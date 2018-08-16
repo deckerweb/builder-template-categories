@@ -145,7 +145,7 @@ Continuing the example: When filtering in "Elementor My Templates" for "Landing 
 This plugin only works and makes sense for Administrator users just because the post types it integrates with are mostly only accessable for administrators. The target user group of this plugin are site builders, admins, developers who want to organize their admin area better, plus their website projects.
 
 To customize the capability to make the taxonomy appear in the Admin Dashboard you can use a filter:
-`
+```
 add_filter( 'btc/filter/capability/submenu', 'btc_custom_capability_submenu' );
 /**
  * Plugin: Builder Template Categories - Custom capability.
@@ -155,7 +155,7 @@ function btc_custom_capability_submenu() {
 	return 'edit_posts';
 
 }  // end function
-`
+```
 
 **Is Elementor required for this plugin?**
 Elementor (free) is not required. But once it is installed and active the integration gets loaded, meaning, the taxonomy for categorizing Elementor templates appears (My Templates Library). This will make organizing templates a breeze ;-)
@@ -192,7 +192,7 @@ Yes, of course.
 There are numerous filters built-in, plus the default filters for taxonomies from WordPress Core apply.
 
 If you want to add support for your own custom library, just declare the following register statement via our filter:
-`
+```
 add_filter( 'btc/filter/integrations/all', 'ddw_btc_register_integration_popup_maker' );
 /**
  * Plugin: Builder Template Categories - Register custom integration.
@@ -220,7 +220,7 @@ function ddw_btc_register_integration_popup_maker( array $integrations ) {
 	return $integrations;
 
 }  // end function
-`
+```
 
 Best practice is to wrapp the whole code above in a conditional to check if the theme/ plugin/ post type is active before applying anything from our "Builder Template Categories" stuff.
 
