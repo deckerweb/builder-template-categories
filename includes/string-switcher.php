@@ -127,6 +127,7 @@ function ddw_btc_string_template( $string_type ) {
 
 /**
  * Build string " (for WooCommerce)".
+ *   Note: Space before the brackets is intended :).
  *
  * @since  1.0.0
  *
@@ -149,6 +150,7 @@ function ddw_btc_string_for_woocommerce() {
 
 /**
  * Build string " (for Post Types, Taxonomies, Fields)".
+ *   Note: Space before the brackets is intended :).
  *
  * @since  1.0.0
  *

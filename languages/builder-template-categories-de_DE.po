@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Builder Template Categories\n"
-"POT-Creation-Date: 2018-08-16 17:47+0200\n"
-"PO-Revision-Date: 2018-08-16 17:47+0200\n"
+"POT-Creation-Date: 2018-08-16 22:42+0200\n"
+"PO-Revision-Date: 2018-08-16 22:42+0200\n"
 "Last-Translator: David Decker DECKERWEB.de -- https://deckerweb.de/\n"
 "Language-Team: David Decker DECKERWEB.de -- https://deckerweb.de/\n"
 "Language: de_DE\n"
@@ -155,6 +155,10 @@ msgstr "Popup Maker Templates"
 #: includes/integrations/integration-thrive-lightboxes.php:27
 msgid "Thrive Lightbox Templates"
 msgstr "Thrive Lightbox-Templates"
+
+#: includes/integrations/integration-wpbakery-templatera.php:27
+msgid "WPBakery Page Builder Templates"
+msgstr "WPBakery Page Builder Templates"
 
 #: includes/integrations/integration-wpshowposts.php:27
 msgid "WP Show Posts Listings"
@@ -404,11 +408,11 @@ msgstr "Listen-%s"
 msgid "EL HF %s"
 msgstr "EL HF %s"
 
-#: includes/string-switcher.php:142
+#: includes/string-switcher.php:143
 msgid "for WooCommerce"
 msgstr "für WooCommerce Shops"
 
-#: includes/string-switcher.php:164
+#: includes/string-switcher.php:166
 msgid "for Post Types, Taxonomies, Fields"
 msgstr "für Inhaltstypen, Taxonomien, Felder"
 

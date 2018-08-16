@@ -87,7 +87,8 @@ function ddw_btc_is_owp_library_active() {
  *
  * @since  1.0.0
  *
- * @return bool TRUE if the module is active, otherwise FALSE.
+ * @return bool TRUE if Astra Pro Custom Layouts module is active, otherwise
+ *              FALSE.
  */
 function ddw_btc_is_astra_layouts_active() {
 
@@ -129,7 +130,7 @@ function ddw_btc_is_jetthemecore_active() {
  *
  * @since  1.0.0
  *
- * @return bool TRUE if JetWooBuilder is active, otherwise FALSE.
+ * @return bool TRUE if WooCommerce and JetWooBuilder is active, otherwise FALSE.
  */
 function ddw_btc_is_jetwoobuilder_active() {
 
@@ -157,7 +158,7 @@ function ddw_btc_is_jetengine_active() {
  *
  * @since  1.0.0
  *
- * @return bool TRUE if Blox is active, otherwise FALSE.
+ * @return bool TRUE if Blox Lite or Blox Pro is active, otherwise FALSE.
  */
 function ddw_btc_is_blox_active() {
 
@@ -294,10 +295,34 @@ function ddw_btc_is_pods_templates_active() {
  *
  * @since  1.0.0
  *s
- * @return bool TRUE if DHWC Elementor is active, otherwise FALSE.
+ * @return bool TRUE if WooCommerce and DHWC Elementor is active, otherwise
+ *              FALSE.
  */
 function ddw_btc_is_dhwc_elementor_active() {
 
 	return ( class_exists( 'WooCommerce' ) && defined( 'DHWC_ELEMENTOR_VERSION' ) ) ? TRUE : FALSE;
+
+}  // end function
+
+
+/**
+ * Is Templatera (WPBakery Page Builder) plugin active or not?
+ *
+ * @since  1.0.0
+ *s
+ * @return bool TRUE if Templatera and minimum required version of WPBakery Page
+ *              Builder is active, otherwise FALSE.
+ */
+function ddw_btc_is_wpbakery_templatera_active() {
+
+	//return ( defined( 'WPB_VC_VERSION' ) && function_exists( 'templatera_init' ) ) ? TRUE : FALSE;
+
+	if ( defined( 'WPB_VC_VERSION' )
+		&& version_compare( WPB_VC_VERSION, '5.0', '>=' )
+	) {
+		return TRUE;
+	}
+
+	return FALSE;
 
 }  // end function

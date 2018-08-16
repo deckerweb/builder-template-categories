@@ -172,3 +172,12 @@ if ( ddw_btc_is_pods_templates_active() ) {
 if ( ddw_btc_is_dhwc_elementor_active() ) {
 	require_once( BTC_PLUGIN_DIR . 'includes/integrations/integration-dhwc-elementor.php' );
 }
+
+
+/**
+ * Plugin: Templatera (for 'WPBakery Page Builder', formerly known as 'Visual Composer')
+ * @since 1.0.0
+ */
+if ( ddw_btc_is_wpbakery_templatera_active() ) {
+	require_once( BTC_PLUGIN_DIR . 'includes/integrations/integration-wpbakery-templatera.php' );
+}

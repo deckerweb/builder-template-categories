@@ -39,6 +39,7 @@ Please note: The categories are global but when filtering only those items are l
 - **Elementor Page Builder** Plugin (free version is sufficient) - **My Templates** (for Pages, Sections, and with Elementor Pro even more template types)
 - **Oxygen Builder** Plugin (Pro) - **Templates** (Pages, Layouts, Sections, Theme Builder elements...)
 - **BoldGrid Post and Page Builder** Plugin (free) - **Blocks (Templates)**
+- **WPBakery Page Builder (the old 'Visual Composer') Plugin with its "Templatera" template plugin - **Templates** (Pages, Layouts, etc.)
 
 = Supported Themes =
 - **Astra Theme** with **Astra Pro** Add-On Plugin - **Custom Layouts** (for Layouts, Headers, Footers, Hooks)
@@ -170,10 +171,10 @@ However, I [strongly recommend Elementor Pro](https://toolbarextras.com/go/eleme
 **Where are the other popular Page Builders?**
 All the others already have template categories by default, or, on the other hand, cannot be supported with a post type taxonomy.
 
-* Beaver Builder & Beaver Themer: has template categories by default
-* Thrive Architect: has category feature built-in
-* Divi: has template categories by default
-* Brizy: has no template library yet
+* Beaver Builder & Beaver Themer: has template categories already by default
+* Thrive Architect: has category feature already built-in
+* Divi: has template categories already by default
+* Brizy: has no template library yet - maybe coming with Pro?
 
 **Will other Themes be supported?**
 Yes, absolutely. – Once I discover another theme (or via an add-on plugin) which adds a template library but has no categories for organizing I consider adding an integration. Of course, you can also make me aware of other themes and plugins with such libraries.
@@ -242,7 +243,7 @@ Best practice is to wrapp the whole code above in a conditional to check if the 
 
 = 1.0.0 - 2018-08-?? =
 * *Plugin launch. Everything's new!*
-* New: Including integration for 13 Plugins: Elementor, AnyWhere Elementor, Header Footer for Elementor, Popup Maker, PopBox for Elementor, Thrive Lightboxes, Oxygen Builder (2.0+), Pods, JetEngine for Elementor, JetWooBuilder for Elementor, DHWC Elementor (WooCommerce Templates), WP Show Posts, BoldGrid Post and Page Builder, 
+* New: Including integration for 14 Plugins: Elementor, AnyWhere Elementor, Header Footer for Elementor, Popup Maker, PopBox for Elementor, Thrive Lightboxes, Oxygen Builder (2.0+), Pods, JetEngine for Elementor, JetWooBuilder for Elementor, DHWC Elementor (WooCommerce Templates), WP Show Posts, BoldGrid Post and Page Builder, WPBakery Page Builder (Visual Composer)
 * New: Including integration for 5 Themes: OceanWP, GeneratePress, Astra, Kava Pro (CrocoBlock), Genesis (Blox)
 * New: Includes a `composer.json` file in the plugin's root folder - this is great for developers using Composer
 
