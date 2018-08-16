@@ -1,0 +1,11 @@
+# Composer
+vendor/**/.git
+vendor/
+composer.lock
+composer.phar
+
+# Grunt
+node_modules/
+
+# macOS
+.DS_Store
