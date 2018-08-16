@@ -121,14 +121,15 @@ You can also contribute code-wise via our [Builder Template Categories GitHub Re
 
 == Frequently Asked Questions ==
 
-**Why is the taxonomy "global" and applied to more than one post type?**
+= Why is the taxonomy "global" and applied to more than one post type? =
 The answer is simple: Our taxonomy is only for organizing purposes if you have to manage many, many templates. It is easy to just enter 2 or more different categories if you use more than one of the supported integrations (and therefore have our taxonomy applied to more than one post type).
 
 It would add a lot of bloat to register a "organizing taxonomy" for every supported post type of an integration. This really makes absolutely no sense in my opinion. Of course, you are free to tweak the behavior of the plugin with the built-in filters or WordPress Core functions, filters, actions and classes. Plus, you can at any time easily register any custom taxonomy yourself.
 
 This plugin here is a "quick and easy" solution: install, activate, organize with categories. Done.
 
-**The category counter displays wrong number?**
+
+= The category counter displays wrong number? =
 The counter works fine, really.
 The "issue" you're seeing is most likely that: you have more than one of the supported integrations active. Therefore the categories are global and applied to each of the integrations. But the terms count for the categories remains also global.
 
@@ -142,7 +143,8 @@ The term **counter** in the **taxonomy list table** will always display: **15**.
 
 Continuing the example: When filtering in "Elementor My Templates" for "Landing Pages" you will get 5 results. Which is fully correct. These are the 5 results that are connected to *this* post type. The same filter in "Astra Custom Layouts" will bring 10, of course, as only these 10 terms are connected to *this* Layouts Post Type. And so on...! :)
 
-**Why is the Administrator Role recommended?**
+
+= Why is the Administrator Role recommended? =
 This plugin only works and makes sense for Administrator users just because the post types it integrates with are mostly only accessable for administrators. The target user group of this plugin are site builders, admins, developers who want to organize their admin area better, plus their website projects.
 
 To customize the capability to make the taxonomy appear in the Admin Dashboard you can use a filter:
@@ -158,37 +160,45 @@ function btc_custom_capability_submenu() {
 }  // end function
 ```
 
-**Is Elementor required for this plugin?**
+
+= Is Elementor required for this plugin? =
 Elementor (free) is not required. But once it is installed and active the integration gets loaded, meaning, the taxonomy for categorizing Elementor templates appears (My Templates Library). This will make organizing templates a breeze ;-)
 
 I totally [recommend Elementor](https://toolbarextras.com/go/elementor/) - so, with it active, this plugin here will make the perfect sense!
 
-**Is Elementor Pro required for this plugin?**
+= Is Elementor Pro required for this plugin? =
 Absolutely not. For the Elementor integration the free version of Elementor is enough as it already adds the template library ("My Templates").
 
 However, I [strongly recommend Elementor Pro](https://toolbarextras.com/go/elementor-pro/) as it is so useful for Non-Coder Designers site builders.
 
-**Where are the other popular Page Builders?**
+
+= Where are the other popular Page Builders? =
 All the others already have template categories by default, or, on the other hand, cannot be supported with a post type taxonomy.
 
 * Beaver Builder & Beaver Themer: has template categories already by default
 * Thrive Architect: has category feature already built-in
 * Divi: has template categories already by default
 * Brizy: has no template library yet - maybe coming with Pro?
+* SiteOrigin Page Builder / Cornerstone / Visual Composer (new one, 2018) / Avada Fusion Builder: all of them have no library built-in, or at least no one that can be extended...
 
-**Will other Themes be supported?**
+
+= Will other Themes be supported? =
 Yes, absolutely. – Once I discover another theme (or via an add-on plugin) which adds a template library but has no categories for organizing I consider adding an integration. Of course, you can also make me aware of other themes and plugins with such libraries.
 
-**Will other third-party Plugins be supported?**
+
+= Will other third-party Plugins be supported? =
 Yes, absolutely. - Once I discover another plugin which adds a template library but has no categories for organizing I consider adding an integration. Of course, you can also make me aware of other themes and plugins with such libraries.
 
-**Will this Plugin slow down my site?**
+
+= Will this Plugin slow down my site? =
 Absolutely not. The plugin will only do its stuff for logged-in Administrator users. It does nothing for visitors of your site. Plugin loads its stuff only when needed and if supported theme/ plugin is active. Plugin was built to be as lightweight as possible.
 
-**Does the Plugin work with Multisite?**
+
+= Does the Plugin work with Multisite? =
 Yes, it works fine in Multisite, you could even activate it Network-wide. However, the taxonomy is only added on a per site basis (if the supported integrations are active). Therefore it makes the most sense to activate the plugin on a per site basis.
 
-**Can I extend or customize the plugin?**
+
+= Can I extend or customize the plugin? =
 Yes, of course.
 There are numerous filters built-in, plus the default filters for taxonomies from WordPress Core apply.
 
@@ -225,7 +235,8 @@ function ddw_btc_register_integration_popup_maker( array $integrations ) {
 
 Best practice is to wrapp the whole code above in a conditional to check if the theme/ plugin/ post type is active before applying anything from our "Builder Template Categories" stuff.
 
-**More info on Translations?**
+
+= More info on Translations? =
 
 * English - default, always included
 * German (de_DE): Deutsch - immer dabei! :-)
@@ -235,9 +246,11 @@ Best practice is to wrapp the whole code above in a conditional to check if the 
 
 *Note:* All my plugins are internationalized/ translateable by default. This is very important for all users worldwide. So please contribute your language to the plugin to make it even more useful. For translating and validating I recommend the awesome ["Poedit Editor"](https://www.poedit.net/), which works fine on Windows, macOS and Linux.
 
+
 == Screenshots ==
 
 1. ???
+
 
 == Changelog ==
 
