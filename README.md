@@ -43,7 +43,7 @@ Please note: The categories are global but when filtering only those items are l
 - **Elementor Page Builder** Plugin (free version is sufficient) - **My Templates** (for Pages, Sections, and with Elementor Pro even more template types)
 - **Oxygen Builder** Plugin (Pro) - **Templates** (Pages, Layouts, Sections, Theme Builder elements...)
 - **BoldGrid Post and Page Builder** Plugin (free) - **Blocks (Templates)**
-- **WPBakery Page Builder (the old 'Visual Composer') Plugin with its "Templatera" template plugin - **Templates** (Pages, Layouts, etc.)
+- **WPBakery Page Builder (the old 'Visual Composer')** Plugin with its **Templatera** template plugin - **Templates** (Pages, Layouts, etc.)
 
 
 ### Supported Themes 
