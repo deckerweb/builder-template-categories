@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Builder Template Categories\n"
-"POT-Creation-Date: 2018-08-17 11:14+0200\n"
-"PO-Revision-Date: 2018-08-17 11:14+0200\n"
+"POT-Creation-Date: 2018-08-17 12:05+0200\n"
+"PO-Revision-Date: 2018-08-17 12:05+0200\n"
 "Last-Translator: David Decker DECKERWEB.de -- https://deckerweb.de/\n"
 "Language-Team: David Decker DECKERWEB.de -- https://deckerweb.de/\n"
 "Language: de_DE\n"
@@ -23,7 +23,7 @@ msgstr ""
 
 #. translators: Title attribute for Toolbar Extras "Plugin settings" link
 #. Plugin Name of the plugin/theme
-#: includes/admin/admin-extras.php:35 includes/admin/admin-extras.php:218
+#: includes/admin/admin-extras.php:35 includes/admin/admin-extras.php:221
 msgid "Builder Template Categories"
 msgstr "Builder Template-Kategorien"
 
@@ -47,11 +47,17 @@ msgstr "Übersetzungen"
 #. translators: Plugins page listing
 #: includes/admin/admin-extras.php:82
 msgctxt "Plugins page listing"
+msgid "Code Snippets"
+msgstr "Code-Snippets"
+
+#. translators: Plugins page listing
+#: includes/admin/admin-extras.php:85
+msgctxt "Plugins page listing"
 msgid "Donate"
 msgstr "Spenden"
 
 #. translators: 1 - Builder Template Categories / 2 - Link to plugin review
-#: includes/admin/admin-extras.php:217
+#: includes/admin/admin-extras.php:220
 #, php-format
 msgid ""
 "Enjoyed %1$s? Please leave us a %2$s rating. We really appreciate your "
@@ -60,7 +66,7 @@ msgstr ""
 "Gefällt dir %1$s? Dann gib uns bitte eine %2$s Bewertung. Wir schätzen deine "
 "Unterstützung!"
 
-#: includes/admin/admin-extras.php:240
+#: includes/admin/admin-extras.php:243
 msgid ""
 "These Template Categories are globally available for Administrators within "
 "the Admin Dashboard and can be used to organize the template libraries for "

@@ -79,6 +79,9 @@ function ddw_btc_plugin_links( $btc_links, $btc_file ) {
 		$btc_links[] = ddw_btc_get_info_link( 'url_translate', esc_html_x( 'Translations', 'Plugins page listing', 'builder-template-categories' ) );
 
 		/* translators: Plugins page listing */
+		$btc_links[] = ddw_btc_get_info_link( 'url_snippets', esc_html_x( 'Code Snippets', 'Plugins page listing', 'builder-template-categories' ) );
+
+		/* translators: Plugins page listing */
 		$btc_links[] = ddw_btc_get_info_link( 'url_donate', esc_html_x( 'Donate', 'Plugins page listing', 'builder-template-categories' ), 'button-primary' );
 
 	}  // end if plugin links

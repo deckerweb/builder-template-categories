@@ -12,8 +12,8 @@
 
 ### 0.9.1 - 2018-08-17
 
-* New: Added Code Snippets as GitHub Gists
-* New: Added short and easy "documentation" as Wiki in official GitHub repository for the plugin
+* New: Added [Code Snippets](https://github.com/deckerweb/builder-template-categories/wiki/Code-Snippets) as GitHub Gists
+* New: Added [short and easy "documentation" as Wiki](https://github.com/deckerweb/builder-template-categories/wiki) in official GitHub repository for the plugin
 * New: Added integration "WPBakery Page Builder" (the old Visual Composer), via its "Templatera" Add-On plugin
 
 

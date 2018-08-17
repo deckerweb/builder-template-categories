@@ -5,7 +5,7 @@ Tags: elementor, page builder, templates, oceanwp, astra, generatepress, genesis
 Requires at least: 4.7
 Tested up to: 4.9.8
 Requires PHP: 5.6
-Stable tag: 1.0.0
+Stable tag: 0.9.1
 License: GPL-2.0+
 License URI: https://opensource.org/licenses/GPL-2.0
 
@@ -267,8 +267,8 @@ Best practice is to wrap the whole code above in a conditional to check if the t
 
 
 = 0.9.1 - 2018-08-17 =
-* New: Added Code Snippets as GitHub Gists
-* New: Added short and easy "documentation" as Wiki in official GitHub repository for the plugin
+* New: Added [Code Snippets](https://github.com/deckerweb/builder-template-categories/wiki/Code-Snippets) as GitHub Gists
+* New: Added [short and easy "documentation" as Wiki](https://github.com/deckerweb/builder-template-categories/wiki) in official GitHub repository for the plugin
 * New: Added integration "WPBakery Page Builder" (the old Visual Composer), via its "Templatera" Add-On plugin
 
 
