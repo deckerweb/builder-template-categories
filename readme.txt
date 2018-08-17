@@ -1,7 +1,7 @@
 === Builder Template Categories - for WordPress Page Builders ===
 Contributors: daveshine, deckerweb, wpautobahn, toolbarextras
 Donate link: https://www.paypal.me/deckerweb
-Tags: elementor, page builder, templates, oceanwp, astra, generatepress, genesis, overview, blox, blocks, popups, usability, deckerweb
+Tags: elementor, page builder, templates, oceanwp, astra, generatepress, genesis, categories, template, overview, blocks, deckerweb
 Requires at least: 4.7
 Tested up to: 4.9.8
 Requires PHP: 5.6
@@ -37,9 +37,10 @@ Please note: The categories are global but when filtering only those items are l
 
 = Supported Page Builders =
 - **Elementor Page Builder** Plugin (free version is sufficient) - **My Templates** (for Pages, Sections, and with Elementor Pro even more template types)
-- **Oxygen Builder** Plugin (Pro) - **Templates** (Pages, Layouts, Sections, Theme Builder elements...)
-- **BoldGrid Post and Page Builder** Plugin (free) - **Blocks (Templates)**
+- **Oxygen Builder** Plugin (Pro) - **Templates** (Pages, Layouts, Sections, Theme Builder elements...) -- Note: also the old Oxygen Visual Site Builder 1.x is supported
 - **WPBakery Page Builder (the old 'Visual Composer')** Plugin with its **Templatera** template plugin - **Templates** (Pages, Layouts, etc.)
+- **Cornerstone** Page Builder via the "Cornerstone Global Blocks" Plugin (free) - **Global Blocks** (Content)
+- **BoldGrid Post and Page Builder** Plugin (free) - **Blocks (Templates)**
 
 = Supported Themes =
 - **Astra Theme** with **Astra Pro** Add-On Plugin - **Custom Layouts** (for Layouts, Headers, Footers, Hooks)
@@ -152,6 +153,8 @@ To customize the capability to make the taxonomy appear in the Admin Dashboard y
 add_filter( 'btc/filter/capability/submenu', 'btc_custom_capability_submenu' );
 /**
  * Plugin: Builder Template Categories - Custom capability.
+ *
+ * @return string String ID of new capability.
  */
 function btc_custom_capability_submenu() {
 
@@ -159,6 +162,7 @@ function btc_custom_capability_submenu() {
 
 }  // end function
 ```
+([This code snippet as a GitHub Gist](https://gist.github.com/deckerweb/89f5f8d2b8d31073401a80ef6d0f10dc))
 
 
 = Is Elementor required for this plugin? =
@@ -178,8 +182,8 @@ All the others already have template categories by default, or, on the other han
 * Beaver Builder & Beaver Themer: has template categories already by default
 * Thrive Architect: has category feature already built-in
 * Divi: has template categories already by default
-* Brizy: has no template library yet - maybe coming with Pro?
-* SiteOrigin Page Builder / Cornerstone / Visual Composer (new one, 2018) / Avada Fusion Builder: all of them have no library built-in, or at least no one that can be extended...
+* Brizy: has no template library yet - but it will come according to their [roadmap](https://trello.com/c/adyn27Fb) - when that happens we will integrate if possible :)
+* Visual Composer (new one, 2018) / SiteOrigin Page Builder / Avada Fusion Builder: all of them have no library built-in, or at least none that can be extended...
 
 
 = Will other Themes be supported? =
@@ -232,8 +236,9 @@ function ddw_btc_register_integration_popup_maker( array $integrations ) {
 
 }  // end function
 ```
+([This code snippet as a GitHub Gist](https://gist.github.com/deckerweb/cae6d2703400601e2e78be3a27e93cfb))
 
-Best practice is to wrapp the whole code above in a conditional to check if the theme/ plugin/ post type is active before applying anything from our "Builder Template Categories" stuff.
+Best practice is to wrap the whole code above in a conditional to check if the theme/ plugin/ post type is active before applying anything from our "Builder Template Categories" stuff.
 
 
 = More info on Translations? =
@@ -249,16 +254,22 @@ Best practice is to wrapp the whole code above in a conditional to check if the 
 
 == Screenshots ==
 
-1. ???
+1. (Upcoming)
 
 
 == Changelog ==
 
-= 1.0.0 - 2018-08-?? =
-* *Plugin launch. Everything's new!*
-* New: Including integration for 14 Plugins: Elementor, AnyWhere Elementor, Header Footer for Elementor, Popup Maker, PopBox for Elementor, Thrive Lightboxes, Oxygen Builder (2.0+), Pods, JetEngine for Elementor, JetWooBuilder for Elementor, DHWC Elementor (WooCommerce Templates), WP Show Posts, BoldGrid Post and Page Builder, WPBakery Page Builder (Visual Composer)
+= 1.0.0 - 2018-08-?? (Upcoming) =
+* *Official plugin launch on WordPress.org. Everything's new!*
+* New: Including integration for 15 Plugins: Elementor, AnyWhere Elementor, Header Footer for Elementor, Popup Maker, PopBox for Elementor, Thrive Lightboxes, Oxygen Builder (2.0+), Pods, JetEngine for Elementor, JetWooBuilder for Elementor, DHWC Elementor (WooCommerce Templates), WP Show Posts, BoldGrid Post and Page Builder, WPBakery Page Builder (Visual Composer), Global Blocks for Cornerstone
 * New: Including integration for 5 Themes: OceanWP, GeneratePress, Astra, Kava Pro (CrocoBlock), Genesis (Blox)
 * New: Includes a `composer.json` file in the plugin's root folder - this is great for developers using Composer
+
+
+= 0.9.1 - 2018-08-17 =
+* New: Added Code Snippets as GitHub Gists
+* New: Added short and easy "documentation" as Wiki in official GitHub repository for the plugin
+* New: Added integration "WPBakery Page Builder" (the old Visual Composer), via its "Templatera" Add-On plugin
 
 
 = 0.9.0 - 2018-08-16 =
@@ -268,6 +279,9 @@ Best practice is to wrapp the whole code above in a conditional to check if the 
 
 = 1.0.0 =
 Official plugin launch. Everything's new!
+
+= 0.9.1 =
+Additions for GitHub.com repo.
 
 = 0.9.0 =
 Beta plugin release on GitHub.com

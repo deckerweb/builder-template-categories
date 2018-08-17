@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Builder Template Categories\n"
-"POT-Creation-Date: 2018-08-16 22:42+0200\n"
-"PO-Revision-Date: 2018-08-16 22:42+0200\n"
+"POT-Creation-Date: 2018-08-17 11:14+0200\n"
+"PO-Revision-Date: 2018-08-17 11:14+0200\n"
 "Last-Translator: David Decker DECKERWEB.de -- https://deckerweb.de/\n"
 "Language-Team: David Decker DECKERWEB.de -- https://deckerweb.de/\n"
 "Language: de_DE\n"
@@ -95,6 +95,10 @@ msgstr "Astra Eigene Layouts"
 #: includes/integrations/integration-boldgrid.php:27
 msgid "BoldGrid Blocks"
 msgstr "BoldGrid-Blöcke"
+
+#: includes/integrations/integration-cornerstone-global-blocks.php:27
+msgid "Global Content Blocks for Cornerstone Page Builder"
+msgstr "Globale Blöcke für Cornerstone Page Builder"
 
 #: includes/integrations/integration-dhwc-elementor.php:27
 msgid "DHWC Elementor Product Templates"

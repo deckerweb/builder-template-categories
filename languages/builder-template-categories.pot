@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Builder Template Categories\n"
-"POT-Creation-Date: 2018-08-16 22:42+0200\n"
+"POT-Creation-Date: 2018-08-17 11:14+0200\n"
 "PO-Revision-Date: 2018-08-14 13:21+0200\n"
 "Last-Translator: David Decker DECKERWEB.de -- https://deckerweb.de/\n"
 "Language-Team: David Decker DECKERWEB.de -- https://deckerweb.de/\n"
@@ -89,6 +89,10 @@ msgstr ""
 
 #: includes/integrations/integration-boldgrid.php:27
 msgid "BoldGrid Blocks"
+msgstr ""
+
+#: includes/integrations/integration-cornerstone-global-blocks.php:27
+msgid "Global Content Blocks for Cornerstone Page Builder"
 msgstr ""
 
 #: includes/integrations/integration-dhwc-elementor.php:27

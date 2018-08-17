@@ -14,7 +14,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 add_filter( 'btc/filter/integrations/all', 'ddw_btc_register_integration_oxygen_builder' );
 /**
- * Register Oxygen Builder (2.0+ required).
+ * Register Oxygen Builder (works with v1.x and v2.0+).
  *
  * @since  1.0.0
  *

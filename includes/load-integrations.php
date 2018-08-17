@@ -94,7 +94,7 @@ if ( ddw_btc_is_blox_active() ) {
 
 
 /**
- * Plugin: Oxygen Builder (v2.0+ required!)
+ * Plugin: Oxygen Builder (works with v1.x and v2.0+)
  * @since 1.0.0
  */
 if ( ddw_btc_is_oxygen_builder_active() ) {
@@ -180,4 +180,13 @@ if ( ddw_btc_is_dhwc_elementor_active() ) {
  */
 if ( ddw_btc_is_wpbakery_templatera_active() ) {
 	require_once( BTC_PLUGIN_DIR . 'includes/integrations/integration-wpbakery-templatera.php' );
+}
+
+
+/**
+ * Plugin: Global Blocks for Cornerstone
+ * @since 1.0.0
+ */
+if ( ddw_btc_is_cornerstone_global_blocks_active() ) {
+	require_once( BTC_PLUGIN_DIR . 'includes/integrations/integration-cornerstone-global-blocks.php' );
 }

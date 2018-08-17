@@ -169,6 +169,9 @@ function ddw_btc_is_blox_active() {
 
 /**
  * Is Oxygen Builder plugin active or not?
+ *   Note: Both major versions are supported, the old v1.x (Oxygen Visual Site
+ *         Builder), and, the new Oxygen Builder 2.0+. The template post type is
+ *         the same for both versions.
  *
  * @since  1.0.0
  *
@@ -176,7 +179,7 @@ function ddw_btc_is_blox_active() {
  */
 function ddw_btc_is_oxygen_builder_active() {
 
-	return ( defined( 'CT_VERSION' ) ) ? TRUE : FALSE;
+	return ( defined( 'CT_VERSION' ) || defined( 'OXYGEN_VSB_VERSION' ) ) ? TRUE : FALSE;
 
 }  // end function
 
@@ -315,8 +318,10 @@ function ddw_btc_is_dhwc_elementor_active() {
  */
 function ddw_btc_is_wpbakery_templatera_active() {
 
-	//return ( defined( 'WPB_VC_VERSION' ) && function_exists( 'templatera_init' ) ) ? TRUE : FALSE;
-
+	/**
+	 * "Templatera" Add-On needs at least WPBakery Page Builder version 5.0 or
+	 *   higher
+	 */
 	if ( defined( 'WPB_VC_VERSION' )
 		&& version_compare( WPB_VC_VERSION, '5.0', '>=' )
 	) {
@@ -324,5 +329,19 @@ function ddw_btc_is_wpbakery_templatera_active() {
 	}
 
 	return FALSE;
+
+}  // end function
+
+
+/**
+ * Is Global Blocks for Cornerstone plugin active or not?
+ *
+ * @since  1.0.0
+ *s
+ * @return bool TRUE if Global Blocks for Cornerstone is active, otherwise FALSE.
+ */
+function ddw_btc_is_cornerstone_global_blocks_active() {
+
+	return ( function_exists( 'global_blocks_plugin_init' ) ) ? TRUE : FALSE;
 
 }  // end function
