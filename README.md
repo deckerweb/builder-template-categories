@@ -57,7 +57,7 @@ Please note: The categories are global but when filtering only those items are l
 
 ### Supported Plugins 
 - *see Page Builder Plugins above :-)*
-- **AnyWhere Elementor Plugin** (free version is sufficient) - **AE Global Templates** (for Layouts etc.)
+- **AnyWhere Elementor Plugin** (both, free & Pro version) - **AE Global Templates** (for Layouts etc.)
 - **Kava Pro Theme/ CrocoBlock Service** with JetThemeCore Plugin - **My Library** (for Layouts, Pages, Headers, Footers, Single, Archive)
 - **JetEngine for Elementor** Plugin - **Listings (Templates)**
 - **JetWooBuilder for Elementor** Plugin - **Product Templates** (for WooCommerce Products)
@@ -237,14 +237,14 @@ There are numerous filters built-in, plus the default filters for taxonomies fro
 
 If you want to add support for your own custom library, just declare the following register statement via our filter:
 ```
-add_filter( 'btc/filter/integrations/all', 'ddw_btc_register_integration_popup_maker' );
+add_filter( 'btc/filter/integrations/all', 'ddw_btc_register_custom_integration' );
 /**
  * Plugin: Builder Template Categories - Register custom integration.
  *
  * @param  array $integrations Holds array of all registered integrations.
  * @return array Tweaked array of registered integrations.
  */
-function ddw_btc_register_integration_popup_maker( array $integrations ) {
+function ddw_btc_register_custom_integration( array $integrations ) {
 
 	$post_type = 'your-post-type';
 
