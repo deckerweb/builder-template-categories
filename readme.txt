@@ -5,7 +5,7 @@ Tags: elementor, page builder, templates, oceanwp, astra, generatepress, genesis
 Requires at least: 4.7
 Tested up to: 4.9.8
 Requires PHP: 5.6
-Stable tag: 0.9.1
+Stable tag: 1.0.0
 License: GPL-2.0+
 License URI: https://opensource.org/licenses/GPL-2.0
 
@@ -208,14 +208,14 @@ There are numerous filters built-in, plus the default filters for taxonomies fro
 
 If you want to add support for your own custom library, just declare the following register statement via our filter:
 ```
-add_filter( 'btc/filter/integrations/all', 'ddw_btc_register_custom_integration' );
+add_filter( 'btc/filter/integrations/all', 'btc_register_custom_integration' );
 /**
  * Plugin: Builder Template Categories - Register custom integration.
  *
  * @param  array $integrations Holds array of all registered integrations.
  * @return array Tweaked array of registered integrations.
  */
-function ddw_btc_register_custom_integration( array $integrations ) {
+function btc_register_custom_integration( array $integrations ) {
 
 	$post_type = 'your-post-type';
 
@@ -254,12 +254,26 @@ Best practice is to wrap the whole code above in a conditional to check if the t
 
 == Screenshots ==
 
-1. (Upcoming)
+1. Template Categories for Elementor "My Templates" - Filtering for templates: 1) Dropdown of template categories, 2) Links to template categories
+
+2. List of Template Categories - plus help info about all current active integrations
+
+3. Edit a template category: 1) Title is the most important item; 2) Description field ist useful for internal notes or for your team of designers/ site builders etc.
+
+4. Template categories for "Astra Custom Layouts" - Astra Theme via Astra Pro plugin
+
+5. Template categories for "GeneratePress Elements" - GP Premium plugin (v1.7+)
+
+6. Template categories for "OceanWP My Library" - Ocean Extra plugin
+
+7. Edit a template - and set the template category (Example of an Elementor template)
+
+8. Plugins page - list of all plugins - "Builder Template Categories" with link to taxonomy listing table
 
 
 == Changelog ==
 
-= 1.0.0 - 2018-08-?? (Upcoming) =
+= 1.0.0 - 2018-08-20 =
 * *Official plugin launch on WordPress.org. Everything's new!*
 * New: Including integration for 15 Plugins: Elementor, AnyWhere Elementor, Header Footer for Elementor, Popup Maker, PopBox for Elementor, Thrive Lightboxes, Oxygen Builder (2.0+), Pods, JetEngine for Elementor, JetWooBuilder for Elementor, DHWC Elementor (WooCommerce Templates), WP Show Posts, BoldGrid Post and Page Builder, WPBakery Page Builder (Visual Composer), Global Blocks for Cornerstone
 * New: Including integration for 5 Themes: OceanWP, GeneratePress, Astra, Kava Pro (CrocoBlock), Genesis (Blox)

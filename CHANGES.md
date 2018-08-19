@@ -10,6 +10,14 @@
 
 ## Changelog of the Plugin
 
+### 1.0.0 - 2018-08-20
+
+* *Official plugin launch on WordPress.org. Everything's new!*
+* New: Including integration for 15 Plugins: Elementor, AnyWhere Elementor, Header Footer for Elementor, Popup Maker, PopBox for Elementor, Thrive Lightboxes, Oxygen Builder (2.0+), Pods, JetEngine for Elementor, JetWooBuilder for Elementor, DHWC Elementor (WooCommerce Templates), WP Show Posts, BoldGrid Post and Page Builder, WPBakery Page Builder (Visual Composer), Global Blocks for Cornerstone
+* New: Including integration for 5 Themes: OceanWP, GeneratePress, Astra, Kava Pro (CrocoBlock), Genesis (Blox)
+* New: Includes a `composer.json` file in the plugin's root folder - this is great for developers using Composer
+
+
 ### 0.9.1 - 2018-08-17
 
 * New: Added [Code Snippets](https://github.com/deckerweb/builder-template-categories/wiki/Code-Snippets) as GitHub Gists
