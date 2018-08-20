@@ -149,7 +149,7 @@ Continuing the example: When filtering in "Elementor My Templates" for "Landing 
 This plugin only works and makes sense for Administrator users just because the post types it integrates with are mostly only accessable for administrators. The target user group of this plugin are site builders, admins, developers who want to organize their admin area better, plus their website projects.
 
 To customize the capability to make the taxonomy appear in the Admin Dashboard you can use a filter:
-```
+`
 add_filter( 'btc/filter/capability/submenu', 'btc_custom_capability_submenu' );
 /**
  * Plugin: Builder Template Categories - Custom capability.
@@ -161,7 +161,7 @@ function btc_custom_capability_submenu() {
 	return 'edit_posts';
 
 }  // end function
-```
+`
 ([This code snippet as a GitHub Gist](https://gist.github.com/deckerweb/89f5f8d2b8d31073401a80ef6d0f10dc))
 
 
@@ -207,7 +207,7 @@ Yes, of course.
 There are numerous filters built-in, plus the default filters for taxonomies from WordPress Core apply.
 
 If you want to add support for your own custom library, just declare the following register statement via our filter:
-```
+`
 add_filter( 'btc/filter/integrations/all', 'btc_register_custom_integration' );
 /**
  * Plugin: Builder Template Categories - Register custom integration.
@@ -235,7 +235,7 @@ function btc_register_custom_integration( array $integrations ) {
 	return $integrations;
 
 }  // end function
-```
+`
 ([This code snippet as a GitHub Gist](https://gist.github.com/deckerweb/cae6d2703400601e2e78be3a27e93cfb))
 
 Best practice is to wrap the whole code above in a conditional to check if the theme/ plugin/ post type is active before applying anything from our "Builder Template Categories" stuff.
@@ -309,3 +309,9 @@ Enjoy using *Builder Template Categories*? **[Please consider making a donation]
 
 == Last but not least ==
 **Special Thanks go out to my family for allowing me to do such spare time projects (aka free plugins) and supporting me in every possible way!**
+
+== My Other Plugins ==
+* [Toolbar Extras for Elementor - WordPress Admin Bar Enhanced](https://wordpress.org/plugins/toolbar-extras/)
+* [Multisite Toolbar Additions](https://wordpress.org/plugins/multisite-toolbar-additions/)
+* [Genesis What's New Info](https://wordpress.org/plugins/genesis-whats-new-info/)
+* [Cleaner Plugin Installer](https://wordpress.org/plugins/cleaner-plugin-installer/)

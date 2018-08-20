@@ -367,3 +367,10 @@ Enjoy using *Builder Template Categories*? **[Please consider making a donation]
 
 ## Last but not least 
 **Special Thanks go out to my family for allowing me to do such spare time projects (aka free plugins) and supporting me in every possible way!**
+
+
+## My Other Plugins
+* [Toolbar Extras for Elementor - WordPress Admin Bar Enhanced](https://wordpress.org/plugins/toolbar-extras/)
+* [Multisite Toolbar Additions](https://wordpress.org/plugins/multisite-toolbar-additions/)
+* [Genesis What's New Info](https://wordpress.org/plugins/genesis-whats-new-info/)
+* [Cleaner Plugin Installer](https://wordpress.org/plugins/cleaner-plugin-installer/)
