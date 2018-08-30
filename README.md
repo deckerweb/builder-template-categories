@@ -327,6 +327,7 @@ Best practice is to wrap the whole code above in a conditional to check if the t
 ### 1.0.1 - 2018-08-30
 * New: Integration with Brizy Templates for Brizy Page Builder - template feature was released in their free version v1.0.25
 * New: Added plugin update message also to Plugins page (overview table)
+* New: French translations by the community
 * Tweak: Added plugins recommendations library by deckerweb to improve the plugin installer tips (old filter function got removed)
 * Tweak: Updated `.pot` file plus all German translations (formal, informal) and language packs
 * Tweak: Enhanced, improved and corrected Readme.txt file here - also tweaked FAQ entry
