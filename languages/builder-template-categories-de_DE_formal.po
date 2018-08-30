@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Builder Template Categories\n"
-"POT-Creation-Date: 2018-08-20 01:08+0200\n"
-"PO-Revision-Date: 2018-08-20 01:08+0200\n"
+"POT-Creation-Date: 2018-08-30 12:10+0200\n"
+"PO-Revision-Date: 2018-08-30 12:10+0200\n"
 "Last-Translator: David Decker DECKERWEB.de -- https://deckerweb.de/\n"
 "Language-Team: David Decker DECKERWEB.de -- https://deckerweb.de/\n"
 "Language: de_DE\n"
@@ -21,9 +21,9 @@ msgstr ""
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: *.js\n"
 
-#. translators: Title attribute for Toolbar Extras "Plugin settings" link
+#. translators: Title attribute for Builder Template Categories taxonomy link
 #. Plugin Name of the plugin/theme
-#: includes/admin/admin-extras.php:35 includes/admin/admin-extras.php:221
+#: includes/admin/admin-extras.php:35 includes/admin/admin-extras.php:129
 msgid "Builder Template Categories"
 msgstr "Builder Template-Kategorien"
 
@@ -33,31 +33,31 @@ msgid "Template Categories"
 msgstr "Template-Kategorien"
 
 #. translators: Plugins page listing
-#: includes/admin/admin-extras.php:76
+#: includes/admin/admin-extras.php:87
 msgctxt "Plugins page listing"
 msgid "Support"
 msgstr "Support"
 
 #. translators: Plugins page listing
-#: includes/admin/admin-extras.php:79
+#: includes/admin/admin-extras.php:90
 msgctxt "Plugins page listing"
 msgid "Translations"
 msgstr "Übersetzungen"
 
 #. translators: Plugins page listing
-#: includes/admin/admin-extras.php:82
+#: includes/admin/admin-extras.php:93
 msgctxt "Plugins page listing"
 msgid "Code Snippets"
 msgstr "Code-Snippets"
 
 #. translators: Plugins page listing
-#: includes/admin/admin-extras.php:85
+#: includes/admin/admin-extras.php:96
 msgctxt "Plugins page listing"
 msgid "Donate"
 msgstr "Spenden"
 
 #. translators: 1 - Builder Template Categories / 2 - Link to plugin review
-#: includes/admin/admin-extras.php:220
+#: includes/admin/admin-extras.php:128
 #, php-format
 msgid ""
 "Enjoyed %1$s? Please leave us a %2$s rating. We really appreciate your "
@@ -66,7 +66,7 @@ msgstr ""
 "Gefällt Ihnen %1$s? Dann geben Sie uns bitte eine %2$s Bewertung. Wir "
 "schätzen Ihre Unterstützung!"
 
-#: includes/admin/admin-extras.php:243
+#: includes/admin/admin-extras.php:151
 msgid ""
 "These Template Categories are globally available for Administrators within "
 "the Admin Dashboard and can be used to organize the template libraries for "
@@ -101,6 +101,10 @@ msgstr "Astra Eigene Layouts"
 #: includes/integrations/integration-boldgrid.php:27
 msgid "BoldGrid Blocks"
 msgstr "BoldGrid-Blöcke"
+
+#: includes/integrations/integration-brizy.php:27
+msgid "Brizy Templates"
+msgstr "Brizy Templates"
 
 #: includes/integrations/integration-cornerstone-global-blocks.php:27
 msgid "Global Content Blocks for Cornerstone Page Builder"

@@ -2,7 +2,7 @@
 
 **General Info**
 
-* *(Upcoming)* [Plugin page on WordPress.org: wordpress.org/plugins/builder-template-categories/](https://wordpress.org/plugins/builder-template-categories/)
+* [Plugin page on WordPress.org: wordpress.org/plugins/builder-template-categories/](https://wordpress.org/plugins/builder-template-categories/)
 * [Translate the plugin](https://translate.wordpress.org/projects/wp-plugins/builder-template-categories)
 * [**Donate** for the further development & support of the plugin](https://www.paypal.me/deckerweb)
 * [Plugin's documentation & FAQ](https://wordpress.org/plugins/builder-template-categories/#faq)

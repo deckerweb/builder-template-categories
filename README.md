@@ -11,6 +11,7 @@
 
 Organize your Page Builder Templates in the WordPress Admin. Better overview, don't get lost. Time saver. With extended plugin & theme support.
 
+<img src="https://ps.w.org/builder-template-categories/assets/banner-1544x500.png" data-canonical-src="https://ps.w.org/builder-template-categories/assets/banner-1544x500.png" width="772" height="250" />
 
 ## Description 
 
@@ -41,6 +42,7 @@ Please note: The categories are global but when filtering only those items are l
 
 ### Supported Page Builders 
 - **Elementor Page Builder** Plugin (free version is sufficient) - **My Templates** (for Pages, Sections, and with Elementor Pro even more template types)
+- **Brizy Page Builder** Plugin (free version is sufficient) - **Templates** (for Pages, Sections etc.)
 - **Oxygen Builder** Plugin (Pro) - **Templates** (Pages, Layouts, Sections, Theme Builder elements...) -- Note: also the old Oxygen Visual Site Builder 1.x is supported
 - **WPBakery Page Builder (the old 'Visual Composer')** Plugin with its **Templatera** template plugin - **Templates** (Pages, Layouts, etc.)
 - **Cornerstone** Page Builder via the "Cornerstone Global Blocks" Plugin (free) - **Global Blocks** (Content)
@@ -87,8 +89,9 @@ Try [**Toolbar Extras**](https://toolbarextras.com/) my other plugin for Site Bu
 
 ### Translations 
 - English (United States) - `en_US` = default, always included
-- [German (informal, default)](https://translate.wordpress.org/locale/de/default/wp-plugins/builder-template-categories) - `de_DE`
-- [German (formal)](https://translate.wordpress.org/locale/de/formal/wp-plugins/builder-template-categories) - `de_DE_formal`
+- [German (informal, default)](https://translate.wordpress.org/locale/de/default/wp-plugins/builder-template-categories) - `de_DE` - always included
+- [German (formal)](https://translate.wordpress.org/locale/de/formal/wp-plugins/builder-template-categories) - `de_DE_formal` - always included
+- [French](https://translate.wordpress.org/locale/fr/default/wp-plugins/builder-template-categories) - `fr_FR` - [by the community, thanks to Bruno Tritsch](https://wp-traduction.com/)
 - `.pot` file (`builder-template-categories.pot`) for translators is always included in the plugin's 'languages' folder :)
 
 
@@ -277,7 +280,7 @@ Best practice is to wrap the whole code above in a conditional to check if the t
 * German (de_DE): Deutsch - immer dabei! :-)
 * For custom and update-safe language files please upload them to `/wp-content/languages/builder-template-categories/` (just create this folder) - This enables you to use fully custom translations that won't be overridden on plugin updates. Also, complete custom English wording is possible with that as well, just use a language file like `builder-template-categories-en_US.mo/.po` to achieve that (for creating one see the following tools).
 
-**Easy WordPress.org plugin translation platform with GlotPress platform:** [**Translate "Toolbar Extras"...**](https://translate.wordpress.org/projects/wp-plugins/builder-template-categories)
+**Easy WordPress.org plugin translation platform with GlotPress platform:** [**Translate "Builder Template Categories"...**](https://translate.wordpress.org/projects/wp-plugins/builder-template-categories)
 
 *Note:* All my plugins are internationalized/ translateable by default. This is very important for all users worldwide. So please contribute your language to the plugin to make it even more useful. For translating and validating I recommend the awesome ["Poedit Editor"](https://www.poedit.net/), which works fine on Windows, macOS and Linux.
 
@@ -286,40 +289,47 @@ Best practice is to wrap the whole code above in a conditional to check if the t
 ## Screenshots 
 
 ### 1. Template Categories for Elementor "My Templates" - Filtering for templates: 1) Dropdown of template categories, 2) Links to template categories
-[missing image]
+![Template Categories for Elementor "My Templates" - Filtering for templates: 1) Dropdown of template categories, 2) Links to template categories](https://ps.w.org/builder-template-categories/assets/screenshot-01.png)
 
 
 ### 2. List of Template Categories - plus help info about all current active integrations
-[missing image]
+![List of Template Categories - plus help info about all current active integrations](https://ps.w.org/builder-template-categories/assets/screenshot-02.png)
 
 
 ### 3. Edit a template category: 1) Title is the most important item; 2) Description field ist useful for internal notes or for your team of designers/ site builders etc.
-[missing image]
+![Edit a template category: 1) Title is the most important item; 2) Description field ist useful for internal notes or for your team of designers/ site builders etc.](https://ps.w.org/builder-template-categories/assets/screenshot-03.png)
 
 
 ### 4. Template categories for "Astra Custom Layouts" - Astra Theme via Astra Pro plugin
-[missing image]
+![Template categories for "Astra Custom Layouts" - Astra Theme via Astra Pro plugin](https://ps.w.org/builder-template-categories/assets/screenshot-04.png)
 
 
 ### 5. Template categories for "GeneratePress Elements" - GP Premium plugin (v1.7+)
-[missing image]
+![Template categories for "GeneratePress Elements" - GP Premium plugin (v1.7+)](https://ps.w.org/builder-template-categories/assets/screenshot-05.png)
 
 
 ### 6. Template categories for "OceanWP My Library" - Ocean Extra plugin
-[missing image]
+![Template categories for "OceanWP My Library" - Ocean Extra plugin](https://ps.w.org/builder-template-categories/assets/screenshot-06.png)
 
 
 ### 7. Edit a template - and set the template category (Example of an Elementor template)
-[missing image]
+![Edit a template - and set the template category (Example of an Elementor template)](https://ps.w.org/builder-template-categories/assets/screenshot-07.png)
 
 
 ### 8. Plugins page - list of all plugins - "Builder Template Categories" with link to taxonomy listing table
-[missing image]
+![Plugins page - list of all plugins - "Builder Template Categories" with link to taxonomy listing table](https://ps.w.org/builder-template-categories/assets/screenshot-08.png)
 
 
 
 
 ## Changelog 
+
+### 1.0.1 - 2018-08-30
+* New: Integration with Brizy Templates for Brizy Page Builder - template feature was released in their free version v1.0.25
+* New: Added plugin update message also to Plugins page (overview table)
+* Tweak: Added plugins recommendations library by deckerweb to improve the plugin installer tips (old filter function got removed)
+* Tweak: Updated `.pot` file plus all German translations (formal, informal) and language packs
+* Tweak: Enhanced, improved and corrected Readme.txt file here - also tweaked FAQ entry
 
 
 ### 1.0.0 - 2018-08-20 
@@ -329,12 +339,10 @@ Best practice is to wrap the whole code above in a conditional to check if the t
 * New: Includes a `composer.json` file in the plugin's root folder - this is great for developers using Composer
 
 
-
 ### 0.9.1 - 2018-08-17 
 * New: Added [Code Snippets](https://github.com/deckerweb/builder-template-categories/wiki/Code-Snippets) as GitHub Gists
 * New: Added [short and easy "documentation" as Wiki](https://github.com/deckerweb/builder-template-categories/wiki) in official GitHub repository for the plugin
 * New: Added integration "WPBakery Page Builder" (the old Visual Composer), via its "Templatera" Add-On plugin
-
 
 
 ### 0.9.0 - 2018-08-16 
@@ -342,6 +350,9 @@ Best practice is to wrap the whole code above in a conditional to check if the t
 
 
 ## Upgrade Notice 
+
+### 1.0.1
+Added integration for Brizy Page Builder. Further tweaks and improvements. Update recommended.
 
 
 ### 1.0.0 
@@ -370,7 +381,11 @@ Enjoy using *Builder Template Categories*? **[Please consider making a donation]
 
 
 ## My Other Plugins
-* [Toolbar Extras for Elementor - WordPress Admin Bar Enhanced](https://wordpress.org/plugins/toolbar-extras/)
-* [Multisite Toolbar Additions](https://wordpress.org/plugins/multisite-toolbar-additions/)
+* [**Toolbar Extras for Elementor - WordPress Admin Bar Enhanced**](https://wordpress.org/plugins/toolbar-extras/)
 * [Genesis What's New Info](https://wordpress.org/plugins/genesis-whats-new-info/)
+* [Genesis Layout Extras](https://wordpress.org/plugins/genesis-layout-extras/)
+* [Genesis Widgetized Not Found & 404](https://wordpress.org/plugins/genesis-widgetized-notfound/)
+* [Genesis Widgetized Footer](https://wordpress.org/plugins/genesis-widgetized-footer/)
+* [Genesis Widgetized Archive](https://wordpress.org/plugins/genesis-widgetized-archive/)
+* [Multisite Toolbar Additions](https://wordpress.org/plugins/multisite-toolbar-additions/)
 * [Cleaner Plugin Installer](https://wordpress.org/plugins/cleaner-plugin-installer/)

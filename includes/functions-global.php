@@ -127,7 +127,7 @@ function ddw_btc_info_values() {
 
 
 /**
- * Get URL of specific TBEX info value.
+ * Get URL of specific BTC info value.
  *
  * @since  1.0.0
  *
@@ -153,7 +153,7 @@ function ddw_btc_get_info_url( $url_key = '', $raw = FALSE ) {
 
 
 /**
- * Setting internal plugin helper values.
+ * Get link with complete markup for a specific BTC info value.
  *
  * @since  1.0.0
  *

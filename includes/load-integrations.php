@@ -49,6 +49,15 @@ if ( ddw_btc_is_astra_layouts_active() ) {
 
 
 /**
+ * Plugin: Brizy
+ * @since 1.0.1
+ */
+if ( ddw_btc_is_brizy_active() ) {
+	require_once( BTC_PLUGIN_DIR . 'includes/integrations/integration-brizy.php' );
+}
+
+
+/**
  * Plugin: AnyWhere Elementor (free)
  * @since 1.0.0
  */

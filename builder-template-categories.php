@@ -66,7 +66,7 @@ function ddw_btc_load_translations() {
 	$btc_textdomain = 'builder-template-categories';
 
 	/** The 'plugin_locale' filter is also used by default in load_plugin_textdomain() */
-	$locale = esc_attr(
+	$locale = esc_url(
 		apply_filters(
 			'plugin_locale',
 			get_user_locale(),	//is_admin() ? get_user_locale() : get_locale(),

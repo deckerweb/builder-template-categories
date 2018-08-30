@@ -31,7 +31,7 @@ function ddw_btc_custom_taxonomy_links( $btc_links ) {
 		$btc_tax_link = sprintf(
 			'<a class="dashicons-before dashicons-category" href="%s" title="%s">%s</a>',
 			esc_url( admin_url( ddw_btc_taxonomy_admin_url() ) ),
-			/* translators: Title attribute for Toolbar Extras "Plugin settings" link */
+			/* translators: Title attribute for Builder Template Categories taxonomy link */
 			esc_html__( 'Builder Template Categories', 'builder-template-categories' ),
 			esc_attr_x( 'Template Categories', 'For Builder Template Categories Plugin', 'builder-template-categories' )
 		);
@@ -72,17 +72,28 @@ function ddw_btc_plugin_links( $btc_links, $btc_file ) {
 	/** List additional links only for this plugin */
 	if ( $btc_file === BTC_PLUGIN_BASEDIR . 'builder-template-categories.php' ) {
 
-		/* translators: Plugins page listing */
-		$btc_links[] = ddw_btc_get_info_link( 'url_wporg_forum', esc_html_x( 'Support', 'Plugins page listing', 'builder-template-categories' ) );
+		?>
+			<style type="text/css">
+				tr[data-slug="builder-template-categories"] .plugin-version-author-uri a.dashicons-before:before {
+					font-size: 17px;
+					margin-right: 2px;
+					opacity: .85;
+					vertical-align: sub;
+				}
+			</style>
+		<?php
 
 		/* translators: Plugins page listing */
-		$btc_links[] = ddw_btc_get_info_link( 'url_translate', esc_html_x( 'Translations', 'Plugins page listing', 'builder-template-categories' ) );
+		$btc_links[] = ddw_btc_get_info_link( 'url_wporg_forum', esc_html_x( 'Support', 'Plugins page listing', 'builder-template-categories' ), 'dashicons-before dashicons-sos' );
 
 		/* translators: Plugins page listing */
-		$btc_links[] = ddw_btc_get_info_link( 'url_snippets', esc_html_x( 'Code Snippets', 'Plugins page listing', 'builder-template-categories' ) );
+		$btc_links[] = ddw_btc_get_info_link( 'url_translate', esc_html_x( 'Translations', 'Plugins page listing', 'builder-template-categories' ), 'dashicons-before dashicons-translation' );
 
 		/* translators: Plugins page listing */
-		$btc_links[] = ddw_btc_get_info_link( 'url_donate', esc_html_x( 'Donate', 'Plugins page listing', 'builder-template-categories' ), 'button-primary' );
+		$btc_links[] = ddw_btc_get_info_link( 'url_snippets', esc_html_x( 'Code Snippets', 'Plugins page listing', 'builder-template-categories' ), 'dashicons-before dashicons-editor-code' );
+
+		/* translators: Plugins page listing */
+		$btc_links[] = ddw_btc_get_info_link( 'url_donate', esc_html_x( 'Donate', 'Plugins page listing', 'builder-template-categories' ), 'button-primary dashicons-before dashicons-thumbs-up' );
 
 	}  // end if plugin links
 
@@ -91,109 +102,6 @@ function ddw_btc_plugin_links( $btc_links, $btc_file ) {
 		'btc/filter/plugins_page/more_links',
 		$btc_links
 	);
-
-}  // end function
-
-
-add_filter( 'plugins_api_result', 'ddw_btc_add_plugins_api_results', 11, 3 );
-/**
- * Filter plugin fetching API results to inject plugin "Multisite Toolbar Additions".
- *
- * @since   1.0.0
- *
- * Code heavily inspired by original code from Remy Perona/ WP-Rocket.
- * @author  Remy Perona
- * @link    https://wp-rocket.me/
- * @license GPL-2.0+
- *
- * @uses    ddw_tbex_is_block_editor_active()
- *
- * @param   object|WP_Error $result Response object or WP_Error.
- * @param   string          $action The type of information being requested from the Plugin Install API.
- * @param   object          $args   Plugin API arguments.
- *
- * @return array Updated array of results.
- */
-function ddw_btc_add_plugins_api_results( $result, $action, $args ) {
-
-	/** Bail early if no results wanted, or results are empty */
-	if ( ddw_btc_is_tbex_active()
-		|| ddw_btc_is_clpinst_active()
-		|| empty( $args->browse )
-	) {
-		return $result;
-	}
-
-	/** Bail early if plugin installer tabs are not available */
-	if ( 'featured' !== $args->browse
-		&& 'recommended' !== $args->browse
-		&& 'popular' !== $args->browse
-	) {
-		return $result;
-	}
-
-	/** Bail early if results page is empty */
-	if ( ! isset( $result->info[ 'page' ] ) || 1 < $result->info[ 'page' ] ) {
-		return $result;
-	}
-
-	$query_fields = array(
-		'icons'             => TRUE,
-		'active_installs'   => TRUE,
-		'short_description' => TRUE,
-		'group'             => TRUE,
-	);
-
-	/** Results for specific plugins (slugs) */
-	$tbex_query_args      = array( 'slug' => 'toolbar-extras', 'fields' => $query_fields, );
-	$elementor_query_args = array( 'slug' => 'elementor', 'fields' => $query_fields, );
-	$fep_query_args       = array( 'slug' => 'flexible-elementor-panel', 'fields' => $query_fields, );
-	$ccp_query_args       = array( 'slug' => 'kt-tinymce-color-grid', 'fields' => $query_fields, );
-	$dagb_query_args      = array( 'slug' => 'disable-gutenberg', 'fields' => $query_fields, );
-	$simplecss_query_args = array( 'slug' => 'simple-css', 'fields' => $query_fields, );
-	$cs_query_args        = array( 'slug' => 'code-snippets', 'fields' => $query_fields, );
-	$czs_query_args       = array( 'slug' => 'customizer-search', 'fields' => $query_fields, );
-	$czei_query_args      = array( 'slug' => 'customizer-export-import', 'fields' => $query_fields, );
-	$dbwfe_query_args     = array( 'slug' => 'dashboard-welcome-for-elementor', 'fields' => $query_fields, );
-	$llar_query_args      = array( 'slug' => 'limit-login-attempts-reloaded', 'fields' => $query_fields, );
-	$aopz_query_args      = array( 'slug' => 'autoptimize', 'fields' => $query_fields, );
-	$spl_query_args       = array( 'slug' => 'swift-performance-lite', 'fields' => $query_fields, );
-	$de_query_args        = array( 'slug' => 'debug-elementor', 'fields' => $query_fields, );
-
-	$tbex_data      = plugins_api( 'plugin_information', $tbex_query_args );
-	$elementor_data = plugins_api( 'plugin_information', $elementor_query_args );
-	$fep_data       = plugins_api( 'plugin_information', $fep_query_args );
-	$ccp_data       = plugins_api( 'plugin_information', $ccp_query_args );
-	$dagb_data      = plugins_api( 'plugin_information', $dagb_query_args );
-	$simplecss_data = plugins_api( 'plugin_information', $simplecss_query_args );
-	$cs_data        = plugins_api( 'plugin_information', $cs_query_args );
-	$czs_data       = plugins_api( 'plugin_information', $czs_query_args );
-	$czei_data      = plugins_api( 'plugin_information', $czei_query_args );
-	$dbwfe_data     = plugins_api( 'plugin_information', $dbwfe_query_args );
-	$llar_data      = plugins_api( 'plugin_information', $llar_query_args );
-	$aopz_data      = plugins_api( 'plugin_information', $aopz_query_args );
-	$spl_data       = plugins_api( 'plugin_information', $spl_query_args );
-	$de_data        = plugins_api( 'plugin_information', $de_query_args );
-
-	/** Hook in our results */
-	if ( 'featured' === $args->browse && ! ddw_btc_is_tbex_active() ) {
-
-		/** Set the default to empty */
-		$result->plugins = array();
-
-		array_push( $result->plugins, $tbex_data, $elementor_data, $ccp_data, $simplecss_data, $cs_data, $czs_data, $czei_data, $dbwfe_data, $llar_data, $aopz_data, $spl_data, $de_data );
-
-	} elseif ( 'recommended' === $args->browse ) {
-
-		array_unshift( $result->plugins, $tbex_data, $aopz_data, $spl_data, $elementor_data );
-
-	} elseif ( 'popular' === $args->browse ) {
-
-		array_unshift( $result->plugins, $tbex_data, $elementor_data );
-
-	}  // end if
-
-	return $result;
 
 }  // end function
 
@@ -305,3 +213,132 @@ function ddw_btc_term_edit_info( $tag, $taxonomy = 'builder-template-category' )
 	ddw_btc_tax_edit_info_content();
 
 }  // end function
+
+
+/**
+ * Inline CSS fix for Plugins page update messages.
+ *
+ * @since 1.0.1
+ *
+ * @see   ddw_btc_plugin_update_message()
+ * @see   ddw_btc_multisite_subsite_plugin_update_message()
+ */
+function ddw_btc_plugin_update_message_style_tweak() {
+
+	?>
+		<style type="text/css">
+			.btc-update-message p:before,
+			.update-message.notice p:empty {
+				display: none !important;
+			}
+		</style>
+	<?php
+
+}  // end function
+
+
+add_action( 'in_plugin_update_message-' . BTC_PLUGIN_BASEDIR . 'builder-template-categories.php', 'ddw_btc_plugin_update_message', 10, 2 );
+/**
+ * On Plugins page add visible upgrade/update notice in the overview table.
+ *   Note: This action fires for regular single site installs, and for Multisite
+ *         installs where the plugin is activated Network-wide.
+ *
+ * @since  1.0.1
+ *
+ * @param  object $data
+ * @param  object $response
+ * @return string Echoed string and markup for the plugin's upgrade/update
+ *                notice.
+ */
+function ddw_btc_plugin_update_message( $data, $response ) {
+
+	if ( isset( $data[ 'upgrade_notice' ] ) ) {
+
+		ddw_btc_plugin_update_message_style_tweak();
+
+		printf(
+			'<div class="update-message btc-update-message">%s</div>',
+			wpautop( $data[ 'upgrade_notice' ] )
+		);
+
+	}  // end if
+
+}  // end function
+
+
+add_action( 'after_plugin_row_wp-' . BTC_PLUGIN_BASEDIR . 'builder-template-categories.php', 'ddw_btc_multisite_subsite_plugin_update_message', 10, 2 );
+/**
+ * On Plugins page add visible upgrade/update notice in the overview table.
+ *   Note: This action fires for Multisite installs where the plugin is
+ *         activated on a per site basis.
+ *
+ * @since  1.0.1
+ *
+ * @param  string $file
+ * @param  object $plugin
+ * @return string Echoed string and markup for the plugin's upgrade/update
+ *                notice.
+ */
+function ddw_btc_multisite_subsite_plugin_update_message( $file, $plugin ) {
+
+	if ( is_multisite() && version_compare( $plugin[ 'Version' ], $plugin[ 'new_version' ], '<' ) ) {
+
+		$wp_list_table = _get_list_table( 'WP_Plugins_List_Table' );
+
+		ddw_btc_plugin_update_message_style_tweak();
+
+		printf(
+			'<tr class="plugin-update-tr"><td colspan="%s" class="plugin-update update-message notice inline notice-warning notice-alt"><div class="update-message btc-update-message"><h4 style="margin: 0; font-size: 14px;">%s</h4>%s</div></td></tr>',
+			$wp_list_table->get_column_count(),
+			$plugin[ 'Name' ],
+			wpautop( $plugin[ 'upgrade_notice' ] )
+		);
+
+	}  // end if
+
+}  // end function
+
+
+/**
+ * Optionally tweaking Plugin API results to make more useful recommendations to
+ *   the user.
+ *
+ * @since 1.0.0
+ * @since 1.0.1 Complete refactoring, using library class DDWlib Plugin
+ *              Installer Recommendations
+ */
+
+add_filter( 'ddwlib_plir/filter/plugins', 'ddw_btc_register_extra_plugin_recommendations' );
+/**
+ * Register specific plugins for the class "DDWlib Plugin Installer
+ *   Recommendations".
+ *   Note: The top-level array keys are plugin slugs from the WordPress.org
+ *         Plugin Directory.
+ *
+ * @since  1.0.1
+ *
+ * @param  array $plugins Array holding all plugin recommendations, coming from
+ *                        the class and the filter.
+ * @return array Filtered array of all plugin recommendations.
+ */
+function ddw_btc_register_extra_plugin_recommendations( array $plugins ) {
+
+	/** Remove our own slug when we are already active :) */
+	if ( isset( $plugins[ 'builder-template-categories' ] ) ) {
+		$plugins[ 'builder-template-categories' ] = null;
+	}
+
+	/** Add new keys to recommendations */
+	$plugins[ 'custom-css-js' ] = array(
+		'featured'    => 'yes',
+		'recommended' => 'yes',
+		'popular'     => 'no',
+	);
+
+	/** Return filtered array */
+	return $plugins;
+  
+}  // end function
+
+/** Include class DDWlib Plugin Installer Recommendations */
+require_once( BTC_PLUGIN_DIR . 'includes/admin/ddwlib-plugin-installer-recommendations.php' );

@@ -37,9 +37,10 @@ Please note: The categories are global but when filtering only those items are l
 
 = Supported Page Builders =
 - **Elementor Page Builder** Plugin (free version is sufficient) - **My Templates** (for Pages, Sections, and with Elementor Pro even more template types)
-- **Oxygen Builder** Plugin (Pro) - **Templates** (Pages, Layouts, Sections, Theme Builder elements...) -- Note: also the old Oxygen Visual Site Builder 1.x is supported
-- **WPBakery Page Builder (the old 'Visual Composer')** Plugin with its **Templatera** template plugin - **Templates** (Pages, Layouts, etc.)
-- **Cornerstone** Page Builder via the "Cornerstone Global Blocks" Plugin (free) - **Global Blocks** (Content)
+- **Brizy Page Builder** Plugin (free version is sufficient) - **Templates** (for Pages, Sections etc.)
+- **Oxygen Builder** Plugin (Pro) - **Templates** (for Pages, Layouts, Sections, Theme Builder elements...) -- Note: also the old Oxygen Visual Site Builder 1.x is supported
+- **WPBakery Page Builder (the old 'Visual Composer')** Plugin with its **Templatera** template plugin - **Templates** (for Pages, Layouts, etc.)
+- **Cornerstone** Page Builder via the "Cornerstone Global Blocks" Plugin (free) - **Global Blocks** (for Content)
 - **BoldGrid Post and Page Builder** Plugin (free) - **Blocks (Templates)**
 
 = Supported Themes =
@@ -47,7 +48,7 @@ Please note: The categories are global but when filtering only those items are l
 - **GeneratePress Theme** with "GP Premium" Add-On Plugin - **Elements** (for Layouts, Headers, Hooks)
 - **OceanWP Theme** with "Ocean Extra" free Plugin - **My Library** (for Layouts, Hooks etc.)
 - **Kava Pro Theme/ CrocoBlock Service** with JetThemeCore Plugin - **My Library** (for Layouts, Pages, Headers, Footers, Single, Archive)
-- **Genesis Framework** with Genesis Child Themes -- via **Blox Lite** and **Blox** (Pro) Plugins - **Global Content Blocks** (Sections, Hooks)
+- **Genesis Framework** with Genesis Child Themes -- via **Blox Lite** and **Blox** (Pro) Plugins - **Global Content Blocks** (for Sections, Hooks)
 
 = Supported Plugins =
 - *see Page Builder Plugins above :-)*
@@ -55,14 +56,14 @@ Please note: The categories are global but when filtering only those items are l
 - **Kava Pro Theme/ CrocoBlock Service** with JetThemeCore Plugin - **My Library** (for Layouts, Pages, Headers, Footers, Single, Archive)
 - **JetEngine for Elementor** Plugin - **Listings (Templates)**
 - **JetWooBuilder for Elementor** Plugin - **Product Templates** (for WooCommerce Products)
-- **Blox Lite** and **Blox** (Pro) Plugins, both for Genesis Framework - **Global Content Blocks** (Sections, Hooks)
-- **Oxygen Builder** Plugin (Pro) - **Templates** (Pages, Layouts, Sections, Theme Builder elements...)
+- **Blox Lite** and **Blox** (Pro) Plugins, both for Genesis Framework - **Global Content Blocks** (for Sections, Hooks)
+- **Oxygen Builder** Plugin (Pro) - **Templates** (for Pages, Layouts, Sections, Theme Builder elements...)
 - **Header Footer for Elementor** Plugin - **Header & Footer Templates** (for Elementor theming areas)
 - **DHWC Elementor** Plugin - **Product Templates** (for WooCommerce Products)
-- **PopBoxes for Elementor** Plugin - **Popups (Templates)** (Popups, Lightboxes)
-- **Thrive Lightboxes** Plugin - **Lightboxes (Templates)** (Lightboxes, Popups)
-- **Popup Maker** Plugin - **Popups (Templates)** (Popups, Lightboxes)
-- **WP Show Posts** Plugin - **Listings (Templates)** (Post Listings)
+- **PopBoxes for Elementor** Plugin - **Popups (Templates)** (for Popups, Lightboxes)
+- **Thrive Lightboxes** Plugin - **Lightboxes (Templates)** (for Lightboxes, Popups)
+- **Popup Maker** Plugin - **Popups (Templates)** (for Popups, Lightboxes)
+- **WP Show Posts** Plugin - **Listings (Templates)** (for Post Listings)
 - **Pods** Plugin - **Templates** (for Post Types, Taxonomies, Fields, etc.) -- Note: the "Templates" Component needs to be enabled in Pods' settings!
 
 = Recommended Time Saver =
@@ -78,8 +79,9 @@ Try [**Toolbar Extras**](https://toolbarextras.com/) my other plugin for Site Bu
 
 = Translations =
 - English (United States) - `en_US` = default, always included
-- [German (informal, default)](https://translate.wordpress.org/locale/de/default/wp-plugins/builder-template-categories) - `de_DE`
-- [German (formal)](https://translate.wordpress.org/locale/de/formal/wp-plugins/builder-template-categories) - `de_DE_formal`
+- [German (informal, default)](https://translate.wordpress.org/locale/de/default/wp-plugins/builder-template-categories) - `de_DE` - always included
+- [German (formal)](https://translate.wordpress.org/locale/de/formal/wp-plugins/builder-template-categories) - `de_DE_formal` - always included
+- [French](https://translate.wordpress.org/locale/fr/default/wp-plugins/builder-template-categories) - `fr_FR` - [by the community, thanks to Bruno Tritsch](https://wp-traduction.com/)
 - `.pot` file (`builder-template-categories.pot`) for translators is always included in the plugin's 'languages' folder :)
 
 = Be a Contributor =
@@ -182,8 +184,9 @@ All the others already have template categories by default, or, on the other han
 * Beaver Builder & Beaver Themer: has template categories already by default
 * Thrive Architect: has category feature already built-in
 * Divi: has template categories already by default
-* Brizy: has no template library yet - but it will come according to their [roadmap](https://trello.com/c/adyn27Fb) - when that happens we will integrate if possible :)
 * Visual Composer (new one, 2018) / SiteOrigin Page Builder / Avada Fusion Builder: all of them have no library built-in, or at least none that can be extended...
+
+*Note:* Brizy Page Builder added template feature in their version 1.0.25 - we added integration with our plugin version 1.0.1
 
 
 = Will other Themes be supported? =
@@ -247,7 +250,7 @@ Best practice is to wrap the whole code above in a conditional to check if the t
 * German (de_DE): Deutsch - immer dabei! :-)
 * For custom and update-safe language files please upload them to `/wp-content/languages/builder-template-categories/` (just create this folder) - This enables you to use fully custom translations that won't be overridden on plugin updates. Also, complete custom English wording is possible with that as well, just use a language file like `builder-template-categories-en_US.mo/.po` to achieve that (for creating one see the following tools).
 
-**Easy WordPress.org plugin translation platform with GlotPress platform:** [**Translate "Toolbar Extras"...**](https://translate.wordpress.org/projects/wp-plugins/builder-template-categories)
+**Easy WordPress.org plugin translation platform with GlotPress platform:** [**Translate "Builder Template Categories"...**](https://translate.wordpress.org/projects/wp-plugins/builder-template-categories)
 
 *Note:* All my plugins are internationalized/ translateable by default. This is very important for all users worldwide. So please contribute your language to the plugin to make it even more useful. For translating and validating I recommend the awesome ["Poedit Editor"](https://www.poedit.net/), which works fine on Windows, macOS and Linux.
 
@@ -273,6 +276,14 @@ Best practice is to wrap the whole code above in a conditional to check if the t
 
 == Changelog ==
 
+= 1.0.1 - 2018-08-30 =
+* New: Integration with Brizy Templates for Brizy Page Builder - template feature was released in their free version v1.0.25
+* New: Added plugin update message also to Plugins page (overview table)
+* Tweak: Added plugins recommendations library by deckerweb to improve the plugin installer tips (old filter function got removed)
+* Tweak: Updated `.pot` file plus all German translations (formal, informal) and language packs
+* Tweak: Enhanced, improved and corrected Readme.txt file here - also tweaked FAQ entry
+
+
 = 1.0.0 - 2018-08-20 =
 * *Official plugin launch on WordPress.org. Everything's new!*
 * New: Including integration for 15 Plugins: Elementor, AnyWhere Elementor, Header Footer for Elementor, Popup Maker, PopBox for Elementor, Thrive Lightboxes, Oxygen Builder (2.0+), Pods, JetEngine for Elementor, JetWooBuilder for Elementor, DHWC Elementor (WooCommerce Templates), WP Show Posts, BoldGrid Post and Page Builder, WPBakery Page Builder (Visual Composer), Global Blocks for Cornerstone
@@ -290,6 +301,9 @@ Best practice is to wrap the whole code above in a conditional to check if the t
 * New: Beta release of the plugin on [its public GitHub repository](https://github.com/deckerweb/builder-template-categories)
 
 == Upgrade Notice =
+
+= 1.0.1 =
+Added integration for Brizy Page Builder. Further tweaks and improvements. Update recommended.
 
 = 1.0.0 =
 Official plugin launch. Everything's new!
@@ -311,7 +325,11 @@ Enjoy using *Builder Template Categories*? **[Please consider making a donation]
 **Special Thanks go out to my family for allowing me to do such spare time projects (aka free plugins) and supporting me in every possible way!**
 
 == My Other Plugins ==
-* [Toolbar Extras for Elementor - WordPress Admin Bar Enhanced](https://wordpress.org/plugins/toolbar-extras/)
-* [Multisite Toolbar Additions](https://wordpress.org/plugins/multisite-toolbar-additions/)
+* [**Toolbar Extras for Elementor - WordPress Admin Bar Enhanced**](https://wordpress.org/plugins/toolbar-extras/)
 * [Genesis What's New Info](https://wordpress.org/plugins/genesis-whats-new-info/)
+* [Genesis Layout Extras](https://wordpress.org/plugins/genesis-layout-extras/)
+* [Genesis Widgetized Not Found & 404](https://wordpress.org/plugins/genesis-widgetized-notfound/)
+* [Genesis Widgetized Footer](https://wordpress.org/plugins/genesis-widgetized-footer/)
+* [Genesis Widgetized Archive](https://wordpress.org/plugins/genesis-widgetized-archive/)
+* [Multisite Toolbar Additions](https://wordpress.org/plugins/multisite-toolbar-additions/)
 * [Cleaner Plugin Installer](https://wordpress.org/plugins/cleaner-plugin-installer/)

@@ -73,7 +73,7 @@ function ddw_btc_is_gp_elements_active() {
  *
  * @since  1.0.0
  *
- * @return bool TRUE if the library is active, otherwise FALSE.
+ * @return bool TRUE if the OceanWP library is active, otherwise FALSE.
  */
 function ddw_btc_is_owp_library_active() {
 
@@ -93,6 +93,20 @@ function ddw_btc_is_owp_library_active() {
 function ddw_btc_is_astra_layouts_active() {
 
 	return ( class_exists( 'Astra_Ext_Extension' ) && Astra_Ext_Extension::is_active( 'advanced-hooks' ) ) ? TRUE : FALSE;
+
+}  // end function
+
+
+/**
+ * Is Brizy plugin active or not?
+ *
+ * @since  1.0.1
+ *
+ * @return bool TRUE if Brizy is active, otherwise FALSE.
+ */
+function ddw_btc_is_brizy_active() {
+
+	return ( defined( 'BRIZY_VERSION' ) ) ? TRUE : FALSE;
 
 }  // end function
 
