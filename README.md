@@ -11,7 +11,7 @@
 
 Organize your Page Builder Templates in the WordPress Admin. Better overview, don't get lost. Time saver. With extended plugin & theme support.
 
-<img src="https://ps.w.org/builder-template-categories/assets/banner-1544x500.png" data-canonical-src="https://ps.w.org/builder-template-categories/assets/banner-1544x500.png" width="772" height="250" />
+[<img src="https://ps.w.org/builder-template-categories/assets/banner-1544x500.png" data-canonical-src="https://ps.w.org/builder-template-categories/assets/banner-1544x500.png" width="772" height="250" />](https://wordpress.org/plugins/builder-template-categories/)
 
 ## Description 
 
