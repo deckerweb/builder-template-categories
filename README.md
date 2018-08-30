@@ -5,7 +5,7 @@
 **Requires at least:** 4.7  
 **Tested up to:** 4.9.8  
 **Requires PHP:** 5.6  
-**Stable tag:** 1.0.0  
+**Stable tag:** 1.0.1  
 **License:** GPL-2.0+  
 **License URI:** https://opensource.org/licenses/GPL-2.0  
 
