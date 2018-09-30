@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Builder Template Categories\n"
-"POT-Creation-Date: 2018-08-30 12:10+0200\n"
-"PO-Revision-Date: 2018-08-30 12:10+0200\n"
+"POT-Creation-Date: 2018-09-30 16:13+0200\n"
+"PO-Revision-Date: 2018-09-30 16:13+0200\n"
 "Last-Translator: David Decker DECKERWEB.de -- https://deckerweb.de/\n"
 "Language-Team: David Decker DECKERWEB.de -- https://deckerweb.de/\n"
 "Language: de_DE\n"
@@ -23,7 +23,9 @@ msgstr ""
 
 #. translators: Title attribute for Builder Template Categories taxonomy link
 #. Plugin Name of the plugin/theme
-#: includes/admin/admin-extras.php:35 includes/admin/admin-extras.php:129
+#: includes/admin/admin-extras.php:35 includes/admin/admin-extras.php:134
+#: includes/admin/admin-help.php:202 includes/admin/admin-help.php:329
+#: includes/admin/admin-help.php:334
 msgid "Builder Template Categories"
 msgstr "Builder Template-Kategorien"
 
@@ -33,31 +35,37 @@ msgid "Template Categories"
 msgstr "Template-Kategorien"
 
 #. translators: Plugins page listing
-#: includes/admin/admin-extras.php:87
+#: includes/admin/admin-extras.php:89
 msgctxt "Plugins page listing"
 msgid "Support"
 msgstr "Support"
 
 #. translators: Plugins page listing
-#: includes/admin/admin-extras.php:90
+#: includes/admin/admin-extras.php:92
+msgctxt "Plugins page listing"
+msgid "Facebook Group"
+msgstr "Facebook-Gruppe"
+
+#. translators: Plugins page listing
+#: includes/admin/admin-extras.php:95
 msgctxt "Plugins page listing"
 msgid "Translations"
 msgstr "Übersetzungen"
 
 #. translators: Plugins page listing
-#: includes/admin/admin-extras.php:93
+#: includes/admin/admin-extras.php:98
 msgctxt "Plugins page listing"
 msgid "Code Snippets"
 msgstr "Code-Snippets"
 
 #. translators: Plugins page listing
-#: includes/admin/admin-extras.php:96
+#: includes/admin/admin-extras.php:101
 msgctxt "Plugins page listing"
 msgid "Donate"
 msgstr "Spenden"
 
 #. translators: 1 - Builder Template Categories / 2 - Link to plugin review
-#: includes/admin/admin-extras.php:128
+#: includes/admin/admin-extras.php:133
 #, php-format
 msgid ""
 "Enjoyed %1$s? Please leave us a %2$s rating. We really appreciate your "
@@ -66,7 +74,17 @@ msgstr ""
 "Gefällt Ihnen %1$s? Dann geben Sie uns bitte eine %2$s Bewertung. Wir "
 "schätzen Ihre Unterstützung!"
 
-#: includes/admin/admin-extras.php:151
+#: includes/admin/admin-extras.php:289
+msgctxt "Plugin installer: Tab name in installer toolbar"
+msgid "Newest"
+msgstr "Neueste"
+
+#: includes/admin/admin-extras.php:295
+msgctxt "Plugin card: plugin version"
+msgid "Version:"
+msgstr "Version:"
+
+#: includes/admin/admin-help.php:26
 msgid ""
 "These Template Categories are globally available for Administrators within "
 "the Admin Dashboard and can be used to organize the template libraries for "
@@ -76,19 +94,129 @@ msgstr ""
 "Dashboard und können zum Organisieren der Template-Bibliotheken verwendet "
 "werden - für die folgenden Plugins und/ oder Themes"
 
+#: includes/admin/admin-help.php:295
+msgid "Content Type"
+msgstr "Inhaltstyp"
+
+#: includes/admin/admin-help.php:297 includes/string-switcher.php:81
+msgid "Post Type"
+msgstr "Beitragstyp"
+
+#: includes/admin/admin-help.php:329
+msgid "Plugin"
+msgstr "Plugin"
+
+#: includes/admin/admin-help.php:333
+#, php-format
+msgid ""
+"Currently active integrations where the %s taxonomy is applied to better "
+"internally organize templates for various content types"
+msgstr ""
+"Derzeit aktive Integrationen, denen die Taxonomie %s zugewiesen wird. Damit "
+"lassen sich Templates für verschiedene Inhaltstypen intern besser "
+"organisieren"
+
+#: includes/admin/admin-help.php:343
+msgid "Video Overview: Bulk Add Template Categories"
+msgstr "Video-Übersicht: Mehrfachaktionen für Template-Kategorien"
+
+#: includes/admin/admin-help.php:344
+msgid "video overview"
+msgstr "Video-Übersicht"
+
+#. translators: 1 - string "Bulk Actions" / 2 - Label "Edit, add Category etc." / 3 - video link markup with title "video overview"
+#: includes/admin/admin-help.php:349
+#, php-format
+msgid ""
+"You can bulk add template categories to more than one template at once in "
+"your template post type overview table, using the %1$s drop-down menu. The "
+"action will be labeled like %2$s. See a short %3$s of this feature."
+msgstr ""
+"Sie können Template-Kategorien auch als Mehrfachaktion hinzufügen, dies "
+"geschieht in der Beitragstyp-Übersichtstabelle, im Drop-Down-Menü %1$s. Die "
+"Aktion ist betitelt mit %2$s. Schauen Sie eine kurze %3$s dieser Funktion an."
+
+#: includes/admin/admin-help.php:350
+msgid "Bulk Actions"
+msgstr "Mehrfachaktionen"
+
+#: includes/admin/admin-help.php:351
+msgid "Edit, add Category etc."
+msgstr "Bearbeiten, Kategorie(n) hinzufügen, etc."
+
+#: includes/admin/admin-help.php:358
+msgid ""
+"The template categories are global and are applied automatically to all "
+"current active integrations."
+msgstr ""
+"Die Template-Kategorien sind global und werden automatisch allen derzeit "
+"aktiven Integrationen zugewiesen."
+
+#: includes/admin/admin-help.php:359
+msgid ""
+"The category description can be used for internal notices for your team "
+"members for example."
+msgstr ""
+"Die Kategoriebeschreibung kann zum Beispiel auch für interne Notizen für "
+"Ihre Team-Mitglieder verwendet werden."
+
+#: includes/admin/admin-help.php:363
+msgid "Important plugin links:"
+msgstr "Wichtige Plugin-Links:"
+
+#: includes/admin/admin-help.php:365
+msgid "Plugin website"
+msgstr "Plugin-Webseite"
+
+#: includes/admin/admin-help.php:367
+msgctxt "Help tab info"
+msgid "FAQ"
+msgstr "FAQ - Häufige Fragen"
+
+#: includes/admin/admin-help.php:369
+msgctxt "Help tab info"
+msgid "Support"
+msgstr "Support"
+
+#: includes/admin/admin-help.php:371
+msgctxt "Help tab info"
+msgid "Facebook Group"
+msgstr "Facebook-Gruppe"
+
+#: includes/admin/admin-help.php:373
+msgctxt "Help tab info"
+msgid "Translations"
+msgstr "Übersetzungen"
+
+#: includes/admin/admin-help.php:375
+msgctxt "Help tab info"
+msgid "Donate"
+msgstr "Spenden"
+
+#: includes/admin/admin-help.php:400
+msgid "Customize"
+msgstr "Anpassen"
+
+#: includes/admin/admin-help.php:401
+msgid "Code Snippets"
+msgstr "Code-Snippets"
+
+#: includes/admin/admin-help.php:403
+msgid "Connect"
+msgstr "Vernetzen"
+
+#: includes/admin/admin-help.php:404
+msgid "Facebook Group"
+msgstr "Facebook-Gruppe"
+
 #: includes/functions-global.php:49
 msgid "No Integration registered"
 msgstr "Keine Integration registriert"
 
 #. Author of the plugin/theme
-#: includes/functions-global.php:110
+#: includes/functions-global.php:239
 msgid "David Decker - DECKERWEB"
 msgstr "David Decker - DECKERWEB.de"
-
-#. Author URI of the plugin/theme
-#: includes/functions-global.php:111
-msgid "https://deckerweb.de/"
-msgstr "https://deckerweb.de/"
 
 #: includes/integrations/integration-anywhere-elementor.php:27
 msgid "AnyWhere Elementor Global Templates"
@@ -105,6 +233,10 @@ msgstr "BoldGrid-Blöcke"
 #: includes/integrations/integration-brizy.php:27
 msgid "Brizy Templates"
 msgstr "Brizy Templates"
+
+#: includes/integrations/integration-cherry-popups.php:27
+msgid "Cherry PopUps Templates"
+msgstr "Cherry PopUps Templates"
 
 #: includes/integrations/integration-cornerstone-global-blocks.php:27
 msgid "Global Content Blocks for Cornerstone Page Builder"
@@ -138,6 +270,10 @@ msgstr "Header &amp; Footer-Templates für Elementor"
 msgid "JetEngine Listing Templates"
 msgstr "JetEngine Auflistungen-Templates"
 
+#: includes/integrations/integration-jetpopup.php:27
+msgid "JetPopup Templates"
+msgstr "JetPopup Templates"
+
 #: includes/integrations/integration-jetthemecore.php:27
 msgid "JetThemeCore My Library"
 msgstr "JetThemeCore Meine Bibliothek"
@@ -145,6 +281,26 @@ msgstr "JetThemeCore Meine Bibliothek"
 #: includes/integrations/integration-jetwoobuilder.php:27
 msgid "JetWooBuilder Product Templates"
 msgstr "JetWooBuilder Produkt-Templates"
+
+#: includes/integrations/integration-kadence-woocommerce-elementor.php:28
+msgid "Kadence Elementor Single Product Templates"
+msgstr "Kadence Elementor Einzelprodukt-Templates"
+
+#: includes/integrations/integration-kadence-woocommerce-elementor.php:39
+msgid "Kadence Elementor Product Archive Templates"
+msgstr "Kadence Elementor Produktarchiv-Templates"
+
+#: includes/integrations/integration-kadence-woocommerce-elementor.php:47
+msgid "Kadence Elementor Checkout Templates"
+msgstr "Kadence Elementor Kassen-Templates"
+
+#: includes/integrations/integration-metabox-posttypes.php:28
+msgid "Meta Box Post Type Registrations"
+msgstr "Meta Box Beitragstyp-Registrierungen"
+
+#: includes/integrations/integration-metabox-posttypes.php:40
+msgid "Meta Box Taxonomy Registrations"
+msgstr "Meta Box Taxonomie-Registrierungen"
 
 #: includes/integrations/integration-oceanwp.php:27
 msgid "OceanWP"
@@ -166,13 +322,33 @@ msgstr "PopBox Popup-Templates"
 msgid "Popup Maker Templates"
 msgstr "Popup Maker Templates"
 
+#: includes/integrations/integration-templementor.php:27
+msgid "Templementor Templates"
+msgstr "Templementor Elementor-Templates"
+
+#: includes/integrations/integration-themify-builder.php:27
+msgid "Themify Builder Layouts"
+msgstr "Themify Builder Layouts"
+
+#: includes/integrations/integration-themify-builder.php:35
+msgid "Themify Builder Layout Parts"
+msgstr "Themify Builder Layout-Bereiche"
+
+#: includes/integrations/integration-themify-popup.php:27
+msgid "Themify Popup Templates"
+msgstr "Themify Popup-Templates"
+
 #: includes/integrations/integration-thrive-lightboxes.php:27
 msgid "Thrive Lightbox Templates"
 msgstr "Thrive Lightbox-Templates"
 
-#: includes/integrations/integration-wpbakery-templatera.php:27
+#: includes/integrations/integration-wpbakery.php:34
 msgid "WPBakery Page Builder Templates"
 msgstr "WPBakery Page Builder Templates"
+
+#: includes/integrations/integration-wpbakery.php:45
+msgid "WPBakery Grid Builder Templates"
+msgstr "WPBakery Raster-Templates"
 
 #: includes/integrations/integration-wpshowposts.php:27
 msgid "WP Show Posts Listings"
@@ -183,250 +359,346 @@ msgstr "WP Show Posts Auflistungen"
 msgid "Listing Categories"
 msgstr "Kategorien für Auflistungen"
 
-#: includes/register-taxonomy.php:29
+#: includes/register-taxonomy.php:33
+#, php-format
 msgctxt "Taxonomy General Name"
-msgid "Template Categories"
-msgstr "Template-Kategorien"
+msgid "%s Categories"
+msgstr "%s-Kategorien"
 
-#: includes/register-taxonomy.php:30
+#: includes/register-taxonomy.php:37
+#, php-format
 msgctxt "Taxonomy Singular Name"
-msgid "Template Category"
-msgstr "Vorlagenkategorie"
+msgid "%s Category"
+msgstr "%s Kategorie"
 
-#: includes/register-taxonomy.php:31
+#: includes/register-taxonomy.php:40
 msgid "Taxonomy"
 msgstr "Taxonomie"
 
-#: includes/register-taxonomy.php:32
-msgid "All Template Categories"
-msgstr "Alle Template-Kategorien"
+#: includes/register-taxonomy.php:42
+#, php-format
+msgid "All %s Categories"
+msgstr "Alle %s-Kategorien"
 
-#: includes/register-taxonomy.php:33
-msgid "Parent Template Category"
-msgstr "Übergeordnete Template-Kategorie"
+#: includes/register-taxonomy.php:46
+#, php-format
+msgid "Parent %s Category"
+msgstr "Übergeordnete %s-Kategorie"
 
-#: includes/register-taxonomy.php:34
-msgid "Parent Template Category:"
-msgstr "Übergeordnete Template-Kategorie:"
+#: includes/register-taxonomy.php:50
+#, php-format
+msgid "Parent %s Category:"
+msgstr "Übergeordnete %s-Kategorie:"
 
-#: includes/register-taxonomy.php:35
-msgid "New Template Category Name"
-msgstr "Neuer Name der Template-Kategorie"
+#: includes/register-taxonomy.php:54
+#, php-format
+msgid "New %s Category Name"
+msgstr "Neuer Name der %s-Kategorie"
 
-#: includes/register-taxonomy.php:36
-msgid "Add New Template Category"
-msgstr "Neue Template-Kategorie hinzufügen"
+#: includes/register-taxonomy.php:58
+#, php-format
+msgid "Add New %s Category"
+msgstr "Neue %s-Kategorie hinzufügen"
 
-#: includes/register-taxonomy.php:37
-msgid "Edit Template Category"
-msgstr "Template-Kategorie bearbeiten"
+#: includes/register-taxonomy.php:62
+#, php-format
+msgid "Edit %s Category"
+msgstr "%s-Kategorie bearbeiten"
 
-#: includes/register-taxonomy.php:38
-msgid "Update Template Category"
-msgstr "Template-Kategorie aktualisieren"
+#: includes/register-taxonomy.php:66
+#, php-format
+msgid "Update %s Category"
+msgstr "%s-Kategorie aktualisieren"
 
-#: includes/register-taxonomy.php:39
-msgid "View Template Category"
-msgstr "Template-Kategorie anzeigen"
+#: includes/register-taxonomy.php:70
+#, php-format
+msgid "View %s Category"
+msgstr "%s-Kategorie anzeigen"
 
-#: includes/register-taxonomy.php:40
-msgid "Separate Template Categories with commas"
-msgstr "Template-Kategorien mit Kommas trennen"
+#: includes/register-taxonomy.php:74
+#, php-format
+msgid "Separate %s Categories with commas"
+msgstr "%s-Kategorien mit Kommas trennen"
 
-#: includes/register-taxonomy.php:41
+#: includes/register-taxonomy.php:77
 msgid "Add or remove categories"
 msgstr "Kategorien hinzufügen oder entfernen"
 
-#: includes/register-taxonomy.php:42
+#: includes/register-taxonomy.php:78
 msgid "Choose from the most used"
 msgstr "Aus meistbenutzten wählen"
 
-#: includes/register-taxonomy.php:43
+#: includes/register-taxonomy.php:79
 msgid "Popular Categories"
 msgstr "Beliebte Kategorien"
 
-#: includes/register-taxonomy.php:44
-msgid "Search Template Categories"
-msgstr "Template-Kategorien durchsuchen"
+#: includes/register-taxonomy.php:81
+#, php-format
+msgid "Search %s Categories"
+msgstr "%s-Kategorien durchsuchen"
 
-#: includes/register-taxonomy.php:45
-msgid "No Template Categories found."
-msgstr "Es wurden keine Template-Kategorien gefunden."
+#: includes/register-taxonomy.php:85
+#, php-format
+msgid "No %s Categories found."
+msgstr "Es wurden keine %s-Kategorien gefunden."
 
-#: includes/register-taxonomy.php:46
-msgid "No Template Categories"
-msgstr "Keine Template-Kategorien"
+#: includes/register-taxonomy.php:89
+#, php-format
+msgid "No %s Categories"
+msgstr "Keine %s-Kategorien"
 
-#: includes/register-taxonomy.php:64
+#: includes/register-taxonomy.php:109
 msgid "Template Categories for templates of Page Builders or similar libraries"
 msgstr ""
 "Template-Kategorien für Templates von Page Buildern oder ähnlichen "
 "Bibliotheken"
 
-#: includes/register-taxonomy.php:98
+#: includes/register-taxonomy.php:142
 msgctxt "Taxonomy term title"
 msgid "General"
 msgstr "Allgemein"
 
-#: includes/register-taxonomy.php:99
+#: includes/register-taxonomy.php:143
 msgctxt "Taxonomy term slug - only lowercase, a-z, 0-9, hyphens!"
 msgid "general"
 msgstr "allgemein"
 
-#: includes/register-taxonomy.php:100
+#: includes/register-taxonomy.php:144
 msgctxt "Taxonomy term description"
 msgid "General templates"
 msgstr "Allgemeine Templates"
 
-#: includes/register-taxonomy.php:103
+#: includes/register-taxonomy.php:147
 msgctxt "Taxonomy term title"
 msgid "Frontpage"
 msgstr "Startseite"
 
-#: includes/register-taxonomy.php:104
+#: includes/register-taxonomy.php:148
 msgctxt "Taxonomy term slug - only lowercase, a-z, 0-9, hyphens!"
 msgid "frontpage"
 msgstr "startseite"
 
-#: includes/register-taxonomy.php:105
+#: includes/register-taxonomy.php:149
 msgctxt "Taxonomy term description"
 msgid "Templates for the Frontpage/ Homepage"
 msgstr "Templates für die Startseite"
 
-#: includes/register-taxonomy.php:108
+#: includes/register-taxonomy.php:152
 msgctxt "Taxonomy term title"
 msgid "Pages"
 msgstr "Seiten"
 
-#: includes/register-taxonomy.php:109
+#: includes/register-taxonomy.php:153
 msgctxt "Taxonomy term slug - only lowercase, a-z, 0-9, hyphens!"
 msgid "pages"
 msgstr "seiten"
 
-#: includes/register-taxonomy.php:110
+#: includes/register-taxonomy.php:154
 msgctxt "Taxonomy term description"
 msgid "Templates for Pages"
 msgstr "Templates für Seiten"
 
-#: includes/register-taxonomy.php:113
+#: includes/register-taxonomy.php:157
 msgctxt "Taxonomy term title"
 msgid "Landing Pages"
 msgstr "Landingseiten"
 
-#: includes/register-taxonomy.php:114
+#: includes/register-taxonomy.php:158
 msgctxt "Taxonomy term slug - only lowercase, a-z, 0-9, hyphens!"
 msgid "landing-pages"
 msgstr "landingseiten"
 
-#: includes/register-taxonomy.php:115
+#: includes/register-taxonomy.php:159
 msgctxt "Taxonomy term description"
 msgid "Templates for Landing Pages"
 msgstr "Templates für Landingseiten"
 
-#: includes/register-taxonomy.php:118
+#: includes/register-taxonomy.php:162
 msgctxt "Taxonomy term title"
 msgid "Sections"
 msgstr "Inhaltsblöcke"
 
-#: includes/register-taxonomy.php:119
+#: includes/register-taxonomy.php:163
 msgctxt "Taxonomy term slug - only lowercase, a-z, 0-9, hyphens!"
 msgid "sections"
 msgstr "inhaltsbloecke"
 
-#: includes/register-taxonomy.php:120
+#: includes/register-taxonomy.php:164
 msgctxt "Taxonomy term description"
 msgid "Templates for Sections/ Content Blocks"
 msgstr "Templates für Inhaltsblöcke"
 
-#: includes/register-taxonomy.php:123
+#: includes/register-taxonomy.php:167
 msgctxt "Taxonomy term title"
 msgid "Hooks"
 msgstr "Hooks"
 
-#: includes/register-taxonomy.php:124
+#: includes/register-taxonomy.php:168
 msgctxt "Taxonomy term slug - only lowercase, a-z, 0-9, hyphens!"
 msgid "hooks"
 msgstr "hooks"
 
-#: includes/register-taxonomy.php:125
+#: includes/register-taxonomy.php:169
 msgctxt "Taxonomy term description"
 msgid "Templates for Action Hooks"
 msgstr "Templates für Action-Hooks"
 
-#: includes/register-taxonomy.php:128
+#: includes/register-taxonomy.php:172
 msgctxt "Taxonomy term title"
 msgid "Testing"
 msgstr "Testing"
 
-#: includes/register-taxonomy.php:129
+#: includes/register-taxonomy.php:173
 msgctxt "Taxonomy term slug - only lowercase, a-z, 0-9, hyphens!"
 msgid "testing"
 msgstr "testing"
 
-#: includes/register-taxonomy.php:130
+#: includes/register-taxonomy.php:174
 msgctxt "Taxonomy term description"
 msgid "Templates just for testing purposes"
 msgstr "Templates für Testzwecke"
 
-#: includes/run-integrations.php:104
+#: includes/register-taxonomy.php:183
+msgctxt "Taxonomy term title"
+msgid "Products"
+msgstr "Produkte"
+
+#: includes/register-taxonomy.php:184
+msgctxt "Taxonomy term slug - only lowercase, a-z, 0-9, hyphens!"
+msgid "products"
+msgstr "produkte"
+
+#: includes/register-taxonomy.php:185
+msgctxt "Taxonomy term description"
+msgid "Templates for WooCommerce products"
+msgstr "Templates für WooCommerce-Produkte"
+
+#: includes/register-taxonomy.php:194
+msgctxt "Taxonomy term title"
+msgid "Popups"
+msgstr "Popups"
+
+#: includes/register-taxonomy.php:195
+msgctxt "Taxonomy term slug - only lowercase, a-z, 0-9, hyphens!"
+msgid "popups"
+msgstr "popups"
+
+#: includes/register-taxonomy.php:196
+msgctxt "Taxonomy term description"
+msgid "Templates for Popups/ Modal Windows"
+msgstr "Templates für Popups"
+
+#: includes/run-integrations.php:99
+msgctxt "Tweaked label for \"Edit\" bulk action"
+msgid "Edit, add Category etc."
+msgstr "Bearbeiten, Kategorie(n) hinzufügen, etc."
+
+#: includes/run-integrations.php:142
 #, php-format
 msgid "All %s"
 msgstr "Alle %s"
 
-#: includes/string-switcher.php:27
+#: includes/string-switcher.php:30 includes/string-switcher.php:85
+msgid "Template"
+msgstr "Template"
+
+#: includes/string-switcher.php:53
+msgid "Library"
+msgstr "Bibliothek"
+
+#: includes/string-switcher.php:57
+msgid "Layout"
+msgstr "Layout"
+
+#: includes/string-switcher.php:61
+msgid "Element"
+msgstr "Element"
+
+#: includes/string-switcher.php:65
+msgid "Block"
+msgstr "Block"
+
+#: includes/string-switcher.php:69
+msgid "Popup"
+msgstr "Popup"
+
+#: includes/string-switcher.php:73
+msgid "Lightbox"
+msgstr "Lightbox"
+
+#: includes/string-switcher.php:77
+msgid "Listing"
+msgstr "Liste"
+
+#: includes/string-switcher.php:107
 msgid "Categories"
 msgstr "Kategorien"
 
-#: includes/string-switcher.php:49 includes/string-switcher.php:112
+#. translators: %s - label "Categories" (for example: Template Categories)
+#: includes/string-switcher.php:133 includes/string-switcher.php:213
 #, php-format
 msgid "Template %s"
 msgstr "Template-%s"
 
-#: includes/string-switcher.php:56
+#. translators: %s - label "Categories" (for example: Library Categories)
+#: includes/string-switcher.php:141
 #, php-format
 msgid "Library %s"
 msgstr "Bibliothek-%s"
 
-#: includes/string-switcher.php:63
+#. translators: %s - label "Categories" (for example: Layout Categories)
+#: includes/string-switcher.php:149
 #, php-format
 msgid "Layout %s"
 msgstr "Layout-%s"
 
-#: includes/string-switcher.php:70
+#. translators: %s - label "Categories" (for example: Element Categories)
+#: includes/string-switcher.php:157
 #, php-format
 msgid "Element %s"
 msgstr "Element-%s"
 
-#: includes/string-switcher.php:77
+#. translators: %s - label "Categories" (for example: Block Categories)
+#: includes/string-switcher.php:165
 #, php-format
 msgid "Block %s"
 msgstr "Block-%s"
 
-#: includes/string-switcher.php:84
+#. translators: %s - label "Categories" (for example: Popup Categories)
+#: includes/string-switcher.php:173
 #, php-format
 msgid "Popup %s"
 msgstr "Popup-%s"
 
-#: includes/string-switcher.php:91
+#. translators: %s - label "Categories" (for example: Lightbox Categories)
+#: includes/string-switcher.php:181
 #, php-format
 msgid "Lightbox %s"
 msgstr "Lightbox-%s"
 
-#: includes/string-switcher.php:98
+#. translators: %s - label "Categories" (for example: Listing Categories)
+#: includes/string-switcher.php:189
 #, php-format
 msgid "Listing %s"
 msgstr "Listen-%s"
 
-#: includes/string-switcher.php:105
+#. translators: %s - label "Categories" (for example: ELHF Categories - "EL HF" stands for Elementor Header Footer Builder plugin)
+#: includes/string-switcher.php:197
 #, php-format
 msgid "EL HF %s"
 msgstr "EL HF %s"
 
-#: includes/string-switcher.php:143
+#. translators: %s - label "Categories" (for example: Post Type Categories)
+#: includes/string-switcher.php:205
+#, php-format
+msgid "Post Type %s"
+msgstr "Beitragstyp-%s"
+
+#: includes/string-switcher.php:244
 msgid "for WooCommerce"
 msgstr "für WooCommerce Shops"
 
-#: includes/string-switcher.php:166
+#: includes/string-switcher.php:267
 msgid "for Post Types, Taxonomies, Fields"
 msgstr "für Inhaltstypen, Taxonomien, Felder"
 
@@ -452,6 +724,33 @@ msgstr ""
 "CrocoBlock). Diese Kategorien erscheinen nur im WP-Admin Dashboard und nur "
 "für die Administrator-Benutzerrolle (Berechtigung 'edit_theme_options')."
 
+#. Author URI of the plugin/theme
+msgid "https://deckerweb.de/"
+msgstr "https://deckerweb.de/"
+
+#~ msgid "Facebook User Group"
+#~ msgstr "Facebook-Nutzergruppe"
+
+#~ msgid "More about the plugin author"
+#~ msgstr "Mehr über den Plugin-Autor"
+
+#~ msgid "Social:"
+#~ msgstr "Vernetzen:"
+
+#~ msgid "Currently active integrations"
+#~ msgstr "Derzeit aktive Integrationen"
+
+#~ msgctxt "Taxonomy General Name"
+#~ msgid "Template Categories"
+#~ msgstr "Template-Kategorien"
+
+#~ msgctxt "Taxonomy Singular Name"
+#~ msgid "Template Category"
+#~ msgstr "Vorlagenkategorie"
+
+#~ msgid "No Template Categories"
+#~ msgstr "Keine Template-Kategorien"
+
 #~ msgid "Not Found"
 #~ msgstr "Es wurden keine Template-Kategorien gefunden."
 
@@ -467,6 +766,3 @@ msgstr ""
 #~ msgstr ""
 #~ "Diese Template-Kategorien werden angezeigt und sind nutzbar für diese "
 #~ "derzeit aktiven Inhaltstypen"
-
-#~ msgid "Elementor"
-#~ msgstr "Elementor"

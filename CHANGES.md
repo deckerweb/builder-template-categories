@@ -10,6 +10,29 @@
 
 ## Changelog of the Plugin
 
+### 1.1.0 - 2018-09-30
+* New: Category labels now fit to the content type (post type) of the integration - popup integrations are now labelled as "Popup Categories", and the same for other types like Blocks, Layouts, Elements etc.
+* New: Integration with Page Builder plugin Themify Builder (Premium, by Themify) - note: this applies only to the premium version of this plugin
+* New: Integration with plugin JetPopup (free, by Zemez Jet/ CrocoBlock)
+* New: Integration with plugin Cherry PopUps (free, by Zemez)
+* New: Integration with plugin Templementor (free, by Lcweb)
+* New: Integration with plugin Kadence WooCommerce Elementor (free, by Kadence Themes) - for single product templates
+* New: Integration with plugin Kadence WooCommerce Elementor Pro (Premium, by Kadence Themes) - for product archive templates and checkout templates
+* New: Integration with plugin Themify Popup (free, by Themify)
+* New: Integration with Add-On plugins Meta Box Post Types and Meta Box Taxonomy (both free, by Meta Box)
+* New: If WooCommerce template related integrations are active before plugin installation/activation add predefined "Products" term
+* New: If Popup/Modal template related integrations are active before plugin installation/activation add predefined "Popups" term
+* New: In post type list tables for bulk actions the "Edit" label was tweaked to "Edit, add Category etc." to make it more clear for users that template categories (of this plugin) can be added as well in bulk mode
+* New: Added help tab with additional info - appearing on the plugin's taxonomy page as well as all edit screens from post types of any active integration
+* New: Added a new screenshot to show Bulk Actions - to add template category to more than one template in one action
+* New: Created special [Facebook Group for user community support](https://www.facebook.com/groups/deckerweb.wordpress.plugins/) for all plugins from me (David Decker - DECKERWEB), this one here included! ;-) - [please join at facebook!](https://www.facebook.com/groups/deckerweb.wordpress.plugins/)
+* Tweak: Partly refactored the WPBakery Page Builder integration - now by default the Grid Builder Templates are integrated, and optionally, if the Templatera templates are active (premium Add-On), these as well -- that way, all makes more sense
+* Tweak: Smaller code and inline documentation tweaks, plus improvements
+* Tweak: Updated bundled library DDWlib Plugin Installer Recommendations to latest version (v1.1.0) - which brings smaller additions and enhancements, like CSS styles to the upload areas and plugin cards, plus plugin version number on plugin cards
+* Tweak: Updated `.pot` file plus all German translations (formal, informal) and language packs
+* Tweak: Enhanced and improved Readme.txt file here - also added new FAQ entry
+
+
 ### 1.0.1 - 2018-08-30
 * New: Integration with Brizy Templates for Brizy Page Builder - template feature was released in their free version v1.0.25
 * New: Added plugin update message also to Plugins page (overview table)

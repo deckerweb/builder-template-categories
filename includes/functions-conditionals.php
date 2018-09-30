@@ -323,14 +323,14 @@ function ddw_btc_is_dhwc_elementor_active() {
 
 
 /**
- * Is Templatera (WPBakery Page Builder) plugin active or not?
+ * Is WPBakery Page Builder plugin active or not?
  *
- * @since  1.0.0
+ * @since  1.1.0
  *s
- * @return bool TRUE if Templatera and minimum required version of WPBakery Page
- *              Builder is active, otherwise FALSE.
+ * @return bool TRUE if WPBakery Page Builder is active and is at least
+ *              version 5.0 or higher, otherwise FALSE.
  */
-function ddw_btc_is_wpbakery_templatera_active() {
+function ddw_btc_is_wpbakery_active() {
 
 	/**
 	 * "Templatera" Add-On needs at least WPBakery Page Builder version 5.0 or
@@ -348,6 +348,20 @@ function ddw_btc_is_wpbakery_templatera_active() {
 
 
 /**
+ * Is Templatera Add-On (WPBakery Page Builder) plugin active or not?
+ *
+ * @since  1.0.0
+ *s
+ * @return bool TRUE if Templatera is active, otherwise FALSE.
+ */
+function ddw_btc_is_wpbakery_templatera_active() {
+
+	return function_exists( 'templatera_init' );
+
+}  // end function
+
+
+/**
  * Is Global Blocks for Cornerstone plugin active or not?
  *
  * @since  1.0.0
@@ -357,5 +371,131 @@ function ddw_btc_is_wpbakery_templatera_active() {
 function ddw_btc_is_cornerstone_global_blocks_active() {
 
 	return ( function_exists( 'global_blocks_plugin_init' ) ) ? TRUE : FALSE;
+
+}  // end function
+
+
+/**
+ * Is JetPopup plugin active or not?
+ *
+ * @since  1.1.0
+ *s
+ * @return bool TRUE if JetPopup is active, otherwise FALSE.
+ */
+function ddw_btc_is_jetpopup_active() {
+
+	return class_exists( 'Jet_Popup' );
+
+}  // end function
+
+
+/**
+ * Is Cherry PopUps plugin active or not?
+ *
+ * @since  1.1.0
+ *s
+ * @return bool TRUE if Cherry PopUps is active, otherwise FALSE.
+ */
+function ddw_btc_is_cherry_popups_active() {
+
+	return class_exists( 'Cherry_Popups' );
+
+}  // end function
+
+
+/**
+ * Is Templementor plugin active or not?
+ *
+ * @since  1.1.0
+ *s
+ * @return bool TRUE if Templementor is active, otherwise FALSE.
+ */
+function ddw_btc_is_templementor_active() {
+
+	return function_exists( 'tpm_plugin_action_links' );
+
+}  // end function
+
+
+/**
+ * Is Kadence WooCommerce Elementor plugin active or not?
+ *
+ * @since  1.1.0
+ *s
+ * @return bool TRUE if Kadence WooCommerce Elementor is active, otherwise FALSE.
+ */
+function ddw_btc_is_kadence_woocommerce_elementor_active() {
+
+	return ( class_exists( 'WooCommerce' ) && class_exists( 'Kadence_Woocommerce_Elementor' ) );
+
+}  // end function
+
+
+/**
+ * Is Kadence WooCommerce Elementor Pro plugin active or not?
+ *
+ * @since  1.1.0
+ *s
+ * @return bool TRUE if Kadence WooCommerce Elementor Pro is active, otherwise FALSE.
+ */
+function ddw_btc_is_kadence_woocommerce_elementor_pro_active() {
+
+	return class_exists( 'Kadence_Woocommerce_Elementor_Pro' );
+
+}  // end function
+
+
+/**
+ * Is Themify Builder plugin active or not?
+ *
+ * @since  1.1.0
+ *s
+ * @return bool TRUE if Themify Builder is active, otherwise FALSE.
+ */
+function ddw_btc_is_themify_builder_active() {
+
+	return class_exists( 'Themify_Builder_Model' ) && Themify_Builder_Model::is_premium();
+
+}  // end function
+
+
+/**
+ * Is Themify Popup plugin active or not?
+ *
+ * @since  1.1.0
+ *s
+ * @return bool TRUE if Themify Popup is active, otherwise FALSE.
+ */
+function ddw_btc_is_themify_popup_active() {
+
+	return function_exists( 'themify_popup_setup' );
+
+}  // end function
+
+
+/**
+ * Is Meta Box Post Type Add-On plugin active or not?
+ *
+ * @since  1.1.0
+ *s
+ * @return bool TRUE if MB Post Type is active, otherwise FALSE.
+ */
+function ddw_btc_is_metabox_posttype_active() {
+
+	return function_exists( 'mb_cpt_load' );
+
+}  // end function
+
+
+/**
+ * Is Meta Box Taxonomy Add-On plugin active or not?
+ *
+ * @since  1.1.0
+ *s
+ * @return bool TRUE if MB Taxonomy is active, otherwise FALSE.
+ */
+function ddw_btc_is_metabox_taxonomy_active() {
+
+	return function_exists( 'mb_custom_taxonomy_load' );
 
 }  // end function

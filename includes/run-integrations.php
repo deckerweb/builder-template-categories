@@ -44,6 +44,7 @@ add_action( 'admin_menu', 'ddw_btc_integrations_add_admin_submenus', 600 );
  *   Note: The post type is added as additional param to the admin URL.
  *
  * @since 1.0.0
+ * @since 1.1.0 Add firing filter to change bulk actions label.
  *
  * @uses  ddw_btc_get_integrations()
  * @uses  ddw_btc_taxonomy_admin_url()
@@ -52,12 +53,16 @@ add_action( 'admin_menu', 'ddw_btc_integrations_add_admin_submenus', 600 );
  */
 function ddw_btc_integrations_add_admin_submenus() {
 
+	/** Get all active integrations */
 	$integrations = ddw_btc_get_integrations();
 
+	/** Iterate through all integrations to add submenu and to fire other tasks */
 	foreach ( $integrations as $integration ) {
 
+		/** Build unique taxonomy URL for each supported post type */
 		$btc_tax_url = ddw_btc_taxonomy_admin_url() . '&post_type=' . $integration[ 'post_type' ];
 
+		/** Add extra submenu for each active integration */
 		add_submenu_page(
 			$integration[ 'submenu_hook' ],
 			ddw_btc_string_template( $integration[ 'template_label' ] ),
@@ -66,8 +71,38 @@ function ddw_btc_integrations_add_admin_submenus() {
 			$btc_tax_url
 		);
 
+		/**
+		 * Add this point in the iteration fire another filter to tweak a bulk
+		 *   edit title label
+		 * @since 1.1.0
+		 * @see   ddw_btc_bulk_actions_edit_title()
+		 */
+		add_filter( 'bulk_actions-edit-' . $integration[ 'post_type' ], 'ddw_btc_bulk_actions_edit_title' );
+
 	}  // end foreach
 
+}  // end function 
+
+
+/**
+ * Tweak title for the "Edit" bulk action for all post types of current active
+ *   integrations.
+ *
+ * @since  1.1.0
+ *
+ * @param  $actions Holds all current bulk actions for a post type.
+ * @return array Tweaked array of all bulk actions for a post type.
+ */
+function ddw_btc_bulk_actions_edit_title( $actions ) {
+  
+	$actions[ 'edit' ] = esc_html_x(
+		'Edit, add Category etc.',
+		'Tweaked label for "Edit" bulk action',
+		'builder-template-categories'
+	);
+  
+	return $actions;
+  
 }  // end function
 
 
@@ -81,8 +116,11 @@ add_action( 'restrict_manage_posts', 'ddw_btc_filter_post_type_by_taxonomy', 100
  * @link   http://thestizmedia.com/custom-post-type-filter-admin-custom-taxonomy/
  *
  * @since  1.0.0
+ * @since  1.1.0 Changed taxonomy label to our own logic via
+ *               ddw_btc_string_template().
  *
  * @uses   ddw_btc_get_integrations()
+ * @uses   ddw_btc_string_template()
  * @uses   wp_dropdown_categories()
  *
  * @global $GLOBALS[ 'pagenow' ]
@@ -102,7 +140,7 @@ function ddw_btc_filter_post_type_by_taxonomy() {
 			$info_taxonomy = get_taxonomy( $taxonomy );
 			$tax_label     = sprintf(
 				esc_attr__( 'All %s', 'builder-template-categories' ),
-				$info_taxonomy->label
+				ddw_btc_string_template( $integration[ 'template_label' ] )
 			);
 
 			wp_dropdown_categories(
@@ -152,12 +190,12 @@ function ddw_btc_convert_id_to_term_in_query( $query ) {
 		$q_vars    = &$query->query_vars;
 
 		if ( 'edit.php' === $GLOBALS[ 'pagenow' ]
-	       	&& isset( $q_vars[ 'post_type' ] )
-	       	&& $q_vars[ 'post_type' ] == $post_type
-	        && isset( $q_vars[ $taxonomy ] )
-	        && is_numeric( $q_vars[ $taxonomy ] )
-	        && $q_vars[ $taxonomy ] != 0
-	    ) {
+			&& isset( $q_vars[ 'post_type' ] )
+			&& $q_vars[ 'post_type' ] == $post_type
+			&& isset( $q_vars[ $taxonomy ] )
+			&& is_numeric( $q_vars[ $taxonomy ] )
+			&& $q_vars[ $taxonomy ] != 0
+		) {
 
 			$term                = get_term_by( 'id', $q_vars[ $taxonomy ], $taxonomy );
 			$q_vars[ $taxonomy ] = $term->slug;
@@ -165,5 +203,138 @@ function ddw_btc_convert_id_to_term_in_query( $query ) {
 		}  // end if
 
 	}  // end foreach
+
+}  // end function
+
+
+add_filter( 'manage_posts_columns', 'ddw_btc_tweak_taxonomy_column_title' );
+/**
+ * Tweak the taxonomy List Table columns label so it fits to the content type of
+ *   the current integration.
+ *
+ *   Note: Fires intentionally on the "global" filter 'manage_posts_columns' to
+ *         catch all integration post types.
+ *
+ * @since  1.1.0
+ *
+ * @uses   ddw_btc_get_integration_post_types()
+ * @uses   ddw_btc_string_template()
+ *
+ * @param  array $columns Array which holds all Post Types list table columns labels.
+ * @return array Tweaked $columns array.
+ */
+function ddw_btc_tweak_taxonomy_column_title( $columns ) {  
+	
+	/** Get current Admin screen object */
+	$current_screen = get_current_screen();
+
+	/** Get our specific, relevant post types from the integrations as an array */
+	$post_types = (array) ddw_btc_get_integration_post_types();
+
+	/**
+	 * Check current Admin post type with our array and set taxonomy label
+	 *   string if proper match.
+	 */
+	if ( in_array( $current_screen->post_type, $post_types[ 'popups' ] ) ) {
+		$columns[ 'taxonomy-builder-template-category' ] = ddw_btc_string_template( 'popup' );
+	}
+
+	if ( in_array( $current_screen->post_type, $post_types[ 'listings' ] ) ) {
+		$columns[ 'taxonomy-builder-template-category' ] = ddw_btc_string_template( 'listing' );
+	}
+
+	if ( in_array( $current_screen->post_type, $post_types[ 'blocks' ] ) ) {
+		$columns[ 'taxonomy-builder-template-category' ] = ddw_btc_string_template( 'block' );
+	}
+
+	if ( in_array( $current_screen->post_type, $post_types[ 'libraries' ] ) ) {
+		$columns[ 'taxonomy-builder-template-category' ] = ddw_btc_string_template( 'library' );
+	}
+
+	if ( in_array( $current_screen->post_type, $post_types[ 'elements' ] ) ) {
+		$columns[ 'taxonomy-builder-template-category' ] = ddw_btc_string_template( 'element' );
+	}
+
+	if ( in_array( $current_screen->post_type, $post_types[ 'layouts' ] ) ) {
+		$columns[ 'taxonomy-builder-template-category' ] = ddw_btc_string_template( 'layout' );
+	}
+
+	if ( in_array( $current_screen->post_type, $post_types[ 'lightboxes' ] ) ) {
+		$columns[ 'taxonomy-builder-template-category' ] = ddw_btc_string_template( 'lightbox' );
+	}
+
+	if ( in_array( $current_screen->post_type, $post_types[ 'post-types' ] ) ) {
+		$columns[ 'taxonomy-builder-template-category' ] = ddw_btc_string_template( 'post-type' );
+	}
+
+	/** Return array of column label strings */
+	return $columns;
+
+}  // end function
+
+
+add_filter( 'btc/filter/string/default_content_type', 'ddw_btc_tweak_taxonomy_labels' );
+/**
+ * For certain post types of our integrations tweak the taxonomy labels, based
+ *   on content type of the integration.
+ *   Example: "Popup" integrations then switch to "Popup Categories" strings
+ *            (instead of "Template Categories").
+ *
+ * @since  1.1.0
+ *
+ * @uses   ddw_btc_get_integration_post_types()
+ * @uses   ddw_btc_string_content_type()
+ *
+ * @return string Taxonomy label string based on content type of the integration
+ *                (post type).
+ */
+function ddw_btc_tweak_taxonomy_labels() {
+
+	/** Bail early if not in Admin context */
+	if ( ! is_admin() ) {
+		return;
+	}
+
+	/** Get our specific, relevant post types from the integrations as an array */
+	$post_types = (array) ddw_btc_get_integration_post_types();
+
+	/**
+	 * Check current Admin post type with our array and return label string if
+	 *   proper match.
+	 */
+	if ( in_array( ddw_btc_admin_get_current_post_type(), $post_types[ 'popups' ] ) ) {
+		return ddw_btc_string_content_type( 'popup' );
+	}
+
+	if ( in_array( ddw_btc_admin_get_current_post_type(), $post_types[ 'layouts' ] ) ) {
+		return ddw_btc_string_content_type( 'layout' );
+	}
+
+	if ( in_array( ddw_btc_admin_get_current_post_type(), $post_types[ 'libraries' ] ) ) {
+		return ddw_btc_string_content_type( 'library' );
+	}
+
+	if ( in_array( ddw_btc_admin_get_current_post_type(), $post_types[ 'listings' ] ) ) {
+		return ddw_btc_string_content_type( 'listing' );
+	}
+
+	if ( in_array( ddw_btc_admin_get_current_post_type(), $post_types[ 'blocks' ] ) ) {
+		return ddw_btc_string_content_type( 'block' );
+	}
+
+	if ( in_array( ddw_btc_admin_get_current_post_type(), $post_types[ 'elements' ] ) ) {
+		return ddw_btc_string_content_type( 'element' );
+	}
+
+	if ( in_array( ddw_btc_admin_get_current_post_type(), $post_types[ 'lightboxes' ] ) ) {
+		return ddw_btc_string_content_type( 'lightbox' );
+	}
+
+	if ( in_array( ddw_btc_admin_get_current_post_type(), $post_types[ 'post-types' ] ) ) {
+		return ddw_btc_string_content_type( 'post-type' );
+	}
+
+	/** If no match, return the default string ("Template") */
+	return ddw_btc_string_content_type( 'btcdefault' );
 
 }  // end function

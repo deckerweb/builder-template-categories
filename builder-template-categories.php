@@ -11,7 +11,7 @@
  * Plugin Name:       Builder Template Categories
  * Plugin URI:        https://github.com/deckerweb/builder-template-categories
  * Description:       This plugin adds a Taxonomy "Template Category" for categorizing templates to make the life of site builders a little bit easier. It integrates with Elementor My Templates, OceanWP My Library, Astra Custom Layouts, GeneratePress Elements, Blox for Genesis, AnyWhere Elementor Global Templates and JetThemeCore My Library (Kava Pro/ CrocoBlock). These categories only appear in the WP-Admin Dashboard and only for the administrator user role (capability 'edit_theme_options').
- * Version:           1.0.1
+ * Version:           1.1.0
  * Author:            David Decker - DECKERWEB
  * Author URI:        https://deckerweb.de/
  * License:           GPL-2.0+
@@ -40,7 +40,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  * @since 1.0.0
  */
 /** Plugin version */
-define( 'BTC_PLUGIN_VERSION', '1.0.1' );
+define( 'BTC_PLUGIN_VERSION', '1.1.0' );
 
 /** Plugin directory */
 define( 'BTC_PLUGIN_DIR', trailingslashit( dirname( __FILE__ ) ) );
@@ -66,10 +66,10 @@ function ddw_btc_load_translations() {
 	$btc_textdomain = 'builder-template-categories';
 
 	/** The 'plugin_locale' filter is also used by default in load_plugin_textdomain() */
-	$locale = esc_url(
+	$locale = esc_attr(
 		apply_filters(
 			'plugin_locale',
-			get_user_locale(),	//is_admin() ? get_user_locale() : get_locale(),
+			get_user_locale(),
 			$btc_textdomain
 		)
 	);
@@ -130,6 +130,7 @@ function ddw_btc_setup_plugin() {
 
 	/** Include admin helper functions */
 	if ( is_admin() ) {
+		require_once( BTC_PLUGIN_DIR . 'includes/admin/admin-help.php' );
 		require_once( BTC_PLUGIN_DIR . 'includes/admin/admin-extras.php' );
 	}
 

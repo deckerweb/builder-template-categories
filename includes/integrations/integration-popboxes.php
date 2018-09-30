@@ -34,3 +34,11 @@ function ddw_btc_register_integration_popboxes( array $integrations ) {
 	return $integrations;
 
 }  // end function
+
+
+/**
+ * Set flag for Popup type template
+ *
+ * @since 1.1.0
+ */
+add_filter( 'btc/filter/is_type/popup', '__return_true' );

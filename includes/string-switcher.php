@@ -13,6 +13,86 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 
 /**
+ * String for the default content type, filterable.
+ *   Default: "Template"
+ *
+ * @since  1.1.0
+ *
+ * @see    ddw_btc_register_templates_taxonomy()
+ *
+ * @return string Filtered string output "Template".
+ */
+function ddw_btc_string_default_content_type() {
+
+	return esc_attr(
+		apply_filters(
+			'btc/filter/string/default_content_type',
+			__( 'Template', 'builder-template-categories' )
+		)
+	);
+
+}  // end function
+
+
+/**
+ * Build content type string (for example "Popup" or "Block").
+ *   Note: This function is especially needed for our
+ *         'btc/filter/string/default_content_type' filter.
+ *
+ * @since  1.1.0
+ *
+ * @param  string $content_type Type of content string stands for.
+ * @return string String output based on content type.
+ */
+function ddw_btc_string_content_type( $content_type ) {
+
+	/** Check type for the possible types and set strings */
+	switch ( sanitize_key( $content_type ) ) {
+
+		case 'library':
+			$string = esc_attr__( 'Library', 'builder-template-categories' );
+			break;
+
+		case 'layout':
+			$string = esc_attr__( 'Layout', 'builder-template-categories' );
+			break;
+
+		case 'element':
+			$string = esc_attr__( 'Element', 'builder-template-categories' );
+			break;
+
+		case 'block':
+			$string = esc_attr__( 'Block', 'builder-template-categories' );
+			break;
+
+		case 'popup':
+			$string = esc_attr__( 'Popup', 'builder-template-categories' );
+			break;
+
+		case 'lightbox':
+			$string = esc_attr__( 'Lightbox', 'builder-template-categories' );
+			break;
+
+		case 'listing':
+			$string = esc_attr__( 'Listing', 'builder-template-categories' );
+			break;
+
+		case 'post-type':
+			$string = esc_attr__( 'Post Type', 'builder-template-categories' );
+			break;
+
+		default:
+			$string = esc_attr__( 'Template', 'builder-template-categories' );
+
+	}  // end switch
+
+	/** Finally, output the string */
+	return $string;
+
+}  // end function
+
+
+/**
  * Build string "Categories".
  *
  * @since  1.0.0
@@ -35,6 +115,9 @@ function ddw_btc_string_categories() {
  * Build string "{Template String Type} Categories".
  *
  * @since  1.0.0
+ * @since  1.1.0 Added "Post Type" content type.
+ *
+ * @uses   ddw_btc_string_categories()
  *
  * @param  string $string_type Type of the template string.
  * @return string Full, filterable, string output "{Template String Type} Categories".
@@ -46,6 +129,7 @@ function ddw_btc_string_template( $string_type ) {
 
 		case 'template':
 			$string = sprintf(
+				/* translators: %s - label "Categories" (for example: Template Categories) */
 				esc_attr__( 'Template %s', 'builder-template-categories' ),
 				ddw_btc_string_categories()
 			);
@@ -53,6 +137,7 @@ function ddw_btc_string_template( $string_type ) {
 
 		case 'library':
 			$string = sprintf(
+				/* translators: %s - label "Categories" (for example: Library Categories) */
 				esc_attr__( 'Library %s', 'builder-template-categories' ),
 				ddw_btc_string_categories()
 			);
@@ -60,6 +145,7 @@ function ddw_btc_string_template( $string_type ) {
 
 		case 'layout':
 			$string = sprintf(
+				/* translators: %s - label "Categories" (for example: Layout Categories) */
 				esc_attr__( 'Layout %s', 'builder-template-categories' ),
 				ddw_btc_string_categories()
 			);
@@ -67,6 +153,7 @@ function ddw_btc_string_template( $string_type ) {
 
 		case 'element':
 			$string = sprintf(
+				/* translators: %s - label "Categories" (for example: Element Categories) */
 				esc_attr__( 'Element %s', 'builder-template-categories' ),
 				ddw_btc_string_categories()
 			);
@@ -74,6 +161,7 @@ function ddw_btc_string_template( $string_type ) {
 
 		case 'block':
 			$string = sprintf(
+				/* translators: %s - label "Categories" (for example: Block Categories) */
 				esc_attr__( 'Block %s', 'builder-template-categories' ),
 				ddw_btc_string_categories()
 			);
@@ -81,6 +169,7 @@ function ddw_btc_string_template( $string_type ) {
 
 		case 'popup':
 			$string = sprintf(
+				/* translators: %s - label "Categories" (for example: Popup Categories) */
 				esc_attr__( 'Popup %s', 'builder-template-categories' ),
 				ddw_btc_string_categories()
 			);
@@ -88,6 +177,7 @@ function ddw_btc_string_template( $string_type ) {
 
 		case 'lightbox':
 			$string = sprintf(
+				/* translators: %s - label "Categories" (for example: Lightbox Categories) */
 				esc_attr__( 'Lightbox %s', 'builder-template-categories' ),
 				ddw_btc_string_categories()
 			);
@@ -95,6 +185,7 @@ function ddw_btc_string_template( $string_type ) {
 
 		case 'listing':
 			$string = sprintf(
+				/* translators: %s - label "Categories" (for example: Listing Categories) */
 				esc_attr__( 'Listing %s', 'builder-template-categories' ),
 				ddw_btc_string_categories()
 			);
@@ -102,13 +193,23 @@ function ddw_btc_string_template( $string_type ) {
 
 		case 'elhf-template':
 			$string = sprintf(
+				/* translators: %s - label "Categories" (for example: ELHF Categories - "EL HF" stands for Elementor Header Footer Builder plugin) */
 				esc_attr__( 'EL HF %s', 'builder-template-categories' ),
+				ddw_btc_string_categories()
+			);
+			break;
+
+		case 'post-type':
+			$string = sprintf(
+				/* translators: %s - label "Categories" (for example: Post Type Categories) */
+				esc_attr__( 'Post Type %s', 'builder-template-categories' ),
 				ddw_btc_string_categories()
 			);
 			break;
 
 		default:
 			$string = sprintf(
+				/* translators: %s - label "Categories" (for example: Template Categories) */
 				esc_attr__( 'Template %s', 'builder-template-categories' ),
 				ddw_btc_string_categories()
 			);

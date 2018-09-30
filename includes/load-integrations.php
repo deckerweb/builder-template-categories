@@ -184,11 +184,75 @@ if ( ddw_btc_is_dhwc_elementor_active() ) {
 
 
 /**
+ * Plugin: JetPopup
+ * @since 1.1.0
+ */
+if ( ddw_btc_is_jetpopup_active() ) {
+	require_once( BTC_PLUGIN_DIR . 'includes/integrations/integration-jetpopup.php' );
+}
+
+
+/**
+ * Plugin: Cherry PopUps
+ * @since 1.1.0
+ */
+if ( ddw_btc_is_cherry_popups_active() ) {
+	require_once( BTC_PLUGIN_DIR . 'includes/integrations/integration-cherry-popups.php' );
+}
+
+
+/**
+ * Plugin: Templementor
+ * @since 1.1.0
+ */
+if ( ddw_btc_is_templementor_active() ) {
+	require_once( BTC_PLUGIN_DIR . 'includes/integrations/integration-templementor.php' );
+}
+
+
+/**
+ * Plugin: Kadence WooCommerce Elementor
+ * @since 1.1.0
+ */
+if ( ddw_btc_is_kadence_woocommerce_elementor_active() ) {
+	require_once( BTC_PLUGIN_DIR . 'includes/integrations/integration-kadence-woocommerce-elementor.php' );
+}
+
+
+/**
+ * Plugin: Themify Builder
+ * @since 1.1.0
+ */
+if ( ddw_btc_is_themify_builder_active() ) {
+	require_once( BTC_PLUGIN_DIR . 'includes/integrations/integration-themify-builder.php' );
+}
+
+
+/**
+ * Plugin: Themify Popup
+ * @since 1.1.0
+ */
+if ( ddw_btc_is_themify_popup_active() ) {
+	require_once( BTC_PLUGIN_DIR . 'includes/integrations/integration-themify-popup.php' );
+}
+
+
+/**
  * Plugin: Templatera (for 'WPBakery Page Builder', formerly known as 'Visual Composer')
  * @since 1.0.0
+ * @since 1.1.0 File name & conditional change.
  */
-if ( ddw_btc_is_wpbakery_templatera_active() ) {
-	require_once( BTC_PLUGIN_DIR . 'includes/integrations/integration-wpbakery-templatera.php' );
+if ( ddw_btc_is_wpbakery_active()	/* ddw_btc_is_wpbakery_templatera_active() */ ) {
+	require_once( BTC_PLUGIN_DIR . 'includes/integrations/integration-wpbakery.php' );
+}
+
+
+/**
+ * Plugin: Meta Box Post Type and Meta Box Taxonomy Add-Ons
+ * @since 1.1.0
+ */
+if ( ddw_btc_is_metabox_posttype_active() || ddw_btc_is_metabox_taxonomy_active() ) {
+	require_once( BTC_PLUGIN_DIR . 'includes/integrations/integration-metabox-posttypes.php' );
 }
 
 

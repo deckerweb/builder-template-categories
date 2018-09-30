@@ -5,7 +5,7 @@ Tags: elementor, page builder, templates, oceanwp, astra, generatepress, genesis
 Requires at least: 4.7
 Tested up to: 4.9.8
 Requires PHP: 5.6
-Stable tag: 1.0.1
+Stable tag: 1.1.0
 License: GPL-2.0+
 License URI: https://opensource.org/licenses/GPL-2.0
 
@@ -42,6 +42,7 @@ Please note: The categories are global but when filtering only those items are l
 - **WPBakery Page Builder (the old 'Visual Composer')** Plugin with its **Templatera** template plugin - **Templates** (for Pages, Layouts, etc.)
 - **Cornerstone** Page Builder via the "Cornerstone Global Blocks" Plugin (free) - **Global Blocks** (for Content)
 - **BoldGrid Post and Page Builder** Plugin (free) - **Blocks (Templates)**
+- **Themify Builder** Plugin (Premium version) - **Layouts** (for Layout Parts, Pages, Sections etc.)
 
 = Supported Themes =
 - **Astra Theme** with **Astra Pro** Add-On Plugin - **Custom Layouts** (for Layouts, Headers, Footers, Hooks)
@@ -60,11 +61,18 @@ Please note: The categories are global but when filtering only those items are l
 - **Oxygen Builder** Plugin (Pro) - **Templates** (for Pages, Layouts, Sections, Theme Builder elements...)
 - **Header Footer for Elementor** Plugin - **Header & Footer Templates** (for Elementor theming areas)
 - **DHWC Elementor** Plugin - **Product Templates** (for WooCommerce Products)
+- **Kadence WooCommerce Elementor** Plugin - **Product Templates** (for WooCommerce Products)
 - **PopBoxes for Elementor** Plugin - **Popups (Templates)** (for Popups, Lightboxes)
+- **Templementor** Plugin - **Templates** (for Elementor content)
 - **Thrive Lightboxes** Plugin - **Lightboxes (Templates)** (for Lightboxes, Popups)
 - **Popup Maker** Plugin - **Popups (Templates)** (for Popups, Lightboxes)
-- **WP Show Posts** Plugin - **Listings (Templates)** (for Post Listings)
 - **Pods** Plugin - **Templates** (for Post Types, Taxonomies, Fields, etc.) -- Note: the "Templates" Component needs to be enabled in Pods' settings!
+- **WP Show Posts** Plugin - **Listings (Templates)** (for Post Listings)
+- **JetPopup** Plugin - **Popups** (for Popups)
+- **Cherry PopUps** Plugin - **Popups** (for Popups)
+- **Themify Popup** Plugin - **Popups** (for Popups)
+- **Meta Box Post Types** Add-On Plugin - **Post Types** (for Post Type registrations)
+- **Meta Box Taxonomy** Add-On Plugin - **Taxonomies** (for Taxonomy registrations)
 
 = Recommended Time Saver =
 Try [**Toolbar Extras**](https://toolbarextras.com/) my other plugin for Site Builders and admins: Building sites with Elementor? [**Your work will get easier & faster with Toolbar Extras.**](https://wordpress.org/plugins/toolbar-extras/) With extended plugin & theme support baked right in.
@@ -93,8 +101,8 @@ You can also contribute code-wise via our [Builder Template Categories GitHub Re
 - If you have any more questions, visit our support on the [Plugin's Forum](https://wordpress.org/support/plugin/builder-template-categories).
 
 = Liked Builder Template Categories? =
-- Then please rate us on [WordPress](https://wordpress.org/support/plugin/builder-template-categories/reviews/?filter=5/#new-post) :)
-- Or join our [Facebook Community Group](https://www.facebook.com/groups/ToolbarExtras/).
+- Then please **rate us 5 stars** on [WordPress.org](https://wordpress.org/support/plugin/builder-template-categories/reviews/?filter=5/#new-post) :)
+- Or join our [**Facebook User Community Support Group**](https://www.facebook.com/groups/deckerweb.wordpress.plugins/)
 
 = This Plugin ... =
 - ... scratches my own itch!
@@ -123,6 +131,20 @@ You can also contribute code-wise via our [Builder Template Categories GitHub Re
 4. Now enjoy organizing your templates, get better overview and save time ;-)
 
 == Frequently Asked Questions ==
+
+= How to apply template categories in bulk? =
+Applying template categories to more than one template at once is easily possible: just use the built-in "Bulk Actions" from WordPress Core, which are available for any post type.
+
+* Go to the post type of your templates, for example "Elementor My Templates"
+* On top of the so-called overview table (Post List Table) look for **Bulk Actions**
+* In the table check (select) any template you want to add a category to
+* In the Bulk Actions drop-down menu, select the "Edit" action and then click the **Apply** button next to the drop-down --> NOTE: v1.1.0 of our plugin tweaks the label to this **Edit, add Category etc.** to make the whole thing more clear! :-)
+* Then assign any category you want to the selected templates
+* Don't forget to click the "Save" button once you're done
+
+[youtube https://www.youtube.com/watch?v=KyCY-cGAB9o]
+[**original video link**](https://www.youtube.com/watch?v=KyCY-cGAB9o) *by plugin developer David Decker*
+
 
 = Why is the taxonomy "global" and applied to more than one post type? =
 The answer is simple: Our taxonomy is only for organizing purposes if you have to manage many, many templates. It is easy to just enter 2 or more different categories if you use more than one of the supported integrations (and therefore have our taxonomy applied to more than one post type).
@@ -225,7 +247,7 @@ function btc_register_custom_integration( array $integrations ) {
 	$submenu_hook = 'your-custom-settings-page';	// as in: your-site.domain/wp-admin/admin.php?page=your-custom-settings-page;
 	// or alternative: $submenu_hook = 'edit.php?post_type=' . $post_type;
 
-	$template_label = 'template';	// or: library, layout, element, popup, lightbox, block, listing
+	$template_label = 'template';	// or: library, layout, element, popup, lightbox, block, listing, post-type
 
 	$integrations[ 'your-custom-handle-lowercase' ] = array(
 		'label'          => __( 'My Custom Templates', 'your-textdomain' ),
@@ -255,6 +277,17 @@ Best practice is to wrap the whole code above in a conditional to check if the t
 *Note:* All my plugins are internationalized/ translateable by default. This is very important for all users worldwide. So please contribute your language to the plugin to make it even more useful. For translating and validating I recommend the awesome ["Poedit Editor"](https://www.poedit.net/), which works fine on Windows, macOS and Linux.
 
 
+= Some Statistics? =
+As of version 1.1.0 of the plugin the following was achieved:
+
+* 1 Taxonomy
+* 28 Integrations overall
+* 5 Theme Integrations
+* 7 Page Builder Integrations
+* 16 Plugin Integrations
+* Up to 33 different post types (of integrations) supported
+
+
 == Screenshots ==
 
 1. Template Categories for Elementor "My Templates" - Filtering for templates: 1) Dropdown of template categories, 2) Links to template categories
@@ -271,10 +304,35 @@ Best practice is to wrap the whole code above in a conditional to check if the t
 
 7. Edit a template - and set the template category (Example of an Elementor template)
 
-8. Plugins page - list of all plugins - "Builder Template Categories" with link to taxonomy listing table
+8. Post type Bulk Actions: add template category to selected templates in one action step
+
+9. Plugins page - list of all plugins - "Builder Template Categories" with link to taxonomy listing table
 
 
 == Changelog ==
+
+= 1.1.0 - 2018-09-30 =
+* New: Category labels now fit to the content type (post type) of the integration - popup integrations are now labelled as "Popup Categories", and the same for other types like Blocks, Layouts, Elements etc.
+* New: Integration with Page Builder plugin Themify Builder (Premium, by Themify) - note: this applies only to the premium version of this plugin
+* New: Integration with plugin JetPopup (free, by Zemez Jet/ CrocoBlock)
+* New: Integration with plugin Cherry PopUps (free, by Zemez)
+* New: Integration with plugin Templementor (free, by Lcweb)
+* New: Integration with plugin Kadence WooCommerce Elementor (free, by Kadence Themes) - for single product templates
+* New: Integration with plugin Kadence WooCommerce Elementor Pro (Premium, by Kadence Themes) - for product archive templates and checkout templates
+* New: Integration with plugin Themify Popup (free, by Themify)
+* New: Integration with Add-On plugins Meta Box Post Types and Meta Box Taxonomy (both free, by Meta Box)
+* New: If WooCommerce template related integrations are active before plugin installation/activation add predefined "Products" term
+* New: If Popup/Modal template related integrations are active before plugin installation/activation add predefined "Popups" term
+* New: In post type list tables for bulk actions the "Edit" label was tweaked to "Edit, add Category etc." to make it more clear for users that template categories (of this plugin) can be added as well in bulk mode
+* New: Added help tab with additional info - appearing on the plugin's taxonomy page as well as all edit screens from post types of any active integration
+* New: Added a new screenshot to show Bulk Actions - to add template category to more than one template in one action
+* New: Created special [Facebook Group for user community support](https://www.facebook.com/groups/deckerweb.wordpress.plugins/) for all plugins from me (David Decker - DECKERWEB), this one here included! ;-) - [please join at facebook!](https://www.facebook.com/groups/deckerweb.wordpress.plugins/)
+* Tweak: Partly refactored the WPBakery Page Builder integration - now by default the Grid Builder Templates are integrated, and optionally, if the Templatera templates are active (premium Add-On), these as well -- that way, all makes more sense
+* Tweak: Smaller code and inline documentation tweaks, plus improvements
+* Tweak: Updated bundled library DDWlib Plugin Installer Recommendations to latest version (v1.1.0) - which brings smaller additions and enhancements, like CSS styles to the upload areas and plugin cards, plus plugin version number on plugin cards
+* Tweak: Updated `.pot` file plus all German translations (formal, informal) and language packs
+* Tweak: Enhanced and improved Readme.txt file here - also added new FAQ entry
+
 
 = 1.0.1 - 2018-08-30 =
 * New: Integration with Brizy Templates for Brizy Page Builder - template feature was released in their free version v1.0.25
@@ -302,6 +360,9 @@ Best practice is to wrap the whole code above in a conditional to check if the t
 * New: Beta release of the plugin on [its public GitHub repository](https://github.com/deckerweb/builder-template-categories)
 
 == Upgrade Notice =
+
+= 1.1.0 =
+Feature release with 9 new integrations added. Also major improvements to category labels, now fitting to the integrated content/post type. Plus smaller tweaks and improvements overall. &ndash; Update highly recommended!
 
 = 1.0.1 =
 Added integration for Brizy Page Builder. Further tweaks and improvements. Update recommended.

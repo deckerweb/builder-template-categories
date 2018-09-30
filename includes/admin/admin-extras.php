@@ -1,6 +1,6 @@
 <?php
 
-// includes/admin-extras
+// includes/admin/admin-extras
 
 /**
  * Prevent direct access to this file.
@@ -39,7 +39,9 @@ function ddw_btc_custom_taxonomy_links( $btc_links ) {
 	}  // end if
 
 	/** Set the order of the links */
-	array_unshift( $btc_links, $btc_tax_link );
+	if ( ! empty( $btc_tax_link ) ) {
+		array_unshift( $btc_links, $btc_tax_link );
+	}
 
 	/** Display plugin settings links */
 	return apply_filters(
@@ -85,6 +87,9 @@ function ddw_btc_plugin_links( $btc_links, $btc_file ) {
 
 		/* translators: Plugins page listing */
 		$btc_links[] = ddw_btc_get_info_link( 'url_wporg_forum', esc_html_x( 'Support', 'Plugins page listing', 'builder-template-categories' ), 'dashicons-before dashicons-sos' );
+
+		/* translators: Plugins page listing */
+		$btc_links[] = ddw_btc_get_info_link( 'url_fb_group', esc_html_x( 'Facebook Group', 'Plugins page listing', 'builder-template-categories' ), 'dashicons-before dashicons-facebook' );
 
 		/* translators: Plugins page listing */
 		$btc_links[] = ddw_btc_get_info_link( 'url_translate', esc_html_x( 'Translations', 'Plugins page listing', 'builder-template-categories' ), 'dashicons-before dashicons-translation' );
@@ -133,84 +138,6 @@ function ddw_btc_admin_footer_text( $footer_text ) {
 	}  // end if
 
 	return $footer_text;
-
-}  // end function
-
-
-/**
- * Help content when on adding/edit our Taxonomy terms.
- *
- * @since 1.0.0
- */
-function ddw_btc_tax_edit_info_content() {
-
-	$output = '<div class="notice notice-info">';
-
-	$output .= sprintf(
-		'<p class="description">%s:</p>',
-		esc_attr__( 'These Template Categories are globally available for Administrators within the Admin Dashboard and can be used to organize the template libraries for the following active Plugins and/or Themes', 'builder-template-categories' )
-	);
-
-	$output .= '<ul style="margin-left: 10px;">';
-
-	/** Get all integrations */
-	$integrations = ddw_btc_get_integrations();
-
-	/** Add label for each active integration */
-	foreach ( $integrations as $integration => $integration_data ) {
-
-		if ( 'default-none' !== $integration ) {
-
-			$output .= sprintf(
-				'<li class="dashicons-before dashicons-category"> <a href="%1$s">%2$s</a></li>',
-				esc_url( admin_url( $integration_data[ 'admin_url' ] ) ),
-				esc_attr( $integration_data[ 'label' ] )
-			);
-
-		}  // end if
-
-	}  // end foreach
-
-	$output .= '</ul>';
-	$output .= '</div>';
-
-	echo $output;
-
-}  // end function
-
-
-add_action( 'builder-template-category_pre_add_form', 'ddw_btc_tax_pre_info', 10, 1 );
-/**
- * Display help content when adding a new term to our Taxonomy.
- *
- * @since 1.0.0
- */
-function ddw_btc_tax_pre_info( $taxonomy = 'builder-template-category' ) {
-
-	/** Bail early if user wants no info */
-	if ( apply_filters( 'btc/filter/help_content/tax_pre_info', FALSE ) ) {
-		return;
-	}
-
-	ddw_btc_tax_edit_info_content();
-
-}  // end function
-
-
-add_action( 'builder-template-category_term_edit_form_top', 'ddw_btc_term_edit_info', 10, 2 );
-/**
- * Display our help content when editing a term of our Taxonomy.
- *
- * @since 1.0.0
- */
-function ddw_btc_term_edit_info( $tag, $taxonomy = 'builder-template-category' ) {
-
-	/** Bail early if user wants no info */
-	if ( apply_filters( 'btc/filter/help_content/tax_pre_info', FALSE ) ) {
-		return;
-	}
-
-	ddw_btc_tax_edit_info_content();
 
 }  // end function
 
@@ -339,6 +266,42 @@ function ddw_btc_register_extra_plugin_recommendations( array $plugins ) {
 	return $plugins;
   
 }  // end function
+
+/** Optionally add string translations for the library */
+if ( ! function_exists( 'ddwlib_plir_strings_plugin_installer' ) ) :
+
+	add_filter( 'ddwlib_plir/filter/strings/plugin_installer', 'ddwlib_plir_strings_plugin_installer' );
+	/**
+	 * Optionally, make strings translateable for included library "DDWlib Plugin
+	 *   Installer Recommendations".
+	 *   Strings:
+	 *    - "Newest" --> tab in plugin installer toolbar
+	 *    - "Version:" --> label in plugin installer plugin card
+	 *
+	 * @since  1.1.0
+	 *
+	 * @param  array $strings Holds all filterable strings of the library.
+	 * @return array Array of tweaked translateable strings.
+	 */
+	function ddwlib_plir_strings_plugin_installer( $strings ) {
+
+		$strings[ 'newest' ] = _x(
+			'Newest',
+			'Plugin installer: Tab name in installer toolbar',
+			'builder-template-categories'
+		);
+
+		$strings[ 'version' ] = _x(
+			'Version:',
+			'Plugin card: plugin version',
+			'builder-template-categories'
+		);
+
+		return $strings;
+
+	}  // end function
+
+endif;  // function check
 
 /** Include class DDWlib Plugin Installer Recommendations */
 require_once( BTC_PLUGIN_DIR . 'includes/admin/ddwlib-plugin-installer-recommendations.php' );

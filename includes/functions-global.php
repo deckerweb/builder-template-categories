@@ -90,6 +90,135 @@ function ddw_btc_taxonomy_admin_url() {
 
 
 /**
+ * Get specific post types from integrations for re-usage, summarized after
+ *   label types (content types).
+ *
+ * @since  1.1.0
+ *
+ * @param  string $all_types Optional string param used as a flag, to enable
+ *                           alternative return of all post types in one single
+ *                           array (not summarized!).
+ * @return array Filterable array of post type keys, summarized after content
+ *               type.
+ */
+function ddw_btc_get_integration_post_types( $all_types = '' ) {
+
+	/** Get array with all active integrations */
+	$integrations = ddw_btc_get_integrations();
+
+	/** Setup array of certain post types as content types (array keys) */
+	$post_types = array(
+		'templates'  => array(),
+		'popups'     => array(),
+		'layouts'    => array(),
+		'listings'   => array(),
+		'libraries'  => array(),
+		'elements'   => array(),
+		'blocks'     => array(),
+		'lightboxes' => array(),
+		'post-types' => array(),
+		'btcdefault' => array( 'btc-template' ),
+	);
+
+	$post_types_all = array();
+
+	/**
+	 * Iterate through all integrations and collect the post types for the
+	 *   defined content types
+	 */
+	foreach ( $integrations as $integration ) {
+
+		if ( 'template' === $integration[ 'template_label' ] ) {
+			$post_types[ 'templates' ][] = $integration[ 'post_type' ];
+		}
+
+		if ( 'popup' === $integration[ 'template_label' ] ) {
+			$post_types[ 'popups' ][] = $integration[ 'post_type' ];
+		}
+
+		if ( 'layout' === $integration[ 'template_label' ] ) {
+			$post_types[ 'layouts' ][] = $integration[ 'post_type' ];
+		}
+
+		if ( 'listing' === $integration[ 'template_label' ] ) {
+			$post_types[ 'listings' ][] = $integration[ 'post_type' ];
+		}
+
+		if ( 'library' === $integration[ 'template_label' ] ) {
+			$post_types[ 'libraries' ][] = $integration[ 'post_type' ];
+		}
+
+		if ( 'element' === $integration[ 'template_label' ] ) {
+			$post_types[ 'elements' ][] = $integration[ 'post_type' ];
+		}
+
+		if ( 'block' === $integration[ 'template_label' ] ) {
+			$post_types[ 'blocks' ][] = $integration[ 'post_type' ];
+		}
+
+		if ( 'lightbox' === $integration[ 'template_label' ] ) {
+			$post_types[ 'lightboxes' ][] = $integration[ 'post_type' ];
+		}
+
+		if ( 'post-type' === $integration[ 'template_label' ] ) {
+			$post_types[ 'post-types' ][] = $integration[ 'post_type' ];
+		}
+
+		$post_types_all[] = $integration[ 'post_type' ];
+
+	}  // end foreach
+
+	/**
+	 * If $all_keys param is set to 'all' return all post types,
+	 *   non-summarized.
+	 */
+	if ( 'all' === sanitize_key( $all_types ) ) {
+		return $post_types_all;
+	}
+
+	/**
+	 * Return filterable array of collected post types - summarized after
+	 *   content types.
+	 */
+	return apply_filters(
+		'btc/filter/integrations/post_types',
+		$post_types
+	);
+
+}  // end function
+
+
+/**
+ * Within WP-Admin get the current post type of the current admin screen. We
+ *   need that for the label tweaking - see ddw_btc_tweak_taxonomy_labels() in
+ *   file includes/run-integrations.php.
+ *
+ *   Inspired by @link https://gist.github.com/DomenicF/3ebcf7d53ce3182854716c4d8f1ab2e2
+ *
+ * @since  1.1.0
+ *
+ * @return string|null String of post type or null if no post type available.
+ */
+function ddw_btc_admin_get_current_post_type() {
+
+	/** Check $_GET for post ID/ post type */
+	if ( isset( $_GET[ 'post' ] ) ) {
+
+		return sanitize_key( get_post_type( wp_unslash( $_GET[ 'post' ] ) ) );
+
+	} elseif ( isset( $_GET[ 'post_type' ] ) ) {
+
+		return sanitize_key( wp_unslash( $_GET[ 'post_type' ] ) );
+
+	}  // end if
+
+	/** Fallback: We do not know the post type! */
+	return null;
+
+}  // end function
+
+
+/**
  * Setting internal plugin helper values.
  *
  * @since  1.0.0
@@ -105,10 +234,10 @@ function ddw_btc_info_values() {
 		'url_wporg_forum'   => 'https://wordpress.org/support/plugin/builder-template-categories',
 		'url_wporg_review'  => 'https://wordpress.org/support/plugin/builder-template-categories/reviews/?filter=5/#new-post',
 		'url_wporg_profile' => 'https://profiles.wordpress.org/daveshine/',
-		'url_fb_group'      => 'https://www.facebook.com/groups/ToolbarExtras/',
+		'url_fb_group'      => 'https://www.facebook.com/groups/deckerweb.wordpress.plugins/',
 		'url_snippets'      => 'https://github.com/deckerweb/builder-template-categories/wiki/Code-Snippets',
 		'author'            => __( 'David Decker - DECKERWEB', 'builder-template-categories' ),
-		'author_uri'        => __( 'https://deckerweb.de/', 'builder-template-categories' ),
+		'author_uri'        => 'https://deckerweb.de/',
 		'license'           => 'GPL-2.0+',
 		'url_license'       => 'https://opensource.org/licenses/GPL-2.0',
 		'first_code'        => '2018',
@@ -118,6 +247,10 @@ function ddw_btc_info_values() {
 		'url_plugin_faq'    => 'https://wordpress.org/plugins/builder-template-categories/#faq',
 		'url_github'        => 'https://github.com/deckerweb/builder-template-categories',
 		'url_github_issues' => 'https://github.com/deckerweb/builder-template-categories/issues',
+		'url_twitter'       => 'https://twitter.com/deckerweb',
+		'url_github_follow' => 'https://github.com/deckerweb',
+		'video_bulk_add'    => 'https://www.youtube.com/watch?v=KyCY-cGAB9o',
+		'video_bulk_add_tb' => '//www.youtube-nocookie.com/embed/KyCY-cGAB9o?rel=0&TB_iframe=true&width=1024&height=576',	// for Thickbox, embed version, no cookies!
 
 	);  // end of array
 
@@ -182,6 +315,7 @@ function ddw_btc_get_info_link( $url_key = '', $text = '', $class = '' ) {
  * Get timespan of coding years for this plugin.
  *
  * @since  1.0.0
+ * @since  1.1.0 Improved first year logic.
  *
  * @uses   ddw_btc_info_values()
  *
@@ -195,7 +329,7 @@ function ddw_btc_coding_years( $first_year = '' ) {
 	$first_year = ( empty( $first_year ) ) ? absint( $btc_info[ 'first_code' ] ) : absint( $first_year );
 
 	/** Set year of first released code */
-	$code_first_year = ( '' !== $first_year && date( 'Y' ) !== $first_year ) ? $first_year . '&#x02013;' : '';
+	$code_first_year = ( date( 'Y' ) == $first_year || 0 === $first_year ) ? '' : $first_year . '&#x02013;';
 
 	return $code_first_year . date( 'Y' );
 
