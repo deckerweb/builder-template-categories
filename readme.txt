@@ -304,7 +304,7 @@ As of version 1.1.0 of the plugin the following was achieved:
 
 7. Edit a template - and set the template category (Example of an Elementor template)
 
-8. Post type Bulk Actions: add template category to selected templates in one action step
+8. Post type Bulk Actions: Add a template category to selected templates in one action step
 
 9. Plugins page - list of all plugins - "Builder Template Categories" with link to taxonomy listing table
 
