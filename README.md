@@ -48,6 +48,7 @@ Please note: The categories are global but when filtering only those items are l
 - **Cornerstone** Page Builder via the "Cornerstone Global Blocks" Plugin (free) - **Global Blocks** (for Content)
 - **BoldGrid Post and Page Builder** Plugin (free) - **Blocks (Templates)**
 - **Themify Builder** Plugin (Premium version) - **Layouts** (for Layout Parts, Pages, Sections etc.)
+- **Gutenberg / Block Editor of WordPress 5.0 - **Blocks** (for Reusable Blocks - the new core feature)
 
 
 ### Supported Themes 
@@ -70,6 +71,7 @@ Please note: The categories are global but when filtering only those items are l
 - **DHWC Elementor** Plugin - **Product Templates** (for WooCommerce Products)
 - **Kadence WooCommerce Elementor** Plugin - **Product Templates** (for WooCommerce Products)
 - **PopBoxes for Elementor** Plugin - **Popups (Templates)** (for Popups, Lightboxes)
+- **StylePress for Elementor** Plugin - **Styles (Templates)** (for Theme Templates)
 - **Templementor** Plugin - **Templates** (for Elementor content)
 - **Thrive Lightboxes** Plugin - **Lightboxes (Templates)** (for Lightboxes, Popups)
 - **Popup Maker** Plugin - **Popups (Templates)** (for Popups, Lightboxes)
@@ -80,10 +82,22 @@ Please note: The categories are global but when filtering only those items are l
 - **Themify Popup** Plugin - **Popups** (for Popups)
 - **Meta Box Post Types** Add-On Plugin - **Post Types** (for Post Type registrations)
 - **Meta Box Taxonomy** Add-On Plugin - **Taxonomies** (for Taxonomy registrations)
+- **Content Blocks (Custom Post Widget)** Plugin - **Blocks** (for Content)
+- **Reusable Content & Text Blocks (by Loomisoft)** Plugin - **Blocks** (for Content)
+- **Dev Content Blocks** Plugin - **Blocks** (for Content)
+- **Text Blocks** Plugin - **Blocks** (for Content, Text)
+- **Widget Content Blocks** Plugin - **Blocks** (for Widgets, Content)
+
+
+### Supported Gutenberg-specific Plugins (Block Editor)
+- **Lazy Blocks** Plugin - **Blocks** (Templates for Gutenberg Blocks)
+- **Advanced Custom Blocks** Plugin - **Blocks** (Templates & Fields for Gutenberg Blocks)
+- **Blocks Layouts** Plugin - **Layouts** (Layouts for Gutenberg Blocks)
+- **Square Happiness: Placeholder Block** Plugin - **Blocks** (Placeholders/ Templates for Gutenberg Blocks)
 
 
 ### Recommended Time Saver 
-Try [**Toolbar Extras**](https://toolbarextras.com/) my other plugin for Site Builders and admins: Building sites with Elementor? [**Your work will get easier & faster with Toolbar Extras.**](https://wordpress.org/plugins/toolbar-extras/) With extended plugin & theme support baked right in.
+Try [**Toolbar Extras**](https://toolbarextras.com/) my other plugin for Site Builders and admins: Building sites with Elementor? [**Your work will get easier & faster with Toolbar Extras.**](https://wordpress.org/plugins/toolbar-extras/) With extended plugin & theme support baked right in. Of course, "Builder Template Categories" is integrated as well :)
 
 * [Plugin Page here on WordPress.org](https://wordpress.org/plugins/toolbar-extras/)
 * [Plugin's own website toolbarextras.com](https://toolbarextras.com/)
@@ -277,7 +291,7 @@ function btc_register_custom_integration( array $integrations ) {
 	$submenu_hook = 'your-custom-settings-page';	// as in: your-site.domain/wp-admin/admin.php?page=your-custom-settings-page;
 	// or alternative: $submenu_hook = 'edit.php?post_type=' . $post_type;
 
-	$template_label = 'template';	// or: library, layout, element, popup, lightbox, block, listing, post-type
+	$template_label = 'template';	// or: library, layout, element, popup, lightbox, block, listing, post-type, field, box, bar, hook
 
 	$integrations[ 'your-custom-handle-lowercase' ] = array(
 		'label'          => __( 'My Custom Templates', 'your-textdomain' ),
@@ -310,14 +324,16 @@ Best practice is to wrap the whole code above in a conditional to check if the t
 
 
 ### Some Statistics?
-As of version 1.1.0 of the plugin the following was achieved:
+As of version 1.2.0 of the plugin the following was achieved:
 
 * 1 Taxonomy
-* 28 Integrations overall
+* 39 Integrations overall
+* 1 Core Integration (Gutenberg Block Editor)
 * 5 Theme Integrations
 * 7 Page Builder Integrations
-* 16 Plugin Integrations
-* Up to 33 different post types (of integrations) supported
+* 26 Plugin Integrations
+* Up to 44 different post types (of integrations) supported
+* 13 generic template content types, plus 1 plugin-specific template content type
 
 
 
@@ -352,7 +368,7 @@ As of version 1.1.0 of the plugin the following was achieved:
 
 
 ### 8. Post type Bulk Actions: add template category to selected templates in one action step
-![Post type Bulk Actions: Add a template category to selected templates in one action step](https://ps.w.org/builder-template-categories/assets/screenshot-08.png)
+![Post type Bulk Actions: Add a template category to selected templates in one action step](https://previews.dropbox.com/p/thumb/AAN814GgViXbB8-DWFWEpgnQWCGe0MOLDZh4n0-GrDy5wa17aFexKDrYGT2XDhVKfcVh_tqwUoH9LFq83n57_JPMY7KVQHZe4qL-eDiGOsBSZttYJegQaUGr6ytwiAHTzMxhnSUgjfx6OvqX_6zOVNHiQ-u1Hs7t7U8K52R6b66JN7dHuguNQv5pZsBEaIBwnfp5brEpp78VRGXJdtaiHhPytKzXJ6hpI9uiopvUxc3ZvA/p.png)
 
 
 ### 9. Plugins page - list of all plugins - "Builder Template Categories" with link to taxonomy listing table
@@ -362,6 +378,28 @@ As of version 1.1.0 of the plugin the following was achieved:
 
 
 ## Changelog 
+
+### 1.2.0 - 2018-10-12
+* *The Gutenberg Block Editor Support Release ;-)*
+* New: Integration with "Gutenberg plugin" / (upcoming) WordPress Version 5.0+: Block categories for new default `wp_block` post type, plus admin enhancements - this lets you manage the "reusable blocks" feature better
+* New: Integration with plugin Lazy Blocks (free, by nK) -- *for WordPress Block Editor, also known as "Gutenberg"*
+* New: Integration with plugin Advanced Custom Blocks (free, by Rheinard Korf, Luke Carbis, Rob Stinson) -- *for WordPress Block Editor, also known as "Gutenberg"*
+* New: Integration with plugin Blocks Layouts (free, by Jordy Meow) -- *for WordPress Block Editor, also known as "Gutenberg"*
+* New: Integration with plugin Square Happiness: Placeholder Block (free, by Square Happiness) -- *for WordPress Block Editor, also known as "Gutenberg"*
+* New: Integration with plugin StylePress for Elementor (free, by David Baker (dtbaker))
+* New: Integration with plugin Content Blocks (Custom Post Widget) (free, by Johan van der Wijk)
+* New: Integration with plugin Reusable Content & Text Blocks (free, by Loomisoft)
+* New: Integration with plugin Dev Content Blocks (free, by Allon Sacks)
+* New: Integration with plugin Text Blocks (free, by Hal Gatewood)
+* New: Integration with plugin Widget Content Blocks (free, by Danny van Kooten)
+* New: Added new template content types "Field/ Fields", "Box/ Boxes", "Bar/ Bars" and "Hook/ Hooks"
+* New: If Fields, Box, Bar or Hook template related integrations are active before plugin installation/activation add predefined terms for "Fields", "Boxes", "Bars" and "Hooks" appropriately
+* New: If Popup/Modal template related integrations are active before plugin installation/activation add predefined "Popups" term
+* Tweak: Code, plus code documentation improvements and tweaks
+* Tweak: Improved special "translators" comments in code
+* Tweak: Updated `.pot` file plus all German translations (formal, informal) and language packs
+* Tweak: Enhanced and improved Readme.txt file here
+
 
 ### 1.1.0 - 2018-09-30
 * New: Category labels now fit to the content type (post type) of the integration - popup integrations are now labelled as "Popup Categories", and the same for other types like Blocks, Layouts, Elements etc.
@@ -413,6 +451,10 @@ As of version 1.1.0 of the plugin the following was achieved:
 
 
 ## Upgrade Notice 
+
+### 1.2.0
+Feature release with 10 new integrations added. Gutenberg / Block Editor support for (upcoming) WordPress 5.0. Plus smaller tweaks and improvements overall. &ndash; Update highly recommended!
+
 
 ### 1.1.0
 Feature release with 9 new integrations added. Also major improvements to category labels, now fitting to the integrated content/post type. Plus smaller tweaks and improvements overall. &ndash; Update highly recommended!

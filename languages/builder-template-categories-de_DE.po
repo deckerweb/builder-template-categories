@@ -1,15 +1,15 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Builder Template Categories\n"
-"POT-Creation-Date: 2018-09-30 16:13+0200\n"
-"PO-Revision-Date: 2018-09-30 16:13+0200\n"
+"POT-Creation-Date: 2018-10-11 23:22+0200\n"
+"PO-Revision-Date: 2018-10-11 23:24+0200\n"
 "Last-Translator: David Decker DECKERWEB.de -- https://deckerweb.de/\n"
 "Language-Team: David Decker DECKERWEB.de -- https://deckerweb.de/\n"
 "Language: de_DE\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.1.1\n"
+"X-Generator: Poedit 2.2\n"
 "X-Poedit-Basepath: ..\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Poedit-Flags-xgettext: --add-comments=translators:\n"
@@ -98,7 +98,7 @@ msgstr ""
 msgid "Content Type"
 msgstr "Inhaltstyp"
 
-#: includes/admin/admin-help.php:297 includes/string-switcher.php:81
+#: includes/admin/admin-help.php:297 includes/string-switcher.php:82
 msgid "Post Type"
 msgstr "Beitragstyp"
 
@@ -214,9 +214,18 @@ msgid "No Integration registered"
 msgstr "Keine Integration registriert"
 
 #. Author of the plugin/theme
-#: includes/functions-global.php:239
+#: includes/functions-global.php:264
 msgid "David Decker - DECKERWEB"
 msgstr "David Decker - DECKERWEB.de"
+
+#: includes/integrations/integration-advanced-custom-blocks.php:27
+msgid "Advanced Custom Blocks"
+msgstr "Erweiterte benutzerdefinierte Blöcke (ACB)"
+
+#: includes/integrations/integration-advanced-custom-blocks.php:60
+#: includes/integrations/integration-advanced-custom-blocks.php:61
+msgid "Add New"
+msgstr "Erstellen"
 
 #: includes/integrations/integration-anywhere-elementor.php:27
 msgid "AnyWhere Elementor Global Templates"
@@ -225,6 +234,14 @@ msgstr "AnyWhere Elementor Globale Templates"
 #: includes/integrations/integration-astra.php:27
 msgid "Astra Custom Layouts"
 msgstr "Astra Eigene Layouts"
+
+#: includes/integrations/integration-block-editor.php:27
+msgid "Block Editor Reusable Blocks"
+msgstr "Block-Editor wiederverwendbare Blöcke"
+
+#: includes/integrations/integration-block-layouts.php:27
+msgid "Block Layouts"
+msgstr "Block-Layouts"
 
 #: includes/integrations/integration-boldgrid.php:27
 msgid "BoldGrid Blocks"
@@ -238,9 +255,17 @@ msgstr "Brizy Templates"
 msgid "Cherry PopUps Templates"
 msgstr "Cherry PopUps Templates"
 
+#: includes/integrations/integration-content-blocks.php:27
+msgid "Content Blocks"
+msgstr "Inhaltsblöcke"
+
 #: includes/integrations/integration-cornerstone-global-blocks.php:27
 msgid "Global Content Blocks for Cornerstone Page Builder"
 msgstr "Globale Blöcke für Cornerstone Page Builder"
+
+#: includes/integrations/integration-dev-content-blocks.php:27
+msgid "Dev Content Blocks"
+msgstr "Dev-Inhaltsblöcke"
 
 #: includes/integrations/integration-dhwc-elementor.php:27
 msgid "DHWC Elementor Product Templates"
@@ -294,6 +319,14 @@ msgstr "Kadence Elementor Produktarchiv-Templates"
 msgid "Kadence Elementor Checkout Templates"
 msgstr "Kadence Elementor Kassen-Templates"
 
+#: includes/integrations/integration-lazy-blocks.php:27
+msgid "Lazy Block Templates"
+msgstr "Lazy Block-Templates"
+
+#: includes/integrations/integration-loomisoft-content-blocks.php:27
+msgid "Loomisoft Reusable Content Blocks"
+msgstr "Loomisoft wiederverwendbare Inhaltsblöcke"
+
 #: includes/integrations/integration-metabox-posttypes.php:28
 msgid "Meta Box Post Type Registrations"
 msgstr "Meta Box Beitragstyp-Registrierungen"
@@ -303,8 +336,8 @@ msgid "Meta Box Taxonomy Registrations"
 msgstr "Meta Box Taxonomie-Registrierungen"
 
 #: includes/integrations/integration-oceanwp.php:27
-msgid "OceanWP"
-msgstr "OceanWP"
+msgid "OceanWP Library"
+msgstr "OceanWP Bibliothek"
 
 #: includes/integrations/integration-oxygen-builder.php:27
 msgid "Oxygen Builder Templates"
@@ -322,9 +355,26 @@ msgstr "PopBox Popup-Templates"
 msgid "Popup Maker Templates"
 msgstr "Popup Maker Templates"
 
+#: includes/integrations/integration-sqh-placeholder-block.php:27
+msgid "Placeholder Blocks by Square Happiness"
+msgstr "Platzhalter-Blocks von Square Happiness"
+
+#: includes/integrations/integration-stylepress-elementor.php:27
+msgid "StylePress Templates for Elementor"
+msgstr "StylePress-Templates für Elementor"
+
+#: includes/integrations/integration-stylepress-elementor.php:52
+#: includes/integrations/integration-stylepress-elementor.php:53
+msgid "Styles Overview"
+msgstr "Style—bersicht"
+
 #: includes/integrations/integration-templementor.php:27
 msgid "Templementor Templates"
 msgstr "Templementor Elementor-Templates"
+
+#: includes/integrations/integration-text-blocks.php:27
+msgid "Text Blocks"
+msgstr "Text-Blöcke"
 
 #: includes/integrations/integration-themify-builder.php:27
 msgid "Themify Builder Layouts"
@@ -341,6 +391,10 @@ msgstr "Themify Popup-Templates"
 #: includes/integrations/integration-thrive-lightboxes.php:27
 msgid "Thrive Lightbox Templates"
 msgstr "Thrive Lightbox-Templates"
+
+#: includes/integrations/integration-widget-content-blocks.php:27
+msgid "Widget Content Blocks"
+msgstr "Widget-Inhaltsblöcke"
 
 #: includes/integrations/integration-wpbakery.php:34
 msgid "WPBakery Page Builder Templates"
@@ -359,346 +413,460 @@ msgstr "WP Show Posts Auflistungen"
 msgid "Listing Categories"
 msgstr "Kategorien für Auflistungen"
 
-#: includes/register-taxonomy.php:33
+#. translators: %s - Label name for default content type, "Template"
+#: includes/register-taxonomy.php:34
 #, php-format
 msgctxt "Taxonomy General Name"
 msgid "%s Categories"
 msgstr "%s-Kategorien"
 
-#: includes/register-taxonomy.php:37
+#. translators: %s - Label name for default content type, "Template"
+#: includes/register-taxonomy.php:39
 #, php-format
 msgctxt "Taxonomy Singular Name"
 msgid "%s Category"
 msgstr "%s-Kategorien"
 
-#: includes/register-taxonomy.php:40
+#: includes/register-taxonomy.php:42
 msgid "Taxonomy"
 msgstr "Taxonomie"
 
-#: includes/register-taxonomy.php:42
+#. translators: %s - Label name for default content type, "Template"
+#: includes/register-taxonomy.php:45
 #, php-format
 msgid "All %s Categories"
 msgstr "Alle %s-Kategorien"
 
-#: includes/register-taxonomy.php:46
+#. translators: %s - Label name for default content type, "Template"
+#: includes/register-taxonomy.php:50
 #, php-format
 msgid "Parent %s Category"
 msgstr "Übergeordnete %s-Kategorie"
 
-#: includes/register-taxonomy.php:50
+#. translators: %s - Label name for default content type, "Template"
+#: includes/register-taxonomy.php:55
 #, php-format
 msgid "Parent %s Category:"
 msgstr "Übergeordnete %s-Kategorie:"
 
-#: includes/register-taxonomy.php:54
+#. translators: %s - Label name for default content type, "Template"
+#: includes/register-taxonomy.php:60
 #, php-format
 msgid "New %s Category Name"
 msgstr "Neuer Name der %s-Kategorie"
 
-#: includes/register-taxonomy.php:58
+#. translators: %s - Label name for default content type, "Template"
+#: includes/register-taxonomy.php:65
 #, php-format
 msgid "Add New %s Category"
 msgstr "Neue %s-Kategorie hinzufügen"
 
-#: includes/register-taxonomy.php:62
+#. translators: %s - Label name for default content type, "Template"
+#: includes/register-taxonomy.php:70
 #, php-format
 msgid "Edit %s Category"
 msgstr "%s-Kategorie bearbeiten"
 
-#: includes/register-taxonomy.php:66
+#: includes/register-taxonomy.php:74
 #, php-format
 msgid "Update %s Category"
 msgstr "%s-Kategorie aktualisieren"
 
-#: includes/register-taxonomy.php:70
+#. translators: %s - Label name for default content type, "Template"
+#: includes/register-taxonomy.php:79
 #, php-format
 msgid "View %s Category"
 msgstr "%s-Kategorie anzeigen"
 
-#: includes/register-taxonomy.php:74
+#. translators: %s - Label name for default content type, "Template"
+#: includes/register-taxonomy.php:84
 #, php-format
 msgid "Separate %s Categories with commas"
 msgstr "%s-Kategorien mit Kommas trennen"
 
-#: includes/register-taxonomy.php:77
+#: includes/register-taxonomy.php:87
 msgid "Add or remove categories"
 msgstr "Kategorien hinzufügen oder entfernen"
 
-#: includes/register-taxonomy.php:78
+#: includes/register-taxonomy.php:88
 msgid "Choose from the most used"
 msgstr "Aus meistbenutzten wählen"
 
-#: includes/register-taxonomy.php:79
+#: includes/register-taxonomy.php:89
 msgid "Popular Categories"
 msgstr "Beliebte Kategorien"
 
-#: includes/register-taxonomy.php:81
+#. translators: %s - Label name for default content type, "Template"
+#: includes/register-taxonomy.php:92
 #, php-format
 msgid "Search %s Categories"
 msgstr "%s-Kategorien durchsuchen"
 
-#: includes/register-taxonomy.php:85
+#. translators: %s - Label name for default content type, "Template"
+#: includes/register-taxonomy.php:97
 #, php-format
 msgid "No %s Categories found."
 msgstr "Es wurden keine %s-Kategorien gefunden."
 
-#: includes/register-taxonomy.php:89
+#. translators: %s - Label name for default content type, "Template"
+#: includes/register-taxonomy.php:102
 #, php-format
 msgid "No %s Categories"
 msgstr "Keine %s-Kategorien"
 
-#: includes/register-taxonomy.php:109
+#: includes/register-taxonomy.php:122
 msgid "Template Categories for templates of Page Builders or similar libraries"
 msgstr ""
 "Template-Kategorien für Templates von Page Buildern oder ähnlichen "
 "Bibliotheken"
 
-#: includes/register-taxonomy.php:142
+#: includes/register-taxonomy.php:156
 msgctxt "Taxonomy term title"
 msgid "General"
 msgstr "Allgemein"
 
-#: includes/register-taxonomy.php:143
+#: includes/register-taxonomy.php:157
 msgctxt "Taxonomy term slug - only lowercase, a-z, 0-9, hyphens!"
 msgid "general"
 msgstr "allgemein"
 
-#: includes/register-taxonomy.php:144
+#: includes/register-taxonomy.php:158
 msgctxt "Taxonomy term description"
 msgid "General templates"
 msgstr "Allgemeine Templates"
 
-#: includes/register-taxonomy.php:147
+#: includes/register-taxonomy.php:161
 msgctxt "Taxonomy term title"
 msgid "Frontpage"
 msgstr "Startseite"
 
-#: includes/register-taxonomy.php:148
+#: includes/register-taxonomy.php:162
 msgctxt "Taxonomy term slug - only lowercase, a-z, 0-9, hyphens!"
 msgid "frontpage"
 msgstr "startseite"
 
-#: includes/register-taxonomy.php:149
+#: includes/register-taxonomy.php:163
 msgctxt "Taxonomy term description"
 msgid "Templates for the Frontpage/ Homepage"
 msgstr "Templates für die Startseite"
 
-#: includes/register-taxonomy.php:152
+#: includes/register-taxonomy.php:166
 msgctxt "Taxonomy term title"
 msgid "Pages"
 msgstr "Seiten"
 
-#: includes/register-taxonomy.php:153
+#: includes/register-taxonomy.php:167
 msgctxt "Taxonomy term slug - only lowercase, a-z, 0-9, hyphens!"
 msgid "pages"
 msgstr "seiten"
 
-#: includes/register-taxonomy.php:154
+#: includes/register-taxonomy.php:168
 msgctxt "Taxonomy term description"
 msgid "Templates for Pages"
 msgstr "Templates für Seiten"
 
-#: includes/register-taxonomy.php:157
+#: includes/register-taxonomy.php:171
 msgctxt "Taxonomy term title"
 msgid "Landing Pages"
 msgstr "Landingseiten"
 
-#: includes/register-taxonomy.php:158
+#: includes/register-taxonomy.php:172
 msgctxt "Taxonomy term slug - only lowercase, a-z, 0-9, hyphens!"
 msgid "landing-pages"
 msgstr "landingseiten"
 
-#: includes/register-taxonomy.php:159
+#: includes/register-taxonomy.php:173
 msgctxt "Taxonomy term description"
 msgid "Templates for Landing Pages"
 msgstr "Templates für Landingseiten"
 
-#: includes/register-taxonomy.php:162
+#: includes/register-taxonomy.php:176
 msgctxt "Taxonomy term title"
 msgid "Sections"
 msgstr "Inhaltsblöcke"
 
-#: includes/register-taxonomy.php:163
+#: includes/register-taxonomy.php:177
 msgctxt "Taxonomy term slug - only lowercase, a-z, 0-9, hyphens!"
 msgid "sections"
 msgstr "inhaltsbloecke"
 
-#: includes/register-taxonomy.php:164
+#: includes/register-taxonomy.php:178
 msgctxt "Taxonomy term description"
 msgid "Templates for Sections/ Content Blocks"
 msgstr "Templates für Inhaltsblöcke"
 
-#: includes/register-taxonomy.php:167
+#: includes/register-taxonomy.php:181
 msgctxt "Taxonomy term title"
 msgid "Hooks"
 msgstr "Hooks"
 
-#: includes/register-taxonomy.php:168
+#: includes/register-taxonomy.php:182
 msgctxt "Taxonomy term slug - only lowercase, a-z, 0-9, hyphens!"
 msgid "hooks"
 msgstr "hooks"
 
-#: includes/register-taxonomy.php:169
+#: includes/register-taxonomy.php:183
 msgctxt "Taxonomy term description"
 msgid "Templates for Action Hooks"
 msgstr "Templates für Action-Hooks"
 
-#: includes/register-taxonomy.php:172
+#: includes/register-taxonomy.php:186
 msgctxt "Taxonomy term title"
 msgid "Testing"
 msgstr "Testing"
 
-#: includes/register-taxonomy.php:173
+#: includes/register-taxonomy.php:187
 msgctxt "Taxonomy term slug - only lowercase, a-z, 0-9, hyphens!"
 msgid "testing"
 msgstr "testing"
 
-#: includes/register-taxonomy.php:174
+#: includes/register-taxonomy.php:188
 msgctxt "Taxonomy term description"
 msgid "Templates just for testing purposes"
 msgstr "Templates für Testzwecke"
 
-#: includes/register-taxonomy.php:183
+#: includes/register-taxonomy.php:197
 msgctxt "Taxonomy term title"
 msgid "Products"
 msgstr "Produkte"
 
-#: includes/register-taxonomy.php:184
+#: includes/register-taxonomy.php:198
 msgctxt "Taxonomy term slug - only lowercase, a-z, 0-9, hyphens!"
 msgid "products"
 msgstr "produkte"
 
-#: includes/register-taxonomy.php:185
+#: includes/register-taxonomy.php:199
 msgctxt "Taxonomy term description"
 msgid "Templates for WooCommerce products"
 msgstr "Templates für WooCommerce-Produkte"
 
-#: includes/register-taxonomy.php:194
+#: includes/register-taxonomy.php:208
 msgctxt "Taxonomy term title"
 msgid "Popups"
 msgstr "Popups"
 
-#: includes/register-taxonomy.php:195
+#: includes/register-taxonomy.php:209
 msgctxt "Taxonomy term slug - only lowercase, a-z, 0-9, hyphens!"
 msgid "popups"
 msgstr "popups"
 
-#: includes/register-taxonomy.php:196
+#: includes/register-taxonomy.php:210
 msgctxt "Taxonomy term description"
 msgid "Templates for Popups/ Modal Windows"
 msgstr "Templates für Popups"
+
+#: includes/register-taxonomy.php:219
+msgctxt "Taxonomy term title"
+msgid "Blocks"
+msgstr "Blöcke"
+
+#: includes/register-taxonomy.php:220
+msgctxt "Taxonomy term slug - only lowercase, a-z, 0-9, hyphens!"
+msgid "blocks"
+msgstr "bloecke"
+
+#: includes/register-taxonomy.php:221
+msgctxt "Taxonomy term description"
+msgid "Templates for Blocks"
+msgstr "Templates für Blöcke"
+
+#: includes/register-taxonomy.php:230
+msgctxt "Taxonomy term title"
+msgid "Fields"
+msgstr "Felder"
+
+#: includes/register-taxonomy.php:231
+msgctxt "Taxonomy term slug - only lowercase, a-z, 0-9, hyphens!"
+msgid "fields"
+msgstr "felder"
+
+#: includes/register-taxonomy.php:232
+msgctxt "Taxonomy term description"
+msgid "Templates for Fields"
+msgstr "Templates für Felder"
+
+#: includes/register-taxonomy.php:241
+msgctxt "Taxonomy term title"
+msgid "Boxes"
+msgstr "Boxen"
+
+#: includes/register-taxonomy.php:242
+msgctxt "Taxonomy term slug - only lowercase, a-z, 0-9, hyphens!"
+msgid "boxes"
+msgstr "boxen"
+
+#: includes/register-taxonomy.php:243
+msgctxt "Taxonomy term description"
+msgid "Templates for Boxes"
+msgstr "Templates für Boxen"
+
+#: includes/register-taxonomy.php:252
+msgctxt "Taxonomy term title"
+msgid "Bars"
+msgstr "Leisten"
+
+#: includes/register-taxonomy.php:253
+msgctxt "Taxonomy term slug - only lowercase, a-z, 0-9, hyphens!"
+msgid "bars"
+msgstr "leisten"
+
+#: includes/register-taxonomy.php:254
+msgctxt "Taxonomy term description"
+msgid "Templates for Bars"
+msgstr "Templates für Leisten"
 
 #: includes/run-integrations.php:99
 msgctxt "Tweaked label for \"Edit\" bulk action"
 msgid "Edit, add Category etc."
 msgstr "Bearbeiten, Kategorie(n) hinzufügen, etc."
 
-#: includes/run-integrations.php:142
+#. translators: %s - Category label based on content type, for example: All Template Categories, All Block Categories etc.
+#: includes/run-integrations.php:143
 #, php-format
 msgid "All %s"
 msgstr "Alle %s"
 
-#: includes/string-switcher.php:30 includes/string-switcher.php:85
+#: includes/string-switcher.php:30 includes/string-switcher.php:102
 msgid "Template"
 msgstr "Template"
 
-#: includes/string-switcher.php:53
+#: includes/string-switcher.php:54
 msgid "Library"
 msgstr "Bibliothek"
 
-#: includes/string-switcher.php:57
+#: includes/string-switcher.php:58
 msgid "Layout"
 msgstr "Layout"
 
-#: includes/string-switcher.php:61
+#: includes/string-switcher.php:62
 msgid "Element"
 msgstr "Element"
 
-#: includes/string-switcher.php:65
+#: includes/string-switcher.php:66
 msgid "Block"
 msgstr "Block"
 
-#: includes/string-switcher.php:69
+#: includes/string-switcher.php:70
 msgid "Popup"
 msgstr "Popup"
 
-#: includes/string-switcher.php:73
+#: includes/string-switcher.php:74
 msgid "Lightbox"
 msgstr "Lightbox"
 
-#: includes/string-switcher.php:77
+#: includes/string-switcher.php:78
 msgid "Listing"
 msgstr "Liste"
 
-#: includes/string-switcher.php:107
+#: includes/string-switcher.php:86
+msgid "Field"
+msgstr "Feld"
+
+#: includes/string-switcher.php:90
+msgid "Box"
+msgstr "Box"
+
+#: includes/string-switcher.php:94
+msgid "Bar"
+msgstr "Leiste"
+
+#: includes/string-switcher.php:98
+msgid "Hook"
+msgstr "Hook"
+
+#: includes/string-switcher.php:124
 msgid "Categories"
 msgstr "Kategorien"
 
 #. translators: %s - label "Categories" (for example: Template Categories)
-#: includes/string-switcher.php:133 includes/string-switcher.php:213
+#: includes/string-switcher.php:151 includes/string-switcher.php:263
 #, php-format
 msgid "Template %s"
 msgstr "Template-%s"
 
 #. translators: %s - label "Categories" (for example: Library Categories)
-#: includes/string-switcher.php:141
+#: includes/string-switcher.php:159
 #, php-format
 msgid "Library %s"
 msgstr "Bibliothek-%s"
 
 #. translators: %s - label "Categories" (for example: Layout Categories)
-#: includes/string-switcher.php:149
+#: includes/string-switcher.php:167
 #, php-format
 msgid "Layout %s"
 msgstr "Layout-%s"
 
 #. translators: %s - label "Categories" (for example: Element Categories)
-#: includes/string-switcher.php:157
+#: includes/string-switcher.php:175
 #, php-format
 msgid "Element %s"
 msgstr "Element-%s"
 
 #. translators: %s - label "Categories" (for example: Block Categories)
-#: includes/string-switcher.php:165
+#: includes/string-switcher.php:183
 #, php-format
 msgid "Block %s"
 msgstr "Block-%s"
 
 #. translators: %s - label "Categories" (for example: Popup Categories)
-#: includes/string-switcher.php:173
+#: includes/string-switcher.php:191
 #, php-format
 msgid "Popup %s"
 msgstr "Popup-%s"
 
 #. translators: %s - label "Categories" (for example: Lightbox Categories)
-#: includes/string-switcher.php:181
+#: includes/string-switcher.php:199
 #, php-format
 msgid "Lightbox %s"
 msgstr "Lightbox-%s"
 
 #. translators: %s - label "Categories" (for example: Listing Categories)
-#: includes/string-switcher.php:189
+#: includes/string-switcher.php:207
 #, php-format
 msgid "Listing %s"
 msgstr "Listen-%s"
 
 #. translators: %s - label "Categories" (for example: ELHF Categories - "EL HF" stands for Elementor Header Footer Builder plugin)
-#: includes/string-switcher.php:197
+#: includes/string-switcher.php:215
 #, php-format
 msgid "EL HF %s"
 msgstr "EL HF %s"
 
 #. translators: %s - label "Categories" (for example: Post Type Categories)
-#: includes/string-switcher.php:205
+#: includes/string-switcher.php:223
 #, php-format
 msgid "Post Type %s"
 msgstr "Beitragstyp-%s"
 
-#: includes/string-switcher.php:244
+#. translators: %s - label "Categories" (for example: Field Categories)
+#: includes/string-switcher.php:231
+#, php-format
+msgid "Field %s"
+msgstr "Feld-%s"
+
+#. translators: %s - label "Categories" (for example: Box Categories)
+#: includes/string-switcher.php:239
+#, php-format
+msgid "Box %s"
+msgstr "Boxen-%s"
+
+#. translators: %s - label "Categories" (for example: Bar Categories)
+#: includes/string-switcher.php:247
+#, php-format
+msgid "Bar %s"
+msgstr "Leisten-%s"
+
+#. translators: %s - label "Categories" (for example: Hook Categories)
+#: includes/string-switcher.php:255
+#, php-format
+msgid "Hook %s"
+msgstr "Hook-%s"
+
+#: includes/string-switcher.php:294
 msgid "for WooCommerce"
 msgstr "für WooCommerce Shops"
 
-#: includes/string-switcher.php:267
+#: includes/string-switcher.php:317
 msgid "for Post Types, Taxonomies, Fields"
 msgstr "für Inhaltstypen, Taxonomien, Felder"
 

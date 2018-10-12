@@ -6,11 +6,36 @@
 * [Translate the plugin](https://translate.wordpress.org/projects/wp-plugins/builder-template-categories)
 * [**Donate** for the further development & support of the plugin](https://www.paypal.me/deckerweb)
 * [Plugin's documentation & FAQ](https://wordpress.org/plugins/builder-template-categories/#faq)
+* [Facebook Community User Group](https://www.facebook.com/groups/deckerweb.wordpress.plugins/)
 
 
 ## Changelog of the Plugin
 
+### 1.2.0 - 2018-10-12
+
+* *The Gutenberg Block Editor Support Release ;-)*
+* New: Integration with "Gutenberg plugin" / (upcoming) WordPress Version 5.0+: Block categories for new default `wp_block` post type, plus admin enhancements - this lets you manage the "reusable blocks" feature better
+* New: Integration with plugin Lazy Blocks (free, by nK) -- *for WordPress Block Editor, also known as "Gutenberg"*
+* New: Integration with plugin Advanced Custom Blocks (free, by Rheinard Korf, Luke Carbis, Rob Stinson) -- *for WordPress Block Editor, also known as "Gutenberg"*
+* New: Integration with plugin Blocks Layouts (free, by Jordy Meow) -- *for WordPress Block Editor, also known as "Gutenberg"*
+* New: Integration with plugin Square Happiness: Placeholder Block (free, by Square Happiness) -- *for WordPress Block Editor, also known as "Gutenberg"*
+* New: Integration with plugin StylePress for Elementor (free, by David Baker (dtbaker))
+* New: Integration with plugin Content Blocks (Custom Post Widget) (free, by Johan van der Wijk)
+* New: Integration with plugin Reusable Content & Text Blocks (free, by Loomisoft)
+* New: Integration with plugin Dev Content Blocks (free, by Allon Sacks)
+* New: Integration with plugin Text Blocks (free, by Hal Gatewood)
+* New: Integration with plugin Widget Content Blocks (free, by Danny van Kooten)
+* New: Added new template content types "Field/ Fields", "Box/ Boxes", "Bar/ Bars" and "Hook/ Hooks"
+* New: If Fields, Box, Bar or Hook template related integrations are active before plugin installation/activation add predefined terms for "Fields", "Boxes", "Bars" and "Hooks" appropriately
+* New: If Popup/Modal template related integrations are active before plugin installation/activation add predefined "Popups" term
+* Tweak: Code, plus code documentation improvements and tweaks
+* Tweak: Improved special "translators" comments in code
+* Tweak: Updated `.pot` file plus all German translations (formal, informal) and language packs
+* Tweak: Enhanced and improved Readme.txt file here
+
+
 ### 1.1.0 - 2018-09-30
+
 * New: Category labels now fit to the content type (post type) of the integration - popup integrations are now labelled as "Popup Categories", and the same for other types like Blocks, Layouts, Elements etc.
 * New: Integration with Page Builder plugin Themify Builder (Premium, by Themify) - note: this applies only to the premium version of this plugin
 * New: Integration with plugin JetPopup (free, by Zemez Jet/ CrocoBlock)
@@ -34,6 +59,7 @@
 
 
 ### 1.0.1 - 2018-08-30
+
 * New: Integration with Brizy Templates for Brizy Page Builder - template feature was released in their free version v1.0.25
 * New: Added plugin update message also to Plugins page (overview table)
 * New: French translations by the community

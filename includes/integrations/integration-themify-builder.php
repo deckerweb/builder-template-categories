@@ -51,6 +51,8 @@ add_action( 'admin_menu', 'ddw_btc_remove_submenu_for_themify_layout_parts', 999
  *   confusing for users.
  *
  * @since 1.1.0
+ *
+ * @uses  remove_submenu_page()
  */
 function ddw_btc_remove_submenu_for_themify_layout_parts() {
 

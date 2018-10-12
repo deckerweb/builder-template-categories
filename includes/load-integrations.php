@@ -13,6 +13,12 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 
 /**
+ * 1) Page Builder integrations:
+ * @since 1.0.0
+ * -----------------------------------------------------------------------------
+ */
+
+/**
  * Plugin: Elementor (free)
  * @since 1.0.0
  */
@@ -20,6 +26,67 @@ if ( ddw_btc_is_elementor_active() ) {
 	require_once( BTC_PLUGIN_DIR . 'includes/integrations/integration-elementor.php' );
 }
 
+
+/**
+ * Plugin: Brizy
+ * @since 1.0.1
+ */
+if ( ddw_btc_is_brizy_active() ) {
+	require_once( BTC_PLUGIN_DIR . 'includes/integrations/integration-brizy.php' );
+}
+
+
+/**
+ * Plugin: Templatera (for 'WPBakery Page Builder', formerly known as 'Visual Composer')
+ * @since 1.0.0
+ * @since 1.1.0 File name & conditional change.
+ */
+if ( ddw_btc_is_wpbakery_active()	/* ddw_btc_is_wpbakery_templatera_active() */ ) {
+	require_once( BTC_PLUGIN_DIR . 'includes/integrations/integration-wpbakery.php' );
+}
+
+
+/**
+ * Plugin: Oxygen Builder (works with v1.x and v2.0+)
+ * @since 1.0.0
+ */
+if ( ddw_btc_is_oxygen_builder_active() ) {
+	require_once( BTC_PLUGIN_DIR . 'includes/integrations/integration-oxygen-builder.php' );
+}
+
+
+/**
+ * Plugin: Themify Builder
+ * @since 1.1.0
+ */
+if ( ddw_btc_is_themify_builder_active() ) {
+	require_once( BTC_PLUGIN_DIR . 'includes/integrations/integration-themify-builder.php' );
+}
+
+
+/**
+ * Plugin: BoldGrid Post and Page Builder
+ * @since 1.0.0
+ */
+if ( ddw_btc_is_boldgrid_active() ) {
+	require_once( BTC_PLUGIN_DIR . 'includes/integrations/integration-boldgrid.php' );
+}
+
+
+/**
+ * Plugin: Global Blocks for Cornerstone
+ * @since 1.0.0
+ */
+if ( ddw_btc_is_cornerstone_global_blocks_active() ) {
+	require_once( BTC_PLUGIN_DIR . 'includes/integrations/integration-cornerstone-global-blocks.php' );
+}
+
+
+/**
+ * 2) Theme integrations:
+ * @since 1.0.0
+ * -----------------------------------------------------------------------------
+ */
 
 /**
  * Theme: GeneratePress Elements - via "GP Premium" Add-On Plugin (Premium)
@@ -49,13 +116,20 @@ if ( ddw_btc_is_astra_layouts_active() ) {
 
 
 /**
- * Plugin: Brizy
- * @since 1.0.1
+ * Plugin: Blox - for Genesis Child Themes
+ * @since 1.0.0
  */
-if ( ddw_btc_is_brizy_active() ) {
-	require_once( BTC_PLUGIN_DIR . 'includes/integrations/integration-brizy.php' );
+if ( ddw_btc_is_blox_active() ) {
+	require_once( BTC_PLUGIN_DIR . 'includes/integrations/integration-genesis-blox.php' );
 }
 
+
+
+/**
+ * 3) Plugin integrations - for Elementor Page Builder:
+ * @since 1.0.0
+ * -----------------------------------------------------------------------------
+ */
 
 /**
  * Plugin: AnyWhere Elementor (free)
@@ -94,33 +168,6 @@ if ( ddw_btc_is_jetengine_active() ) {
 
 
 /**
- * Plugin: Blox - for Genesis Child Themes
- * @since 1.0.0
- */
-if ( ddw_btc_is_blox_active() ) {
-	require_once( BTC_PLUGIN_DIR . 'includes/integrations/integration-genesis-blox.php' );
-}
-
-
-/**
- * Plugin: Oxygen Builder (works with v1.x and v2.0+)
- * @since 1.0.0
- */
-if ( ddw_btc_is_oxygen_builder_active() ) {
-	require_once( BTC_PLUGIN_DIR . 'includes/integrations/integration-oxygen-builder.php' );
-}
-
-
-/**
- * Plugin: Popup Maker
- * @since 1.0.0
- */
-if ( ddw_btc_is_popup_maker_active() ) {
-	require_once( BTC_PLUGIN_DIR . 'includes/integrations/integration-popup-maker.php' );
-}
-
-
-/**
  * Plugin: Header Footer for Elementor
  * @since 1.0.0
  */
@@ -135,42 +182,6 @@ if ( ddw_btc_is_hfelementor_active() ) {
  */
 if ( ddw_btc_is_popboxes_active() ) {
 	require_once( BTC_PLUGIN_DIR . 'includes/integrations/integration-popboxes.php' );
-}
-
-
-/**
- * Plugin: Thrive Lightboxes (as part of Thrive Architect)
- * @since 1.0.0
- */
-if ( ddw_btc_is_thrive_lightboxes_active() ) {
-	require_once( BTC_PLUGIN_DIR . 'includes/integrations/integration-thrive-lightboxes.php' );
-}
-
-
-/**
- * Plugin: BoldGrid Post and Page Builder
- * @since 1.0.0
- */
-if ( ddw_btc_is_boldgrid_active() ) {
-	require_once( BTC_PLUGIN_DIR . 'includes/integrations/integration-boldgrid.php' );
-}
-
-
-/**
- * Plugin: WP Show Posts
- * @since 1.0.0
- */
-if ( ddw_btc_is_wpshowposts_active() ) {
-	require_once( BTC_PLUGIN_DIR . 'includes/integrations/integration-wpshowposts.php' );
-}
-
-
-/**
- * Plugin: Pods
- * @since 1.0.0
- */
-if ( ddw_btc_is_pods_templates_active() ) {
-	require_once( BTC_PLUGIN_DIR . 'includes/integrations/integration-pods.php' );
 }
 
 
@@ -193,15 +204,6 @@ if ( ddw_btc_is_jetpopup_active() ) {
 
 
 /**
- * Plugin: Cherry PopUps
- * @since 1.1.0
- */
-if ( ddw_btc_is_cherry_popups_active() ) {
-	require_once( BTC_PLUGIN_DIR . 'includes/integrations/integration-cherry-popups.php' );
-}
-
-
-/**
  * Plugin: Templementor
  * @since 1.1.0
  */
@@ -220,11 +222,64 @@ if ( ddw_btc_is_kadence_woocommerce_elementor_active() ) {
 
 
 /**
- * Plugin: Themify Builder
+ * Plugin: StylePress for Elementor
+ * @since 1.2.0
+ */
+if ( ddw_btc_is_stylepress_elementor_active() ) {
+	require_once( BTC_PLUGIN_DIR . 'includes/integrations/integration-stylepress-elementor.php' );
+}
+
+
+
+
+/**
+ * 4) Plugin integrations - everything else:
+ * @since 1.0.0
+ * -----------------------------------------------------------------------------
+ */
+
+/**
+ * Plugin: Popup Maker
+ * @since 1.0.0
+ */
+if ( ddw_btc_is_popup_maker_active() ) {
+	require_once( BTC_PLUGIN_DIR . 'includes/integrations/integration-popup-maker.php' );
+}
+
+
+/**
+ * Plugin: Thrive Lightboxes (as part of Thrive Architect)
+ * @since 1.0.0
+ */
+if ( ddw_btc_is_thrive_lightboxes_active() ) {
+	require_once( BTC_PLUGIN_DIR . 'includes/integrations/integration-thrive-lightboxes.php' );
+}
+
+
+/**
+ * Plugin: WP Show Posts
+ * @since 1.0.0
+ */
+if ( ddw_btc_is_wpshowposts_active() ) {
+	require_once( BTC_PLUGIN_DIR . 'includes/integrations/integration-wpshowposts.php' );
+}
+
+
+/**
+ * Plugin: Pods
+ * @since 1.0.0
+ */
+if ( ddw_btc_is_pods_templates_active() ) {
+	require_once( BTC_PLUGIN_DIR . 'includes/integrations/integration-pods.php' );
+}
+
+
+/**
+ * Plugin: Cherry PopUps
  * @since 1.1.0
  */
-if ( ddw_btc_is_themify_builder_active() ) {
-	require_once( BTC_PLUGIN_DIR . 'includes/integrations/integration-themify-builder.php' );
+if ( ddw_btc_is_cherry_popups_active() ) {
+	require_once( BTC_PLUGIN_DIR . 'includes/integrations/integration-cherry-popups.php' );
 }
 
 
@@ -238,16 +293,6 @@ if ( ddw_btc_is_themify_popup_active() ) {
 
 
 /**
- * Plugin: Templatera (for 'WPBakery Page Builder', formerly known as 'Visual Composer')
- * @since 1.0.0
- * @since 1.1.0 File name & conditional change.
- */
-if ( ddw_btc_is_wpbakery_active()	/* ddw_btc_is_wpbakery_templatera_active() */ ) {
-	require_once( BTC_PLUGIN_DIR . 'includes/integrations/integration-wpbakery.php' );
-}
-
-
-/**
  * Plugin: Meta Box Post Type and Meta Box Taxonomy Add-Ons
  * @since 1.1.0
  */
@@ -257,9 +302,97 @@ if ( ddw_btc_is_metabox_posttype_active() || ddw_btc_is_metabox_taxonomy_active(
 
 
 /**
- * Plugin: Global Blocks for Cornerstone
- * @since 1.0.0
+ * Plugin: Reusable Content & Text Blocks by Loomisoft
+ * @since 1.2.0
  */
-if ( ddw_btc_is_cornerstone_global_blocks_active() ) {
-	require_once( BTC_PLUGIN_DIR . 'includes/integrations/integration-cornerstone-global-blocks.php' );
+if ( ddw_btc_is_loomisoft_content_blocks_active() ) {
+	require_once( BTC_PLUGIN_DIR . 'includes/integrations/integration-loomisoft-content-blocks.php' );
+}
+
+
+/**
+ * Plugin: Content Blocks (Custom Post Widget)
+ * @since 1.2.0
+ */
+if ( ddw_btc_is_content_blocks_active() ) {
+	require_once( BTC_PLUGIN_DIR . 'includes/integrations/integration-content-blocks.php' );
+}
+
+
+/**
+ * Plugin: Text Blocks
+ * @since 1.2.0
+ */
+if ( ddw_btc_is_text_blocks_active() ) {
+	require_once( BTC_PLUGIN_DIR . 'includes/integrations/integration-text-blocks.php' );
+}
+
+
+/**
+ * Plugin: Widget Content Blocks
+ * @since 1.2.0
+ */
+if ( ddw_btc_is_widget_content_blocks_active() ) {
+	require_once( BTC_PLUGIN_DIR . 'includes/integrations/integration-widget-content-blocks.php' );
+}
+
+
+/**
+ * Plugin: Dev Content Blocks
+ * @since 1.2.0
+ */
+if ( ddw_btc_is_dev_content_blocks_active() ) {
+	require_once( BTC_PLUGIN_DIR . 'includes/integrations/integration-dev-content-blocks.php' );
+}
+
+
+
+/**
+ * 5) Block Editor (Gutenberg) integrations - WP Core, plugins etc.:
+ * @since 1.2.0
+ * -----------------------------------------------------------------------------
+ */
+
+/**
+ * Plugin: Gutenberg / WP Core 5.0+
+ * @since 1.2.0
+ */
+if ( ddw_btc_is_block_editor_active() ) {
+	require_once( BTC_PLUGIN_DIR . 'includes/integrations/integration-block-editor.php' );
+}
+
+
+/**
+ * Plugin: Lazy Blocks
+ * @since 1.2.0
+ */
+if ( ddw_btc_is_lazy_blocks_active() ) {
+	require_once( BTC_PLUGIN_DIR . 'includes/integrations/integration-lazy-blocks.php' );
+}
+
+
+/**
+ * Plugin: Advanced Custom Blocks
+ * @since 1.2.0
+ */
+if ( ddw_btc_is_advanced_custom_blocks_active() ) {
+	require_once( BTC_PLUGIN_DIR . 'includes/integrations/integration-advanced-custom-blocks.php' );
+}
+
+
+/**
+ * Plugin: Blocks Layouts
+ * @since 1.2.0
+ */
+if ( ddw_btc_is_block_layouts_active() ) {
+	require_once( BTC_PLUGIN_DIR . 'includes/integrations/integration-block-layouts.php' );
+}
+
+
+/**
+ * Plugin: Square Happiness Placeholder Block
+ * @since 1.2.0
+ */
+if ( ddw_btc_is_sqh_placeholder_block_active() ) {
+	require_once( BTC_PLUGIN_DIR . 'includes/integrations/integration-sqh-placeholder-block.php' );
 }

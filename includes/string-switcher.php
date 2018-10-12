@@ -40,6 +40,7 @@ function ddw_btc_string_default_content_type() {
  *         'btc/filter/string/default_content_type' filter.
  *
  * @since  1.1.0
+ * @since  1.2.0 Added "Field" and "Box" content types.
  *
  * @param  string $content_type Type of content string stands for.
  * @return string String output based on content type.
@@ -81,6 +82,22 @@ function ddw_btc_string_content_type( $content_type ) {
 			$string = esc_attr__( 'Post Type', 'builder-template-categories' );
 			break;
 
+		case 'field':
+			$string = esc_attr__( 'Field', 'builder-template-categories' );
+			break;
+
+		case 'box':
+			$string = esc_attr__( 'Box', 'builder-template-categories' );
+			break;
+
+		case 'bar':
+			$string = esc_attr__( 'Bar', 'builder-template-categories' );
+			break;
+
+		case 'hook':
+			$string = esc_attr__( 'Hook', 'builder-template-categories' );
+			break;
+
 		default:
 			$string = esc_attr__( 'Template', 'builder-template-categories' );
 
@@ -116,6 +133,7 @@ function ddw_btc_string_categories() {
  *
  * @since  1.0.0
  * @since  1.1.0 Added "Post Type" content type.
+ * @since  1.2.0 Added "Field" and "Box" content types.
  *
  * @uses   ddw_btc_string_categories()
  *
@@ -203,6 +221,38 @@ function ddw_btc_string_template( $string_type ) {
 			$string = sprintf(
 				/* translators: %s - label "Categories" (for example: Post Type Categories) */
 				esc_attr__( 'Post Type %s', 'builder-template-categories' ),
+				ddw_btc_string_categories()
+			);
+			break;
+
+		case 'field':
+			$string = sprintf(
+				/* translators: %s - label "Categories" (for example: Field Categories) */
+				esc_attr__( 'Field %s', 'builder-template-categories' ),
+				ddw_btc_string_categories()
+			);
+			break;
+
+		case 'box':
+			$string = sprintf(
+				/* translators: %s - label "Categories" (for example: Box Categories) */
+				esc_attr__( 'Box %s', 'builder-template-categories' ),
+				ddw_btc_string_categories()
+			);
+			break;
+
+		case 'bar':
+			$string = sprintf(
+				/* translators: %s - label "Categories" (for example: Bar Categories) */
+				esc_attr__( 'Bar %s', 'builder-template-categories' ),
+				ddw_btc_string_categories()
+			);
+			break;
+
+		case 'hook':
+			$string = sprintf(
+				/* translators: %s - label "Categories" (for example: Hook Categories) */
+				esc_attr__( 'Hook %s', 'builder-template-categories' ),
 				ddw_btc_string_categories()
 			);
 			break;

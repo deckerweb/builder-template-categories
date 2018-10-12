@@ -30,35 +30,43 @@ function ddw_btc_register_templates_taxonomy() {
 		'btc/filter/taxonomy/labels',
 		array(
 			'name'                       => sprintf(
+				/* translators: %s - Label name for default content type, "Template" */
 				_x( '%s Categories', 'Taxonomy General Name', 'builder-template-categories' ),
 				ddw_btc_string_default_content_type()
 			),
 			'singular_name'              => sprintf(
+				/* translators: %s - Label name for default content type, "Template" */
 				_x( '%s Category', 'Taxonomy Singular Name', 'builder-template-categories' ),
 				ddw_btc_string_default_content_type()
 			),
 			'menu_name'                  => __( 'Taxonomy', 'builder-template-categories' ),
 			'all_items'                  => sprintf(
+				/* translators: %s - Label name for default content type, "Template" */
 				__( 'All %s Categories', 'builder-template-categories' ),
 				ddw_btc_string_default_content_type()
 			),
 			'parent_item'                => sprintf(
+				/* translators: %s - Label name for default content type, "Template" */
 				__( 'Parent %s Category', 'builder-template-categories' ),
 				ddw_btc_string_default_content_type()
 			),
 			'parent_item_colon'          => sprintf(
+				/* translators: %s - Label name for default content type, "Template" */
 				__( 'Parent %s Category:', 'builder-template-categories' ),
 				ddw_btc_string_default_content_type()
 			),
 			'new_item_name'              => sprintf(
+				/* translators: %s - Label name for default content type, "Template" */
 				__( 'New %s Category Name', 'builder-template-categories' ),
 				ddw_btc_string_default_content_type()
 			),
 			'add_new_item'               => sprintf(
+				/* translators: %s - Label name for default content type, "Template" */
 				__( 'Add New %s Category', 'builder-template-categories' ),
 				ddw_btc_string_default_content_type()
 			),
 			'edit_item'                  => sprintf(
+				/* translators: %s - Label name for default content type, "Template" */
 				__( 'Edit %s Category', 'builder-template-categories' ),
 				ddw_btc_string_default_content_type()
 			),
@@ -67,10 +75,12 @@ function ddw_btc_register_templates_taxonomy() {
 				ddw_btc_string_default_content_type()
 			),
 			'view_item'                  => sprintf(
+				/* translators: %s - Label name for default content type, "Template" */
 				__( 'View %s Category', 'builder-template-categories' ),
 				ddw_btc_string_default_content_type()
 			),
 			'separate_items_with_commas' => sprintf(
+				/* translators: %s - Label name for default content type, "Template" */
 				__( 'Separate %s Categories with commas', 'builder-template-categories' ),
 				ddw_btc_string_default_content_type()
 			),
@@ -78,14 +88,17 @@ function ddw_btc_register_templates_taxonomy() {
 			'choose_from_most_used'      => __( 'Choose from the most used', 'builder-template-categories' ),
 			'popular_items'              => __( 'Popular Categories', 'builder-template-categories' ),
 			'search_items'               => sprintf(
+				/* translators: %s - Label name for default content type, "Template" */
 				__( 'Search %s Categories', 'builder-template-categories' ),
 				ddw_btc_string_default_content_type()
 			),
 			'not_found'                  => sprintf(
+				/* translators: %s - Label name for default content type, "Template" */
 				__( 'No %s Categories found.', 'builder-template-categories' ),
 				ddw_btc_string_default_content_type()
 			),
 			'no_terms'                   => sprintf(
+				/* translators: %s - Label name for default content type, "Template" */
 				__( 'No %s Categories', 'builder-template-categories' ),
 				ddw_btc_string_default_content_type()
 			),
@@ -105,7 +118,7 @@ function ddw_btc_register_templates_taxonomy() {
 			'show_admin_column' => TRUE,
 			'show_in_nav_menus' => FALSE,
 			'show_tagcloud'     => FALSE,
-			'show_in_rest'      => FALSE,
+			'show_in_rest'      => TRUE,	//FALSE,
 			'description'       => __( 'Template Categories for templates of Page Builders or similar libraries', 'builder-template-categories' )
 		)
 	);
@@ -127,6 +140,7 @@ function ddw_btc_register_templates_taxonomy() {
  *
  * @since 1.0.0
  * @since 1.1.0 Added optional terms for products, as well as popups.
+ * @since 1.2.0 Added optional terms for blocks, fields and boxes.
  *
  * @uses  wp_insert_term()
  */
@@ -194,6 +208,50 @@ function ddw_btc_add_predefined_terms() {
 			'name'        => esc_attr_x( 'Popups', 'Taxonomy term title', 'builder-template-categories' ),
 			'slug'        => sanitize_key( _x( 'popups', 'Taxonomy term slug - only lowercase, a-z, 0-9, hyphens!', 'builder-template-categories' ) ),
 			'description' => _x( 'Templates for Popups/ Modal Windows', 'Taxonomy term description', 'builder-template-categories' ),
+		);
+
+	}  // end if
+
+	/** Optional: Block type templates */
+	if ( has_filter( 'btc/filter/is_type/block' ) ) {
+
+		$terms[ 'terms_block' ] = array(
+			'name'        => esc_attr_x( 'Blocks', 'Taxonomy term title', 'builder-template-categories' ),
+			'slug'        => sanitize_key( _x( 'blocks', 'Taxonomy term slug - only lowercase, a-z, 0-9, hyphens!', 'builder-template-categories' ) ),
+			'description' => _x( 'Templates for Blocks', 'Taxonomy term description', 'builder-template-categories' ),
+		);
+
+	}  // end if
+
+	/** Optional: Field type templates */
+	if ( has_filter( 'btc/filter/is_type/field' ) ) {
+
+		$terms[ 'terms_field' ] = array(
+			'name'        => esc_attr_x( 'Fields', 'Taxonomy term title', 'builder-template-categories' ),
+			'slug'        => sanitize_key( _x( 'fields', 'Taxonomy term slug - only lowercase, a-z, 0-9, hyphens!', 'builder-template-categories' ) ),
+			'description' => _x( 'Templates for Fields', 'Taxonomy term description', 'builder-template-categories' ),
+		);
+
+	}  // end if
+
+	/** Optional: Box type templates */
+	if ( has_filter( 'btc/filter/is_type/box' ) ) {
+
+		$terms[ 'terms_box' ] = array(
+			'name'        => esc_attr_x( 'Boxes', 'Taxonomy term title', 'builder-template-categories' ),
+			'slug'        => sanitize_key( _x( 'boxes', 'Taxonomy term slug - only lowercase, a-z, 0-9, hyphens!', 'builder-template-categories' ) ),
+			'description' => _x( 'Templates for Boxes', 'Taxonomy term description', 'builder-template-categories' ),
+		);
+
+	}  // end if
+
+	/** Optional: Bar type templates */
+	if ( has_filter( 'btc/filter/is_type/bar' ) ) {
+
+		$terms[ 'terms_bar' ] = array(
+			'name'        => esc_attr_x( 'Bars', 'Taxonomy term title', 'builder-template-categories' ),
+			'slug'        => sanitize_key( _x( 'bars', 'Taxonomy term slug - only lowercase, a-z, 0-9, hyphens!', 'builder-template-categories' ) ),
+			'description' => _x( 'Templates for Bars', 'Taxonomy term description', 'builder-template-categories' ),
 		);
 
 	}  // end if

@@ -55,7 +55,11 @@ function ddw_btc_get_integrations() {
 	);
 
 	/** Allow the array to be filtered (= adding more integrations) */
-	$integrations = (array) apply_filters( 'btc/filter/integrations/all', $integrations );
+	$integrations = (array) apply_filters(
+		'btc/filter/integrations/all',
+		$integrations,
+		array()
+	);
 
 	/** Escape the values of the array */
 	foreach ( $integrations as $integration => $integration_data ) {
@@ -94,6 +98,7 @@ function ddw_btc_taxonomy_admin_url() {
  *   label types (content types).
  *
  * @since  1.1.0
+ * @since  1.2.0 Added "Field", "Box", "Bar" and "Hook" content types.
  *
  * @param  string $all_types Optional string param used as a flag, to enable
  *                           alternative return of all post types in one single
@@ -117,6 +122,10 @@ function ddw_btc_get_integration_post_types( $all_types = '' ) {
 		'blocks'     => array(),
 		'lightboxes' => array(),
 		'post-types' => array(),
+		'fields'     => array(),
+		'boxes'      => array(),
+		'bars'       => array(),
+		'hooks'      => array(),
 		'btcdefault' => array( 'btc-template' ),
 	);
 
@@ -162,6 +171,22 @@ function ddw_btc_get_integration_post_types( $all_types = '' ) {
 
 		if ( 'post-type' === $integration[ 'template_label' ] ) {
 			$post_types[ 'post-types' ][] = $integration[ 'post_type' ];
+		}
+
+		if ( 'field' === $integration[ 'template_label' ] ) {
+			$post_types[ 'fields' ][] = $integration[ 'post_type' ];
+		}
+
+		if ( 'box' === $integration[ 'template_label' ] ) {
+			$post_types[ 'boxes' ][] = $integration[ 'post_type' ];
+		}
+
+		if ( 'bar' === $integration[ 'template_label' ] ) {
+			$post_types[ 'bars' ][] = $integration[ 'post_type' ];
+		}
+
+		if ( 'hook' === $integration[ 'template_label' ] ) {
+			$post_types[ 'hooks' ][] = $integration[ 'post_type' ];
 		}
 
 		$post_types_all[] = $integration[ 'post_type' ];

@@ -61,7 +61,7 @@ add_filter( 'plugin_row_meta', 'ddw_btc_plugin_links', 10, 2 );
  * @uses   ddw_btc_get_info_link()
  *
  * @param  array  $btc_links (Default) Array of plugin meta links
- * @param  string $btc_file  URL of base plugin file
+ * @param  string $btc_file  Path of base plugin file
  * @return array $btc_links Array of plugin link strings to build HTML markup.
  */
 function ddw_btc_plugin_links( $btc_links, $btc_file ) {
@@ -76,7 +76,7 @@ function ddw_btc_plugin_links( $btc_links, $btc_file ) {
 
 		?>
 			<style type="text/css">
-				tr[data-slug="builder-template-categories"] .plugin-version-author-uri a.dashicons-before:before {
+				tr[data-plugin="<?php echo $btc_file; ?>"] .plugin-version-author-uri a.dashicons-before:before {
 					font-size: 17px;
 					margin-right: 2px;
 					opacity: .85;

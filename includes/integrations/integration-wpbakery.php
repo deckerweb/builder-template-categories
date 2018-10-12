@@ -61,6 +61,8 @@ add_action( 'admin_menu', 'ddw_btc_remove_submenu_for_wpbakery_post_types', 999 
  *   same time. Otherwise it would be highly confusing for users.
  *
  * @since 1.1.0
+ *
+ * @uses  remove_submenu_page()
  */
 function ddw_btc_remove_submenu_for_wpbakery_post_types() {
 

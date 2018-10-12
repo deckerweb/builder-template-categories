@@ -34,3 +34,11 @@ function ddw_btc_register_integration_cornerstone_global_blocks( array $integrat
 	return $integrations;
 
 }  // end function
+
+
+/**
+ * Set flag for Block type template
+ *
+ * @since 1.2.0
+ */
+add_filter( 'btc/filter/is_type/block', '__return_true' );

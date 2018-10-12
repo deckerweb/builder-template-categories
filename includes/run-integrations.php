@@ -139,6 +139,7 @@ function ddw_btc_filter_post_type_by_taxonomy() {
 			$selected      = isset( $_GET[ $taxonomy ] ) ? sanitize_key( wp_unslash( $_GET[ $taxonomy ] ) ) : '';
 			$info_taxonomy = get_taxonomy( $taxonomy );
 			$tax_label     = sprintf(
+				/* translators: %s - Category label based on content type, for example: All Template Categories, All Block Categories etc. */
 				esc_attr__( 'All %s', 'builder-template-categories' ),
 				ddw_btc_string_template( $integration[ 'template_label' ] )
 			);
@@ -216,6 +217,7 @@ add_filter( 'manage_posts_columns', 'ddw_btc_tweak_taxonomy_column_title' );
  *         catch all integration post types.
  *
  * @since  1.1.0
+ * @since  1.2.0 Added checks for "Field" and "Box" content types.
  *
  * @uses   ddw_btc_get_integration_post_types()
  * @uses   ddw_btc_string_template()
@@ -267,6 +269,22 @@ function ddw_btc_tweak_taxonomy_column_title( $columns ) {
 		$columns[ 'taxonomy-builder-template-category' ] = ddw_btc_string_template( 'post-type' );
 	}
 
+	if ( in_array( $current_screen->post_type, $post_types[ 'fields' ] ) ) {
+		$columns[ 'taxonomy-builder-template-category' ] = ddw_btc_string_template( 'field' );
+	}
+
+	if ( in_array( $current_screen->post_type, $post_types[ 'boxes' ] ) ) {
+		$columns[ 'taxonomy-builder-template-category' ] = ddw_btc_string_template( 'box' );
+	}
+
+	if ( in_array( $current_screen->post_type, $post_types[ 'bars' ] ) ) {
+		$columns[ 'taxonomy-builder-template-category' ] = ddw_btc_string_template( 'bar' );
+	}
+
+	if ( in_array( $current_screen->post_type, $post_types[ 'hooks' ] ) ) {
+		$columns[ 'taxonomy-builder-template-category' ] = ddw_btc_string_template( 'hook' );
+	}
+
 	/** Return array of column label strings */
 	return $columns;
 
@@ -281,6 +299,7 @@ add_filter( 'btc/filter/string/default_content_type', 'ddw_btc_tweak_taxonomy_la
  *            (instead of "Template Categories").
  *
  * @since  1.1.0
+ * @since  1.2.0 Added checks for "Field" and "Box" content types.
  *
  * @uses   ddw_btc_get_integration_post_types()
  * @uses   ddw_btc_string_content_type()
@@ -332,6 +351,22 @@ function ddw_btc_tweak_taxonomy_labels() {
 
 	if ( in_array( ddw_btc_admin_get_current_post_type(), $post_types[ 'post-types' ] ) ) {
 		return ddw_btc_string_content_type( 'post-type' );
+	}
+
+	if ( in_array( ddw_btc_admin_get_current_post_type(), $post_types[ 'fields' ] ) ) {
+		return ddw_btc_string_content_type( 'field' );
+	}
+
+	if ( in_array( ddw_btc_admin_get_current_post_type(), $post_types[ 'boxes' ] ) ) {
+		return ddw_btc_string_content_type( 'box' );
+	}
+
+	if ( in_array( ddw_btc_admin_get_current_post_type(), $post_types[ 'bars' ] ) ) {
+		return ddw_btc_string_content_type( 'bar' );
+	}
+
+	if ( in_array( ddw_btc_admin_get_current_post_type(), $post_types[ 'hooks' ] ) ) {
+		return ddw_btc_string_content_type( 'hook' );
 	}
 
 	/** If no match, return the default string ("Template") */
