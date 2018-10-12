@@ -368,7 +368,7 @@ As of version 1.2.0 of the plugin the following was achieved:
 
 
 ### 8. Post type Bulk Actions: add template category to selected templates in one action step
-![Post type Bulk Actions: Add a template category to selected templates in one action step](https://previews.dropbox.com/p/thumb/AAN814GgViXbB8-DWFWEpgnQWCGe0MOLDZh4n0-GrDy5wa17aFexKDrYGT2XDhVKfcVh_tqwUoH9LFq83n57_JPMY7KVQHZe4qL-eDiGOsBSZttYJegQaUGr6ytwiAHTzMxhnSUgjfx6OvqX_6zOVNHiQ-u1Hs7t7U8K52R6b66JN7dHuguNQv5pZsBEaIBwnfp5brEpp78VRGXJdtaiHhPytKzXJ6hpI9uiopvUxc3ZvA/p.png)
+![Post type Bulk Actions: Add a template category to selected templates in one action step](https://ps.w.org/builder-template-categories/assets/screenshot-08.png)
 
 
 ### 9. Plugins page - list of all plugins - "Builder Template Categories" with link to taxonomy listing table
