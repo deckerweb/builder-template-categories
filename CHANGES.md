@@ -7,6 +7,7 @@
 * [**Donate** for the further development & support of the plugin](https://www.paypal.me/deckerweb)
 * [Plugin's documentation & FAQ](https://wordpress.org/plugins/builder-template-categories/#faq)
 * [Facebook Community User Group](https://www.facebook.com/groups/deckerweb.wordpress.plugins/)
+* [Facebook Info Page for Deckerweb Plugins](https://www.facebook.com/deckerweb.wordpress.plugins/)
 
 
 ## Changelog of the Plugin

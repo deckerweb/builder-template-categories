@@ -115,7 +115,8 @@ You can also contribute code-wise via our [Builder Template Categories GitHub Re
 
 = Liked Builder Template Categories? =
 - Then please **rate us 5 stars** on [WordPress.org](https://wordpress.org/support/plugin/builder-template-categories/reviews/?filter=5/#new-post) :)
-- Or join our [**Facebook User Community Support Group**](https://www.facebook.com/groups/deckerweb.wordpress.plugins/)
+- Join our [**Facebook User Community Support Group**](https://www.facebook.com/groups/deckerweb.wordpress.plugins/)
+- Like our [**Facebook Info Page for Deckerweb Plugins**](https://www.facebook.com/deckerweb.wordpress.plugins/)
 
 = This Plugin ... =
 - ... scratches my own itch!
