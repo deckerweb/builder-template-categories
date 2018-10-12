@@ -395,7 +395,7 @@ As of version 1.2.0 of the plugin the following was achieved:
 * New: Integration with plugin Widget Content Blocks (free, by Danny van Kooten)
 * New: Added new template content types "Field/ Fields", "Box/ Boxes", "Bar/ Bars" and "Hook/ Hooks"
 * New: If Fields, Box, Bar or Hook template related integrations are active before plugin installation/activation add predefined terms for "Fields", "Boxes", "Bars" and "Hooks" appropriately
-* New: If Popup/Modal template related integrations are active before plugin installation/activation add predefined "Popups" term
+* New: [Facebook Info Page for my WordPress plugins](https://www.facebook.com/deckerweb.wordpress.plugins/), this one included :)
 * Tweak: Code, plus code documentation improvements and tweaks
 * Tweak: Improved special "translators" comments in code
 * Tweak: Updated `.pot` file plus all German translations (formal, informal) and language packs
