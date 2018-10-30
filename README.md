@@ -436,6 +436,7 @@ As of version 1.2.0 of the plugin the following was achieved:
 * New: Integration with plugin Reusable Content Blocks (free, by Safeer)
 * New: Integration with plugin JetSmartFilters (Premium, by Zemez Jet/ CrocoBlock)
 * New: Added new template content type "Filter/ Filters"
+* New: Added 2 new screenshots to show Reusable Block support in Block Editor (Gutenberg)
 * New: Successfully tested with WordPress 5.0 Beta 1
 * Tweak: Updated bundled library DDWlib Plugin Installer Recommendations to latest version (v1.2.0) - which brings enhanced CSS styles, including for the "Dark Mode" plugin
 * Tweak: Updated `.pot` file plus all German translations (formal, informal) and language packs
