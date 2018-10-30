@@ -21,7 +21,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  */
 function ddw_btc_is_tbex_active() {
 
-	return ( defined( 'TBEX_PLUGIN_VERSION' ) ) ? TRUE : FALSE;
+	return defined( 'TBEX_PLUGIN_VERSION' );
 
 }  // end function
 
@@ -35,7 +35,7 @@ function ddw_btc_is_tbex_active() {
  */
 function ddw_btc_is_clpinst_active() {
 
-	return ( defined( 'CLPINST_PLUGIN_VERSION' ) ) ? TRUE : FALSE;
+	return defined( 'CLPINST_PLUGIN_VERSION' );
 
 }  // end function
 
@@ -55,7 +55,7 @@ function ddw_btc_is_clpinst_active() {
  */
 function ddw_btc_is_elementor_active() {
 
-	return ( defined( 'ELEMENTOR_VERSION' ) ) ? TRUE : FALSE;
+	return defined( 'ELEMENTOR_VERSION' );
 
 }  // end function
 
@@ -69,7 +69,7 @@ function ddw_btc_is_elementor_active() {
  */
 function ddw_btc_is_brizy_active() {
 
-	return ( defined( 'BRIZY_VERSION' ) ) ? TRUE : FALSE;
+	return defined( 'BRIZY_VERSION' );
 
 }  // end function
 
@@ -125,7 +125,7 @@ function ddw_btc_is_wpbakery_templatera_active() {
  */
 function ddw_btc_is_oxygen_builder_active() {
 
-	return ( defined( 'CT_VERSION' ) || defined( 'OXYGEN_VSB_VERSION' ) ) ? TRUE : FALSE;
+	return ( defined( 'CT_VERSION' ) || defined( 'OXYGEN_VSB_VERSION' ) );
 
 }  // end function
 
@@ -139,7 +139,7 @@ function ddw_btc_is_oxygen_builder_active() {
  */
 function ddw_btc_is_boldgrid_active() {
 
-	return ( defined( 'BOLDGRID_EDITOR_VERSION' ) ) ? TRUE : FALSE;
+	return defined( 'BOLDGRID_EDITOR_VERSION' );
 
 }  // end function
 
@@ -153,7 +153,7 @@ function ddw_btc_is_boldgrid_active() {
  */
 function ddw_btc_is_cornerstone_global_blocks_active() {
 
-	return ( function_exists( 'global_blocks_plugin_init' ) ) ? TRUE : FALSE;
+	return function_exists( 'global_blocks_plugin_init' );
 
 }  // end function
 
@@ -174,7 +174,7 @@ function ddw_btc_is_cornerstone_global_blocks_active() {
  */
 function ddw_btc_is_gp_elements_active() {
 
-	return ( function_exists( 'generate_premium_do_elements' ) ) ? TRUE : FALSE;
+	return function_exists( 'generate_premium_do_elements' );
 
 }  // end function
 
@@ -188,7 +188,7 @@ function ddw_btc_is_gp_elements_active() {
  */
 function ddw_btc_is_owp_library_active() {
 
-	return ( function_exists( 'Ocean_Extra' ) ) ? TRUE : FALSE;
+	return function_exists( 'Ocean_Extra' );
 
 }  // end function
 
@@ -203,7 +203,7 @@ function ddw_btc_is_owp_library_active() {
  */
 function ddw_btc_is_astra_layouts_active() {
 
-	return ( class_exists( 'Astra_Ext_Extension' ) && Astra_Ext_Extension::is_active( 'advanced-hooks' ) ) ? TRUE : FALSE;
+	return ( class_exists( 'Astra_Ext_Extension' ) && Astra_Ext_Extension::is_active( 'advanced-hooks' ) );
 
 }  // end function
 
@@ -217,7 +217,7 @@ function ddw_btc_is_astra_layouts_active() {
  */
 function ddw_btc_is_blox_active() {
 
-	return ( class_exists( 'Blox_Lite_Main' ) || class_exists( 'Blox_Main' ) ) ? TRUE : FALSE;
+	return ( class_exists( 'Blox_Lite_Main' ) || class_exists( 'Blox_Main' ) );
 
 }  // end function
 
@@ -238,7 +238,7 @@ function ddw_btc_is_blox_active() {
  */
 function ddw_btc_is_anywhere_elementor_active() {
 
-	return ( function_exists( 'WTS_AE_load_plugin_textdomain' ) || function_exists( 'ae_pro_load_plugin_textdomain' ) ) ? TRUE : FALSE;
+	return ( function_exists( 'WTS_AE_load_plugin_textdomain' ) || function_exists( 'ae_pro_load_plugin_textdomain' ) );
 
 }  // end function
 
@@ -252,7 +252,7 @@ function ddw_btc_is_anywhere_elementor_active() {
  */
 function ddw_btc_is_jetthemecore_active() {
 
-	return ( class_exists( 'Jet_Theme_Core' ) ) ? TRUE : FALSE;
+	return class_exists( 'Jet_Theme_Core' );
 
 }  // end function
 
@@ -266,7 +266,7 @@ function ddw_btc_is_jetthemecore_active() {
  */
 function ddw_btc_is_jetwoobuilder_active() {
 
-	return ( class_exists( 'WooCommerce' ) && class_exists( 'Jet_Woo_Builder' ) ) ? TRUE : FALSE;
+	return ( class_exists( 'WooCommerce' ) && class_exists( 'Jet_Woo_Builder' ) );
 
 }  // end function
 
@@ -280,7 +280,7 @@ function ddw_btc_is_jetwoobuilder_active() {
  */
 function ddw_btc_is_jetengine_active() {
 
-	return ( class_exists( 'Jet_Engine' ) ) ? TRUE : FALSE;
+	return class_exists( 'Jet_Engine' );
 
 }  // end function
 
@@ -294,7 +294,7 @@ function ddw_btc_is_jetengine_active() {
  */
 function ddw_btc_is_hfelementor_active() {
 
-	return ( class_exists( 'Header_Footer_Elementor' ) ) ? TRUE : FALSE;
+	return class_exists( 'Header_Footer_Elementor' );
 
 }  // end function
 
@@ -308,7 +308,7 @@ function ddw_btc_is_hfelementor_active() {
  */
 function ddw_btc_is_popboxes_active() {
 
-	return ( defined( 'MODAL_ELEMENTOR_VERSION' ) ) ? TRUE : FALSE;
+	return defined( 'MODAL_ELEMENTOR_VERSION' );
 
 }  // end function
 
@@ -337,7 +337,7 @@ function ddw_btc_is_jetpopup_active() {
  */
 function ddw_btc_is_dhwc_elementor_active() {
 
-	return ( class_exists( 'WooCommerce' ) && defined( 'DHWC_ELEMENTOR_VERSION' ) ) ? TRUE : FALSE;
+	return ( class_exists( 'WooCommerce' ) && defined( 'DHWC_ELEMENTOR_VERSION' ) );
 
 }  // end function
 
@@ -400,6 +400,34 @@ function ddw_btc_is_stylepress_elementor_active() {
 }  // end function
 
 
+/**
+ * Is Opal Widgets for Elementor plugin active or not?
+ *
+ * @since  1.3.0
+ *s
+ * @return bool TRUE if Opal Widgets for Elementor is active, otherwise FALSE.
+ */
+function ddw_btc_is_opal_widgets_elementor_active() {
+
+	return class_exists( 'OSF_Elementor_Loader' );
+
+}  // end function
+
+
+/**
+ * Is JetSmartFilters plugin active or not?
+ *
+ * @since  1.3.0
+ *
+ * @return bool TRUE if JetSmartFilters is active, otherwise FALSE.
+ */
+function ddw_btc_is_jetsmartfilters_active() {
+
+	return class_exists( 'Jet_Smart_Filters' );
+
+}  // end function
+
+
 
 /**
  * 4) Plugin integrations - everything else:
@@ -416,7 +444,7 @@ function ddw_btc_is_stylepress_elementor_active() {
  */
 function ddw_btc_is_wpshowposts_active() {
 
-	return ( defined( 'WPSP_VERSION' ) ) ? TRUE : FALSE;
+	return defined( 'WPSP_VERSION' );
 
 }  // end function
 
@@ -455,7 +483,7 @@ function ddw_btc_is_pods_templates_active() {
  */
 function ddw_btc_is_popup_maker_active() {
 
-	return ( class_exists( 'Popup_Maker' ) ) ? TRUE : FALSE;
+	return class_exists( 'Popup_Maker' );
 
 }  // end function
 
@@ -469,7 +497,7 @@ function ddw_btc_is_popup_maker_active() {
  */
 function ddw_btc_is_thrive_lightboxes_active() {
 
-	return ( class_exists( 'TCB_Lightbox' ) ) ? TRUE : FALSE;
+	return class_exists( 'TCB_Lightbox' );
 
 }  // end function
 
@@ -615,6 +643,104 @@ function ddw_btc_is_dev_content_blocks_active() {
 }  // end function
 
 
+/**
+ * Is Advanced Custom Fields (Pro) plugin active or not?
+ *
+ * @since  1.3.0
+ *s
+ * @return bool TRUE if ACF is active, otherwise FALSE.
+ */
+function ddw_btc_is_advanced_custom_fields_active() {
+
+	return class_exists( 'ACF' );
+
+}  // end function
+
+
+/**
+ * Is Custom Field Suite plugin active or not?
+ *
+ * @since  1.3.0
+ *s
+ * @return bool TRUE if Custom Field Suite is active, otherwise FALSE.
+ */
+function ddw_btc_is_custom_field_suite_active() {
+
+	return class_exists( 'Custom_Field_Suite' );
+
+}  // end function
+
+
+/**
+ * Is CMB2 Admin Extension plugin active or not?
+ *
+ * @since  1.3.0
+ *s
+ * @return bool TRUE if CMB2 Admin Extension is active, otherwise FALSE.
+ */
+function ddw_btc_is_cmb2_admin_extension_active() {
+
+	return class_exists( 'CMB2_Admin_Extension_Class' );
+
+}  // end function
+
+
+/**
+ * Is Meta Box Builder plugin active or not?
+ *
+ * @since  1.3.0
+ *s
+ * @return bool TRUE if Meta Box Builder is active, otherwise FALSE.
+ */
+function ddw_btc_is_meta_box_builder_active() {
+
+	return function_exists( 'mb_builder_load' );
+
+}  // end function
+
+
+/**
+ * Is Custom Template for LifterLMS plugin active or not?
+ *
+ * @since  1.3.0
+ *s
+ * @return bool TRUE if Custom Template for LifterLMS is active, otherwise FALSE.
+ */
+function ddw_btc_is_custom_template_lifterlms_active() {
+
+	return defined( 'CTLLMS_VER' );
+
+}  // end function
+
+
+/**
+ * Is Custom Template for LearnDash plugin active or not?
+ *
+ * @since  1.3.0
+ *s
+ * @return bool TRUE if Custom Template for LearnDash is active, otherwise FALSE.
+ */
+function ddw_btc_is_custom_template_learndash_active() {
+
+	return defined( 'CTLEARNDASH_VER' );
+
+}  // end function
+
+
+/**
+ * Is Reusable Content Blocks plugin active or not?
+ *
+ * @since  1.3.0
+ *s
+ * @return bool TRUE if Reusable Content Blocks is active, otherwise FALSE.
+ */
+function ddw_btc_is_reusable_content_blocks_active() {
+
+	return function_exists( 'rcb_plugin_init' );
+
+}  // end function
+
+
 
 /**
  * 5) Block Editor (Gutenberg) integrations - WP Core, plugins etc.:
@@ -628,15 +754,14 @@ function ddw_btc_is_dev_content_blocks_active() {
  *   2) or, the "Gutenberg" plugin is active (it is the blocks editor)
  *
  * @since  1.2.0
+ * @since  1.3.0 Made WP 5.0 version check more precise.
  *
  * @global string $GLOBALS[ 'wp_version' ] 
  * @return bool TRUE if blocks editor available, otherwise FALSE.
  */
 function ddw_btc_is_block_editor_active() {
 
-	//return ( defined( 'GUTENBERG_VERSION' ) ) ? TRUE : FALSE;
-
-	if ( version_compare( $GLOBALS[ 'wp_version' ], '5.0.0', '>=' )
+	if ( version_compare( $GLOBALS[ 'wp_version' ], '5.0-beta1', '>=' )
 		|| defined( 'GUTENBERG_VERSION' )
 	) {
 		return TRUE;
@@ -644,7 +769,7 @@ function ddw_btc_is_block_editor_active() {
 
 	return FALSE;
 
-}  // end if
+}  // end function
 
 
  /**

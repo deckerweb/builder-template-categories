@@ -262,8 +262,63 @@ function ddw_btc_register_extra_plugin_recommendations( array $plugins ) {
 		'popular'     => 'no',
 	);
 
-	/** Return filtered array */
-	return $plugins;
+  	/** Register additional Elementor plugin recommendations */
+  	$plugins_elementor = array();
+
+  	if ( ddw_btc_is_elementor_active() ) {
+
+		$plugins_elementor = array(
+			'anywhere-elementor' => array(
+				'featured'    => 'yes',
+				'recommended' => 'yes',
+				'popular'     => 'yes',
+			),
+			'templementor' => array(
+				'featured'    => 'yes',
+				'recommended' => 'yes',
+				'popular'     => 'no',
+			),
+		);
+
+	}  // end if
+
+  	/** Register additional Block Editor (Gutenberg) plugin recommendations */
+  	$plugins_block_editor = array();
+
+  	if ( ddw_btc_is_block_editor_active() ) {
+
+		$plugins_block_editor = array(
+			'classic-editor' => array(
+				'featured'    => 'yes',
+				'recommended' => 'yes',
+				'popular'     => 'yes',
+			),
+			'classic-editor-addon' => array(
+				'featured'    => 'yes',
+				'recommended' => 'yes',
+				'popular'     => 'yes',
+			),
+			'block-builder' => array(
+				'featured'    => 'yes',
+				'recommended' => 'yes',
+				'popular'     => 'yes',
+			),
+			'custom-fields-gutenberg' => array(
+				'featured'    => 'yes',
+				'recommended' => 'yes',
+				'popular'     => 'no',
+			),
+			'manager-for-gutenberg' => array(
+				'featured'    => 'no',
+				'recommended' => 'yes',
+				'popular'     => 'no',
+			),
+		);
+
+	}  // end if
+
+	/** Merge with the existing recommendations and return */
+	return array_merge( $plugins, $plugins_elementor, $plugins_block_editor );
   
 }  // end function
 

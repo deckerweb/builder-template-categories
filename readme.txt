@@ -3,9 +3,9 @@ Contributors: daveshine, deckerweb, wpautobahn, toolbarextras
 Donate link: https://www.paypal.me/deckerweb
 Tags: elementor, page builder, templates, gutenberg, blocks, oceanwp, astra, generatepress, genesis, categories, template, deckerweb
 Requires at least: 4.7
-Tested up to: 4.9.8
+Tested up to: 5.0
 Requires PHP: 5.6
-Stable tag: 1.2.0
+Stable tag: 1.3.0
 License: GPL-2.0+
 License URI: https://opensource.org/licenses/GPL-2.0
 
@@ -21,6 +21,7 @@ Out of the box the plugin includes integrations for a lot of awesome Page Builde
 - **Better organize** your templates if you have many of them
 - **Better overview** for admins and site builders
 - **Filtering** in the overview table of a post type (typical WordPress overview) via Dropdown Filter, or Link filter in the row of a post type's post
+- For **WordPress 5.0** with Block Editor (Gutenberg): make the Reusable Blocks visible in Admin and **organize** them - yeah, finally! Your growing collection of reusable blocks needs some organization - this plugin here makes it possible! ;-)
 - Only for admins, within the admin - a great helper tool
 - No frontend, no scripts, no styles - nothing! :-)
 - Lightweight, efficient
@@ -36,56 +37,66 @@ So in every one of those libraries you can now filter and list all parts of temp
 Please note: The categories are global but when filtering only those items are listed that are connected to the specific post type. [See the FAQ for more info on that](https://wordpress.org/plugins/builder-template-categories/#faq)
 
 = Supported Page Builders =
-- **Elementor Page Builder** Plugin (free version is sufficient) - **My Templates** (for Pages, Sections, and with Elementor Pro even more template types)
-- **Brizy Page Builder** Plugin (free version is sufficient) - **Templates** (for Pages, Sections etc.)
+- [**Elementor Page Builder**](https://wordpress.org/plugins/elementor/) Plugin (free version is sufficient) - **My Templates** (for Pages, Sections, and with Elementor Pro even more template types)
+- [**Brizy Page Builder**](https://wordpress.org/plugins/brizy/) Plugin (free version is sufficient) - **Templates** (for Pages, Sections etc.)
 - **Oxygen Builder** Plugin (Pro) - **Templates** (for Pages, Layouts, Sections, Theme Builder elements...) -- Note: also the old Oxygen Visual Site Builder 1.x is supported
 - **WPBakery Page Builder (the old 'Visual Composer')** Plugin with its **Templatera** template plugin - **Templates** (for Pages, Layouts, etc.)
 - **Cornerstone** Page Builder via the "Cornerstone Global Blocks" Plugin (free) - **Global Blocks** (for Content)
-- **BoldGrid Post and Page Builder** Plugin (free) - **Blocks (Templates)**
+- [**BoldGrid Post and Page Builder**](https://wordpress.org/plugins/post-and-page-builder/) Plugin (free) - **Blocks (Templates)**
 - **Themify Builder** Plugin (Premium version) - **Layouts** (for Layout Parts, Pages, Sections etc.)
-- **Gutenberg / Block Editor of WordPress 5.0 - **Blocks** (for Reusable Blocks - the new core feature)
+- [**Gutenberg / Block Editor of WordPress 5.0**](https://wordpress.org/plugins/gutenberg/) - **Blocks** (for Reusable Blocks - the new core feature)
 
 = Supported Themes =
-- **Astra Theme** with **Astra Pro** Add-On Plugin - **Custom Layouts** (for Layouts, Headers, Footers, Hooks)
-- **GeneratePress Theme** with "GP Premium" Add-On Plugin - **Elements** (for Layouts, Headers, Hooks)
-- **OceanWP Theme** with "Ocean Extra" free Plugin - **My Library** (for Layouts, Hooks etc.)
+- [**Astra Theme**](https://wordpress.org/themes/astra/) with **Astra Pro** Add-On Plugin - **Custom Layouts** (for Layouts, Headers, Footers, Hooks)
+- [**GeneratePress Theme**](https://wordpress.org/themes/generatepress/) with "GP Premium" Add-On Plugin - **Elements** (for Layouts, Headers, Hooks)
+- [**OceanWP Theme**](https://wordpress.org/themes/oceanwp/) with ["Ocean Extra"](https://wordpress.org/plugins/ocean-extra/) free Plugin - **My Library** (for Layouts, Hooks etc.)
 - **Kava Pro Theme/ CrocoBlock Service** with JetThemeCore Plugin - **My Library** (for Layouts, Pages, Headers, Footers, Single, Archive)
 - **Genesis Framework** with Genesis Child Themes -- via **Blox Lite** and **Blox** (Pro) Plugins - **Global Content Blocks** (for Sections, Hooks)
 
 = Supported Plugins =
 - *see Page Builder Plugins above :-)*
-- **AnyWhere Elementor Plugin** (both, free & Pro version) - **AE Global Templates** (for Layouts etc.)
+- *see Gutenberg-specific Plugins below :-)*
+- [**AnyWhere Elementor**](https://wordpress.org/plugins/anywhere-elementor/) Plugin (both, free & Pro version) - **AE Global Templates** (for Layouts, Content, Pages etc.)
 - **Kava Pro Theme/ CrocoBlock Service** with JetThemeCore Plugin - **My Library** (for Layouts, Pages, Headers, Footers, Single, Archive)
 - **JetEngine for Elementor** Plugin - **Listings (Templates)**
 - **JetWooBuilder for Elementor** Plugin - **Product Templates** (for WooCommerce Products)
-- **Blox Lite** and **Blox** (Pro) Plugins, both for Genesis Framework - **Global Content Blocks** (for Sections, Hooks)
+- [**Blox Lite**](https://wordpress.org/plugins/blox-lite/) and **Blox** (Pro) Plugins, both for Genesis Framework - **Global Content Blocks** (for Sections, Hooks)
 - **Oxygen Builder** Plugin (Pro) - **Templates** (for Pages, Layouts, Sections, Theme Builder elements...)
-- **Header Footer for Elementor** Plugin - **Header & Footer Templates** (for Elementor theming areas)
+- [**Header Footer for Elementor**](https://wordpress.org/plugins/header-footer-elementor/) Plugin - **Header & Footer Templates** (for Elementor theming areas)
 - **DHWC Elementor** Plugin - **Product Templates** (for WooCommerce Products)
-- **Kadence WooCommerce Elementor** Plugin - **Product Templates** (for WooCommerce Products)
-- **PopBoxes for Elementor** Plugin - **Popups (Templates)** (for Popups, Lightboxes)
-- **StylePress for Elementor** Plugin - **Styles (Templates)** (for Theme Templates)
-- **Templementor** Plugin - **Templates** (for Elementor content)
+- [**Kadence WooCommerce Elementor**](https://wordpress.org/plugins/kadence-woocommerce-elementor/) Plugin - **Product Templates** (for WooCommerce Products)
+- [**PopBoxes for Elementor**](https://wordpress.org/plugins/modal-for-elementor/) Plugin - **Popups (Templates)** (for Popups, Lightboxes)
+- [**StylePress for Elementor**](https://wordpress.org/plugins/full-site-builder-for-elementor/) Plugin - **Styles (Templates)** (for Theme Templates)
+- [**Templementor**](https://wordpress.org/plugins/templementor/) Plugin - **Templates** (for Elementor content)
 - **Thrive Lightboxes** Plugin - **Lightboxes (Templates)** (for Lightboxes, Popups)
-- **Popup Maker** Plugin - **Popups (Templates)** (for Popups, Lightboxes)
-- **Pods** Plugin - **Templates** (for Post Types, Taxonomies, Fields, etc.) -- Note: the "Templates" Component needs to be enabled in Pods' settings!
-- **WP Show Posts** Plugin - **Listings (Templates)** (for Post Listings)
+- [**Popup Maker**](https://wordpress.org/plugins/popup-maker/) Plugin - **Popups (Templates)** (for Popups, Lightboxes)
+- [**Pods**](https://wordpress.org/plugins/pods/) Plugin - **Templates** (for Post Types, Taxonomies, Fields, etc.) -- Note: the "Templates" Component needs to be enabled in Pods' settings!
+- [**WP Show Posts**](https://wordpress.org/plugins/wp-show-posts/) Plugin - **Listings (Templates)** (for Post Listings)
+- **JetSmartFilters** Plugin - **Filters** (Templates for Filter Controls, Listings etc.)
 - **JetPopup** Plugin - **Popups** (for Popups)
-- **Cherry PopUps** Plugin - **Popups** (for Popups)
-- **Themify Popup** Plugin - **Popups** (for Popups)
-- **Meta Box Post Types** Add-On Plugin - **Post Types** (for Post Type registrations)
-- **Meta Box Taxonomy** Add-On Plugin - **Taxonomies** (for Taxonomy registrations)
-- **Content Blocks (Custom Post Widget)** Plugin - **Blocks** (for Content)
-- **Reusable Content & Text Blocks (by Loomisoft)** Plugin - **Blocks** (for Content)
-- **Dev Content Blocks** Plugin - **Blocks** (for Content)
-- **Text Blocks** Plugin - **Blocks** (for Content, Text)
-- **Widget Content Blocks** Plugin - **Blocks** (for Widgets, Content)
+- [**Cherry PopUps**](https://wordpress.org/plugins/cherry-popups/) Plugin - **Popups** (for Popups)
+- [**Themify Popup**](https://wordpress.org/plugins/themify-popup/) Plugin - **Popups** (for Popups)
+- [**Meta Box Post Types**](https://wordpress.org/plugins/mb-custom-post-type/) Add-On Plugin - **Post Types** (for Post Type registrations)
+- [**Meta Box Taxonomy**](https://wordpress.org/plugins/mb-custom-taxonomy/) Add-On Plugin - **Taxonomies** (for Taxonomy registrations)
+- [**Content Blocks (Custom Post Widget)**](https://wordpress.org/plugins/custom-post-widget/) Plugin - **Blocks** (for Content)
+- [**Reusable Content & Text Blocks (by Loomisoft)**](https://wordpress.org/plugins/loomisoft-content-blocks/) Plugin - **Blocks** (for Content)
+- [**Dev Content Blocks**](https://wordpress.org/plugins/dev-content-blocks/) Plugin - **Blocks** (for Content)
+- [**Reusable Text Blocks**](https://wordpress.org/plugins/reusable-text-blocks/) Plugin - **Blocks** (for Content, Text)
+- [**Widget Content Blocks**](https://wordpress.org/plugins/wysiwyg-widgets/) Plugin - **Blocks** (for Widgets, Content)
+- [**Reusable Content Blocks**](https://wordpress.org/plugins/reusable-content-blocks/) Plugin - **Blocks** (for Content, Text, etc.)
+- [**Advanced Custom Fields (ACF)**](https://wordpress.org/plugins/advanced-custom-fields/) Plugin (both, free & Pro version) - **Field Groups** (for Custom Fields, Options)
+- [**Custom Field Suite**](https://wordpress.org/plugins/custom-field-suite/) Plugin - **Field Groups** (for Custom Fields, Options)
+- [**CMB2 Admin Extension**](https://wordpress.org/plugins/cmb2-admin-extension/) Plugin - **Field Groups** (for Custom Fields, Options)
+- **Meta Box Builder** and **Meta Box All-In-One (AIO)** Plugins (both Premium) - **Field Groups** (for Custom Fields, Options)
+- [**Custom Template for LifterLMS**](https://wordpress.org/plugins/custom-template-lifterlms/) Plugin - **Templates** (for Courses etc.)
+- [**Custom Template for LearnDash**](https://wordpress.org/plugins/custom-template-learndash/) Plugin - **Templates** (for Courses etc.)
+- [**Opal Widgets for Elementor**](https://wordpress.org/plugins/opal-widgets-for-elementor/) Plugin - **Templates** (for Headers, Footers)
 
 = Supported Gutenberg-specific Plugins (Block Editor) =
-- **Lazy Blocks** Plugin - **Blocks** (Templates for Gutenberg Blocks)
-- **Advanced Custom Blocks** Plugin - **Blocks** (Templates & Fields for Gutenberg Blocks)
-- **Blocks Layouts** Plugin - **Layouts** (Layouts for Gutenberg Blocks)
-- **Square Happiness: Placeholder Block** Plugin - **Blocks** (Placeholders/ Templates for Gutenberg Blocks)
+- [**Lazy Blocks**](https://wordpress.org/plugins/lazy-blocks/) Plugin - **Blocks** (Templates for Gutenberg Blocks)
+- [**Advanced Custom Blocks**](https://wordpress.org/plugins/advanced-custom-blocks/) Plugin - **Blocks** (Templates & Fields for Gutenberg Blocks)
+- [**Blocks Layouts**](https://wordpress.org/plugins/blocks-layouts/) Plugin - **Layouts** (Layouts for Gutenberg Blocks)
+- [**Square Happiness: Placeholder Block**](https://wordpress.org/plugins/placeholder-block-square-happiness/) Plugin - **Blocks** (Placeholders/ Templates for Gutenberg Blocks)
 
 = Recommended Time Saver =
 Try [**Toolbar Extras**](https://toolbarextras.com/) my other plugin for Site Builders and admins: Building sites with Elementor? [**Your work will get easier & faster with Toolbar Extras.**](https://wordpress.org/plugins/toolbar-extras/) With extended plugin & theme support baked right in. Of course, "Builder Template Categories" is integrated as well :)
@@ -123,6 +134,7 @@ You can also contribute code-wise via our [Builder Template Categories GitHub Re
 - ... is *Quality Made in Germany*
 - ... was created with love (plus some coffee) :-) - [if you like it consider donating](https://www.paypal.me/deckerweb)
 
+
 == Installation ==
 
 = Minimum Requirements =
@@ -143,6 +155,7 @@ You can also contribute code-wise via our [Builder Template Categories GitHub Re
 2. Activate the plugin through the 'Plugins' menu in WordPress.
 3. Go to your already active plugin or theme which has the template library and you'll see the additional template category as a new submenu item (for example: "Template Categories").
 4. Now enjoy organizing your templates, get better overview and save time ;-)
+
 
 == Frequently Asked Questions ==
 
@@ -208,6 +221,7 @@ Elementor (free) is not required. But once it is installed and active the integr
 
 I totally [recommend Elementor](https://toolbarextras.com/go/elementor/) - so, with it active, this plugin here will make the perfect sense!
 
+
 = Is Elementor Pro required for this plugin? =
 Absolutely not. For the Elementor integration the free version of Elementor is enough as it already adds the template library ("My Templates").
 
@@ -220,9 +234,11 @@ All the others already have template categories by default, or, on the other han
 * Beaver Builder & Beaver Themer: has template categories already by default
 * Thrive Architect: has category feature already built-in
 * Divi: has template categories already by default
-* Visual Composer (new one, 2018) / SiteOrigin Page Builder / Avada Fusion Builder: all of them have no library built-in, or at least none that can be extended...
+* Visual Composer (the new one, 2018): has template feature in Pro Version --> I will add integration in upcoming v1.4.0!
+* Avada Fusion Builder: template feature somewhat "hidden" --> I will add integration in upcoming v1.4.0!
+* SiteOrigin Page Builder: library built-in, but it is currently impossible to extend it with this taxonomy...
 
-*Note:* Brizy Page Builder added template feature in their version 1.0.25 - we added integration with our plugin version 1.0.1
+*Update:* Brizy Page Builder added template feature in their version 1.0.25 - we added integration with our plugin version 1.0.1
 
 
 = Will other Themes be supported? =
@@ -233,12 +249,32 @@ Yes, absolutely. – Once I discover another theme (or via an add-on plugin) whi
 Yes, absolutely. - Once I discover another plugin which adds a template library but has no categories for organizing I consider adding an integration. Of course, you can also make me aware of other themes and plugins with such libraries.
 
 
+= Does this Plugin work with Gutenberg / WordPress 5.0 / Block Editor? =
+Yes, of course! - The plugin is fully compatible with Gutenberg Block Editor which is (becoming) WordPress 5.0. It even supports the "Reusable Blocks" feature and adds our template category for that. This means, you can now categorize your reusable blocks and edit them from a dedicated screen!
+
+Beyond that, there is already integration with some Gutenberg-specific plugins built-in. More integrations might follow over time.
+
+
+= Does this Plugin work with Classic Editor and even ClassicPress? =
+Yes, this plugin works with the Classic Editor plugin perfectly fine.
+
+I will try my best to also have my plugin work perfectly in ClassicPress, the fork of WordPress without Gutenberg. It should already be fully compatible but I will follow all events closely to adjust compat if needed.
+
+
 = Will this Plugin slow down my site? =
 Absolutely not. The plugin will only do its stuff for logged-in Administrator users. It does nothing for visitors of your site. Plugin loads its stuff only when needed and if supported theme/ plugin is active. Plugin was built to be as lightweight as possible.
 
 
 = Does the Plugin work with Multisite? =
 Yes, it works fine in Multisite, you could even activate it Network-wide. However, the taxonomy is only added on a per site basis (if the supported integrations are active). Therefore it makes the most sense to activate the plugin on a per site basis.
+
+
+= Do I need to have any of the integrations installed? =
+Technically not. However, without the integrations this plugin doesn't make any sense. So you want to have at least *one* of the integrations installed and activated.
+
+Or, you can also register your own custom integration (see snippets below) if you do not want or need the built-in integrations.
+
+Note: One exception is the new Block Editor coming with WordPress 5.0 (currently available as the "Gutenberg" plugin). The Block Editor has a feature called "Reusable Blocks" and this is already natively integrated with our plugin, "Builder Template Categories". So, once you have Gutenberg or WordPress 5.0+ active you already have one native integration active by default ;-).
 
 
 = Can I extend or customize the plugin? =
@@ -261,7 +297,7 @@ function btc_register_custom_integration( array $integrations ) {
 	$submenu_hook = 'your-custom-settings-page';	// as in: your-site.domain/wp-admin/admin.php?page=your-custom-settings-page;
 	// or alternative: $submenu_hook = 'edit.php?post_type=' . $post_type;
 
-	$template_label = 'template';	// or: library, layout, element, popup, lightbox, block, listing, post-type, field, box, bar, hook
+	$template_label = 'template';	// or: library, layout, element, popup, lightbox, block, listing, post-type, field, box, bar, hook, filter
 
 	$integrations[ 'your-custom-handle-lowercase' ] = array(
 		'label'          => __( 'My Custom Templates', 'your-textdomain' ),
@@ -324,8 +360,30 @@ As of version 1.2.0 of the plugin the following was achieved:
 
 9. Plugins page - list of all plugins - "Builder Template Categories" with link to taxonomy listing table
 
+10. Reusable Blocks support in Block Editor (Gutenberg) in WordPress 5.0 - post type list table (overview)
+
+11. Editing a Reusable Block - adding the "Builder Template Categories" taxonomy via the new Block Editor JavaScript-based meta box
+
 
 == Changelog ==
+
+= 1.3.0 - 2018-10-30 =
+* New: Integration with plugin Advanced Custom Fields (ACF) (free & Pro, by Elliot Condon)
+* New: Integration with plugin Custom Field Suite (free, by Matt Gibbs)
+* New: Integration with Add-On plugin CMB2 Admin Extension (free, by twoelevenjay) --> Note: This is the UI plugin for the [CMB2 library](https://wordpress.org/plugins/cmb2/) plugin!
+* New: Integration with Add-On plugins Meta Box Builder and Meta Box All-In-One (AIO) (both Premium, by Meta Box) --> Note: This is the UI plugin for the [Meta Box](https://wordpress.org/plugins/meta-box/) (fields) plugin!
+* New: Integration with plugin Custom Template for LifterLMS (free, by Brainstorm Force)
+* New: Integration with plugin Custom Template for LearnDash (free, by Brainstorm Force)
+* New: Integration with plugin Opal Widgets for Elementor (free, by WpOpal) - for Header and Footer templates
+* New: Integration with plugin Reusable Content Blocks (free, by Safeer)
+* New: Integration with plugin JetSmartFilters (Premium, by Zemez Jet/ CrocoBlock)
+* New: Added new template content type "Filter/ Filters"
+* New: Added 2 new screenshots to show Reusable Block support in Block Editor (Gutenberg)
+* New: Successfully tested with WordPress 5.0 Beta 1
+* Tweak: Updated bundled library DDWlib Plugin Installer Recommendations to latest version (v1.2.0) - which brings enhanced CSS styles, including for the "Dark Mode" plugin
+* Tweak: Updated `.pot` file plus all German translations (formal, informal) and language packs
+* Tweak: Enhanced and improved Readme.txt file here - also added some new FAQ entries
+
 
 = 1.2.0 - 2018-10-12 =
 * *The Gutenberg Block Editor Support Release ;-)*
@@ -338,7 +396,7 @@ As of version 1.2.0 of the plugin the following was achieved:
 * New: Integration with plugin Content Blocks (Custom Post Widget) (free, by Johan van der Wijk)
 * New: Integration with plugin Reusable Content & Text Blocks (free, by Loomisoft)
 * New: Integration with plugin Dev Content Blocks (free, by Allon Sacks)
-* New: Integration with plugin Text Blocks (free, by Hal Gatewood)
+* New: Integration with plugin Reusable Text Blocks (free, by Hal Gatewood)
 * New: Integration with plugin Widget Content Blocks (free, by Danny van Kooten)
 * New: Added new template content types "Field/ Fields", "Box/ Boxes", "Bar/ Bars" and "Hook/ Hooks"
 * New: If Fields, Box, Bar or Hook template related integrations are active before plugin installation/activation add predefined terms for "Fields", "Boxes", "Bars" and "Hooks" appropriately
@@ -399,8 +457,11 @@ As of version 1.2.0 of the plugin the following was achieved:
 
 == Upgrade Notice =
 
+= 1.3.0 =
+Feature release with 10 new integrations added. Enhanced Gutenberg / Block Editor support for (upcoming) WordPress 5.0. Plus smaller tweaks and improvements overall. &ndash; Update highly recommended!
+
 = 1.2.0 =
-Feature release with 10 new integrations added. Gutenberg / Block Editor support for (upcoming) WordPress 5.0. Plus smaller tweaks and improvements overall. &ndash; Update highly recommended!
+Feature release with 11 new integrations added. Gutenberg / Block Editor support for (upcoming) WordPress 5.0. Plus smaller tweaks and improvements overall. &ndash; Update highly recommended!
 
 = 1.1.0 =
 Feature release with 9 new integrations added. Also major improvements to category labels, now fitting to the integrated content/post type. Plus smaller tweaks and improvements overall. &ndash; Update highly recommended!

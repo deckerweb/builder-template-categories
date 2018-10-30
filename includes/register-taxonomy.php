@@ -18,9 +18,12 @@ add_action( 'init', 'ddw_btc_register_templates_taxonomy', 20 );
  *
  * @since 1.0.0
  * @since 1.1.0 Make the default label string "Template" filterable.
+ * @since 1.3.0 Added logic for optionally adding post types at registering,
+ *              for special Block Editor support.
  *
  * @see   ddw_btc_string_default_content_type()
  *
+ * @uses  ddw_btc_get_post_types_for_block_editor()
  * @uses  register_taxonomy()
  */
 function ddw_btc_register_templates_taxonomy() {
@@ -123,12 +126,55 @@ function ddw_btc_register_templates_taxonomy() {
 		)
 	);
 
+	/** Set post types to add the taxonomy to */
+	$post_types = null;
+
+	$block_editor_types = ddw_btc_get_post_types_for_block_editor( 'keys_only' );
+
+	if ( ! is_null( $block_editor_types ) ) {
+		$post_types = $block_editor_types;
+	}
+
 	/** Finally, register the taxonomy */
 	register_taxonomy(
 		'builder-template-category',
-		array(),	//'btc-custom-post-type',
+		$post_types,	//'btc-custom-post-type',
 		$args
 	);
+
+}  // end function
+
+
+add_action( 'admin_menu', 'ddw_btc_inbetween_remove_submenu_for_block_editor_types', 599 );
+/**
+ * Remove the added taxonomy submenu for integrations that explicitely support
+ *   the Block Editor (Gutenberg).
+ *   Note: This is a necessary in-between step, as we run our integrations at a
+ *   later priority. The reasoning behind is, that we need proper label support
+ *   for our template content types, that the WordPress core-added submenus
+ *   don't add.
+ *
+ * @since  1.3.0
+ *
+ * @uses   ddw_btc_get_post_types_for_block_editor()
+ *
+ * @global array $GLOBALS[ 'submenu' ]
+ */
+function ddw_btc_inbetween_remove_submenu_for_block_editor_types() {
+
+	$types = ddw_btc_get_post_types_for_block_editor();
+
+	if ( ! is_null( $types ) ) {
+
+		foreach ( $types as $type => $type_data ) {
+			
+			$submenu_hook = $type_data[ 'submenu_hook' ];
+
+			unset( $GLOBALS[ 'submenu' ][ $submenu_hook ][15] );
+
+		}  // end foreach
+
+	}  // end if
 
 }  // end function
 
@@ -140,8 +186,9 @@ function ddw_btc_register_templates_taxonomy() {
  *
  * @since 1.0.0
  * @since 1.1.0 Added optional terms for products, as well as popups.
- * @since 1.2.0 Added optional terms for blocks, fields and boxes.
+ * @since 1.2.0 Added optional terms for blocks, fields, boxes, bars and hooks.
  *
+ * @uses  ddw_btc_is_block_editor_active()
  * @uses  wp_insert_term()
  */
 function ddw_btc_add_predefined_terms() {
@@ -213,7 +260,7 @@ function ddw_btc_add_predefined_terms() {
 	}  // end if
 
 	/** Optional: Block type templates */
-	if ( has_filter( 'btc/filter/is_type/block' ) ) {
+	if ( ddw_btc_is_block_editor_active() || has_filter( 'btc/filter/is_type/block' ) ) {
 
 		$terms[ 'terms_block' ] = array(
 			'name'        => esc_attr_x( 'Blocks', 'Taxonomy term title', 'builder-template-categories' ),

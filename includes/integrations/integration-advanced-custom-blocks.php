@@ -52,13 +52,14 @@ add_action( 'admin_menu', 'ddw_btc_add_submenu_acb_addnew' );
  * @since 1.2.0
  *
  * @uses  add_submenu_page()
+ * @uses  ddw_btc_string_add_new()
  */
 function ddw_btc_add_submenu_acb_addnew() {
 
 	add_submenu_page(
 		'acb',		// 'edit.php?post_type=acb_block'
-		esc_html__( 'Add New', 'builder-template-categories' ),
-		esc_html__( 'Add New', 'builder-template-categories' ),
+		ddw_btc_string_add_new(),
+		ddw_btc_string_add_new(),
 		'edit_theme_options',
 		esc_url( admin_url( 'post-new.php?post_type=acb_block' ) )
 	);

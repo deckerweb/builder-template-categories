@@ -21,7 +21,7 @@
  * @package DDWlib Plugin Installer Recommendations
  * @author  David Decker
  * @license http://www.gnu.org/licenses GNU General Public License
- * @version 1.1.0
+ * @version 1.2.0
  * @link    https://github.com/deckerweb/ddwlib-plugin-installer-recommendations
  */
 
@@ -482,6 +482,7 @@ if ( ! class_exists( 'DDWlib_Plugin_Installer_Recommendations' ) ) :
 		 *   - Theme uploader
 		 *
 		 * @since 1.1.0
+		 * @since 1.2.0 Added more styles for plugin cards. Dark mode support.
 		 */
 		static function installer_styles() {
 
@@ -512,6 +513,57 @@ if ( ! class_exists( 'DDWlib_Plugin_Installer_Recommendations' ) ) :
 						margin-left: 10px;
 					}
 
+					.dark-mode .plugin-card:hover {
+						background: #404C58 !important;
+						border-color: #090909 !important;
+					}
+					.dark-mode .plugin-card:hover > .plugin-card-bottom {
+						background: #111921 !important;
+					}
+					.dark-mode .plugin-action-buttons div small {
+						color: #bbc8d4;
+					}
+
+					/** Plugin cards: buttons */
+					#wpwrap .plugin-action-buttons .button-disabled {
+						background-color: #d9edc2 !important;
+						border-color: #b2ce96 !important;
+						color: #555 !important;
+					}
+					.plugin-action-buttons .update-now,
+					.plugin-action-buttons .install-now.updating-message {
+						background-color: #fef5c4;
+					}
+					.plugin-action-buttons .activate-now,
+					.plugin-action-buttons .activate-now:focus,
+					.dark-mode .plugin-action-buttons .activate-now,
+					.dark-mode .plugin-action-buttons .activate-now:focus, {
+						background-color: #e2e2f9;
+						border-color: #bebde9;
+						color: #333;
+					}
+					.plugin-action-buttons a.activate-now:before {
+						color: #999;  /* #f56e28; */
+						content: "\f106";
+						display: inline-block;
+						font: 400 20px/1 dashicons;
+						margin: 3px 5px 0 -2px;
+						speak: none;
+						-webkit-font-smoothing: antialiased;
+						-moz-osx-font-smoothing: grayscale;
+						vertical-align: top;
+					}
+
+					/** Plugin cards: compatibility */
+					.plugin-card .compatibility-compatible:before,
+					.plugin-card .compatibility-compatible strong {
+						color: #0b0 !important;
+					}
+					.plugin-card .compatibility-incompatible:before,
+					.plugin-card .compatibility-incompatible strong {
+						color: #f00 !important;
+					}
+
 					/** Plugin & Theme uploaders */
 					.upload-plugin .wp-upload-form,
 					.upload-theme .wp-upload-form {
@@ -538,6 +590,15 @@ if ( ! class_exists( 'DDWlib_Plugin_Installer_Recommendations' ) ) :
 						display: inline-block;
 						font-size: 120%;
 						margin-top: 20px;
+					}
+					.dark-mode input#pluginzip,
+					.dark-mode input#themezip {
+						background-color: #404C58;
+						border-color: #23282d;
+					}
+					.dark-mode input#pluginzip:hover,
+					.dark-mode input#themezip:hover {
+					    background-color: #50626f;
 					}
 				</style>
 			<?php

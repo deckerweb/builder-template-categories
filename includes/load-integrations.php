@@ -82,6 +82,7 @@ if ( ddw_btc_is_cornerstone_global_blocks_active() ) {
 }
 
 
+
 /**
  * 2) Theme integrations:
  * @since 1.0.0
@@ -230,6 +231,23 @@ if ( ddw_btc_is_stylepress_elementor_active() ) {
 }
 
 
+/**
+ * Plugin: Opal Widgets for Elementor
+ * @since 1.3.0
+ */
+if ( ddw_btc_is_opal_widgets_elementor_active() ) {
+	require_once( BTC_PLUGIN_DIR . 'includes/integrations/integration-opal-widgets-elementor.php' );
+}
+
+
+/**
+ * Plugin: JetSmartFilters
+ * @since 1.3.0
+ */
+if ( ddw_btc_is_jetsmartfilters_active() ) {
+	require_once( BTC_PLUGIN_DIR . 'includes/integrations/integration-jetsmartfilters.php' );
+}
+
 
 
 /**
@@ -343,6 +361,69 @@ if ( ddw_btc_is_widget_content_blocks_active() ) {
  */
 if ( ddw_btc_is_dev_content_blocks_active() ) {
 	require_once( BTC_PLUGIN_DIR . 'includes/integrations/integration-dev-content-blocks.php' );
+}
+
+
+/**
+ * Plugin: Advanced Custom Fields (Pro)
+ * @since 1.3.0
+ */
+if ( ddw_btc_is_advanced_custom_fields_active() ) {
+	require_once( BTC_PLUGIN_DIR . 'includes/integrations/integration-advanced-custom-fields.php' );
+}
+
+
+/**
+ * Plugin: Custom Field Suite
+ * @since 1.3.0
+ */
+if ( ddw_btc_is_custom_field_suite_active() ) {
+	require_once( BTC_PLUGIN_DIR . 'includes/integrations/integration-custom-field-suite.php' );
+}
+
+
+/**
+ * Plugin: CMB2 Admin Extension
+ * @since 1.3.0
+ */
+if ( ddw_btc_is_cmb2_admin_extension_active() ) {
+	require_once( BTC_PLUGIN_DIR . 'includes/integrations/integration-cmb2-admin-extension.php' );
+}
+
+
+/**
+ * Plugin: Meta Box Builder
+ * @since 1.3.0
+ */
+if ( ddw_btc_is_meta_box_builder_active() ) {
+	require_once( BTC_PLUGIN_DIR . 'includes/integrations/integration-metabox-builder.php' );
+}
+
+
+/**
+ * Plugin: Custom Template for LifterLMS
+ * @since 1.3.0
+ */
+if ( ddw_btc_is_custom_template_lifterlms_active() ) {
+	require_once( BTC_PLUGIN_DIR . 'includes/integrations/integration-custom-template-lifterlms.php' );
+}
+
+
+/**
+ * Plugin: Custom Template for LearnDash
+ * @since 1.3.0
+ */
+if ( ddw_btc_is_custom_template_learndash_active() ) {
+	require_once( BTC_PLUGIN_DIR . 'includes/integrations/integration-custom-template-learndash.php' );
+}
+
+
+/**
+ * Plugin: Reusable Content Blocks
+ * @since 1.3.0
+ */
+if ( ddw_btc_is_reusable_content_blocks_active() ) {
+	require_once( BTC_PLUGIN_DIR . 'includes/integrations/integration-reusable-content-blocks.php' );
 }
 
 

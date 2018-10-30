@@ -4,7 +4,7 @@
   "keywords": ["templates", "categories", "template", "category", "elementor", "page builder", "pods", "astra", "generatepress", "oceanwp", "crocoblock"],
   "type": "wordpress-plugin",
   "homepage": "https://github.com/deckerweb/builder-template-categories",
-  "license": "GPL-2.0+",
+  "license": "GPL-2.0-or-later",
   "authors": [
     {
       "name": "David Decker",

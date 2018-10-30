@@ -99,6 +99,9 @@ function ddw_btc_taxonomy_admin_url() {
  *
  * @since  1.1.0
  * @since  1.2.0 Added "Field", "Box", "Bar" and "Hook" content types.
+ * @since  1.3.0 Added "Filter" content type.
+ *
+ * @uses   ddw_btc_get_integrations()
  *
  * @param  string $all_types Optional string param used as a flag, to enable
  *                           alternative return of all post types in one single
@@ -126,6 +129,7 @@ function ddw_btc_get_integration_post_types( $all_types = '' ) {
 		'boxes'      => array(),
 		'bars'       => array(),
 		'hooks'      => array(),
+		'filters'    => array(),
 		'btcdefault' => array( 'btc-template' ),
 	);
 
@@ -189,6 +193,10 @@ function ddw_btc_get_integration_post_types( $all_types = '' ) {
 			$post_types[ 'hooks' ][] = $integration[ 'post_type' ];
 		}
 
+		if ( 'filter' === $integration[ 'template_label' ] ) {
+			$post_types[ 'filters' ][] = $integration[ 'post_type' ];
+		}
+
 		$post_types_all[] = $integration[ 'post_type' ];
 
 	}  // end foreach
@@ -208,6 +216,60 @@ function ddw_btc_get_integration_post_types( $all_types = '' ) {
 	return apply_filters(
 		'btc/filter/integrations/post_types',
 		$post_types
+	);
+
+}  // end function
+
+
+/**
+ * Get only those post types from our registered, active integrations which
+ *   stated explicit 'block_editor' support in the registering array.
+ *   This is needed for registering our taxonomy so that the taxonomy meta box
+ *   is appearing for those post types in the Block Editor (Gutenberg).
+ *
+ * @since  1.3.0
+ *
+ * @uses   ddw_btc_get_integrations()
+ *
+ * @param  string $keys_only Flag string to optionally output only a single
+ *                           array with all post type keys.
+ * @return array Filterable array with the full sub arrays for each integration.
+ */
+function ddw_btc_get_post_types_for_block_editor( $keys_only = '' ) {
+
+	/** Get array with all active integrations */
+	$integrations = ddw_btc_get_integrations();
+
+	/** Setup arrays */
+	$post_types_block_editor = array();
+	$post_type_keys          = array();
+
+	/** Iterate through all integrations and collect the post types */
+	foreach ( $integrations as $integration => $integration_data ) {
+
+		if ( isset( $integration_data[ 'block_editor' ] )
+			&& 'register_early' === $integration_data[ 'block_editor' ]
+		) {
+
+			$post_types_block_editor[ $integration ] = $integration_data;
+
+			$post_type_keys[] = $integration_data[ 'post_type' ];
+		}
+
+	}  // end foreach
+
+	/**
+	 * If $keys_only param is set to 'keys_only' return all post types keys
+	 *   in a single array.
+	 */
+	if ( 'keys_only' === sanitize_key( $keys_only ) ) {
+		return $post_type_keys;
+	}
+
+	/** Return filterable array of collected post types */
+	return apply_filters(
+		'btc/filter/integrations/post_types/block_editor',
+		$post_types_block_editor
 	);
 
 }  // end function
@@ -263,7 +325,7 @@ function ddw_btc_info_values() {
 		'url_snippets'      => 'https://github.com/deckerweb/builder-template-categories/wiki/Code-Snippets',
 		'author'            => __( 'David Decker - DECKERWEB', 'builder-template-categories' ),
 		'author_uri'        => 'https://deckerweb.de/',
-		'license'           => 'GPL-2.0+',
+		'license'           => 'GPL-2.0-or-later',
 		'url_license'       => 'https://opensource.org/licenses/GPL-2.0',
 		'first_code'        => '2018',
 		'url_donate'        => 'https://www.paypal.me/deckerweb',

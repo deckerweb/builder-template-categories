@@ -12,6 +12,24 @@
 
 ## Changelog of the Plugin
 
+### 1.3.0 - 2018-10-30
+
+* New: Integration with plugin Advanced Custom Fields (ACF) (free & Pro, by Elliot Condon)
+* New: Integration with plugin Custom Field Suite (free, by Matt Gibbs)
+* New: Integration with Add-On plugin CMB2 Admin Extension (free, by twoelevenjay) --> Note: This is the UI plugin for the [CMB2 library](https://wordpress.org/plugins/cmb2/) plugin!
+* New: Integration with Add-On plugins Meta Box Builder and Meta Box All-In-One (AIO) (both Premium, by Meta Box) --> Note: This is the UI plugin for the [Meta Box](https://wordpress.org/plugins/meta-box/) (fields) plugin!
+* New: Integration with plugin Custom Template for LifterLMS (free, by Brainstorm Force)
+* New: Integration with plugin Custom Template for LearnDash (free, by Brainstorm Force)
+* New: Integration with plugin Opal Widgets for Elementor (free, by WpOpal) - for Header and Footer templates
+* New: Integration with plugin Reusable Content Blocks (free, by Safeer)
+* New: Integration with plugin JetSmartFilters (Premium, by Zemez Jet/ CrocoBlock)
+* New: Added new template content type "Filter/ Filters"
+* New: Successfully tested with WordPress 5.0 Beta 1
+* Tweak: Updated bundled library DDWlib Plugin Installer Recommendations to latest version (v1.2.0) - which brings enhanced CSS styles, including for the "Dark Mode" plugin
+* Tweak: Updated `.pot` file plus all German translations (formal, informal) and language packs
+* Tweak: Enhanced and improved Readme.txt file here - also added some new FAQ entries
+
+
 ### 1.2.0 - 2018-10-12
 
 * *The Gutenberg Block Editor Support Release ;-)*
