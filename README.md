@@ -6,7 +6,7 @@
 **Tested up to:** 5.0  
 **Requires PHP:** 5.6  
 **Stable tag:** 1.3.0  
-**License:** GPL-2.0+  
+**License:** GPL-2.0-or-later  
 **License URI:** https://opensource.org/licenses/GPL-2.0  
 
 Organize your Page Builder Templates in the WordPress Admin. Better overview, don't get lost. Time saver. With extended plugin & theme support.
@@ -362,16 +362,16 @@ Best practice is to wrap the whole code above in a conditional to check if the t
 
 
 ### Some Statistics?
-As of version 1.2.0 of the plugin the following was achieved:
+As of version 1.3.0 of the plugin the following was achieved:
 
 * 1 Taxonomy
-* 39 Integrations overall
+* 49 Integrations overall
 * 1 Core Integration (Gutenberg Block Editor)
 * 5 Theme Integrations
 * 7 Page Builder Integrations
-* 26 Plugin Integrations
-* Up to 44 different post types (of integrations) supported
-* 13 generic template content types, plus 1 plugin-specific template content type
+* 36 Plugin Integrations
+* Up to 54 different post types (of integrations) supported
+* 14 generic template content types, plus 1 plugin-specific template content type
 
 
 

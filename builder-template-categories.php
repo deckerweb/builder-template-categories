@@ -4,7 +4,7 @@
  * @package           Builder Template Categories
  * @author            David Decker
  * @copyright         Copyright (c) 2018, David Decker - DECKERWEB
- * @license           GPL-2.0+
+ * @license           GPL-2.0-or-later
  * @link              https://deckerweb.de/twitter
  *
  * @wordpress-plugin
