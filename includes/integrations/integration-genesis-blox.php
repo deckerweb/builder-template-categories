@@ -29,6 +29,7 @@ function ddw_btc_register_integration_blox( array $integrations ) {
 		'post_type'      => 'blox',
 		'template_label' => 'block',
 		'admin_url'      => 'edit.php?post_type=blox',
+		'add_tax_column' => 'yes',
 	);
 
 	return $integrations;
@@ -48,20 +49,21 @@ add_action( 'add_meta_boxes', 'ddw_btc_add_categories_metabox_blox', 200 );
  *
  * @uses  add_meta_box()
  * @uses  post_categories_meta_box() Original function from WP core, used as callback here.
+ * @uses  ddw_btc_string_template()
  */
 function ddw_btc_add_categories_metabox_blox() {
 
-    add_meta_box(
-    	'builder-template-category',
-    	esc_attr__( 'Block Categories', 'builder-template-categories' ),
-    	'post_categories_meta_box',	// WP Core callback function for taxonomies - what we need!
-    	'blox',		// post type
-    	'side',		// context
-    	'default',	// priority
-    	array(		// args for the above callback function
-    		'taxonomy' => 'builder-template-category',
-    	)
-    );
+	add_meta_box(
+		'builder-template-category',
+		ddw_btc_string_template( 'block' ),	//esc_attr__( 'Block Categories', 'builder-template-categories' ),
+		'post_categories_meta_box',	// WP Core callback function for taxonomies - what we need!
+		'blox',		// post type
+		'side',		// context
+		'default',	// priority
+		array(		// args for the above callback function
+			'taxonomy' => 'builder-template-category',
+		)
+	);
 
 }  // end function
 
@@ -72,3 +74,28 @@ function ddw_btc_add_categories_metabox_blox() {
  * @since 1.2.0
  */
 add_filter( 'btc/filter/is_type/block', '__return_true' );
+
+
+add_filter( 'blox_admin_column_titles', 'ddw_btc_add_tax_column_blox' );
+/**
+ * Manually add our tax column to the post type list table. This is a needed
+ *   step as the automatic adding doesn't work for this (customized) post type
+ *   list table.
+ *   Note: The core default filter 'manage_edit-blox_columns' is not working
+ *         here as 'Blox' plugin already has customized columns - but luckily
+ *         provides its own filters :).
+ *
+ * @since  1.4.0
+ *
+ * @uses   ddw_btc_string_template()
+ *
+ * @param  array $columns Array that holds all columns.
+ * @return array Modified array of columns.
+ */
+function ddw_btc_add_tax_column_blox( $columns ) {
+
+	$columns[ 'builder-template-category' ] = ddw_btc_string_template( 'block' );
+
+	return $columns;
+
+}  // end function

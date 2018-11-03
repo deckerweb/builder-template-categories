@@ -17,6 +17,9 @@ Organize your Page Builder Templates in the WordPress Admin. Better overview, do
 
 Organize your Page Builder Templates in the WordPress Admin. Time saver, especially for bigger projects. Get a better and faster overview, don't get lost. Filter templates with your categories. With extended plugin & theme support.
 
+[![Video of Plugin's Live Demo and Walkthrough](https://img.youtube.com/vi/9FhIJ2QxOoQ/0.jpg)](https://www.youtube.com/watch?v=9FhIJ2QxOoQ)
+[**original video link**](https://www.youtube.com/watch?v=9FhIJ2QxOoQ) *by plugin developer David Decker*
+
 Out of the box the plugin includes integrations for a lot of awesome Page Builders, Themes and Plugins. If any supported integration is installed & active, the "Builder Template Categories" plugin just applies its additions. The plugin is really lightweight and simple. Just activate and you're done - and can use the categorization.
 
 
@@ -438,6 +441,7 @@ As of version 1.3.0 of the plugin the following was achieved:
 * New: Added new template content type "Filter/ Filters"
 * New: Added 2 new screenshots to show Reusable Block support in Block Editor (Gutenberg)
 * New: Successfully tested with WordPress 5.0 Beta 1
+* New: [Video of plugin walkthrough and live demo](https://www.youtube.com/watch?v=9FhIJ2QxOoQ)
 * Tweak: Updated bundled library DDWlib Plugin Installer Recommendations to latest version (v1.2.0) - which brings enhanced CSS styles, including for the "Dark Mode" plugin
 * Tweak: Updated `.pot` file plus all German translations (formal, informal) and language packs
 * Tweak: Enhanced and improved Readme.txt file here - also added some new FAQ entries

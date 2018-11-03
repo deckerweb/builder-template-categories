@@ -427,6 +427,15 @@ if ( ddw_btc_is_reusable_content_blocks_active() ) {
 }
 
 
+/**
+ * Plugin: Master Popups
+ * @since 1.4.0
+ */
+if ( ddw_btc_is_master_popups_active() ) {
+	require_once( BTC_PLUGIN_DIR . 'includes/integrations/integration-master-popups.php' );
+}
+
+
 
 /**
  * 5) Block Editor (Gutenberg) integrations - WP Core, plugins etc.:

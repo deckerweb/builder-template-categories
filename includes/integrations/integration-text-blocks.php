@@ -29,6 +29,7 @@ function ddw_btc_register_integration_text_blocks( array $integrations ) {
 		'post_type'      => 'text-blocks',
 		'template_label' => 'block',
 		'admin_url'      => 'edit.php?post_type=text-blocks',
+		'add_tax_column' => 'yes',
 	);
 
 	return $integrations;
@@ -42,3 +43,25 @@ function ddw_btc_register_integration_text_blocks( array $integrations ) {
  * @since 1.2.0
  */
 add_filter( 'btc/filter/is_type/block', '__return_true' );
+
+
+add_filter( 'manage_edit-text-blocks_columns', 'ddw_btc_add_tax_column_text_blocks', 10, 1 );
+/**
+ * Manually add our tax column to the post type list table. This is a needed
+ *   step as the automatic adding doesn't work for this (customized) post type
+ *   list table.
+ *
+ * @since  1.4.0
+ *
+ * @uses   ddw_btc_string_template()
+ *
+ * @param  array $columns Array that holds all columns.
+ * @return array Modified array of columns.
+ */
+function ddw_btc_add_tax_column_text_blocks( $columns ) {
+
+	$columns[ 'builder-template-category' ] = ddw_btc_string_template( 'block' );
+
+	return $columns;
+
+}  // end function

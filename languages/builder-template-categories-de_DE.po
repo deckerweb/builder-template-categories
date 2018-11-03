@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Builder Template Categories\n"
-"POT-Creation-Date: 2018-10-30 11:33+0100\n"
-"PO-Revision-Date: 2018-10-30 11:33+0100\n"
+"POT-Creation-Date: 2018-11-03 23:51+0100\n"
+"PO-Revision-Date: 2018-11-03 23:51+0100\n"
 "Last-Translator: David Decker DECKERWEB.de -- https://deckerweb.de/\n"
 "Language-Team: David Decker DECKERWEB.de -- https://deckerweb.de/\n"
 "Language: de_DE\n"
@@ -308,10 +308,6 @@ msgstr "GeneratePress Elemente"
 msgid "Blox Global Blocks (for Genesis)"
 msgstr "Blox Globale Blöcke (für Genesis)"
 
-#: includes/integrations/integration-genesis-blox.php:56
-msgid "Block Categories"
-msgstr "Block-Kategorien"
-
 #: includes/integrations/integration-hf-elementor.php:27
 msgid "Header &amp; Footer Templates for Elementor"
 msgstr "Header &amp; Footer-Templates für Elementor"
@@ -355,6 +351,10 @@ msgstr "Lazy Block-Templates"
 #: includes/integrations/integration-loomisoft-content-blocks.php:27
 msgid "Loomisoft Reusable Content Blocks"
 msgstr "Loomisoft wiederverwendbare Inhaltsblöcke"
+
+#: includes/integrations/integration-master-popups.php:27
+msgid "Master Popup Templates"
+msgstr "Master Popup Templates"
 
 #: includes/integrations/integration-metabox-builder.php:27
 msgid "Meta Box Field Groups"
@@ -954,6 +954,9 @@ msgstr ""
 #. Author URI of the plugin/theme
 msgid "https://deckerweb.de/"
 msgstr "https://deckerweb.de/"
+
+#~ msgid "Block Categories"
+#~ msgstr "Block-Kategorien"
 
 #~ msgid "Facebook User Group"
 #~ msgstr "Facebook-Nutzergruppe"

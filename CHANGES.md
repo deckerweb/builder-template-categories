@@ -26,6 +26,7 @@
 * New: Added new template content type "Filter/ Filters"
 * New: Added 2 new screenshots to show Reusable Block support in Block Editor (Gutenberg)
 * New: Successfully tested with WordPress 5.0 Beta 1
+* New: [Video of plugin walkthrough and live demo](https://www.youtube.com/watch?v=9FhIJ2QxOoQ)
 * Tweak: Updated bundled library DDWlib Plugin Installer Recommendations to latest version (v1.2.0) - which brings enhanced CSS styles, including for the "Dark Mode" plugin
 * Tweak: Updated `.pot` file plus all German translations (formal, informal) and language packs
 * Tweak: Enhanced and improved Readme.txt file here - also added some new FAQ entries

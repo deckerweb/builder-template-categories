@@ -741,6 +741,20 @@ function ddw_btc_is_reusable_content_blocks_active() {
 }  // end function
 
 
+/**
+ * Is Master Popups plugin active or not?
+ *
+ * @since  1.4.0
+ *s
+ * @return bool TRUE if Master Popups is active, otherwise FALSE.
+ */
+function ddw_btc_is_master_popups_active() {
+
+	return function_exists( 'MasterPopups' );
+
+}  // end function
+
+
 
 /**
  * 5) Block Editor (Gutenberg) integrations - WP Core, plugins etc.:

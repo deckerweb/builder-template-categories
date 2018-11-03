@@ -15,6 +15,8 @@ Organize your Page Builder Templates in the WordPress Admin. Better overview, do
 
 Organize your Page Builder Templates in the WordPress Admin. Time saver, especially for bigger projects. Get a better and faster overview, don't get lost. Filter templates with your categories. With extended plugin & theme support.
 
+https://www.youtube.com/watch?v=9FhIJ2QxOoQ
+
 Out of the box the plugin includes integrations for a lot of awesome Page Builders, Themes and Plugins. If any supported integration is installed & active, the "Builder Template Categories" plugin just applies its additions. The plugin is really lightweight and simple. Just activate and you're done - and can use the categorization.
 
 = What the Plugin does? =
@@ -367,6 +369,12 @@ As of version 1.3.0 of the plugin the following was achieved:
 
 == Changelog ==
 
+= 1.4.0 - 2018-11-?? =
+* New: Integration with plugin Master Popups (Premium, by CodexHelp)
+* Tweak: For some integrations (manually) added taxonomy column to the post type list table (overview table) where the automatic adding didn't work (because of customized post types...)
+* Tweak: Updated `.pot` file plus all German translations (formal, informal) and language packs
+
+
 = 1.3.0 - 2018-10-30 =
 * New: Integration with plugin Advanced Custom Fields (ACF) (free & Pro, by Elliot Condon)
 * New: Integration with plugin Custom Field Suite (free, by Matt Gibbs)
@@ -380,6 +388,7 @@ As of version 1.3.0 of the plugin the following was achieved:
 * New: Added new template content type "Filter/ Filters"
 * New: Added 2 new screenshots to show Reusable Block support in Block Editor (Gutenberg)
 * New: Successfully tested with WordPress 5.0 Beta 1
+* New: [Video of plugin walkthrough and live demo](https://www.youtube.com/watch?v=9FhIJ2QxOoQ)
 * Tweak: Updated bundled library DDWlib Plugin Installer Recommendations to latest version (v1.2.0) - which brings enhanced CSS styles, including for the "Dark Mode" plugin
 * Tweak: Updated `.pot` file plus all German translations (formal, informal) and language packs
 * Tweak: Enhanced and improved Readme.txt file here - also added some new FAQ entries
@@ -455,7 +464,11 @@ As of version 1.3.0 of the plugin the following was achieved:
 = 0.9.0 - 2018-08-16 =
 * New: Beta release of the plugin on [its public GitHub repository](https://github.com/deckerweb/builder-template-categories)
 
+
 == Upgrade Notice =
+
+= 1.4.0 =
+???
 
 = 1.3.0 =
 Feature release with 10 new integrations added. Enhanced Gutenberg / Block Editor support for (upcoming) WordPress 5.0. Plus smaller tweaks and improvements overall. &ndash; Update highly recommended!

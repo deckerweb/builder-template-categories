@@ -81,7 +81,7 @@ function ddw_btc_integrations_add_admin_submenus() {
 
 	}  // end foreach
 
-}  // end function 
+}  // end function
 
 
 /**
@@ -381,5 +381,68 @@ function ddw_btc_tweak_taxonomy_labels() {
 
 	/** If no match, return the default string ("Template") */
 	return ddw_btc_string_content_type( 'btcdefault' );
+
+}  // end function
+
+
+add_action( 'manage_posts_custom_column', 'ddw_btc_maybe_add_tax_column_data', 10, 2 );
+/**
+ * Optionally add our taxonomy as column data in the post list table. This is
+ *   necessary for those post types where the WordPress default taxonomy
+ *   registering doesn't add the column by default. The label setup happens on
+ *   the integration level, though, as this is dependent on the template content
+ *   type.
+ *
+ * @since  1.4.0
+ *
+ * @uses   ddw_btc_get_integrations()
+ *
+ * @param  string $column_name
+ * @param  int $post_id ID of the current post in the table.
+ * @return null
+ */
+function ddw_btc_maybe_add_tax_column_data( $column_name, $post_id ) {
+
+	$taxonomies = array( 'builder-template-category' );
+
+	/** Get array with all active integrations */
+	$integrations = ddw_btc_get_integrations();
+
+	/** Iterate through all integrations and collect the post types */
+	foreach ( $integrations as $integration => $integration_data ) {
+
+		if ( isset( $integration_data[ 'add_tax_column' ] )
+			&& 'yes' === $integration_data[ 'add_tax_column' ]
+		) {
+
+			foreach ( $taxonomies as $taxonomy ) {
+
+				if ( $column_name == $taxonomy ) {
+
+					$terms = get_the_terms( $post_id, $taxonomy );
+
+					if ( ! empty( $terms ) ) {
+
+						$output = array();
+
+						foreach ( $terms as $term ) {
+							$output[] = '<a href="' . esc_url( admin_url( 'edit.php?' . $taxonomy . '='.  $term->slug . '&post_type=' . $integration_data[ 'post_type' ] ) ) . '">' . $term->name . '</a>';
+						}
+
+						echo join( ', ', $output );
+
+					} else {
+
+						echo '&mdash;';
+
+					}  // end if
+				
+				}  // end if
+
+			}  // end foreach (taxonomies)
+
+		}  // end if
+
+	}  // end foreach (integrations)
 
 }  // end function
