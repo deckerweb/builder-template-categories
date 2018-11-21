@@ -346,7 +346,7 @@ Best practice is to wrap the whole code above in a conditional to check if the t
 As of version 1.4.0 of the plugin the following was achieved:
 
 * 1 Taxonomy
-* 58 Integrations overall
+* 59 Integrations overall
 * 1 Core Integration (Gutenberg Block Editor)
 * 6 Theme Integrations
 * 10 Page Builder Integrations
