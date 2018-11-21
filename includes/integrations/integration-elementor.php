@@ -34,3 +34,23 @@ function ddw_btc_register_integration_elementor( array $integrations ) {
 	return $integrations;
 
 }  // end function
+
+
+add_action( 'elementor/finder/categories/init', 'ddw_btc_elementor_finder_add_items' );
+/**
+ * Add "Builder Template Categories" category to the Elementor Finder
+ *   (Elementor v2.3.0+).
+ *
+ * @since 1.4.0
+ *
+ * @param object $categories_manager
+ */
+function ddw_btc_elementor_finder_add_items( $categories_manager ) {
+
+	/** Include the Finder Category class file */
+	require_once( BTC_PLUGIN_DIR . 'includes/integrations/elementor-finder.php' );
+
+	/** Add the BTC category */
+	$categories_manager->add_category( 'builder-template-categories', new DDW_BTC_Finder_Category() );
+
+}  // end function

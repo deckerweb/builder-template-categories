@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Builder Template Categories\n"
-"POT-Creation-Date: 2018-11-03 23:50+0100\n"
+"POT-Creation-Date: 2018-11-21 21:39+0100\n"
 "PO-Revision-Date: 2018-08-14 13:21+0200\n"
 "Last-Translator: David Decker DECKERWEB.de -- https://deckerweb.de/\n"
 "Language-Team: David Decker DECKERWEB.de -- https://deckerweb.de/\n"
@@ -72,12 +72,12 @@ msgid ""
 "support!"
 msgstr ""
 
-#: includes/admin/admin-extras.php:344
+#: includes/admin/admin-extras.php:355
 msgctxt "Plugin installer: Tab name in installer toolbar"
 msgid "Newest"
 msgstr ""
 
-#: includes/admin/admin-extras.php:350
+#: includes/admin/admin-extras.php:361
 msgctxt "Plugin card: plugin version"
 msgid "Version:"
 msgstr ""
@@ -199,8 +199,40 @@ msgid "No Integration registered"
 msgstr ""
 
 #. Author of the plugin/theme
-#: includes/functions-global.php:326
+#: includes/functions-global.php:349
 msgid "David Decker - DECKERWEB"
+msgstr ""
+
+#: includes/integrations/elementor-finder.php:28
+msgctxt "Title in Elementor Finder"
+msgid "Add-On: Builder Template Categories"
+msgstr ""
+
+#: includes/integrations/elementor-finder.php:49
+msgctxt "Title in Elementor Finder"
+msgid "Template Categories"
+msgstr ""
+
+#: includes/integrations/elementor-finder.php:53
+msgid "Manage template categories for site builders"
+msgstr ""
+
+#: includes/integrations/elementor-finder.php:56
+msgctxt "Title in Elementor Finder"
+msgid "Help Resources - Builder Template Categories"
+msgstr ""
+
+#: includes/integrations/elementor-finder.php:60
+msgid "FAQ and documentation for the plugin"
+msgstr ""
+
+#: includes/integrations/elementor-finder.php:63
+msgctxt "Title in Elementor Finder"
+msgid "Code Snippets - Builder Template Categories"
+msgstr ""
+
+#: includes/integrations/elementor-finder.php:67
+msgid "These allow for tweaks and customizations"
 msgstr ""
 
 #: includes/integrations/integration-advanced-custom-blocks.php:27
@@ -219,6 +251,24 @@ msgstr ""
 msgid "Astra Custom Layouts"
 msgstr ""
 
+#: includes/integrations/integration-avada-fusion-builder.php:27
+msgid "Avada Fusion Builder Templates"
+msgstr ""
+
+#: includes/integrations/integration-avada-fusion-builder.php:35
+msgid "Avada Fusion Builder Elements"
+msgstr ""
+
+#: includes/integrations/integration-avada-fusion-builder.php:81
+#: includes/integrations/integration-avada-fusion-builder.php:82
+msgid "Templates Overview"
+msgstr ""
+
+#: includes/integrations/integration-avada-fusion-builder.php:89
+#: includes/integrations/integration-avada-fusion-builder.php:90
+msgid "Elements Overview"
+msgstr ""
+
 #: includes/integrations/integration-block-editor.php:30
 msgid "Block Editor Reusable Blocks"
 msgstr ""
@@ -233,8 +283,16 @@ msgctxt "Admin menu label"
 msgid "Blocks"
 msgstr ""
 
+#: includes/integrations/integration-block-lab.php:27
+msgid "Block Lab Blocks"
+msgstr ""
+
 #: includes/integrations/integration-block-layouts.php:27
 msgid "Block Layouts"
+msgstr ""
+
+#: includes/integrations/integration-block-templates.php:27
+msgid "Gutenberg Block Templates"
 msgstr ""
 
 #: includes/integrations/integration-boldgrid.php:27
@@ -265,6 +323,18 @@ msgstr ""
 msgid "Custom Field Suite Field Groups"
 msgstr ""
 
+#: includes/integrations/integration-custom-page-templates.php:28
+msgid "Custom Page Templates"
+msgstr ""
+
+#: includes/integrations/integration-custom-page-templates.php:37
+msgid "Custom Post Type Registrations"
+msgstr ""
+
+#: includes/integrations/integration-custom-page-templates.php:46
+msgid "Custom Taxonomy Registrations"
+msgstr ""
+
 #: includes/integrations/integration-custom-template-learndash.php:27
 msgid "LearnDash Custom Templates"
 msgstr ""
@@ -281,8 +351,20 @@ msgstr ""
 msgid "DHWC Elementor Product Templates"
 msgstr ""
 
+#: includes/integrations/integration-easy-content-templates.php:27
+msgid "Easy Content Templates"
+msgstr ""
+
 #: includes/integrations/integration-elementor.php:27
 msgid "Elementor My Templates"
+msgstr ""
+
+#: includes/integrations/integration-epic-news-elements.php:27
+msgid "Epic News Elements - Post Templates"
+msgstr ""
+
+#: includes/integrations/integration-epic-news-elements.php:35
+msgid "Epic News Elements - Archive Templates"
 msgstr ""
 
 #: includes/integrations/integration-generatepress.php:27
@@ -345,11 +427,11 @@ msgstr ""
 msgid "Meta Box Field Groups"
 msgstr ""
 
-#: includes/integrations/integration-metabox-posttypes.php:28
+#: includes/integrations/integration-metabox-posttypes.php:29
 msgid "Meta Box Post Type Registrations"
 msgstr ""
 
-#: includes/integrations/integration-metabox-posttypes.php:40
+#: includes/integrations/integration-metabox-posttypes.php:41
 msgid "Meta Box Taxonomy Registrations"
 msgstr ""
 
@@ -383,6 +465,14 @@ msgstr ""
 
 #: includes/integrations/integration-reusable-content-blocks.php:27
 msgid "Reusable Content Blocks"
+msgstr ""
+
+#: includes/integrations/integration-simple-content-templates.php:27
+msgid "Simple Content Templates"
+msgstr ""
+
+#: includes/integrations/integration-smart-footer-system.php:27
+msgid "Smart Footer Templates"
 msgstr ""
 
 #: includes/integrations/integration-sqh-placeholder-block.php:27
@@ -420,6 +510,22 @@ msgstr ""
 
 #: includes/integrations/integration-thrive-lightboxes.php:27
 msgid "Thrive Lightbox Templates"
+msgstr ""
+
+#: includes/integrations/integration-visual-composer.php:33
+msgid "Visual Composer Global Templates"
+msgstr ""
+
+#: includes/integrations/integration-visual-composer.php:44
+msgid "Visual Composer Header Builder Templates"
+msgstr ""
+
+#: includes/integrations/integration-visual-composer.php:53
+msgid "Visual Composer Footer Builder Templates"
+msgstr ""
+
+#: includes/integrations/integration-visual-composer.php:62
+msgid "Visual Composer Sidebar Builder Templates"
 msgstr ""
 
 #: includes/integrations/integration-widget-content-blocks.php:27

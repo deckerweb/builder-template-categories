@@ -29,7 +29,6 @@ function ddw_btc_register_integration_master_popups( array $integrations ) {
 		'post_type'      => 'master-popups',
 		'template_label' => 'popup',
 		'admin_url'      => 'edit.php?post_type=master-popups',
-		'add_tax_column' => 'yes',
 	);
 
 	return $integrations;
@@ -96,3 +95,12 @@ function ddw_btc_add_tax_column_master_popups( $columns ) {
 	return $columns;
 
 }  // end function
+
+
+/**
+ * Needed step to add the custom data to the added column in the post type list
+ *   table. Will run at hook 'manage_{$post_type}_posts_custom_column'.
+ *
+ * @since 1.4.0
+ */
+ddw_btc_prepare_tax_column_add( 'master-popups' );

@@ -12,6 +12,25 @@
 
 ## Changelog of the Plugin
 
+### 1.4.0 - 2018-11-21
+
+* New: Integration with plugin Epic News Elements (Premium, by Jegtheme) - *an Add-On for Elementor, Block Editor (Gutenberg) and WPBakery Page Builder (old Visual Composer)*
+* New: Integration with plugin Master Popups (Premium, by CodexHelp)
+* New: Integration with plugin Block Lab (free, by Block Lab) -- *for WordPress Block Editor, also known as "Gutenberg"*
+* New: Integration with plugin Gutenberg Templates (Block Templates) (free, by Konstantinos Galanakis) -- *for WordPress Block Editor, also known as "Gutenberg"*
+* New: Integration with plugin Visual Composer Website Builder (free/Premium, by The Visual Composer Team) -- Note: this is the new plugin version from 2018, not the old one (now renamed), "WPBakery Page Builder"
+* New: Integration with Page Builder plugin Avada Fusion Builder in *Avada Theme* (Premium, by ThemeFusion)
+* New: Integration with plugin Smart Footer System (Premium, by Meta Plugin) - compatible with Elementor, Gutenberg, Genesis, Beaver Builder etc.
+* New: Integration with plugin Easy Content Templates (free, by Japa Alekhin Llemos)
+* New: Integration with plugin Simple Content Templates (free, by Clifton Griffin)
+* New: Integration with plugin Custom Page Templates (Premium, by Pavlo Reva)
+* New: Added integration with "Elementor Finder" - interactive search since Elementor v2.3.0+
+* Tweak: For some integrations (manually) added taxonomy column to the post type list table (overview table) where the automatic adding didn't work (because of customized post types...)
+* Tweak: Set proper 'parent file' / 'subemenu file' relations for all integrations - therefore our taxonomy is now highlighted correctly as submenu in the Admin
+* Tweak: Updated `.pot` file plus all German translations (formal, informal) and language packs
+* Tweak: Enhanced and improved Readme.txt file here
+
+
 ### 1.3.0 - 2018-10-30
 
 * New: Integration with plugin Advanced Custom Fields (ACF) (free & Pro, by Elliot Condon)

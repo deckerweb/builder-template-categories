@@ -260,6 +260,9 @@ function ddw_btc_content_help() {
 				margin-left: 9px;
 				padding: 5px 10px;
 			}
+			.btc.dashicons-thumbs-up:before {
+				margin-top: 2px;
+			}
 		</style>
 	<?php
 
@@ -372,7 +375,7 @@ function ddw_btc_content_help_tab() {
 
 		'&nbsp;&nbsp;' . ddw_btc_get_info_link( 'url_translate', esc_html_x( 'Translations', 'Help tab info', 'builder-template-categories' ), 'button' ) .
 
-		'&nbsp;&nbsp;' . ddw_btc_get_info_link( 'url_donate', esc_html_x( 'Donate', 'Help tab info', 'builder-template-categories' ), 'button button-primary dashicons-before dashicons-thumbs-up' ) .
+		'&nbsp;&nbsp;' . ddw_btc_get_info_link( 'url_donate', esc_html_x( 'Donate', 'Help tab info', 'builder-template-categories' ), 'button button-primary dashicons-before dashicons-thumbs-up btc' ) .
 
 		sprintf(
 			'<p><a href="%1$s" target="_blank" rel="nofollow noopener noreferrer" title="%2$s">%2$s</a> &#x000A9; %3$s <a href="%4$s" target="_blank" rel="noopener noreferrer" title="%5$s">%5$s</a></p>',

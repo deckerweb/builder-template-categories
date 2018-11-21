@@ -57,8 +57,8 @@ function ddw_btc_register_integration_wpbakery_page_builder( array $integrations
 add_action( 'admin_menu', 'ddw_btc_remove_submenu_for_wpbakery_post_types', 999 );
 /**
  * Since we added support for up to TWO post types for this integration we need
- *   one of the submenus in the admin again - in the case both are active at the
- *   same time. Otherwise it would be highly confusing for users.
+ *   to remove one of the submenus in the admin again - in the case both are
+ *   active at the same time. Otherwise it would be highly confusing for users.
  *
  * @since 1.1.0
  *

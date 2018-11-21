@@ -158,6 +158,34 @@ function ddw_btc_is_cornerstone_global_blocks_active() {
 }  // end function
 
 
+/**
+ * Is Visual Composer Website Builder (2018) plugin active or not?
+ *
+ * @since  1.4.0
+ *s
+ * @return bool TRUE if Visual Composer is active, otherwise FALSE.
+ */
+function ddw_btc_is_visual_composer_active() {
+
+	return defined( 'VCV_VERSION' );
+
+}  // end function
+
+
+/**
+ * Is Visual Composer -> Global Templates module active or not?
+ *
+ * @since  1.4.0
+ *s
+ * @return bool TRUE if module is active, otherwise FALSE.
+ */
+function ddw_btc_is_vc_global_templates_active() {
+
+	return class_exists( '\VisualComposer\Modules\Editors\Templates\PostType' );
+
+}  // end function
+
+
 
 /**
  * 2) Theme integrations:
@@ -218,6 +246,20 @@ function ddw_btc_is_astra_layouts_active() {
 function ddw_btc_is_blox_active() {
 
 	return ( class_exists( 'Blox_Lite_Main' ) || class_exists( 'Blox_Main' ) );
+
+}  // end function
+
+
+/**
+ * Is Avada Theme with Fusion Builder plugin active or not?
+ *
+ * @since  1.4.0
+ *
+ * @return bool TRUE if Avada Fusion Builder is active, otherwise FALSE.
+ */
+function ddw_btc_is_avada_fusion_builder_active() {
+
+	return ( defined( 'FUSION_BUILDER_VERSION' ) );
 
 }  // end function
 
@@ -424,6 +466,20 @@ function ddw_btc_is_opal_widgets_elementor_active() {
 function ddw_btc_is_jetsmartfilters_active() {
 
 	return class_exists( 'Jet_Smart_Filters' );
+
+}  // end function
+
+
+/**
+ * Is Epic News Elements plugin active or not?
+ *
+ * @since  1.3.0
+ *
+ * @return bool TRUE if plugin is active, otherwise FALSE.
+ */
+function ddw_btc_is_epic_news_elements_active() {
+
+	return class_exists( '\EPIC\Init' );
 
 }  // end function
 
@@ -755,6 +811,62 @@ function ddw_btc_is_master_popups_active() {
 }  // end function
 
 
+/**
+ * Is Smart Footer System plugin active or not?
+ *
+ * @since  1.4.0
+ *s
+ * @return bool TRUE if plugin is active, otherwise FALSE.
+ */
+function ddw_btc_is_smart_footer_system_active() {
+
+	return defined( 'SFS_VERSION' );
+
+}  // end function
+
+
+/**
+ * Is Easy Content Templates plugin active or not?
+ *
+ * @since  1.4.0
+ *s
+ * @return bool TRUE if plugin is active, otherwise FALSE.
+ */
+function ddw_btc_is_easy_content_templates_active() {
+
+	return class_exists( 'ect_template' );
+
+}  // end function
+
+
+/**
+ * Is Simple Content Templates plugin active or not?
+ *
+ * @since  1.4.0
+ *s
+ * @return bool TRUE if plugin is active, otherwise FALSE.
+ */
+function ddw_btc_is_simple_content_templates_active() {
+
+	return defined( 'CGD_SCT_VERSION' );
+
+}  // end function
+
+
+/**
+ * Is Custom Page Templates plugin active or not?
+ *
+ * @since  1.4.0
+ *s
+ * @return bool TRUE if plugin is active, otherwise FALSE.
+ */
+function ddw_btc_is_custom_page_templates_active() {
+
+	return class_exists( 'cptemplates' );
+
+}  // end function
+
+
 
 /**
  * 5) Block Editor (Gutenberg) integrations - WP Core, plugins etc.:
@@ -801,6 +913,20 @@ function ddw_btc_is_lazy_blocks_active() {
 
 
 /**
+ * Is Block Lab plugin active or not?
+ *
+ * @since  1.4.0
+ *s
+ * @return bool TRUE if Block Lab is active, otherwise FALSE.
+ */
+function ddw_btc_is_block_lab_active() {
+
+	return function_exists( 'block_lab' );
+
+}  // end function
+
+
+/**
  * Is Advanced Custom Blocks plugin active or not?
  *
  * @since  1.2.0
@@ -838,5 +964,19 @@ function ddw_btc_is_block_layouts_active() {
 function ddw_btc_is_sqh_placeholder_block_active() {
 
 	return class_exists( 'SQHP_Placeholder_Init' );
+
+}  // end function
+
+
+/**
+ * Is Gutenberg Templates (Block Templates) plugin active or not?
+ *
+ * @since  1.4.0
+ *s
+ * @return bool TRUE if plugin is active, otherwise FALSE.
+ */
+function ddw_btc_is_block_templates_active() {
+
+	return class_exists( '\Gutenberg_Templates\Controllers\Gutenberg_Templates' );
 
 }  // end function

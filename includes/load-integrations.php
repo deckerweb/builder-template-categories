@@ -41,7 +41,7 @@ if ( ddw_btc_is_brizy_active() ) {
  * @since 1.0.0
  * @since 1.1.0 File name & conditional change.
  */
-if ( ddw_btc_is_wpbakery_active()	/* ddw_btc_is_wpbakery_templatera_active() */ ) {
+if ( ddw_btc_is_wpbakery_active() ) {
 	require_once( BTC_PLUGIN_DIR . 'includes/integrations/integration-wpbakery.php' );
 }
 
@@ -79,6 +79,15 @@ if ( ddw_btc_is_boldgrid_active() ) {
  */
 if ( ddw_btc_is_cornerstone_global_blocks_active() ) {
 	require_once( BTC_PLUGIN_DIR . 'includes/integrations/integration-cornerstone-global-blocks.php' );
+}
+
+
+/**
+ * Plugin: Visual Composer Website Builder (2018)
+ * @since 1.4.0
+ */
+if ( ddw_btc_is_visual_composer_active() ) {
+	require_once( BTC_PLUGIN_DIR . 'includes/integrations/integration-visual-composer.php' );
 }
 
 
@@ -122,6 +131,15 @@ if ( ddw_btc_is_astra_layouts_active() ) {
  */
 if ( ddw_btc_is_blox_active() ) {
 	require_once( BTC_PLUGIN_DIR . 'includes/integrations/integration-genesis-blox.php' );
+}
+
+
+/**
+ * Theme: Avada - via integrated "Fusion Builder" plugin
+ * @since 1.4.0
+ */
+if ( ddw_btc_is_avada_fusion_builder_active() ) {
+	require_once( BTC_PLUGIN_DIR . 'includes/integrations/integration-avada-fusion-builder.php' );
 }
 
 
@@ -246,6 +264,15 @@ if ( ddw_btc_is_opal_widgets_elementor_active() ) {
  */
 if ( ddw_btc_is_jetsmartfilters_active() ) {
 	require_once( BTC_PLUGIN_DIR . 'includes/integrations/integration-jetsmartfilters.php' );
+}
+
+
+/**
+ * Plugin: Epic News Elements
+ * @since 1.4.0
+ */
+if ( ddw_btc_is_epic_news_elements_active() ) {
+	require_once( BTC_PLUGIN_DIR . 'includes/integrations/integration-epic-news-elements.php' );
 }
 
 
@@ -436,6 +463,42 @@ if ( ddw_btc_is_master_popups_active() ) {
 }
 
 
+/**
+ * Plugin: Smart Footer System
+ * @since 1.4.0
+ */
+if ( ddw_btc_is_smart_footer_system_active() ) {
+	require_once( BTC_PLUGIN_DIR . 'includes/integrations/integration-smart-footer-system.php' );
+}
+
+
+/**
+ * Plugin: Easy Content Templates
+ * @since 1.4.0
+ */
+if ( ddw_btc_is_easy_content_templates_active() ) {
+	require_once( BTC_PLUGIN_DIR . 'includes/integrations/integration-easy-content-templates.php' );
+}
+
+
+/**
+ * Plugin: Simple Content Templates
+ * @since 1.4.0
+ */
+if ( ddw_btc_is_simple_content_templates_active() ) {
+	require_once( BTC_PLUGIN_DIR . 'includes/integrations/integration-simple-content-templates.php' );
+}
+
+
+/**
+ * Plugin: Custom Page Templates
+ * @since 1.4.0
+ */
+if ( ddw_btc_is_custom_page_templates_active() ) {
+	require_once( BTC_PLUGIN_DIR . 'includes/integrations/integration-custom-page-templates.php' );
+}
+
+
 
 /**
  * 5) Block Editor (Gutenberg) integrations - WP Core, plugins etc.:
@@ -458,6 +521,15 @@ if ( ddw_btc_is_block_editor_active() ) {
  */
 if ( ddw_btc_is_lazy_blocks_active() ) {
 	require_once( BTC_PLUGIN_DIR . 'includes/integrations/integration-lazy-blocks.php' );
+}
+
+
+/**
+ * Plugin: Block Lab
+ * @since 1.4.0
+ */
+if ( ddw_btc_is_block_lab_active() ) {
+	require_once( BTC_PLUGIN_DIR . 'includes/integrations/integration-block-lab.php' );
 }
 
 
@@ -485,4 +557,13 @@ if ( ddw_btc_is_block_layouts_active() ) {
  */
 if ( ddw_btc_is_sqh_placeholder_block_active() ) {
 	require_once( BTC_PLUGIN_DIR . 'includes/integrations/integration-sqh-placeholder-block.php' );
+}
+
+
+/**
+ * Plugin: Gutenberg Templates (Block Templates)
+ * @since 1.4.0
+ */
+if ( ddw_btc_is_block_templates_active() ) {
+	require_once( BTC_PLUGIN_DIR . 'includes/integrations/integration-block-templates.php' );
 }

@@ -24,6 +24,7 @@ add_filter( 'btc/filter/integrations/all', 'ddw_btc_register_integration_metabox
 function ddw_btc_register_integration_metabox_posttypes( array $integrations ) {
 
 	if ( ddw_btc_is_metabox_posttype_active() ) {
+		
 		$integrations[ 'metabox-posttype-templates' ] = array(
 			'label'          => __( 'Meta Box Post Type Registrations', 'builder-template-categories' ),
 			'submenu_hook'   => 'meta-box',

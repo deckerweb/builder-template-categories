@@ -1,6 +1,6 @@
 <?php
 
-// includes/integrations/integration-text-blocks
+// includes/integrations/integration-block-lab
 
 /**
  * Prevent direct access to this file.
@@ -12,23 +12,23 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 
-add_filter( 'btc/filter/integrations/all', 'ddw_btc_register_integration_text_blocks' );
+add_filter( 'btc/filter/integrations/all', 'ddw_btc_register_integration_block_lab' );
 /**
- * Register Content Blocks (Custom Post Widget).
+ * Register Block Lab.
  *
- * @since  1.2.0
+ * @since  1.4.0
  *
  * @param  array $integrations Holds array of all registered integrations.
  * @return array Tweaked array of registered integrations.
  */
-function ddw_btc_register_integration_text_blocks( array $integrations ) {
+function ddw_btc_register_integration_block_lab( array $integrations ) {
 
-	$integrations[ 'hg-text-blocks' ] = array(
-		'label'          => __( 'Text Blocks', 'builder-template-categories' ),
-		'submenu_hook'   => 'edit.php?post_type=text-blocks',
-		'post_type'      => 'text-blocks',
+	$integrations[ 'block-lab' ] = array(
+		'label'          => __( 'Block Lab Blocks', 'builder-template-categories' ),
+		'submenu_hook'   => 'edit.php?post_type=block_lab',
+		'post_type'      => 'block_lab',
 		'template_label' => 'block',
-		'admin_url'      => 'edit.php?post_type=text-blocks',
+		'admin_url'      => 'edit.php?post_type=block_lab',
 	);
 
 	return $integrations;
@@ -39,12 +39,12 @@ function ddw_btc_register_integration_text_blocks( array $integrations ) {
 /**
  * Set flag for Block type template
  *
- * @since 1.2.0
+ * @since 1.4.0
  */
 add_filter( 'btc/filter/is_type/block', '__return_true' );
 
 
-add_filter( 'manage_edit-text-blocks_columns', 'ddw_btc_add_tax_column_text_blocks', 10, 1 );
+add_filter( 'manage_edit-block_lab_columns', 'ddw_btc_add_tax_column_block_lab', 20, 1 );
 /**
  * Manually add our tax column to the post type list table. This is a needed
  *   step as the automatic adding doesn't work for this (customized) post type
@@ -57,7 +57,7 @@ add_filter( 'manage_edit-text-blocks_columns', 'ddw_btc_add_tax_column_text_bloc
  * @param  array $columns Array that holds all columns.
  * @return array Modified array of columns.
  */
-function ddw_btc_add_tax_column_text_blocks( $columns ) {
+function ddw_btc_add_tax_column_block_lab( $columns ) {
 
 	$columns[ 'builder-template-category' ] = ddw_btc_string_template( 'block' );
 
@@ -72,4 +72,4 @@ function ddw_btc_add_tax_column_text_blocks( $columns ) {
  *
  * @since 1.4.0
  */
-ddw_btc_prepare_tax_column_add( 'text-blocks' );
+ddw_btc_prepare_tax_column_add( 'block_lab' );

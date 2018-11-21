@@ -306,6 +306,29 @@ function ddw_btc_admin_get_current_post_type() {
 
 
 /**
+ * Helper function to fire the 'manage_{$post_type}_posts_custom_column' action
+ *   hook for specific post types and at custom priorities if needed.
+ *
+ * @since 1.4.0
+ *
+ * @param string  $post_type Given post type to run the action for.
+ * @param integer $priority Given priority to run the action at.
+ */
+function ddw_btc_prepare_tax_column_add( $post_type = '', $priority = 10 ) {
+
+	$post_type = sanitize_key( $post_type );
+
+	add_action(
+		'manage_' . $post_type . '_posts_custom_column',
+		'ddw_btc_maybe_add_tax_column_data_cpt',
+		(int) $priority,
+		2
+	);
+
+}  // end function
+
+
+/**
  * Setting internal plugin helper values.
  *
  * @since  1.0.0

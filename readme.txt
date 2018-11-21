@@ -5,7 +5,7 @@ Tags: elementor, page builder, templates, gutenberg, blocks, oceanwp, astra, gen
 Requires at least: 4.7
 Tested up to: 5.0
 Requires PHP: 5.6
-Stable tag: 1.3.0
+Stable tag: 1.4.0
 License: GPL-2.0-or-later
 License URI: https://opensource.org/licenses/GPL-2.0
 
@@ -42,10 +42,12 @@ Please note: The categories are global but when filtering only those items are l
 - [**Elementor Page Builder**](https://wordpress.org/plugins/elementor/) Plugin (free version is sufficient) - **My Templates** (for Pages, Sections, and with Elementor Pro even more template types)
 - [**Brizy Page Builder**](https://wordpress.org/plugins/brizy/) Plugin (free version is sufficient) - **Templates** (for Pages, Sections etc.)
 - **Oxygen Builder** Plugin (Pro) - **Templates** (for Pages, Layouts, Sections, Theme Builder elements...) -- Note: also the old Oxygen Visual Site Builder 1.x is supported
+- **Visual Composer Website Builder** (the new one, 2018) - **Global Templates** / **Header, Footer, Sidebars Templates**
 - **WPBakery Page Builder (the old 'Visual Composer')** Plugin with its **Templatera** template plugin - **Templates** (for Pages, Layouts, etc.)
 - **Cornerstone** Page Builder via the "Cornerstone Global Blocks" Plugin (free) - **Global Blocks** (for Content)
 - [**BoldGrid Post and Page Builder**](https://wordpress.org/plugins/post-and-page-builder/) Plugin (free) - **Blocks (Templates)**
 - **Themify Builder** Plugin (Premium version) - **Layouts** (for Layout Parts, Pages, Sections etc.)
+- **Avada Fusion Builder** Plugin in the *Avada Theme* (Premium) - **Library** (for Templates, Pages, Layouts, Columns, Rows)
 - [**Gutenberg / Block Editor of WordPress 5.0**](https://wordpress.org/plugins/gutenberg/) - **Blocks** (for Reusable Blocks - the new core feature)
 
 = Supported Themes =
@@ -54,6 +56,7 @@ Please note: The categories are global but when filtering only those items are l
 - [**OceanWP Theme**](https://wordpress.org/themes/oceanwp/) with ["Ocean Extra"](https://wordpress.org/plugins/ocean-extra/) free Plugin - **My Library** (for Layouts, Hooks etc.)
 - **Kava Pro Theme/ CrocoBlock Service** with JetThemeCore Plugin - **My Library** (for Layouts, Pages, Headers, Footers, Single, Archive)
 - **Genesis Framework** with Genesis Child Themes -- via **Blox Lite** and **Blox** (Pro) Plugins - **Global Content Blocks** (for Sections, Hooks)
+- **Avada Theme** with Avada Fusion Builder - **Library** (for Templates, Pages, Layouts, Columns, Rows)
 
 = Supported Plugins =
 - *see Page Builder Plugins above :-)*
@@ -93,12 +96,20 @@ Please note: The categories are global but when filtering only those items are l
 - [**Custom Template for LifterLMS**](https://wordpress.org/plugins/custom-template-lifterlms/) Plugin - **Templates** (for Courses etc.)
 - [**Custom Template for LearnDash**](https://wordpress.org/plugins/custom-template-learndash/) Plugin - **Templates** (for Courses etc.)
 - [**Opal Widgets for Elementor**](https://wordpress.org/plugins/opal-widgets-for-elementor/) Plugin - **Templates** (for Headers, Footers)
+- **Epic News Elements** Plugin - **Templates** (for Posts/ Singular, Archives)
+- **Smart Footer System** Plugin - **Templates** (for Footers)
+- **Master Popups** Plugin - **Popups** (for Popups)
+- [**Easy Content Templates**](https://wordpress.org/plugins/easy-content-templates/) Plugin - **Templates** (for Content)
+- [**Simple Content Templates**](https://wordpress.org/plugins/simple-post-template/) Plugin - **Templates** (for Content)
+- **Custom Page Templates** Plugin - **Templates** (for Pages, Post Types) / **Post Types** (for Post Type registrations) / **Taxonomies** (for Taxonomy registrations)
 
 = Supported Gutenberg-specific Plugins (Block Editor) =
 - [**Lazy Blocks**](https://wordpress.org/plugins/lazy-blocks/) Plugin - **Blocks** (Templates for Gutenberg Blocks)
+- [**Block Lab**](https://wordpress.org/plugins/block-lab/) Plugin - **Blocks** (Templates & Fields for Gutenberg Blocks)
 - [**Advanced Custom Blocks**](https://wordpress.org/plugins/advanced-custom-blocks/) Plugin - **Blocks** (Templates & Fields for Gutenberg Blocks)
 - [**Blocks Layouts**](https://wordpress.org/plugins/blocks-layouts/) Plugin - **Layouts** (Layouts for Gutenberg Blocks)
 - [**Square Happiness: Placeholder Block**](https://wordpress.org/plugins/placeholder-block-square-happiness/) Plugin - **Blocks** (Placeholders/ Templates for Gutenberg Blocks)
+- [**Gutenberg Templates (Block Templates)**](https://wordpress.org/plugins/block-templates/) Plugin - **Templates** (Templates for Gutenberg Blocks)
 
 = Recommended Time Saver =
 Try [**Toolbar Extras**](https://toolbarextras.com/) my other plugin for Site Builders and admins: Building sites with Elementor? [**Your work will get easier & faster with Toolbar Extras.**](https://wordpress.org/plugins/toolbar-extras/) With extended plugin & theme support baked right in. Of course, "Builder Template Categories" is integrated as well :)
@@ -236,11 +247,13 @@ All the others already have template categories by default, or, on the other han
 * Beaver Builder & Beaver Themer: has template categories already by default
 * Thrive Architect: has category feature already built-in
 * Divi: has template categories already by default
-* Visual Composer (the new one, 2018): has template feature in Pro Version --> I will add integration in upcoming v1.4.0!
-* Avada Fusion Builder: template feature somewhat "hidden" --> I will add integration in upcoming v1.4.0!
 * SiteOrigin Page Builder: library built-in, but it is currently impossible to extend it with this taxonomy...
 
-*Update:* Brizy Page Builder added template feature in their version 1.0.25 - we added integration with our plugin version 1.0.1
+*Update:*
+
+- Brizy Page Builder added template feature in their version 1.0.25 - we added integration with our plugin version 1.0.1
+- Visual Composer Website Builder for Headers, Footers, Sidebars, Global Templates - we added integration with our plugin version 1.4.0
+- Avada Fusion Builder in *Avada Theme* - we added integration with our plugin version 1.4.0
 
 
 = Will other Themes be supported? =
@@ -330,15 +343,15 @@ Best practice is to wrap the whole code above in a conditional to check if the t
 
 
 = Some Statistics? =
-As of version 1.3.0 of the plugin the following was achieved:
+As of version 1.4.0 of the plugin the following was achieved:
 
 * 1 Taxonomy
-* 49 Integrations overall
+* 58 Integrations overall
 * 1 Core Integration (Gutenberg Block Editor)
-* 5 Theme Integrations
-* 7 Page Builder Integrations
-* 36 Plugin Integrations
-* Up to 54 different post types (of integrations) supported
+* 6 Theme Integrations
+* 10 Page Builder Integrations
+* 45 Plugin Integrations
+* Up to 71 different post types (of integrations) supported
 * 14 generic template content types, plus 1 plugin-specific template content type
 
 
@@ -369,10 +382,22 @@ As of version 1.3.0 of the plugin the following was achieved:
 
 == Changelog ==
 
-= 1.4.0 - 2018-11-?? =
+= 1.4.0 - 2018-11-21 =
+* New: Integration with plugin Epic News Elements (Premium, by Jegtheme) - *an Add-On for Elementor, Block Editor (Gutenberg) and WPBakery Page Builder (old Visual Composer)*
 * New: Integration with plugin Master Popups (Premium, by CodexHelp)
+* New: Integration with plugin Block Lab (free, by Block Lab) -- *for WordPress Block Editor, also known as "Gutenberg"*
+* New: Integration with plugin Gutenberg Templates (Block Templates) (free, by Konstantinos Galanakis) -- *for WordPress Block Editor, also known as "Gutenberg"*
+* New: Integration with plugin Visual Composer Website Builder (free/Premium, by The Visual Composer Team) -- Note: this is the new plugin version from 2018, **not** the old one (now renamed), "WPBakery Page Builder"
+* New: Integration with Page Builder plugin Avada Fusion Builder in *Avada Theme* (Premium, by ThemeFusion)
+* New: Integration with plugin Smart Footer System (Premium, by Meta Plugin) - compatible with Elementor, Gutenberg, Genesis, Beaver Builder etc.
+* New: Integration with plugin Easy Content Templates (free, by Japa Alekhin Llemos)
+* New: Integration with plugin Simple Content Templates (free, by Clifton Griffin)
+* New: Integration with plugin Custom Page Templates (Premium, by Pavlo Reva)
+* New: Added integration with "Elementor Finder" - interactive search since Elementor v2.3.0+
 * Tweak: For some integrations (manually) added taxonomy column to the post type list table (overview table) where the automatic adding didn't work (because of customized post types...)
+* Tweak: Set proper 'parent file' / 'subemenu file' relations for all integrations - therefore our taxonomy is now highlighted correctly as submenu in the Admin
 * Tweak: Updated `.pot` file plus all German translations (formal, informal) and language packs
+* Tweak: Enhanced and improved Readme.txt file here
 
 
 = 1.3.0 - 2018-10-30 =
@@ -468,7 +493,7 @@ As of version 1.3.0 of the plugin the following was achieved:
 == Upgrade Notice =
 
 = 1.4.0 =
-???
+Feature release with 10 new integrations added. Plus integration with new "Elementor Finder" feature (interactive search). Also proper highlighting of our taxonomy in submenus in Admin, among other tweaks & improvements. &ndash; Update highly recommended!
 
 = 1.3.0 =
 Feature release with 10 new integrations added. Enhanced Gutenberg / Block Editor support for (upcoming) WordPress 5.0. Plus smaller tweaks and improvements overall. &ndash; Update highly recommended!

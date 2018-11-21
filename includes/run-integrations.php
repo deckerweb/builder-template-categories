@@ -385,8 +385,10 @@ function ddw_btc_tweak_taxonomy_labels() {
 }  // end function
 
 
-add_action( 'manage_posts_custom_column', 'ddw_btc_maybe_add_tax_column_data', 10, 2 );
 /**
+ * Execute the action fired in hook 'manage_{$post_type}_posts_custom_column',
+ *   triggered via our helper function ddw_btc_prepare_tax_column_add().
+ *
  * Optionally add our taxonomy as column data in the post list table. This is
  *   necessary for those post types where the WordPress default taxonomy
  *   registering doesn't add the column by default. The label setup happens on
@@ -395,54 +397,75 @@ add_action( 'manage_posts_custom_column', 'ddw_btc_maybe_add_tax_column_data', 1
  *
  * @since  1.4.0
  *
- * @uses   ddw_btc_get_integrations()
+ * @see    ddw_btc_prepare_tax_column_add() in functions-global.php
  *
  * @param  string $column_name
  * @param  int $post_id ID of the current post in the table.
  * @return null
  */
-function ddw_btc_maybe_add_tax_column_data( $column_name, $post_id ) {
+function ddw_btc_maybe_add_tax_column_data_cpt( $column_name, $post_id ) {
 
-	$taxonomies = array( 'builder-template-category' );
+	$taxonomy  = 'builder-template-category';
+	$post_type = sanitize_key( get_query_var( 'post_type' ) );
+
+	if ( $column_name == $taxonomy ) {
+
+		$terms = get_the_terms( $post_id, $taxonomy );
+
+		if ( ! empty( $terms ) ) {
+
+			$output = array();
+
+			foreach ( $terms as $term ) {
+				$output[] = '<a href="' . esc_url( admin_url( 'edit.php?' . $taxonomy . '='.  $term->slug . '&post_type=' . $post_type ) ) . '">' . $term->name . '</a>';
+			}
+
+			echo join( ', ', $output );
+
+		} else {
+
+			echo '&mdash;';
+
+		}  // end if
+	
+	}  // end if
+
+}  // end function
+
+
+add_filter( 'parent_file', 'ddw_btc_parent_submenu_tweaks', 5 );
+/**
+ * When viewing our taxonomy within the Admin, properly highlight it as the
+ *   'submenu', and the integrations menu hook as the 'parent file'. This
+ *   creates the wanted behavior for a lot of integrations where it is not
+ *   happening by default.
+ *
+ * @since  1.4.0
+ *
+ * @uses   ddw_btc_get_integrations()
+ * @uses   get_current_screen()
+ *
+ * @global string $GLOBALS[ 'submenu_file' ]
+ *
+ * @param  string $parent_file The filename of the parent menu.
+ * @return string $parent_file The tweaked filename of the parent menu.
+ */
+function ddw_btc_parent_submenu_tweaks( $parent_file ) {
 
 	/** Get array with all active integrations */
 	$integrations = ddw_btc_get_integrations();
 
-	/** Iterate through all integrations and collect the post types */
 	foreach ( $integrations as $integration => $integration_data ) {
 
-		if ( isset( $integration_data[ 'add_tax_column' ] )
-			&& 'yes' === $integration_data[ 'add_tax_column' ]
-		) {
+		if ( 'edit-builder-template-category' === get_current_screen()->id && $integration_data[ 'post_type' ] === get_current_screen()->post_type ) {
 
-			foreach ( $taxonomies as $taxonomy ) {
-
-				if ( $column_name == $taxonomy ) {
-
-					$terms = get_the_terms( $post_id, $taxonomy );
-
-					if ( ! empty( $terms ) ) {
-
-						$output = array();
-
-						foreach ( $terms as $term ) {
-							$output[] = '<a href="' . esc_url( admin_url( 'edit.php?' . $taxonomy . '='.  $term->slug . '&post_type=' . $integration_data[ 'post_type' ] ) ) . '">' . $term->name . '</a>';
-						}
-
-						echo join( ', ', $output );
-
-					} else {
-
-						echo '&mdash;';
-
-					}  // end if
-				
-				}  // end if
-
-			}  // end foreach (taxonomies)
+			$GLOBALS[ 'submenu_file' ] = 'edit-tags.php?taxonomy=builder-template-category&post_type=' . $integration_data[ 'post_type' ];
+			$parent_file = $integration_data[ 'submenu_hook' ];
 
 		}  // end if
 
-	}  // end foreach (integrations)
+	}  // end foreach
+
+	return $parent_file;
 
 }  // end function

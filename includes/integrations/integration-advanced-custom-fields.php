@@ -42,3 +42,34 @@ function ddw_btc_register_integration_advanced_custom_fields( array $integration
  * @since 1.3.0
  */
 add_filter( 'btc/filter/is_type/field', '__return_true' );
+
+
+add_filter( 'manage_edit-acf-field-group_columns', 'ddw_btc_add_tax_column_acf', 15, 1 );
+/**
+ * Manually add our tax column to the post type list table. This is a needed
+ *   step as the automatic adding doesn't work for this (customized) post type
+ *   list table.
+ *
+ * @since  1.4.0
+ *
+ * @uses   ddw_btc_string_template()
+ *
+ * @param  array $columns Array that holds all columns.
+ * @return array Modified array of columns.
+ */
+function ddw_btc_add_tax_column_acf( $columns ) {
+
+	$columns[ 'builder-template-category' ] = ddw_btc_string_template( 'field' );
+
+	return $columns;
+
+}  // end function
+
+
+/**
+ * Needed step to add the custom data to the added column in the post type list
+ *   table. Will run at hook 'manage_{$post_type}_posts_custom_column'.
+ *
+ * @since 1.4.0
+ */
+ddw_btc_prepare_tax_column_add( 'acf-field-group' );

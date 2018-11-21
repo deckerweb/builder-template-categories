@@ -29,7 +29,6 @@ function ddw_btc_register_integration_loomisoft_content_blocks( array $integrati
 		'post_type'      => 'lscontentblock',
 		'template_label' => 'block',
 		'admin_url'      => 'edit.php?post_type=lscontentblock',
-		'add_tax_column' => 'yes',
 	);
 
 	return $integrations;
@@ -65,3 +64,12 @@ function ddw_btc_add_tax_column_loomisoft_content_blocks( $columns ) {
 	return $columns;
 
 }  // end function
+
+
+/**
+ * Needed step to add the custom data to the added column in the post type list
+ *   table. Will run at hook 'manage_{$post_type}_posts_custom_column'.
+ *
+ * @since 1.4.0
+ */
+ddw_btc_prepare_tax_column_add( 'lscontentblock' );
