@@ -3,7 +3,7 @@ Contributors: daveshine, deckerweb, wpautobahn, toolbarextras
 Donate link: https://www.paypal.me/deckerweb
 Tags: elementor, page builder, templates, gutenberg, blocks, oceanwp, astra, generatepress, genesis, categories, template, deckerweb
 Requires at least: 4.7
-Tested up to: 5.0
+Tested up to: 5.0.0
 Requires PHP: 5.6
 Stable tag: 1.4.0
 License: GPL-2.0-or-later
