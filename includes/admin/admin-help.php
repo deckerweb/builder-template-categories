@@ -94,6 +94,30 @@ function ddw_btc_term_edit_info( $tag, $taxonomy = 'builder-template-category' )
 }  // end function
 
 
+//add_action( 'admin_enqueue_scripts', 'ddw_btc_register_styles_help_tabs', 20 );
+/**
+ * Register CSS styles for our help tabs.
+ *   Note: The hook is executed in ddw_btc_load_content_help().
+ *
+ * @since 1.4.2
+ *
+ * @see   ddw_btc_load_content_help()
+ */
+function ddw_btc_register_styles_help_tabs() {
+
+	wp_register_style(
+		'btc-help-tabs',
+		plugins_url( '/assets/css/btc-help.css', dirname( dirname( __FILE__ ) ) ),
+		array(),
+		BTC_PLUGIN_VERSION,
+		'screen'
+	);
+
+	wp_enqueue_style( 'btc-help-tabs' );
+
+}  // end function
+
+
 /**
  * Determine if the current screen is a post type edit screen of an active
  *   integration.
@@ -144,6 +168,7 @@ add_action( 'load-edit-tags.php', 'ddw_btc_load_content_help', 15 );
  *   Load on edit screens for our supported hook engine's post types.
  *
  * @since  1.1.0
+ * @since  1.4.2 Added style enqueuing hook.
  *
  * @see    ddw_btc_content_help()
  *
@@ -172,6 +197,9 @@ function ddw_btc_load_content_help() {
 		/** Optionally add Thickbox JS & CSS (for video content) */
 		add_thickbox();
 
+		/** CSS style tweaks */
+		add_action( 'admin_enqueue_scripts', 'ddw_btc_register_styles_help_tabs', 20 );
+
 	}  // end if
 
 }  // end function
@@ -182,6 +210,7 @@ function ddw_btc_load_content_help() {
  *   Load on edit screens for our supported hook engine's post types.
  *
  * @since  1.1.0
+ * @since  1.4.2 Move CSS into proper file, and enqueue it.
  *
  * @see    ddw_btc_content_help_tab()
  * @see    ddw_btc_content_help_sidebar()
@@ -209,62 +238,6 @@ function ddw_btc_content_help() {
 
 	/** Add additional help sidebar */
 	$GLOBALS[ 'btc_edit_screen' ]->set_help_sidebar( ddw_btc_content_help_sidebar() );
-
-	/** Some subtle CSS styling additions ... ;-) */
-	?>
-		<style type='text/css'>
-			/** Dashicons commons */
-			#tab-link-btc-edit-help a:before {
-				display: inline-block;
-				-webkit-font-smoothing: antialiased;
-				font-family: 'dashicons';
-				font-weight: 400;
-				vertical-align: top;
-			}
-
-			/** Our help tab */
-			#tab-link-btc-edit-help a:before {
-				clear: left;
-				content: "\f106";
-				float: left;
-				margin: 1px 5px 25px -3px;
-			}
-			#tab-panel-btc-edit-help .dashicons-before:before {
-				margin-right: 3px;
-				vertical-align: top;
-			}
-
-			/** Help tab content */
-			.btc-help-version {
-				opacity: .6;
-			}
-			.help-tab-content .btc-help-integrations-group li {
-				list-style: none;
-			}
-			.btc-help-integrations-list small code {
-				font-size: 80%;
-			}
-			.btc-help-sidebar-icons:before {
-				margin-right: 4px;
-				text-decoration: none !important;
-			}
-			.btc-help-notice.dashicons-info:before {
-				clear: left;
-				float: left;
-				font-size: 20px;
-				margin-right: 10px !important;
-				margin-top: 3px;
-				opacity: .77;
-			}
-			.btc-help-notice {
-				margin-left: 9px;
-				padding: 5px 10px;
-			}
-			.btc.dashicons-thumbs-up:before {
-				margin-top: 2px;
-			}
-		</style>
-	<?php
 
 }  // end function
 

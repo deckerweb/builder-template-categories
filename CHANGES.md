@@ -12,6 +12,11 @@
 
 ## Changelog of the Plugin
 
+### 1.4.2 - 2018-12-14
+
+* Tweak: Moved admin CSS into proper stylesheet, and enqueue it - this fixes issues users have reported
+
+
 ### 1.4.1 - 2018-12-13
 
 * New: Successfully tested with WordPress 5.0.x major release version

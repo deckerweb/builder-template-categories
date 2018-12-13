@@ -1,0 +1,72 @@
+/**
+ * // assets/css/btc-help
+ * @package Builder Template Categories - Assets
+ * @since   1.0.0
+ * @since   1.4.2 Moved to own CSS file; enhanced styles.
+ */
+
+/* Builder Template Categories - Taxonomy Edit Page
+------------------------------------------------------------ */
+
+/** Dashicons commons */
+
+#tab-link-btc-edit-help a:before {
+	display: inline-block;
+	-webkit-font-smoothing: antialiased;
+	font-family: 'dashicons';
+	font-weight: 400;
+	vertical-align: top;
+}
+
+
+/** Our help tab */
+
+#tab-link-btc-edit-help a:before {
+	clear: left;
+	content: "\f106";
+	float: left;
+	margin: 1px 5px 25px -3px;
+}
+
+#tab-panel-btc-edit-help .dashicons-before:before {
+	margin-right: 3px;
+	vertical-align: top;
+}
+
+
+/** Help tab content */
+
+.btc-help-version {
+	opacity: .6;
+}
+
+.help-tab-content .btc-help-integrations-group li {
+	list-style: none;
+}
+
+.btc-help-integrations-list small code {
+	font-size: 80%;
+}
+
+.btc-help-sidebar-icons:before {
+	margin-right: 4px;
+	text-decoration: none !important;
+}
+
+.btc-help-notice.dashicons-info:before {
+	clear: left;
+	float: left;
+	font-size: 20px;
+	margin-right: 10px !important;
+	margin-top: 3px;
+	opacity: .77;
+}
+
+.btc-help-notice {
+	margin-left: 9px;
+	padding: 5px 10px;
+}
+
+.btc.dashicons-thumbs-up:before {
+	margin-top: 2px;
+}

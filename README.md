@@ -5,7 +5,7 @@
 **Requires at least:** 4.7  
 **Tested up to:** 5.0  
 **Requires PHP:** 5.6  
-**Stable tag:** 1.4.1  
+**Stable tag:** 1.4.2  
 **License:** GPL-2.0-or-later  
 **License URI:** https://opensource.org/licenses/GPL-2.0  
 
@@ -437,6 +437,10 @@ As of version 1.3.0 of the plugin the following was achieved:
 
 ## Changelog 
 
+### 1.4.2 - 2018-12-14
+* Tweak: Moved admin CSS into proper stylesheet, and enqueue it - this fixes issues users have reported
+
+
 ### 1.4.1 - 2018-12-13
 * New: Successfully tested with WordPress 5.0.x major release version
 * New: Added new template content type "Section/ Sections"
@@ -555,6 +559,10 @@ As of version 1.3.0 of the plugin the following was achieved:
 
 
 ## Upgrade Notice 
+
+### 1.4.2
+New template content type; admin CSS fixes; internal library update; smaller tweaks. - **Update recommended!** :-)
+
 
 ### 1.4.1
 New template content type; internal library update; smaller tweaks. - **Update recommended!** :-)
