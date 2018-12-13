@@ -219,6 +219,7 @@ add_filter( 'manage_posts_columns', 'ddw_btc_tweak_taxonomy_column_title' );
  * @since  1.1.0
  * @since  1.2.0 Added checks for "Field", "Box", "Bar" and "Hook" content types.
  * @since  1.3.0 Added checks for "Filter" content type.
+ * @since  1.4.1 Added checks for "Section" content type.
  *
  * @uses   ddw_btc_get_integration_post_types()
  * @uses   ddw_btc_string_template()
@@ -290,6 +291,10 @@ function ddw_btc_tweak_taxonomy_column_title( $columns ) {
 		$columns[ 'taxonomy-builder-template-category' ] = ddw_btc_string_template( 'filter' );
 	}
 
+	if ( in_array( $current_screen->post_type, $post_types[ 'sections' ] ) ) {
+		$columns[ 'taxonomy-builder-template-category' ] = ddw_btc_string_template( 'section' );
+	}
+
 	/** Return array of column label strings */
 	return $columns;
 
@@ -306,6 +311,7 @@ add_filter( 'btc/filter/string/default_content_type', 'ddw_btc_tweak_taxonomy_la
  * @since  1.1.0
  * @since  1.2.0 Added checks for "Field", "Box", "Bar" and "Hook" content types.
  * @since  1.3.0 Added checks for "Filter" content type.
+ * @since  1.4.1 Added checks for "Section" content type.
  *
  * @uses   ddw_btc_get_integration_post_types()
  * @uses   ddw_btc_string_content_type()
@@ -377,6 +383,10 @@ function ddw_btc_tweak_taxonomy_labels() {
 
 	if ( in_array( ddw_btc_admin_get_current_post_type(), $post_types[ 'filters' ] ) ) {
 		return ddw_btc_string_content_type( 'filter' );
+	}
+
+	if ( in_array( ddw_btc_admin_get_current_post_type(), $post_types[ 'sections' ] ) ) {
+		return ddw_btc_string_content_type( 'section' );
 	}
 
 	/** If no match, return the default string ("Template") */

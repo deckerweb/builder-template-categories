@@ -100,6 +100,7 @@ function ddw_btc_taxonomy_admin_url() {
  * @since  1.1.0
  * @since  1.2.0 Added "Field", "Box", "Bar" and "Hook" content types.
  * @since  1.3.0 Added "Filter" content type.
+ * @since  1.4.1 Added "Section" content type.
  *
  * @uses   ddw_btc_get_integrations()
  *
@@ -130,6 +131,7 @@ function ddw_btc_get_integration_post_types( $all_types = '' ) {
 		'bars'       => array(),
 		'hooks'      => array(),
 		'filters'    => array(),
+		'sections'    => array(),
 		'btcdefault' => array( 'btc-template' ),
 	);
 
@@ -195,6 +197,10 @@ function ddw_btc_get_integration_post_types( $all_types = '' ) {
 
 		if ( 'filter' === $integration[ 'template_label' ] ) {
 			$post_types[ 'filters' ][] = $integration[ 'post_type' ];
+		}
+
+		if ( 'section' === $integration[ 'template_label' ] ) {
+			$post_types[ 'sections' ][] = $integration[ 'post_type' ];
 		}
 
 		$post_types_all[] = $integration[ 'post_type' ];

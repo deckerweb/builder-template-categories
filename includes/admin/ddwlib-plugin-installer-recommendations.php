@@ -20,8 +20,8 @@
  *
  * @package DDWlib Plugin Installer Recommendations
  * @author  David Decker
- * @license http://www.gnu.org/licenses GNU General Public License
- * @version 1.2.0
+ * @license GPL-2.0-or-later http://www.gnu.org/licenses GNU General Public License
+ * @version 1.2.1
  * @link    https://github.com/deckerweb/ddwlib-plugin-installer-recommendations
  */
 
@@ -312,6 +312,7 @@ if ( ! class_exists( 'DDWlib_Plugin_Installer_Recommendations' ) ) :
 			/** Prepare data & values */
 			$plugins = (array) DDWlib_Plugin_Installer_Recommendations::recommended_plugins();
 			$fields  = (array) DDWlib_Plugin_Installer_Recommendations::query_fields();
+			$tab     = sanitize_key( $tab );
 
 			/** Set array */
 			$get_plugins = array();
@@ -319,12 +320,14 @@ if ( ! class_exists( 'DDWlib_Plugin_Installer_Recommendations' ) ) :
 			/** Loop through plugin data arguments */
 			foreach ( $plugins as $plugin_slug => $plugin_data ) {
 
-				if ( 'yes' === $plugin_data[ sanitize_key( $tab ) ] ) {
+				if ( 'yes' === $plugin_data[ $tab ] ) {
 
-					$get_plugins[ sanitize_key( $plugin_slug ) ] = plugins_api(
+					$plugin_slug = sanitize_key( $plugin_slug );
+
+					$get_plugins[ $plugin_slug ] = plugins_api(
 						'plugin_information',
 						array(
-							'slug'   => sanitize_key( $plugin_slug ),
+							'slug'   => $plugin_slug,
 							'fields' => $fields,
 						)
 					);
@@ -537,7 +540,7 @@ if ( ! class_exists( 'DDWlib_Plugin_Installer_Recommendations' ) ) :
 					.plugin-action-buttons .activate-now,
 					.plugin-action-buttons .activate-now:focus,
 					.dark-mode .plugin-action-buttons .activate-now,
-					.dark-mode .plugin-action-buttons .activate-now:focus, {
+					.dark-mode .plugin-action-buttons .activate-now:focus {
 						background-color: #e2e2f9;
 						border-color: #bebde9;
 						color: #333;

@@ -12,6 +12,16 @@
 
 ## Changelog of the Plugin
 
+### 1.4.1 - 2018-12-13
+
+* New: Successfully tested with WordPress 5.0.x major release version
+* New: Added new template content type "Section/ Sections"
+* Tweak: Make sure our help tab is restricted to our own taxonomy only
+* Tweak: Updated bundled library DDWlib Plugin Installer Recommendations to latest version (v1.2.1) - CSS fixes
+* Tweak: Updated `.pot` file plus all German translations (formal, informal) and language packs
+* Tweak: Enhanced and improved Readme.txt file here
+
+
 ### 1.4.0 - 2018-11-21
 
 * New: Integration with plugin Epic News Elements (Premium, by Jegtheme) - *an Add-On for Elementor, Block Editor (Gutenberg) and WPBakery Page Builder (old Visual Composer)*

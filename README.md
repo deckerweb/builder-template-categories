@@ -3,9 +3,9 @@
 **Donate link:** https://www.paypal.me/deckerweb  
 **Tags:** elementor, page builder, templates, gutenberg, blocks, oceanwp, astra, generatepress, genesis, categories, template, deckerweb  
 **Requires at least:** 4.7  
-**Tested up to:** 5.0.0  
+**Tested up to:** 5.0  
 **Requires PHP:** 5.6  
-**Stable tag:** 1.4.0  
+**Stable tag:** 1.4.1  
 **License:** GPL-2.0-or-later  
 **License URI:** https://opensource.org/licenses/GPL-2.0  
 
@@ -437,6 +437,15 @@ As of version 1.3.0 of the plugin the following was achieved:
 
 ## Changelog 
 
+### 1.4.1 - 2018-12-13
+* New: Successfully tested with WordPress 5.0.x major release version
+* New: Added new template content type "Section/ Sections"
+* Tweak: Make sure our help tab is restricted to our own taxonomy only
+* Tweak: Updated bundled library DDWlib Plugin Installer Recommendations to latest version (v1.2.1) - CSS fixes
+* Tweak: Updated `.pot` file plus all German translations (formal, informal) and language packs
+* Tweak: Enhanced and improved Readme.txt file here
+
+
 ### 1.4.0 - 2018-11-21
 * New: Integration with plugin Epic News Elements (Premium, by Jegtheme) - *an Add-On for Elementor, Block Editor (Gutenberg) and WPBakery Page Builder (old Visual Composer)*
 * New: Integration with plugin Master Popups (Premium, by CodexHelp)
@@ -547,6 +556,10 @@ As of version 1.3.0 of the plugin the following was achieved:
 
 ## Upgrade Notice 
 
+### 1.4.1
+New template content type; internal library update; smaller tweaks. - **Update recommended!** :-)
+
+
 ### 1.4.0
 Feature release with 10 new integrations added. Plus integration with new "Elementor Finder" feature (interactive search). Also proper highlighting of our taxonomy in submenus in Admin, among other tweaks & improvements. &ndash; Update highly recommended!
 
@@ -595,6 +608,7 @@ Enjoy using *Builder Template Categories*? **[Please consider making a donation]
 ## My Other Plugins
 * [**Toolbar Extras for Elementor - WordPress Admin Bar Enhanced**](https://wordpress.org/plugins/toolbar-extras/)
 * [**Polylang Connect for Elementor – Language Switcher & Template Tweaks**](https://wordpress.org/plugins/connect-polylang-elementor/)
+* [**Simple Download Manager for WP Document Revisions**](https://wordpress.org/plugins/wpdr-simple-downloads/)
 * [Genesis What's New Info](https://wordpress.org/plugins/genesis-whats-new-info/)
 * [Genesis Layout Extras](https://wordpress.org/plugins/genesis-layout-extras/)
 * [Genesis Widgetized Not Found & 404](https://wordpress.org/plugins/genesis-widgetized-notfound/)

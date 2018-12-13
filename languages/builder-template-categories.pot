@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Builder Template Categories\n"
-"POT-Creation-Date: 2018-11-21 21:39+0100\n"
+"POT-Creation-Date: 2018-12-13 19:50+0100\n"
 "PO-Revision-Date: 2018-08-14 13:21+0200\n"
 "Last-Translator: David Decker DECKERWEB.de -- https://deckerweb.de/\n"
 "Language-Team: David Decker DECKERWEB.de -- https://deckerweb.de/\n"
@@ -24,8 +24,8 @@ msgstr ""
 #. translators: Title attribute for Builder Template Categories taxonomy link
 #. Plugin Name of the plugin/theme
 #: includes/admin/admin-extras.php:35 includes/admin/admin-extras.php:134
-#: includes/admin/admin-help.php:202 includes/admin/admin-help.php:329
-#: includes/admin/admin-help.php:334
+#: includes/admin/admin-help.php:202 includes/admin/admin-help.php:332
+#: includes/admin/admin-help.php:337
 msgid "Builder Template Categories"
 msgstr ""
 
@@ -89,35 +89,35 @@ msgid ""
 "the following active Plugins and/or Themes"
 msgstr ""
 
-#: includes/admin/admin-help.php:295
+#: includes/admin/admin-help.php:298
 msgid "Content Type"
 msgstr ""
 
-#: includes/admin/admin-help.php:297 includes/string-switcher.php:83
+#: includes/admin/admin-help.php:300 includes/string-switcher.php:84
 msgid "Post Type"
 msgstr ""
 
-#: includes/admin/admin-help.php:329
+#: includes/admin/admin-help.php:332
 msgid "Plugin"
 msgstr ""
 
-#: includes/admin/admin-help.php:333
+#: includes/admin/admin-help.php:336
 #, php-format
 msgid ""
 "Currently active integrations where the %s taxonomy is applied to better "
 "internally organize templates for various content types"
 msgstr ""
 
-#: includes/admin/admin-help.php:343
+#: includes/admin/admin-help.php:346
 msgid "Video Overview: Bulk Add Template Categories"
 msgstr ""
 
-#: includes/admin/admin-help.php:344
+#: includes/admin/admin-help.php:347
 msgid "video overview"
 msgstr ""
 
 #. translators: 1 - string "Bulk Actions" / 2 - Label "Edit, add Category etc." / 3 - video link markup with title "video overview"
-#: includes/admin/admin-help.php:349
+#: includes/admin/admin-help.php:352
 #, php-format
 msgid ""
 "You can bulk add template categories to more than one template at once in "
@@ -125,72 +125,72 @@ msgid ""
 "action will be labeled like %2$s. See a short %3$s of this feature."
 msgstr ""
 
-#: includes/admin/admin-help.php:350
+#: includes/admin/admin-help.php:353
 msgid "Bulk Actions"
 msgstr ""
 
-#: includes/admin/admin-help.php:351
+#: includes/admin/admin-help.php:354
 msgid "Edit, add Category etc."
 msgstr ""
 
-#: includes/admin/admin-help.php:358
+#: includes/admin/admin-help.php:361
 msgid ""
 "The template categories are global and are applied automatically to all "
 "current active integrations."
 msgstr ""
 
-#: includes/admin/admin-help.php:359
+#: includes/admin/admin-help.php:362
 msgid ""
 "The category description can be used for internal notices for your team "
 "members for example."
 msgstr ""
 
-#: includes/admin/admin-help.php:363
+#: includes/admin/admin-help.php:366
 msgid "Important plugin links:"
 msgstr ""
 
-#: includes/admin/admin-help.php:365
+#: includes/admin/admin-help.php:368
 msgid "Plugin website"
 msgstr ""
 
-#: includes/admin/admin-help.php:367
+#: includes/admin/admin-help.php:370
 msgctxt "Help tab info"
 msgid "FAQ"
 msgstr ""
 
-#: includes/admin/admin-help.php:369
+#: includes/admin/admin-help.php:372
 msgctxt "Help tab info"
 msgid "Support"
 msgstr ""
 
-#: includes/admin/admin-help.php:371
+#: includes/admin/admin-help.php:374
 msgctxt "Help tab info"
 msgid "Facebook Group"
 msgstr ""
 
-#: includes/admin/admin-help.php:373
+#: includes/admin/admin-help.php:376
 msgctxt "Help tab info"
 msgid "Translations"
 msgstr ""
 
-#: includes/admin/admin-help.php:375
+#: includes/admin/admin-help.php:378
 msgctxt "Help tab info"
 msgid "Donate"
 msgstr ""
 
-#: includes/admin/admin-help.php:400
+#: includes/admin/admin-help.php:403
 msgid "Customize"
 msgstr ""
 
-#: includes/admin/admin-help.php:401
+#: includes/admin/admin-help.php:404
 msgid "Code Snippets"
 msgstr ""
 
-#: includes/admin/admin-help.php:403
+#: includes/admin/admin-help.php:406
 msgid "Connect"
 msgstr ""
 
-#: includes/admin/admin-help.php:404
+#: includes/admin/admin-help.php:407
 msgid "Facebook Group"
 msgstr ""
 
@@ -203,35 +203,35 @@ msgstr ""
 msgid "David Decker - DECKERWEB"
 msgstr ""
 
-#: includes/integrations/elementor-finder.php:28
+#: includes/integrations/elementor-finder.php:35
 msgctxt "Title in Elementor Finder"
 msgid "Add-On: Builder Template Categories"
 msgstr ""
 
-#: includes/integrations/elementor-finder.php:49
+#: includes/integrations/elementor-finder.php:58
 msgctxt "Title in Elementor Finder"
 msgid "Template Categories"
 msgstr ""
 
-#: includes/integrations/elementor-finder.php:53
+#: includes/integrations/elementor-finder.php:62
 msgid "Manage template categories for site builders"
 msgstr ""
 
-#: includes/integrations/elementor-finder.php:56
+#: includes/integrations/elementor-finder.php:65
 msgctxt "Title in Elementor Finder"
 msgid "Help Resources - Builder Template Categories"
 msgstr ""
 
-#: includes/integrations/elementor-finder.php:60
+#: includes/integrations/elementor-finder.php:69
 msgid "FAQ and documentation for the plugin"
 msgstr ""
 
-#: includes/integrations/elementor-finder.php:63
+#: includes/integrations/elementor-finder.php:79
 msgctxt "Title in Elementor Finder"
 msgid "Code Snippets - Builder Template Categories"
 msgstr ""
 
-#: includes/integrations/elementor-finder.php:67
+#: includes/integrations/elementor-finder.php:83
 msgid "These allow for tweaks and customizations"
 msgstr ""
 
@@ -860,161 +860,171 @@ msgstr ""
 msgid "All %s"
 msgstr ""
 
-#: includes/string-switcher.php:30 includes/string-switcher.php:107
+#: includes/string-switcher.php:30 includes/string-switcher.php:112
 msgid "Template"
 msgstr ""
 
-#: includes/string-switcher.php:55
+#: includes/string-switcher.php:56
 msgid "Library"
 msgstr ""
 
-#: includes/string-switcher.php:59
+#: includes/string-switcher.php:60
 msgid "Layout"
 msgstr ""
 
-#: includes/string-switcher.php:63
+#: includes/string-switcher.php:64
 msgid "Element"
 msgstr ""
 
-#: includes/string-switcher.php:67
+#: includes/string-switcher.php:68
 msgid "Block"
 msgstr ""
 
-#: includes/string-switcher.php:71
+#: includes/string-switcher.php:72
 msgid "Popup"
 msgstr ""
 
-#: includes/string-switcher.php:75
+#: includes/string-switcher.php:76
 msgid "Lightbox"
 msgstr ""
 
-#: includes/string-switcher.php:79
+#: includes/string-switcher.php:80
 msgid "Listing"
 msgstr ""
 
-#: includes/string-switcher.php:87
+#: includes/string-switcher.php:88
 msgid "Field"
 msgstr ""
 
-#: includes/string-switcher.php:91
+#: includes/string-switcher.php:92
 msgid "Box"
 msgstr ""
 
-#: includes/string-switcher.php:95
+#: includes/string-switcher.php:96
 msgid "Bar"
 msgstr ""
 
-#: includes/string-switcher.php:99
+#: includes/string-switcher.php:100
 msgid "Hook"
 msgstr ""
 
-#: includes/string-switcher.php:103
+#: includes/string-switcher.php:104
 msgid "Filter"
 msgstr ""
 
-#: includes/string-switcher.php:129
+#: includes/string-switcher.php:108
+msgid "Sections"
+msgstr ""
+
+#: includes/string-switcher.php:134
 msgid "Categories"
 msgstr ""
 
 #. translators: %s - label "Categories" (for example: Template Categories)
-#: includes/string-switcher.php:157 includes/string-switcher.php:277
+#: includes/string-switcher.php:163 includes/string-switcher.php:291
 #, php-format
 msgid "Template %s"
 msgstr ""
 
 #. translators: %s - label "Categories" (for example: Library Categories)
-#: includes/string-switcher.php:165
+#: includes/string-switcher.php:171
 #, php-format
 msgid "Library %s"
 msgstr ""
 
 #. translators: %s - label "Categories" (for example: Layout Categories)
-#: includes/string-switcher.php:173
+#: includes/string-switcher.php:179
 #, php-format
 msgid "Layout %s"
 msgstr ""
 
 #. translators: %s - label "Categories" (for example: Element Categories)
-#: includes/string-switcher.php:181
+#: includes/string-switcher.php:187
 #, php-format
 msgid "Element %s"
 msgstr ""
 
 #. translators: %s - label "Categories" (for example: Block Categories)
-#: includes/string-switcher.php:189
+#: includes/string-switcher.php:195
 #, php-format
 msgid "Block %s"
 msgstr ""
 
 #. translators: %s - label "Categories" (for example: Popup Categories)
-#: includes/string-switcher.php:197
+#: includes/string-switcher.php:203
 #, php-format
 msgid "Popup %s"
 msgstr ""
 
 #. translators: %s - label "Categories" (for example: Lightbox Categories)
-#: includes/string-switcher.php:205
+#: includes/string-switcher.php:211
 #, php-format
 msgid "Lightbox %s"
 msgstr ""
 
 #. translators: %s - label "Categories" (for example: Listing Categories)
-#: includes/string-switcher.php:213
+#: includes/string-switcher.php:219
 #, php-format
 msgid "Listing %s"
 msgstr ""
 
 #. translators: %s - label "Categories" (for example: ELHF Categories - "EL HF" stands for Elementor Header Footer Builder plugin)
-#: includes/string-switcher.php:221
+#: includes/string-switcher.php:227
 #, php-format
 msgid "EL HF %s"
 msgstr ""
 
 #. translators: %s - label "Categories" (for example: Post Type Categories)
-#: includes/string-switcher.php:229
+#: includes/string-switcher.php:235
 #, php-format
 msgid "Post Type %s"
 msgstr ""
 
 #. translators: %s - label "Categories" (for example: Field Categories)
-#: includes/string-switcher.php:237
+#: includes/string-switcher.php:243
 #, php-format
 msgid "Field %s"
 msgstr ""
 
 #. translators: %s - label "Categories" (for example: Box Categories)
-#: includes/string-switcher.php:245
+#: includes/string-switcher.php:251
 #, php-format
 msgid "Box %s"
 msgstr ""
 
 #. translators: %s - label "Categories" (for example: Bar Categories)
-#: includes/string-switcher.php:253
+#: includes/string-switcher.php:259
 #, php-format
 msgid "Bar %s"
 msgstr ""
 
 #. translators: %s - label "Categories" (for example: Hook Categories)
-#: includes/string-switcher.php:261
+#: includes/string-switcher.php:267
 #, php-format
 msgid "Hook %s"
 msgstr ""
 
 #. translators: %s - label "Categories" (for example: Filter Categories)
-#: includes/string-switcher.php:269
+#: includes/string-switcher.php:275
 #, php-format
 msgid "Filter %s"
 msgstr ""
 
-#: includes/string-switcher.php:308
+#. translators: %s - label "Categories" (for example: Section Categories)
+#: includes/string-switcher.php:283
+#, php-format
+msgid "Section %s"
+msgstr ""
+
+#: includes/string-switcher.php:322
 msgid "for WooCommerce"
 msgstr ""
 
-#: includes/string-switcher.php:331
+#: includes/string-switcher.php:345
 msgid "for Post Types, Taxonomies, Fields"
 msgstr ""
 
-#: includes/string-switcher.php:348
+#: includes/string-switcher.php:362
 msgid "Add New"
 msgstr ""
 

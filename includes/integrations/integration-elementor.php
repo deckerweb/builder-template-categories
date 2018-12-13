@@ -29,6 +29,7 @@ function ddw_btc_register_integration_elementor( array $integrations ) {
 		'post_type'      => 'elementor_library',
 		'template_label' => 'template',
 		'admin_url'      => 'edit.php?post_type=elementor_library',
+		'block_editor'   => 'register_early',	// for third-party plugin compat reasons
 	);
 
 	return $integrations;

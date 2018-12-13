@@ -138,7 +138,7 @@ function ddw_btc_is_taxonomy_edit_screen( $current_screen ) {
 add_action( 'load-edit.php', 'ddw_btc_load_content_help', 15 );
 add_action( 'load-post.php', 'ddw_btc_load_content_help', 15 );
 add_action( 'load-post-new.php', 'ddw_btc_load_content_help', 15 );
-add_action( 'load-edit-tags.php', 'ddw_btc_content_help', 15 );
+add_action( 'load-edit-tags.php', 'ddw_btc_load_content_help', 15 );
 /**
  * Create and display plugin help tab content.
  *   Load on edit screens for our supported hook engine's post types.

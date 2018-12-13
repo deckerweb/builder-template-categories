@@ -42,6 +42,7 @@ function ddw_btc_string_default_content_type() {
  * @since  1.1.0
  * @since  1.2.0 Added "Field", "Box", "Bar" and "Hook" content types.
  * @since  1.3.0 Added "Filter" content type.
+ * @since  1.4.1 Added "Section" content type.
  *
  * @param  string $content_type Type of content string stands for.
  * @return string String output based on content type.
@@ -103,6 +104,10 @@ function ddw_btc_string_content_type( $content_type ) {
 			$string = esc_attr__( 'Filter', 'builder-template-categories' );
 			break;
 
+		case 'section':
+			$string = esc_attr__( 'Sections', 'builder-template-categories' );
+			break;
+
 		default:
 			$string = esc_attr__( 'Template', 'builder-template-categories' );
 
@@ -140,6 +145,7 @@ function ddw_btc_string_categories() {
  * @since  1.1.0 Added "Post Type" content type.
  * @since  1.2.0 Added "Field", "Box", "Bar" and "Hook" content types.
  * @since  1.3.0 Added "Filter" content type.
+ * @since  1.4.1 Added "Section" content type.
  *
  * @uses   ddw_btc_string_categories()
  *
@@ -267,6 +273,14 @@ function ddw_btc_string_template( $string_type ) {
 			$string = sprintf(
 				/* translators: %s - label "Categories" (for example: Filter Categories) */
 				esc_attr__( 'Filter %s', 'builder-template-categories' ),
+				ddw_btc_string_categories()
+			);
+			break;
+
+		case 'section':
+			$string = sprintf(
+				/* translators: %s - label "Categories" (for example: Section Categories) */
+				esc_attr__( 'Section %s', 'builder-template-categories' ),
 				ddw_btc_string_categories()
 			);
 			break;
