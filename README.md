@@ -5,7 +5,7 @@
 **Requires at least:** 4.7  
 **Tested up to:** 5.0  
 **Requires PHP:** 5.6  
-**Stable tag:** 1.4.2  
+**Stable tag:** 1.4.3  
 **License:** GPL-2.0-or-later  
 **License URI:** https://opensource.org/licenses/GPL-2.0  
 
@@ -146,7 +146,7 @@ If you want to translate, [go to the Translation Portal at translate.wordpress.o
 You can also contribute code-wise via our [Builder Template Categories GitHub Repository](https://github.com/deckerweb/builder-template-categories) - and see where you can help.
 
 
-### Documentation and Support 
+### 📝 Documentation and Support 
 * If you have any more questions, visit our support on the [Plugin's Forum](https://wordpress.org/support/plugin/builder-template-categories).
 
 
@@ -157,7 +157,7 @@ You can also contribute code-wise via our [Builder Template Categories GitHub Re
 * [**Subscribe to my Newsletter for insider info on this plugin**](https://eepurl.com/gbAUUn), plus tutorials and more stuff on deckerweb WordPress plugins - join a thriving community of site builders!
 
 
-### This Plugin ... 
+### ☕ This Plugin ... 
 * ... scratches my own itch!
 * ... is *Quality Made in Germany*
 * ... was created with love (plus some coffee) :-) - [if you like it consider donating](https://www.paypal.me/deckerweb)
@@ -637,7 +637,7 @@ Additions for GitHub.com repo.
 Beta plugin release on GitHub.com
 
 
-## Donate 
+## ☺️ Donate 
 Enjoy using *Builder Template Categories*? **[Please consider making a donation](https://www.paypal.me/deckerweb)** - every donation helps to support the project's continued development, maintenance and support.
 **Thank you very much in advance for your support!**
 
@@ -650,7 +650,7 @@ Enjoy using *Builder Template Categories*? **[Please consider making a donation]
 **Special Thanks go out to my family for allowing me to do such spare time projects (aka free plugins) and supporting me in every possible way!**
 
 
-## My Other Plugins
+## 🔆 My Other Plugins
 * [**Toolbar Extras for Elementor - WordPress Admin Bar Enhanced**](https://wordpress.org/plugins/toolbar-extras/)
 * [**Polylang Connect for Elementor – Language Switcher & Template Tweaks**](https://wordpress.org/plugins/connect-polylang-elementor/)
 * [**Simple Download Manager for WP Document Revisions**](https://wordpress.org/plugins/wpdr-simple-downloads/)
