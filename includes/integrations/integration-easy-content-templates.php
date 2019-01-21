@@ -16,9 +16,9 @@ add_filter( 'btc/filter/integrations/all', 'ddw_btc_register_integration_easy_co
 /**
  * Register Easy Content Templates.
  *
- * @since  1.4.0
+ * @since 1.4.0
  *
- * @param  array $integrations Holds array of all registered integrations.
+ * @param array $integrations Holds array of all registered integrations.
  * @return array Tweaked array of registered integrations.
  */
 function ddw_btc_register_integration_easy_content_templates( array $integrations ) {

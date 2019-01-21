@@ -3,7 +3,7 @@
  * Main plugin file.
  * @package           Builder Template Categories
  * @author            David Decker
- * @copyright         Copyright (c) 2018, David Decker - DECKERWEB
+ * @copyright         Copyright (c) 2018-2019, David Decker - DECKERWEB
  * @license           GPL-2.0-or-later
  * @link              https://deckerweb.de/twitter
  *
@@ -23,7 +23,7 @@
  * GitHub Plugin URI: https://github.com/deckerweb/builder-template-categories
  * GitHub Branch:     master
  *
- * Copyright (c) 2018 David Decker - DECKERWEB
+ * Copyright (c) 2018-2019 David Decker - DECKERWEB
  */
 
 /**
@@ -55,9 +55,9 @@ add_action( 'init', 'ddw_btc_load_translations', 1 );
  *
  * @since 1.0.0
  *
- * @uses  get_user_locale()
- * @uses  load_textdomain() To load translations first from WP_LANG_DIR sub folder.
- * @uses  load_plugin_textdomain() To additionally load default translations from plugin folder (default).
+ * @uses get_user_locale()
+ * @uses load_textdomain() To load translations first from WP_LANG_DIR sub folder.
+ * @uses load_plugin_textdomain() To additionally load default translations from plugin folder (default).
  */
 function ddw_btc_load_translations() {
 
@@ -155,12 +155,13 @@ function ddw_btc_setup_plugin() {
  * Steps of the plugin activation routine.
  *
  * @since 1.0.0
+ * @since 1.4.3 Predefined terms for Elementor's own taxonomy.
  *
- * @see   includes/reguster-taxonomy.php
+ * @see plugin file includes/register-taxonomy.php
  *
- * @uses  ddw_btc_load_translations()
- * @uses  ddw_btc_register_templates_taxonomy()
- * @uses  ddw_btc_add_predefined_terms()
+ * @uses ddw_btc_load_translations()
+ * @uses ddw_btc_register_templates_taxonomy()
+ * @uses ddw_btc_add_predefined_terms()
  */
 function ddw_btc_plugin_activation_routine() {
 
@@ -180,9 +181,18 @@ function ddw_btc_plugin_activation_routine() {
 
 	ddw_btc_register_templates_taxonomy();
 
+	/** Add predefined terms */
 	if ( apply_filters( 'btc/filter/terms/add_predefined', TRUE ) ) {
-		ddw_btc_add_predefined_terms();
-	}
+
+		/** For our own taxonomy */
+		ddw_btc_add_predefined_terms( 'builder-template-category' );
+
+		/** Optionally for Elementor's built-in tax */
+		if ( ddw_btc_is_elementor_version( 'core', '2.4.0-beta1', '>=' ) ) {
+			ddw_btc_add_predefined_terms( 'elementor_library_category' );
+		}
+
+	}  // end if
 
 }  // end function
 
@@ -194,9 +204,9 @@ register_activation_hook( __FILE__, 'ddw_btc_run_plugin_activation', 10, 1 );
  *
  * @since 1.0.0
  *
- * @link  https://leaves-and-love.net/blog/making-plugin-multisite-compatible/
+ * @link https://leaves-and-love.net/blog/making-plugin-multisite-compatible/
  *
- * @uses  ddw_btc_plugin_activation_routine()
+ * @uses ddw_btc_plugin_activation_routine()
  */
 function ddw_btc_run_plugin_activation( $network_wide ) {
 
@@ -236,7 +246,7 @@ add_action( 'wpmu_new_blog', 'ddw_btc_network_new_site_run_plugin_activation', 1
  *
  * @since 1.0.0
  *
- * @uses  ddw_btc_plugin_activation_routine()
+ * @uses ddw_btc_plugin_activation_routine()
  */
 function ddw_btc_network_new_site_run_plugin_activation( $blog_id, $user_id, $domain, $path, $site_id, $meta ) {
 

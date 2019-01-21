@@ -19,9 +19,9 @@ add_filter( 'btc/filter/integrations/all', 'ddw_btc_register_integration_visual_
  *   Also, optionally register "Global Templates" module, a official premium
  *   Add-On from the VC Hub.
  *
- * @since  1.4.0
+ * @since 1.4.0
  *
- * @param  array $integrations Holds array of all registered integrations.
+ * @param array $integrations Holds array of all registered integrations.
  * @return array Tweaked array of registered integrations.
  */
 function ddw_btc_register_integration_visual_composer( array $integrations ) {
@@ -79,7 +79,7 @@ add_action( 'admin_menu', 'ddw_btc_remove_submenu_for_visual_composer_post_types
  *
  * @since 1.4.0
  *
- * @uses  remove_submenu_page()
+ * @uses remove_submenu_page()
  */
 function ddw_btc_remove_submenu_for_visual_composer_post_types() {
 

@@ -509,8 +509,10 @@ if ( ddw_btc_is_custom_page_templates_active() ) {
 /**
  * Plugin: Gutenberg / WP Core 5.0+
  * @since 1.2.0
+ * @since 1.4.0 Additional checks if Gutenberg disabled.
+ * @since 1.4.3 Additional checks if Block Editor is wanted or not.
  */
-if ( ddw_btc_is_block_editor_active() ) {
+if ( ddw_btc_is_block_editor_active() && ddw_btc_is_block_editor_wanted() ) {
 	require_once( BTC_PLUGIN_DIR . 'includes/integrations/integration-block-editor.php' );
 }
 

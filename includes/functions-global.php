@@ -15,7 +15,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * Get the - filtered - capability for showing the submenus.
  *
- * @since  1.0.0
+ * @since 1.0.0
  *
  * @return string Key for the submenu capability.
  */
@@ -37,7 +37,7 @@ function ddw_btc_capability_submenu() {
  * Plugins and themes can hook into the 'btc_filter_get_integrations' filter to
  *   register their own integration.
  *
- * @since  1.0.0
+ * @since 1.0.0
  *
  * @return array Filterable array of registered integrations.
  */
@@ -82,7 +82,7 @@ function ddw_btc_get_integrations() {
 /**
  * Admin URL for the taxonomy (overview table).
  *
- * @since  1.0.0
+ * @since 1.0.0
  *
  * @return string Admin URL for the taxonomy (taxonomy table).
  */
@@ -97,16 +97,17 @@ function ddw_btc_taxonomy_admin_url() {
  * Get specific post types from integrations for re-usage, summarized after
  *   label types (content types).
  *
- * @since  1.1.0
- * @since  1.2.0 Added "Field", "Box", "Bar" and "Hook" content types.
- * @since  1.3.0 Added "Filter" content type.
- * @since  1.4.1 Added "Section" content type.
+ * @since 1.1.0
+ * @since 1.2.0 Added "Field", "Box", "Bar" and "Hook" content types.
+ * @since 1.3.0 Added "Filter" content type.
+ * @since 1.4.1 Added "Section" content type.
+ * @since 1.4.3 Added "Flow" and "Section" content types.
  *
- * @uses   ddw_btc_get_integrations()
+ * @uses ddw_btc_get_integrations()
  *
- * @param  string $all_types Optional string param used as a flag, to enable
- *                           alternative return of all post types in one single
- *                           array (not summarized!).
+ * @param string $all_types Optional string param used as a flag, to enable
+ *                          alternative return of all post types in one single
+ *                          array (not summarized!).
  * @return array Filterable array of post type keys, summarized after content
  *               type.
  */
@@ -131,7 +132,9 @@ function ddw_btc_get_integration_post_types( $all_types = '' ) {
 		'bars'       => array(),
 		'hooks'      => array(),
 		'filters'    => array(),
-		'sections'    => array(),
+		'sections'   => array(),
+		'flows'      => array(),
+		'snippets'   => array(),
 		'btcdefault' => array( 'btc-template' ),
 	);
 
@@ -203,6 +206,14 @@ function ddw_btc_get_integration_post_types( $all_types = '' ) {
 			$post_types[ 'sections' ][] = $integration[ 'post_type' ];
 		}
 
+		if ( 'flow' === $integration[ 'template_label' ] ) {
+			$post_types[ 'flows' ][] = $integration[ 'post_type' ];
+		}
+
+		if ( 'snippet' === $integration[ 'template_label' ] ) {
+			$post_types[ 'snippets' ][] = $integration[ 'post_type' ];
+		}
+
 		$post_types_all[] = $integration[ 'post_type' ];
 
 	}  // end foreach
@@ -233,11 +244,11 @@ function ddw_btc_get_integration_post_types( $all_types = '' ) {
  *   This is needed for registering our taxonomy so that the taxonomy meta box
  *   is appearing for those post types in the Block Editor (Gutenberg).
  *
- * @since  1.3.0
+ * @since 1.3.0
  *
- * @uses   ddw_btc_get_integrations()
+ * @uses ddw_btc_get_integrations()
  *
- * @param  string $keys_only Flag string to optionally output only a single
+ * @param string $keys_only Flag string to optionally output only a single
  *                           array with all post type keys.
  * @return array Filterable array with the full sub arrays for each integration.
  */
@@ -288,7 +299,7 @@ function ddw_btc_get_post_types_for_block_editor( $keys_only = '' ) {
  *
  *   Inspired by @link https://gist.github.com/DomenicF/3ebcf7d53ce3182854716c4d8f1ab2e2
  *
- * @since  1.1.0
+ * @since 1.1.0
  *
  * @return string|null String of post type or null if no post type available.
  */
@@ -337,11 +348,21 @@ function ddw_btc_prepare_tax_column_add( $post_type = '', $priority = 10 ) {
 /**
  * Setting internal plugin helper values.
  *
- * @since  1.0.0
+ * @since 1.0.0
  *
  * @return array $btc_info Array of info values.
  */
 function ddw_btc_info_values() {
+
+	/** Get current user */
+	$user = wp_get_current_user();
+
+	/** Build Newsletter URL */
+	$url_nl = sprintf(
+		'https://deckerweb.us2.list-manage.com/subscribe?u=e09bef034abf80704e5ff9809&amp;id=380976af88&amp;MERGE0=%1$s&amp;MERGE1=%2$s',
+		esc_attr( $user->user_email ),
+		esc_attr( $user->user_firstname )
+	);
 
 	$btc_info = array(
 
@@ -357,7 +378,10 @@ function ddw_btc_info_values() {
 		'license'           => 'GPL-2.0-or-later',
 		'url_license'       => 'https://opensource.org/licenses/GPL-2.0',
 		'first_code'        => '2018',
+
+		'url_newsletter'    => $url_nl,
 		'url_donate'        => 'https://www.paypal.me/deckerweb',
+
 		'url_plugin'        => 'https://github.com/deckerweb/builder-template-categories',
 		'url_plugin_docs'   => 'https://github.com/deckerweb/builder-template-categories/wiki',
 		'url_plugin_faq'    => 'https://wordpress.org/plugins/builder-template-categories/#faq',
@@ -378,12 +402,12 @@ function ddw_btc_info_values() {
 /**
  * Get URL of specific BTC info value.
  *
- * @since  1.0.0
+ * @since 1.0.0
  *
- * @uses   ddw_btc_info_values()
+ * @uses ddw_btc_info_values()
  *
- * @param  string $url_key String of value key from array of ddw_btc_info_values()
- * @param  bool   $raw     If raw escaping or regular escaping of URL gets used
+ * @param string $url_key String of value key from array of ddw_btc_info_values()
+ * @param bool   $raw     If raw escaping or regular escaping of URL gets used
  * @return string URL for info value.
  */
 function ddw_btc_get_info_url( $url_key = '', $raw = FALSE ) {
@@ -404,13 +428,13 @@ function ddw_btc_get_info_url( $url_key = '', $raw = FALSE ) {
 /**
  * Get link with complete markup for a specific BTC info value.
  *
- * @since  1.0.0
+ * @since 1.0.0
  *
- * @uses   ddw_btc_get_info_url()
+ * @uses ddw_btc_get_info_url()
  *
- * @param  string $url_key String of value key
- * @param  string $text    String of text and link attribute
- * @param  string $class   String of CSS class
+ * @param string $url_key String of value key
+ * @param string $text    String of text and link attribute
+ * @param string $class   String of CSS class
  * @return string HTML markup for linked URL.
  */
 function ddw_btc_get_info_link( $url_key = '', $text = '', $class = '' ) {
@@ -430,12 +454,12 @@ function ddw_btc_get_info_link( $url_key = '', $text = '', $class = '' ) {
 /**
  * Get timespan of coding years for this plugin.
  *
- * @since  1.0.0
- * @since  1.1.0 Improved first year logic.
+ * @since 1.0.0
+ * @since 1.1.0 Improved first year logic.
  *
- * @uses   ddw_btc_info_values()
+ * @uses ddw_btc_info_values()
  *
- * @param  int $first_year Integer number of first year
+ * @param int $first_year Integer number of first year
  * @return string Timespan of years.
  */
 function ddw_btc_coding_years( $first_year = '' ) {

@@ -16,9 +16,9 @@ add_filter( 'btc/filter/integrations/all', 'ddw_btc_register_integration_master_
 /**
  * Register Popup Maker plugin.
  *
- * @since  1.0.0
+ * @since 1.0.0
  *
- * @param  array $integrations Holds array of all registered integrations.
+ * @param array $integrations Holds array of all registered integrations.
  * @return array Tweaked array of registered integrations.
  */
 function ddw_btc_register_integration_master_popups( array $integrations ) {
@@ -52,11 +52,11 @@ add_action( 'add_meta_boxes', 'ddw_btc_add_categories_metabox_master_popups', 20
  *
  * @since 1.4.0
  *
- * @see   https://developer.wordpress.org/reference/functions/add_meta_box/
+ * @see https://developer.wordpress.org/reference/functions/add_meta_box/
  *
- * @uses  add_meta_box()
- * @uses  post_categories_meta_box() Original function from WP core, used as callback here.
- * @uses  ddw_btc_string_template()
+ * @uses add_meta_box()
+ * @uses post_categories_meta_box() Original function from WP core, used as callback here.
+ * @uses ddw_btc_string_template()
  */
 function ddw_btc_add_categories_metabox_master_popups() {
 
@@ -81,11 +81,11 @@ add_filter( 'manage_edit-master-popups_columns', 'ddw_btc_add_tax_column_master_
  *   step as the automatic adding doesn't work for this (customized) post type
  *   list table.
  *
- * @since  1.4.0
+ * @since 1.4.0
  *
- * @uses   ddw_btc_string_template()
+ * @uses ddw_btc_string_template()
  *
- * @param  array $columns Array that holds all columns.
+ * @param array $columns Array that holds all columns.
  * @return array Modified array of columns.
  */
 function ddw_btc_add_tax_column_master_popups( $columns ) {

@@ -16,9 +16,9 @@ add_filter( 'btc/filter/integrations/all', 'ddw_btc_register_integration_themify
 /**
  * Register Themify Builder Page Builder.
  *
- * @since  1.1.0
+ * @since 1.1.0
  *
- * @param  array $integrations Holds array of all registered integrations.
+ * @param array $integrations Holds array of all registered integrations.
  * @return array Tweaked array of registered integrations.
  */
 function ddw_btc_register_integration_themify_builder( array $integrations ) {
@@ -52,7 +52,7 @@ add_action( 'admin_menu', 'ddw_btc_remove_submenu_for_themify_layout_parts', 999
  *
  * @since 1.1.0
  *
- * @uses  remove_submenu_page()
+ * @uses remove_submenu_page()
  */
 function ddw_btc_remove_submenu_for_themify_layout_parts() {
 

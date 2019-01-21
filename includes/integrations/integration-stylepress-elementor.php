@@ -16,9 +16,9 @@ add_filter( 'btc/filter/integrations/all', 'ddw_btc_register_integration_stylepr
 /**
  * Register StylePress for Elementor plugin.
  *
- * @since  1.2.0
+ * @since 1.2.0
  *
- * @param  array $integrations Holds array of all registered integrations.
+ * @param array $integrations Holds array of all registered integrations.
  * @return array Tweaked array of registered integrations.
  */
 function ddw_btc_register_integration_stylepress_elementor( array $integrations ) {
@@ -43,7 +43,7 @@ add_action( 'admin_menu', 'ddw_btc_add_submenu_stylepress_elementor_style_cpt' )
  *
  * @since 1.2.0
  *
- * @uses  add_submenu_page()
+ * @uses add_submenu_page()
  */
 function ddw_btc_add_submenu_stylepress_elementor_style_cpt() {
 

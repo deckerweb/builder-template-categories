@@ -19,10 +19,10 @@ add_filter( 'btc/filter/integrations/all', 'ddw_btc_register_integration_wpbaker
  *   Also, optionally register "Templatera" plugin, a premium Add-On for
  *   'WPBakery Page Builder'.
  *
- * @since  1.0.0
- * @since  1.1.0 Partly refactoring.
+ * @since 1.0.0
+ * @since 1.1.0 Partly refactoring.
  *
- * @param  array $integrations Holds array of all registered integrations.
+ * @param array $integrations Holds array of all registered integrations.
  * @return array Tweaked array of registered integrations.
  */
 function ddw_btc_register_integration_wpbakery_page_builder( array $integrations ) {
@@ -62,7 +62,7 @@ add_action( 'admin_menu', 'ddw_btc_remove_submenu_for_wpbakery_post_types', 999 
  *
  * @since 1.1.0
  *
- * @uses  remove_submenu_page()
+ * @uses remove_submenu_page()
  */
 function ddw_btc_remove_submenu_for_wpbakery_post_types() {
 

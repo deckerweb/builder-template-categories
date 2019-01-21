@@ -16,10 +16,10 @@ add_filter( 'btc/filter/integrations/all', 'ddw_btc_register_integration_wp_bloc
 /**
  * Register default WP Blocks = Gutenberg Reusable Blocks (WP Block Editor).
  *
- * @since  1.2.0
- * @since  1.3.0 Enhanced for WordPress 5.0-beta1 or higher.
+ * @since 1.2.0
+ * @since 1.3.0 Enhanced for WordPress 5.0-beta1 or higher.
  *
- * @param  array $integrations Holds array of all registered integrations.
+ * @param array $integrations Holds array of all registered integrations.
  * @return array Tweaked array of registered integrations.
  */
 function ddw_btc_register_integration_wp_block_editor( array $integrations ) {
@@ -67,9 +67,9 @@ if ( version_compare( $GLOBALS[ 'wp_version' ], '5.0-beta1', '>=' )
 	 *
 	 * @since 1.3.0
 	 *
-	 * @see   WP Core /wp-includes/post.php for 'wp_block' capabilities
+	 * @see WP Core /wp-includes/post.php for 'wp_block' capabilities
 	 *
-	 * @uses  add_menu_page()
+	 * @uses add_menu_page()
 	 */
 	function ddw_btc_maybe_add_menu_wpblock_posttype() {
 		
@@ -108,9 +108,9 @@ if ( version_compare( $GLOBALS[ 'wp_version' ], '4.9.999', '<=' )
 	 *
 	 *   Note: Code concept based on:
 	 * @author Jeff Starr
-	 * @link   https://perishablepress.com/delete-shared-saved-gutenberg-blocks/
+	 * @link https://perishablepress.com/delete-shared-saved-gutenberg-blocks/
 	 *
-	 * @since  1.2.0
+	 * @since 1.2.0
 	 *
 	 * @global object $GLOBALS[ 'wp_post_types' ]
 	 */
@@ -140,7 +140,7 @@ if ( version_compare( $GLOBALS[ 'wp_version' ], '4.9.999', '<=' )
 	 *
 	 * @since 1.2.0
 	 *
-	 * @uses  remove_submenu_page()
+	 * @uses remove_submenu_page()
 	 */
 	function ddw_btc_maybe_remove_wpblock_addnew() {
 
@@ -157,10 +157,10 @@ if ( version_compare( $GLOBALS[ 'wp_version' ], '4.9.999', '<=' )
 	 * Tweak the admin for the 'wp_block' post type to make it more relevant and
 	 *   useful.
 	 *
-	 * @since  1.2.0
+	 * @since 1.2.0
 	 *
-	 * @param  array  $args      Array that holds all registered post type arguments.
-	 * @param  string $post_type String of registered post type to tweak.
+	 * @param array  $args      Array that holds all registered post type arguments.
+	 * @param string $post_type String of registered post type to tweak.
 	 * @return array Array of tweaked post type arguments.
 	 */
 	function ddw_btc_tweak_posttype_wpblock( $args, $post_type ) {

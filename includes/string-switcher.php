@@ -16,9 +16,9 @@ if ( ! defined( 'ABSPATH' ) ) {
  * String for the default content type, filterable.
  *   Default: "Template"
  *
- * @since  1.1.0
+ * @since 1.1.0
  *
- * @see    ddw_btc_register_templates_taxonomy()
+ * @see ddw_btc_register_templates_taxonomy()
  *
  * @return string Filtered string output "Template".
  */
@@ -39,12 +39,13 @@ function ddw_btc_string_default_content_type() {
  *   Note: This function is especially needed for our
  *         'btc/filter/string/default_content_type' filter.
  *
- * @since  1.1.0
- * @since  1.2.0 Added "Field", "Box", "Bar" and "Hook" content types.
- * @since  1.3.0 Added "Filter" content type.
- * @since  1.4.1 Added "Section" content type.
+ * @since 1.1.0
+ * @since 1.2.0 Added "Field", "Box", "Bar" and "Hook" content types.
+ * @since 1.3.0 Added "Filter" content type.
+ * @since 1.4.1 Added "Section" content type.
+ * @since 1.4.3 Added "Flow" and "Section" content types.
  *
- * @param  string $content_type Type of content string stands for.
+ * @param string $content_type Type of content string stands for.
  * @return string String output based on content type.
  */
 function ddw_btc_string_content_type( $content_type ) {
@@ -108,6 +109,14 @@ function ddw_btc_string_content_type( $content_type ) {
 			$string = esc_attr__( 'Sections', 'builder-template-categories' );
 			break;
 
+		case 'flow':
+			$string = esc_attr__( 'Flows', 'builder-template-categories' );
+			break;
+
+		case 'snippet':
+			$string = esc_attr__( 'Snippets', 'builder-template-categories' );
+			break;
+
 		default:
 			$string = esc_attr__( 'Template', 'builder-template-categories' );
 
@@ -122,7 +131,7 @@ function ddw_btc_string_content_type( $content_type ) {
 /**
  * Build string "Categories".
  *
- * @since  1.0.0
+ * @since 1.0.0
  *
  * @return string Filtered string output "Categories".
  */
@@ -141,15 +150,16 @@ function ddw_btc_string_categories() {
 /**
  * Build string "{Template String Type} Categories".
  *
- * @since  1.0.0
- * @since  1.1.0 Added "Post Type" content type.
- * @since  1.2.0 Added "Field", "Box", "Bar" and "Hook" content types.
- * @since  1.3.0 Added "Filter" content type.
- * @since  1.4.1 Added "Section" content type.
+ * @since 1.0.0
+ * @since 1.1.0 Added "Post Type" content type.
+ * @since 1.2.0 Added "Field", "Box", "Bar" and "Hook" content types.
+ * @since 1.3.0 Added "Filter" content type.
+ * @since 1.4.1 Added "Section" content type.
+ * @since 1.4.3 Added "Flow" and "Section" content types.
  *
- * @uses   ddw_btc_string_categories()
+ * @uses ddw_btc_string_categories()
  *
- * @param  string $string_type Type of the template string.
+ * @param string $string_type Type of the template string.
  * @return string Full, filterable, string output "{Template String Type} Categories".
  */
 function ddw_btc_string_template( $string_type ) {
@@ -285,6 +295,22 @@ function ddw_btc_string_template( $string_type ) {
 			);
 			break;
 
+		case 'flow':
+			$string = sprintf(
+				/* translators: %s - label "Categories" (for example: Flow Categories) */
+				esc_attr__( 'Flow %s', 'builder-template-categories' ),
+				ddw_btc_string_categories()
+			);
+			break;
+
+		case 'snippet':
+			$string = sprintf(
+				/* translators: %s - label "Categories" (for example: Snippet Categories) */
+				esc_attr__( 'Snippet %s', 'builder-template-categories' ),
+				ddw_btc_string_categories()
+			);
+			break;
+
 		default:
 			$string = sprintf(
 				/* translators: %s - label "Categories" (for example: Template Categories) */
@@ -308,7 +334,7 @@ function ddw_btc_string_template( $string_type ) {
  * Build string " (for WooCommerce)".
  *   Note: Space before the brackets is intended :).
  *
- * @since  1.0.0
+ * @since 1.0.0
  *
  * @return string Filtered string output " (for WooCommerce)".
  */
@@ -331,7 +357,7 @@ function ddw_btc_string_for_woocommerce() {
  * Build string " (for Post Types, Taxonomies, Fields)".
  *   Note: Space before the brackets is intended :).
  *
- * @since  1.0.0
+ * @since 1.0.0
  *
  * @return string Filtered string output " (for Post Types, Taxonomies, Fields)".
  */
@@ -353,7 +379,7 @@ function ddw_btc_string_for_cpt_fields() {
 /**
  * Build string "Add New".
  *
- * @since  1.3.0
+ * @since 1.3.0
  *
  * @return string Translateable string "Add New".
  */

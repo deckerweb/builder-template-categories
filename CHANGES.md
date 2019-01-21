@@ -4,6 +4,7 @@
 
 * [Plugin page on WordPress.org: wordpress.org/plugins/builder-template-categories/](https://wordpress.org/plugins/builder-template-categories/)
 * [Translate the plugin](https://translate.wordpress.org/projects/wp-plugins/builder-template-categories)
+* [**Join plugin's newsletter for insider info, tutorials and more**](https://eepurl.com/gbAUUn)
 * [**Donate** for the further development & support of the plugin](https://www.paypal.me/deckerweb)
 * [Plugin's documentation & FAQ](https://wordpress.org/plugins/builder-template-categories/#faq)
 * [Facebook Community User Group](https://www.facebook.com/groups/deckerweb.wordpress.plugins/)
@@ -11,6 +12,17 @@
 
 
 ## Changelog of the Plugin
+
+### 1.4.3 - 2019-01-21
+
+* New: Additional checks for Block Editor (Gutenberg) integration if one of the popular disabling plugins has disabled it completely (in that case the integration won't be loaded at all!)
+* New: Overhauled Elementor integration to be also fully compatible with Elementor 2.4.0 or higher (while still being compatible with older Elementor versions)
+* New: Make predefined category terms also available for Elementor built-in "Categories" taxonomy (only for Elementor v2.4.0+)
+* New: Added new template content types "Flow/ Flows" and "Snippet/ Snippets"
+* New: [Join my newsletter for DECKERWEB WordPress Plugins](https://eepurl.com/gbAUUn) - insider info, plus tutorials and more useful stuff
+* Tweak: Updated `.pot` file plus all German translations (formal, informal) and language packs
+* Tweak: Enhanced and improved Readme.txt file here - also added new FAQ entry
+
 
 ### 1.4.2 - 2018-12-14
 

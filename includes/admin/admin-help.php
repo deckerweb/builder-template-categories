@@ -60,7 +60,7 @@ add_action( 'builder-template-category_pre_add_form', 'ddw_btc_tax_pre_info', 10
  *
  * @since 1.0.0
  *
- * @uses  ddw_btc_tax_edit_info_content()
+ * @uses ddw_btc_tax_edit_info_content()
  */
 function ddw_btc_tax_pre_info( $taxonomy = 'builder-template-category' ) {
 
@@ -80,7 +80,7 @@ add_action( 'builder-template-category_term_edit_form_top', 'ddw_btc_term_edit_i
  *
  * @since 1.0.0
  *
- * @uses  ddw_btc_tax_edit_info_content()
+ * @uses ddw_btc_tax_edit_info_content()
  */
 function ddw_btc_term_edit_info( $tag, $taxonomy = 'builder-template-category' ) {
 
@@ -101,7 +101,7 @@ function ddw_btc_term_edit_info( $tag, $taxonomy = 'builder-template-category' )
  *
  * @since 1.4.2
  *
- * @see   ddw_btc_load_content_help()
+ * @see ddw_btc_load_content_help()
  */
 function ddw_btc_register_styles_help_tabs() {
 
@@ -122,14 +122,14 @@ function ddw_btc_register_styles_help_tabs() {
  * Determine if the current screen is a post type edit screen of an active
  *   integration.
  *
- * @since  1.1.0
+ * @since 1.1.0
  *
- * @uses   ddw_btc_get_integration_post_types()
+ * @uses ddw_btc_get_integration_post_types()
  *
- * @param  object $current_screen This global (via get_current_screen()) holds
- *                                the current screen object.
+ * @param object $current_screen This global (via get_current_screen()) holds
+ *                               the current screen object.
  * @return bool If current screen matches the base or post type of an
- *              integration return TRUE, otherwise FALSE.
+ *              integration return TRUE, FALSE otherwise.
  */
 function ddw_btc_is_post_type_edit_screen( $current_screen ) {
 
@@ -145,10 +145,10 @@ function ddw_btc_is_post_type_edit_screen( $current_screen ) {
  * Determine if the current screen is the taxonomy edit screen of our own
  *   taxonomy.
  *
- * @since  1.1.0
+ * @since 1.1.0
  *
- * @param  object $current_screen This global (via get_current_screen()) holds
- *                                the current screen object.
+ * @param object $current_screen This global (via get_current_screen()) holds
+ *                               the current screen object.
  * @return bool If current screen matches the ID of our taxonomy return TRUE,
  *              otherwise FALSE.
  */
@@ -167,14 +167,14 @@ add_action( 'load-edit-tags.php', 'ddw_btc_load_content_help', 15 );
  * Create and display plugin help tab content.
  *   Load on edit screens for our supported hook engine's post types.
  *
- * @since  1.1.0
- * @since  1.4.2 Added style enqueuing hook.
+ * @since 1.1.0
+ * @since 1.4.2 Added style enqueuing hook.
  *
- * @see    ddw_btc_content_help()
+ * @see ddw_btc_content_help() Where the tab gets actually added.
  *
- * @uses   ddw_btc_is_post_type_edit_screen()
- * @uses   ddw_btc_is_taxonomy_edit_screen()
- * @uses   add_thickbox()
+ * @uses ddw_btc_is_post_type_edit_screen()
+ * @uses ddw_btc_is_taxonomy_edit_screen()
+ * @uses add_thickbox()
  *
  * @global mixed $GLOBALS[ 'btc_edit_screen' ]
  */
@@ -206,17 +206,16 @@ function ddw_btc_load_content_help() {
 
 
 /**
- * Create and display plugin help tab content.
- *   Load on edit screens for our supported hook engine's post types.
+ * Setup the help tab content for rendering.
  *
- * @since  1.1.0
- * @since  1.4.2 Move CSS into proper file, and enqueue it.
+ * @since 1.1.0
+ * @since 1.4.2 Move CSS into proper file, and enqueue it.
  *
- * @see    ddw_btc_content_help_tab()
- * @see    ddw_btc_content_help_sidebar()
+ * @see ddw_btc_content_help_tab()
+ * @see ddw_btc_content_help_sidebar()
  *
- * @uses   WP_Screen::add_help_tab()
- * @uses   WP_Screen::set_help_sidebar()
+ * @uses WP_Screen::add_help_tab()
+ * @uses WP_Screen::set_help_sidebar()
  *
  * @global mixed $GLOBALS[ 'btc_edit_screen' ]
  */
@@ -245,9 +244,9 @@ function ddw_btc_content_help() {
 /**
  * Build listing of current active integrations for the help tab content.
  *
- * @since  1.1.0
+ * @since 1.1.0
  *
- * @uses   ddw_btc_get_integrations()
+ * @uses ddw_btc_get_integrations()
  *
  * @return string Markup and strings of current active integrations list.
  */
@@ -289,9 +288,9 @@ function ddw_btc_content_help_integrations_list() {
 /**
  * Content for help tab.
  *
- * @since  1.1.0
+ * @since 1.1.0
  *
- * @uses   ddw_btc_content_help_integrations_list()
+ * @uses ddw_btc_content_help_integrations_list()
  *
  * @return string Complete help content markup and content as a string.
  */
@@ -348,7 +347,9 @@ function ddw_btc_content_help_tab() {
 
 		'&nbsp;&nbsp;' . ddw_btc_get_info_link( 'url_translate', esc_html_x( 'Translations', 'Help tab info', 'builder-template-categories' ), 'button' ) .
 
-		'&nbsp;&nbsp;' . ddw_btc_get_info_link( 'url_donate', esc_html_x( 'Donate', 'Help tab info', 'builder-template-categories' ), 'button button-primary dashicons-before dashicons-thumbs-up btc' ) .
+		'&nbsp;&nbsp;' . ddw_btc_get_info_link( 'url_donate', esc_html_x( 'Donate', 'Help tab info', 'builder-template-categories' ), 'button dashicons-before dashicons-thumbs-up btc' ) .
+
+		'&nbsp;&nbsp;' . ddw_btc_get_info_link( 'url_newsletter', esc_html_x( 'Join our Newsletter', 'Help tab info', 'builder-template-categories' ), 'button button-primary dashicons-before dashicons-awards btc' ) .
 
 		sprintf(
 			'<p><a href="%1$s" target="_blank" rel="nofollow noopener noreferrer" title="%2$s">%2$s</a> &#x000A9; %3$s <a href="%4$s" target="_blank" rel="noopener noreferrer" title="%5$s">%5$s</a></p>',
@@ -367,7 +368,7 @@ function ddw_btc_content_help_tab() {
  *   Note: Content/Markup has to be returned instead of echoed, as the
  *         set_help_sidebar() method already is echoing its content.
  *
- * @since  1.1.0
+ * @since 1.1.0
  *
  * @return string Complete help sidebar markup and content as a string.
  */

@@ -16,9 +16,9 @@ add_filter( 'btc/filter/integrations/all', 'ddw_btc_register_integration_wpshowp
 /**
  * Register WP Show Posts plugin.
  *
- * @since  1.0.0
+ * @since 1.0.0
  *
- * @param  array $integrations Holds array of all registered integrations.
+ * @param array $integrations Holds array of all registered integrations.
  * @return array Tweaked array of registered integrations.
  */
 function ddw_btc_register_integration_wpshowposts( array $integrations ) {
@@ -54,10 +54,10 @@ add_action( 'add_meta_boxes', 'ddw_btc_add_categories_metabox_wpshowposts' );
  *
  * @since 1.0.0
  *
- * @see   https://developer.wordpress.org/reference/functions/add_meta_box/
+ * @see https://developer.wordpress.org/reference/functions/add_meta_box/
  *
- * @uses  add_meta_box()
- * @uses  post_categories_meta_box() Original function from WP core, used as callback here.
+ * @uses add_meta_box()
+ * @uses post_categories_meta_box() Original function from WP core, used as callback here.
  */
 function ddw_btc_add_categories_metabox_wpshowposts() {
 

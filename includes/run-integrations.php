@@ -23,7 +23,7 @@ add_action( 'admin_init', 'ddw_btc_integrations_add_taxonomy', 100 );
  *
  * @since 1.0.0
  *
- * @uses  ddw_btc_get_integrations()
+ * @uses ddw_btc_get_integrations()
  */
 function ddw_btc_integrations_add_taxonomy() {
 
@@ -46,10 +46,10 @@ add_action( 'admin_menu', 'ddw_btc_integrations_add_admin_submenus', 600 );
  * @since 1.0.0
  * @since 1.1.0 Add firing filter to change bulk actions label.
  *
- * @uses  ddw_btc_get_integrations()
- * @uses  ddw_btc_taxonomy_admin_url()
- * @uses  ddw_btc_string_template()
- * @uses  ddw_btc_capability_submenu()
+ * @uses ddw_btc_get_integrations()
+ * @uses ddw_btc_taxonomy_admin_url()
+ * @uses ddw_btc_string_template()
+ * @uses ddw_btc_capability_submenu()
  */
 function ddw_btc_integrations_add_admin_submenus() {
 
@@ -75,7 +75,7 @@ function ddw_btc_integrations_add_admin_submenus() {
 		 * Add this point in the iteration fire another filter to tweak a bulk
 		 *   edit title label
 		 * @since 1.1.0
-		 * @see   ddw_btc_bulk_actions_edit_title()
+		 * @see ddw_btc_bulk_actions_edit_title()
 		 */
 		add_filter( 'bulk_actions-edit-' . $integration[ 'post_type' ], 'ddw_btc_bulk_actions_edit_title' );
 
@@ -88,9 +88,9 @@ function ddw_btc_integrations_add_admin_submenus() {
  * Tweak title for the "Edit" bulk action for all post types of current active
  *   integrations.
  *
- * @since  1.1.0
+ * @since 1.1.0
  *
- * @param  $actions Holds all current bulk actions for a post type.
+ * @param $actions Holds all current bulk actions for a post type.
  * @return array Tweaked array of all bulk actions for a post type.
  */
 function ddw_btc_bulk_actions_edit_title( $actions ) {
@@ -113,15 +113,15 @@ add_action( 'restrict_manage_posts', 'ddw_btc_filter_post_type_by_taxonomy', 100
  *
  * The below code was used from/ inspired by:
  * @author Mike Hemberger
- * @link   http://thestizmedia.com/custom-post-type-filter-admin-custom-taxonomy/
+ * @link http://thestizmedia.com/custom-post-type-filter-admin-custom-taxonomy/
  *
- * @since  1.0.0
- * @since  1.1.0 Changed taxonomy label to our own logic via
- *               ddw_btc_string_template().
+ * @since 1.0.0
+ * @since 1.1.0 Changed taxonomy label to our own logic via
+ *              ddw_btc_string_template().
  *
- * @uses   ddw_btc_get_integrations()
- * @uses   ddw_btc_string_template()
- * @uses   wp_dropdown_categories()
+ * @uses ddw_btc_get_integrations()
+ * @uses ddw_btc_string_template()
+ * @uses wp_dropdown_categories()
  *
  * @global $GLOBALS[ 'pagenow' ]
  */
@@ -166,17 +166,17 @@ function ddw_btc_filter_post_type_by_taxonomy() {
 add_filter( 'parse_query', 'ddw_btc_convert_id_to_term_in_query', 10, 3 );
 /**
  * Execute the taxonomy filter within the post type overview table.
- *  This will only be added for supported integrations and their post types.
+ *   This will only be added for supported integrations and their post types.
  *
  * The below code was used from/ inspired by:
  * @author Mike Hemberger
- * @link   http://thestizmedia.com/custom-post-type-filter-admin-custom-taxonomy/
+ * @link http://thestizmedia.com/custom-post-type-filter-admin-custom-taxonomy/
  *
- * @since  1.0.0
+ * @since 1.0.0
  *
- * @see    ddw_btc_filter_post_type_by_taxonomy()
+ * @see ddw_btc_filter_post_type_by_taxonomy()
  *
- * @uses   ddw_btc_get_integrations()
+ * @uses ddw_btc_get_integrations()
  *
  * @global object $GLOBALS[ 'pagenow' ]
  */
@@ -216,15 +216,16 @@ add_filter( 'manage_posts_columns', 'ddw_btc_tweak_taxonomy_column_title' );
  *   Note: Fires intentionally on the "global" filter 'manage_posts_columns' to
  *         catch all integration post types.
  *
- * @since  1.1.0
- * @since  1.2.0 Added checks for "Field", "Box", "Bar" and "Hook" content types.
- * @since  1.3.0 Added checks for "Filter" content type.
- * @since  1.4.1 Added checks for "Section" content type.
+ * @since 1.1.0
+ * @since 1.2.0 Added checks for "Field", "Box", "Bar" and "Hook" content types.
+ * @since 1.3.0 Added checks for "Filter" content type.
+ * @since 1.4.1 Added checks for "Section" content type.
+ * @since 1.4.3 Added checks for "Flow" and "Section" content types.
  *
- * @uses   ddw_btc_get_integration_post_types()
- * @uses   ddw_btc_string_template()
+ * @uses ddw_btc_get_integration_post_types()
+ * @uses ddw_btc_string_template()
  *
- * @param  array $columns Array which holds all Post Types list table columns labels.
+ * @param array $columns Array which holds all Post Types list table columns labels.
  * @return array Tweaked $columns array.
  */
 function ddw_btc_tweak_taxonomy_column_title( $columns ) {  
@@ -295,6 +296,14 @@ function ddw_btc_tweak_taxonomy_column_title( $columns ) {
 		$columns[ 'taxonomy-builder-template-category' ] = ddw_btc_string_template( 'section' );
 	}
 
+	if ( in_array( $current_screen->post_type, $post_types[ 'flows' ] ) ) {
+		$columns[ 'taxonomy-builder-template-category' ] = ddw_btc_string_template( 'flow' );
+	}
+
+	if ( in_array( $current_screen->post_type, $post_types[ 'snippets' ] ) ) {
+		$columns[ 'taxonomy-builder-template-category' ] = ddw_btc_string_template( 'snippet' );
+	}
+
 	/** Return array of column label strings */
 	return $columns;
 
@@ -308,13 +317,14 @@ add_filter( 'btc/filter/string/default_content_type', 'ddw_btc_tweak_taxonomy_la
  *   Example: "Popup" integrations then switch to "Popup Categories" strings
  *            (instead of "Template Categories").
  *
- * @since  1.1.0
- * @since  1.2.0 Added checks for "Field", "Box", "Bar" and "Hook" content types.
- * @since  1.3.0 Added checks for "Filter" content type.
- * @since  1.4.1 Added checks for "Section" content type.
+ * @since 1.1.0
+ * @since 1.2.0 Added checks for "Field", "Box", "Bar" and "Hook" content types.
+ * @since 1.3.0 Added checks for "Filter" content type.
+ * @since 1.4.1 Added checks for "Section" content type.
+ * @since 1.4.3 Added checks for "Flow" and "Section" content types.
  *
- * @uses   ddw_btc_get_integration_post_types()
- * @uses   ddw_btc_string_content_type()
+ * @uses ddw_btc_get_integration_post_types()
+ * @uses ddw_btc_string_content_type()
  *
  * @return string Taxonomy label string based on content type of the integration
  *                (post type).
@@ -389,6 +399,14 @@ function ddw_btc_tweak_taxonomy_labels() {
 		return ddw_btc_string_content_type( 'section' );
 	}
 
+	if ( in_array( ddw_btc_admin_get_current_post_type(), $post_types[ 'flows' ] ) ) {
+		return ddw_btc_string_content_type( 'flow' );
+	}
+
+	if ( in_array( ddw_btc_admin_get_current_post_type(), $post_types[ 'snippets' ] ) ) {
+		return ddw_btc_string_content_type( 'snippet' );
+	}
+
 	/** If no match, return the default string ("Template") */
 	return ddw_btc_string_content_type( 'btcdefault' );
 
@@ -405,12 +423,12 @@ function ddw_btc_tweak_taxonomy_labels() {
  *   the integration level, though, as this is dependent on the template content
  *   type.
  *
- * @since  1.4.0
+ * @since 1.4.0
  *
- * @see    ddw_btc_prepare_tax_column_add() in functions-global.php
+ * @see ddw_btc_prepare_tax_column_add() in functions-global.php
  *
- * @param  string $column_name
- * @param  int $post_id ID of the current post in the table.
+ * @param string $column_name
+ * @param int $post_id ID of the current post in the table.
  * @return null
  */
 function ddw_btc_maybe_add_tax_column_data_cpt( $column_name, $post_id ) {
@@ -450,14 +468,14 @@ add_filter( 'parent_file', 'ddw_btc_parent_submenu_tweaks', 5 );
  *   creates the wanted behavior for a lot of integrations where it is not
  *   happening by default.
  *
- * @since  1.4.0
+ * @since 1.4.0
  *
- * @uses   ddw_btc_get_integrations()
- * @uses   get_current_screen()
+ * @uses ddw_btc_get_integrations()
+ * @uses get_current_screen()
  *
  * @global string $GLOBALS[ 'submenu_file' ]
  *
- * @param  string $parent_file The filename of the parent menu.
+ * @param string $parent_file The filename of the parent menu.
  * @return string $parent_file The tweaked filename of the parent menu.
  */
 function ddw_btc_parent_submenu_tweaks( $parent_file ) {

@@ -16,9 +16,9 @@ add_filter( 'btc/filter/integrations/all', 'ddw_btc_register_integration_brizy' 
 /**
  * Register Brizy Page Builder.
  *
- * @since  1.0.1
+ * @since 1.0.1
  *
- * @param  array $integrations Holds array of all registered integrations.
+ * @param array $integrations Holds array of all registered integrations.
  * @return array Tweaked array of registered integrations.
  */
 function ddw_btc_register_integration_brizy( array $integrations ) {

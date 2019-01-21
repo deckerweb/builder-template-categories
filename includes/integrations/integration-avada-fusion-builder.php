@@ -16,9 +16,9 @@ add_filter( 'btc/filter/integrations/all', 'ddw_btc_register_integration_avada_f
 /**
  * Register Avada Theme with Fusion Builder plugin.
  *
- * @since  1.4.0
+ * @since 1.4.0
  *
- * @param  array $integrations Holds array of all registered integrations.
+ * @param array $integrations Holds array of all registered integrations.
  * @return array Tweaked array of registered integrations.
  */
 function ddw_btc_register_integration_avada_fusion_builder( array $integrations ) {
@@ -52,7 +52,7 @@ add_action( 'admin_menu', 'ddw_btc_remove_submenu_for_avada_post_types', 999 );
  *
  * @since 1.4.0
  *
- * @uses  remove_submenu_page()
+ * @uses remove_submenu_page()
  */
 function ddw_btc_remove_submenu_for_avada_post_types() {
 
@@ -72,7 +72,7 @@ add_action( 'admin_menu', 'ddw_btc_add_submenu_avada_fusion_builder_cpts', 999 )
  *
  * @since 1.4.0
  *
- * @uses  add_submenu_page()
+ * @uses add_submenu_page()
  */
 function ddw_btc_add_submenu_avada_fusion_builder_cpts() {
 

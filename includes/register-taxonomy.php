@@ -21,10 +21,10 @@ add_action( 'init', 'ddw_btc_register_templates_taxonomy', 20 );
  * @since 1.3.0 Added logic for optionally adding post types at registering,
  *              for special Block Editor support.
  *
- * @see   ddw_btc_string_default_content_type()
+ * @see ddw_btc_string_default_content_type()
  *
- * @uses  ddw_btc_get_post_types_for_block_editor()
- * @uses  register_taxonomy()
+ * @uses ddw_btc_get_post_types_for_block_editor()
+ * @uses register_taxonomy()
  */
 function ddw_btc_register_templates_taxonomy() {
 
@@ -154,9 +154,9 @@ add_action( 'admin_menu', 'ddw_btc_inbetween_remove_submenu_for_block_editor_typ
  *   for our template content types, that the WordPress core-added submenus
  *   don't add.
  *
- * @since  1.3.0
+ * @since 1.3.0
  *
- * @uses   ddw_btc_get_post_types_for_block_editor()
+ * @uses ddw_btc_get_post_types_for_block_editor()
  *
  * @global array $GLOBALS[ 'submenu' ]
  */
@@ -179,57 +179,60 @@ function ddw_btc_inbetween_remove_submenu_for_block_editor_types() {
 }  // end function
 
 
-//add_action( 'init', 'ddw_btc_add_predefined_terms', 25 );
 /**
- * Add predefined taxonomy terms for our taxonomy.
- *   Terms: General, Frontpage, Pages, Landing Pages, Sections, Hooks, Testing
+ * Setup predefined taxonomy terms for our taxonomy.
+ *   Default terms: General, Frontpage, Pages, Landing Pages, Sections, Hooks
+ *   and Testing. Plus, more terms depending on various conditions and contexts.
  *
  * @since 1.0.0
  * @since 1.1.0 Added optional terms for products, as well as popups.
  * @since 1.2.0 Added optional terms for blocks, fields, boxes, bars and hooks.
+ * @since 1.4.3 Added optional terms for flows and snippets; moved declaration
+ *              into own function for reusability.
  *
- * @uses  ddw_btc_is_block_editor_active()
- * @uses  wp_insert_term()
+ * @uses ddw_btc_is_woocommerce_active()
+ * @uses ddw_btc_is_elementor_pro_active()
+ * @uses ddw_btc_is_elementor_version()
+ * @uses ddw_btc_is_block_editor_active()
+ *
+ * @return array Filterable array of predefined terms, plus arguments.
  */
-function ddw_btc_add_predefined_terms() {
-
-	/** Set taxonomy */
-	$taxonomy = 'builder-template-category';
+function ddw_btc_get_predefined_terms() {
 
 	/** Set predefined terms, filterable */
 	$terms = array(
 
-		'0' => array(
+		'terms_general' => array(
 			'name'        => esc_attr_x( 'General', 'Taxonomy term title', 'builder-template-categories' ),
 			'slug'        => sanitize_key( _x( 'general', 'Taxonomy term slug - only lowercase, a-z, 0-9, hyphens!', 'builder-template-categories' ) ),
 			'description' => _x( 'General templates', 'Taxonomy term description', 'builder-template-categories' ),
 		),
-		'1' => array(
+		'terms_frontpage' => array(
 			'name'        => esc_attr_x( 'Frontpage', 'Taxonomy term title', 'builder-template-categories' ),
 			'slug'        => sanitize_key( _x( 'frontpage', 'Taxonomy term slug - only lowercase, a-z, 0-9, hyphens!', 'builder-template-categories' ) ),
 			'description' => _x( 'Templates for the Frontpage/ Homepage', 'Taxonomy term description', 'builder-template-categories' ),
 		),
-		'2' => array(
+		'terms_pages' => array(
 			'name'        => esc_attr_x( 'Pages', 'Taxonomy term title', 'builder-template-categories' ),
 			'slug'        => sanitize_key( _x( 'pages', 'Taxonomy term slug - only lowercase, a-z, 0-9, hyphens!', 'builder-template-categories' ) ),
 			'description' => _x( 'Templates for Pages', 'Taxonomy term description', 'builder-template-categories' ),
 		),
-		'3' => array(
+		'terms_landing_pages' => array(
 			'name'        => esc_attr_x( 'Landing Pages', 'Taxonomy term title', 'builder-template-categories' ),
 			'slug'        => sanitize_key( _x( 'landing-pages', 'Taxonomy term slug - only lowercase, a-z, 0-9, hyphens!', 'builder-template-categories' ) ),
 			'description' => _x( 'Templates for Landing Pages', 'Taxonomy term description', 'builder-template-categories' ),
 		),
-		'4' => array(
+		'terms_sections' => array(
 			'name'        => esc_attr_x( 'Sections', 'Taxonomy term title', 'builder-template-categories' ),
 			'slug'        => sanitize_key( _x( 'sections', 'Taxonomy term slug - only lowercase, a-z, 0-9, hyphens!', 'builder-template-categories' ) ),
 			'description' => _x( 'Templates for Sections/ Content Blocks', 'Taxonomy term description', 'builder-template-categories' ),
 		),
-		'5' => array(
+		'terms_hooks' => array(
 			'name'        => esc_attr_x( 'Hooks', 'Taxonomy term title', 'builder-template-categories' ),
 			'slug'        => sanitize_key( _x( 'hooks', 'Taxonomy term slug - only lowercase, a-z, 0-9, hyphens!', 'builder-template-categories' ) ),
 			'description' => _x( 'Templates for Action Hooks', 'Taxonomy term description', 'builder-template-categories' ),
 		),
-		'6' => array(
+		'terms_testing' => array(
 			'name'        => esc_attr_x( 'Testing', 'Taxonomy term title', 'builder-template-categories' ),
 			'slug'        => sanitize_key( _x( 'testing', 'Taxonomy term slug - only lowercase, a-z, 0-9, hyphens!', 'builder-template-categories' ) ),
 			'description' => _x( 'Templates just for testing purposes', 'Taxonomy term description', 'builder-template-categories' ),
@@ -238,7 +241,7 @@ function ddw_btc_add_predefined_terms() {
 	);  // end array
 
 	/** Optional: WooCommerce product type templates */
-	if ( class_exists( 'WooCommerce' ) && has_filter( 'btc/filter/is_type/woo' ) ) {
+	if ( ddw_btc_is_woocommerce_active() && has_filter( 'btc/filter/is_type/woo' ) ) {
 
 		$terms[ 'terms_woo' ] = array(
 			'name'        => esc_attr_x( 'Products', 'Taxonomy term title', 'builder-template-categories' ),
@@ -249,7 +252,9 @@ function ddw_btc_add_predefined_terms() {
 	}  // end if
 
 	/** Optional: Popup type templates */
-	if ( has_filter( 'btc/filter/is_type/popup' ) ) {
+	if ( has_filter( 'btc/filter/is_type/popup' )
+		|| ( ddw_btc_is_elementor_pro_active() && ddw_btc_is_elementor_version( 'pro', '2.4.0-beta1', '>=' ) )
+	) {
 
 		$terms[ 'terms_popup' ] = array(
 			'name'        => esc_attr_x( 'Popups', 'Taxonomy term title', 'builder-template-categories' ),
@@ -303,30 +308,84 @@ function ddw_btc_add_predefined_terms() {
 
 	}  // end if
 
-	/** Make terms array filterable */
-	$terms = apply_filters(
+	/** Optional: Flow type templates */
+	if ( has_filter( 'btc/filter/is_type/flow' ) ) {
+
+		$terms[ 'terms_flow' ] = array(
+			'name'        => esc_attr_x( 'Flows', 'Taxonomy term title', 'builder-template-categories' ),
+			'slug'        => sanitize_key( _x( 'flows', 'Taxonomy term slug - only lowercase, a-z, 0-9, hyphens!', 'builder-template-categories' ) ),
+			'description' => _x( 'Templates for Flows', 'Taxonomy term description', 'builder-template-categories' ),
+		);
+
+	}  // end if
+
+	/** Optional: Snippet type content */
+	if ( has_filter( 'btc/filter/is_type/snippet' ) ) {
+
+		$terms[ 'terms_snippet' ] = array(
+			'name'        => esc_attr_x( 'Snippets', 'Taxonomy term title', 'builder-template-categories' ),
+			'slug'        => sanitize_key( _x( 'snippets', 'Taxonomy term slug - only lowercase, a-z, 0-9, hyphens!', 'builder-template-categories' ) ),
+			'description' => _x( 'Templates for Snippets', 'Taxonomy term description', 'builder-template-categories' ),
+		);
+
+	}  // end if
+
+	/** Return the terms array, filterable */
+	return apply_filters(
 		'btc/filter/taxonomy/predefined_terms',
 		$terms
 	);
 
+}  // end function
+
+
+//add_action( 'init', 'ddw_btc_add_predefined_terms', 25 );
+/**
+ * Add predefined taxonomy terms for our taxonomy.
+ *   See ddw_btc_get_predefined_terms() for the (filterable) terms setup.
+ *
+ * @since 1.0.0
+ * @since 1.1.0 Added optional terms for products, as well as popups.
+ * @since 1.2.0 Added optional terms for blocks, fields, boxes, bars and hooks.
+ * @since 1.4.3 Added optional terms for flows and snippets.
+ *
+ * @see ddw_btc_get_predefined_terms()
+ *
+ * @uses ddw_btc_get_predefined_terms() To get all our predefined terms.
+ * @uses wp_insert_term() To actually insert the terms if they not yet exist.
+ *
+ * @param string $taxonomy Registered ID of a given taxonomy.
+ * @return void
+ */
+function ddw_btc_add_predefined_terms( $taxonomy = '' ) {
+
+	/** Set taxonomy */
+	$taxonomy = sanitize_key( $taxonomy );	//'builder-template-category';
+
+	$terms = ddw_btc_get_predefined_terms();
+
 	/** Insert all predefined terms */
-	foreach ( $terms as $term_key => $term ) {
+	if ( ! is_null( $terms ) ) {
 
-		if ( ! term_exists( $term[ 'slug' ], 'builder-template-category' ) ) {
+		foreach ( $terms as $term_key => $term ) {
 
-			wp_insert_term(
-				$term[ 'name' ],
-				$taxonomy,
-				array(
-					'description' => $term[ 'description' ],
-					'slug'        => $term[ 'slug' ],
-				)
-			);
+			if ( ! term_exists( $term[ 'slug' ], $taxonomy ) ) {
 
-			unset( $term );
+				wp_insert_term(
+					$term[ 'name' ],
+					$taxonomy,
+					array(
+						'description' => $term[ 'description' ],
+						'slug'        => $term[ 'slug' ],
+					)
+				);
 
-		}  // end if
+				unset( $term );
 
-	}  // end foreach
+			}  // end if
+
+		}  // end foreach
+
+	}  // end if
 
 }  // end function

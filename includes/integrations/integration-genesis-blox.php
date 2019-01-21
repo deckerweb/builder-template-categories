@@ -16,9 +16,9 @@ add_filter( 'btc/filter/integrations/all', 'ddw_btc_register_integration_blox' )
 /**
  * Register Blox plugin (for Genesis).
  *
- * @since  1.0.0
+ * @since 1.0.0
  *
- * @param  array $integrations Holds array of all registered integrations.
+ * @param array $integrations Holds array of all registered integrations.
  * @return array Tweaked array of registered integrations.
  */
 function ddw_btc_register_integration_blox( array $integrations ) {
@@ -44,11 +44,11 @@ add_action( 'add_meta_boxes', 'ddw_btc_add_categories_metabox_blox', 200 );
  *
  * @since 1.0.0
  *
- * @see   https://developer.wordpress.org/reference/functions/add_meta_box/
+ * @see https://developer.wordpress.org/reference/functions/add_meta_box/
  *
- * @uses  add_meta_box()
- * @uses  post_categories_meta_box() Original function from WP core, used as callback here.
- * @uses  ddw_btc_string_template()
+ * @uses add_meta_box()
+ * @uses post_categories_meta_box() Original function from WP core, used as callback here.
+ * @uses ddw_btc_string_template()
  */
 function ddw_btc_add_categories_metabox_blox() {
 
@@ -84,11 +84,11 @@ add_filter( 'blox_admin_column_titles', 'ddw_btc_add_tax_column_blox' );
  *         here as 'Blox' plugin already has customized columns - but luckily
  *         provides its own filters :).
  *
- * @since  1.4.0
+ * @since 1.4.0
  *
- * @uses   ddw_btc_string_template()
+ * @uses ddw_btc_string_template()
  *
- * @param  array $columns Array that holds all columns.
+ * @param array $columns Array that holds all columns.
  * @return array Modified array of columns.
  */
 function ddw_btc_add_tax_column_blox( $columns ) {

@@ -24,7 +24,7 @@ class DDW_BTC_Finder_Category extends \Elementor\Core\Common\Modules\Finder\Base
 	/**
 	 * Get title.
 	 *
-	 * @since  1.4.0
+	 * @since 1.4.0
 	 *
 	 * @access public
 	 *
@@ -40,14 +40,14 @@ class DDW_BTC_Finder_Category extends \Elementor\Core\Common\Modules\Finder\Base
 	/**
 	 * Get category items.
 	 *
-	 * @since  1.4.0
-	 * @since  1.5.0 Added actions, plus filter.
+	 * @since 1.4.0
+	 * @since 1.4.3 Added actions, plus filter.
 	 *
 	 * @access public
 	 *
-	 * @uses   ddw_btc_get_info_url()
+	 * @uses ddw_btc_get_info_url()
 	 *
-	 * @param  array $options
+	 * @param array $options
 	 * @return array $items Filterable array of additional Finder items.
 	 */
 	public function get_category_items( array $options = [] ) {

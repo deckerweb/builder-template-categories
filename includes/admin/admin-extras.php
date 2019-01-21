@@ -15,9 +15,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * Add "Custom Taxonomy" link to Plugins page.
  *
- * @since  1.0.0
+ * @since 1.0.0
  *
- * @param  array $btc_links (Default) Array of plugin action links.
+ * @param array $btc_links (Default) Array of plugin action links.
  * @return strings $btc_links Settings & Menu Admin links.
  */
 function ddw_btc_custom_taxonomy_links( $btc_links ) {
@@ -56,12 +56,12 @@ add_filter( 'plugin_row_meta', 'ddw_btc_plugin_links', 10, 2 );
 /**
  * Add various support links to Plugins page.
  *
- * @since  1.0.0
+ * @since 1.0.0
  *
- * @uses   ddw_btc_get_info_link()
+ * @uses ddw_btc_get_info_link()
  *
- * @param  array  $btc_links (Default) Array of plugin meta links
- * @param  string $btc_file  Path of base plugin file
+ * @param array  $btc_links (Default) Array of plugin meta links
+ * @param string $btc_file  Path of base plugin file
  * @return array $btc_links Array of plugin link strings to build HTML markup.
  */
 function ddw_btc_plugin_links( $btc_links, $btc_file ) {
@@ -98,7 +98,10 @@ function ddw_btc_plugin_links( $btc_links, $btc_file ) {
 		$btc_links[] = ddw_btc_get_info_link( 'url_snippets', esc_html_x( 'Code Snippets', 'Plugins page listing', 'builder-template-categories' ), 'dashicons-before dashicons-editor-code' );
 
 		/* translators: Plugins page listing */
-		$btc_links[] = ddw_btc_get_info_link( 'url_donate', esc_html_x( 'Donate', 'Plugins page listing', 'builder-template-categories' ), 'button-primary dashicons-before dashicons-thumbs-up' );
+		$btc_links[] = ddw_btc_get_info_link( 'url_donate', esc_html_x( 'Donate', 'Plugins page listing', 'builder-template-categories' ), 'button dashicons-before dashicons-thumbs-up' );
+
+		/* translators: Plugins page listing */
+		$btc_links[] = ddw_btc_get_info_link( 'url_newsletter', esc_html_x( 'Join our Newsletter', 'Plugins page listing', 'builder-template-categories' ), 'button-primary dashicons-before dashicons-awards' );
 
 	}  // end if plugin links
 
@@ -116,9 +119,12 @@ add_filter( 'admin_footer_text', 'ddw_btc_admin_footer_text' );
  * Modifies the "Thank you" text displayed in the WP Admin footer.
  *   Fired by 'admin_footer_text' filter.
  *
- * @since  1.0.0
+ * @since 1.0.0
+ * @since 1.4.3 Tweaked rating link.
  *
- * @param  string $footer_text The content that will be printed.
+ * @uses ddw_btc_get_info_url()
+ *
+ * @param string $footer_text The content that will be printed.
  * @return string The content that will be printed.
  */
 function ddw_btc_admin_footer_text( $footer_text ) {
@@ -128,11 +134,17 @@ function ddw_btc_admin_footer_text( $footer_text ) {
 
 	if ( $is_btc_screen ) {
 
+		$rating = sprintf(
+			/* translators: %s - 5 stars icons */
+			'<a href="' . ddw_btc_get_info_url( 'url_wporg_review' ) . '" target="_blank" rel="nofollow noopener noreferrer">' . __( '%s rating', 'builder-template-categories' ) . '</a>',
+			'&#9733;&#9733;&#9733;&#9733;&#9733;'
+		);
+
 		$footer_text = sprintf(
-			/* translators: 1 - Builder Template Categories / 2 - Link to plugin review */
-			__( 'Enjoyed %1$s? Please leave us a %2$s rating. We really appreciate your support!', 'builder-template-categories' ),
+			/* translators: 1 - Plugin name "Builder Template Categories" / 2 - label "5 star rating" */
+			__( 'Enjoyed %1$s? Please leave us a %2$s. We really appreciate your support!', 'builder-template-categories' ),
 			'<strong>' . __( 'Builder Template Categories', 'builder-template-categories' ) . '</strong>',
-			'<a href="https://wordpress.org/support/plugin/builder-template-categories/reviews/?filter=5#new-post" target="_blank" rel="noopener noreferrer">&#9733;&#9733;&#9733;&#9733;&#9733;</a>'
+			$rating
 		);
 
 	}  // end if
@@ -147,8 +159,8 @@ function ddw_btc_admin_footer_text( $footer_text ) {
  *
  * @since 1.0.1
  *
- * @see   ddw_btc_plugin_update_message()
- * @see   ddw_btc_multisite_subsite_plugin_update_message()
+ * @see ddw_btc_plugin_update_message()
+ * @see ddw_btc_multisite_subsite_plugin_update_message()
  */
 function ddw_btc_plugin_update_message_style_tweak() {
 
@@ -170,10 +182,10 @@ add_action( 'in_plugin_update_message-' . BTC_PLUGIN_BASEDIR . 'builder-template
  *   Note: This action fires for regular single site installs, and for Multisite
  *         installs where the plugin is activated Network-wide.
  *
- * @since  1.0.1
+ * @since 1.0.1
  *
- * @param  object $data
- * @param  object $response
+ * @param object $data
+ * @param object $response
  * @return string Echoed string and markup for the plugin's upgrade/update
  *                notice.
  */
@@ -199,10 +211,10 @@ add_action( 'after_plugin_row_wp-' . BTC_PLUGIN_BASEDIR . 'builder-template-cate
  *   Note: This action fires for Multisite installs where the plugin is
  *         activated on a per site basis.
  *
- * @since  1.0.1
+ * @since 1.0.1
  *
- * @param  string $file
- * @param  object $plugin
+ * @param string $file
+ * @param object $plugin
  * @return string Echoed string and markup for the plugin's upgrade/update
  *                notice.
  */
@@ -242,11 +254,15 @@ add_filter( 'ddwlib_plir/filter/plugins', 'ddw_btc_register_extra_plugin_recomme
  *   Note: The top-level array keys are plugin slugs from the WordPress.org
  *         Plugin Directory.
  *
- * @since  1.0.1
- * @since  1.4.0 Added new Block Editor recommendations.
+ * @since 1.0.1
+ * @since 1.4.0 Added new Block Editor recommendations.
  *
- * @param  array $plugins Array holding all plugin recommendations, coming from
- *                        the class and the filter.
+ * @uses ddw_btc_is_elementor_active()
+ * @uses ddw_btc_is_block_editor_active()
+ * @uses ddw_btc_is_block_editor_wanted()
+ *
+ * @param array $plugins Array holding all plugin recommendations, coming from
+ *                       the class and the filter.
  * @return array Filtered array of all plugin recommendations.
  */
 function ddw_btc_register_extra_plugin_recommendations( array $plugins ) {
@@ -286,7 +302,7 @@ function ddw_btc_register_extra_plugin_recommendations( array $plugins ) {
   	/** Register additional Block Editor (Gutenberg) plugin recommendations */
   	$plugins_block_editor = array();
 
-  	if ( ddw_btc_is_block_editor_active() ) {
+  	if ( ddw_btc_is_block_editor_active() && ddw_btc_is_block_editor_wanted() ) {
 
 		$plugins_block_editor = array(
 			'classic-editor' => array(
@@ -299,15 +315,15 @@ function ddw_btc_register_extra_plugin_recommendations( array $plugins ) {
 				'recommended' => 'yes',
 				'popular'     => 'yes',
 			),
+			'disable-gutenberg-blocks' => array(
+				'featured'    => 'yes',
+				'recommended' => 'yes',
+				'popular'     => 'no',
+			),
 			'block-builder' => array(
 				'featured'    => 'yes',
 				'recommended' => 'yes',
 				'popular'     => 'yes',
-			),
-			'custom-fields-gutenberg' => array(
-				'featured'    => 'yes',
-				'recommended' => 'yes',
-				'popular'     => 'no',
 			),
 			'lazy-blocks' => array(
 				'featured'    => 'yes',
@@ -321,6 +337,11 @@ function ddw_btc_register_extra_plugin_recommendations( array $plugins ) {
 			),
 			'manager-for-gutenberg' => array(
 				'featured'    => 'no',
+				'recommended' => 'yes',
+				'popular'     => 'no',
+			),
+			'custom-fields-gutenberg' => array(
+				'featured'    => 'yes',
 				'recommended' => 'yes',
 				'popular'     => 'no',
 			),
@@ -344,9 +365,9 @@ if ( ! function_exists( 'ddwlib_plir_strings_plugin_installer' ) ) :
 	 *    - "Newest" --> tab in plugin installer toolbar
 	 *    - "Version:" --> label in plugin installer plugin card
 	 *
-	 * @since  1.1.0
+	 * @since 1.1.0
 	 *
-	 * @param  array $strings Holds all filterable strings of the library.
+	 * @param array $strings Holds all filterable strings of the library.
 	 * @return array Array of tweaked translateable strings.
 	 */
 	function ddwlib_plir_strings_plugin_installer( $strings ) {

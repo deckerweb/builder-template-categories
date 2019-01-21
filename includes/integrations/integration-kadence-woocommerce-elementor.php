@@ -16,9 +16,9 @@ add_filter( 'btc/filter/integrations/all', 'ddw_btc_register_integration_kadence
 /**
  * Register Kadence WooCommerce Elementor plugin (free & Pro versions!).
  *
- * @since  1.1.0
+ * @since 1.1.0
  *
- * @param  array $integrations Holds array of all registered integrations.
+ * @param array $integrations Holds array of all registered integrations.
  * @return array Tweaked array of registered integrations.
  */
 function ddw_btc_register_integration_kadence_woocommerce_elementor( array $integrations ) {

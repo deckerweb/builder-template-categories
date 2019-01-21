@@ -16,9 +16,9 @@ add_filter( 'btc/filter/integrations/all', 'ddw_btc_register_integration_advance
 /**
  * Register Advanced Custom Fields (Pro) plugin.
  *
- * @since  1.3.0
+ * @since 1.3.0
  *
- * @param  array $integrations Holds array of all registered integrations.
+ * @param array $integrations Holds array of all registered integrations.
  * @return array Tweaked array of registered integrations.
  */
 function ddw_btc_register_integration_advanced_custom_fields( array $integrations ) {
@@ -50,11 +50,11 @@ add_filter( 'manage_edit-acf-field-group_columns', 'ddw_btc_add_tax_column_acf',
  *   step as the automatic adding doesn't work for this (customized) post type
  *   list table.
  *
- * @since  1.4.0
+ * @since 1.4.0
  *
- * @uses   ddw_btc_string_template()
+ * @uses ddw_btc_string_template()
  *
- * @param  array $columns Array that holds all columns.
+ * @param array $columns Array that holds all columns.
  * @return array Modified array of columns.
  */
 function ddw_btc_add_tax_column_acf( $columns ) {

@@ -16,9 +16,9 @@ add_filter( 'btc/filter/integrations/all', 'ddw_btc_register_integration_jetthem
 /**
  * Register JetThemeCore plugin.
  *
- * @since  1.0.0
+ * @since 1.0.0
  *
- * @param  array $integrations Holds array of all registered integrations.
+ * @param array $integrations Holds array of all registered integrations.
  * @return array Tweaked array of registered integrations.
  */
 function ddw_btc_register_integration_jetthemecore( array $integrations ) {

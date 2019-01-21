@@ -16,9 +16,9 @@ add_filter( 'btc/filter/integrations/all', 'ddw_btc_register_integration_advance
 /**
  * Register Advanced Custom Blocks.
  *
- * @since  1.2.0
+ * @since 1.2.0
  *
- * @param  array $integrations Holds array of all registered integrations.
+ * @param array $integrations Holds array of all registered integrations.
  * @return array Tweaked array of registered integrations.
  */
 function ddw_btc_register_integration_advanced_custom_blocks( array $integrations ) {
@@ -51,8 +51,8 @@ add_action( 'admin_menu', 'ddw_btc_add_submenu_acb_addnew' );
  *
  * @since 1.2.0
  *
- * @uses  add_submenu_page()
- * @uses  ddw_btc_string_add_new()
+ * @uses add_submenu_page()
+ * @uses ddw_btc_string_add_new()
  */
 function ddw_btc_add_submenu_acb_addnew() {
 
