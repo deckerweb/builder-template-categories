@@ -114,9 +114,11 @@ Please note: The categories are global but when filtering only those items are l
 
 ### 📦 Supported Gutenberg-specific Plugins (Block Editor)
 * [**Lazy Blocks**](https://wordpress.org/plugins/lazy-blocks/) Plugin - **Blocks** (Templates for Gutenberg Blocks)
+* [**Block Lab**](https://wordpress.org/plugins/block-lab/) Plugin - **Blocks** (Templates & Fields for Gutenberg Blocks)
 * [**Advanced Custom Blocks**](https://wordpress.org/plugins/advanced-custom-blocks/) Plugin - **Blocks** (Templates & Fields for Gutenberg Blocks)
 * [**Blocks Layouts**](https://wordpress.org/plugins/blocks-layouts/) Plugin - **Layouts** (Layouts for Gutenberg Blocks)
 * [**Square Happiness: Placeholder Block**](https://wordpress.org/plugins/placeholder-block-square-happiness/) Plugin - **Blocks** (Placeholders/ Templates for Gutenberg Blocks)
+* [**Gutenberg Templates (Block Templates)**](https://wordpress.org/plugins/block-templates/) Plugin - **Templates** (Templates for Gutenberg Blocks)
 
 
 ### 👍 Recommended Time Saver 
