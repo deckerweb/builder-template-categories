@@ -620,6 +620,10 @@ As of version 1.5.0 of the plugin the following was achieved:
 
 ## Upgrade Notice 
 
+### 1.5.0
+Feature Release with 5 new integrations. - **Update highly recommended!** :-)
+
+
 ### 1.4.3
 New template content types. Elementor 2.4.0 compatibility. - **Update highly recommended!** :-)
 
