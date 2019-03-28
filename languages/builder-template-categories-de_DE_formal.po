@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Builder Template Categories\n"
-"POT-Creation-Date: 2019-03-28 12:58+0100\n"
-"PO-Revision-Date: 2019-03-28 12:58+0100\n"
+"POT-Creation-Date: 2019-03-28 13:41+0100\n"
+"PO-Revision-Date: 2019-03-28 13:42+0100\n"
 "Last-Translator: David Decker DECKERWEB.de -- https://deckerweb.de/\n"
 "Language-Team: David Decker DECKERWEB.de -- https://deckerweb.de/\n"
 "Language: de_DE@formal\n"
@@ -85,15 +85,47 @@ msgstr ""
 "Gefällt Ihnen %1$s? Dann geben Sie uns bitte eine %2$s. Wir schätzen Ihre "
 "Unterstützung!"
 
-#: includes/admin/admin-extras.php:376
+#: includes/admin/admin-extras.php:377
 msgctxt "Plugin installer: Tab name in installer toolbar"
 msgid "Newest"
 msgstr "Neueste"
 
-#: includes/admin/admin-extras.php:382
+#: includes/admin/admin-extras.php:383
 msgctxt "Plugin card: plugin version"
 msgid "Version:"
 msgstr "Version:"
+
+#: includes/admin/admin-extras.php:389
+msgctxt "Plugin installer: Tab name in installer toolbar"
+msgid "deckerweb Plugins"
+msgstr "deckerweb Plugins"
+
+#: includes/admin/admin-extras.php:395
+msgctxt "Plugin installer: Page title"
+msgid "deckerweb Plugins"
+msgstr "deckerweb Plugins"
+
+#: includes/admin/admin-extras.php:400
+msgid ""
+"Great helper tools for Site Builders to save time and get more productive"
+msgstr ""
+"Großartige Helferlein-Plugins für Site-Builder, um wertvolle Zeit zu sparen "
+"und noch produktiver zu werden."
+
+#: includes/admin/admin-extras.php:403
+#, php-format
+msgid "You can use any of our free plugins or premium plugins from %s"
+msgstr ""
+"Sie können jedes unserer kostenlosen Plugins oder Premium-Plugins von %s "
+"verwenden"
+
+#: includes/admin/admin-extras.php:407
+msgid "Join our Newsletter"
+msgstr "Newsletter jetzt!"
+
+#: includes/admin/admin-extras.php:409
+msgid "Facebook User Group"
+msgstr "Facebook-Nutzergruppe"
 
 #: includes/admin/admin-help.php:26
 msgid ""
@@ -1177,9 +1209,6 @@ msgstr "https://deckerweb.de/"
 
 #~ msgid "Block Categories"
 #~ msgstr "Block-Kategorien"
-
-#~ msgid "Facebook User Group"
-#~ msgstr "Facebook-Nutzergruppe"
 
 #~ msgid "More about the plugin author"
 #~ msgstr "Mehr über den Plugin-Autor"

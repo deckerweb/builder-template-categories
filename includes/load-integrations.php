@@ -23,7 +23,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  * @since 1.0.0
  */
 if ( ddw_btc_is_elementor_active() ) {
-	require_once( BTC_PLUGIN_DIR . 'includes/integrations/integration-elementor.php' );
+	require_once BTC_PLUGIN_DIR . 'includes/integrations/integration-elementor.php';
 }
 
 
@@ -32,7 +32,7 @@ if ( ddw_btc_is_elementor_active() ) {
  * @since 1.0.1
  */
 if ( ddw_btc_is_brizy_active() ) {
-	require_once( BTC_PLUGIN_DIR . 'includes/integrations/integration-brizy.php' );
+	require_once BTC_PLUGIN_DIR . 'includes/integrations/integration-brizy.php';
 }
 
 
@@ -42,7 +42,7 @@ if ( ddw_btc_is_brizy_active() ) {
  * @since 1.1.0 File name & conditional change.
  */
 if ( ddw_btc_is_wpbakery_active() ) {
-	require_once( BTC_PLUGIN_DIR . 'includes/integrations/integration-wpbakery.php' );
+	require_once BTC_PLUGIN_DIR . 'includes/integrations/integration-wpbakery.php';
 }
 
 
@@ -51,7 +51,7 @@ if ( ddw_btc_is_wpbakery_active() ) {
  * @since 1.0.0
  */
 if ( ddw_btc_is_oxygen_builder_active() ) {
-	require_once( BTC_PLUGIN_DIR . 'includes/integrations/integration-oxygen-builder.php' );
+	require_once BTC_PLUGIN_DIR . 'includes/integrations/integration-oxygen-builder.php';
 }
 
 
@@ -60,7 +60,7 @@ if ( ddw_btc_is_oxygen_builder_active() ) {
  * @since 1.1.0
  */
 if ( ddw_btc_is_themify_builder_active() ) {
-	require_once( BTC_PLUGIN_DIR . 'includes/integrations/integration-themify-builder.php' );
+	require_once BTC_PLUGIN_DIR . 'includes/integrations/integration-themify-builder.php';
 }
 
 
@@ -69,7 +69,7 @@ if ( ddw_btc_is_themify_builder_active() ) {
  * @since 1.0.0
  */
 if ( ddw_btc_is_boldgrid_active() ) {
-	require_once( BTC_PLUGIN_DIR . 'includes/integrations/integration-boldgrid.php' );
+	require_once BTC_PLUGIN_DIR . 'includes/integrations/integration-boldgrid.php';
 }
 
 
@@ -78,7 +78,7 @@ if ( ddw_btc_is_boldgrid_active() ) {
  * @since 1.0.0
  */
 if ( ddw_btc_is_cornerstone_global_blocks_active() ) {
-	require_once( BTC_PLUGIN_DIR . 'includes/integrations/integration-cornerstone-global-blocks.php' );
+	require_once BTC_PLUGIN_DIR . 'includes/integrations/integration-cornerstone-global-blocks.php';
 }
 
 
@@ -87,7 +87,7 @@ if ( ddw_btc_is_cornerstone_global_blocks_active() ) {
  * @since 1.4.0
  */
 if ( ddw_btc_is_visual_composer_active() ) {
-	require_once( BTC_PLUGIN_DIR . 'includes/integrations/integration-visual-composer.php' );
+	require_once BTC_PLUGIN_DIR . 'includes/integrations/integration-visual-composer.php';
 }
 
 
@@ -103,7 +103,7 @@ if ( ddw_btc_is_visual_composer_active() ) {
  * @since 1.0.0
  */
 if ( ddw_btc_is_gp_elements_active() ) {
-	require_once( BTC_PLUGIN_DIR . 'includes/integrations/integration-generatepress.php' );
+	require_once BTC_PLUGIN_DIR . 'includes/integrations/integration-generatepress.php';
 }
 
 
@@ -112,7 +112,7 @@ if ( ddw_btc_is_gp_elements_active() ) {
  * @since 1.0.0
  */
 if ( ddw_btc_is_owp_library_active() ) {
-	require_once( BTC_PLUGIN_DIR . 'includes/integrations/integration-oceanwp.php' );
+	require_once BTC_PLUGIN_DIR . 'includes/integrations/integration-oceanwp.php';
 }
 
 
@@ -121,7 +121,7 @@ if ( ddw_btc_is_owp_library_active() ) {
  * @since 1.0.0
  */
 if ( ddw_btc_is_astra_layouts_active() ) {
-	require_once( BTC_PLUGIN_DIR . 'includes/integrations/integration-astra.php' );
+	require_once BTC_PLUGIN_DIR . 'includes/integrations/integration-astra.php';
 }
 
 
@@ -130,7 +130,7 @@ if ( ddw_btc_is_astra_layouts_active() ) {
  * @since 1.0.0
  */
 if ( ddw_btc_is_blox_active() ) {
-	require_once( BTC_PLUGIN_DIR . 'includes/integrations/integration-genesis-blox.php' );
+	require_once BTC_PLUGIN_DIR . 'includes/integrations/integration-genesis-blox.php';
 }
 
 
@@ -139,7 +139,7 @@ if ( ddw_btc_is_blox_active() ) {
  * @since 1.4.0
  */
 if ( ddw_btc_is_avada_fusion_builder_active() ) {
-	require_once( BTC_PLUGIN_DIR . 'includes/integrations/integration-avada-fusion-builder.php' );
+	require_once BTC_PLUGIN_DIR . 'includes/integrations/integration-avada-fusion-builder.php';
 }
 
 
@@ -148,7 +148,7 @@ if ( ddw_btc_is_avada_fusion_builder_active() ) {
  * @since 1.5.0
  */
 if ( ddw_btc_is_customify_hooks_active() ) {
-	require_once( BTC_PLUGIN_DIR . 'includes/integrations/integration-customify.php' );
+	require_once BTC_PLUGIN_DIR . 'includes/integrations/integration-customify.php';
 }
 
 
@@ -157,7 +157,7 @@ if ( ddw_btc_is_customify_hooks_active() ) {
  * @since 1.5.0
  */
 if ( ddw_btc_is_pbf_sections_active() ) {
-	require_once( BTC_PLUGIN_DIR . 'includes/integrations/integration-page-builder-framework.php' );
+	require_once BTC_PLUGIN_DIR . 'includes/integrations/integration-page-builder-framework.php';
 }
 
 
@@ -166,7 +166,7 @@ if ( ddw_btc_is_pbf_sections_active() ) {
  * @since 1.5.0
  */
 if ( ddw_btc_is_suki_blocks_active() ) {
-	require_once( BTC_PLUGIN_DIR . 'includes/integrations/integration-suki.php' );
+	require_once BTC_PLUGIN_DIR . 'includes/integrations/integration-suki.php';
 }
 
 
@@ -182,7 +182,7 @@ if ( ddw_btc_is_suki_blocks_active() ) {
  * @since 1.0.0
  */
 if ( ddw_btc_is_anywhere_elementor_active() ) {
-	require_once( BTC_PLUGIN_DIR . 'includes/integrations/integration-anywhere-elementor.php' );
+	require_once BTC_PLUGIN_DIR . 'includes/integrations/integration-anywhere-elementor.php';
 }
 
 
@@ -191,7 +191,7 @@ if ( ddw_btc_is_anywhere_elementor_active() ) {
  * @since 1.0.0
  */
 if ( ddw_btc_is_jetthemecore_active() ) {
-	require_once( BTC_PLUGIN_DIR . 'includes/integrations/integration-jetthemecore.php' );
+	require_once BTC_PLUGIN_DIR . 'includes/integrations/integration-jetthemecore.php';
 }
 
 
@@ -200,7 +200,7 @@ if ( ddw_btc_is_jetthemecore_active() ) {
  * @since 1.0.0
  */
 if ( ddw_btc_is_jetwoobuilder_active() ) {
-	require_once( BTC_PLUGIN_DIR . 'includes/integrations/integration-jetwoobuilder.php' );
+	require_once BTC_PLUGIN_DIR . 'includes/integrations/integration-jetwoobuilder.php';
 }
 
 
@@ -209,7 +209,7 @@ if ( ddw_btc_is_jetwoobuilder_active() ) {
  * @since 1.0.0
  */
 if ( ddw_btc_is_jetengine_active() ) {
-	require_once( BTC_PLUGIN_DIR . 'includes/integrations/integration-jetengine.php' );
+	require_once BTC_PLUGIN_DIR . 'includes/integrations/integration-jetengine.php';
 }
 
 
@@ -218,7 +218,7 @@ if ( ddw_btc_is_jetengine_active() ) {
  * @since 1.0.0
  */
 if ( ddw_btc_is_hfelementor_active() ) {
-	require_once( BTC_PLUGIN_DIR . 'includes/integrations/integration-hf-elementor.php' );
+	require_once BTC_PLUGIN_DIR . 'includes/integrations/integration-hf-elementor.php';
 }
 
 
@@ -227,7 +227,7 @@ if ( ddw_btc_is_hfelementor_active() ) {
  * @since 1.0.0
  */
 if ( ddw_btc_is_popboxes_active() ) {
-	require_once( BTC_PLUGIN_DIR . 'includes/integrations/integration-popboxes.php' );
+	require_once BTC_PLUGIN_DIR . 'includes/integrations/integration-popboxes.php';
 }
 
 
@@ -236,7 +236,7 @@ if ( ddw_btc_is_popboxes_active() ) {
  * @since 1.0.0
  */
 if ( ddw_btc_is_dhwc_elementor_active() ) {
-	require_once( BTC_PLUGIN_DIR . 'includes/integrations/integration-dhwc-elementor.php' );
+	require_once BTC_PLUGIN_DIR . 'includes/integrations/integration-dhwc-elementor.php';
 }
 
 
@@ -245,7 +245,7 @@ if ( ddw_btc_is_dhwc_elementor_active() ) {
  * @since 1.1.0
  */
 if ( ddw_btc_is_jetpopup_active() ) {
-	require_once( BTC_PLUGIN_DIR . 'includes/integrations/integration-jetpopup.php' );
+	require_once BTC_PLUGIN_DIR . 'includes/integrations/integration-jetpopup.php';
 }
 
 
@@ -254,7 +254,7 @@ if ( ddw_btc_is_jetpopup_active() ) {
  * @since 1.1.0
  */
 if ( ddw_btc_is_templementor_active() ) {
-	require_once( BTC_PLUGIN_DIR . 'includes/integrations/integration-templementor.php' );
+	require_once BTC_PLUGIN_DIR . 'includes/integrations/integration-templementor.php';
 }
 
 
@@ -263,7 +263,7 @@ if ( ddw_btc_is_templementor_active() ) {
  * @since 1.1.0
  */
 if ( ddw_btc_is_kadence_woocommerce_elementor_active() ) {
-	require_once( BTC_PLUGIN_DIR . 'includes/integrations/integration-kadence-woocommerce-elementor.php' );
+	require_once BTC_PLUGIN_DIR . 'includes/integrations/integration-kadence-woocommerce-elementor.php';
 }
 
 
@@ -272,7 +272,7 @@ if ( ddw_btc_is_kadence_woocommerce_elementor_active() ) {
  * @since 1.2.0
  */
 if ( ddw_btc_is_stylepress_elementor_active() ) {
-	require_once( BTC_PLUGIN_DIR . 'includes/integrations/integration-stylepress-elementor.php' );
+	require_once BTC_PLUGIN_DIR . 'includes/integrations/integration-stylepress-elementor.php';
 }
 
 
@@ -281,7 +281,7 @@ if ( ddw_btc_is_stylepress_elementor_active() ) {
  * @since 1.3.0
  */
 if ( ddw_btc_is_opal_widgets_elementor_active() ) {
-	require_once( BTC_PLUGIN_DIR . 'includes/integrations/integration-opal-widgets-elementor.php' );
+	require_once BTC_PLUGIN_DIR . 'includes/integrations/integration-opal-widgets-elementor.php';
 }
 
 
@@ -290,7 +290,7 @@ if ( ddw_btc_is_opal_widgets_elementor_active() ) {
  * @since 1.3.0
  */
 if ( ddw_btc_is_jetsmartfilters_active() ) {
-	require_once( BTC_PLUGIN_DIR . 'includes/integrations/integration-jetsmartfilters.php' );
+	require_once BTC_PLUGIN_DIR . 'includes/integrations/integration-jetsmartfilters.php';
 }
 
 
@@ -299,7 +299,7 @@ if ( ddw_btc_is_jetsmartfilters_active() ) {
  * @since 1.4.0
  */
 if ( ddw_btc_is_epic_news_elements_active() ) {
-	require_once( BTC_PLUGIN_DIR . 'includes/integrations/integration-epic-news-elements.php' );
+	require_once BTC_PLUGIN_DIR . 'includes/integrations/integration-epic-news-elements.php';
 }
 
 
@@ -315,7 +315,7 @@ if ( ddw_btc_is_epic_news_elements_active() ) {
  * @since 1.0.0
  */
 if ( ddw_btc_is_popup_maker_active() ) {
-	require_once( BTC_PLUGIN_DIR . 'includes/integrations/integration-popup-maker.php' );
+	require_once BTC_PLUGIN_DIR . 'includes/integrations/integration-popup-maker.php';
 }
 
 
@@ -324,7 +324,7 @@ if ( ddw_btc_is_popup_maker_active() ) {
  * @since 1.0.0
  */
 if ( ddw_btc_is_thrive_lightboxes_active() ) {
-	require_once( BTC_PLUGIN_DIR . 'includes/integrations/integration-thrive-lightboxes.php' );
+	require_once BTC_PLUGIN_DIR . 'includes/integrations/integration-thrive-lightboxes.php';
 }
 
 
@@ -333,7 +333,7 @@ if ( ddw_btc_is_thrive_lightboxes_active() ) {
  * @since 1.0.0
  */
 if ( ddw_btc_is_wpshowposts_active() ) {
-	require_once( BTC_PLUGIN_DIR . 'includes/integrations/integration-wpshowposts.php' );
+	require_once BTC_PLUGIN_DIR . 'includes/integrations/integration-wpshowposts.php';
 }
 
 
@@ -342,7 +342,7 @@ if ( ddw_btc_is_wpshowposts_active() ) {
  * @since 1.0.0
  */
 if ( ddw_btc_is_pods_templates_active() ) {
-	require_once( BTC_PLUGIN_DIR . 'includes/integrations/integration-pods.php' );
+	require_once BTC_PLUGIN_DIR . 'includes/integrations/integration-pods.php';
 }
 
 
@@ -351,7 +351,7 @@ if ( ddw_btc_is_pods_templates_active() ) {
  * @since 1.1.0
  */
 if ( ddw_btc_is_cherry_popups_active() ) {
-	require_once( BTC_PLUGIN_DIR . 'includes/integrations/integration-cherry-popups.php' );
+	require_once BTC_PLUGIN_DIR . 'includes/integrations/integration-cherry-popups.php';
 }
 
 
@@ -360,7 +360,7 @@ if ( ddw_btc_is_cherry_popups_active() ) {
  * @since 1.1.0
  */
 if ( ddw_btc_is_themify_popup_active() ) {
-	require_once( BTC_PLUGIN_DIR . 'includes/integrations/integration-themify-popup.php' );
+	require_once BTC_PLUGIN_DIR . 'includes/integrations/integration-themify-popup.php';
 }
 
 
@@ -369,7 +369,7 @@ if ( ddw_btc_is_themify_popup_active() ) {
  * @since 1.1.0
  */
 if ( ddw_btc_is_metabox_posttype_active() || ddw_btc_is_metabox_taxonomy_active() ) {
-	require_once( BTC_PLUGIN_DIR . 'includes/integrations/integration-metabox-posttypes.php' );
+	require_once BTC_PLUGIN_DIR . 'includes/integrations/integration-metabox-posttypes.php';
 }
 
 
@@ -378,7 +378,7 @@ if ( ddw_btc_is_metabox_posttype_active() || ddw_btc_is_metabox_taxonomy_active(
  * @since 1.2.0
  */
 if ( ddw_btc_is_loomisoft_content_blocks_active() ) {
-	require_once( BTC_PLUGIN_DIR . 'includes/integrations/integration-loomisoft-content-blocks.php' );
+	require_once BTC_PLUGIN_DIR . 'includes/integrations/integration-loomisoft-content-blocks.php';
 }
 
 
@@ -387,7 +387,7 @@ if ( ddw_btc_is_loomisoft_content_blocks_active() ) {
  * @since 1.2.0
  */
 if ( ddw_btc_is_content_blocks_active() ) {
-	require_once( BTC_PLUGIN_DIR . 'includes/integrations/integration-content-blocks.php' );
+	require_once BTC_PLUGIN_DIR . 'includes/integrations/integration-content-blocks.php';
 }
 
 
@@ -396,7 +396,7 @@ if ( ddw_btc_is_content_blocks_active() ) {
  * @since 1.2.0
  */
 if ( ddw_btc_is_text_blocks_active() ) {
-	require_once( BTC_PLUGIN_DIR . 'includes/integrations/integration-text-blocks.php' );
+	require_once BTC_PLUGIN_DIR . 'includes/integrations/integration-text-blocks.php';
 }
 
 
@@ -405,7 +405,7 @@ if ( ddw_btc_is_text_blocks_active() ) {
  * @since 1.2.0
  */
 if ( ddw_btc_is_widget_content_blocks_active() ) {
-	require_once( BTC_PLUGIN_DIR . 'includes/integrations/integration-widget-content-blocks.php' );
+	require_once BTC_PLUGIN_DIR . 'includes/integrations/integration-widget-content-blocks.php';
 }
 
 
@@ -414,7 +414,7 @@ if ( ddw_btc_is_widget_content_blocks_active() ) {
  * @since 1.2.0
  */
 if ( ddw_btc_is_dev_content_blocks_active() ) {
-	require_once( BTC_PLUGIN_DIR . 'includes/integrations/integration-dev-content-blocks.php' );
+	require_once BTC_PLUGIN_DIR . 'includes/integrations/integration-dev-content-blocks.php';
 }
 
 
@@ -423,7 +423,7 @@ if ( ddw_btc_is_dev_content_blocks_active() ) {
  * @since 1.3.0
  */
 if ( ddw_btc_is_advanced_custom_fields_active() ) {
-	require_once( BTC_PLUGIN_DIR . 'includes/integrations/integration-advanced-custom-fields.php' );
+	require_once BTC_PLUGIN_DIR . 'includes/integrations/integration-advanced-custom-fields.php';
 }
 
 
@@ -432,7 +432,7 @@ if ( ddw_btc_is_advanced_custom_fields_active() ) {
  * @since 1.3.0
  */
 if ( ddw_btc_is_custom_field_suite_active() ) {
-	require_once( BTC_PLUGIN_DIR . 'includes/integrations/integration-custom-field-suite.php' );
+	require_once BTC_PLUGIN_DIR . 'includes/integrations/integration-custom-field-suite.php';
 }
 
 
@@ -441,7 +441,7 @@ if ( ddw_btc_is_custom_field_suite_active() ) {
  * @since 1.3.0
  */
 if ( ddw_btc_is_cmb2_admin_extension_active() ) {
-	require_once( BTC_PLUGIN_DIR . 'includes/integrations/integration-cmb2-admin-extension.php' );
+	require_once BTC_PLUGIN_DIR . 'includes/integrations/integration-cmb2-admin-extension.php';
 }
 
 
@@ -450,7 +450,7 @@ if ( ddw_btc_is_cmb2_admin_extension_active() ) {
  * @since 1.3.0
  */
 if ( ddw_btc_is_meta_box_builder_active() ) {
-	require_once( BTC_PLUGIN_DIR . 'includes/integrations/integration-metabox-builder.php' );
+	require_once BTC_PLUGIN_DIR . 'includes/integrations/integration-metabox-builder.php';
 }
 
 
@@ -459,7 +459,7 @@ if ( ddw_btc_is_meta_box_builder_active() ) {
  * @since 1.3.0
  */
 if ( ddw_btc_is_custom_template_lifterlms_active() ) {
-	require_once( BTC_PLUGIN_DIR . 'includes/integrations/integration-custom-template-lifterlms.php' );
+	require_once BTC_PLUGIN_DIR . 'includes/integrations/integration-custom-template-lifterlms.php';
 }
 
 
@@ -468,7 +468,7 @@ if ( ddw_btc_is_custom_template_lifterlms_active() ) {
  * @since 1.3.0
  */
 if ( ddw_btc_is_custom_template_learndash_active() ) {
-	require_once( BTC_PLUGIN_DIR . 'includes/integrations/integration-custom-template-learndash.php' );
+	require_once BTC_PLUGIN_DIR . 'includes/integrations/integration-custom-template-learndash.php';
 }
 
 
@@ -477,7 +477,7 @@ if ( ddw_btc_is_custom_template_learndash_active() ) {
  * @since 1.3.0
  */
 if ( ddw_btc_is_reusable_content_blocks_active() ) {
-	require_once( BTC_PLUGIN_DIR . 'includes/integrations/integration-reusable-content-blocks.php' );
+	require_once BTC_PLUGIN_DIR . 'includes/integrations/integration-reusable-content-blocks.php';
 }
 
 
@@ -486,7 +486,7 @@ if ( ddw_btc_is_reusable_content_blocks_active() ) {
  * @since 1.4.0
  */
 if ( ddw_btc_is_master_popups_active() ) {
-	require_once( BTC_PLUGIN_DIR . 'includes/integrations/integration-master-popups.php' );
+	require_once BTC_PLUGIN_DIR . 'includes/integrations/integration-master-popups.php';
 }
 
 
@@ -495,7 +495,7 @@ if ( ddw_btc_is_master_popups_active() ) {
  * @since 1.4.0
  */
 if ( ddw_btc_is_smart_footer_system_active() ) {
-	require_once( BTC_PLUGIN_DIR . 'includes/integrations/integration-smart-footer-system.php' );
+	require_once BTC_PLUGIN_DIR . 'includes/integrations/integration-smart-footer-system.php';
 }
 
 
@@ -504,7 +504,7 @@ if ( ddw_btc_is_smart_footer_system_active() ) {
  * @since 1.4.0
  */
 if ( ddw_btc_is_easy_content_templates_active() ) {
-	require_once( BTC_PLUGIN_DIR . 'includes/integrations/integration-easy-content-templates.php' );
+	require_once BTC_PLUGIN_DIR . 'includes/integrations/integration-easy-content-templates.php';
 }
 
 
@@ -513,7 +513,7 @@ if ( ddw_btc_is_easy_content_templates_active() ) {
  * @since 1.4.0
  */
 if ( ddw_btc_is_simple_content_templates_active() ) {
-	require_once( BTC_PLUGIN_DIR . 'includes/integrations/integration-simple-content-templates.php' );
+	require_once BTC_PLUGIN_DIR . 'includes/integrations/integration-simple-content-templates.php';
 }
 
 
@@ -522,7 +522,7 @@ if ( ddw_btc_is_simple_content_templates_active() ) {
  * @since 1.4.0
  */
 if ( ddw_btc_is_custom_page_templates_active() ) {
-	require_once( BTC_PLUGIN_DIR . 'includes/integrations/integration-custom-page-templates.php' );
+	require_once BTC_PLUGIN_DIR . 'includes/integrations/integration-custom-page-templates.php';
 }
 
 
@@ -531,7 +531,7 @@ if ( ddw_btc_is_custom_page_templates_active() ) {
  * @since 1.5.0
  */
 if ( ddw_btc_is_cartflows_active() ) {
-	require_once( BTC_PLUGIN_DIR . 'includes/integrations/integration-cartflows.php' );
+	require_once BTC_PLUGIN_DIR . 'includes/integrations/integration-cartflows.php';
 }
 
 
@@ -549,7 +549,7 @@ if ( ddw_btc_is_cartflows_active() ) {
  * @since 1.4.3 Additional checks if Block Editor is wanted or not.
  */
 if ( ddw_btc_is_block_editor_active() && ddw_btc_is_block_editor_wanted() ) {
-	require_once( BTC_PLUGIN_DIR . 'includes/integrations/integration-block-editor.php' );
+	require_once BTC_PLUGIN_DIR . 'includes/integrations/integration-block-editor.php';
 }
 
 
@@ -558,7 +558,7 @@ if ( ddw_btc_is_block_editor_active() && ddw_btc_is_block_editor_wanted() ) {
  * @since 1.2.0
  */
 if ( ddw_btc_is_lazy_blocks_active() ) {
-	require_once( BTC_PLUGIN_DIR . 'includes/integrations/integration-lazy-blocks.php' );
+	require_once BTC_PLUGIN_DIR . 'includes/integrations/integration-lazy-blocks.php';
 }
 
 
@@ -567,7 +567,7 @@ if ( ddw_btc_is_lazy_blocks_active() ) {
  * @since 1.4.0
  */
 if ( ddw_btc_is_block_lab_active() ) {
-	require_once( BTC_PLUGIN_DIR . 'includes/integrations/integration-block-lab.php' );
+	require_once BTC_PLUGIN_DIR . 'includes/integrations/integration-block-lab.php';
 }
 
 
@@ -576,7 +576,7 @@ if ( ddw_btc_is_block_lab_active() ) {
  * @since 1.2.0
  */
 if ( ddw_btc_is_advanced_custom_blocks_active() ) {
-	require_once( BTC_PLUGIN_DIR . 'includes/integrations/integration-advanced-custom-blocks.php' );
+	require_once BTC_PLUGIN_DIR . 'includes/integrations/integration-advanced-custom-blocks.php';
 }
 
 
@@ -585,7 +585,7 @@ if ( ddw_btc_is_advanced_custom_blocks_active() ) {
  * @since 1.2.0
  */
 if ( ddw_btc_is_block_layouts_active() ) {
-	require_once( BTC_PLUGIN_DIR . 'includes/integrations/integration-block-layouts.php' );
+	require_once BTC_PLUGIN_DIR . 'includes/integrations/integration-block-layouts.php';
 }
 
 
@@ -594,7 +594,7 @@ if ( ddw_btc_is_block_layouts_active() ) {
  * @since 1.2.0
  */
 if ( ddw_btc_is_sqh_placeholder_block_active() ) {
-	require_once( BTC_PLUGIN_DIR . 'includes/integrations/integration-sqh-placeholder-block.php' );
+	require_once BTC_PLUGIN_DIR . 'includes/integrations/integration-sqh-placeholder-block.php';
 }
 
 
@@ -603,5 +603,5 @@ if ( ddw_btc_is_sqh_placeholder_block_active() ) {
  * @since 1.4.0
  */
 if ( ddw_btc_is_block_templates_active() ) {
-	require_once( BTC_PLUGIN_DIR . 'includes/integrations/integration-block-templates.php' );
+	require_once BTC_PLUGIN_DIR . 'includes/integrations/integration-block-templates.php';
 }

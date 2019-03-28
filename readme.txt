@@ -420,6 +420,7 @@ As of version 1.5.0 of the plugin the following was achieved:
 * New: Added additional integration with plugin Oxygen Builder - Oxygen User Elements Library (*if enabled via Library settings in Oxygen v2.3 alpha 1 or higher*)
 * New: [The plugin now has its own Supporter page on Patreon.com](https://www.patreon.com/deckerweb) - become a patron and support ongoing development
 * Tweak: Updated bundled library DDWlib Plugin Installer Recommendations to latest version (v1.3.0) - feature updates
+* Tweak: Minor code improvements
 * Tweak: Updated `.pot` file plus all German translations (formal, informal) and language packs
 * Tweak: Enhanced and improved Readme.txt file here
 

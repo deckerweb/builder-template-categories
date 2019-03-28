@@ -11,7 +11,7 @@
  * Plugin Name:       Builder Template Categories
  * Plugin URI:        https://github.com/deckerweb/builder-template-categories
  * Description:       This plugin adds a Taxonomy "Template Category" for categorizing templates to make the life of site builders a little bit easier. It integrates with Elementor My Templates, OceanWP My Library, Astra Custom Layouts, GeneratePress Elements, Blox for Genesis, AnyWhere Elementor Global Templates and JetThemeCore My Library (Kava Pro/ CrocoBlock). These categories only appear in the WP-Admin Dashboard and only for the administrator user role (capability 'edit_theme_options').
- * Version:           1.4.3
+ * Version:           1.5.0
  * Author:            David Decker - DECKERWEB
  * Author URI:        https://deckerweb.de/
  * License:           GPL-2.0-or-later
@@ -40,7 +40,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  * @since 1.0.0
  */
 /** Plugin version */
-define( 'BTC_PLUGIN_VERSION', '1.4.3' );
+define( 'BTC_PLUGIN_VERSION', '1.5.0' );
 
 /** Plugin directory */
 define( 'BTC_PLUGIN_DIR', trailingslashit( dirname( __FILE__ ) ) );
@@ -96,13 +96,13 @@ function ddw_btc_load_translations() {
 
 
 /** Include global functions */
-require_once( BTC_PLUGIN_DIR . 'includes/functions-global.php' );
+require_once BTC_PLUGIN_DIR . 'includes/functions-global.php';
 
 /** Include (global) conditionals functions */
-require_once( BTC_PLUGIN_DIR . 'includes/functions-conditionals.php' );
+require_once BTC_PLUGIN_DIR . 'includes/functions-conditionals.php';
 
 /** Include string functions */
-require_once( BTC_PLUGIN_DIR . 'includes/string-switcher.php' );
+require_once BTC_PLUGIN_DIR . 'includes/string-switcher.php';
 
 
 add_action( 'init', 'ddw_btc_setup_plugin' );
@@ -119,18 +119,18 @@ function ddw_btc_setup_plugin() {
 	}
 
 	/** Register Templates taxonomy */
-	require_once( BTC_PLUGIN_DIR . 'includes/register-taxonomy.php' );
+	require_once BTC_PLUGIN_DIR . 'includes/register-taxonomy.php';
 
 	/** Load available integrations */
-	require_once( BTC_PLUGIN_DIR . 'includes/load-integrations.php' );
+	require_once BTC_PLUGIN_DIR . 'includes/load-integrations.php';
 
 	/** Finally, execute the available integrations */
-	require_once( BTC_PLUGIN_DIR . 'includes/run-integrations.php' );
+	require_once BTC_PLUGIN_DIR . 'includes/run-integrations.php';
 
 	/** Include admin helper functions */
 	if ( is_admin() ) {
-		require_once( BTC_PLUGIN_DIR . 'includes/admin/admin-help.php' );
-		require_once( BTC_PLUGIN_DIR . 'includes/admin/admin-extras.php' );
+		require_once BTC_PLUGIN_DIR . 'includes/admin/admin-help.php';
+		require_once BTC_PLUGIN_DIR . 'includes/admin/admin-extras.php';
 	}
 
 	/** Add links to Settings and Menu pages to Plugins page */
@@ -177,7 +177,7 @@ function ddw_btc_plugin_activation_routine() {
 	 */
 	ddw_btc_load_translations();
 
-	require_once( BTC_PLUGIN_DIR . 'includes/register-taxonomy.php' );
+	require_once BTC_PLUGIN_DIR . 'includes/register-taxonomy.php';
 
 	ddw_btc_register_templates_taxonomy();
 

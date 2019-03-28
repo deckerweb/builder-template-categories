@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Builder Template Categories\n"
-"POT-Creation-Date: 2019-03-28 12:58+0100\n"
+"POT-Creation-Date: 2019-03-28 13:41+0100\n"
 "PO-Revision-Date: 2018-08-14 13:21+0200\n"
 "Last-Translator: David Decker DECKERWEB.de -- https://deckerweb.de/\n"
 "Language-Team: David Decker DECKERWEB.de -- https://deckerweb.de/\n"
@@ -83,14 +83,42 @@ msgid ""
 "Enjoyed %1$s? Please leave us a %2$s. We really appreciate your support!"
 msgstr ""
 
-#: includes/admin/admin-extras.php:376
+#: includes/admin/admin-extras.php:377
 msgctxt "Plugin installer: Tab name in installer toolbar"
 msgid "Newest"
 msgstr ""
 
-#: includes/admin/admin-extras.php:382
+#: includes/admin/admin-extras.php:383
 msgctxt "Plugin card: plugin version"
 msgid "Version:"
+msgstr ""
+
+#: includes/admin/admin-extras.php:389
+msgctxt "Plugin installer: Tab name in installer toolbar"
+msgid "deckerweb Plugins"
+msgstr ""
+
+#: includes/admin/admin-extras.php:395
+msgctxt "Plugin installer: Page title"
+msgid "deckerweb Plugins"
+msgstr ""
+
+#: includes/admin/admin-extras.php:400
+msgid ""
+"Great helper tools for Site Builders to save time and get more productive"
+msgstr ""
+
+#: includes/admin/admin-extras.php:403
+#, php-format
+msgid "You can use any of our free plugins or premium plugins from %s"
+msgstr ""
+
+#: includes/admin/admin-extras.php:407
+msgid "Join our Newsletter"
+msgstr ""
+
+#: includes/admin/admin-extras.php:409
+msgid "Facebook User Group"
 msgstr ""
 
 #: includes/admin/admin-help.php:26

@@ -366,6 +366,7 @@ if ( ! function_exists( 'ddwlib_plir_strings_plugin_installer' ) ) :
 	 *    - "Version:" --> label in plugin installer plugin card
 	 *
 	 * @since 1.1.0
+	 * @since 1.5.0 Added new strings.
 	 *
 	 * @param array $strings Holds all filterable strings of the library.
 	 * @return array Array of tweaked translateable strings.
@@ -384,6 +385,29 @@ if ( ! function_exists( 'ddwlib_plir_strings_plugin_installer' ) ) :
 			'builder-template-categories'
 		);
 
+		$strings[ 'ddwplugins_tab' ] = _x(
+			'deckerweb Plugins',
+			'Plugin installer: Tab name in installer toolbar',
+			'builder-template-categories'
+		);
+
+		$strings[ 'tab_title' ] = _x(
+			'deckerweb Plugins',
+			'Plugin installer: Page title',
+			'builder-template-categories'
+		);
+
+		$strings[ 'tab_slogan' ] = __( 'Great helper tools for Site Builders to save time and get more productive', 'builder-template-categories' );
+
+		$strings[ 'tab_info' ] = sprintf(
+			__( 'You can use any of our free plugins or premium plugins from %s', 'builder-template-categories' ),
+			'<a href="https://deckerweb-plugins.com/" target="_blank" rel="nofollow noopener noreferrer">' . $strings[ 'tab_title' ] . '</a>'
+		);
+
+		$strings[ 'tab_newsletter' ] = __( 'Join our Newsletter', 'builder-template-categories' );
+
+		$strings[ 'tab_fbgroup' ] = __( 'Facebook User Group', 'builder-template-categories' );
+
 		return $strings;
 
 	}  // end function
@@ -391,4 +415,4 @@ if ( ! function_exists( 'ddwlib_plir_strings_plugin_installer' ) ) :
 endif;  // function check
 
 /** Include class DDWlib Plugin Installer Recommendations */
-require_once( BTC_PLUGIN_DIR . 'includes/admin/ddwlip-plir/ddwlib-plugin-installer-recommendations.php' );
+require_once BTC_PLUGIN_DIR . 'includes/admin/ddwlib-plir/ddwlib-plugin-installer-recommendations.php';
