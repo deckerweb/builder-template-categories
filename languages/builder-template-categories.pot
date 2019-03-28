@@ -3,14 +3,14 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Builder Template Categories\n"
-"POT-Creation-Date: 2019-01-21 20:27+0100\n"
+"POT-Creation-Date: 2019-03-28 12:58+0100\n"
 "PO-Revision-Date: 2018-08-14 13:21+0200\n"
 "Last-Translator: David Decker DECKERWEB.de -- https://deckerweb.de/\n"
 "Language-Team: David Decker DECKERWEB.de -- https://deckerweb.de/\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.2\n"
+"X-Generator: Poedit 2.2.1\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-Flags-xgettext: --add-comments=translators:\n"
 "X-Poedit-WPHeader: builder-template-categories.php\n"
@@ -24,8 +24,8 @@ msgstr ""
 #. translators: Title attribute for Builder Template Categories taxonomy link
 #. Plugin Name of the plugin/theme
 #: includes/admin/admin-extras.php:35 includes/admin/admin-extras.php:146
-#: includes/admin/admin-help.php:231 includes/admin/admin-help.php:305
-#: includes/admin/admin-help.php:310
+#: includes/admin/admin-help.php:230 includes/admin/admin-help.php:304
+#: includes/admin/admin-help.php:309
 msgid "Builder Template Categories"
 msgstr ""
 
@@ -83,12 +83,12 @@ msgid ""
 "Enjoyed %1$s? Please leave us a %2$s. We really appreciate your support!"
 msgstr ""
 
-#: includes/admin/admin-extras.php:367
+#: includes/admin/admin-extras.php:376
 msgctxt "Plugin installer: Tab name in installer toolbar"
 msgid "Newest"
 msgstr ""
 
-#: includes/admin/admin-extras.php:373
+#: includes/admin/admin-extras.php:382
 msgctxt "Plugin card: plugin version"
 msgid "Version:"
 msgstr ""
@@ -100,35 +100,35 @@ msgid ""
 "the following active Plugins and/or Themes"
 msgstr ""
 
-#: includes/admin/admin-help.php:271
+#: includes/admin/admin-help.php:270
 msgid "Content Type"
 msgstr ""
 
-#: includes/admin/admin-help.php:273 includes/string-switcher.php:85
+#: includes/admin/admin-help.php:272 includes/string-switcher.php:85
 msgid "Post Type"
 msgstr ""
 
-#: includes/admin/admin-help.php:305
+#: includes/admin/admin-help.php:304
 msgid "Plugin"
 msgstr ""
 
-#: includes/admin/admin-help.php:309
+#: includes/admin/admin-help.php:308
 #, php-format
 msgid ""
 "Currently active integrations where the %s taxonomy is applied to better "
 "internally organize templates for various content types"
 msgstr ""
 
-#: includes/admin/admin-help.php:319
+#: includes/admin/admin-help.php:318
 msgid "Video Overview: Bulk Add Template Categories"
 msgstr ""
 
-#: includes/admin/admin-help.php:320
+#: includes/admin/admin-help.php:319
 msgid "video overview"
 msgstr ""
 
 #. translators: 1 - string "Bulk Actions" / 2 - Label "Edit, add Category etc." / 3 - video link markup with title "video overview"
-#: includes/admin/admin-help.php:325
+#: includes/admin/admin-help.php:324
 #, php-format
 msgid ""
 "You can bulk add template categories to more than one template at once in "
@@ -136,77 +136,77 @@ msgid ""
 "action will be labeled like %2$s. See a short %3$s of this feature."
 msgstr ""
 
-#: includes/admin/admin-help.php:326
+#: includes/admin/admin-help.php:325
 msgid "Bulk Actions"
 msgstr ""
 
-#: includes/admin/admin-help.php:327
+#: includes/admin/admin-help.php:326
 msgid "Edit, add Category etc."
 msgstr ""
 
-#: includes/admin/admin-help.php:334
+#: includes/admin/admin-help.php:333
 msgid ""
 "The template categories are global and are applied automatically to all "
 "current active integrations."
 msgstr ""
 
-#: includes/admin/admin-help.php:335
+#: includes/admin/admin-help.php:334
 msgid ""
 "The category description can be used for internal notices for your team "
 "members for example."
 msgstr ""
 
-#: includes/admin/admin-help.php:339
+#: includes/admin/admin-help.php:338
 msgid "Important plugin links:"
 msgstr ""
 
-#: includes/admin/admin-help.php:341
+#: includes/admin/admin-help.php:340
 msgid "Plugin website"
 msgstr ""
 
-#: includes/admin/admin-help.php:343
+#: includes/admin/admin-help.php:342
 msgctxt "Help tab info"
 msgid "FAQ"
 msgstr ""
 
-#: includes/admin/admin-help.php:345
+#: includes/admin/admin-help.php:344
 msgctxt "Help tab info"
 msgid "Support"
 msgstr ""
 
-#: includes/admin/admin-help.php:347
+#: includes/admin/admin-help.php:346
 msgctxt "Help tab info"
 msgid "Facebook Group"
 msgstr ""
 
-#: includes/admin/admin-help.php:349
+#: includes/admin/admin-help.php:348
 msgctxt "Help tab info"
 msgid "Translations"
 msgstr ""
 
-#: includes/admin/admin-help.php:351
+#: includes/admin/admin-help.php:350
 msgctxt "Help tab info"
 msgid "Donate"
 msgstr ""
 
-#: includes/admin/admin-help.php:353
+#: includes/admin/admin-help.php:352
 msgctxt "Help tab info"
 msgid "Join our Newsletter"
 msgstr ""
 
-#: includes/admin/admin-help.php:378
+#: includes/admin/admin-help.php:377
 msgid "Customize"
 msgstr ""
 
-#: includes/admin/admin-help.php:379
+#: includes/admin/admin-help.php:378
 msgid "Code Snippets"
 msgstr ""
 
-#: includes/admin/admin-help.php:381
+#: includes/admin/admin-help.php:380
 msgid "Connect"
 msgstr ""
 
-#: includes/admin/admin-help.php:382
+#: includes/admin/admin-help.php:381
 msgid "Facebook Group"
 msgstr ""
 
@@ -319,6 +319,10 @@ msgstr ""
 msgid "Brizy Templates"
 msgstr ""
 
+#: includes/integrations/integration-cartflows.php:27
+msgid "CartFlows Checkout Flows"
+msgstr ""
+
 #: includes/integrations/integration-cherry-popups.php:27
 msgid "Cherry PopUps Templates"
 msgstr ""
@@ -357,6 +361,10 @@ msgstr ""
 
 #: includes/integrations/integration-custom-template-lifterlms.php:27
 msgid "LifterLMS Custom Templates"
+msgstr ""
+
+#: includes/integrations/integration-customify.php:27
+msgid "Customify Hooks"
 msgstr ""
 
 #: includes/integrations/integration-dev-content-blocks.php:27
@@ -463,8 +471,16 @@ msgstr ""
 msgid "Opal Footer Templates for Elementor"
 msgstr ""
 
-#: includes/integrations/integration-oxygen-builder.php:27
+#: includes/integrations/integration-oxygen-builder.php:31
 msgid "Oxygen Builder Templates"
+msgstr ""
+
+#: includes/integrations/integration-oxygen-builder.php:42
+msgid "Oxygen User Elements Library"
+msgstr ""
+
+#: includes/integrations/integration-page-builder-framework.php:27
+msgid "Page Builder Framework Sections"
 msgstr ""
 
 #: includes/integrations/integration-pods.php:27
@@ -502,6 +518,10 @@ msgstr ""
 #: includes/integrations/integration-stylepress-elementor.php:52
 #: includes/integrations/integration-stylepress-elementor.php:53
 msgid "Styles Overview"
+msgstr ""
+
+#: includes/integrations/integration-suki.php:27
+msgid "Suki Custom Blocks"
 msgstr ""
 
 #: includes/integrations/integration-templementor.php:27
@@ -670,227 +690,227 @@ msgstr ""
 msgid "Template Categories for templates of Page Builders or similar libraries"
 msgstr ""
 
-#: includes/register-taxonomy.php:203
+#: includes/register-taxonomy.php:206
 msgctxt "Taxonomy term title"
 msgid "General"
 msgstr ""
 
-#: includes/register-taxonomy.php:204
+#: includes/register-taxonomy.php:207
 msgctxt "Taxonomy term slug - only lowercase, a-z, 0-9, hyphens!"
 msgid "general"
 msgstr ""
 
-#: includes/register-taxonomy.php:205
+#: includes/register-taxonomy.php:208
 msgctxt "Taxonomy term description"
 msgid "General templates"
 msgstr ""
 
-#: includes/register-taxonomy.php:208
+#: includes/register-taxonomy.php:211
 msgctxt "Taxonomy term title"
 msgid "Frontpage"
 msgstr ""
 
-#: includes/register-taxonomy.php:209
+#: includes/register-taxonomy.php:212
 msgctxt "Taxonomy term slug - only lowercase, a-z, 0-9, hyphens!"
 msgid "frontpage"
 msgstr ""
 
-#: includes/register-taxonomy.php:210
+#: includes/register-taxonomy.php:213
 msgctxt "Taxonomy term description"
 msgid "Templates for the Frontpage/ Homepage"
 msgstr ""
 
-#: includes/register-taxonomy.php:213
+#: includes/register-taxonomy.php:216
 msgctxt "Taxonomy term title"
 msgid "Pages"
 msgstr ""
 
-#: includes/register-taxonomy.php:214
+#: includes/register-taxonomy.php:217
 msgctxt "Taxonomy term slug - only lowercase, a-z, 0-9, hyphens!"
 msgid "pages"
 msgstr ""
 
-#: includes/register-taxonomy.php:215
+#: includes/register-taxonomy.php:218
 msgctxt "Taxonomy term description"
 msgid "Templates for Pages"
 msgstr ""
 
-#: includes/register-taxonomy.php:218
+#: includes/register-taxonomy.php:221
 msgctxt "Taxonomy term title"
 msgid "Landing Pages"
 msgstr ""
 
-#: includes/register-taxonomy.php:219
+#: includes/register-taxonomy.php:222
 msgctxt "Taxonomy term slug - only lowercase, a-z, 0-9, hyphens!"
 msgid "landing-pages"
 msgstr ""
 
-#: includes/register-taxonomy.php:220
+#: includes/register-taxonomy.php:223
 msgctxt "Taxonomy term description"
 msgid "Templates for Landing Pages"
 msgstr ""
 
-#: includes/register-taxonomy.php:223
+#: includes/register-taxonomy.php:226
 msgctxt "Taxonomy term title"
 msgid "Sections"
 msgstr ""
 
-#: includes/register-taxonomy.php:224
+#: includes/register-taxonomy.php:227
 msgctxt "Taxonomy term slug - only lowercase, a-z, 0-9, hyphens!"
 msgid "sections"
 msgstr ""
 
-#: includes/register-taxonomy.php:225
+#: includes/register-taxonomy.php:228
 msgctxt "Taxonomy term description"
 msgid "Templates for Sections/ Content Blocks"
 msgstr ""
 
-#: includes/register-taxonomy.php:228
+#: includes/register-taxonomy.php:231
 msgctxt "Taxonomy term title"
 msgid "Hooks"
 msgstr ""
 
-#: includes/register-taxonomy.php:229
+#: includes/register-taxonomy.php:232
 msgctxt "Taxonomy term slug - only lowercase, a-z, 0-9, hyphens!"
 msgid "hooks"
 msgstr ""
 
-#: includes/register-taxonomy.php:230
+#: includes/register-taxonomy.php:233
 msgctxt "Taxonomy term description"
 msgid "Templates for Action Hooks"
 msgstr ""
 
-#: includes/register-taxonomy.php:233
+#: includes/register-taxonomy.php:236
 msgctxt "Taxonomy term title"
 msgid "Testing"
 msgstr ""
 
-#: includes/register-taxonomy.php:234
+#: includes/register-taxonomy.php:237
 msgctxt "Taxonomy term slug - only lowercase, a-z, 0-9, hyphens!"
 msgid "testing"
 msgstr ""
 
-#: includes/register-taxonomy.php:235
+#: includes/register-taxonomy.php:238
 msgctxt "Taxonomy term description"
 msgid "Templates just for testing purposes"
 msgstr ""
 
-#: includes/register-taxonomy.php:244
+#: includes/register-taxonomy.php:247
 msgctxt "Taxonomy term title"
 msgid "Products"
 msgstr ""
 
-#: includes/register-taxonomy.php:245
+#: includes/register-taxonomy.php:248
 msgctxt "Taxonomy term slug - only lowercase, a-z, 0-9, hyphens!"
 msgid "products"
 msgstr ""
 
-#: includes/register-taxonomy.php:246
+#: includes/register-taxonomy.php:249
 msgctxt "Taxonomy term description"
 msgid "Templates for WooCommerce products"
 msgstr ""
 
-#: includes/register-taxonomy.php:255
+#: includes/register-taxonomy.php:260
 msgctxt "Taxonomy term title"
 msgid "Popups"
 msgstr ""
 
-#: includes/register-taxonomy.php:256
+#: includes/register-taxonomy.php:261
 msgctxt "Taxonomy term slug - only lowercase, a-z, 0-9, hyphens!"
 msgid "popups"
 msgstr ""
 
-#: includes/register-taxonomy.php:257
+#: includes/register-taxonomy.php:262
 msgctxt "Taxonomy term description"
 msgid "Templates for Popups/ Modal Windows"
 msgstr ""
 
-#: includes/register-taxonomy.php:266
+#: includes/register-taxonomy.php:271
 msgctxt "Taxonomy term title"
 msgid "Blocks"
 msgstr ""
 
-#: includes/register-taxonomy.php:267
+#: includes/register-taxonomy.php:272
 msgctxt "Taxonomy term slug - only lowercase, a-z, 0-9, hyphens!"
 msgid "blocks"
 msgstr ""
 
-#: includes/register-taxonomy.php:268
+#: includes/register-taxonomy.php:273
 msgctxt "Taxonomy term description"
 msgid "Templates for Blocks"
 msgstr ""
 
-#: includes/register-taxonomy.php:277
+#: includes/register-taxonomy.php:282
 msgctxt "Taxonomy term title"
 msgid "Fields"
 msgstr ""
 
-#: includes/register-taxonomy.php:278
+#: includes/register-taxonomy.php:283
 msgctxt "Taxonomy term slug - only lowercase, a-z, 0-9, hyphens!"
 msgid "fields"
 msgstr ""
 
-#: includes/register-taxonomy.php:279
+#: includes/register-taxonomy.php:284
 msgctxt "Taxonomy term description"
 msgid "Templates for Fields"
 msgstr ""
 
-#: includes/register-taxonomy.php:288
+#: includes/register-taxonomy.php:293
 msgctxt "Taxonomy term title"
 msgid "Boxes"
 msgstr ""
 
-#: includes/register-taxonomy.php:289
+#: includes/register-taxonomy.php:294
 msgctxt "Taxonomy term slug - only lowercase, a-z, 0-9, hyphens!"
 msgid "boxes"
 msgstr ""
 
-#: includes/register-taxonomy.php:290
+#: includes/register-taxonomy.php:295
 msgctxt "Taxonomy term description"
 msgid "Templates for Boxes"
 msgstr ""
 
-#: includes/register-taxonomy.php:299
+#: includes/register-taxonomy.php:304
 msgctxt "Taxonomy term title"
 msgid "Bars"
 msgstr ""
 
-#: includes/register-taxonomy.php:300
+#: includes/register-taxonomy.php:305
 msgctxt "Taxonomy term slug - only lowercase, a-z, 0-9, hyphens!"
 msgid "bars"
 msgstr ""
 
-#: includes/register-taxonomy.php:301
+#: includes/register-taxonomy.php:306
 msgctxt "Taxonomy term description"
 msgid "Templates for Bars"
 msgstr ""
 
-#: includes/register-taxonomy.php:310
+#: includes/register-taxonomy.php:315
 msgctxt "Taxonomy term title"
 msgid "Flows"
 msgstr ""
 
-#: includes/register-taxonomy.php:311
+#: includes/register-taxonomy.php:316
 msgctxt "Taxonomy term slug - only lowercase, a-z, 0-9, hyphens!"
 msgid "flows"
 msgstr ""
 
-#: includes/register-taxonomy.php:312
+#: includes/register-taxonomy.php:317
 msgctxt "Taxonomy term description"
 msgid "Templates for Flows"
 msgstr ""
 
-#: includes/register-taxonomy.php:321
+#: includes/register-taxonomy.php:326
 msgctxt "Taxonomy term title"
 msgid "Snippets"
 msgstr ""
 
-#: includes/register-taxonomy.php:322
+#: includes/register-taxonomy.php:327
 msgctxt "Taxonomy term slug - only lowercase, a-z, 0-9, hyphens!"
 msgid "snippets"
 msgstr ""
 
-#: includes/register-taxonomy.php:323
+#: includes/register-taxonomy.php:328
 msgctxt "Taxonomy term description"
 msgid "Templates for Snippets"
 msgstr ""

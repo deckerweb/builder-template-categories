@@ -14,7 +14,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 add_filter( 'btc/filter/integrations/all', 'ddw_btc_register_integration_block_layouts' );
 /**
- * Register Lazy Blocks.
+ * Register Block Layouts.
  *
  * @since 1.2.0
  *

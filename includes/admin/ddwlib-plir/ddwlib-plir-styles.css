@@ -1,0 +1,175 @@
+/**
+ * @package DDWlib Plugin Installer Recommendations - Assets
+ * @since 1.1.0
+ * @since 1.2.0 Added more styles for plugin cards. Dark mode support.
+ * @since 1.3.0 Moved CSS into own stylesheet. WP Enqueue declaration.
+ */
+
+/** Plugin cards */
+
+.plugin-card:hover {
+	background: #ffffd9;
+	border: 1px solid #bbb;
+}
+
+.plugin-card-bottom {
+	background: #f2f2f2;
+}
+
+.plugin-card:hover > .plugin-card-bottom {
+	background: #e1e1e1;
+}
+
+.plugin-install-php .tablenav .tablenav-pages {
+	margin-top: 15px;
+	margin-bottom: 15px;
+}
+
+.plugin-action-buttons div small {
+	margin-left: 10px;
+}
+
+.dark-mode .plugin-card:hover {
+	background: #404C58 !important;
+	border-color: #090909 !important;
+}
+
+.dark-mode .plugin-card:hover > .plugin-card-bottom {
+	background: #111921 !important;
+}
+
+.dark-mode .plugin-action-buttons div small {
+	color: #bbc8d4;
+}
+
+
+/** Plugin cards: buttons */
+
+#wpwrap .plugin-action-buttons .button-disabled {
+	background-color: #d9edc2 !important;
+	border-color: #b2ce96 !important;
+	color: #555 !important;
+}
+
+.plugin-action-buttons .update-now,
+.plugin-action-buttons .install-now.updating-message {
+	background-color: #fef5c4;
+}
+
+.plugin-action-buttons .activate-now,
+.plugin-action-buttons .activate-now:focus,
+.dark-mode .plugin-action-buttons .activate-now,
+.dark-mode .plugin-action-buttons .activate-now:focus {
+	background-color: #e2e2f9;
+	border-color: #bebde9;
+	color: #333;
+	text-shadow: none;
+}
+
+.plugin-action-buttons a.activate-now:before {
+	color: #999;  /* #f56e28; */
+	content: "\f106";
+	display: inline-block;
+	font: 400 20px/1 dashicons;
+	margin: 3px 5px 0 -2px;
+	speak: none;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	vertical-align: top;
+}
+
+
+/** Plugin cards: compatibility */
+
+.plugin-card .compatibility-compatible:before,
+.plugin-card .compatibility-compatible strong {
+	color: #0b0 !important;
+}
+
+.plugin-card .compatibility-incompatible:before,
+.plugin-card .compatibility-incompatible strong {
+	color: #f00 !important;
+}
+
+
+/** Plugin & Theme uploaders */
+
+.upload-plugin .wp-upload-form,
+.upload-theme .wp-upload-form {
+	padding: 20px;
+	margin: 20px auto;
+	max-width: 80%;
+	text-align: center;
+}
+
+input#pluginzip,
+input#themezip {
+    background-color: #ffffe8;
+    border: 4px dashed #b4b9be;
+    display: inline-block;
+    font-size: 135%;
+    padding: 20px;
+    width: 100% !important;
+}
+
+input#pluginzip:hover,
+input#themezip:hover {
+    background-color: #ffffd9;
+}
+
+input#install-plugin-submit,
+input#install-theme-submit {
+	display: inline-block;
+	font-size: 120%;
+	margin-top: 20px;
+}
+
+.dark-mode input#pluginzip,
+.dark-mode input#themezip {
+	background-color: #404C58;
+	border-color: #23282d;
+}
+
+.dark-mode input#pluginzip:hover,
+.dark-mode input#themezip:hover {
+    background-color: #50626f;
+}
+
+
+/** Tab: deckerweb Plugins */
+
+.ddwplugins-preface {
+	padding: 10px 20px 0;
+}
+
+.ddwplugins-logo {
+	border: 1px solid #fafafa;
+	float: left;
+	margin: 20px 20px 0;
+}
+
+.ddwplugins-text {
+	display: inline-block;
+	padding-top: 5px;
+}
+
+.ddwplugins-text h3,
+.ddwplugins-text h4,
+.ddwplugins-text p {
+	display: block;
+}
+
+.ddwplugins-text h3 {
+	color: #7e49c2;
+	font-size: 1.5em;
+	margin-top: 1.2em;
+}
+
+.ddwplugins-text h4 {
+	color: #c56cd7;
+	font-size: 1.1em;
+}
+
+.ddwplugins-text p {
+	font-size: 107%;
+}

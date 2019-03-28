@@ -29,7 +29,7 @@ function ddw_btc_custom_taxonomy_links( $btc_links ) {
 
 		/** Taxonomy Page link */
 		$btc_tax_link = sprintf(
-			'<a class="dashicons-before dashicons-category" href="%s" title="%s">%s</a>',
+			'<a href="%s" title="%s"><span class="dashicons-before dashicons-category"></span> %s</a>',
 			esc_url( admin_url( ddw_btc_taxonomy_admin_url() ) ),
 			/* translators: Title attribute for Builder Template Categories taxonomy link */
 			esc_html__( 'Builder Template Categories', 'builder-template-categories' ),
@@ -391,4 +391,4 @@ if ( ! function_exists( 'ddwlib_plir_strings_plugin_installer' ) ) :
 endif;  // function check
 
 /** Include class DDWlib Plugin Installer Recommendations */
-require_once( BTC_PLUGIN_DIR . 'includes/admin/ddwlib-plugin-installer-recommendations.php' );
+require_once( BTC_PLUGIN_DIR . 'includes/admin/ddwlip-plir/ddwlib-plugin-installer-recommendations.php' );

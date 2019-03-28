@@ -5,6 +5,7 @@
 * [Plugin page on WordPress.org: wordpress.org/plugins/builder-template-categories/](https://wordpress.org/plugins/builder-template-categories/)
 * [Translate the plugin](https://translate.wordpress.org/projects/wp-plugins/builder-template-categories)
 * [**Join plugin's newsletter for insider info, tutorials and more**](https://eepurl.com/gbAUUn)
+* [**Become a Patron**](https://www.patreon.com/deckerweb) and support ongoing development, maintenance and support of this plugin
 * [**Donate** for the further development & support of the plugin](https://www.paypal.me/deckerweb)
 * [Plugin's documentation & FAQ](https://wordpress.org/plugins/builder-template-categories/#faq)
 * [Facebook Community User Group](https://www.facebook.com/groups/deckerweb.wordpress.plugins/)
@@ -12,6 +13,19 @@
 
 
 ## Changelog of the Plugin
+
+### 🎉 1.5.0 - 2019-03-28
+
+* New: Added integration with theme Page Builder Framework - Custom Sections via WPBF Premium Add-On plugin (Premium, by David Vongries & MapSteps)
+* New: Added integration with theme Suki - Custom Blocks via Suki Pro Add-On plugin (Premium, by SukiWP/ David Rozando)
+* New: Added integration with theme Customify - Customify Hooks via Customify Pro Add-On plugin (Premium, by WPCustomify/ PressMaximum)
+* New: Added integration with plugin CartFlows (free, by CartFlows Inc.)
+* New: Added additional integration with plugin Oxygen Builder - Oxygen User Elements Library (*if enabled via Library settings in Oxygen v2.3 alpha 1 or higher*)
+* *New: Successfully tested with WordPress 5.1.1*
+* Tweak: Updated bundled library DDWlib Plugin Installer Recommendations to latest version (v1.3.0) - feature updates
+* Tweak: Updated `.pot` file plus all German translations (formal, informal) and language packs
+* Tweak: Enhanced and improved Readme.txt file here
+
 
 ### 1.4.3 - 2019-01-21
 

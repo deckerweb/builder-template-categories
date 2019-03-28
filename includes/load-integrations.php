@@ -143,6 +143,33 @@ if ( ddw_btc_is_avada_fusion_builder_active() ) {
 }
 
 
+/**
+ * Theme: Customify - via "Customify Pro" Add-On Plugin (Premium)
+ * @since 1.5.0
+ */
+if ( ddw_btc_is_customify_hooks_active() ) {
+	require_once( BTC_PLUGIN_DIR . 'includes/integrations/integration-customify.php' );
+}
+
+
+/**
+ * Theme: Page Builder Framework - via "WPBF Premium" Add-On Plugin (Premium)
+ * @since 1.5.0
+ */
+if ( ddw_btc_is_pbf_sections_active() ) {
+	require_once( BTC_PLUGIN_DIR . 'includes/integrations/integration-page-builder-framework.php' );
+}
+
+
+/**
+ * Theme: Suki - via "Suki Pro" Add-On Plugin (Premium)
+ * @since 1.5.0
+ */
+if ( ddw_btc_is_suki_blocks_active() ) {
+	require_once( BTC_PLUGIN_DIR . 'includes/integrations/integration-suki.php' );
+}
+
+
 
 /**
  * 3) Plugin integrations - for Elementor Page Builder:
@@ -496,6 +523,15 @@ if ( ddw_btc_is_simple_content_templates_active() ) {
  */
 if ( ddw_btc_is_custom_page_templates_active() ) {
 	require_once( BTC_PLUGIN_DIR . 'includes/integrations/integration-custom-page-templates.php' );
+}
+
+
+/**
+ * Plugin: CartFlows
+ * @since 1.5.0
+ */
+if ( ddw_btc_is_cartflows_active() ) {
+	require_once( BTC_PLUGIN_DIR . 'includes/integrations/integration-cartflows.php' );
 }
 
 

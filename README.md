@@ -3,9 +3,9 @@
 **Donate link:** https://www.paypal.me/deckerweb  
 **Tags:** elementor, page builder, templates, gutenberg, blocks, oceanwp, astra, generatepress, genesis, categories, template, deckerweb  
 **Requires at least:** 4.7  
-**Tested up to:** 5.0  
+**Tested up to:** 5.1  
 **Requires PHP:** 5.6  
-**Stable tag:** 1.4.3  
+**Stable tag:** 1.5.0  
 **License:** GPL-2.0-or-later  
 **License URI:** https://opensource.org/licenses/GPL-2.0  
 
@@ -47,7 +47,8 @@ Please note: The categories are global but when filtering only those items are l
 ### 🎉 Supported Page Builders 
 * **Elementor Page Builder** Plugin (free version is sufficient) - **My Templates** (for Pages, Sections, and with Elementor Pro even more template types)
 * **Brizy Page Builder** Plugin (free version is sufficient) - **Templates** (for Pages, Sections etc.)
-* **Oxygen Builder** Plugin (Pro) - **Templates** (for Pages, Layouts, Sections, Theme Builder elements...) -- Note: also the old Oxygen Visual Site Builder 1.x is supported
+* **Oxygen Builder** Plugin (Pro) - **Templates** (for Pages, Layouts, Sections, Theme Builder elements...) -- Note: also the old Oxygen Visual Site Builder 1.x is supported  
+  **Oxygen User Elements Library** (for Blocks, Layouts, Sections, Theme Builder elements...) -- Note: only if enabled in Oxygen v2.3 alpha 1 or higher
 * **Visual Composer Website Builder** (the new one, 2018) - **Global Templates** / **Header, Footer, Sidebars Templates**
 * **WPBakery Page Builder (the old 'Visual Composer')** Plugin with its **Templatera** template plugin - **Templates** (for Pages, Layouts, etc.)
 * **Cornerstone** Page Builder via the "Cornerstone Global Blocks" Plugin (free) - **Global Blocks** (for Content)
@@ -63,6 +64,9 @@ Please note: The categories are global but when filtering only those items are l
 * **OceanWP Theme** with "Ocean Extra" free Plugin - **My Library** (for Layouts, Hooks etc.)
 * **Kava Pro Theme/ CrocoBlock Service** with JetThemeCore Plugin - **My Library** (for Layouts, Pages, Headers, Footers, Single, Archive)
 * **Genesis Framework** with Genesis Child Themes -- via **Blox Lite** and **Blox** (Pro) Plugins - **Global Content Blocks** (Sections, Hooks)
+* **Page Builder Framework** with **WPBF Premium** Add-On Plugin - **Custom Section** (for Sections, Layouts, Hooks etc.)
+* **Customify** with **Customify Pro** Add-On Plugin - **Hooks** (for Layouts, Sections, Hooks etc.)
+* **Suki** with **Suki Pro** Add-On Plugin - **Custom Blocks** (for Layouts, Sections, Hooks etc.)
 * **Avada Theme** with Avada Fusion Builder - **Library** (for Templates, Pages, Layouts, Columns, Rows)
 
 
@@ -74,7 +78,7 @@ Please note: The categories are global but when filtering only those items are l
 * **JetEngine for Elementor** Plugin - **Listings (Templates)**
 * **JetWooBuilder for Elementor** Plugin - **Product Templates** (for WooCommerce Products)
 * [**Blox Lite**](https://wordpress.org/plugins/blox-lite/) and **Blox** (Pro) Plugins, both for Genesis Framework - **Global Content Blocks** (for Sections, Hooks)
-* **Oxygen Builder** Plugin (Pro) - **Templates** (for Pages, Layouts, Sections, Theme Builder elements...)
+* **Oxygen Builder** Plugin (Pro) - **Templates** (for Pages, Layouts, Sections, Theme Builder elements...) - **User Elements Library** (Elements, Blocks, Content)
 * [**Header Footer for Elementor**](https://wordpress.org/plugins/header-footer-elementor/) Plugin - **Header & Footer Templates** (for Elementor theming areas)
 * **DHWC Elementor** Plugin - **Product Templates** (for WooCommerce Products)
 * [**Kadence WooCommerce Elementor**](https://wordpress.org/plugins/kadence-woocommerce-elementor/) Plugin - **Product Templates** (for WooCommerce Products)
@@ -87,6 +91,7 @@ Please note: The categories are global but when filtering only those items are l
 * [**WP Show Posts**](https://wordpress.org/plugins/wp-show-posts/) Plugin - **Listings (Templates)** (for Post Listings)
 * **JetSmartFilters** Plugin - **Filters** (Templates for Filter Controls, Listings etc.)
 * **JetPopup** Plugin - **Popups** (for Popups)
+* [**CartFlows**](https://wordpress.org/plugins/cartflows/) Plugin - **Flows** (for WooCommerce *Checkout* & *Thank You* Pages)
 * [**Cherry PopUps**](https://wordpress.org/plugins/cherry-popups/) Plugin - **Popups** (for Popups)
 * [**Themify Popup**](https://wordpress.org/plugins/themify-popup/) Plugin - **Popups** (for Popups)
 * [**Meta Box Post Types**](https://wordpress.org/plugins/mb-custom-post-type/) Add-On Plugin - **Post Types** (for Post Type registrations)
@@ -153,10 +158,11 @@ You can also contribute code-wise via our [Builder Template Categories GitHub Re
 
 
 ### ⚡ Liked Builder Template Categories? 
-* **Rate us 5 stars** on [WordPress.org](https://wordpress.org/support/plugin/builder-template-categories/reviews/?filter=5/#new-post) :)
-* Join our [**Facebook User Community Support Group**](https://www.facebook.com/groups/deckerweb.wordpress.plugins/)
-* Like our [**Facebook Info Page for Deckerweb Plugins**](https://www.facebook.com/deckerweb.wordpress.plugins/)
-* [**Subscribe to my Newsletter for insider info on this plugin**](https://eepurl.com/gbAUUn), plus tutorials and more stuff on deckerweb WordPress plugins - join a thriving community of site builders!
+* **Rate us 5 ⭐ stars** on [WordPress.org](https://wordpress.org/support/plugin/builder-template-categories/reviews/?filter=5/#new-post) :)
+* Join our [**Facebook User Community Support Group** 💬](https://www.facebook.com/groups/deckerweb.wordpress.plugins/)
+* Like 👍 our [**Facebook Info Page for Deckerweb Plugins**](https://www.facebook.com/deckerweb.wordpress.plugins/)
+* [**Subscribe to my Newsletter for insider info on this plugin** 💯](https://eepurl.com/gbAUUn), plus tutorials and more stuff on deckerweb WordPress plugins - join a thriving community of site builders!
+* [**Become a Patron** 💜](https://www.patreon.com/deckerweb) and support ongoing development, maintenance and support of this plugin
 
 
 ### ☕ This Plugin ... 
@@ -178,7 +184,7 @@ You can also contribute code-wise via our [Builder Template Categories GitHub Re
 
 ### We Recommend Your Host Supports at least: 
 
-* PHP version 7.0 or higher
+* PHP version 7.2 or higher
 * MySQL version 5.6 or higher / or MariaDB 10 or higher
 
 
@@ -399,16 +405,16 @@ Best practice is to wrap the whole code above in a conditional to check if the t
 
 
 ### Some Statistics?
-As of version 1.3.0 of the plugin the following was achieved:
+As of version 1.5.0 of the plugin the following was achieved:
 
 * 1 Taxonomy
-* 59 Integrations overall
+* 65 Integrations overall
 * 1 Core Integration (Gutenberg Block Editor)
-* 6 Theme Integrations
+* 9 Theme Integrations
 * 10 Page Builder Integrations
-* 45 Plugin Integrations
-* Up to 71 different post types (of integrations) supported
-* 14 generic template content types, plus 1 plugin-specific template content type
+* 46 Plugin Integrations
+* Up to 76 different post types (of integrations) supported
+* 16 generic template content types, plus 1 plugin-specific template content type
 
 
 
@@ -461,6 +467,18 @@ As of version 1.3.0 of the plugin the following was achieved:
 
 
 ## Changelog 
+
+### 🎉 1.5.0 - 2019-03-28
+* New: Added integration with theme Page Builder Framework - Custom Sections via WPBF Premium Add-On plugin (Premium, by David Vongries & MapSteps)
+* New: Added integration with theme Suki - Custom Blocks via Suki Pro Add-On plugin (Premium, by SukiWP/ David Rozando)
+* New: Added integration with theme Customify - Customify Hooks via Customify Pro Add-On plugin (Premium, by WPCustomify/ PressMaximum)
+* New: Added integration with plugin CartFlows (free, by CartFlows Inc.)
+* New: Added additional integration with plugin Oxygen Builder - Oxygen User Elements Library (*if enabled via Library settings in Oxygen v2.3 alpha 1 or higher*)
+* *New: Successfully tested with WordPress 5.1.1*
+* Tweak: Updated bundled library DDWlib Plugin Installer Recommendations to latest version (v1.3.0) - feature updates
+* Tweak: Updated `.pot` file plus all German translations (formal, informal) and language packs
+* Tweak: Enhanced and improved Readme.txt file here
+
 
 ### ⚡ 1.4.3 - 2019-01-21
 * New: Additional checks for Block Editor (Gutenberg) integration if one of the popular disabling plugins has disabled it completely (in that case the integration won't be loaded at all!)

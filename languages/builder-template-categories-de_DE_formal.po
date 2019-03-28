@@ -1,15 +1,15 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Builder Template Categories\n"
-"POT-Creation-Date: 2019-01-21 22:59+0100\n"
-"PO-Revision-Date: 2019-01-21 22:59+0100\n"
+"POT-Creation-Date: 2019-03-28 12:58+0100\n"
+"PO-Revision-Date: 2019-03-28 12:58+0100\n"
 "Last-Translator: David Decker DECKERWEB.de -- https://deckerweb.de/\n"
 "Language-Team: David Decker DECKERWEB.de -- https://deckerweb.de/\n"
-"Language: de_DE\n"
+"Language: de_DE@formal\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.2\n"
+"X-Generator: Poedit 2.2.1\n"
 "X-Poedit-Basepath: ..\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Poedit-Flags-xgettext: --add-comments=translators:\n"
@@ -334,6 +334,10 @@ msgstr "BoldGrid-Blöcke"
 msgid "Brizy Templates"
 msgstr "Brizy Templates"
 
+#: includes/integrations/integration-cartflows.php:27
+msgid "CartFlows Checkout Flows"
+msgstr "CartFlows Checkout-Abläufe"
+
 #: includes/integrations/integration-cherry-popups.php:27
 msgid "Cherry PopUps Templates"
 msgstr "Cherry PopUps Templates"
@@ -373,6 +377,10 @@ msgstr "LearnDash eigene Templates"
 #: includes/integrations/integration-custom-template-lifterlms.php:27
 msgid "LifterLMS Custom Templates"
 msgstr "LifterLMS eigene Templates"
+
+#: includes/integrations/integration-customify.php:27
+msgid "Customify Hooks"
+msgstr "Customify Hooks"
 
 #: includes/integrations/integration-dev-content-blocks.php:27
 msgid "Dev Content Blocks"
@@ -478,9 +486,17 @@ msgstr "Opal Header-Templates für Elementor"
 msgid "Opal Footer Templates for Elementor"
 msgstr "Opal Footer-Templates für Elementor"
 
-#: includes/integrations/integration-oxygen-builder.php:27
+#: includes/integrations/integration-oxygen-builder.php:31
 msgid "Oxygen Builder Templates"
 msgstr "Oxygen Builder Templates"
+
+#: includes/integrations/integration-oxygen-builder.php:42
+msgid "Oxygen User Elements Library"
+msgstr "Oxygen Benutzer Elemente-Bibliothek"
+
+#: includes/integrations/integration-page-builder-framework.php:27
+msgid "Page Builder Framework Sections"
+msgstr "Page Builder Framework Abschnitte"
 
 #: includes/integrations/integration-pods.php:27
 msgid "Pods Templates"
@@ -518,6 +534,10 @@ msgstr "StylePress-Templates für Elementor"
 #: includes/integrations/integration-stylepress-elementor.php:53
 msgid "Styles Overview"
 msgstr "Styles-Übersicht"
+
+#: includes/integrations/integration-suki.php:27
+msgid "Suki Custom Blocks"
+msgstr "Suki individuelle Blöcke"
 
 #: includes/integrations/integration-templementor.php:27
 msgid "Templementor Templates"

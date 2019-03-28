@@ -23,7 +23,7 @@ add_filter( 'btc/filter/integrations/all', 'ddw_btc_register_integration_astra' 
  */
 function ddw_btc_register_integration_astra( array $integrations ) {
 
-	$integrations[ 'generatepress' ] = array(
+	$integrations[ 'astra-layouts' ] = array(
 		'label'          => __( 'Astra Custom Layouts', 'builder-template-categories' ),
 		'submenu_hook'   => 'themes.php',
 		'post_type'      => 'astra-advanced-hook',

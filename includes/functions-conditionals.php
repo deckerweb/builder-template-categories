@@ -193,6 +193,26 @@ function ddw_btc_is_oxygen_builder_active() {
 
 
 /**
+ * Check if Oxygen User Library Module is activated in plugin settings or not.
+ *
+ * @since 1.5.0
+ *
+ * @return bool TRUE if option is set to "true", FALSE otherwise.
+ */
+function ddw_btc_is_oxygen_user_library_active() {
+
+	if ( ! class_exists( 'OXY_VSB_Connection' ) ) {
+		return FALSE;
+	}
+
+	$status = get_option( 'oxygen_vsb_enable_connection' );
+
+	return ( 'true' === $status );
+
+}  // end function
+
+
+/**
  * Is BoldGrid Post and Page Builder plugin active or not?
  *
  * @since 1.0.0
@@ -322,6 +342,60 @@ function ddw_btc_is_blox_active() {
 function ddw_btc_is_avada_fusion_builder_active() {
 
 	return ( defined( 'FUSION_BUILDER_VERSION' ) );
+
+}  // end function
+
+
+/**
+ * Is Customify Pro "Custom Hooks" module active or not? (via Pro Addon)
+ *
+ * @since 1.5.0
+ *
+ * @return bool TRUE if Customify Pro Custom Hooks module is active, FALSE
+ *              otherwise.
+ */
+function ddw_btc_is_customify_hooks_active() {
+
+	return ( class_exists( 'Customify_Pro' ) && Customify_Pro()->is_enabled_module( 'Customify_Pro_Module_Hooks' ) );
+
+}  // end function
+
+
+/**
+ * Is Page Builder Framework WPBF Premium "Sections" module active or not?
+ *   (via Premium Addon)
+ *
+ * @since 1.5.0
+ *
+ * @return bool TRUE if WPBF Premium Sections module is active, FALSE otherwise.
+ */
+function ddw_btc_is_pbf_sections_active() {
+
+	return defined( 'WPBF_PREMIUM_VERSION' );
+
+}  // end function
+
+
+/**
+ * Is Suki Pro "Custom Blocks" module active or not? (via Pro Addon)
+ *
+ * @since 1.5.0
+ *
+ * @return bool TRUE if Suki Pro Custom Blocks module is active, FALSE
+ *              otherwise.
+ */
+function ddw_btc_is_suki_blocks_active() {
+
+	/** Get current active Suki Pro modules */
+	$suki_modules = get_option( 'suki_pro_active_modules', array() );
+
+	/** When Suki Pro & Custom Blocks active return TRUE */
+	if ( defined( 'SUKI_PRO_VERSION' ) && in_array( 'custom-blocks', $suki_modules ) ) {
+		return TRUE;
+	}
+
+	/** By default return FALSE */
+	return FALSE;
 
 }  // end function
 
@@ -931,6 +1005,20 @@ function ddw_btc_is_simple_content_templates_active() {
 function ddw_btc_is_custom_page_templates_active() {
 
 	return class_exists( 'cptemplates' );
+
+}  // end function
+
+
+/**
+ * Is CartFlows plugin active or not?
+ *
+ * @since 1.5.0
+ *
+ * @return bool TRUE if plugin is active, FALSE otherwise.
+ */
+function ddw_btc_is_cartflows_active() {
+
+	return class_exists( 'Cartflows_Loader' );
 
 }  // end function
 
