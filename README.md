@@ -1,4 +1,10 @@
 # Builder Template Categories - for WordPress Page Builders 
+
+[![Plugin Version](https://img.shields.io/wordpress/plugin/v/toolbar-extras.svg)](https://wordpress.org/plugins/builder-template-categories/)
+[![WordPress Version Compatibility](https://img.shields.io/wordpress/v/builder-template-categories.svg)](https://wordpress.org/plugins/builder-template-categories/)
+[![Downloads](https://img.shields.io/wordpress/plugin/dt/builder-template-categories.svg)](https://wordpress.org/plugins/builder-template-categories/)
+[![Rating](https://img.shields.io/wordpress/plugin/r/builder-template-categories.svg)](https://wordpress.org/plugins/builder-template-categories/)
+
 **Contributors:** daveshine, deckerweb, wpautobahn, toolbarextras  
 **Donate link:** https://www.paypal.me/deckerweb  
 **Tags:** elementor, page builder, templates, gutenberg, blocks, oceanwp, astra, generatepress, genesis, categories, template, deckerweb  
@@ -11,7 +17,7 @@
 
 Organize your Page Builder Templates in the WordPress Admin. Better overview, don't get lost. Time saver. With extended plugin & theme support.
 
-[<img src="https://ps.w.org/builder-template-categories/assets/banner-1544x500.png" data-canonical-src="https://ps.w.org/builder-template-categories/assets/banner-1544x500.png" width="772" height="250" />](https://wordpress.org/plugins/builder-template-categories/)
+[<img src="https://raw.githubusercontent.com/deckerweb/builder-template-categories/master/assets-repos/github-com/btc-banner.png" data-canonical-src="https://raw.githubusercontent.com/deckerweb/builder-template-categories/master/assets-repos/github-com/btc-banner.png" width="772" height="250" />](https://wordpress.org/plugins/builder-template-categories/)
 
 ## Description 
 
@@ -47,8 +53,8 @@ Please note: The categories are global but when filtering only those items are l
 ### 🎉 Supported Page Builders 
 * **Elementor Page Builder** Plugin (free version is sufficient) - **My Templates** (for Pages, Sections, and with Elementor Pro even more template types)
 * **Brizy Page Builder** Plugin (free version is sufficient) - **Templates** (for Pages, Sections etc.)
-* **Oxygen Builder** Plugin (Pro) - **Templates** (for Pages, Layouts, Sections, Theme Builder elements...) -- Note: also the old Oxygen Visual Site Builder 1.x is supported  
-  **Oxygen User Elements Library** (for Blocks, Layouts, Sections, Theme Builder elements...) -- Note: only if enabled in Oxygen v2.3 alpha 1 or higher
+* **Oxygen Builder** Plugin (Pro) - **Templates** (for Pages, Layouts, Sections, Theme Builder elements...) -- *Note: also the old Oxygen Visual Site Builder 1.x is supported*  
+  **Oxygen User Elements Library** (for Blocks, Layouts, Sections, Theme Builder elements...) -- *Note: only if enabled in Oxygen v2.3 alpha 1 or higher*
 * **Visual Composer Website Builder** (the new one, 2018) - **Global Templates** / **Header, Footer, Sidebars Templates**
 * **WPBakery Page Builder (the old 'Visual Composer')** Plugin with its **Templatera** template plugin - **Templates** (for Pages, Layouts, etc.)
 * **Cornerstone** Page Builder via the "Cornerstone Global Blocks" Plugin (free) - **Global Blocks** (for Content)
