@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Builder Template Categories\n"
-"POT-Creation-Date: 2019-03-28 13:41+0100\n"
+"POT-Creation-Date: 2019-05-03 23:22+0200\n"
 "PO-Revision-Date: 2018-08-14 13:21+0200\n"
 "Last-Translator: David Decker DECKERWEB.de -- https://deckerweb.de/\n"
 "Language-Team: David Decker DECKERWEB.de -- https://deckerweb.de/\n"
@@ -23,140 +23,160 @@ msgstr ""
 
 #. translators: Title attribute for Builder Template Categories taxonomy link
 #. Plugin Name of the plugin/theme
-#: includes/admin/admin-extras.php:35 includes/admin/admin-extras.php:146
-#: includes/admin/admin-help.php:230 includes/admin/admin-help.php:304
-#: includes/admin/admin-help.php:309
+#: includes/admin/admin-extras.php:56 includes/admin/admin-extras.php:167
+#: includes/admin/admin-extras.php:222 includes/admin/admin-help.php:238
+#: includes/admin/admin-help.php:312 includes/admin/admin-help.php:317
 msgid "Builder Template Categories"
 msgstr ""
 
-#: includes/admin/admin-extras.php:36
+#: includes/admin/admin-extras.php:57
 msgctxt "For Builder Template Categories Plugin"
 msgid "Template Categories"
 msgstr ""
 
 #. translators: Plugins page listing
-#: includes/admin/admin-extras.php:89
+#: includes/admin/admin-extras.php:110
 msgctxt "Plugins page listing"
 msgid "Support"
 msgstr ""
 
 #. translators: Plugins page listing
-#: includes/admin/admin-extras.php:92
+#: includes/admin/admin-extras.php:113
 msgctxt "Plugins page listing"
 msgid "Facebook Group"
 msgstr ""
 
 #. translators: Plugins page listing
-#: includes/admin/admin-extras.php:95
+#: includes/admin/admin-extras.php:116
 msgctxt "Plugins page listing"
 msgid "Translations"
 msgstr ""
 
 #. translators: Plugins page listing
-#: includes/admin/admin-extras.php:98
+#: includes/admin/admin-extras.php:119
 msgctxt "Plugins page listing"
 msgid "Code Snippets"
 msgstr ""
 
 #. translators: Plugins page listing
-#: includes/admin/admin-extras.php:101
+#: includes/admin/admin-extras.php:122
 msgctxt "Plugins page listing"
 msgid "Donate"
 msgstr ""
 
 #. translators: Plugins page listing
-#: includes/admin/admin-extras.php:104
+#: includes/admin/admin-extras.php:125
 msgctxt "Plugins page listing"
 msgid "Join our Newsletter"
 msgstr ""
 
 #. translators: %s - 5 stars icons
-#: includes/admin/admin-extras.php:139
+#: includes/admin/admin-extras.php:160
 #, php-format
 msgid "%s rating"
 msgstr ""
 
 #. translators: 1 - Plugin name "Builder Template Categories" / 2 - label "5 star rating"
-#: includes/admin/admin-extras.php:145
+#: includes/admin/admin-extras.php:166
 #, php-format
 msgid ""
 "Enjoyed %1$s? Please leave us a %2$s. We really appreciate your support!"
 msgstr ""
 
-#: includes/admin/admin-extras.php:377
+#: includes/admin/admin-extras.php:215
+msgid "Enabled"
+msgstr ""
+
+#: includes/admin/admin-extras.php:216
+msgid "Disabled"
+msgstr ""
+
+#: includes/admin/admin-extras.php:222 includes/admin/admin-help.php:312
+msgid "Plugin"
+msgstr ""
+
+#: includes/admin/admin-extras.php:225
+msgid "Plugin version"
+msgstr ""
+
+#: includes/admin/admin-extras.php:229
+msgid "Current active integrations"
+msgstr ""
+
+#: includes/admin/admin-extras.php:233
+msgid "Reusable Blocks Post Type UI"
+msgstr ""
+
+#: includes/admin/admin-extras.php:491
 msgctxt "Plugin installer: Tab name in installer toolbar"
 msgid "Newest"
 msgstr ""
 
-#: includes/admin/admin-extras.php:383
+#: includes/admin/admin-extras.php:497
 msgctxt "Plugin card: plugin version"
 msgid "Version:"
 msgstr ""
 
-#: includes/admin/admin-extras.php:389
+#: includes/admin/admin-extras.php:503
 msgctxt "Plugin installer: Tab name in installer toolbar"
 msgid "deckerweb Plugins"
 msgstr ""
 
-#: includes/admin/admin-extras.php:395
+#: includes/admin/admin-extras.php:509
 msgctxt "Plugin installer: Page title"
 msgid "deckerweb Plugins"
 msgstr ""
 
-#: includes/admin/admin-extras.php:400
+#: includes/admin/admin-extras.php:514
 msgid ""
 "Great helper tools for Site Builders to save time and get more productive"
 msgstr ""
 
-#: includes/admin/admin-extras.php:403
+#: includes/admin/admin-extras.php:517
 #, php-format
 msgid "You can use any of our free plugins or premium plugins from %s"
 msgstr ""
 
-#: includes/admin/admin-extras.php:407
+#: includes/admin/admin-extras.php:521
 msgid "Join our Newsletter"
 msgstr ""
 
-#: includes/admin/admin-extras.php:409
+#: includes/admin/admin-extras.php:523
 msgid "Facebook User Group"
 msgstr ""
 
-#: includes/admin/admin-help.php:26
+#: includes/admin/admin-help.php:30
 msgid ""
 "These Template Categories are globally available for Administrators within "
 "the Admin Dashboard and can be used to organize the template libraries for "
 "the following active Plugins and/or Themes"
 msgstr ""
 
-#: includes/admin/admin-help.php:270
+#: includes/admin/admin-help.php:278
 msgid "Content Type"
 msgstr ""
 
-#: includes/admin/admin-help.php:272 includes/string-switcher.php:85
+#: includes/admin/admin-help.php:280 includes/string-switcher.php:85
 msgid "Post Type"
 msgstr ""
 
-#: includes/admin/admin-help.php:304
-msgid "Plugin"
-msgstr ""
-
-#: includes/admin/admin-help.php:308
+#: includes/admin/admin-help.php:316
 #, php-format
 msgid ""
 "Currently active integrations where the %s taxonomy is applied to better "
 "internally organize templates for various content types"
 msgstr ""
 
-#: includes/admin/admin-help.php:318
+#: includes/admin/admin-help.php:326
 msgid "Video Overview: Bulk Add Template Categories"
 msgstr ""
 
-#: includes/admin/admin-help.php:319
+#: includes/admin/admin-help.php:327
 msgid "video overview"
 msgstr ""
 
 #. translators: 1 - string "Bulk Actions" / 2 - Label "Edit, add Category etc." / 3 - video link markup with title "video overview"
-#: includes/admin/admin-help.php:324
+#: includes/admin/admin-help.php:332
 #, php-format
 msgid ""
 "You can bulk add template categories to more than one template at once in "
@@ -164,77 +184,77 @@ msgid ""
 "action will be labeled like %2$s. See a short %3$s of this feature."
 msgstr ""
 
-#: includes/admin/admin-help.php:325
+#: includes/admin/admin-help.php:333
 msgid "Bulk Actions"
 msgstr ""
 
-#: includes/admin/admin-help.php:326
+#: includes/admin/admin-help.php:334
 msgid "Edit, add Category etc."
 msgstr ""
 
-#: includes/admin/admin-help.php:333
+#: includes/admin/admin-help.php:341
 msgid ""
 "The template categories are global and are applied automatically to all "
 "current active integrations."
 msgstr ""
 
-#: includes/admin/admin-help.php:334
+#: includes/admin/admin-help.php:342
 msgid ""
 "The category description can be used for internal notices for your team "
 "members for example."
 msgstr ""
 
-#: includes/admin/admin-help.php:338
+#: includes/admin/admin-help.php:346
 msgid "Important plugin links:"
 msgstr ""
 
-#: includes/admin/admin-help.php:340
-msgid "Plugin website"
-msgstr ""
-
-#: includes/admin/admin-help.php:342
-msgctxt "Help tab info"
-msgid "FAQ"
-msgstr ""
-
-#: includes/admin/admin-help.php:344
-msgctxt "Help tab info"
-msgid "Support"
-msgstr ""
-
-#: includes/admin/admin-help.php:346
-msgctxt "Help tab info"
-msgid "Facebook Group"
-msgstr ""
-
 #: includes/admin/admin-help.php:348
-msgctxt "Help tab info"
-msgid "Translations"
+msgid "Plugin website"
 msgstr ""
 
 #: includes/admin/admin-help.php:350
 msgctxt "Help tab info"
-msgid "Donate"
+msgid "FAQ"
 msgstr ""
 
 #: includes/admin/admin-help.php:352
 msgctxt "Help tab info"
+msgid "Support"
+msgstr ""
+
+#: includes/admin/admin-help.php:354
+msgctxt "Help tab info"
+msgid "Facebook Group"
+msgstr ""
+
+#: includes/admin/admin-help.php:356
+msgctxt "Help tab info"
+msgid "Translations"
+msgstr ""
+
+#: includes/admin/admin-help.php:358
+msgctxt "Help tab info"
+msgid "Donate"
+msgstr ""
+
+#: includes/admin/admin-help.php:360
+msgctxt "Help tab info"
 msgid "Join our Newsletter"
 msgstr ""
 
-#: includes/admin/admin-help.php:377
+#: includes/admin/admin-help.php:385
 msgid "Customize"
 msgstr ""
 
-#: includes/admin/admin-help.php:378
+#: includes/admin/admin-help.php:386
 msgid "Code Snippets"
 msgstr ""
 
-#: includes/admin/admin-help.php:380
+#: includes/admin/admin-help.php:388
 msgid "Connect"
 msgstr ""
 
-#: includes/admin/admin-help.php:381
+#: includes/admin/admin-help.php:389
 msgid "Facebook Group"
 msgstr ""
 
@@ -317,14 +337,24 @@ msgstr ""
 msgid "Block Editor Reusable Blocks"
 msgstr ""
 
-#: includes/integrations/integration-block-editor.php:77
+#: includes/integrations/integration-block-editor.php:89
 msgctxt "Admin page title"
 msgid "Reusable Blocks"
 msgstr ""
 
-#: includes/integrations/integration-block-editor.php:78
+#: includes/integrations/integration-block-editor.php:90
 msgctxt "Admin menu label"
 msgid "Blocks"
+msgstr ""
+
+#: includes/integrations/integration-block-editor.php:101
+msgctxt "Admin page title"
+msgid "Add New Reusable Block"
+msgstr ""
+
+#: includes/integrations/integration-block-editor.php:102
+msgctxt "Admin menu label"
+msgid "Add New"
 msgstr ""
 
 #: includes/integrations/integration-block-lab.php:27
@@ -425,6 +455,14 @@ msgstr ""
 
 #: includes/integrations/integration-genesis-blox.php:27
 msgid "Blox Global Blocks (for Genesis)"
+msgstr ""
+
+#: includes/integrations/integration-genesis-blox.php:136
+msgid "Genesis Plugins from the Plugin Directory"
+msgstr ""
+
+#: includes/integrations/integration-genesis-blox.php:137
+msgid "Genesis Plugins"
 msgstr ""
 
 #: includes/integrations/integration-hf-elementor.php:27

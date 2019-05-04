@@ -16,8 +16,12 @@ if ( ! defined( 'ABSPATH' ) ) {
  * Help content when on adding/edit our Taxonomy terms.
  *
  * @since 1.0.0
+ * @since 1.5.1 Added return/ echo logic.
+ *
+ * @param string $render Flag string to optionally echo string (not returning).
+ * @return string Echo or return string & markup with list of integrations.
  */
-function ddw_btc_tax_edit_info_content() {
+function ddw_btc_tax_edit_info_content( $render = 'echo' ) {
 
 	$output = '<div class="notice notice-info">';
 
@@ -49,7 +53,11 @@ function ddw_btc_tax_edit_info_content() {
 	$output .= '</ul>';
 	$output .= '</div>';
 
-	echo $output;
+	if ( 'echo' === sanitize_key( $render ) ) {
+		echo $output;
+	}
+
+	return $output;
 
 }  // end function
 

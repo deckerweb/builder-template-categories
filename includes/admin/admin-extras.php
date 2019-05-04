@@ -13,6 +13,27 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 
 /**
+ * Remove unethical Jetpack search results Ads as no one needs these anyway.
+ *   Additionally remove other promotions and Ads from Jetpack.
+ *
+ * @link https://wptavern.com/jetpack-7-1-adds-feature-suggestions-to-plugin-search-results#comment-284531
+ *
+ * @since 1.6.0
+ */
+add_filter( 'jetpack_show_promotions', '__return_false', 20 );
+add_filter( 'can_display_jetpack_manage_notice', '__return_false', 20 );
+add_filter( 'jetpack_just_in_time_msgs', '__return_false', 20 );
+
+
+/**
+ * Remove unethical WooCommerce Ads injections.
+ *
+ * @since 1.6.0
+ */
+add_filter( 'woocommerce_allow_marketplace_suggestions', '__return_false' );
+
+
+/**
  * Add "Custom Taxonomy" link to Plugins page.
  *
  * @since 1.0.0
@@ -152,6 +173,104 @@ function ddw_btc_admin_footer_text( $footer_text ) {
 	return $footer_text;
 
 }  // end function
+
+
+add_filter( 'debug_information', 'ddw_btc_site_health_add_debug_info', 12 );
+/**
+ * Add additional plugin related info to the Site Health Debug Info section.
+ *   (Only relevant for WordPress 5.2 or higher)
+ *
+ * @link https://make.wordpress.org/core/2019/04/25/site-health-check-in-5-2/
+ *
+ * @since 1.5.1
+ *
+ * @uses ddw_btc_get_integrations()
+ * @uses ddw_btc_tax_edit_info_content()
+ *
+ * @param array $debug_info Array holding all Debug Info items.
+ * @return array Modified array of Debug Info.
+ */
+function ddw_btc_site_health_add_debug_info( $debug_info ) {
+
+	/** Get all integrations */
+	$get_integrations    = ddw_btc_get_integrations();
+	$integrations_output = '';
+
+	/** Collect string for each active integration */
+	foreach ( $get_integrations as $integration => $integration_data ) {
+
+		if ( 'default-none' !== $integration ) {
+
+			$integrations_output .= sprintf(
+				'%1$s (%2$s), ',
+				esc_html( $integration_data[ 'label' ] ),
+				sanitize_key( $integration_data[ 'post_type' ] )
+			);
+
+		}  // end if
+
+	}  // end foreach
+
+	/** Setup strings */
+	$string_enabled   = __( 'Enabled', 'builder-template-categories' );
+	$string_disabled  = __( 'Disabled', 'builder-template-categories' );
+
+	$block_editor_cpt_ui = apply_filters( 'btc/filter/wp_block/post_type_ui', TRUE );
+	
+	/** Add our Debug info */
+	$debug_info[ 'builder-template-categories' ] = array(
+		'label'  => esc_html__( 'Builder Template Categories', 'builder-template-categories' ) . ' (' . esc_html__( 'Plugin', 'builder-template-categories' ) . ')',
+		'fields' => array(
+			'btc_plugin_version' => array(
+				'label' => __( 'Plugin version', 'builder-template-categories' ),
+				'value' => BTC_PLUGIN_VERSION,
+			),
+			'current_active_integrations' => array(
+				'label' => __( 'Current active integrations', 'builder-template-categories' ),
+				'value' => $integrations_output,
+			),
+			'wpblock_post_type_ui' => array(
+				'label' => __( 'Reusable Blocks Post Type UI', 'builder-template-categories' ),
+				'value' => ( $block_editor_cpt_ui ) ? $string_enabled : $string_disabled,
+			),
+		),
+	);
+
+	/** Return modified Debug Info array */
+	return $debug_info;
+
+}  // end function
+
+
+if ( ! function_exists( 'ddw_wp_site_health_remove_percentage' ) ) :
+
+	add_action( 'admin_head', 'ddw_wp_site_health_remove_percentage', 100 );
+	/**
+	 * Remove the "Percentage Progress" display in Site Health feature as this will
+	 *   get users obsessed with fullfilling a 100% where there are non-problems!
+	 *
+	 * @link https://make.wordpress.org/core/2019/04/25/site-health-check-in-5-2/
+	 *
+	 * @since 1.5.1
+	 */
+	function ddw_wp_site_health_remove_percentage() {
+
+		/** Bail early if not on WP 5.2+ */
+		if ( version_compare( $GLOBALS[ 'wp_version' ], '5.2-beta', '<' ) ) {
+			return;
+		}
+
+		?>
+			<style type="text/css">
+				.site-health-progress {
+					display: none;
+				}
+			</style>
+		<?php
+
+	}  // end function
+
+endif;
 
 
 /**
@@ -305,12 +424,12 @@ function ddw_btc_register_extra_plugin_recommendations( array $plugins ) {
   	if ( ddw_btc_is_block_editor_active() && ddw_btc_is_block_editor_wanted() ) {
 
 		$plugins_block_editor = array(
-			'classic-editor' => array(
+			'ultimate-addons-for-gutenberg' => array(
 				'featured'    => 'yes',
 				'recommended' => 'yes',
 				'popular'     => 'yes',
 			),
-			'classic-editor-addon' => array(
+			'kadence-blocks' => array(
 				'featured'    => 'yes',
 				'recommended' => 'yes',
 				'popular'     => 'yes',
@@ -337,11 +456,6 @@ function ddw_btc_register_extra_plugin_recommendations( array $plugins ) {
 			),
 			'manager-for-gutenberg' => array(
 				'featured'    => 'no',
-				'recommended' => 'yes',
-				'popular'     => 'no',
-			),
-			'custom-fields-gutenberg' => array(
-				'featured'    => 'yes',
 				'recommended' => 'yes',
 				'popular'     => 'no',
 			),

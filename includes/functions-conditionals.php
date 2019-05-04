@@ -27,6 +27,31 @@ function ddw_btc_is_tbex_active() {
 
 
 /**
+ * Check, if Toolbar Extras v1.4.3+ is active, and if Block Editor support is
+ *   enabled there.
+ *
+ * @since 1.5.1
+ *
+ * @uses ddw_btc_is_tbex_active()
+ * @uses ddw_btc_is_block_editor_wanted()
+ * @uses ddw_tbex_use_block_editor_support()
+ *
+ * @return bool TRUE if all conditions are met, FALSE otherwise.
+ */
+function ddw_btc_is_tbex_reusable_blocks() {
+
+	if ( ! ddw_btc_is_tbex_active()
+		&& version_compare( 'TBEX_PLUGIN_VERSION', '1.4.3', '<' )
+	) {
+		return FALSE;
+	}
+
+	return ( ddw_btc_is_block_editor_wanted() && ddw_tbex_use_block_editor_support() );
+
+}  // end function
+
+
+/**
  * Is Cleaner Plugin Installer (free) plugin active or not?
  *
  * @since 1.0.0

@@ -14,6 +14,17 @@
 
 ## Changelog of the Plugin
 
+### ⚡ 1.5.1 - 2019-05-03
+
+* *New: Successfully tested with WordPress 5.2*
+* *New: Successfully tested with ClassicPress 1.0.1*
+* New: Integrated with WordPress 5.2+ new Site Health feature: Builder Template Categories now has an extra section on the Debug Info tab - this is especially helpful for support requests
+* Tweak: Refined integration and compatibility with Toolbar Extras v1.4.3 or higher, regarding the Block Editor support
+* Tweak: Refined recommended Gutenberg-specific plugins for "Plugin Installer Recommendations" library
+* Tweak: Updated bundled library DDWlib Plugin Installer Recommendations to latest version (v1.4.0) - feature updates
+* Tweak: Updated `.pot` file plus all German translations (formal, informal) and language packs
+
+
 ### 🎉 1.5.0 - 2019-03-28
 
 * New: Added integration with theme Page Builder Framework - Custom Sections via WPBF Premium Add-On plugin (Premium, by David Vongries & MapSteps)

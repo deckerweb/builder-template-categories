@@ -66,13 +66,25 @@ if ( version_compare( $GLOBALS[ 'wp_version' ], '5.0-beta1', '>=' )
 	 *   the callback.
 	 *
 	 * @since 1.3.0
+	 * @since 1.5.1 Perfect integration with Toolbar Extras v1.4.3+.
 	 *
 	 * @see WP Core /wp-includes/post.php for 'wp_block' capabilities
 	 *
+	 * @uses ddw_btc_is_tbex_reusable_blocks()
 	 * @uses add_menu_page()
+	 * @uses add_submenu_page()
 	 */
 	function ddw_btc_maybe_add_menu_wpblock_posttype() {
 		
+		/**
+		 * Bail early if the same stuff as below is already added by
+		 *   Toolbar Extras plugin.
+		 */
+		if ( ddw_btc_is_tbex_reusable_blocks() ) {
+			return;
+		}
+
+		/** Add "Blocks" top-level Admin menu, below "Comments" */
 	    add_menu_page(
 	        _x( 'Reusable Blocks', 'Admin page title', 'builder-template-categories' ),
 	        _x( 'Blocks', 'Admin menu label', 'builder-template-categories' ),
@@ -83,9 +95,18 @@ if ( version_compare( $GLOBALS[ 'wp_version' ], '5.0-beta1', '>=' )
 	        '25.1'	// directly after comments
 	    );
 
+	    /** "Blocks" submenu: "Add New" (Reusable Block) */
+	    add_submenu_page(
+	    	'edit.php?post_type=wp_block',
+	        _x( 'Add New Reusable Block', 'Admin page title', 'builder-template-categories' ),
+	        _x( 'Add New', 'Admin menu label', 'builder-template-categories' ),
+	        'publish_posts',
+	        'post-new.php?post_type=wp_block'
+	    );
+
 	}  // end function
 
-	add_action( 'admin_head', 'ddw_btc_remove_wpblock_addnew_button' );
+	//add_action( 'admin_head', 'ddw_btc_remove_wpblock_addnew_button' );
 
 }  // end if WP 5.0 check
 
@@ -130,7 +151,7 @@ if ( version_compare( $GLOBALS[ 'wp_version' ], '4.9.999', '<=' )
 		//$GLOBALS[ 'wp_post_types' ][ $post_type ]->_edit_link   = 'post.php?post=%d';
 		
 		/** Remove the "Add New" submenu which was added to the actions above */
-		add_action( 'admin_menu', 'ddw_btc_maybe_remove_wpblock_addnew', 999 );
+		//add_action( 'admin_menu', 'ddw_btc_maybe_remove_wpblock_addnew', 999 );
 
 	}  // end function
 
@@ -176,7 +197,7 @@ if ( version_compare( $GLOBALS[ 'wp_version' ], '4.9.999', '<=' )
 }  // end if WP 5.0 check
 
 
-add_action( 'admin_head', 'ddw_btc_remove_wpblock_addnew_button', 100 );
+//add_action( 'admin_head', 'ddw_btc_remove_wpblock_addnew_button', 100 );
 /**
  * Hide the "Add New" button for the 'wp_block' post type UI.
  *   Note: This is (currently?) necessary as the "Add New" button brings WSOD/

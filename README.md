@@ -9,9 +9,9 @@
 **Donate link:** https://www.paypal.me/deckerweb  
 **Tags:** elementor, page builder, templates, gutenberg, blocks, oceanwp, astra, generatepress, genesis, categories, template, deckerweb  
 **Requires at least:** 4.7  
-**Tested up to:** 5.1  
+**Tested up to:** 5.2  
 **Requires PHP:** 5.6  
-**Stable tag:** 1.5.0  
+**Stable tag:** 1.5.1  
 **License:** GPL-2.0-or-later  
 **License URI:** https://opensource.org/licenses/GPL-2.0  
 
@@ -474,6 +474,16 @@ As of version 1.5.0 of the plugin the following was achieved:
 
 ## Changelog 
 
+### ⚡ 1.5.1 - 2019-05-03
+* *New: Successfully tested with WordPress 5.2*
+* *New: Successfully tested with ClassicPress 1.0.1*
+* New: Integrated with WordPress 5.2+ new Site Health feature: Builder Template Categories now has an extra section on the Debug Info tab - this is especially helpful for support requests
+* Tweak: Refined integration and compatibility with Toolbar Extras v1.4.3 or higher, regarding the Block Editor support
+* Tweak: Refined recommended Gutenberg-specific plugins for "Plugin Installer Recommendations" library
+* Tweak: Updated bundled library DDWlib Plugin Installer Recommendations to latest version (v1.4.0) - feature updates
+* Tweak: Updated `.pot` file plus all German translations (formal, informal) and language packs
+
+
 ### 🎉 1.5.0 - 2019-03-28
 * New: Added integration with theme Page Builder Framework - Custom Sections via WPBF Premium Add-On plugin (Premium, by David Vongries & MapSteps)
 * New: Added integration with theme Suki - Custom Blocks via Suki Pro Add-On plugin (Premium, by SukiWP/ David Rozando)
@@ -620,6 +630,9 @@ As of version 1.5.0 of the plugin the following was achieved:
 
 ## Upgrade Notice 
 
+### 1.5.1
+Now with WordPress 5.2 Site Health integration. Plus few internal improvements. - **Update highly recommended!**
+
 ### 1.5.0
 Feature Release with 5 new integrations. - **Update highly recommended!** :-)
 
@@ -683,6 +696,7 @@ Enjoy using *Builder Template Categories*? **[Please consider making a donation]
 
 ## 🔆 My Other Plugins
 * [**Toolbar Extras for Elementor - WordPress Admin Bar Enhanced**](https://wordpress.org/plugins/toolbar-extras/)
+* [**Toolbar Extras for Oxygen Builder - Add-On plugin**](https://wordpress.org/plugins/toolbar-extras-oxygen/)
 * [**Polylang Connect for Elementor – Language Switcher & Template Tweaks**](https://wordpress.org/plugins/connect-polylang-elementor/)
 * [**Simple Download Manager for WP Document Revisions**](https://wordpress.org/plugins/wpdr-simple-downloads/)
 * [Genesis What's New Info](https://wordpress.org/plugins/genesis-whats-new-info/)

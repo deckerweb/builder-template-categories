@@ -3,9 +3,9 @@ Contributors: daveshine, deckerweb, wpautobahn, toolbarextras
 Donate link: https://www.paypal.me/deckerweb
 Tags: elementor, page builder, templates, gutenberg, blocks, oceanwp, astra, generatepress, genesis, categories, template, deckerweb
 Requires at least: 4.7
-Tested up to: 5.1
+Tested up to: 5.2
 Requires PHP: 5.6
-Stable tag: 1.5.0
+Stable tag: 1.5.1
 License: GPL-2.0-or-later
 License URI: https://opensource.org/licenses/GPL-2.0
 
@@ -128,10 +128,10 @@ Try [**Toolbar Extras**](https://toolbarextras.com/) my other plugin for Site Bu
 * Required: User is logged in (of course)
 
 = 🌎 Translations =
-* English (United States) - `en_US` = default, always included
-* [German (informal, default)](https://translate.wordpress.org/locale/de/default/wp-plugins/builder-template-categories) - `de_DE` - always included
-* [German (formal)](https://translate.wordpress.org/locale/de/formal/wp-plugins/builder-template-categories) - `de_DE_formal` - always included
-* [French](https://translate.wordpress.org/locale/fr/default/wp-plugins/builder-template-categories) - `fr_FR` - [by the community, thanks to Bruno Tritsch](https://wp-traduction.com/)
+* 🇺🇸 English (United States) - `en_US` = default, always included
+* 🇩🇪 [German (informal, default)](https://translate.wordpress.org/locale/de/default/wp-plugins/builder-template-categories) - `de_DE` - always included
+* 🇩🇪 [German (formal)](https://translate.wordpress.org/locale/de/formal/wp-plugins/builder-template-categories) - `de_DE_formal` - always included
+* 🇫🇷 [French](https://translate.wordpress.org/locale/fr/default/wp-plugins/builder-template-categories) - `fr_FR` - [by the community, thanks to Bruno Tritsch](https://wp-traduction.com/)
 * `.pot` file (`builder-template-categories.pot`) for translators is always included in the plugin's 'languages' folder :)
 
 = 👍 Be a Contributor =
@@ -251,16 +251,16 @@ However, I [strongly recommend Elementor Pro](https://toolbarextras.com/go/eleme
 = Where are the other popular Page Builders? =
 All the others already have template categories by default, or, on the other hand, cannot be supported with a post type taxonomy.
 
-* Beaver Builder & Beaver Themer: has template categories already by default
-* Thrive Architect: has category feature already built-in
-* Divi: has template categories already by default
+* Beaver Builder & Beaver Themer: has template categories already by default - we will still integrate shortly to to have our "global" taxonomy available
+* Thrive Architect: has category feature already built-in - cannot be extended
+* Divi: has template categories already by default - we will still integrate shortly to to have our "global" taxonomy available
 * SiteOrigin Page Builder: library built-in, but it is currently impossible to extend it with this taxonomy...
 
 *Update:*
 
-- Brizy Page Builder added template feature in their version 1.0.25 - we added integration with our plugin version 1.0.1
-- Visual Composer Website Builder for Headers, Footers, Sidebars, Global Templates - we added integration with our plugin version 1.4.0
-- Avada Fusion Builder in *Avada Theme* - we added integration with our plugin version 1.4.0
+* Brizy Page Builder added template feature in their version 1.0.25 - we added integration with our plugin version 1.0.1
+* Visual Composer Website Builder for Headers, Footers, Sidebars, Global Templates - we added integration with our plugin version 1.4.0
+* Avada Fusion Builder in *Avada Theme* - we added integration with our plugin version 1.4.0
 
 
 = Will other Themes be supported? =
@@ -300,20 +300,22 @@ Note: One exception is the new Block Editor coming with WordPress 5.0 (currently
 
 
 = Do I still need this plugin since Elementor has its own Category now? =
-Good question. If you used our plugin, Builder Template Categories, before it's recommended to use it still to not lose your data and for consistency, of course. You absolutely can run both taxonomies side by side. This plugin always plays nice with others! ;-)
+Good question. If you used our plugin, Builder Template Categories, before it's recommended to use it still to not lose your data and for consistency, of course. You absolutely can run both taxonomies side by side. This plugin here always plays nice with others! ;-)
 
-And, Builder Template Categories, has a **big advantage** over Elementor's own taxonomy: **our taxonomy is global!** This means, it is used by other integrations at the same time - if those are active side by side with Elementor. This "effect" just makes our plugin way more smart and usable.
+And, Builder Template Categories, has a **big advantage** over Elementor's own taxonomy: **our taxonomy is global!** This means, it is used by other integrations at the same time - if those are active side by side with Elementor. This "effect" just makes our plugin way more smart and usable in the long run.
 
 **That is especially useful if you work with Elementor, *PLUS* one of these:**
 
-- GeneratePress Elements (GP Premium)
-- Astra Custom Layouts (Astra Pro)
-- OceanWP Library
-- Page Builder Framework Sections (WPBF Premium)
-- Genesis Blox plugin (free or Pro)
-- One of the Jet Plugins by Zemez Jet (JetWooBuilder, JetThemeCore, JetListing, JetPopop, JetSmartFilters)
-- AnyWhere Elementor plugin (free or Pro)
-- Templementor
+* GeneratePress Elements (GP Premium)
+* Astra Custom Layouts (Astra Pro)
+* OceanWP Library
+* Page Builder Framework Sections (WPBF Premium)
+* Customify Hooks (Customify Pro)
+* Suki Blocks (Suki Pro)
+* Genesis Blox plugin (free or Pro)
+* One of the Jet Plugins by Zemez Jet (JetWooBuilder, JetThemeCore, JetListing, JetPopop, JetSmartFilters)
+* AnyWhere Elementor plugin (free or Pro)
+* Templementor
 
 If you ask me: In such a case Builder Template Categories has way more power and makes just more sense, also if you're working with a team.
 
@@ -411,6 +413,16 @@ As of version 1.5.0 of the plugin the following was achieved:
 
 
 == Changelog ==
+
+= ⚡ 1.5.1 - 2019-05-03 =
+* *New: Successfully tested with WordPress 5.2*
+* *New: Successfully tested with ClassicPress 1.0.1*
+* New: Integrated with WordPress 5.2+ new Site Health feature: Builder Template Categories now has an extra section on the Debug Info tab - this is especially helpful for support requests
+* Tweak: Refined integration and compatibility with Toolbar Extras v1.4.3 or higher, regarding the Block Editor support
+* Tweak: Refined recommended Gutenberg-specific plugins for "Plugin Installer Recommendations" library
+* Tweak: Updated bundled library DDWlib Plugin Installer Recommendations to latest version (v1.4.0) - feature updates
+* Tweak: Updated `.pot` file plus all German translations (formal, informal) and language packs
+
 
 = 🎉 1.5.0 - 2019-03-28 =
 * New: Added integration with theme Page Builder Framework - Custom Sections via WPBF Premium Add-On plugin (Premium, by David Vongries & MapSteps)
@@ -558,6 +570,9 @@ As of version 1.5.0 of the plugin the following was achieved:
 
 == Upgrade Notice =
 
+= 1.5.1 =
+Now with WordPress 5.2 Site Health integration. Plus few internal improvements. - **Update highly recommended!**
+
 = 1.5.0 =
 Feature Release with 5 new integrations. - **Update highly recommended!** :-)
 
@@ -606,6 +621,7 @@ Enjoy using *Builder Template Categories*? **[Please consider making a donation]
 
 == 🔆 My Other Plugins ==
 * [**Toolbar Extras for Elementor - WordPress Admin Bar Enhanced**](https://wordpress.org/plugins/toolbar-extras/)
+* [**Toolbar Extras for Oxygen Builder - Add-On plugin**](https://wordpress.org/plugins/toolbar-extras-oxygen/)
 * [**Polylang Connect for Elementor – Language Switcher & Template Tweaks**](https://wordpress.org/plugins/connect-polylang-elementor/)
 * [**Simple Download Manager for WP Document Revisions**](https://wordpress.org/plugins/wpdr-simple-downloads/)
 * [Genesis What's New Info](https://wordpress.org/plugins/genesis-whats-new-info/)

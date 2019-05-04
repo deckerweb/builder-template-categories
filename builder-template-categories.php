@@ -11,7 +11,7 @@
  * Plugin Name:       Builder Template Categories
  * Plugin URI:        https://github.com/deckerweb/builder-template-categories
  * Description:       This plugin adds a Taxonomy "Template Category" for categorizing templates to make the life of site builders a little bit easier. It integrates with Elementor My Templates, OceanWP My Library, Astra Custom Layouts, GeneratePress Elements, Blox for Genesis, AnyWhere Elementor Global Templates and JetThemeCore My Library (Kava Pro/ CrocoBlock). These categories only appear in the WP-Admin Dashboard and only for the administrator user role (capability 'edit_theme_options').
- * Version:           1.5.0
+ * Version:           1.5.1
  * Author:            David Decker - DECKERWEB
  * Author URI:        https://deckerweb.de/
  * License:           GPL-2.0-or-later
@@ -40,7 +40,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  * @since 1.0.0
  */
 /** Plugin version */
-define( 'BTC_PLUGIN_VERSION', '1.5.0' );
+define( 'BTC_PLUGIN_VERSION', '1.5.1' );
 
 /** Plugin directory */
 define( 'BTC_PLUGIN_DIR', trailingslashit( dirname( __FILE__ ) ) );
