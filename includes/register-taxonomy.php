@@ -330,6 +330,17 @@ function ddw_btc_get_predefined_terms() {
 
 	}  // end if
 
+	/** Optional: Form type content */
+	if ( has_filter( 'btc/filter/is_type/form' ) ) {
+
+		$terms[ 'terms_forms' ] = array(
+			'name'        => esc_attr_x( 'Forms', 'Taxonomy term title', 'builder-template-categories' ),
+			'slug'        => sanitize_key( _x( 'forms', 'Taxonomy term slug - only lowercase, a-z, 0-9, hyphens!', 'builder-template-categories' ) ),
+			'description' => _x( 'Templates for Forms', 'Taxonomy term description', 'builder-template-categories' ),
+		);
+
+	}  // end if
+
 	/** Return the terms array, filterable */
 	return apply_filters(
 		'btc/filter/taxonomy/predefined_terms',

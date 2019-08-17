@@ -35,7 +35,7 @@ function ddw_btc_register_integration_oxygen_builder( array $integrations ) {
 		'admin_url'      => 'edit.php?post_type=ct_template',
 	);
 
-	/** For: Oxygen User Elements Libraray ('?') */
+	/** For: Oxygen User Elements Library ('?') */
 	if ( ddw_btc_is_oxygen_user_library_active() ) {
 
 		$integrations[ 'oxygen-elements-library' ] = array(

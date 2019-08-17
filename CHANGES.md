@@ -14,6 +14,27 @@
 
 ## Changelog of the Plugin
 
+### 🎉 1.6.0 - 2019-08-16
+
+* New: Added integration with plugin GiveWP Donations (free, by GiveWP/ Impress.org, LLC)
+* New: Added integration with plugin Lightweight Sidebar Manager (free, by Brainstorm Force)
+* New: Added integration with plugin Reusable Layouts for SiteOrigin (free, by Echelon)
+* New: Added integration with plugin Reusable Blocks - Elementor, Beaver Builder, WYSIWYG (free, by WebEmpire)
+* New: Added integration with plugin Block Areas (free, by The WP Rig Contributors)
+* New: Added integration with plugin HT Script (Insert Headers and Footers Code) (free, by HasThemes)
+* New: Added integration with plugin HappyForms (free) and HappyForms Pro (Premium) (both by The Theme Foundry)
+* New: Added integration with plugin Beaver Builder (Premium, by The Beaver Builder Team) -- the pro version
+* New: Added integration with plugin Beaver Themer (Premium, by The Beaver Builder Team)
+* New: Added integration with plugin Divi Builder (Premium, by Elegant Themes)
+* New: Added integration with theme Divi (Premium, by Elegant Themes)
+* New: Added integration with theme Extra (Premium, by Elegant Themes)
+* New: Added new template content types "Sidebar/ Sidebars", "Area/ Areas", "Form/ Forms" and "Script/ Scripts"
+* Tweak: Corrected some labels for their singular/plural form
+* Tweak: Updated bundled library DDWlib Plugin Installer Recommendations to latest version (v1.4.1) - feature updates
+* Tweak: Minor code improvements
+* Tweak: Updated `.pot` file plus all German translations (formal, informal) and language packs
+
+
 ### ⚡ 1.5.1 - 2019-05-03
 
 * *New: Successfully tested with WordPress 5.2*

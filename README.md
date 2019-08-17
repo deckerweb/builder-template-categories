@@ -1,6 +1,6 @@
 # Builder Template Categories - for WordPress Page Builders 
 
-[![Plugin Version](https://img.shields.io/wordpress/plugin/v/toolbar-extras.svg)](https://wordpress.org/plugins/builder-template-categories/)
+[![Plugin Version](https://img.shields.io/wordpress/plugin/v/builder-template-categories.svg)](https://wordpress.org/plugins/builder-template-categories/)
 [![WordPress Version Compatibility](https://img.shields.io/wordpress/v/builder-template-categories.svg)](https://wordpress.org/plugins/builder-template-categories/)
 [![Downloads](https://img.shields.io/wordpress/plugin/dt/builder-template-categories.svg)](https://wordpress.org/plugins/builder-template-categories/)
 [![Rating](https://img.shields.io/wordpress/plugin/r/builder-template-categories.svg)](https://wordpress.org/plugins/builder-template-categories/)
@@ -11,7 +11,7 @@
 **Requires at least:** 4.7  
 **Tested up to:** 5.2  
 **Requires PHP:** 5.6  
-**Stable tag:** 1.5.1  
+**Stable tag:** 1.6.0  
 **License:** GPL-2.0-or-later  
 **License URI:** https://opensource.org/licenses/GPL-2.0  
 
@@ -23,7 +23,7 @@ Organize your Page Builder Templates in the WordPress Admin. Better overview, do
 
 Organize your Page Builder Templates in the WordPress Admin. Time saver, especially for bigger projects. Get a better and faster overview, don't get lost. Filter templates with your categories. With extended plugin & theme support.
 
-[![Video of Plugin's Live Demo and Walkthrough](https://img.youtube.com/vi/9FhIJ2QxOoQ/0.jpg)](https://www.youtube.com/watch?v=9FhIJ2QxOoQ)
+[![Video of Plugin's Live Demo and Walkthrough](https://img.youtube.com/vi/9FhIJ2QxOoQ/0.jpg)](https://www.youtube.com/watch?v=9FhIJ2QxOoQ)  
 [**original video link**](https://www.youtube.com/watch?v=9FhIJ2QxOoQ) *by plugin developer David Decker*
 
 Out of the box the plugin includes integrations for a lot of awesome Page Builders, Themes and Plugins. If any supported integration is installed & active, the "Builder Template Categories" plugin just applies its additions. The plugin is really lightweight and simple. Just activate and you're done - and can use the categorization.
@@ -33,7 +33,7 @@ Out of the box the plugin includes integrations for a lot of awesome Page Builde
 - **Better organize** your templates if you have many of them
 - **Better overview** for admins and site builders
 - **Filtering** in the overview table of a post type (typical WordPress overview) via Dropdown Filter, or Link filter in the row of a post type's post
-- For **WordPress 5.0** with Block Editor (Gutenberg): make the Reusable Blocks visible in Admin and **organize** them - yeah, finally! Your growing collection of reusable blocks needs some organization - this plugin here makes it possible! ;-)
+- For **WordPress 5.0+** with Block Editor (Gutenberg): make the Reusable Blocks visible in Admin and **organize** them - yeah, finally! Your growing collection of reusable blocks needs some organization - this plugin here makes it possible! ;-)
 - Only for admins, within the admin - a great helper tool
 - No frontend, no scripts, no styles - nothing! :-)
 - Lightweight, efficient
@@ -61,7 +61,9 @@ Please note: The categories are global but when filtering only those items are l
 * **BoldGrid Post and Page Builder** Plugin (free) - **Blocks (Templates)**
 * **Themify Builder** Plugin (Premium version) - **Layouts** (for Layout Parts, Pages, Sections etc.)
 * **Avada Fusion Builder** Plugin in the *Avada Theme* (Premium) - **Library** (for Templates, Pages, Layouts, Columns, Rows)
-* [**Gutenberg / Block Editor of WordPress 5.0**](https://wordpress.org/plugins/gutenberg/) - **Blocks** (for Reusable Blocks - the new core feature)
+* **Beaver Builder** Plugin (Pro) - **Templates** (for Templates, Pages, Layouts, Rows etc.) - also including *Beaver Themer* support
+* **Divi Builder** as Plugin version/ as Divi Theme version/ as Extra Theme version (all Pro) - **Library** (for Templates etc.) - **Category Templates** (for Layouts, Templates etc.)
+* [**Gutenberg / Block Editor of WordPress 5.0+**](https://wordpress.org/plugins/gutenberg/) - **Blocks** (for Reusable Blocks - the new core feature)
 
 
 ### 🎨 Supported Themes 
@@ -74,6 +76,8 @@ Please note: The categories are global but when filtering only those items are l
 * **Customify** with **Customify Pro** Add-On Plugin - **Hooks** (for Layouts, Sections, Hooks etc.)
 * **Suki** with **Suki Pro** Add-On Plugin - **Custom Blocks** (for Layouts, Sections, Hooks etc.)
 * **Avada Theme** with Avada Fusion Builder - **Library** (for Templates, Pages, Layouts, Columns, Rows)
+* **Divi Theme** with Divi Builder - **Library** (for Templates etc.)
+* **Extra Theme** with Divi Builder - **Library** (for Templates etc.) - **Category Templates** (for Layouts, Templates etc.)
 
 
 ### 🚀 Supported Plugins 
@@ -81,7 +85,7 @@ Please note: The categories are global but when filtering only those items are l
 * *see Gutenberg-specific Plugins below :-)*
 * [**AnyWhere Elementor**](https://wordpress.org/plugins/anywhere-elementor/) Plugin (both, free & Pro version) - **AE Global Templates** (for Layouts, Content, Pages etc.)
 * **Kava Pro Theme/ CrocoBlock Service** with JetThemeCore Plugin - **My Library** (for Layouts, Pages, Headers, Footers, Single, Archive)
-* **JetEngine for Elementor** Plugin - **Listings (Templates)**
+* **JetEngine for Elementor** Plugin - **Listings** (Templates)
 * **JetWooBuilder for Elementor** Plugin - **Product Templates** (for WooCommerce Products)
 * [**Blox Lite**](https://wordpress.org/plugins/blox-lite/) and **Blox** (Pro) Plugins, both for Genesis Framework - **Global Content Blocks** (for Sections, Hooks)
 * **Oxygen Builder** Plugin (Pro) - **Templates** (for Pages, Layouts, Sections, Theme Builder elements...) - **User Elements Library** (Elements, Blocks, Content)
@@ -121,6 +125,13 @@ Please note: The categories are global but when filtering only those items are l
 * [**Easy Content Templates**](https://wordpress.org/plugins/easy-content-templates/) Plugin - **Templates** (for Content)
 * [**Simple Content Templates**](https://wordpress.org/plugins/simple-post-template/) Plugin - **Templates** (for Content)
 * **Custom Page Templates** Plugin - **Templates** (for Pages, Post Types) / **Post Types** (for Post Type registrations) / **Taxonomies** (for Taxonomy registrations)
+* **Beaver Themer** Plugin (Pro) - **Themer Layouts** (for Templates)
+* [**Give Donations**](https://wordpress.org/plugins/give/) Plugin - **Donation Forms** (for Forms)
+* [**HappyForms**](https://wordpress.org/plugins/happyforms/) Plugin (free & Pro version) - **Forms**
+* [**Reusable Layouts for SiteOrigin**](https://wordpress.org/plugins/reusable-layouts-for-siteorigin/) Plugin - **Layouts** (for Templates etc.)
+* [**Lightweight Sidebar Manager**](https://wordpress.org/plugins/sidebar-manager/) Plugin - **Sidebars** (for Sidebars, Widget Areas)
+* [**Reusable Blocks - Elementor, Beaver Builder, WYSIWYG**](https://wordpress.org/plugins/design-sidebar-using-page-builder/) Plugin - **Templates** (for Sections, Sidebars, etc.)
+* [**HT Script (Insert Headers and Footers Code)**](https://wordpress.org/plugins/insert-headers-and-footers-script/) Plugin - **Scripts** (for Custom Code)
 
 
 ### 📦 Supported Gutenberg-specific Plugins (Block Editor)
@@ -130,6 +141,7 @@ Please note: The categories are global but when filtering only those items are l
 * [**Blocks Layouts**](https://wordpress.org/plugins/blocks-layouts/) Plugin - **Layouts** (Layouts for Gutenberg Blocks)
 * [**Square Happiness: Placeholder Block**](https://wordpress.org/plugins/placeholder-block-square-happiness/) Plugin - **Blocks** (Placeholders/ Templates for Gutenberg Blocks)
 * [**Gutenberg Templates (Block Templates)**](https://wordpress.org/plugins/block-templates/) Plugin - **Templates** (Templates for Gutenberg Blocks)
+* [**Block Areas**](https://wordpress.org/plugins/block-areas/) Plugin - **Areas** (Templates for Theme/Block Areas)
 
 
 ### 👍 Recommended Time Saver 
@@ -191,7 +203,8 @@ You can also contribute code-wise via our [Builder Template Categories GitHub Re
 ### We Recommend Your Host Supports at least: 
 
 * PHP version 7.2 or higher
-* MySQL version 5.6 or higher / or MariaDB 10 or higher
+* MySQL version 5.6 or higher / OR MariaDB 10.1 or higher
+* HTTPS support
 
 
 ### Installation 
@@ -282,14 +295,15 @@ However, I [strongly recommend Elementor Pro](https://toolbarextras.com/go/eleme
 ### Where are the other popular Page Builders? 
 All the others already have template categories by default, or, on the other hand, cannot be supported with a post type taxonomy.
 
-* Beaver Builder & Beaver Themer: has template categories already by default
 * Thrive Architect: has category feature already built-in
-* Divi: has template categories already by default
-* Visual Composer (the new one, 2018): has template feature in Pro Version --> I will add integration in upcoming v1.4.0!
-* Avada Fusion Builder: template feature somewhat "hidden" --> I will add integration in upcoming v1.4.0!
-* SiteOrigin Page Builder: library built-in, but it is currently impossible to extend it with this taxonomy...
+* SiteOrigin Page Builder: library built-in, but it is currently impossible to extend it with this taxonomy... - only possible via third-party plugin "Reusable Layouts for SiteOrigin" (free, by Echelon) which we already integrated with since our plugin version 1.6.0
 
-*Update:* Brizy Page Builder added template feature in their version 1.0.25 - we added integration with our plugin version 1.0.1
+*Update:*  
+* Brizy Page Builder added template feature in their version 1.0.25 - we added integration with our plugin version 1.0.1
+* Visual Composer Website Builder for Headers, Footers, Sidebars, Global Templates - we added integration with our plugin version 1.4.0
+* Avada Fusion Builder in *Avada Theme* - we added integration with our plugin version 1.4.0
+* Beaver Builder & Beaver Themer - we added integration with our plugin version 1.6.0
+* Divi Builder (plugin version, Divi Theme, Extra Theme) - we added integration with our plugin version 1.6.0
 
 
 
@@ -303,8 +317,8 @@ Yes, absolutely. - Once I discover another plugin which adds a template library 
 
 
 
-### Does this Plugin work with Gutenberg / WordPress 5.0 / Block Editor?
-Yes, of course! - The plugin is fully compatible with Gutenberg Block Editor which is (becoming) WordPress 5.0. It even supports the "Reusable Blocks" feature and adds our template category for that. This means, you can now categorize your reusable blocks and edit them from a dedicated screen!
+### Does this Plugin work with Gutenberg / WordPress 5.0+ / Block Editor?
+Yes, of course! - The plugin is fully compatible with Gutenberg Block Editor which is (becoming) WordPress 5.0+. It even supports the "Reusable Blocks" feature and adds our template category for that. This means, you can now categorize your reusable blocks and edit them from a dedicated screen!
 
 Beyond that, there is already integration with some Gutenberg-specific plugins built-in. More integrations might follow over time.
 
@@ -332,7 +346,7 @@ Technically not. However, without the integrations this plugin doesn't make any 
 
 Or, you can also register your own custom integration (see snippets below) if you do not want or need the built-in integrations.
 
-Note: One exception is the new Block Editor coming with WordPress 5.0 (currently available as the "Gutenberg" plugin). The Block Editor has a feature called "Reusable Blocks" and this is already natively integrated with our plugin, "Builder Template Categories". So, once you have Gutenberg or WordPress 5.0+ active you already have one native integration active by default ;-).
+Note: One exception is the new Block Editor since WordPress 5.0+. The Block Editor has a feature called "Reusable Blocks" and this is already natively integrated with our plugin, "Builder Template Categories". So, once you have Gutenberg or WordPress 5.0+ active you already have one native integration active by default ;-).
 
 
 
@@ -462,8 +476,8 @@ As of version 1.5.0 of the plugin the following was achieved:
 ![Plugins page - list of all plugins - "Builder Template Categories" with link to taxonomy listing table](https://ps.w.org/builder-template-categories/assets/screenshot-09.png)
 
 
-### 10. Reusable Blocks support in Block Editor (Gutenberg) in WordPress 5.0 - post type list table (overview)
-![Reusable Blocks support in Block Editor (Gutenberg) in WordPress 5.0 - post type list table (overview)](https://ps.w.org/builder-template-categories/assets/screenshot-10.png)
+### 10. Reusable Blocks support in Block Editor (Gutenberg) in WordPress 5.0+ - post type list table (overview)
+![Reusable Blocks support in Block Editor (Gutenberg) in WordPress 5.0+ - post type list table (overview)](https://ps.w.org/builder-template-categories/assets/screenshot-10.png)
 
 
 ### 11. Editing a Reusable Block - adding the "Builder Template Categories" taxonomy via the new Block Editor JavaScript-based meta box
@@ -473,6 +487,26 @@ As of version 1.5.0 of the plugin the following was achieved:
 
 
 ## Changelog 
+
+### 🎉 1.6.0 - 2019-08-16
+* New: Added integration with plugin GiveWP Donations (free, by GiveWP/ Impress.org, LLC)
+* New: Added integration with plugin Lightweight Sidebar Manager (free, by Brainstorm Force)
+* New: Added integration with plugin Reusable Layouts for SiteOrigin (free, by Echelon)
+* New: Added integration with plugin Reusable Blocks - Elementor, Beaver Builder, WYSIWYG (free, by WebEmpire)
+* New: Added integration with plugin Block Areas (free, by The WP Rig Contributors)
+* New: Added integration with plugin HT Script (Insert Headers and Footers Code) (free, by HasThemes)
+* New: Added integration with plugin HappyForms (free) and HappyForms Pro (Premium) (both by The Theme Foundry)
+* New: Added integration with plugin Beaver Builder (Premium, by The Beaver Builder Team) -- the pro version
+* New: Added integration with plugin Beaver Themer (Premium, by The Beaver Builder Team)
+* New: Added integration with plugin Divi Builder (Premium, by Elegant Themes)
+* New: Added integration with theme Divi (Premium, by Elegant Themes)
+* New: Added integration with theme Extra (Premium, by Elegant Themes)
+* New: Added new template content types "Sidebar/ Sidebars", "Area/ Areas", "Form/ Forms" and "Script/ Scripts"
+* Tweak: Corrected some labels for their singular/plural form
+* Tweak: Updated bundled library DDWlib Plugin Installer Recommendations to latest version (v1.4.1) - feature updates
+* Tweak: Minor code improvements
+* Tweak: Updated `.pot` file plus all German translations (formal, informal) and language packs
+
 
 ### ⚡ 1.5.1 - 2019-05-03
 * *New: Successfully tested with WordPress 5.2*
@@ -630,6 +664,10 @@ As of version 1.5.0 of the plugin the following was achieved:
 
 ## Upgrade Notice 
 
+### 1.6.0
+Feature Release with 13 new integrations. - **Update highly recommended!** :-)
+
+
 ### 1.5.1
 Now with WordPress 5.2 Site Health integration. Plus few internal improvements. - **Update highly recommended!**
 
@@ -696,6 +734,8 @@ Enjoy using *Builder Template Categories*? **[Please consider making a donation]
 
 ## 🔆 My Other Plugins
 * [**Toolbar Extras for Elementor - WordPress Admin Bar Enhanced**](https://wordpress.org/plugins/toolbar-extras/)
+* [**Toolbar Extras for Give Donations (GiveWP) - Add-On plugin**](https://wordpress.org/plugins/toolbar-extras-givewp/)
+* [**Toolbar Extras for MainWP Dashboard - Add-On plugin**](https://wordpress.org/plugins/toolbar-extras-mainwp/)
 * [**Toolbar Extras for Oxygen Builder - Add-On plugin**](https://wordpress.org/plugins/toolbar-extras-oxygen/)
 * [**Polylang Connect for Elementor – Language Switcher & Template Tweaks**](https://wordpress.org/plugins/connect-polylang-elementor/)
 * [**Simple Download Manager for WP Document Revisions**](https://wordpress.org/plugins/wpdr-simple-downloads/)

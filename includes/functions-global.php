@@ -101,7 +101,8 @@ function ddw_btc_taxonomy_admin_url() {
  * @since 1.2.0 Added "Field", "Box", "Bar" and "Hook" content types.
  * @since 1.3.0 Added "Filter" content type.
  * @since 1.4.1 Added "Section" content type.
- * @since 1.4.3 Added "Flow" and "Section" content types.
+ * @since 1.4.3 Added "Flow" and "Snippet" content types.
+ * @since 1.6.0 Added "Sidebar", "Area", "Form" and "Script" content types.
  *
  * @uses ddw_btc_get_integrations()
  *
@@ -135,6 +136,10 @@ function ddw_btc_get_integration_post_types( $all_types = '' ) {
 		'sections'   => array(),
 		'flows'      => array(),
 		'snippets'   => array(),
+		'sidebars'   => array(),
+		'areas'      => array(),
+		'forms'      => array(),
+		'scripts'    => array(),
 		'btcdefault' => array( 'btc-template' ),
 	);
 
@@ -212,6 +217,22 @@ function ddw_btc_get_integration_post_types( $all_types = '' ) {
 
 		if ( 'snippet' === $integration[ 'template_label' ] ) {
 			$post_types[ 'snippets' ][] = $integration[ 'post_type' ];
+		}
+
+		if ( 'sidebar' === $integration[ 'template_label' ] ) {
+			$post_types[ 'sidebars' ][] = $integration[ 'post_type' ];
+		}
+
+		if ( 'area' === $integration[ 'template_label' ] ) {
+			$post_types[ 'areas' ][] = $integration[ 'post_type' ];
+		}
+
+		if ( 'form' === $integration[ 'template_label' ] ) {
+			$post_types[ 'forms' ][] = $integration[ 'post_type' ];
+		}
+
+		if ( 'script' === $integration[ 'template_label' ] ) {
+			$post_types[ 'scripts' ][] = $integration[ 'post_type' ];
 		}
 
 		$post_types_all[] = $integration[ 'post_type' ];

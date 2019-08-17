@@ -129,6 +129,8 @@ function ddw_btc_is_elementor_pro_active() {
  */
 function ddw_btc_is_elementor_version( $type = 'core', $version = '', $operator = '' ) {
 
+	$elementor_version = '';
+
 	/** Check type for the 2 possible values */
 	switch ( sanitize_key( $type ) ) {
 
@@ -289,6 +291,90 @@ function ddw_btc_is_visual_composer_active() {
 function ddw_btc_is_vc_global_templates_active() {
 
 	return class_exists( '\VisualComposer\Modules\Editors\Templates\PostType' );
+
+}  // end function
+
+
+/**
+ * Is Reusable Layouts for SiteOrigin plugin active or not?
+ *
+ * @since 1.6.0
+ *
+ * @return bool TRUE if plugin is active, FALSE otherwise.
+ */
+function ddw_btc_is_reusable_layouts_siteorigin_active() {
+
+	return class_exists( 'ReusableLayoutsForSiteOrigin' );
+
+}  // end function
+
+
+/**
+ * Is Beaver Builder (Pro) plugin active or not?
+ *
+ * @since 1.6.0
+ *
+ * @return bool TRUE if plugin is active, FALSE otherwise.
+ */
+function ddw_btc_is_beaver_builder_active() {
+
+	return class_exists( 'FLBuilderLoader' );
+
+}  // end function
+
+
+/**
+ * Is Beaver Themer plugin active or not?
+ *
+ * @since 1.6.0
+ *
+ * @return bool TRUE if plugin is active, FALSE otherwise.
+ */
+function ddw_btc_is_beaver_themer_active() {
+
+	return class_exists( 'FLThemeBuilderLoader' );
+
+}  // end function
+
+
+/**
+ * Is Divi Builder plugin / Divi Theme / Extra Theme active or not?
+ *
+ * @since 1.6.0
+ *
+ * @return bool TRUE if plugin is active, FALSE otherwise.
+ */
+function ddw_btc_is_divi_builder_active() {
+
+	return ( defined( 'ET_BUILDER_PRODUCT_VERSION' ) || defined( 'ET_BUILDER_PLUGIN_VERSION' ) );
+
+}  // end function
+
+
+/**
+ * Is Divi Theme active or not?
+ *
+ * @since 1.6.0
+ *
+ * @return bool TRUE if plugin is active, FALSE otherwise.
+ */
+function ddw_btc_is_divi_theme_active() {
+
+	return function_exists( 'et_divi_load_unminified_scripts' );
+
+}  // end function
+
+
+/**
+ * Is Extra Theme active or not?
+ *
+ * @since 1.6.0
+ *
+ * @return bool TRUE if plugin is active, FALSE otherwise.
+ */
+function ddw_btc_is_extra_theme_active() {
+
+	return defined( 'EXTRA_LAYOUT_POST_TYPE' );
 
 }  // end function
 
@@ -1048,6 +1134,76 @@ function ddw_btc_is_cartflows_active() {
 }  // end function
 
 
+/**
+ * Is GiveWP plugin active or not?
+ *
+ * @since 1.6.0
+ *
+ * @return bool TRUE if plugin is active, FALSE otherwise.
+ */
+function ddw_btc_is_givewp_active() {
+
+	return class_exists( 'Give' );
+
+}  // end function
+
+
+/**
+ * Is Reusable Templates plugin active or not?
+ *
+ * @since 1.6.0
+ *
+ * @return bool TRUE if plugin is active, FALSE otherwise.
+ */
+function ddw_btc_is_reusable_templates_active() {
+
+	return defined( 'WE_SIDEBAR_PLUGIN_VERSION' );
+
+}  // end function
+
+
+/**
+ * Is Sidebar Manager plugin active or not?
+ *
+ * @since 1.6.0
+ *
+ * @return bool TRUE if plugin is active, FALSE otherwise.
+ */
+function ddw_btc_is_bsf_sidebar_manager_active() {
+
+	return class_exists( 'BSF_SB_Loader' );
+
+}  // end function
+
+
+/**
+ * Is HT Script plugin active or not?
+ *
+ * @since 1.6.0
+ *
+ * @return bool TRUE if plugin is active, FALSE otherwise.
+ */
+function ddw_btc_is_ht_script_active() {
+
+	return function_exists( 'ihafs_load_textdomain' );
+
+}  // end function
+
+
+/**
+ * Is HappyForms plugin active or not?
+ *
+ * @since 1.6.0
+ *
+ * @return bool TRUE if plugin is active, FALSE otherwise.
+ */
+function ddw_btc_is_happyforms_active() {
+
+	return ( defined( 'HAPPYFORMS_VERSION' ) || defined( 'HAPPYFORMS_UPGRADE_VERSION' ) );
+
+}  // end function
+
+
 
 /**
  * 5) Block Editor (Gutenberg) integrations - WP Core, plugins etc.:
@@ -1407,5 +1563,19 @@ function ddw_btc_is_block_editor_wanted() {
 
 	/** For: Default - TRUE */
 	return TRUE;
+
+}  // end function
+
+
+/**
+ * Is the Block Areas plugin active or not?
+ *
+ * @since 1.6.0
+ *
+ * @return bool TRUE if plugin is active, FALSE otherwise.
+ */
+function ddw_btc_is_block_areas_active() {
+
+	return function_exists( 'block_areas' );
 
 }  // end function

@@ -43,7 +43,8 @@ function ddw_btc_string_default_content_type() {
  * @since 1.2.0 Added "Field", "Box", "Bar" and "Hook" content types.
  * @since 1.3.0 Added "Filter" content type.
  * @since 1.4.1 Added "Section" content type.
- * @since 1.4.3 Added "Flow" and "Section" content types.
+ * @since 1.4.3 Added "Flow" and "Snippet" content types.
+ * @since 1.6.0 Added "Sidebar", "Area" and "Form" content types.
  *
  * @param string $content_type Type of content string stands for.
  * @return string String output based on content type.
@@ -106,15 +107,31 @@ function ddw_btc_string_content_type( $content_type ) {
 			break;
 
 		case 'section':
-			$string = esc_attr__( 'Sections', 'builder-template-categories' );
+			$string = esc_attr__( 'Section', 'builder-template-categories' );
 			break;
 
 		case 'flow':
-			$string = esc_attr__( 'Flows', 'builder-template-categories' );
+			$string = esc_attr__( 'Flow', 'builder-template-categories' );
 			break;
 
 		case 'snippet':
-			$string = esc_attr__( 'Snippets', 'builder-template-categories' );
+			$string = esc_attr__( 'Snippet', 'builder-template-categories' );
+			break;
+
+		case 'sidebar':
+			$string = esc_attr__( 'Sidebar', 'builder-template-categories' );
+			break;
+
+		case 'area':
+			$string = esc_attr__( 'Area', 'builder-template-categories' );
+			break;
+
+		case 'form':
+			$string = esc_attr__( 'Form', 'builder-template-categories' );
+			break;
+
+		case 'script':
+			$string = esc_attr__( 'Script', 'builder-template-categories' );
 			break;
 
 		default:
@@ -155,7 +172,8 @@ function ddw_btc_string_categories() {
  * @since 1.2.0 Added "Field", "Box", "Bar" and "Hook" content types.
  * @since 1.3.0 Added "Filter" content type.
  * @since 1.4.1 Added "Section" content type.
- * @since 1.4.3 Added "Flow" and "Section" content types.
+ * @since 1.4.3 Added "Flow" and "Snippet" content types.
+ * @since 1.6.0 Added "Sidebar", "Area", "Form" and "Script" content types.
  *
  * @uses ddw_btc_string_categories()
  *
@@ -307,6 +325,38 @@ function ddw_btc_string_template( $string_type ) {
 			$string = sprintf(
 				/* translators: %s - label "Categories" (for example: Snippet Categories) */
 				esc_attr__( 'Snippet %s', 'builder-template-categories' ),
+				ddw_btc_string_categories()
+			);
+			break;
+
+		case 'sidebar':
+			$string = sprintf(
+				/* translators: %s - label "Categories" (for example: Sidebar Categories) */
+				esc_attr__( 'Sidebar %s', 'builder-template-categories' ),
+				ddw_btc_string_categories()
+			);
+			break;
+
+		case 'area':
+			$string = sprintf(
+				/* translators: %s - label "Categories" (for example: Area Categories) */
+				esc_attr__( 'Area %s', 'builder-template-categories' ),
+				ddw_btc_string_categories()
+			);
+			break;
+
+		case 'form':
+			$string = sprintf(
+				/* translators: %s - label "Categories" (for example: Form Categories) */
+				esc_attr__( 'Form %s', 'builder-template-categories' ),
+				ddw_btc_string_categories()
+			);
+			break;
+
+		case 'script':
+			$string = sprintf(
+				/* translators: %s - label "Categories" (for example: Script Categories) */
+				esc_attr__( 'Script %s', 'builder-template-categories' ),
 				ddw_btc_string_categories()
 			);
 			break;

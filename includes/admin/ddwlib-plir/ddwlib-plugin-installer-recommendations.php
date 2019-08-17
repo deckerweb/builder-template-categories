@@ -21,7 +21,7 @@
  * @package DDWlib Plugin Installer Recommendations
  * @author  David Decker
  * @license http://www.gnu.org/licenses GNU General Public License
- * @version 1.4.0
+ * @version 1.4.1
  * @link    https://github.com/deckerweb/ddwlib-plugin-installer-recommendations
  */
 
@@ -355,7 +355,7 @@ if ( ! class_exists( 'DDWlib_Plugin_Installer_Recommendations' ) ) :
 		 * @param object|WP_Error $result Response object or WP_Error.
 		 * @param string          $action The type of information being requested from the Plugin Install API.
 		 * @param object          $args   Plugin API arguments.
-		 * @return array Updated array of results.
+		 * @return object|WP_Error Updated object (array) of results.
 		 */
 		static function plugins_api_result( $result, $action, $args ) {
 
@@ -436,6 +436,7 @@ if ( ! class_exists( 'DDWlib_Plugin_Installer_Recommendations' ) ) :
 		 *
 		 * @since 1.1.0
 		 * @since 1.3.0 Added 'deckerweb Plugins' tab.
+		 * @since 1.4.1 Added ClassicPress compat.
 		 *
 		 * @param array $tabs Array of plugin installer tabs.
 		 * @return array Tweaked array of tabs for plugin installer toolbar.
@@ -446,7 +447,7 @@ if ( ! class_exists( 'DDWlib_Plugin_Installer_Recommendations' ) ) :
 			$labels = DDWlib_Plugin_Installer_Recommendations::get_strings();
 
 			/** Re-enable hidden tab from core */
-			if ( ! defined( 'CLPINST_PLUGIN_VERSION' ) ) {
+			if ( ! defined( 'CLPINST_PLUGIN_VERSION' ) && ! function_exists( 'classicpress_version' ) ) {
 				$tabs[ 'new' ] = esc_attr( $labels[ 'newest' ] );
 			}
 
@@ -472,7 +473,7 @@ if ( ! class_exists( 'DDWlib_Plugin_Installer_Recommendations' ) ) :
 
 			/** Bail early if plugin "Cleaner Plugin Installer" is active */
 			if ( defined( 'CLPINST_PLUGIN_VERSION' ) ) {
-				return;
+				return $action_links;
 			}
 
 			/** Get array of label strings */

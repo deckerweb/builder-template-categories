@@ -37,19 +37,20 @@ add_filter( 'woocommerce_allow_marketplace_suggestions', '__return_false' );
  * Add "Custom Taxonomy" link to Plugins page.
  *
  * @since 1.0.0
+ * @since 1.6.0 Overall code improvements.
  *
- * @param array $btc_links (Default) Array of plugin action links.
- * @return strings $btc_links Settings & Menu Admin links.
+ * @param array $action_links (Default) Array of plugin action links.
+ * @return array Modified array of plugin action links.
  */
-function ddw_btc_custom_taxonomy_links( $btc_links ) {
+function ddw_btc_custom_taxonomy_links( $action_links = [] ) {
 
-	$btc_tax_link = '';
-
+	$btc_links = array();
+	
 	/** Add settings link only if user has permission */
 	if ( current_user_can( ddw_btc_capability_submenu() ) ) {
 
 		/** Taxonomy Page link */
-		$btc_tax_link = sprintf(
+		$btc_links[ 'btc-taxonomy' ] = sprintf(
 			'<a href="%s" title="%s"><span class="dashicons-before dashicons-category"></span> %s</a>',
 			esc_url( admin_url( ddw_btc_taxonomy_admin_url() ) ),
 			/* translators: Title attribute for Builder Template Categories taxonomy link */
@@ -59,15 +60,11 @@ function ddw_btc_custom_taxonomy_links( $btc_links ) {
 
 	}  // end if
 
-	/** Set the order of the links */
-	if ( ! empty( $btc_tax_link ) ) {
-		array_unshift( $btc_links, $btc_tax_link );
-	}
-
 	/** Display plugin settings links */
 	return apply_filters(
 		'btc/filter/plugins_page/tax_link',
-		$btc_links
+		array_merge( $btc_links, $action_links ),
+		$btc_links 		// additional param
 	);
 
 }  // end function
@@ -107,22 +104,46 @@ function ddw_btc_plugin_links( $btc_links, $btc_file ) {
 		<?php
 
 		/* translators: Plugins page listing */
-		$btc_links[] = ddw_btc_get_info_link( 'url_wporg_forum', esc_html_x( 'Support', 'Plugins page listing', 'builder-template-categories' ), 'dashicons-before dashicons-sos' );
+		$btc_links[] = ddw_btc_get_info_link(
+			'url_wporg_forum',
+			esc_html_x( 'Support', 'Plugins page listing', 'builder-template-categories' ),
+			'dashicons-before dashicons-sos'
+		);
 
 		/* translators: Plugins page listing */
-		$btc_links[] = ddw_btc_get_info_link( 'url_fb_group', esc_html_x( 'Facebook Group', 'Plugins page listing', 'builder-template-categories' ), 'dashicons-before dashicons-facebook' );
+		$btc_links[] = ddw_btc_get_info_link(
+			'url_fb_group',
+			esc_html_x( 'Facebook Group', 'Plugins page listing', 'builder-template-categories' ),
+			'dashicons-before dashicons-facebook'
+		);
 
 		/* translators: Plugins page listing */
-		$btc_links[] = ddw_btc_get_info_link( 'url_translate', esc_html_x( 'Translations', 'Plugins page listing', 'builder-template-categories' ), 'dashicons-before dashicons-translation' );
+		$btc_links[] = ddw_btc_get_info_link(
+			'url_translate',
+			esc_html_x( 'Translations', 'Plugins page listing', 'builder-template-categories' ),
+			'dashicons-before dashicons-translation'
+		);
 
 		/* translators: Plugins page listing */
-		$btc_links[] = ddw_btc_get_info_link( 'url_snippets', esc_html_x( 'Code Snippets', 'Plugins page listing', 'builder-template-categories' ), 'dashicons-before dashicons-editor-code' );
+		$btc_links[] = ddw_btc_get_info_link(
+			'url_snippets',
+			esc_html_x( 'Code Snippets', 'Plugins page listing', 'builder-template-categories' ),
+			'dashicons-before dashicons-editor-code'
+		);
 
 		/* translators: Plugins page listing */
-		$btc_links[] = ddw_btc_get_info_link( 'url_donate', esc_html_x( 'Donate', 'Plugins page listing', 'builder-template-categories' ), 'button dashicons-before dashicons-thumbs-up' );
+		$btc_links[] = ddw_btc_get_info_link(
+			'url_donate',
+			esc_html_x( 'Donate', 'Plugins page listing', 'builder-template-categories' ),
+			'button dashicons-before dashicons-thumbs-up'
+		);
 
 		/* translators: Plugins page listing */
-		$btc_links[] = ddw_btc_get_info_link( 'url_newsletter', esc_html_x( 'Join our Newsletter', 'Plugins page listing', 'builder-template-categories' ), 'button-primary dashicons-before dashicons-awards' );
+		$btc_links[] = ddw_btc_get_info_link(
+			'url_newsletter',
+			esc_html_x( 'Join our Newsletter', 'Plugins page listing', 'builder-template-categories' ),
+			'button-primary dashicons-before dashicons-awards'
+		);
 
 	}  // end if plugin links
 
@@ -175,7 +196,7 @@ function ddw_btc_admin_footer_text( $footer_text ) {
 }  // end function
 
 
-add_filter( 'debug_information', 'ddw_btc_site_health_add_debug_info', 12 );
+add_filter( 'debug_information', 'ddw_btc_site_health_add_debug_info', 7 );
 /**
  * Add additional plugin related info to the Site Health Debug Info section.
  *   (Only relevant for WordPress 5.2 or higher)
@@ -210,6 +231,8 @@ function ddw_btc_site_health_add_debug_info( $debug_info ) {
 		}  // end if
 
 	}  // end foreach
+
+	$integrations_output = ( empty( $integrations_output ) ) ? esc_html__( 'No integration(s) active', 'builder-template-categories' ) : $integrations_output;
 
 	/** Setup strings */
 	$string_enabled   = __( 'Enabled', 'builder-template-categories' );
@@ -375,6 +398,7 @@ add_filter( 'ddwlib_plir/filter/plugins', 'ddw_btc_register_extra_plugin_recomme
  *
  * @since 1.0.1
  * @since 1.4.0 Added new Block Editor recommendations.
+ * @since 1.6.0 Tweaked Block Editor recommendations.
  *
  * @uses ddw_btc_is_elementor_active()
  * @uses ddw_btc_is_block_editor_active()
@@ -434,7 +458,7 @@ function ddw_btc_register_extra_plugin_recommendations( array $plugins ) {
 				'recommended' => 'yes',
 				'popular'     => 'yes',
 			),
-			'disable-gutenberg-blocks' => array(
+			'block-options' => array(
 				'featured'    => 'yes',
 				'recommended' => 'yes',
 				'popular'     => 'no',

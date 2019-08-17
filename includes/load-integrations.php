@@ -91,6 +91,36 @@ if ( ddw_btc_is_visual_composer_active() ) {
 }
 
 
+/**
+ * Plugin: Reusable Layouts for SiteOrigin
+ * @since 1.6.0
+ */
+if ( ddw_btc_is_reusable_layouts_siteorigin_active() ) {
+	require_once BTC_PLUGIN_DIR . 'includes/integrations/integration-reusable-layouts-siteorigin.php';
+}
+
+
+/**
+ * Plugin: Beaver Builder (Pro)
+ * Plugin: Beaver Themer
+ * @since 1.6.0
+ */
+if ( ddw_btc_is_beaver_builder_active() || ddw_btc_is_beaver_themer_active() ) {
+	require_once BTC_PLUGIN_DIR . 'includes/integrations/integration-beaver-templates.php';
+}
+
+
+/**
+ * Plugin: Divi Builder
+ * Theme: Divi
+ * Theme: Extra
+ * @since 1.6.0
+ */
+if ( ddw_btc_is_divi_builder_active() ) {
+	require_once BTC_PLUGIN_DIR . 'includes/integrations/integration-divi-templates.php';
+}
+
+
 
 /**
  * 2) Theme integrations:
@@ -535,6 +565,51 @@ if ( ddw_btc_is_cartflows_active() ) {
 }
 
 
+/**
+ * Plugin: GiveWP
+ * @since 1.6.0
+ */
+if ( ddw_btc_is_givewp_active() ) {
+	require_once BTC_PLUGIN_DIR . 'includes/integrations/integration-givewp.php';
+}
+
+
+/**
+ * Plugin: Reusable Templates
+ * @since 1.6.0
+ */
+if ( ddw_btc_is_reusable_templates_active() ) {
+	require_once BTC_PLUGIN_DIR . 'includes/integrations/integration-reusable-templates.php';
+}
+
+
+/**
+ * Plugin: Sidebar Manager
+ * @since 1.6.0
+ */
+if ( ddw_btc_is_bsf_sidebar_manager_active() ) {
+	require_once BTC_PLUGIN_DIR . 'includes/integrations/integration-bsf-sidebar-manager.php';
+}
+
+
+/**
+ * Plugin: HT Script (free & Pro)
+ * @since 1.6.0
+ */
+if ( ddw_btc_is_ht_script_active() ) {
+	require_once BTC_PLUGIN_DIR . 'includes/integrations/integration-ht-script.php';
+}
+
+
+/**
+ * Plugin: HappyForms (free & Pro)
+ * @since 1.6.0
+ */
+if ( ddw_btc_is_happyforms_active() ) {
+	require_once BTC_PLUGIN_DIR . 'includes/integrations/integration-happyforms.php';
+}
+
+
 
 /**
  * 5) Block Editor (Gutenberg) integrations - WP Core, plugins etc.:
@@ -604,4 +679,13 @@ if ( ddw_btc_is_sqh_placeholder_block_active() ) {
  */
 if ( ddw_btc_is_block_templates_active() ) {
 	require_once BTC_PLUGIN_DIR . 'includes/integrations/integration-block-templates.php';
+}
+
+
+/**
+ * Plugin: Block Areas
+ * @since 1.6.0
+ */
+if ( ddw_btc_is_block_areas_active() ) {
+	require_once BTC_PLUGIN_DIR . 'includes/integrations/integration-block-areas.php';
 }

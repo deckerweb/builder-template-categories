@@ -90,7 +90,7 @@ function ddw_btc_integrations_add_admin_submenus() {
  *
  * @since 1.1.0
  *
- * @param $actions Holds all current bulk actions for a post type.
+ * @param array $actions Holds all current bulk actions for a post type.
  * @return array Tweaked array of all bulk actions for a post type.
  */
 function ddw_btc_bulk_actions_edit_title( $actions ) {
@@ -220,7 +220,9 @@ add_filter( 'manage_posts_columns', 'ddw_btc_tweak_taxonomy_column_title' );
  * @since 1.2.0 Added checks for "Field", "Box", "Bar" and "Hook" content types.
  * @since 1.3.0 Added checks for "Filter" content type.
  * @since 1.4.1 Added checks for "Section" content type.
- * @since 1.4.3 Added checks for "Flow" and "Section" content types.
+ * @since 1.4.3 Added checks for "Flow" and "Snippet" content types.
+ * @since 1.6.0 Added checks for "Sidebar", "Area", "Form" and "Script" content
+ *              types.
  *
  * @uses ddw_btc_get_integration_post_types()
  * @uses ddw_btc_string_template()
@@ -304,6 +306,22 @@ function ddw_btc_tweak_taxonomy_column_title( $columns ) {
 		$columns[ 'taxonomy-builder-template-category' ] = ddw_btc_string_template( 'snippet' );
 	}
 
+	if ( in_array( $current_screen->post_type, $post_types[ 'sidebars' ] ) ) {
+		$columns[ 'taxonomy-builder-template-category' ] = ddw_btc_string_template( 'sidebar' );
+	}
+
+	if ( in_array( $current_screen->post_type, $post_types[ 'areas' ] ) ) {
+		$columns[ 'taxonomy-builder-template-category' ] = ddw_btc_string_template( 'area' );
+	}
+
+	if ( in_array( $current_screen->post_type, $post_types[ 'forms' ] ) ) {
+		$columns[ 'taxonomy-builder-template-category' ] = ddw_btc_string_template( 'form' );
+	}
+
+	if ( in_array( $current_screen->post_type, $post_types[ 'scripts' ] ) ) {
+		$columns[ 'taxonomy-builder-template-category' ] = ddw_btc_string_template( 'script' );
+	}
+
 	/** Return array of column label strings */
 	return $columns;
 
@@ -321,7 +339,9 @@ add_filter( 'btc/filter/string/default_content_type', 'ddw_btc_tweak_taxonomy_la
  * @since 1.2.0 Added checks for "Field", "Box", "Bar" and "Hook" content types.
  * @since 1.3.0 Added checks for "Filter" content type.
  * @since 1.4.1 Added checks for "Section" content type.
- * @since 1.4.3 Added checks for "Flow" and "Section" content types.
+ * @since 1.4.3 Added checks for "Flow" and "Snippet" content types.
+ * @since 1.6.0 Added checks for "Sidebar", "Area", "Form" and "Script" content
+ *              types.
  *
  * @uses ddw_btc_get_integration_post_types()
  * @uses ddw_btc_string_content_type()
@@ -405,6 +425,22 @@ function ddw_btc_tweak_taxonomy_labels() {
 
 	if ( in_array( ddw_btc_admin_get_current_post_type(), $post_types[ 'snippets' ] ) ) {
 		return ddw_btc_string_content_type( 'snippet' );
+	}
+
+	if ( in_array( ddw_btc_admin_get_current_post_type(), $post_types[ 'sidebars' ] ) ) {
+		return ddw_btc_string_content_type( 'sidebar' );
+	}
+
+	if ( in_array( ddw_btc_admin_get_current_post_type(), $post_types[ 'areas' ] ) ) {
+		return ddw_btc_string_content_type( 'area' );
+	}
+
+	if ( in_array( ddw_btc_admin_get_current_post_type(), $post_types[ 'forms' ] ) ) {
+		return ddw_btc_string_content_type( 'form' );
+	}
+
+	if ( in_array( ddw_btc_admin_get_current_post_type(), $post_types[ 'scripts' ] ) ) {
+		return ddw_btc_string_content_type( 'script' );
 	}
 
 	/** If no match, return the default string ("Template") */
