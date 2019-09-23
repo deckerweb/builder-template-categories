@@ -11,7 +11,7 @@
 **Requires at least:** 4.7  
 **Tested up to:** 5.2  
 **Requires PHP:** 5.6  
-**Stable tag:** 1.6.0  
+**Stable tag:** 1.7.0  
 **License:** GPL-2.0-or-later  
 **License URI:** https://opensource.org/licenses/GPL-2.0  
 
@@ -687,6 +687,9 @@ As of version 1.5.0 of the plugin the following was achieved:
 
 
 ## Upgrade Notice 
+
+### 1.7.0
+Feature Release with 9 new integrations. - **Update highly recommended!** :-)
 
 ### 1.6.0
 Feature Release with 13 new integrations. - **Update highly recommended!** :-)
