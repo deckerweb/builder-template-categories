@@ -92,17 +92,6 @@ function ddw_btc_plugin_links( $btc_links, $btc_file ) {
 	/** List additional links only for this plugin */
 	if ( $btc_file === BTC_PLUGIN_BASEDIR . 'builder-template-categories.php' ) {
 
-		?>
-			<style type="text/css">
-				tr[data-plugin="<?php echo $btc_file; ?>"] .plugin-version-author-uri a.dashicons-before:before {
-					font-size: 17px;
-					margin-right: 2px;
-					opacity: .85;
-					vertical-align: sub;
-				}
-			</style>
-		<?php
-
 		/* translators: Plugins page listing */
 		$btc_links[] = ddw_btc_get_info_link(
 			'url_wporg_forum',
@@ -152,6 +141,54 @@ function ddw_btc_plugin_links( $btc_links, $btc_file ) {
 		'btc/filter/plugins_page/more_links',
 		$btc_links
 	);
+
+}  // end function
+
+
+add_action( 'admin_enqueue_scripts', 'ddw_btc_inline_styles_plugins_page', 20 );
+/**
+ * Add additional inline styles on the admin Plugins page.
+ *
+ * @since 1.0.0
+ * @since 1.7.0 Splitted into function; using wp_add_inline_style() from Core.
+ *
+ * @uses wp_add_inline_style()
+ *
+ * @global string $GLOBALS[ 'pagenow' ]
+ */
+function ddw_btc_inline_styles_plugins_page() {
+
+	/** Bail early if not on plugins.php admin page */
+	if ( 'plugins.php' !== $GLOBALS[ 'pagenow' ] ) {
+		return;
+	}
+
+	$btc_file = BTC_PLUGIN_BASEDIR . 'builder-template-categories.php';
+
+    /**
+     * For WordPress Admin Area
+     *   Style handle: 'wp-admin' (WordPress Core)
+     */
+    $inline_css = sprintf(
+    	'
+        tr[data-plugin="%s"] .plugin-version-author-uri a.dashicons-before:before {
+			font-size: 17px;
+			margin-right: 2px;
+			opacity: .85;
+			vertical-align: sub;
+		}
+
+		.btc-update-message p:before,
+		.update-message.notice p:empty,
+		.update-message.updating-message > p,
+		.update-message.notice-success > p,
+		.update-message.notice-error > p {
+			display: none !important;
+		}',
+		$btc_file
+	);
+
+    wp_add_inline_style( 'wp-admin', $inline_css );
 
 }  // end function
 
@@ -296,28 +333,6 @@ if ( ! function_exists( 'ddw_wp_site_health_remove_percentage' ) ) :
 endif;
 
 
-/**
- * Inline CSS fix for Plugins page update messages.
- *
- * @since 1.0.1
- *
- * @see ddw_btc_plugin_update_message()
- * @see ddw_btc_multisite_subsite_plugin_update_message()
- */
-function ddw_btc_plugin_update_message_style_tweak() {
-
-	?>
-		<style type="text/css">
-			.btc-update-message p:before,
-			.update-message.notice p:empty {
-				display: none !important;
-			}
-		</style>
-	<?php
-
-}  // end function
-
-
 add_action( 'in_plugin_update_message-' . BTC_PLUGIN_BASEDIR . 'builder-template-categories.php', 'ddw_btc_plugin_update_message', 10, 2 );
 /**
  * On Plugins page add visible upgrade/update notice in the overview table.
@@ -334,8 +349,6 @@ add_action( 'in_plugin_update_message-' . BTC_PLUGIN_BASEDIR . 'builder-template
 function ddw_btc_plugin_update_message( $data, $response ) {
 
 	if ( isset( $data[ 'upgrade_notice' ] ) ) {
-
-		ddw_btc_plugin_update_message_style_tweak();
 
 		printf(
 			'<div class="update-message btc-update-message">%s</div>',
@@ -365,8 +378,6 @@ function ddw_btc_multisite_subsite_plugin_update_message( $file, $plugin ) {
 	if ( is_multisite() && version_compare( $plugin[ 'Version' ], $plugin[ 'new_version' ], '<' ) ) {
 
 		$wp_list_table = _get_list_table( 'WP_Plugins_List_Table' );
-
-		ddw_btc_plugin_update_message_style_tweak();
 
 		printf(
 			'<tr class="plugin-update-tr"><td colspan="%s" class="plugin-update update-message notice inline notice-warning notice-alt"><div class="update-message btc-update-message"><h4 style="margin: 0; font-size: 14px;">%s</h4>%s</div></td></tr>',
@@ -399,6 +410,7 @@ add_filter( 'ddwlib_plir/filter/plugins', 'ddw_btc_register_extra_plugin_recomme
  * @since 1.0.1
  * @since 1.4.0 Added new Block Editor recommendations.
  * @since 1.6.0 Tweaked Block Editor recommendations.
+ * @since 1.7.0 Tweaked Block Editor recommendations.
  *
  * @uses ddw_btc_is_elementor_active()
  * @uses ddw_btc_is_block_editor_active()
@@ -459,6 +471,11 @@ function ddw_btc_register_extra_plugin_recommendations( array $plugins ) {
 				'popular'     => 'yes',
 			),
 			'block-options' => array(
+				'featured'    => 'yes',
+				'recommended' => 'yes',
+				'popular'     => 'no',
+			),
+			'reusable-blocks-extended' => array(
 				'featured'    => 'yes',
 				'recommended' => 'yes',
 				'popular'     => 'no',

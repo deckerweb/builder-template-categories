@@ -189,6 +189,8 @@ function ddw_btc_inbetween_remove_submenu_for_block_editor_types() {
  * @since 1.2.0 Added optional terms for blocks, fields, boxes, bars and hooks.
  * @since 1.4.3 Added optional terms for flows and snippets; moved declaration
  *              into own function for reusability.
+ * @since 1.6.0 Added optional terms for forms.
+ * @since 1.7.0 Added optional terms for URLs and redirects.
  *
  * @uses ddw_btc_is_woocommerce_active()
  * @uses ddw_btc_is_elementor_pro_active()
@@ -337,6 +339,28 @@ function ddw_btc_get_predefined_terms() {
 			'name'        => esc_attr_x( 'Forms', 'Taxonomy term title', 'builder-template-categories' ),
 			'slug'        => sanitize_key( _x( 'forms', 'Taxonomy term slug - only lowercase, a-z, 0-9, hyphens!', 'builder-template-categories' ) ),
 			'description' => _x( 'Templates for Forms', 'Taxonomy term description', 'builder-template-categories' ),
+		);
+
+	}  // end if
+
+	/** Optional: URL type content */
+	if ( has_filter( 'btc/filter/is_type/url' ) ) {
+
+		$terms[ 'terms_urls' ] = array(
+			'name'        => esc_attr_x( 'URLs', 'Taxonomy term title', 'builder-template-categories' ),
+			'slug'        => sanitize_key( _x( 'urls', 'Taxonomy term slug - only lowercase, a-z, 0-9, hyphens!', 'builder-template-categories' ) ),
+			'description' => _x( 'Templates for URLs', 'Taxonomy term description', 'builder-template-categories' ),
+		);
+
+	}  // end if
+
+	/** Optional: Redirect type content */
+	if ( has_filter( 'btc/filter/is_type/redirect' ) ) {
+
+		$terms[ 'terms_redirects' ] = array(
+			'name'        => esc_attr_x( 'Redirects', 'Taxonomy term title', 'builder-template-categories' ),
+			'slug'        => sanitize_key( _x( 'redirects', 'Taxonomy term slug - only lowercase, a-z, 0-9, hyphens!', 'builder-template-categories' ) ),
+			'description' => _x( 'Templates for Redirects', 'Taxonomy term description', 'builder-template-categories' ),
 		);
 
 	}  // end if

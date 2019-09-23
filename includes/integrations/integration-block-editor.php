@@ -73,6 +73,8 @@ if ( version_compare( $GLOBALS[ 'wp_version' ], '5.0-beta1', '>=' )
 	 * @uses ddw_btc_is_tbex_reusable_blocks()
 	 * @uses add_menu_page()
 	 * @uses add_submenu_page()
+	 *
+	 * @global string $GLOBALS[ 'admin_page_hooks' ]
 	 */
 	function ddw_btc_maybe_add_menu_wpblock_posttype() {
 		
@@ -80,7 +82,15 @@ if ( version_compare( $GLOBALS[ 'wp_version' ], '5.0-beta1', '>=' )
 		 * Bail early if the same stuff as below is already added by
 		 *   Toolbar Extras plugin.
 		 */
-		if ( ddw_btc_is_tbex_reusable_blocks() ) {
+		//if ( ddw_btc_is_tbex_reusable_blocks() ) {
+		//	return;
+		//}
+
+
+		/**
+		 * Bail early if the same stuff as below was already added by other plugins.
+		 */
+		if ( ! empty( $GLOBALS[ 'admin_page_hooks' ][ 'edit.php?post_type=wp_block' ] ) ) {
 			return;
 		}
 

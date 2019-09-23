@@ -23,7 +23,7 @@ add_filter( 'btc/filter/integrations/all', 'ddw_btc_register_integration_oceanwp
  */
 function ddw_btc_register_integration_oceanwp( array $integrations ) {
 
-	$integrations[ 'generatepress' ] = array(
+	$integrations[ 'oceanwp-library' ] = array(
 		'label'          => __( 'OceanWP Library', 'builder-template-categories' ),
 		'submenu_hook'   => 'oceanwp-panel',
 		'post_type'      => 'oceanwp_library',

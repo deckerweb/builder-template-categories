@@ -62,6 +62,8 @@ Please note: The categories are global but when filtering only those items are l
 * **Page Builder Framework** with **WPBF Premium** Add-On Plugin - **Custom Section** (for Sections, Layouts, Hooks etc.)
 * **Customify** with **Customify Pro** Add-On Plugin - **Hooks** (for Layouts, Sections, Hooks etc.)
 * **Suki** with **Suki Pro** Add-On Plugin - **Custom Blocks** (for Layouts, Sections, Hooks etc.)
+* **Neve** with **Neve Pro** Add-On Plugin - **Custom Layouts** (for Layouts, Sections, Hooks etc.)
+* **Woostify** with **Woostify Pro** Add-On Plugin - **Header Footer Builder** (for Elementor theming areas - Headers/ Footers)
 * **Avada Theme** with Avada Fusion Builder - **Library** (for Templates, Pages, Layouts, Columns, Rows)
 * **Divi Theme** with Divi Builder - **Library** (for Templates etc.)
 * **Extra Theme** with Divi Builder - **Library** (for Templates etc.) - **Category Templates** (for Layouts, Templates etc.)
@@ -71,7 +73,7 @@ Please note: The categories are global but when filtering only those items are l
 * *see Gutenberg-specific Plugins below :-)*
 * [**AnyWhere Elementor**](https://wordpress.org/plugins/anywhere-elementor/) Plugin (both, free & Pro version) - **AE Global Templates** (for Layouts, Content, Pages etc.)
 * **Kava Pro Theme/ CrocoBlock Service** with JetThemeCore Plugin - **My Library** (for Layouts, Pages, Headers, Footers, Single, Archive)
-* **JetEngine for Elementor** Plugin - **Listings** (Templates)
+* **JetEngine for Elementor** Plugin - **Listings** (Templates) - **Forms** (JetEngine Appointment Forms etc.)
 * **JetWooBuilder for Elementor** Plugin - **Product Templates** (for WooCommerce Products)
 * [**Blox Lite**](https://wordpress.org/plugins/blox-lite/) and **Blox** (Pro) Plugins, both for Genesis Framework - **Global Content Blocks** (for Sections, Hooks)
 * **Oxygen Builder** Plugin (Pro) - **Templates** (for Pages, Layouts, Sections, Theme Builder elements...)
@@ -118,6 +120,12 @@ Please note: The categories are global but when filtering only those items are l
 * [**Lightweight Sidebar Manager**](https://wordpress.org/plugins/sidebar-manager/) Plugin - **Sidebars** (for Sidebars, Widget Areas)
 * [**Reusable Blocks - Elementor, Beaver Builder, WYSIWYG**](https://wordpress.org/plugins/design-sidebar-using-page-builder/) Plugin - **Templates** (for Sections, Sidebars, etc.)
 * [**HT Script (Insert Headers and Footers Code)**](https://wordpress.org/plugins/insert-headers-and-footers-script/) Plugin - **Scripts** (for Custom Code)
+* **ToolKit for Elementor** Plugin (Pro) - **My Templates** (for Elementor Templates)
+* [**Elements Kit**](https://wordpress.org/plugins/elementskit-lite/) Plugin (free & Pro version) - **My Templates** (for Elementor Templates)
+* [**Flo Forms**](https://wordpress.org/plugins/flo-forms/) Plugin - **Forms** (for Contact Forms etc.)
+* [**Woody Snippets**](https://wordpress.org/plugins/insert-php/) Plugin - **Snippets** (for Code Snippets, Ad Snippets etc.)
+* [**Boxzilla**](https://wordpress.org/plugins/boxzilla/) Plugin (free & Pro version) - **Boxes** (for Popups, Boxes, Sections etc.)
+* [**Holler Boxes**](https://wordpress.org/plugins/holler-box/) Plugin - **Boxes** (for Popups, Boxes, Sections etc.)
 
 = 📦 Supported Gutenberg-specific Plugins (Block Editor) =
 * [**Lazy Blocks**](https://wordpress.org/plugins/lazy-blocks/) Plugin - **Blocks** (Templates for Gutenberg Blocks)
@@ -172,7 +180,7 @@ You can also contribute code-wise via our [Builder Template Categories GitHub Re
 = Minimum Requirements =
 
 * WordPress version 4.7 or higher
-* PHP version 5.6 or higher
+* PHP version 5.6.20 or higher
 * MySQL version 5.0 or higher
 * Administrator user with capability `edit_theme_options`
 
@@ -387,16 +395,16 @@ Best practice is to wrap the whole code above in a conditional to check if the t
 
 
 = Some Statistics? =
-As of version 1.6.0 of the plugin the following was achieved:
+As of version 1.7.0 of the plugin the following was achieved:
 
 * 1 Taxonomy
-* 78 Integrations overall
+* 87 Integrations overall
 * 1 Core Integration (Gutenberg Block Editor)
-* 11 Theme Integrations
+* 13 Theme Integrations
 * 12 Page Builder Integrations
-* 57 Plugin Integrations
-* Up to 87 different post types (of integrations) supported
-* 20 generic template content types, plus 1 plugin-specific template content type
+* 63 Plugin Integrations
+* Up to 96 different post types (of integrations) supported
+* 22 generic template content types, plus 1 plugin-specific template content type
 
 
 == Screenshots ==
@@ -425,6 +433,22 @@ As of version 1.6.0 of the plugin the following was achieved:
 
 
 == Changelog ==
+
+= 🎉 1.7.0 - 2019-09-23 =
+* New: Extended integration with plugin JetEngine (Premium, by Zemez Jet/ CrocoBlock) for Form Categories
+* New: Added integration with plugin ToolKit for Elementor (Premium, by ToolKit for Elementor)
+* New: Added integration with theme Woostify - Header & Footers via Woostify Pro Add-On plugin (Premium, by BoostifyThemes)
+* New: Added integration with plugin Woody Snippets (formerly: Insert PHP) (free, by Webcraftic)
+* New: Added integration with plugin ElementsKit Lite/Pro (free/Premium, by wpmet)
+* New: Added integration with plugin Flo Forms (free, by Flothemes)
+* New: Added integration with plugin Boxzilla (free, by ibericode)
+* New: Added integration with plugin Holler Box (free, by Scott Bolinger)
+* New: Added integration with theme Neve - Neve Custom Layouts via Neve Pro Add-On plugin (Premium, by ThemeIsle)
+* New: Added new template content types "URL/ URLs" and "Redirect/ Redirects"
+* Tweak: Updated bundled library DDWlib Plugin Installer Recommendations to latest version (v1.5.0) - better performance due to the use of transients
+* Tweak: Minor code improvements
+* Tweak: Updated `.pot` file plus all German translations (formal, informal) and language packs
+
 
 = 🎉 1.6.0 - 2019-08-16 =
 * New: Added integration with plugin GiveWP Donations (free, by GiveWP/ Impress.org, LLC)
@@ -602,6 +626,9 @@ As of version 1.6.0 of the plugin the following was achieved:
 
 == Upgrade Notice =
 
+= 1.7.0 =
+Feature Release with 9 new integrations. - **Update highly recommended!** :-)
+
 = 1.6.0 =
 Feature Release with 13 new integrations. - **Update highly recommended!** :-)
 
@@ -659,6 +686,7 @@ Enjoy using *Builder Template Categories*? **[Please consider making a donation]
 * [**Toolbar Extras for Give Donations (GiveWP) - Add-On plugin**](https://wordpress.org/plugins/toolbar-extras-givewp/)
 * [**Toolbar Extras for MainWP Dashboard - Add-On plugin**](https://wordpress.org/plugins/toolbar-extras-mainwp/)
 * [**Toolbar Extras for Oxygen Builder - Add-On plugin**](https://wordpress.org/plugins/toolbar-extras-oxygen/)
+* [**Builder Shortcode Extras – WordPress Shortcodes Collection to Save You Time**](https://wordpress.org/plugins/builder-shortcode-extras/)
 * [**Polylang Connect for Elementor – Language Switcher & Template Tweaks**](https://wordpress.org/plugins/connect-polylang-elementor/)
 * [**Simple Download Manager for WP Document Revisions**](https://wordpress.org/plugins/wpdr-simple-downloads/)
 * [Genesis What's New Info](https://wordpress.org/plugins/genesis-whats-new-info/)

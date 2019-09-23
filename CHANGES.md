@@ -14,6 +14,23 @@
 
 ## Changelog of the Plugin
 
+### 🎉 1.7.0 - 2019-09-23
+
+* New: Extended integration with plugin JetEngine (Premium, by Zemez Jet/ CrocoBlock) for Form Categories
+* New: Added integration with plugin ToolKit for Elementor (Premium, by ToolKit for Elementor)
+* New: Added integration with theme Woostify - Header & Footers via Woostify Pro Add-On plugin (Premium, by BoostifyThemes)
+* New: Added integration with plugin Woody Snippets (formerly: Insert PHP) (free, by Webcraftic)
+* New: Added integration with plugin ElementsKit Lite/Pro (free/Premium, by wpmet)
+* New: Added integration with plugin Flo Forms (free, by Flothemes)
+* New: Added integration with plugin Boxzilla (free, by ibericode)
+* New: Added integration with plugin Holler Box (free, by Scott Bolinger)
+* New: Added integration with theme Neve - Neve Custom Layouts via Neve Pro Add-On plugin (Premium, by ThemeIsle)
+* New: Added new template content types "URL/ URLs" and "Redirect/ Redirects"
+* Tweak: Updated bundled library DDWlib Plugin Installer Recommendations to latest version (v1.5.0) - better performance due to the use of transients
+* Tweak: Minor code improvements
+* Tweak: Updated `.pot` file plus all German translations (formal, informal) and language packs
+
+
 ### 🎉 1.6.0 - 2019-08-16
 
 * New: Added integration with plugin GiveWP Donations (free, by GiveWP/ Impress.org, LLC)

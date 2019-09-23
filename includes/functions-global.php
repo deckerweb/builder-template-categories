@@ -103,6 +103,7 @@ function ddw_btc_taxonomy_admin_url() {
  * @since 1.4.1 Added "Section" content type.
  * @since 1.4.3 Added "Flow" and "Snippet" content types.
  * @since 1.6.0 Added "Sidebar", "Area", "Form" and "Script" content types.
+ * @since 1.7.0 Added "URL" and "Redirect" content types.
  *
  * @uses ddw_btc_get_integrations()
  *
@@ -140,6 +141,8 @@ function ddw_btc_get_integration_post_types( $all_types = '' ) {
 		'areas'      => array(),
 		'forms'      => array(),
 		'scripts'    => array(),
+		'urls'       => array(),
+		'redirects'  => array(),
 		'btcdefault' => array( 'btc-template' ),
 	);
 
@@ -233,6 +236,14 @@ function ddw_btc_get_integration_post_types( $all_types = '' ) {
 
 		if ( 'script' === $integration[ 'template_label' ] ) {
 			$post_types[ 'scripts' ][] = $integration[ 'post_type' ];
+		}
+
+		if ( 'url' === $integration[ 'template_label' ] ) {
+			$post_types[ 'urls' ][] = $integration[ 'post_type' ];
+		}
+
+		if ( 'redirect' === $integration[ 'template_label' ] ) {
+			$post_types[ 'redirects' ][] = $integration[ 'post_type' ];
 		}
 
 		$post_types_all[] = $integration[ 'post_type' ];

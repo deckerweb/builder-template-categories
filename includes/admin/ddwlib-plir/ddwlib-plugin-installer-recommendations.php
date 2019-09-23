@@ -21,7 +21,7 @@
  * @package DDWlib Plugin Installer Recommendations
  * @author  David Decker
  * @license http://www.gnu.org/licenses GNU General Public License
- * @version 1.4.1
+ * @version 1.5.0
  * @link    https://github.com/deckerweb/ddwlib-plugin-installer-recommendations
  */
 
@@ -44,6 +44,9 @@ if ( ! defined( 'ABSPATH' ) ) {
  *
  * @since 1.0.0
  * @since 1.1.0 Added "Newest" tab; version number to plugin cards; CSS styles.
+ * @since 1.3.0 Added "deckerweb Plugins" tab on plugin installer page.
+ * @since 1.4.0 Added "deckerweb" view on Plugins page.
+ * @since 1.5.0 Added saving to transients to speed up performance.
  */
 if ( ! class_exists( 'DDWlib_Plugin_Installer_Recommendations' ) ) :
 
@@ -59,14 +62,18 @@ if ( ! class_exists( 'DDWlib_Plugin_Installer_Recommendations' ) ) :
 		 *
 		 * @since 1.3.0
 		 */
-		private static $version = '1.4.0';
+		private static $version = '1.5.0';
 
 
 		/**
-		 * Constructor. Hooks all interactions into correct areas to start the class.
+		 * Constructor. Hooks all interactions into correct areas to start the
+		 *   class.
 		 *
 		 * @since 1.0.0
 		 * @since 1.1.0 Added two more filter functions, plus two more actions.
+		 * @since 1.3.0 Added one more filter, plus one more action.
+		 * @since 1.4.0 Added four more filters, plus one more action.
+		 * @since 1.5.0 Added one more filter function.
 		 */
 		public function __construct() {
 
@@ -82,6 +89,7 @@ if ( ! class_exists( 'DDWlib_Plugin_Installer_Recommendations' ) ) :
 
 			/** Deckerweb Plugins tab (Installer page) */
 			add_filter( 'install_plugins_table_api_args_ddwplugins', array( 'DDWlib_Plugin_Installer_Recommendations', 'install_plugins_table_api_args_ddwplugins' ), 1 );
+			add_filter( 'plugins_api_result', array( 'DDWlib_Plugin_Installer_Recommendations', 'install_plugins_ddwplugins_api_result' ), 10, 3 );
 			add_action( 'install_plugins_ddwplugins', array( 'DDWlib_Plugin_Installer_Recommendations', 'install_plugins_ddwplugins' ) );
 
 
@@ -165,6 +173,11 @@ if ( ! class_exists( 'DDWlib_Plugin_Installer_Recommendations' ) ) :
 					'popular'     => 'no',
 				),
 				'builder-template-categories' => array(		// by deckerweb		
+					'featured'    => 'yes',
+					'recommended' => 'yes',
+					'popular'     => 'no',
+				),
+				'builder-shortcode-extras' => array(		// by deckerweb		
 					'featured'    => 'yes',
 					'recommended' => 'yes',
 					'popular'     => 'no',
@@ -306,6 +319,7 @@ if ( ! class_exists( 'DDWlib_Plugin_Installer_Recommendations' ) ) :
 		 *   to 'yes'.
 		 *
 		 * @since 1.0.0
+		 * @since 1.5.0 Added saving into Transients to speed up performance.
 		 *
 		 * @param string $tab The tab of the plugin installer (as array key).
 		 * @return array Array of plugins for the specified tab with the proper
@@ -321,6 +335,11 @@ if ( ! class_exists( 'DDWlib_Plugin_Installer_Recommendations' ) ) :
 			/** Set array */
 			$get_plugins = array();
 
+			$transient_expiration = (int) apply_filters(
+				'ddwlib_plir/filter/transient_expiration',
+				DAY_IN_SECONDS * 7
+			);
+
 			/** Loop through plugin data arguments */
 			foreach ( $plugins as $plugin_slug => $plugin_data ) {
 
@@ -328,15 +347,37 @@ if ( ! class_exists( 'DDWlib_Plugin_Installer_Recommendations' ) ) :
 
 					$plugin_slug = sanitize_key( $plugin_slug );
 
-					$get_plugins[ $plugin_slug ] = plugins_api(
-						'plugin_information',
-						array(
-							'slug'   => $plugin_slug,
-							'fields' => $fields,
-						)
-					);
+					/** Get info for current plugin from Transient */
+					$get_plugins[ $plugin_slug ] = get_site_transient( 'ddwplir-plinfo-' . $plugin_slug );
 
-				}  // end if
+					/** If there is no info in Transient, get it fresh */
+					if ( ! $get_plugins[ $plugin_slug ] ) {
+
+						$get_plugins[ $plugin_slug ] = plugins_api(
+							'plugin_information',
+							array(
+								'slug'   => $plugin_slug,
+								'fields' => $fields,
+							)
+						);
+
+						/**
+						 * If no error on getting info, save data for current
+						 *   plugin into Transient
+						 */
+						if ( ! is_wp_error( $get_plugins[ $plugin_slug ] ) ) {
+
+							set_site_transient(
+								'ddwplir-plinfo-' . $plugin_slug,
+								$get_plugins[ $plugin_slug ],
+								$transient_expiration
+							);
+
+						}  // end if WP_Error check
+
+					}   // end if check for info for current plugin slug
+
+				}  // end if check for Installer Tab
 
 			}  // end foreach
 
@@ -347,8 +388,8 @@ if ( ! class_exists( 'DDWlib_Plugin_Installer_Recommendations' ) ) :
 
 
 		/**
-		 * Filter plugin fetching API results to inject multiple plugin recommendations
-		 *   - all via WordPress.org Plugin Directory.
+		 * Filter plugin fetching API results to inject multiple plugin
+		 *   recommendations - all via WordPress.org Plugin Directory.
 		 *
 		 * @since 1.0.0
 		 * 
@@ -555,7 +596,10 @@ if ( ! class_exists( 'DDWlib_Plugin_Installer_Recommendations' ) ) :
 					'active_installs' => TRUE
 				),
 
-				// Send the locale and installed plugin slugs to the API so it can provide context-sensitive results.
+				/**
+				 * Send the locale and installed plugin slugs to the API so it
+				 *   can provide context-sensitive results.
+				 */
 				'locale'   => get_user_locale(),
 			);
 
@@ -563,6 +607,69 @@ if ( ! class_exists( 'DDWlib_Plugin_Installer_Recommendations' ) ) :
 			$args[ 'author' ] = 'wpautobahn';
 
 			return $args;
+
+		}  // end method
+
+
+		/**
+		 * For the 'ddwplugins' tab, filter the results of the plugin API
+		 *   results.
+		 *
+		 * @since 1.5.0
+		 *
+		 * @param object $result Plugins API result object.
+		 * @param string $action The type of information being requested from
+		 *                       the Plugins Installation API.
+		 * @param object $args   Plugins API arguments.
+		 * @return object $result The modified Plugins API result.
+		 */
+		static function install_plugins_ddwplugins_api_result( $result, $action, $args ) {
+
+			if ( isset( $args->author ) && 'wpautobahn' === $args->author ) {
+
+				usort( $result->plugins, array( 'DDWlib_Plugin_Installer_Recommendations', 'install_plugins_ddwplugins_sort_callback' ) );
+
+				/** Bring "Toolbar Extras" to the top */
+				foreach ( $result->plugins as $key => $plugin ) {
+
+					$plugin_data = (array) $plugin;
+
+					if ( 'toolbar-extras' === $plugin_data[ 'slug' ] ) {
+
+						unset( $result->plugins[ $key ] );
+						array_unshift( $result->plugins, $plugin );
+
+					}  // end if
+
+				}  // end foreach
+
+			}  // end if
+
+			return $result;
+
+		}  // end method
+
+
+		/**
+		 * For 'ddwplugins' tab sort plugins returned by Plugins API by active
+		 *   install count.
+		 *
+		 * @since 1.5.0
+		 *
+		 * @param array|object $a First plugin info to compare.
+		 * @param array|object $b Second plugin info to compare.
+		 * @return array|object|null|int Resorted array of results.
+		 */
+		static function install_plugins_ddwplugins_sort_callback( $a, $b ) {
+
+			$a = (array) $a;
+			$b = (array) $b;
+
+			if ( $a[ 'active_installs' ] === $b[ 'active_installs' ] ) {
+				return 0;
+			}
+
+			return $a[ 'active_installs' ] > $b[ 'active_installs' ] ? -1 : 1;
 
 		}  // end method
 
@@ -641,6 +748,7 @@ if ( ! class_exists( 'DDWlib_Plugin_Installer_Recommendations' ) ) :
 
 		}  // end method
 
+
 		/**
 		 * Add (CSS inline) style tweaks to the following areas:
 		 *   - Plugin cards (plugin installer results)
@@ -678,7 +786,7 @@ if ( ! class_exists( 'DDWlib_Plugin_Installer_Recommendations' ) ) :
 
 			global $plugins;
 
-			if ( is_array( $plugins ) ) {
+			if ( is_array( $plugins ) && isset( $plugins[ 'all' ] ) ) {
 
 				foreach ( $plugins[ 'all' ] as $plugin_slug => $plugin_data ) {
 

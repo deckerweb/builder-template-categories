@@ -223,6 +223,7 @@ add_filter( 'manage_posts_columns', 'ddw_btc_tweak_taxonomy_column_title' );
  * @since 1.4.3 Added checks for "Flow" and "Snippet" content types.
  * @since 1.6.0 Added checks for "Sidebar", "Area", "Form" and "Script" content
  *              types.
+ * @since 1.7.0 Added checks for "URL" and "Redirect" content types.
  *
  * @uses ddw_btc_get_integration_post_types()
  * @uses ddw_btc_string_template()
@@ -322,6 +323,14 @@ function ddw_btc_tweak_taxonomy_column_title( $columns ) {
 		$columns[ 'taxonomy-builder-template-category' ] = ddw_btc_string_template( 'script' );
 	}
 
+	if ( in_array( $current_screen->post_type, $post_types[ 'urls' ] ) ) {
+		$columns[ 'taxonomy-builder-template-category' ] = ddw_btc_string_template( 'url' );
+	}
+
+	if ( in_array( $current_screen->post_type, $post_types[ 'redirects' ] ) ) {
+		$columns[ 'taxonomy-builder-template-category' ] = ddw_btc_string_template( 'redirect' );
+	}
+
 	/** Return array of column label strings */
 	return $columns;
 
@@ -342,6 +351,7 @@ add_filter( 'btc/filter/string/default_content_type', 'ddw_btc_tweak_taxonomy_la
  * @since 1.4.3 Added checks for "Flow" and "Snippet" content types.
  * @since 1.6.0 Added checks for "Sidebar", "Area", "Form" and "Script" content
  *              types.
+ * @since 1.7.0 Added checks for "URL" and "Redirect" content types.
  *
  * @uses ddw_btc_get_integration_post_types()
  * @uses ddw_btc_string_content_type()
@@ -441,6 +451,14 @@ function ddw_btc_tweak_taxonomy_labels() {
 
 	if ( in_array( ddw_btc_admin_get_current_post_type(), $post_types[ 'scripts' ] ) ) {
 		return ddw_btc_string_content_type( 'script' );
+	}
+
+	if ( in_array( ddw_btc_admin_get_current_post_type(), $post_types[ 'urls' ] ) ) {
+		return ddw_btc_string_content_type( 'url' );
+	}
+
+	if ( in_array( ddw_btc_admin_get_current_post_type(), $post_types[ 'redirects' ] ) ) {
+		return ddw_btc_string_content_type( 'redirect' );
 	}
 
 	/** If no match, return the default string ("Template") */

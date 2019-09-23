@@ -45,6 +45,7 @@ function ddw_btc_string_default_content_type() {
  * @since 1.4.1 Added "Section" content type.
  * @since 1.4.3 Added "Flow" and "Snippet" content types.
  * @since 1.6.0 Added "Sidebar", "Area" and "Form" content types.
+ * @since 1.7.0 Added "URL" and "Redirect" content types.
  *
  * @param string $content_type Type of content string stands for.
  * @return string String output based on content type.
@@ -134,6 +135,14 @@ function ddw_btc_string_content_type( $content_type ) {
 			$string = esc_attr__( 'Script', 'builder-template-categories' );
 			break;
 
+		case 'url':
+			$string = esc_attr__( 'URL', 'builder-template-categories' );
+			break;
+
+		case 'redirect':
+			$string = esc_attr__( 'Redirect', 'builder-template-categories' );
+			break;
+
 		default:
 			$string = esc_attr__( 'Template', 'builder-template-categories' );
 
@@ -174,6 +183,7 @@ function ddw_btc_string_categories() {
  * @since 1.4.1 Added "Section" content type.
  * @since 1.4.3 Added "Flow" and "Snippet" content types.
  * @since 1.6.0 Added "Sidebar", "Area", "Form" and "Script" content types.
+ * @since 1.7.0 Added "URL" and "Redirect" content types.
  *
  * @uses ddw_btc_string_categories()
  *
@@ -357,6 +367,22 @@ function ddw_btc_string_template( $string_type ) {
 			$string = sprintf(
 				/* translators: %s - label "Categories" (for example: Script Categories) */
 				esc_attr__( 'Script %s', 'builder-template-categories' ),
+				ddw_btc_string_categories()
+			);
+			break;
+
+		case 'url':
+			$string = sprintf(
+				/* translators: %s - label "Categories" (for example: Script Categories) */
+				esc_attr__( 'URL %s', 'builder-template-categories' ),
+				ddw_btc_string_categories()
+			);
+			break;
+
+		case 'redirect':
+			$string = sprintf(
+				/* translators: %s - label "Categories" (for example: Script Categories) */
+				esc_attr__( 'Redirect %s', 'builder-template-categories' ),
 				ddw_btc_string_categories()
 			);
 			break;

@@ -511,6 +511,34 @@ function ddw_btc_is_suki_blocks_active() {
 }  // end function
 
 
+/**
+ * Is Woostify Theme Pro Add-On plugin active or not?
+ *
+ * @since 1.7.0
+ *
+ * @return bool TRUE if Woostify Pro is active, FALSE otherwise.
+ */
+function ddw_btc_is_wostify_pro_active() {
+
+	return defined( 'WOOSTIFY_PRO_VERSION' );
+
+}  // end function
+
+
+/**
+ * Is Neve Pro Add-On plugin active or not?
+ *
+ * @since 1.7.0
+ *
+ * @return bool TRUE if Neve Pro is active, FALSE otherwise.
+ */
+function ddw_btc_is_neve_pro_active() {
+
+	return function_exists( 'neve_pro_run' );
+
+}  // end function
+
+
 
 /**
  * 3) Plugin integrations - for Elementor Page Builder:
@@ -733,6 +761,34 @@ function ddw_btc_is_jetsmartfilters_active() {
 function ddw_btc_is_epic_news_elements_active() {
 
 	return class_exists( '\EPIC\Init' );
+
+}  // end function
+
+
+/**
+ * Is ToolKit for Elementor plugin active or not?
+ *
+ * @since 1.7.0
+ *
+ * @return bool TRUE if plugin is active, FALSE otherwise.
+ */
+function ddw_btc_is_toolkit_elementor_active() {
+
+	return defined( 'TOOLKIT_FOR_ELEMENTOR_VERSION' );
+
+}  // end function
+
+
+/**
+ * Is Elements Kit plugin active or not?
+ *
+ * @since 1.7.0
+ *
+ * @return bool TRUE if plugin is active, FALSE otherwise.
+ */
+function ddw_btc_is_elementskit_active() {
+
+	return class_exists( 'ElementsKit' );
 
 }  // end function
 
@@ -1200,6 +1256,62 @@ function ddw_btc_is_ht_script_active() {
 function ddw_btc_is_happyforms_active() {
 
 	return ( defined( 'HAPPYFORMS_VERSION' ) || defined( 'HAPPYFORMS_UPGRADE_VERSION' ) );
+
+}  // end function
+
+
+/**
+ * Is Woody Snippets plugin active or not?
+ *
+ * @since 1.7.0
+ *
+ * @return bool TRUE if plugin is active, FALSE otherwise.
+ */
+function ddw_btc_is_woody_snippets_active() {
+
+	return defined( 'WINP_PLUGIN_VERSION' );
+
+}  // end function
+
+
+/**
+ * Is Flo Forms plugin active or not?
+ *
+ * @since 1.7.0
+ *
+ * @return bool TRUE if plugin is active, FALSE otherwise.
+ */
+function ddw_btc_is_flo_forms_active() {
+
+	return class_exists( 'Flo_Forms_Loader' );
+
+}  // end function
+
+
+/**
+ * Is Boxzilla plugin active or not?
+ *
+ * @since 1.7.0
+ *
+ * @return bool TRUE if plugin is active, FALSE otherwise.
+ */
+function ddw_btc_is_boxzilla_active() {
+
+	return defined( 'BOXZILLA_VERSION' );
+
+}  // end function
+
+
+/**
+ * Is Holler Box plugin active or not?
+ *
+ * @since 1.7.0
+ *
+ * @return bool TRUE if plugin is active, FALSE otherwise.
+ */
+function ddw_btc_is_holler_box_active() {
+
+	return class_exists( 'Holler_Box' );
 
 }  // end function
 

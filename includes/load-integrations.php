@@ -200,6 +200,24 @@ if ( ddw_btc_is_suki_blocks_active() ) {
 }
 
 
+/**
+ * Theme: Woostify - via "Woostify Pro" Add-On Plugin (Premium)
+ * @since 1.7.0
+ */
+if ( ddw_btc_is_wostify_pro_active() ) {
+	require_once BTC_PLUGIN_DIR . 'includes/integrations/integration-woostify.php';
+}
+
+
+/**
+ * Theme: Neve - via "Neve Pro" Add-On Plugin (Premium)
+ * @since 1.7.0
+ */
+if ( ddw_btc_is_neve_pro_active() ) {
+	require_once BTC_PLUGIN_DIR . 'includes/integrations/integration-neve.php';
+}
+
+
 
 /**
  * 3) Plugin integrations - for Elementor Page Builder:
@@ -330,6 +348,26 @@ if ( ddw_btc_is_jetsmartfilters_active() ) {
  */
 if ( ddw_btc_is_epic_news_elements_active() ) {
 	require_once BTC_PLUGIN_DIR . 'includes/integrations/integration-epic-news-elements.php';
+}
+
+
+/**
+ * Plugin: ToolKit for Elementor
+ * @since 1.7.0
+ */
+if ( ddw_btc_is_toolkit_elementor_active()
+	&& ( ddw_btc_is_elementor_active() && ! ddw_btc_is_elementor_pro_active() )		// depending on Elementor but only for free version
+) {
+	require_once BTC_PLUGIN_DIR . 'includes/integrations/integration-toolkit-elementor.php';
+}
+
+
+/**
+ * Plugin: Elements Kit
+ * @since 1.7.0
+ */
+if ( ddw_btc_is_elementskit_active() ) {
+	require_once BTC_PLUGIN_DIR . 'includes/integrations/integration-elements-kit.php';
 }
 
 
@@ -607,6 +645,42 @@ if ( ddw_btc_is_ht_script_active() ) {
  */
 if ( ddw_btc_is_happyforms_active() ) {
 	require_once BTC_PLUGIN_DIR . 'includes/integrations/integration-happyforms.php';
+}
+
+
+/**
+ * Plugin: Woody Snippets
+ * @since 1.7.0
+ */
+if ( ddw_btc_is_woody_snippets_active() ) {
+	require_once BTC_PLUGIN_DIR . 'includes/integrations/integration-woody-snippets.php';
+}
+
+
+/**
+ * Plugin: Flo Forms
+ * @since 1.7.0
+ */
+if ( ddw_btc_is_flo_forms_active() ) {
+	require_once BTC_PLUGIN_DIR . 'includes/integrations/integration-flo-forms.php';
+}
+
+
+/**
+ * Plugin: Boxzilla
+ * @since 1.7.0
+ */
+if ( ddw_btc_is_boxzilla_active() ) {
+	require_once BTC_PLUGIN_DIR . 'includes/integrations/integration-boxzilla.php';
+}
+
+
+/**
+ * Plugin: Holler Box
+ * @since 1.7.0
+ */
+if ( ddw_btc_is_holler_box_active() ) {
+	require_once BTC_PLUGIN_DIR . 'includes/integrations/integration-holler-box.php';
 }
 
 
