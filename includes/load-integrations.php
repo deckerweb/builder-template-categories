@@ -763,3 +763,12 @@ if ( ddw_btc_is_block_templates_active() ) {
 if ( ddw_btc_is_block_areas_active() ) {
 	require_once BTC_PLUGIN_DIR . 'includes/integrations/integration-block-areas.php';
 }
+
+
+/**
+ * Plugin: Reusable Blocks Extended
+ * @since 1.8.0
+ */
+if ( ddw_btc_is_reusable_blocks_extended_active() ) {
+	require_once BTC_PLUGIN_DIR . 'includes/integrations/integration-reusable-blocks-extended.php';
+}

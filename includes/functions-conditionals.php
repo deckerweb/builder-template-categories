@@ -1691,3 +1691,17 @@ function ddw_btc_is_block_areas_active() {
 	return function_exists( 'block_areas' );
 
 }  // end function
+
+
+/**
+ * Is the Reusable Blocks Extended plugin active or not?
+ *
+ * @since 1.8.0
+ *
+ * @return bool TRUE if plugin is active, FALSE otherwise.
+ */
+function ddw_btc_is_reusable_blocks_extended_active() {
+
+	return function_exists( 'reblex_reusable_screen_enqueues' );
+
+}  // end function

@@ -347,14 +347,6 @@ function ddw_btc_content_help_tab() {
 
 		ddw_btc_get_info_link( 'url_plugin', esc_html__( 'Plugin website', 'builder-template-categories' ), 'button' ) .
 
-		'&nbsp;&nbsp;' . ddw_btc_get_info_link( 'url_plugin_faq', esc_html_x( 'FAQ', 'Help tab info', 'builder-template-categories' ), 'button' ) .
-
-		'&nbsp;&nbsp;' . ddw_btc_get_info_link( 'url_wporg_forum', esc_html_x( 'Support', 'Help tab info', 'builder-template-categories' ), 'button' ) .
-
-		'&nbsp;&nbsp;' . ddw_btc_get_info_link( 'url_fb_group', esc_html_x( 'Facebook Group', 'Help tab info', 'builder-template-categories' ), 'button' ) .
-
-		'&nbsp;&nbsp;' . ddw_btc_get_info_link( 'url_translate', esc_html_x( 'Translations', 'Help tab info', 'builder-template-categories' ), 'button' ) .
-
 		'&nbsp;&nbsp;' . ddw_btc_get_info_link( 'url_donate', esc_html_x( 'Donate', 'Help tab info', 'builder-template-categories' ), 'button dashicons-before dashicons-thumbs-up btc' ) .
 
 		'&nbsp;&nbsp;' . ddw_btc_get_info_link( 'url_newsletter', esc_html_x( 'Join our Newsletter', 'Help tab info', 'builder-template-categories' ), 'button button-primary dashicons-before dashicons-awards btc' ) .
@@ -386,8 +378,6 @@ function ddw_btc_content_help_sidebar() {
 		'<p>' . ddw_btc_get_info_link( 'url_snippets', esc_html__( 'Code Snippets', 'builder-template-categories' ), 'btc-help-sidebar-icons dashicons-before dashicons-editor-code' ) . '</p>';
 
 	$btc_help_sidebar_content .= '<h4>' . __( 'Connect', 'builder-template-categories' ) . ':</h4>' .
-		'<p><strong>' . ddw_btc_get_info_link( 'url_fb_group', __( 'Facebook Group', 'builder-template-categories' ), 'btc-help-sidebar-icons dashicons-before dashicons-facebook' ) . '</strong></p>' .
-		'<p>' . ddw_btc_get_info_link( 'url_twitter', 'Twitter', 'btc-help-sidebar-icons dashicons-before dashicons-twitter' ) . '</p>' .
 		'<p>' . ddw_btc_get_info_link( 'url_github_follow', 'GitHub', 'btc-help-sidebar-icons dashicons-before dashicons-admin-users' ) . '</p>' .
 		'<p>' . ddw_btc_get_info_link( 'author_uri', 'DECKERWEB', 'btc-help-sidebar-icons dashicons-before dashicons-networking' ) . '</p>' .
 		'<p>' . ddw_btc_get_info_link( 'url_wporg_profile', 'WordPress.org', 'btc-help-sidebar-icons dashicons-before dashicons-wordpress' ) . '</p>';

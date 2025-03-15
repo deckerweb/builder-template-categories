@@ -1,10 +1,5 @@
 # Builder Template Categories - for WordPress Page Builders 
 
-[![Plugin Version](https://img.shields.io/wordpress/plugin/v/builder-template-categories.svg)](https://wordpress.org/plugins/builder-template-categories/)
-[![WordPress Version Compatibility](https://img.shields.io/wordpress/v/builder-template-categories.svg)](https://wordpress.org/plugins/builder-template-categories/)
-[![Downloads](https://img.shields.io/wordpress/plugin/dt/builder-template-categories.svg)](https://wordpress.org/plugins/builder-template-categories/)
-[![Rating](https://img.shields.io/wordpress/plugin/r/builder-template-categories.svg)](https://wordpress.org/plugins/builder-template-categories/)
-
 **Contributors:** daveshine, deckerweb, wpautobahn, toolbarextras  
 **Donate link:** https://www.paypal.me/deckerweb  
 **Tags:** elementor, page builder, templates, gutenberg, blocks, oceanwp, astra, generatepress, genesis, categories, template, deckerweb  
@@ -496,6 +491,10 @@ As of version 1.5.0 of the plugin the following was achieved:
 
 ## Changelog 
 
+### 1.8.0 – March 2025
+_Currently being worked on!_
+
+
 ### 🎉 1.7.0 - 2019-09-23 
 * New: Extended integration with plugin JetEngine (Premium, by Zemez Jet/ CrocoBlock) for Form Categories
 * New: Added integration with plugin ToolKit for Elementor (Premium, by ToolKit for Elementor)
@@ -686,66 +685,6 @@ As of version 1.5.0 of the plugin the following was achieved:
 * New: Beta release of the plugin on [its public GitHub repository](https://github.com/deckerweb/builder-template-categories)
 
 
-## Upgrade Notice 
-
-### 1.7.0
-Feature Release with 9 new integrations. - **Update highly recommended!** :-)
-
-### 1.6.0
-Feature Release with 13 new integrations. - **Update highly recommended!** :-)
-
-
-### 1.5.1
-Now with WordPress 5.2 Site Health integration. Plus few internal improvements. - **Update highly recommended!**
-
-### 1.5.0
-Feature Release with 5 new integrations. - **Update highly recommended!** :-)
-
-
-### 1.4.3
-New template content types. Elementor 2.4.0 compatibility. - **Update highly recommended!** :-)
-
-
-### 1.4.2
-New template content type; admin CSS fixes; internal library update; smaller tweaks. - **Update recommended!** :-)
-
-
-### 1.4.1
-New template content type; internal library update; smaller tweaks. - **Update recommended!** :-)
-
-
-### 1.4.0
-Feature release with 10 new integrations added. Plus integration with new "Elementor Finder" feature (interactive search). Also proper highlighting of our taxonomy in submenus in Admin, among other tweaks & improvements. &ndash; Update highly recommended!
-
-
-### 1.3.0
-Feature release with 10 new integrations added. Enhanced Gutenberg / Block Editor support for (upcoming) WordPress 5.0. Plus smaller tweaks and improvements overall. &ndash; Update highly recommended!
-
-
-### 1.2.0
-Feature release with 11 new integrations added. Gutenberg / Block Editor support for (upcoming) WordPress 5.0. Plus smaller tweaks and improvements overall. &ndash; Update highly recommended!
-
-
-### 1.1.0
-Feature release with 9 new integrations added. Also major improvements to category labels, now fitting to the integrated content/post type. Plus smaller tweaks and improvements overall. &ndash; Update highly recommended!
-
-
-### 1.0.1
-Added integration for Brizy Page Builder. Further tweaks and improvements. Update recommended.
-
-
-### 1.0.0 
-Official plugin launch. Everything's new!
-
-
-### 0.9.1 
-Additions for GitHub.com repo.
-
-
-### 0.9.0 
-Beta plugin release on GitHub.com
-
-
 ## ☺️ Donate 
 Enjoy using *Builder Template Categories*? **[Please consider making a donation](https://www.paypal.me/deckerweb)** - every donation helps to support the project's continued development, maintenance and support.
 **Thank you very much in advance for your support!**
@@ -753,26 +692,3 @@ Enjoy using *Builder Template Categories*? **[Please consider making a donation]
 
 ## Additional Info 
 **Idea Behind / Philosophy:** Just a little lightweight plugin for all the Non-Coder site builders out there using plugins or themes with template libraries and wanting to categorize these templates. Just making their daily work and life just a little easier.
-
-
-## Last but not least 
-**Special Thanks go out to my family for allowing me to do such spare time projects (aka free plugins) and supporting me in every possible way!**
-
-
-## 🔆 My Other Plugins
-* [**Toolbar Extras for Elementor - WordPress Admin Bar Enhanced**](https://wordpress.org/plugins/toolbar-extras/)
-* [**Toolbar Extras for Give Donations (GiveWP) - Add-On plugin**](https://wordpress.org/plugins/toolbar-extras-givewp/)
-* [**Toolbar Extras for MainWP Dashboard - Add-On plugin**](https://wordpress.org/plugins/toolbar-extras-mainwp/)
-* [**Toolbar Extras for Oxygen Builder - Add-On plugin**](https://wordpress.org/plugins/toolbar-extras-oxygen/)
-* [**Builder Shortcode Extras – WordPress Shortcodes Collection to Save You Time**](https://wordpress.org/plugins/builder-shortcode-extras/)
-* [**Polylang Connect for Elementor – Language Switcher & Template Tweaks**](https://wordpress.org/plugins/connect-polylang-elementor/)
-* [**Simple Download Manager for WP Document Revisions**](https://wordpress.org/plugins/wpdr-simple-downloads/)
-* [Genesis What's New Info](https://wordpress.org/plugins/genesis-whats-new-info/)
-* [Genesis Layout Extras](https://wordpress.org/plugins/genesis-layout-extras/)
-* [Genesis Widgetized Not Found & 404](https://wordpress.org/plugins/genesis-widgetized-notfound/)
-* [Genesis Extra Settings Transporter](https://wordpress.org/plugins/genesis-extra-settings-transporter/)
-* [Genesis Widgetized Footer](https://wordpress.org/plugins/genesis-widgetized-footer/)
-* [Genesis Widgetized Archive](https://wordpress.org/plugins/genesis-widgetized-archive/)
-* [Multisite Toolbar Additions](https://wordpress.org/plugins/multisite-toolbar-additions/)
-* [Cleaner Plugin Installer](https://wordpress.org/plugins/cleaner-plugin-installer/)
-* [*My plugins newsletter*](https://eepurl.com/gbAUUn)
