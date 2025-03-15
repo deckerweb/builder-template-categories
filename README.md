@@ -2,7 +2,7 @@
 
 Organize your Page Builder Templates in the WordPress Admin. Better overview, don't get lost. Time saver. With extended plugin & theme support.
 
-![Builder Template Categories plugin banner](https://raw.githubusercontent.com/deckerweb/builder-template-categories/master/assets-github/btc-banner.png)
+![Builder Template Categories plugin banner](https://raw.githubusercontent.com/deckerweb/builder-template-categories/master/assets-repos/github-com/btc-banner.png)
 
 ### Tested Compatibility
 - **WordPress**: 6.7.2
