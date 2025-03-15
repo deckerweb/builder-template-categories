@@ -1,18 +1,50 @@
-# Builder Template Categories - for WordPress Page Builders 
-
-**Contributors:** daveshine, deckerweb, wpautobahn, toolbarextras  
-**Donate link:** https://www.paypal.me/deckerweb  
-**Tags:** elementor, page builder, templates, gutenberg, blocks, oceanwp, astra, generatepress, genesis, categories, template, deckerweb  
-**Requires at least:** 4.7  
-**Tested up to:** 5.2  
-**Requires PHP:** 5.6  
-**Stable tag:** 1.7.0  
-**License:** GPL-2.0-or-later  
-**License URI:** https://opensource.org/licenses/GPL-2.0  
+# Builder Template Categories - for WordPress Page Builders
 
 Organize your Page Builder Templates in the WordPress Admin. Better overview, don't get lost. Time saver. With extended plugin & theme support.
 
-[<img src="https://raw.githubusercontent.com/deckerweb/builder-template-categories/master/assets-repos/github-com/btc-banner.png" data-canonical-src="https://raw.githubusercontent.com/deckerweb/builder-template-categories/master/assets-repos/github-com/btc-banner.png" width="772" height="250" />](https://wordpress.org/plugins/builder-template-categories/)
+![Builder Template Categories plugin banner](https://raw.githubusercontent.com/deckerweb/builder-template-categories/master/assets-github/btc-banner.png)
+
+### Tested Compatibility
+- **WordPress**: 6.7.2
+- **PHP**: 8.3+
+- Requires at least: WP 6.7 / PHP 7.4
+
+---
+
+[Support Project](#support-the-project) | [Installation](#installation) | [Description](#description) | [Frequently Asked Questions](#frequently-asked-questions) | [Screenshots](#screenshots) | [Changelog](#changelog) | [Plugin Scope / Disclaimer](#plugin-scope--disclaimer)
+
+---
+
+## Support the Project
+
+If you find this project helpful, consider showing your support by buying me a coffee! Your contribution helps me keep developing and improving this plugin.
+
+Enjoying the plugin? Feel free to treat me to a cup of coffee ☕🙂 through the following options:
+
+- [![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/W7W81BNTZE)
+- [Buy me a coffee](https://buymeacoffee.com/daveshine)
+- [PayPal donation](https://paypal.me/deckerweb)
+
+---
+
+## Installation
+
+**Quick Install – as Plugin**
+1. **Download ZIP:** [**builder-template-categories.zip**](https://github.com/deckerweb/builder-template-categories/releases/latest/download/builder-template-categories.zip)
+2. Upload via WordPress Plugins > Add New > Upload Plugin
+3. Go to your already active plugin or theme which has the template library and you'll see the additional template category as a new submenu item (for example: "Template Categories").
+4. Now enjoy organizing your templates, get better overview and save time ;-)
+
+
+### Minimum Requirements 
+
+* WordPress version 6.7 or higher
+* PHP version 7.4 or higher (better 8.3+)
+* MySQL version 5.6 or higher / OR MariaDB 10.1 or higher
+* Administrator user with capability `edit_theme_options`
+* HTTPS support
+
+---
 
 ## Description 
 
@@ -147,76 +179,11 @@ Please note: The categories are global but when filtering only those items are l
 * [**Block Areas**](https://wordpress.org/plugins/block-areas/) Plugin - **Areas** (Templates for Theme/Block Areas)
 
 
-### 👍 Recommended Time Saver 
-Try [**Toolbar Extras**](https://toolbarextras.com/) my other plugin for Site Builders and admins: Building sites with Elementor? [**Your work will get easier & faster with Toolbar Extras.**](https://wordpress.org/plugins/toolbar-extras/) With extended plugin & theme support baked right in. Of course, "Builder Template Categories" is integrated as well :)
-
-* [Plugin Page here on WordPress.org](https://wordpress.org/plugins/toolbar-extras/)
-* [Plugin's own website toolbarextras.com](https://toolbarextras.com/)
-* In your WordPress admin dashboard search for `toolbar extras` in the plugin installer ;-)
-
-
 ### ℹ️ Important: Required/ Recommended for plugin usage 
 * Required: User has role `Administrator` (needed capability `edit_theme_options`)
 * Required: User is logged in (of course)
 
-
-### 🌎 Translations 
-* English (United States) - `en_US` = default, always included
-* [German (informal, default)](https://translate.wordpress.org/locale/de/default/wp-plugins/builder-template-categories) - `de_DE` - always included
-* [German (formal)](https://translate.wordpress.org/locale/de/formal/wp-plugins/builder-template-categories) - `de_DE_formal` - always included
-* [French](https://translate.wordpress.org/locale/fr/default/wp-plugins/builder-template-categories) - `fr_FR` - [by the community, thanks to Bruno Tritsch](https://wp-traduction.com/)
-* `.pot` file (`builder-template-categories.pot`) for translators is always included in the plugin's 'languages' folder :)
-
-
-### 👍 Be a Contributor 
-If you want to translate, [go to the Translation Portal at translate.wordpress.org](https://translate.wordpress.org/projects/wp-plugins/builder-template-categories).
-
-You can also contribute code-wise via our [Builder Template Categories GitHub Repository](https://github.com/deckerweb/builder-template-categories) - and see where you can help.
-
-
-### 📝 Documentation and Support 
-* If you have any more questions, visit our support on the [Plugin's Forum](https://wordpress.org/support/plugin/builder-template-categories).
-
-
-### ⚡ Liked Builder Template Categories? 
-* **Rate us 5 ⭐ stars** on [WordPress.org](https://wordpress.org/support/plugin/builder-template-categories/reviews/?filter=5/#new-post) :)
-* Join our [**Facebook User Community Support Group** 💬](https://www.facebook.com/groups/deckerweb.wordpress.plugins/)
-* Like 👍 our [**Facebook Info Page for Deckerweb Plugins**](https://www.facebook.com/deckerweb.wordpress.plugins/)
-* [**Subscribe to my Newsletter for insider info on this plugin** 💯](https://eepurl.com/gbAUUn), plus tutorials and more stuff on deckerweb WordPress plugins - join a thriving community of site builders!
-* [**Become a Patron** 💜](https://www.patreon.com/deckerweb) and support ongoing development, maintenance and support of this plugin
-
-
-### ☕ This Plugin ... 
-* ... scratches my own itch!
-* ... is *Quality Made in Germany*
-* ... was created with love (plus some coffee) :-) - [if you like it consider donating](https://www.paypal.me/deckerweb)
-
-
-## Installation 
-
-
-### Minimum Requirements 
-
-* WordPress version 4.7 or higher
-* PHP version 5.6.20 or higher
-* MySQL version 5.0 or higher
-* Administrator user with capability `edit_theme_options`
-
-
-### We Recommend Your Host Supports at least: 
-
-* PHP version 7.2 or higher
-* MySQL version 5.6 or higher / OR MariaDB 10.1 or higher
-* HTTPS support
-
-
-### Installation 
-
-1. Install using the WordPress built-in Plugin installer (via **Plugins > Add New** - search for `builder template categories`), or extract the ZIP file and drop the contents in the `wp-content/plugins/` directory of your WordPress installation.
-2. Activate the plugin through the 'Plugins' menu in WordPress.
-3. Go to your already active plugin or theme which has the template library and you'll see the additional template category as a new submenu item (for example: "Template Categories").
-4. Now enjoy organizing your templates, get better overview and save time ;-)
-
+---
 
 ## Frequently Asked Questions 
 
@@ -439,7 +406,7 @@ As of version 1.5.0 of the plugin the following was achieved:
 * Up to 76 different post types (of integrations) supported
 * 16 generic template content types, plus 1 plugin-specific template content type
 
-
+---
 
 ## Screenshots 
 
@@ -487,12 +454,15 @@ As of version 1.5.0 of the plugin the following was achieved:
 ![Editing a Reusable Block - adding the "Builder Template Categories" taxonomy via the new Block Editor JavaScript-based meta box](https://ps.w.org/builder-template-categories/assets/screenshot-11.png)
 
 
-
+---
 
 ## Changelog 
 
 ### 1.8.0 – March 2025
 _Currently being worked on!_
+* Brought back plugin into a more lightweight and working state as it was originally intended!
+* Some info links, help texts, plus the _DDWlib Plugin Installer Recommendations_ library got removed, it is no longer wanted/supported anyways
+* **Note:** No longer in the .org plugin repo available – thanks to Matt... (I've taken it out myself as I have no longer interest in WordPress.org repo strategy) – just install yourself via ZIP file, see above under [**Installation**](#installation)
 
 
 ### 🎉 1.7.0 - 2019-09-23 
@@ -684,11 +654,20 @@ _Currently being worked on!_
 ### ⚡ 0.9.0 - 2018-08-16 
 * New: Beta release of the plugin on [its public GitHub repository](https://github.com/deckerweb/builder-template-categories)
 
+---
 
-## ☺️ Donate 
-Enjoy using *Builder Template Categories*? **[Please consider making a donation](https://www.paypal.me/deckerweb)** - every donation helps to support the project's continued development, maintenance and support.
-**Thank you very much in advance for your support!**
+## Plugin Scope / Disclaimer
 
+**Original Idea Behind / Philosophy:** Just a little lightweight plugin for all the Non-Coder site builders out there using plugins or themes with template libraries and wanting to categorize these templates. Just making their daily work and life just a little easier.
 
-## Additional Info 
-**Idea Behind / Philosophy:** Just a little lightweight plugin for all the Non-Coder site builders out there using plugins or themes with template libraries and wanting to categorize these templates. Just making their daily work and life just a little easier.
+This plugin comes as is.
+
+_Disclaimer 1:_ So far I will support the plugin for breaking errors to keep it working. Otherwise support will be very limited. Also, it will NEVER be released to WordPress.org Plugin Repository for a lot of reasons (ah, thanks, Matt!).
+
+_Disclaimer 2:_ All of the above might change. I do all this stuff only in my spare time.
+
+_Most of all:_ Have fun building great sites!!! ;-)
+
+---
+
+Copyright © 2018-2025 David Decker – DECKERWEB.de

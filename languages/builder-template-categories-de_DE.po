@@ -1,17 +1,17 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Builder Template Categories\n"
-"POT-Creation-Date: 2019-09-23 15:21+0200\n"
-"PO-Revision-Date: 2019-09-23 15:21+0200\n"
-"Last-Translator: David Decker DECKERWEB.de -- https://deckerweb.de/\n"
-"Language-Team: David Decker DECKERWEB.de -- https://deckerweb.de/\n"
+"POT-Creation-Date: 2025-03-15 18:08+0100\n"
+"PO-Revision-Date: 2025-03-15 18:08+0100\n"
+"Last-Translator: David Decker DECKERWEB.de <David Decker DECKERWEB.de>\n"
+"Language-Team: David Decker DECKERWEB.de\n"
 "Language: de_DE\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.2.3\n"
-"X-Poedit-Basepath: ..\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.5\n"
+"X-Poedit-Basepath: ..\n"
 "X-Poedit-Flags-xgettext: --add-comments=translators:\n"
 "X-Poedit-WPHeader: builder-template-categories.php\n"
 "X-Poedit-SourceCharset: UTF-8\n"
@@ -23,9 +23,9 @@ msgstr ""
 
 #. translators: Title attribute for Builder Template Categories taxonomy link
 #. Plugin Name of the plugin/theme
-#: includes/admin/admin-extras.php:57 includes/admin/admin-extras.php:225
-#: includes/admin/admin-extras.php:282 includes/admin/admin-help.php:238
-#: includes/admin/admin-help.php:312 includes/admin/admin-help.php:317
+#: includes/admin/admin-extras.php:57 includes/admin/admin-extras.php:221
+#: includes/admin/admin-help.php:238 includes/admin/admin-help.php:312
+#: includes/admin/admin-help.php:317
 msgid "Builder Template Categories"
 msgstr "Builder Template-Kategorien"
 
@@ -36,118 +36,46 @@ msgstr "Template-Kategorien"
 
 #: includes/admin/admin-extras.php:98
 msgctxt "Plugins page listing"
-msgid "Support"
-msgstr "Support"
-
-#: includes/admin/admin-extras.php:105
-msgctxt "Plugins page listing"
-msgid "Facebook Group"
-msgstr "Facebook-Gruppe"
-
-#: includes/admin/admin-extras.php:112
-msgctxt "Plugins page listing"
-msgid "Translations"
-msgstr "Übersetzungen"
-
-#: includes/admin/admin-extras.php:119
-msgctxt "Plugins page listing"
 msgid "Code Snippets"
 msgstr "Code-Snippets"
 
-#: includes/admin/admin-extras.php:126
+#: includes/admin/admin-extras.php:105
 msgctxt "Plugins page listing"
 msgid "Donate"
 msgstr "Spenden"
 
-#: includes/admin/admin-extras.php:133
+#: includes/admin/admin-extras.php:112
 msgctxt "Plugins page listing"
 msgid "Join our Newsletter"
 msgstr "Newsletter jetzt!"
 
-#. translators: %s - 5 stars icons
-#: includes/admin/admin-extras.php:218
-#, php-format
-msgid "%s rating"
-msgstr "%s Bewertung"
-
-#. translators: 1 - Plugin name "Builder Template Categories" / 2 - label "5 star rating"
-#: includes/admin/admin-extras.php:224
-#, php-format
-msgid ""
-"Enjoyed %1$s? Please leave us a %2$s. We really appreciate your support!"
-msgstr ""
-"Gefällt dir %1$s? Dann gib uns bitte eine %2$s. Wir schätzen deine "
-"Unterstützung!"
-
-#: includes/admin/admin-extras.php:272
+#: includes/admin/admin-extras.php:211
 msgid "No integration(s) active"
 msgstr "Keine Integration(en) aktiv"
 
-#: includes/admin/admin-extras.php:275
+#: includes/admin/admin-extras.php:214
 msgid "Enabled"
 msgstr "Aktiviert "
 
-#: includes/admin/admin-extras.php:276
+#: includes/admin/admin-extras.php:215
 msgid "Disabled"
 msgstr "Deaktiviert"
 
-#: includes/admin/admin-extras.php:282 includes/admin/admin-help.php:312
+#: includes/admin/admin-extras.php:221 includes/admin/admin-help.php:312
 msgid "Plugin"
 msgstr "Plugin"
 
-#: includes/admin/admin-extras.php:285
+#: includes/admin/admin-extras.php:224
 msgid "Plugin version"
 msgstr "Plugin-Version"
 
-#: includes/admin/admin-extras.php:289
+#: includes/admin/admin-extras.php:228
 msgid "Current active integrations"
 msgstr "Derzeit aktive Integrationen"
 
-#: includes/admin/admin-extras.php:293
+#: includes/admin/admin-extras.php:232
 msgid "Reusable Blocks Post Type UI"
 msgstr "Wiederverwendbare Blöcke Inhaltstyp-Interface"
-
-#: includes/admin/admin-extras.php:532
-msgctxt "Plugin installer: Tab name in installer toolbar"
-msgid "Newest"
-msgstr "Neueste"
-
-#: includes/admin/admin-extras.php:538
-msgctxt "Plugin card: plugin version"
-msgid "Version:"
-msgstr "Version:"
-
-#: includes/admin/admin-extras.php:544
-msgctxt "Plugin installer: Tab name in installer toolbar"
-msgid "deckerweb Plugins"
-msgstr "deckerweb Plugins"
-
-#: includes/admin/admin-extras.php:550
-msgctxt "Plugin installer: Page title"
-msgid "deckerweb Plugins"
-msgstr "deckerweb Plugins"
-
-#: includes/admin/admin-extras.php:555
-msgid ""
-"Great helper tools for Site Builders to save time and get more productive"
-msgstr ""
-"Großartige Helferlein-Plugins für Site-Builder, um wertvolle Zeit zu sparen "
-"und noch produktiver zu werden."
-
-#: includes/admin/admin-extras.php:558
-#, php-format
-msgid "You can use any of our free plugins or premium plugins from %s"
-msgstr ""
-"Du kannst jedes unserer kostenlosen Plugins oder Premium-Plugins von %s "
-"verwenden."
-
-#: includes/admin/admin-extras.php:562
-msgid "Join our Newsletter"
-msgstr "Newsletter jetzt!"
-
-#: includes/admin/admin-extras.php:564
-msgid "Facebook User Group"
-msgstr "Facebook-Nutzergruppe"
 
 #: includes/admin/admin-help.php:30
 msgid ""
@@ -231,49 +159,25 @@ msgstr "Plugin-Webseite"
 
 #: includes/admin/admin-help.php:350
 msgctxt "Help tab info"
-msgid "FAQ"
-msgstr "FAQ - Häufige Fragen"
-
-#: includes/admin/admin-help.php:352
-msgctxt "Help tab info"
-msgid "Support"
-msgstr "Support"
-
-#: includes/admin/admin-help.php:354
-msgctxt "Help tab info"
-msgid "Facebook Group"
-msgstr "Facebook-Gruppe"
-
-#: includes/admin/admin-help.php:356
-msgctxt "Help tab info"
-msgid "Translations"
-msgstr "Übersetzungen"
-
-#: includes/admin/admin-help.php:358
-msgctxt "Help tab info"
 msgid "Donate"
 msgstr "Spenden"
 
-#: includes/admin/admin-help.php:360
+#: includes/admin/admin-help.php:352
 msgctxt "Help tab info"
 msgid "Join our Newsletter"
 msgstr "Newsletter jetzt!"
 
-#: includes/admin/admin-help.php:385
+#: includes/admin/admin-help.php:377
 msgid "Customize"
 msgstr "Anpassen"
 
-#: includes/admin/admin-help.php:386
+#: includes/admin/admin-help.php:378
 msgid "Code Snippets"
 msgstr "Code-Snippets"
 
-#: includes/admin/admin-help.php:388
+#: includes/admin/admin-help.php:380
 msgid "Connect"
 msgstr "Vernetzen"
-
-#: includes/admin/admin-help.php:389
-msgid "Facebook Group"
-msgstr "Facebook-Gruppe"
 
 #: includes/functions-global.php:49
 msgid "No Integration registered"
@@ -1422,6 +1326,82 @@ msgstr ""
 #. Author URI of the plugin/theme
 msgid "https://deckerweb.de/"
 msgstr "https://deckerweb.de/"
+
+#~ msgctxt "Plugins page listing"
+#~ msgid "Support"
+#~ msgstr "Support"
+
+#~ msgctxt "Plugins page listing"
+#~ msgid "Facebook Group"
+#~ msgstr "Facebook-Gruppe"
+
+#~ msgctxt "Plugins page listing"
+#~ msgid "Translations"
+#~ msgstr "Übersetzungen"
+
+#, php-format
+#~ msgid "%s rating"
+#~ msgstr "%s Bewertung"
+
+#, php-format
+#~ msgid ""
+#~ "Enjoyed %1$s? Please leave us a %2$s. We really appreciate your support!"
+#~ msgstr ""
+#~ "Gefällt dir %1$s? Dann gib uns bitte eine %2$s. Wir schätzen deine "
+#~ "Unterstützung!"
+
+#~ msgctxt "Plugin installer: Tab name in installer toolbar"
+#~ msgid "Newest"
+#~ msgstr "Neueste"
+
+#~ msgctxt "Plugin card: plugin version"
+#~ msgid "Version:"
+#~ msgstr "Version:"
+
+#~ msgctxt "Plugin installer: Tab name in installer toolbar"
+#~ msgid "deckerweb Plugins"
+#~ msgstr "deckerweb Plugins"
+
+#~ msgctxt "Plugin installer: Page title"
+#~ msgid "deckerweb Plugins"
+#~ msgstr "deckerweb Plugins"
+
+#~ msgid ""
+#~ "Great helper tools for Site Builders to save time and get more productive"
+#~ msgstr ""
+#~ "Großartige Helferlein-Plugins für Site-Builder, um wertvolle Zeit zu "
+#~ "sparen und noch produktiver zu werden."
+
+#, php-format
+#~ msgid "You can use any of our free plugins or premium plugins from %s"
+#~ msgstr ""
+#~ "Du kannst jedes unserer kostenlosen Plugins oder Premium-Plugins von %s "
+#~ "verwenden."
+
+#~ msgid "Join our Newsletter"
+#~ msgstr "Newsletter jetzt!"
+
+#~ msgid "Facebook User Group"
+#~ msgstr "Facebook-Nutzergruppe"
+
+#~ msgctxt "Help tab info"
+#~ msgid "FAQ"
+#~ msgstr "FAQ - Häufige Fragen"
+
+#~ msgctxt "Help tab info"
+#~ msgid "Support"
+#~ msgstr "Support"
+
+#~ msgctxt "Help tab info"
+#~ msgid "Facebook Group"
+#~ msgstr "Facebook-Gruppe"
+
+#~ msgctxt "Help tab info"
+#~ msgid "Translations"
+#~ msgstr "Übersetzungen"
+
+#~ msgid "Facebook Group"
+#~ msgstr "Facebook-Gruppe"
 
 #~ msgid "Block Categories"
 #~ msgstr "Block-Kategorien"
