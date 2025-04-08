@@ -1,6 +1,6 @@
 {
   "name": "deckerweb/builder-template-categories",
-  "description": "WordPress plugin that enhances the default Shortcodes of the Genesis Framework with a Shortcode UI powered by the Shortcake plugin.",
+  "description": "WordPress plugin that adds a Taxonomy Template Category for categorizing templates to make the life of site builders a little bit easier. Integrates with Page Builders and other plugins.",
   "keywords": ["templates", "categories", "template", "category", "elementor", "page builder", "pods", "astra", "generatepress", "oceanwp", "crocoblock"],
   "type": "wordpress-plugin",
   "homepage": "https://github.com/deckerweb/builder-template-categories",
@@ -17,6 +17,6 @@
     "source": "https://github.com/deckerweb/builder-template-categories"
   },
   "require": {
-    "php": ">=5.6.20"
+    "php": ">=7.4"
   }
 }
