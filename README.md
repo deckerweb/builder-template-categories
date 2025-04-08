@@ -2,16 +2,19 @@
 
 Organize your Page Builder Templates in the WordPress Admin. Better overview, don't get lost. Time saver. With extended plugin & theme support.
 
-![Builder Template Categories plugin banner](https://raw.githubusercontent.com/deckerweb/builder-template-categories/master/assets-repos/github-com/btc-banner.png)
+![Builder Template Categories plugin banner](https://repository-images.githubusercontent.com/145009110/9489867d-0af3-407a-a366-15c54a3de5a4)
 
-### Tested Compatibility
-- **WordPress**: 6.7.2
-- **PHP**: 8.3+
-- Requires at least: WP 6.7 / PHP 7.4
+* Contributors: [David Decker](https://github.com/deckerweb), [contributors](https://github.com/deckerweb/builder-template-categories/graphs/contributors)
+* Tags: elementor, page builder, templates, gutenberg, blocks, oceanwp, astra, generatepress, genesis, categories, template, deckerweb
+* Requires at least: 5.2
+* Requires PHP: 7.4
+* Stable tag: [master](https://github.com/deckerweb/builder-template-categories/releases/latest)
+* Donate link: https://paypal.me/deckerweb
+* License: GPL v2 or later
 
 ---
 
-[Support Project](#support-the-project) | [Installation](#installation) | [Description](#description) | [Frequently Asked Questions](#frequently-asked-questions) | [Screenshots](#screenshots) | [Changelog](#changelog) | [Plugin Scope / Disclaimer](#plugin-scope--disclaimer)
+[Support Project](#support-the-project) | [Installation](#installation) | [Updates](#updates) | [Description](#description) | [FAQ](#frequently-asked-questions) | [Screenshots](#screenshots) | [Changelog](#changelog) | [Plugin Scope / Disclaimer](#plugin-scope--disclaimer)
 
 ---
 
@@ -24,25 +27,41 @@ Enjoying the plugin? Feel free to treat me to a cup of coffee ☕🙂 through th
 - [![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/W7W81BNTZE)
 - [Buy me a coffee](https://buymeacoffee.com/daveshine)
 - [PayPal donation](https://paypal.me/deckerweb)
+- [Join my **newsletter** for DECKERWEB WordPress Plugins](https://eepurl.com/gbAUUn)
 
 ---
 
-## Installation
+## Installation 
 
-**Quick Install – as Plugin**
-1. **Download ZIP:** [**builder-template-categories.zip**](https://github.com/deckerweb/builder-template-categories/releases/latest/download/builder-template-categories.zip)
+### **Quick Install – as Plugin**
+1. **Download ZIP:** [**builder-template-categories.zip**](https://github.com/deckerweb/builder-template-categories/releases/download/1.7.0/builder-template-categories.1.7.0.zip)
 2. Upload via WordPress Plugins > Add New > Upload Plugin
 3. Go to your already active plugin or theme which has the template library and you'll see the additional template category as a new submenu item (for example: "Template Categories").
 4. Now enjoy organizing your templates, get better overview and save time ;-)
 
 
-### Minimum Requirements 
+#### Minimum Requirements 
 
 * WordPress version 6.7 or higher
 * PHP version 7.4 or higher (better 8.3+)
 * MySQL version 5.6 or higher / OR MariaDB 10.1 or higher
 * Administrator user with capability `edit_theme_options`
 * HTTPS support
+
+#### Tested Compatibility
+- **WordPress**: 6.7.2
+- **PHP**: 8.3+
+- Requires at least: WP 6.7 / PHP 7.4
+
+---
+
+## Updates 
+
+1) Alternative 1: Just download a new [ZIP file](https://github.com/deckerweb/builder-template-categories/releases/latest/download/builder-template-categories.zip) (see above), upload and override existing version. Done.
+
+2) Alternative 2: Use the (free) [**_Git Updater_ plugin**](https://git-updater.com/) and get updates automatically.
+
+3) Alternative 3: Upcoming! – In future I will built-in our own deckerweb updater. This is currently being worked on for my plugins. Stay tuned!
 
 ---
 
@@ -458,7 +477,7 @@ As of version 1.5.0 of the plugin the following was achieved:
 
 ## Changelog 
 
-### 1.8.0 – March 2025
+### 1.8.0 – March/April 2025
 _Currently being worked on!_
 * Brought back plugin into a more lightweight and working state as it was originally intended!
 * Some info links, help texts, plus the _DDWlib Plugin Installer Recommendations_ library got removed, it is no longer wanted/supported anyways
@@ -670,4 +689,6 @@ _Most of all:_ Have fun building great sites!!! ;-)
 
 ---
 
-Copyright © 2018-2025 David Decker – DECKERWEB.de
+Icon used in promo graphics: [© Tabler Icons by Paweł Kuna](https://tabler.io/icons)
+
+Readme & Plugin Copyright © 2018-2025, David Decker – DECKERWEB.de
