@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Builder Template Categories\n"
-"POT-Creation-Date: 2025-03-15 18:07+0100\n"
+"POT-Creation-Date: 2025-04-08 21:24+0200\n"
 "PO-Revision-Date: 2018-08-14 13:21+0200\n"
 "Last-Translator: David Decker DECKERWEB.de\n"
 "Language-Team: David Decker DECKERWEB.de\n"
@@ -10,14 +10,13 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
-"X-Generator: Poedit 3.5\n"
+"X-Generator: Poedit 3.6\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-Flags-xgettext: --add-comments=translators:\n"
 "X-Poedit-WPHeader: builder-template-categories.php\n"
 "X-Poedit-SourceCharset: UTF-8\n"
-"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
-"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
-"_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"X-Poedit-KeywordsList: "
+"__;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: *.js\n"
 
@@ -88,7 +87,7 @@ msgstr ""
 msgid "Content Type"
 msgstr ""
 
-#: includes/admin/admin-help.php:280 includes/string-switcher.php:87
+#: includes/admin/admin-help.php:280 includes/string-switcher.php:92
 msgid "Post Type"
 msgstr ""
 
@@ -171,7 +170,7 @@ msgid "No Integration registered"
 msgstr ""
 
 #. Author of the plugin/theme
-#: includes/functions-global.php:408
+#: includes/functions-global.php:413
 msgid "David Decker - DECKERWEB"
 msgstr ""
 
@@ -295,6 +294,10 @@ msgstr ""
 
 #: includes/integrations/integration-boxzilla.php:27
 msgid "Boxzilla Boxes"
+msgstr ""
+
+#: includes/integrations/integration-bricks.php:27
+msgid "Bricks Templates"
 msgstr ""
 
 #: includes/integrations/integration-brizy.php:27
@@ -666,363 +669,359 @@ msgctxt "Taxonomy Singular Name"
 msgid "%s Category"
 msgstr ""
 
-#: includes/register-taxonomy.php:45
-msgid "Taxonomy"
-msgstr ""
-
 #. translators: %s - Label name for default content type, "Template"
-#: includes/register-taxonomy.php:48
+#: includes/register-taxonomy.php:47
 #, php-format
 msgid "All %s Categories"
 msgstr ""
 
 #. translators: %s - Label name for default content type, "Template"
-#: includes/register-taxonomy.php:53
+#: includes/register-taxonomy.php:52
 #, php-format
 msgid "Parent %s Category"
 msgstr ""
 
 #. translators: %s - Label name for default content type, "Template"
-#: includes/register-taxonomy.php:58
+#: includes/register-taxonomy.php:57
 #, php-format
 msgid "Parent %s Category:"
 msgstr ""
 
 #. translators: %s - Label name for default content type, "Template"
-#: includes/register-taxonomy.php:63
+#: includes/register-taxonomy.php:62
 #, php-format
 msgid "New %s Category Name"
 msgstr ""
 
 #. translators: %s - Label name for default content type, "Template"
-#: includes/register-taxonomy.php:68
+#: includes/register-taxonomy.php:67
 #, php-format
 msgid "Add New %s Category"
 msgstr ""
 
 #. translators: %s - Label name for default content type, "Template"
-#: includes/register-taxonomy.php:73
+#: includes/register-taxonomy.php:72
 #, php-format
 msgid "Edit %s Category"
 msgstr ""
 
-#: includes/register-taxonomy.php:77
+#: includes/register-taxonomy.php:76
 #, php-format
 msgid "Update %s Category"
 msgstr ""
 
 #. translators: %s - Label name for default content type, "Template"
-#: includes/register-taxonomy.php:82
+#: includes/register-taxonomy.php:81
 #, php-format
 msgid "View %s Category"
 msgstr ""
 
 #. translators: %s - Label name for default content type, "Template"
-#: includes/register-taxonomy.php:87
+#: includes/register-taxonomy.php:86
 #, php-format
 msgid "Separate %s Categories with commas"
 msgstr ""
 
-#: includes/register-taxonomy.php:90
+#: includes/register-taxonomy.php:89
 msgid "Add or remove categories"
 msgstr ""
 
-#: includes/register-taxonomy.php:91
+#: includes/register-taxonomy.php:90
 msgid "Choose from the most used"
 msgstr ""
 
-#: includes/register-taxonomy.php:92
+#: includes/register-taxonomy.php:91
 msgid "Popular Categories"
 msgstr ""
 
 #. translators: %s - Label name for default content type, "Template"
-#: includes/register-taxonomy.php:95
+#: includes/register-taxonomy.php:94
 #, php-format
 msgid "Search %s Categories"
 msgstr ""
 
 #. translators: %s - Label name for default content type, "Template"
-#: includes/register-taxonomy.php:100
+#: includes/register-taxonomy.php:99
 #, php-format
 msgid "No %s Categories found."
 msgstr ""
 
 #. translators: %s - Label name for default content type, "Template"
-#: includes/register-taxonomy.php:105
+#: includes/register-taxonomy.php:104
 #, php-format
 msgid "No %s Categories"
 msgstr ""
 
-#: includes/register-taxonomy.php:125
+#: includes/register-taxonomy.php:124
 msgid "Template Categories for templates of Page Builders or similar libraries"
 msgstr ""
 
-#: includes/register-taxonomy.php:208
+#: includes/register-taxonomy.php:207
 msgctxt "Taxonomy term title"
 msgid "General"
 msgstr ""
 
-#: includes/register-taxonomy.php:209
+#: includes/register-taxonomy.php:208
 msgctxt "Taxonomy term slug - only lowercase, a-z, 0-9, hyphens!"
 msgid "general"
 msgstr ""
 
-#: includes/register-taxonomy.php:210
+#: includes/register-taxonomy.php:209
 msgctxt "Taxonomy term description"
 msgid "General templates"
 msgstr ""
 
-#: includes/register-taxonomy.php:213
+#: includes/register-taxonomy.php:212
 msgctxt "Taxonomy term title"
 msgid "Frontpage"
 msgstr ""
 
-#: includes/register-taxonomy.php:214
+#: includes/register-taxonomy.php:213
 msgctxt "Taxonomy term slug - only lowercase, a-z, 0-9, hyphens!"
 msgid "frontpage"
 msgstr ""
 
-#: includes/register-taxonomy.php:215
+#: includes/register-taxonomy.php:214
 msgctxt "Taxonomy term description"
 msgid "Templates for the Frontpage/ Homepage"
 msgstr ""
 
-#: includes/register-taxonomy.php:218
+#: includes/register-taxonomy.php:217
 msgctxt "Taxonomy term title"
 msgid "Pages"
 msgstr ""
 
-#: includes/register-taxonomy.php:219
+#: includes/register-taxonomy.php:218
 msgctxt "Taxonomy term slug - only lowercase, a-z, 0-9, hyphens!"
 msgid "pages"
 msgstr ""
 
-#: includes/register-taxonomy.php:220
+#: includes/register-taxonomy.php:219
 msgctxt "Taxonomy term description"
 msgid "Templates for Pages"
 msgstr ""
 
-#: includes/register-taxonomy.php:223
+#: includes/register-taxonomy.php:222
 msgctxt "Taxonomy term title"
 msgid "Landing Pages"
 msgstr ""
 
-#: includes/register-taxonomy.php:224
+#: includes/register-taxonomy.php:223
 msgctxt "Taxonomy term slug - only lowercase, a-z, 0-9, hyphens!"
 msgid "landing-pages"
 msgstr ""
 
-#: includes/register-taxonomy.php:225
+#: includes/register-taxonomy.php:224
 msgctxt "Taxonomy term description"
 msgid "Templates for Landing Pages"
 msgstr ""
 
-#: includes/register-taxonomy.php:228
+#: includes/register-taxonomy.php:227
 msgctxt "Taxonomy term title"
 msgid "Sections"
 msgstr ""
 
-#: includes/register-taxonomy.php:229
+#: includes/register-taxonomy.php:228
 msgctxt "Taxonomy term slug - only lowercase, a-z, 0-9, hyphens!"
 msgid "sections"
 msgstr ""
 
-#: includes/register-taxonomy.php:230
+#: includes/register-taxonomy.php:229
 msgctxt "Taxonomy term description"
 msgid "Templates for Sections/ Content Blocks"
 msgstr ""
 
-#: includes/register-taxonomy.php:233
+#: includes/register-taxonomy.php:232
 msgctxt "Taxonomy term title"
 msgid "Hooks"
 msgstr ""
 
-#: includes/register-taxonomy.php:234
+#: includes/register-taxonomy.php:233
 msgctxt "Taxonomy term slug - only lowercase, a-z, 0-9, hyphens!"
 msgid "hooks"
 msgstr ""
 
-#: includes/register-taxonomy.php:235
+#: includes/register-taxonomy.php:234
 msgctxt "Taxonomy term description"
 msgid "Templates for Action Hooks"
 msgstr ""
 
-#: includes/register-taxonomy.php:238
+#: includes/register-taxonomy.php:237
 msgctxt "Taxonomy term title"
 msgid "Testing"
 msgstr ""
 
-#: includes/register-taxonomy.php:239
+#: includes/register-taxonomy.php:238
 msgctxt "Taxonomy term slug - only lowercase, a-z, 0-9, hyphens!"
 msgid "testing"
 msgstr ""
 
-#: includes/register-taxonomy.php:240
+#: includes/register-taxonomy.php:239
 msgctxt "Taxonomy term description"
 msgid "Templates just for testing purposes"
 msgstr ""
 
-#: includes/register-taxonomy.php:249
+#: includes/register-taxonomy.php:248
 msgctxt "Taxonomy term title"
 msgid "Products"
 msgstr ""
 
-#: includes/register-taxonomy.php:250
+#: includes/register-taxonomy.php:249
 msgctxt "Taxonomy term slug - only lowercase, a-z, 0-9, hyphens!"
 msgid "products"
 msgstr ""
 
-#: includes/register-taxonomy.php:251
+#: includes/register-taxonomy.php:250
 msgctxt "Taxonomy term description"
 msgid "Templates for WooCommerce products"
 msgstr ""
 
-#: includes/register-taxonomy.php:262
+#: includes/register-taxonomy.php:261
 msgctxt "Taxonomy term title"
 msgid "Popups"
 msgstr ""
 
-#: includes/register-taxonomy.php:263
+#: includes/register-taxonomy.php:262
 msgctxt "Taxonomy term slug - only lowercase, a-z, 0-9, hyphens!"
 msgid "popups"
 msgstr ""
 
-#: includes/register-taxonomy.php:264
+#: includes/register-taxonomy.php:263
 msgctxt "Taxonomy term description"
 msgid "Templates for Popups/ Modal Windows"
 msgstr ""
 
-#: includes/register-taxonomy.php:273
+#: includes/register-taxonomy.php:272
 msgctxt "Taxonomy term title"
 msgid "Blocks"
 msgstr ""
 
-#: includes/register-taxonomy.php:274
+#: includes/register-taxonomy.php:273
 msgctxt "Taxonomy term slug - only lowercase, a-z, 0-9, hyphens!"
 msgid "blocks"
 msgstr ""
 
-#: includes/register-taxonomy.php:275
+#: includes/register-taxonomy.php:274
 msgctxt "Taxonomy term description"
 msgid "Templates for Blocks"
 msgstr ""
 
-#: includes/register-taxonomy.php:284
+#: includes/register-taxonomy.php:283
 msgctxt "Taxonomy term title"
 msgid "Fields"
 msgstr ""
 
-#: includes/register-taxonomy.php:285
+#: includes/register-taxonomy.php:284
 msgctxt "Taxonomy term slug - only lowercase, a-z, 0-9, hyphens!"
 msgid "fields"
 msgstr ""
 
-#: includes/register-taxonomy.php:286
+#: includes/register-taxonomy.php:285
 msgctxt "Taxonomy term description"
 msgid "Templates for Fields"
 msgstr ""
 
-#: includes/register-taxonomy.php:295
+#: includes/register-taxonomy.php:294
 msgctxt "Taxonomy term title"
 msgid "Boxes"
 msgstr ""
 
-#: includes/register-taxonomy.php:296
+#: includes/register-taxonomy.php:295
 msgctxt "Taxonomy term slug - only lowercase, a-z, 0-9, hyphens!"
 msgid "boxes"
 msgstr ""
 
-#: includes/register-taxonomy.php:297
+#: includes/register-taxonomy.php:296
 msgctxt "Taxonomy term description"
 msgid "Templates for Boxes"
 msgstr ""
 
-#: includes/register-taxonomy.php:306
+#: includes/register-taxonomy.php:305
 msgctxt "Taxonomy term title"
 msgid "Bars"
 msgstr ""
 
-#: includes/register-taxonomy.php:307
+#: includes/register-taxonomy.php:306
 msgctxt "Taxonomy term slug - only lowercase, a-z, 0-9, hyphens!"
 msgid "bars"
 msgstr ""
 
-#: includes/register-taxonomy.php:308
+#: includes/register-taxonomy.php:307
 msgctxt "Taxonomy term description"
 msgid "Templates for Bars"
 msgstr ""
 
-#: includes/register-taxonomy.php:317
+#: includes/register-taxonomy.php:316
 msgctxt "Taxonomy term title"
 msgid "Flows"
 msgstr ""
 
-#: includes/register-taxonomy.php:318
+#: includes/register-taxonomy.php:317
 msgctxt "Taxonomy term slug - only lowercase, a-z, 0-9, hyphens!"
 msgid "flows"
 msgstr ""
 
-#: includes/register-taxonomy.php:319
+#: includes/register-taxonomy.php:318
 msgctxt "Taxonomy term description"
 msgid "Templates for Flows"
 msgstr ""
 
-#: includes/register-taxonomy.php:328
+#: includes/register-taxonomy.php:327
 msgctxt "Taxonomy term title"
 msgid "Snippets"
 msgstr ""
 
-#: includes/register-taxonomy.php:329
+#: includes/register-taxonomy.php:328
 msgctxt "Taxonomy term slug - only lowercase, a-z, 0-9, hyphens!"
 msgid "snippets"
 msgstr ""
 
-#: includes/register-taxonomy.php:330
+#: includes/register-taxonomy.php:329
 msgctxt "Taxonomy term description"
 msgid "Templates for Snippets"
 msgstr ""
 
-#: includes/register-taxonomy.php:339
+#: includes/register-taxonomy.php:338
 msgctxt "Taxonomy term title"
 msgid "Forms"
 msgstr ""
 
-#: includes/register-taxonomy.php:340
+#: includes/register-taxonomy.php:339
 msgctxt "Taxonomy term slug - only lowercase, a-z, 0-9, hyphens!"
 msgid "forms"
 msgstr ""
 
-#: includes/register-taxonomy.php:341
+#: includes/register-taxonomy.php:340
 msgctxt "Taxonomy term description"
 msgid "Templates for Forms"
 msgstr ""
 
-#: includes/register-taxonomy.php:350
+#: includes/register-taxonomy.php:349
 msgctxt "Taxonomy term title"
 msgid "URLs"
 msgstr ""
 
-#: includes/register-taxonomy.php:351
+#: includes/register-taxonomy.php:350
 msgctxt "Taxonomy term slug - only lowercase, a-z, 0-9, hyphens!"
 msgid "urls"
 msgstr ""
 
-#: includes/register-taxonomy.php:352
+#: includes/register-taxonomy.php:351
 msgctxt "Taxonomy term description"
 msgid "Templates for URLs"
 msgstr ""
 
-#: includes/register-taxonomy.php:361
+#: includes/register-taxonomy.php:360
 msgctxt "Taxonomy term title"
 msgid "Redirects"
 msgstr ""
 
-#: includes/register-taxonomy.php:362
+#: includes/register-taxonomy.php:361
 msgctxt "Taxonomy term slug - only lowercase, a-z, 0-9, hyphens!"
 msgid "redirects"
 msgstr ""
 
-#: includes/register-taxonomy.php:363
+#: includes/register-taxonomy.php:362
 msgctxt "Taxonomy term description"
 msgid "Templates for Redirects"
 msgstr ""
@@ -1038,251 +1037,271 @@ msgstr ""
 msgid "All %s"
 msgstr ""
 
-#: includes/string-switcher.php:30 includes/string-switcher.php:147
+#: includes/string-switcher.php:30 includes/string-switcher.php:156
 msgid "Template"
 msgstr ""
 
-#: includes/string-switcher.php:59
+#: includes/string-switcher.php:60
 msgid "Library"
 msgstr ""
 
-#: includes/string-switcher.php:63
+#: includes/string-switcher.php:64
 msgid "Layout"
 msgstr ""
 
-#: includes/string-switcher.php:67
+#: includes/string-switcher.php:68
 msgid "Element"
 msgstr ""
 
-#: includes/string-switcher.php:71
+#: includes/string-switcher.php:72
 msgid "Block"
 msgstr ""
 
-#: includes/string-switcher.php:75
+#: includes/string-switcher.php:76
+msgid "Pattern"
+msgstr ""
+
+#: includes/string-switcher.php:80
 msgid "Popup"
 msgstr ""
 
-#: includes/string-switcher.php:79
+#: includes/string-switcher.php:84
 msgid "Lightbox"
 msgstr ""
 
-#: includes/string-switcher.php:83
+#: includes/string-switcher.php:88
 msgid "Listing"
 msgstr ""
 
-#: includes/string-switcher.php:91
+#: includes/string-switcher.php:96
 msgid "Field"
 msgstr ""
 
-#: includes/string-switcher.php:95
+#: includes/string-switcher.php:100
 msgid "Box"
 msgstr ""
 
-#: includes/string-switcher.php:99
+#: includes/string-switcher.php:104
 msgid "Bar"
 msgstr ""
 
-#: includes/string-switcher.php:103
+#: includes/string-switcher.php:108
 msgid "Hook"
 msgstr ""
 
-#: includes/string-switcher.php:107
+#: includes/string-switcher.php:112
 msgid "Filter"
 msgstr ""
 
-#: includes/string-switcher.php:111
+#: includes/string-switcher.php:116
 msgid "Section"
 msgstr ""
 
-#: includes/string-switcher.php:115
+#: includes/string-switcher.php:120
 msgid "Flow"
 msgstr ""
 
-#: includes/string-switcher.php:119
+#: includes/string-switcher.php:124
 msgid "Snippet"
 msgstr ""
 
-#: includes/string-switcher.php:123
+#: includes/string-switcher.php:128
 msgid "Sidebar"
 msgstr ""
 
-#: includes/string-switcher.php:127
+#: includes/string-switcher.php:132
 msgid "Area"
 msgstr ""
 
-#: includes/string-switcher.php:131
+#: includes/string-switcher.php:136
 msgid "Form"
 msgstr ""
 
-#: includes/string-switcher.php:135
+#: includes/string-switcher.php:140
 msgid "Script"
 msgstr ""
 
-#: includes/string-switcher.php:139
+#: includes/string-switcher.php:144
 msgid "URL"
 msgstr ""
 
-#: includes/string-switcher.php:143
+#: includes/string-switcher.php:148
 msgid "Redirect"
 msgstr ""
 
-#: includes/string-switcher.php:169
+#: includes/string-switcher.php:152
+msgid "Font"
+msgstr ""
+
+#: includes/string-switcher.php:178
 msgid "Categories"
 msgstr ""
 
 #. translators: %s - label "Categories" (for example: Template Categories)
-#: includes/string-switcher.php:201 includes/string-switcher.php:393
+#: includes/string-switcher.php:211 includes/string-switcher.php:419
 #, php-format
 msgid "Template %s"
 msgstr ""
 
 #. translators: %s - label "Categories" (for example: Library Categories)
-#: includes/string-switcher.php:209
+#: includes/string-switcher.php:219
 #, php-format
 msgid "Library %s"
 msgstr ""
 
 #. translators: %s - label "Categories" (for example: Layout Categories)
-#: includes/string-switcher.php:217
+#: includes/string-switcher.php:227
 #, php-format
 msgid "Layout %s"
 msgstr ""
 
 #. translators: %s - label "Categories" (for example: Element Categories)
-#: includes/string-switcher.php:225
+#: includes/string-switcher.php:235
 #, php-format
 msgid "Element %s"
 msgstr ""
 
 #. translators: %s - label "Categories" (for example: Block Categories)
-#: includes/string-switcher.php:233
+#: includes/string-switcher.php:243
 #, php-format
 msgid "Block %s"
 msgstr ""
 
+#. translators: %s - label "Categories" (for example: Block Categories)
+#: includes/string-switcher.php:251
+#, php-format
+msgid "Pattern %s"
+msgstr ""
+
 #. translators: %s - label "Categories" (for example: Popup Categories)
-#: includes/string-switcher.php:241
+#: includes/string-switcher.php:259
 #, php-format
 msgid "Popup %s"
 msgstr ""
 
 #. translators: %s - label "Categories" (for example: Lightbox Categories)
-#: includes/string-switcher.php:249
+#: includes/string-switcher.php:267
 #, php-format
 msgid "Lightbox %s"
 msgstr ""
 
 #. translators: %s - label "Categories" (for example: Listing Categories)
-#: includes/string-switcher.php:257
+#: includes/string-switcher.php:275
 #, php-format
 msgid "Listing %s"
 msgstr ""
 
 #. translators: %s - label "Categories" (for example: ELHF Categories - "EL HF" stands for Elementor Header Footer Builder plugin)
-#: includes/string-switcher.php:265
+#: includes/string-switcher.php:283
 #, php-format
 msgid "EL HF %s"
 msgstr ""
 
 #. translators: %s - label "Categories" (for example: Post Type Categories)
-#: includes/string-switcher.php:273
+#: includes/string-switcher.php:291
 #, php-format
 msgid "Post Type %s"
 msgstr ""
 
 #. translators: %s - label "Categories" (for example: Field Categories)
-#: includes/string-switcher.php:281
+#: includes/string-switcher.php:299
 #, php-format
 msgid "Field %s"
 msgstr ""
 
 #. translators: %s - label "Categories" (for example: Box Categories)
-#: includes/string-switcher.php:289
+#: includes/string-switcher.php:307
 #, php-format
 msgid "Box %s"
 msgstr ""
 
 #. translators: %s - label "Categories" (for example: Bar Categories)
-#: includes/string-switcher.php:297
+#: includes/string-switcher.php:315
 #, php-format
 msgid "Bar %s"
 msgstr ""
 
 #. translators: %s - label "Categories" (for example: Hook Categories)
-#: includes/string-switcher.php:305
+#: includes/string-switcher.php:323
 #, php-format
 msgid "Hook %s"
 msgstr ""
 
 #. translators: %s - label "Categories" (for example: Filter Categories)
-#: includes/string-switcher.php:313
+#: includes/string-switcher.php:331
 #, php-format
 msgid "Filter %s"
 msgstr ""
 
 #. translators: %s - label "Categories" (for example: Section Categories)
-#: includes/string-switcher.php:321
+#: includes/string-switcher.php:339
 #, php-format
 msgid "Section %s"
 msgstr ""
 
 #. translators: %s - label "Categories" (for example: Flow Categories)
-#: includes/string-switcher.php:329
+#: includes/string-switcher.php:347
 #, php-format
 msgid "Flow %s"
 msgstr ""
 
 #. translators: %s - label "Categories" (for example: Snippet Categories)
-#: includes/string-switcher.php:337
+#: includes/string-switcher.php:355
 #, php-format
 msgid "Snippet %s"
 msgstr ""
 
 #. translators: %s - label "Categories" (for example: Sidebar Categories)
-#: includes/string-switcher.php:345
+#: includes/string-switcher.php:363
 #, php-format
 msgid "Sidebar %s"
 msgstr ""
 
 #. translators: %s - label "Categories" (for example: Area Categories)
-#: includes/string-switcher.php:353
+#: includes/string-switcher.php:371
 #, php-format
 msgid "Area %s"
 msgstr ""
 
 #. translators: %s - label "Categories" (for example: Form Categories)
-#: includes/string-switcher.php:361
+#: includes/string-switcher.php:379
 #, php-format
 msgid "Form %s"
 msgstr ""
 
 #. translators: %s - label "Categories" (for example: Script Categories)
-#: includes/string-switcher.php:369
+#: includes/string-switcher.php:387
 #, php-format
 msgid "Script %s"
 msgstr ""
 
 #. translators: %s - label "Categories" (for example: Script Categories)
-#: includes/string-switcher.php:377
+#: includes/string-switcher.php:395
 #, php-format
 msgid "URL %s"
 msgstr ""
 
 #. translators: %s - label "Categories" (for example: Script Categories)
-#: includes/string-switcher.php:385
+#: includes/string-switcher.php:403
 #, php-format
 msgid "Redirect %s"
 msgstr ""
 
-#: includes/string-switcher.php:424
+#. translators: %s - label "Categories" (for example: Script Categories)
+#: includes/string-switcher.php:411
+#, php-format
+msgid "Font %s"
+msgstr ""
+
+#: includes/string-switcher.php:450
 msgid "for WooCommerce"
 msgstr ""
 
-#: includes/string-switcher.php:447
+#: includes/string-switcher.php:473
 msgid "for Post Types, Taxonomies, Fields"
 msgstr ""
 
-#: includes/string-switcher.php:464
+#: includes/string-switcher.php:490
 msgid "Add New"
 msgstr ""
 
