@@ -224,6 +224,7 @@ add_filter( 'manage_posts_columns', 'ddw_btc_tweak_taxonomy_column_title' );
  * @since 1.6.0 Added checks for "Sidebar", "Area", "Form" and "Script" content
  *              types.
  * @since 1.7.0 Added checks for "URL" and "Redirect" content types.
+ * @since 1.8.0 Added checks for "Pattern" and "Font" content types.
  *
  * @uses ddw_btc_get_integration_post_types()
  * @uses ddw_btc_string_template()
@@ -255,6 +256,10 @@ function ddw_btc_tweak_taxonomy_column_title( $columns ) {
 		$columns[ 'taxonomy-builder-template-category' ] = ddw_btc_string_template( 'block' );
 	}
 
+	if ( in_array( $current_screen->post_type, $post_types[ 'patterns' ] ) ) {
+		$columns[ 'taxonomy-builder-template-category' ] = ddw_btc_string_template( 'pattern' );
+	}
+	
 	if ( in_array( $current_screen->post_type, $post_types[ 'libraries' ] ) ) {
 		$columns[ 'taxonomy-builder-template-category' ] = ddw_btc_string_template( 'library' );
 	}
@@ -331,6 +336,10 @@ function ddw_btc_tweak_taxonomy_column_title( $columns ) {
 		$columns[ 'taxonomy-builder-template-category' ] = ddw_btc_string_template( 'redirect' );
 	}
 
+	if ( in_array( $current_screen->post_type, $post_types[ 'fonts' ] ) ) {
+		$columns[ 'taxonomy-builder-template-category' ] = ddw_btc_string_template( 'font' );
+	}
+	
 	/** Return array of column label strings */
 	return $columns;
 
@@ -352,6 +361,7 @@ add_filter( 'btc/filter/string/default_content_type', 'ddw_btc_tweak_taxonomy_la
  * @since 1.6.0 Added checks for "Sidebar", "Area", "Form" and "Script" content
  *              types.
  * @since 1.7.0 Added checks for "URL" and "Redirect" content types.
+ * @since 1.8.0 Added checks for "Pattern" content type.
  *
  * @uses ddw_btc_get_integration_post_types()
  * @uses ddw_btc_string_content_type()
@@ -393,6 +403,10 @@ function ddw_btc_tweak_taxonomy_labels() {
 		return ddw_btc_string_content_type( 'block' );
 	}
 
+	if ( in_array( ddw_btc_admin_get_current_post_type(), $post_types[ 'patterns' ] ) ) {
+		return ddw_btc_string_content_type( 'pattern' );
+	}
+	
 	if ( in_array( ddw_btc_admin_get_current_post_type(), $post_types[ 'elements' ] ) ) {
 		return ddw_btc_string_content_type( 'element' );
 	}

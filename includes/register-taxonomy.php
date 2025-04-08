@@ -42,7 +42,6 @@ function ddw_btc_register_templates_taxonomy() {
 				_x( '%s Category', 'Taxonomy Singular Name', 'builder-template-categories' ),
 				ddw_btc_string_default_content_type()
 			),
-			'menu_name'                  => __( 'Taxonomy', 'builder-template-categories' ),
 			'all_items'                  => sprintf(
 				/* translators: %s - Label name for default content type, "Template" */
 				__( 'All %s Categories', 'builder-template-categories' ),

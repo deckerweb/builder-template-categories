@@ -379,8 +379,7 @@ function ddw_btc_content_help_sidebar() {
 
 	$btc_help_sidebar_content .= '<h4>' . __( 'Connect', 'builder-template-categories' ) . ':</h4>' .
 		'<p>' . ddw_btc_get_info_link( 'url_github_follow', 'GitHub', 'btc-help-sidebar-icons dashicons-before dashicons-admin-users' ) . '</p>' .
-		'<p>' . ddw_btc_get_info_link( 'author_uri', 'DECKERWEB', 'btc-help-sidebar-icons dashicons-before dashicons-networking' ) . '</p>' .
-		'<p>' . ddw_btc_get_info_link( 'url_wporg_profile', 'WordPress.org', 'btc-help-sidebar-icons dashicons-before dashicons-wordpress' ) . '</p>';
+		'<p>' . ddw_btc_get_info_link( 'author_uri', 'DECKERWEB', 'btc-help-sidebar-icons dashicons-before dashicons-networking' ) . '</p>';
 
 	return apply_filters(
 		'btc/filter/content/help_sidebar',

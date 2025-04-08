@@ -19,6 +19,15 @@ if ( ! defined( 'ABSPATH' ) ) {
  */
 
 /**
+  * Plugin: Bricks
+  * @since 1.8.0
+  */
+ if ( ddw_btc_is_bricks_active() ) {
+     require_once BTC_PLUGIN_DIR . 'includes/integrations/integration-bricks.php';
+ }
+ 
+ 
+/**
  * Plugin: Elementor (free)
  * @since 1.0.0
  */

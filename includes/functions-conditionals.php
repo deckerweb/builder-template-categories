@@ -87,6 +87,20 @@ function ddw_btc_is_woocommerce_active() {
  */
 
 /**
+  * Is Bricks Builder (theme) active or not?
+  *
+  * @since 1.8.0
+  *
+  * @return bool TRUE if Bricks is active, FALSE otherwise.
+  */
+ function ddw_btc_is_bricks_active() {
+ 
+     return defined( 'BRICKS_VERSION' );
+ 
+ }  // end function
+ 
+ 
+/**
  * Is Elementor (free) plugin active or not?
  *
  * @since 1.0.0

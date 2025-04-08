@@ -63,14 +63,14 @@ class DDW_BTC_Finder_Category extends \Elementor\Core\Common\Modules\Finder\Base
 			],
 			'resources' => [
 				'title'       => _x( 'Help Resources - Builder Template Categories', 'Title in Elementor Finder', 'builder-template-categories' ),
-				'url'         => ddw_btc_get_info_url( 'url_wporg_faq' ),
+				'url'         => ddw_btc_get_info_url( 'url_plugin_faq' ),
 				'icon'        => 'info',
 				'keywords'    => [ 'help', 'support', 'docs', 'documentation', 'faq', 'knowledge base' ],
 				'description' => __( 'FAQ and documentation for the plugin', 'builder-template-categories' ),
 				'actions'     => [
 					[
 						'name' => 'view',
-						'url'  => ddw_btc_get_info_url( 'url_wporg_faq' ),
+						'url'  => ddw_btc_get_info_url( 'url_plugin_faq' ),
 						'icon' => 'eye',
 					],
 				],

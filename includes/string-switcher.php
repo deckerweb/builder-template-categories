@@ -46,6 +46,7 @@ function ddw_btc_string_default_content_type() {
  * @since 1.4.3 Added "Flow" and "Snippet" content types.
  * @since 1.6.0 Added "Sidebar", "Area" and "Form" content types.
  * @since 1.7.0 Added "URL" and "Redirect" content types.
+ * @since 1.8.0 Added "Pattern" and "Font" content types.
  *
  * @param string $content_type Type of content string stands for.
  * @return string String output based on content type.
@@ -71,6 +72,10 @@ function ddw_btc_string_content_type( $content_type ) {
 			$string = esc_attr__( 'Block', 'builder-template-categories' );
 			break;
 
+		case 'pattern':
+			$string = esc_attr__( 'Pattern', 'builder-template-categories' );
+			break;
+			
 		case 'popup':
 			$string = esc_attr__( 'Popup', 'builder-template-categories' );
 			break;
@@ -143,6 +148,10 @@ function ddw_btc_string_content_type( $content_type ) {
 			$string = esc_attr__( 'Redirect', 'builder-template-categories' );
 			break;
 
+		case 'font':
+			$string = esc_attr__( 'Font', 'builder-template-categories' );
+			break;
+			
 		default:
 			$string = esc_attr__( 'Template', 'builder-template-categories' );
 
@@ -184,6 +193,7 @@ function ddw_btc_string_categories() {
  * @since 1.4.3 Added "Flow" and "Snippet" content types.
  * @since 1.6.0 Added "Sidebar", "Area", "Form" and "Script" content types.
  * @since 1.7.0 Added "URL" and "Redirect" content types.
+ * @since 1.8.0 Added "Pattern" and "Font" content type.
  *
  * @uses ddw_btc_string_categories()
  *
@@ -235,6 +245,14 @@ function ddw_btc_string_template( $string_type ) {
 			);
 			break;
 
+		case 'pattern':
+			$string = sprintf(
+				/* translators: %s - label "Categories" (for example: Block Categories) */
+				esc_attr__( 'Pattern %s', 'builder-template-categories' ),
+				ddw_btc_string_categories()
+			);
+			break;
+			
 		case 'popup':
 			$string = sprintf(
 				/* translators: %s - label "Categories" (for example: Popup Categories) */
@@ -387,6 +405,14 @@ function ddw_btc_string_template( $string_type ) {
 			);
 			break;
 
+		case 'font':
+			$string = sprintf(
+				/* translators: %s - label "Categories" (for example: Script Categories) */
+				esc_attr__( 'Font %s', 'builder-template-categories' ),
+				ddw_btc_string_categories()
+			);
+			break;
+			
 		default:
 			$string = sprintf(
 				/* translators: %s - label "Categories" (for example: Template Categories) */

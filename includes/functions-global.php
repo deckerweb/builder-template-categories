@@ -104,6 +104,7 @@ function ddw_btc_taxonomy_admin_url() {
  * @since 1.4.3 Added "Flow" and "Snippet" content types.
  * @since 1.6.0 Added "Sidebar", "Area", "Form" and "Script" content types.
  * @since 1.7.0 Added "URL" and "Redirect" content types.
+ * @since 1.8.0 Added "Pattern" and "Fonts" content types.
  *
  * @uses ddw_btc_get_integrations()
  *
@@ -127,6 +128,7 @@ function ddw_btc_get_integration_post_types( $all_types = '' ) {
 		'libraries'  => array(),
 		'elements'   => array(),
 		'blocks'     => array(),
+		'patterns'   => array(),
 		'lightboxes' => array(),
 		'post-types' => array(),
 		'fields'     => array(),
@@ -143,6 +145,7 @@ function ddw_btc_get_integration_post_types( $all_types = '' ) {
 		'scripts'    => array(),
 		'urls'       => array(),
 		'redirects'  => array(),
+		'fonts'      => array(),
 		'btcdefault' => array( 'btc-template' ),
 	);
 
@@ -182,6 +185,10 @@ function ddw_btc_get_integration_post_types( $all_types = '' ) {
 			$post_types[ 'blocks' ][] = $integration[ 'post_type' ];
 		}
 
+		if ( 'pattern' === $integration[ 'template_label' ] ) {
+			$post_types[ 'patterns' ][] = $integration[ 'post_type' ];
+		}
+		
 		if ( 'lightbox' === $integration[ 'template_label' ] ) {
 			$post_types[ 'lightboxes' ][] = $integration[ 'post_type' ];
 		}
@@ -246,6 +253,10 @@ function ddw_btc_get_integration_post_types( $all_types = '' ) {
 			$post_types[ 'redirects' ][] = $integration[ 'post_type' ];
 		}
 
+		if ( 'font' === $integration[ 'template_label' ] ) {
+			$post_types[ 'fonts' ][] = $integration[ 'post_type' ];
+		}
+		
 		$post_types_all[] = $integration[ 'post_type' ];
 
 	}  // end foreach
@@ -398,12 +409,6 @@ function ddw_btc_info_values() {
 
 	$btc_info = array(
 
-		'url_translate'     => 'https://translate.wordpress.org/projects/wp-plugins/builder-template-categories',
-		'url_wporg_faq'     => 'https://wordpress.org/plugins/builder-template-categories/#faq',
-		'url_wporg_forum'   => 'https://wordpress.org/support/plugin/builder-template-categories',
-		'url_wporg_review'  => 'https://wordpress.org/support/plugin/builder-template-categories/reviews/?filter=5/#new-post',
-		'url_wporg_profile' => 'https://profiles.wordpress.org/daveshine/',
-		'url_fb_group'      => 'https://www.facebook.com/groups/deckerweb.wordpress.plugins/',
 		'url_snippets'      => 'https://github.com/deckerweb/builder-template-categories/wiki/Code-Snippets',
 		'author'            => __( 'David Decker - DECKERWEB', 'builder-template-categories' ),
 		'author_uri'        => 'https://deckerweb.de/',
@@ -416,7 +421,7 @@ function ddw_btc_info_values() {
 
 		'url_plugin'        => 'https://github.com/deckerweb/builder-template-categories',
 		'url_plugin_docs'   => 'https://github.com/deckerweb/builder-template-categories/wiki',
-		'url_plugin_faq'    => 'https://wordpress.org/plugins/builder-template-categories/#faq',
+		'url_plugin_faq'    => 'https://github.com/deckerweb/builder-template-categories?tab=readme-ov-file#frequently-asked-questions',
 		'url_github'        => 'https://github.com/deckerweb/builder-template-categories',
 		'url_github_issues' => 'https://github.com/deckerweb/builder-template-categories/issues',
 		'url_twitter'       => 'https://twitter.com/deckerweb',

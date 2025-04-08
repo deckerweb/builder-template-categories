@@ -7,7 +7,7 @@
  * Author:            David Decker - DECKERWEB
  * Author URI:        https://deckerweb.de/
  * License:           GPL-2.0-or-later
- * License URI:       https://opensource.org/licenses/GPL-2.0
+ * License URI:       https://www.gnu.org/licenses/gpl-2.0.html
  * Text Domain:       builder-template-categories
  * Domain Path:       /languages/
  * Requires WP:       6.7
@@ -15,7 +15,7 @@
  * GitHub Plugin URI: https://github.com/deckerweb/builder-template-categories
  * GitHub Branch:     master
  *
- * Copyright: © 2018-2025 David Decker - DECKERWEB
+ * Copyright:         © 2018-2025, David Decker - DECKERWEB
  */
 
 /**
@@ -39,6 +39,52 @@ define( 'BTC_PLUGIN_DIR', trailingslashit( dirname( __FILE__ ) ) );
 
 /** Plugin base directory */
 define( 'BTC_PLUGIN_BASEDIR', trailingslashit( dirname( plugin_basename( __FILE__ ) ) ) );
+
+
+add_action( 'init', 'ddw_btc_load_translations', 1 );
+/**
+ * Load the text domain for translation of the plugin.
+ *
+ * @since 1.0.0
+ *
+ * @uses get_user_locale()
+ * @uses load_textdomain() To load translations first from WP_LANG_DIR sub folder.
+ * @uses load_plugin_textdomain() To additionally load default translations from plugin folder (default).
+ */
+function ddw_btc_load_translations() {
+
+    /** Set unique textdomain string */
+    $btc_textdomain = 'builder-template-categories';
+
+    /** The 'plugin_locale' filter is also used by default in load_plugin_textdomain() */
+    $locale = esc_attr(
+        apply_filters(
+            'plugin_locale',
+            get_user_locale(),
+            $btc_textdomain
+        )
+    );
+
+    /**
+     * WordPress languages directory
+     *   Will default to: wp-content/languages/builder-template-categories/builder-template-categories-{locale}.mo
+     */
+    $btc_wp_lang_dir = trailingslashit( WP_LANG_DIR ) . trailingslashit( $btc_textdomain ) . $btc_textdomain . '-' . $locale . '.mo';
+
+    /** Translations: First, look in WordPress' "languages" folder = custom & update-safe! */
+    load_textdomain(
+        $btc_textdomain,
+        $btc_wp_lang_dir
+    );
+
+    /** Translations: Secondly, look in 'wp-content/languages/plugins/' for the proper .mo file (= default) */
+    load_plugin_textdomain(
+        $btc_textdomain,
+        FALSE,
+        BTC_PLUGIN_BASEDIR . 'languages'
+    );
+
+}  // end function
 
 
 /** Include global functions */
@@ -186,7 +232,7 @@ function ddw_btc_run_plugin_activation( $network_wide ) {
 add_action( 'wpmu_new_blog', 'ddw_btc_network_new_site_run_plugin_activation', 10, 6 );
 /**
  * When creating a new Site within a Multisite Network run the plugin activation
- *   routine - if Toolbar Extras is activated Network-wide.
+ *   routine - if Builder Template Categories is activated Network-wide.
  *   Note: The 'wpmu_new_blog' hook fires only in Multisite.
  *
  * @since 1.0.0
