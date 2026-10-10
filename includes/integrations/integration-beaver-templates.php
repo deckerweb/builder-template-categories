@@ -29,7 +29,7 @@ add_filter( 'btc/filter/integrations/all', 'ddw_btc_register_integration_beaver_
 function ddw_btc_register_integration_beaver_builder_templates( array $integrations ) {
 
 	if ( ddw_btc_is_beaver_builder_active() ) {
-		
+
 		$integrations[ 'beaver-builder-templates' ] = array(
 			'label'          => __( 'Beaver Builder Templates', 'builder-template-categories' ),
 			'submenu_hook'   => 'edit.php?post_type=fl-builder-template',
@@ -67,6 +67,8 @@ add_action( 'admin_menu', 'ddw_btc_remove_submenu_for_beaver_themer', 999 );
  *
  * @uses ddw_btc_is_beaver_builder_active()
  * @uses ddw_btc_is_beaver_themer_active()
+
+ * @return void
  */
 function ddw_btc_remove_submenu_for_beaver_themer() {
 

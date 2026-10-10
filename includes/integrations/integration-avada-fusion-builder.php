@@ -53,6 +53,8 @@ add_action( 'admin_menu', 'ddw_btc_remove_submenu_for_avada_post_types', 999 );
  * @since 1.4.0
  *
  * @uses remove_submenu_page()
+
+ * @return void
  */
 function ddw_btc_remove_submenu_for_avada_post_types() {
 
@@ -73,6 +75,8 @@ add_action( 'admin_menu', 'ddw_btc_add_submenu_avada_fusion_builder_cpts', 999 )
  * @since 1.4.0
  *
  * @uses add_submenu_page()
+
+ * @return void
  */
 function ddw_btc_add_submenu_avada_fusion_builder_cpts() {
 

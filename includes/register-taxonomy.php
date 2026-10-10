@@ -12,6 +12,105 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 
+/**
+ * Build translated taxonomy labels for the current screen or REST post type.
+ *
+ * @param string|null $content_type Translated content type, or null for the default.
+ * @return array Taxonomy labels, including existing label filter overrides.
+
+ * @since 1.9.0
+ */
+function ddw_btc_get_taxonomy_labels( $content_type = null ) {
+
+	// One shared taxonomy across builders; distinguish it from Core pattern categories.
+	$content_type = 'Builder';
+
+	/** Set taxonomy labels, filterable */
+	return apply_filters(
+		'btc/filter/taxonomy/labels',
+		array(
+			'name'                       => sprintf(
+				/* translators: %s - Label name for default content type, "Template" */
+				_x( '%s Categories', 'Taxonomy General Name', 'builder-template-categories' ),
+				$content_type
+			),
+			'singular_name'              => sprintf(
+				/* translators: %s - Label name for default content type, "Template" */
+				_x( '%s Category', 'Taxonomy Singular Name', 'builder-template-categories' ),
+				$content_type
+			),
+			'all_items'                  => sprintf(
+				/* translators: %s - Label name for default content type, "Template" */
+				__( 'All %s Categories', 'builder-template-categories' ),
+				$content_type
+			),
+			'parent_item'                => sprintf(
+				/* translators: %s - Label name for default content type, "Template" */
+				__( 'Parent %s Category', 'builder-template-categories' ),
+				$content_type
+			),
+			'parent_item_colon'          => sprintf(
+				/* translators: %s - Label name for default content type, "Template" */
+				__( 'Parent %s Category:', 'builder-template-categories' ),
+				$content_type
+			),
+			'new_item_name'              => sprintf(
+				/* translators: %s - Label name for default content type, "Template" */
+				__( 'New %s Category Name', 'builder-template-categories' ),
+				$content_type
+			),
+			'add_new_item'               => sprintf(
+				/* translators: %s - Label name for default content type, "Template" */
+				__( 'Add New %s Category', 'builder-template-categories' ),
+				$content_type
+			),
+			'edit_item'                  => sprintf(
+				/* translators: %s - Label name for default content type, "Template" */
+				__( 'Edit %s Category', 'builder-template-categories' ),
+				$content_type
+			),
+			'update_item'                => sprintf(
+				/* translators: %s - translated template content type. */
+				__( 'Update %s Category', 'builder-template-categories' ),
+				$content_type
+			),
+			'view_item'                  => sprintf(
+				/* translators: %s - Label name for default content type, "Template" */
+				__( 'View %s Category', 'builder-template-categories' ),
+				$content_type
+			),
+			'separate_items_with_commas' => sprintf(
+				/* translators: %s - Label name for default content type, "Template" */
+				__( 'Separate %s Categories with commas', 'builder-template-categories' ),
+				$content_type
+			),
+			'add_or_remove_items'        => __( 'Add or remove categories', 'builder-template-categories' ),
+			'choose_from_most_used'      => __( 'Choose from the most used', 'builder-template-categories' ),
+			'popular_items'              => __( 'Popular Categories', 'builder-template-categories' ),
+			'search_items'               => sprintf(
+				/* translators: %s - Label name for default content type, "Template" */
+				__( 'Search %s Categories', 'builder-template-categories' ),
+				$content_type
+			),
+			'not_found'                  => sprintf(
+				/* translators: %s - Label name for default content type, "Template" */
+				__( 'No %s Categories found.', 'builder-template-categories' ),
+				$content_type
+			),
+			'no_terms'                   => sprintf(
+				/* translators: %s - Label name for default content type, "Template" */
+				__( 'No %s Categories', 'builder-template-categories' ),
+				$content_type
+			),
+			//'items_list'                 => __( 'Items list', 'builder-template-categories' ),
+			//'items_list_navigation'      => __( 'Items list navigation', 'builder-template-categories' ),
+		)
+	);
+
+
+}
+
+
 add_action( 'init', 'ddw_btc_register_templates_taxonomy', 20 );
 /**
  * Register Taxonomy for categorizing Templates for use in Page Builder contexts.
@@ -25,89 +124,12 @@ add_action( 'init', 'ddw_btc_register_templates_taxonomy', 20 );
  *
  * @uses ddw_btc_get_post_types_for_block_editor()
  * @uses register_taxonomy()
+
+ * @return void
  */
 function ddw_btc_register_templates_taxonomy() {
 
-	/** Set taxonomy labels, filterable */
-	$tax_labels = apply_filters(
-		'btc/filter/taxonomy/labels',
-		array(
-			'name'                       => sprintf(
-				/* translators: %s - Label name for default content type, "Template" */
-				_x( '%s Categories', 'Taxonomy General Name', 'builder-template-categories' ),
-				ddw_btc_string_default_content_type()
-			),
-			'singular_name'              => sprintf(
-				/* translators: %s - Label name for default content type, "Template" */
-				_x( '%s Category', 'Taxonomy Singular Name', 'builder-template-categories' ),
-				ddw_btc_string_default_content_type()
-			),
-			'all_items'                  => sprintf(
-				/* translators: %s - Label name for default content type, "Template" */
-				__( 'All %s Categories', 'builder-template-categories' ),
-				ddw_btc_string_default_content_type()
-			),
-			'parent_item'                => sprintf(
-				/* translators: %s - Label name for default content type, "Template" */
-				__( 'Parent %s Category', 'builder-template-categories' ),
-				ddw_btc_string_default_content_type()
-			),
-			'parent_item_colon'          => sprintf(
-				/* translators: %s - Label name for default content type, "Template" */
-				__( 'Parent %s Category:', 'builder-template-categories' ),
-				ddw_btc_string_default_content_type()
-			),
-			'new_item_name'              => sprintf(
-				/* translators: %s - Label name for default content type, "Template" */
-				__( 'New %s Category Name', 'builder-template-categories' ),
-				ddw_btc_string_default_content_type()
-			),
-			'add_new_item'               => sprintf(
-				/* translators: %s - Label name for default content type, "Template" */
-				__( 'Add New %s Category', 'builder-template-categories' ),
-				ddw_btc_string_default_content_type()
-			),
-			'edit_item'                  => sprintf(
-				/* translators: %s - Label name for default content type, "Template" */
-				__( 'Edit %s Category', 'builder-template-categories' ),
-				ddw_btc_string_default_content_type()
-			),
-			'update_item'                => sprintf(
-				__( 'Update %s Category', 'builder-template-categories' ),
-				ddw_btc_string_default_content_type()
-			),
-			'view_item'                  => sprintf(
-				/* translators: %s - Label name for default content type, "Template" */
-				__( 'View %s Category', 'builder-template-categories' ),
-				ddw_btc_string_default_content_type()
-			),
-			'separate_items_with_commas' => sprintf(
-				/* translators: %s - Label name for default content type, "Template" */
-				__( 'Separate %s Categories with commas', 'builder-template-categories' ),
-				ddw_btc_string_default_content_type()
-			),
-			'add_or_remove_items'        => __( 'Add or remove categories', 'builder-template-categories' ),
-			'choose_from_most_used'      => __( 'Choose from the most used', 'builder-template-categories' ),
-			'popular_items'              => __( 'Popular Categories', 'builder-template-categories' ),
-			'search_items'               => sprintf(
-				/* translators: %s - Label name for default content type, "Template" */
-				__( 'Search %s Categories', 'builder-template-categories' ),
-				ddw_btc_string_default_content_type()
-			),
-			'not_found'                  => sprintf(
-				/* translators: %s - Label name for default content type, "Template" */
-				__( 'No %s Categories found.', 'builder-template-categories' ),
-				ddw_btc_string_default_content_type()
-			),
-			'no_terms'                   => sprintf(
-				/* translators: %s - Label name for default content type, "Template" */
-				__( 'No %s Categories', 'builder-template-categories' ),
-				ddw_btc_string_default_content_type()
-			),
-			//'items_list'                 => __( 'Items list', 'builder-template-categories' ),
-			//'items_list_navigation'      => __( 'Items list navigation', 'builder-template-categories' ),
-		)
-	);
+	$tax_labels = ddw_btc_get_taxonomy_labels();
 
 	/** Set taxonomy args, filterable */
 	$args = apply_filters(
@@ -116,8 +138,16 @@ function ddw_btc_register_templates_taxonomy() {
 			'labels'            => $tax_labels,	//ddw_btc_get_taxonomy_labels(),
 			'hierarchical'      => TRUE,
 			'public'            => FALSE,
-			'show_ui'           => TRUE,
-			'show_admin_column' => TRUE,
+			'show_ui'           => current_user_can( ddw_btc_capability_submenu() ),
+			'show_in_menu'      => FALSE,
+			'capabilities'      => array(
+				'manage_terms' => ddw_btc_capability_submenu(),
+				'edit_terms'   => ddw_btc_capability_submenu(),
+				'delete_terms' => ddw_btc_capability_submenu(),
+				'assign_terms' => ddw_btc_capability_submenu(),
+			),
+			'show_admin_column' => current_user_can( ddw_btc_capability_submenu() ),
+			'rewrite'           => FALSE,
 			'show_in_nav_menus' => FALSE,
 			'show_tagcloud'     => FALSE,
 			'show_in_rest'      => TRUE,	//FALSE,
@@ -125,14 +155,7 @@ function ddw_btc_register_templates_taxonomy() {
 		)
 	);
 
-	/** Set post types to add the taxonomy to */
-	$post_types = null;
-
-	$block_editor_types = ddw_btc_get_post_types_for_block_editor( 'keys_only' );
-
-	if ( ! is_null( $block_editor_types ) ) {
-		$post_types = $block_editor_types;
-	}
+	$post_types = ddw_btc_get_integration_post_types( 'all' );
 
 	/** Finally, register the taxonomy */
 	register_taxonomy(
@@ -144,59 +167,14 @@ function ddw_btc_register_templates_taxonomy() {
 }  // end function
 
 
-add_action( 'admin_menu', 'ddw_btc_inbetween_remove_submenu_for_block_editor_types', 599 );
-/**
- * Remove the added taxonomy submenu for integrations that explicitely support
- *   the Block Editor (Gutenberg).
- *   Note: This is a necessary in-between step, as we run our integrations at a
- *   later priority. The reasoning behind is, that we need proper label support
- *   for our template content types, that the WordPress core-added submenus
- *   don't add.
- *
- * @since 1.3.0
- *
- * @uses ddw_btc_get_post_types_for_block_editor()
- *
- * @global array $GLOBALS[ 'submenu' ]
- */
-function ddw_btc_inbetween_remove_submenu_for_block_editor_types() {
 
-	$types = ddw_btc_get_post_types_for_block_editor();
-
-	if ( ! is_null( $types ) ) {
-
-		foreach ( $types as $type => $type_data ) {
-			
-			$submenu_hook = $type_data[ 'submenu_hook' ];
-
-			unset( $GLOBALS[ 'submenu' ][ $submenu_hook ][15] );
-
-		}  // end foreach
-
-	}  // end if
-
-}  // end function
 
 
 /**
- * Setup predefined taxonomy terms for our taxonomy.
- *   Default terms: General, Frontpage, Pages, Landing Pages, Sections, Hooks
- *   and Testing. Plus, more terms depending on various conditions and contexts.
- *
- * @since 1.0.0
- * @since 1.1.0 Added optional terms for products, as well as popups.
- * @since 1.2.0 Added optional terms for blocks, fields, boxes, bars and hooks.
- * @since 1.4.3 Added optional terms for flows and snippets; moved declaration
- *              into own function for reusability.
- * @since 1.6.0 Added optional terms for forms.
- * @since 1.7.0 Added optional terms for URLs and redirects.
- *
- * @uses ddw_btc_is_woocommerce_active()
- * @uses ddw_btc_is_elementor_pro_active()
- * @uses ddw_btc_is_elementor_version()
- * @uses ddw_btc_is_block_editor_active()
- *
- * @return array Filterable array of predefined terms, plus arguments.
+ * Default template categories for newly activated sites, filterable.
+
+ * @since 1.9.0
+ * @return array Default term definitions.
  */
 function ddw_btc_get_predefined_terms() {
 
@@ -241,129 +219,6 @@ function ddw_btc_get_predefined_terms() {
 
 	);  // end array
 
-	/** Optional: WooCommerce product type templates */
-	if ( ddw_btc_is_woocommerce_active() && has_filter( 'btc/filter/is_type/woo' ) ) {
-
-		$terms[ 'terms_woo' ] = array(
-			'name'        => esc_attr_x( 'Products', 'Taxonomy term title', 'builder-template-categories' ),
-			'slug'        => sanitize_key( _x( 'products', 'Taxonomy term slug - only lowercase, a-z, 0-9, hyphens!', 'builder-template-categories' ) ),
-			'description' => _x( 'Templates for WooCommerce products', 'Taxonomy term description', 'builder-template-categories' ),
-		);
-
-	}  // end if
-
-	/** Optional: Popup type templates */
-	if ( has_filter( 'btc/filter/is_type/popup' )
-		|| ( ddw_btc_is_elementor_pro_active() && ddw_btc_is_elementor_version( 'pro', '2.4.0-beta1', '>=' ) )
-	) {
-
-		$terms[ 'terms_popup' ] = array(
-			'name'        => esc_attr_x( 'Popups', 'Taxonomy term title', 'builder-template-categories' ),
-			'slug'        => sanitize_key( _x( 'popups', 'Taxonomy term slug - only lowercase, a-z, 0-9, hyphens!', 'builder-template-categories' ) ),
-			'description' => _x( 'Templates for Popups/ Modal Windows', 'Taxonomy term description', 'builder-template-categories' ),
-		);
-
-	}  // end if
-
-	/** Optional: Block type templates */
-	if ( ddw_btc_is_block_editor_active() || has_filter( 'btc/filter/is_type/block' ) ) {
-
-		$terms[ 'terms_block' ] = array(
-			'name'        => esc_attr_x( 'Blocks', 'Taxonomy term title', 'builder-template-categories' ),
-			'slug'        => sanitize_key( _x( 'blocks', 'Taxonomy term slug - only lowercase, a-z, 0-9, hyphens!', 'builder-template-categories' ) ),
-			'description' => _x( 'Templates for Blocks', 'Taxonomy term description', 'builder-template-categories' ),
-		);
-
-	}  // end if
-
-	/** Optional: Field type templates */
-	if ( has_filter( 'btc/filter/is_type/field' ) ) {
-
-		$terms[ 'terms_field' ] = array(
-			'name'        => esc_attr_x( 'Fields', 'Taxonomy term title', 'builder-template-categories' ),
-			'slug'        => sanitize_key( _x( 'fields', 'Taxonomy term slug - only lowercase, a-z, 0-9, hyphens!', 'builder-template-categories' ) ),
-			'description' => _x( 'Templates for Fields', 'Taxonomy term description', 'builder-template-categories' ),
-		);
-
-	}  // end if
-
-	/** Optional: Box type templates */
-	if ( has_filter( 'btc/filter/is_type/box' ) ) {
-
-		$terms[ 'terms_box' ] = array(
-			'name'        => esc_attr_x( 'Boxes', 'Taxonomy term title', 'builder-template-categories' ),
-			'slug'        => sanitize_key( _x( 'boxes', 'Taxonomy term slug - only lowercase, a-z, 0-9, hyphens!', 'builder-template-categories' ) ),
-			'description' => _x( 'Templates for Boxes', 'Taxonomy term description', 'builder-template-categories' ),
-		);
-
-	}  // end if
-
-	/** Optional: Bar type templates */
-	if ( has_filter( 'btc/filter/is_type/bar' ) ) {
-
-		$terms[ 'terms_bar' ] = array(
-			'name'        => esc_attr_x( 'Bars', 'Taxonomy term title', 'builder-template-categories' ),
-			'slug'        => sanitize_key( _x( 'bars', 'Taxonomy term slug - only lowercase, a-z, 0-9, hyphens!', 'builder-template-categories' ) ),
-			'description' => _x( 'Templates for Bars', 'Taxonomy term description', 'builder-template-categories' ),
-		);
-
-	}  // end if
-
-	/** Optional: Flow type templates */
-	if ( has_filter( 'btc/filter/is_type/flow' ) ) {
-
-		$terms[ 'terms_flow' ] = array(
-			'name'        => esc_attr_x( 'Flows', 'Taxonomy term title', 'builder-template-categories' ),
-			'slug'        => sanitize_key( _x( 'flows', 'Taxonomy term slug - only lowercase, a-z, 0-9, hyphens!', 'builder-template-categories' ) ),
-			'description' => _x( 'Templates for Flows', 'Taxonomy term description', 'builder-template-categories' ),
-		);
-
-	}  // end if
-
-	/** Optional: Snippet type content */
-	if ( has_filter( 'btc/filter/is_type/snippet' ) ) {
-
-		$terms[ 'terms_snippet' ] = array(
-			'name'        => esc_attr_x( 'Snippets', 'Taxonomy term title', 'builder-template-categories' ),
-			'slug'        => sanitize_key( _x( 'snippets', 'Taxonomy term slug - only lowercase, a-z, 0-9, hyphens!', 'builder-template-categories' ) ),
-			'description' => _x( 'Templates for Snippets', 'Taxonomy term description', 'builder-template-categories' ),
-		);
-
-	}  // end if
-
-	/** Optional: Form type content */
-	if ( has_filter( 'btc/filter/is_type/form' ) ) {
-
-		$terms[ 'terms_forms' ] = array(
-			'name'        => esc_attr_x( 'Forms', 'Taxonomy term title', 'builder-template-categories' ),
-			'slug'        => sanitize_key( _x( 'forms', 'Taxonomy term slug - only lowercase, a-z, 0-9, hyphens!', 'builder-template-categories' ) ),
-			'description' => _x( 'Templates for Forms', 'Taxonomy term description', 'builder-template-categories' ),
-		);
-
-	}  // end if
-
-	/** Optional: URL type content */
-	if ( has_filter( 'btc/filter/is_type/url' ) ) {
-
-		$terms[ 'terms_urls' ] = array(
-			'name'        => esc_attr_x( 'URLs', 'Taxonomy term title', 'builder-template-categories' ),
-			'slug'        => sanitize_key( _x( 'urls', 'Taxonomy term slug - only lowercase, a-z, 0-9, hyphens!', 'builder-template-categories' ) ),
-			'description' => _x( 'Templates for URLs', 'Taxonomy term description', 'builder-template-categories' ),
-		);
-
-	}  // end if
-
-	/** Optional: Redirect type content */
-	if ( has_filter( 'btc/filter/is_type/redirect' ) ) {
-
-		$terms[ 'terms_redirects' ] = array(
-			'name'        => esc_attr_x( 'Redirects', 'Taxonomy term title', 'builder-template-categories' ),
-			'slug'        => sanitize_key( _x( 'redirects', 'Taxonomy term slug - only lowercase, a-z, 0-9, hyphens!', 'builder-template-categories' ) ),
-			'description' => _x( 'Templates for Redirects', 'Taxonomy term description', 'builder-template-categories' ),
-		);
-
-	}  // end if
-
 	/** Return the terms array, filterable */
 	return apply_filters(
 		'btc/filter/taxonomy/predefined_terms',
@@ -392,34 +247,137 @@ function ddw_btc_get_predefined_terms() {
  * @return void
  */
 function ddw_btc_add_predefined_terms( $taxonomy = '' ) {
-
-	/** Set taxonomy */
-	$taxonomy = sanitize_key( $taxonomy );	//'builder-template-category';
-
+	if ( ! is_string( $taxonomy ) || ! taxonomy_exists( $taxonomy ) ) {
+		return;
+	}
+	// Never refill an existing category collection or duplicate translated defaults.
+	$existing = get_terms( array( 'taxonomy' => $taxonomy, 'hide_empty' => false, 'fields' => 'ids', 'number' => 1 ) );
+	if ( is_wp_error( $existing ) || ! empty( $existing ) ) {
+		return;
+	}
 	$terms = ddw_btc_get_predefined_terms();
+	if ( ! is_array( $terms ) ) {
+		return;
+	}
+	foreach ( $terms as $term ) {
+		if ( ! is_array( $term ) || ! isset( $term['name'], $term['slug'], $term['description'] ) || ! is_string( $term['name'] ) || ! is_string( $term['slug'] ) || ! is_string( $term['description'] ) ) {
+			continue;
+		}
+		if ( ! term_exists( $term['slug'], $taxonomy ) ) {
+			wp_insert_term( $term['name'], $taxonomy, array( 'slug' => $term['slug'], 'description' => $term['description'] ) );
+		}
+	}
+}
 
-	/** Insert all predefined terms */
-	if ( ! is_null( $terms ) ) {
 
-		foreach ( $terms as $term_key => $term ) {
+add_filter( 'rest_prepare_taxonomy', 'ddw_btc_rest_taxonomy_labels', 10, 3 );
+/**
+ * Supply Gutenberg with translated labels for the requested integration.
+ * REST requests have no admin screen; do not change the shared taxonomy object.
+ *
+ * @param WP_REST_Response $response Prepared response.
+ * @param WP_Taxonomy      $taxonomy Registered taxonomy.
+ * @param WP_REST_Request  $request  REST request.
+ * @return WP_REST_Response
 
-			if ( ! term_exists( $term[ 'slug' ], $taxonomy ) ) {
+ * @since 1.9.0
+ */
+function ddw_btc_rest_taxonomy_labels( $response, $taxonomy, $request ) {
 
-				wp_insert_term(
-					$term[ 'name' ],
-					$taxonomy,
-					array(
-						'description' => $term[ 'description' ],
-						'slug'        => $term[ 'slug' ],
-					)
-				);
+	if ( 'builder-template-category' !== $taxonomy->name ) {
+		return $response;
+	}
 
-				unset( $term );
+	$post_type = $request->get_param( 'type' );
+	if ( ! is_string( $post_type ) || ! in_array( $post_type, (array) $taxonomy->object_type, true ) ) {
+		return $response;
+	}
 
-			}  // end if
+	foreach ( ddw_btc_get_integrations() as $integration ) {
+		if ( $post_type !== $integration['post_type'] ) {
+			continue;
+		}
 
-		}  // end foreach
+		$labels = ddw_btc_get_taxonomy_labels( ddw_btc_string_content_type( $integration['template_label'] ) );
+		$data   = $response->get_data();
 
-	}  // end if
+		// Respect context and _fields: update only fields already in the response.
+		if ( isset( $data['name'] ) ) {
+			$data['name'] = $labels['name'];
+		}
+		if ( isset( $data['labels'] ) ) {
+			$data['labels'] = array_replace( (array) $data['labels'], array_intersect_key( $labels, (array) $data['labels'] ) );
+		}
 
-}  // end function
+		$response->set_data( $data );
+		break;
+	}
+
+	return $response;
+
+}
+
+
+add_filter( 'rest_pre_dispatch', 'ddw_btc_rest_terms_permissions', 10, 3 );
+/**
+ * Restrict internal template categories to the configured taxonomy capability.
+ *
+ * @since 1.9.0
+ * @param mixed           $result  Previously short-circuited REST result.
+ * @param WP_REST_Server  $server  REST server.
+ * @param WP_REST_Request $request Current request.
+ * @return mixed Original result, or an authorization error for our term route.
+ */
+function ddw_btc_rest_terms_permissions( $result, $server, $request ) {
+	$taxonomy = get_taxonomy( 'builder-template-category' );
+	if ( ! $taxonomy ) {
+		return $result;
+	}
+	$namespace = $taxonomy->rest_namespace ?: 'wp/v2';
+	$base = $taxonomy->rest_base ?: $taxonomy->name;
+	$prefix = '/' . trim( $namespace, '/' ) . '/' . trim( $base, '/' );
+	$route = $request->get_route();
+	if ( ( $route === $prefix || str_starts_with( $route, $prefix . '/' ) ) && ! current_user_can( $taxonomy->cap->assign_terms ) ) {
+		return new WP_Error( 'rest_forbidden', __( 'Sorry, you are not allowed to access template categories.', 'builder-template-categories' ), array( 'status' => rest_authorization_required_code() ) );
+	}
+	return $result;
+}
+
+add_action( 'admin_notices', 'ddw_btc_category_origin_notice' );
+/**
+ * Explain which plugin owns this taxonomy in its management screen.
+ *
+ * @since 1.9.0
+ * @return void
+ */
+function ddw_btc_category_origin_notice() {
+	$screen = get_current_screen();
+	if ( ! is_admin() || ! $screen || 'edit-tags' !== $screen->base || 'builder-template-category' !== $screen->taxonomy || ! current_user_can( ddw_btc_capability_submenu() ) ) {
+		return;
+	}
+
+	$links = array();
+	$types = array();
+	foreach ( ddw_btc_get_integrations() as $integration ) {
+		$post_type = get_post_type_object( $integration['post_type'] );
+		if ( ! $post_type || ! is_object_in_taxonomy( $post_type->name, 'builder-template-category' ) ) {
+			continue;
+		}
+		$label = esc_html( $integration['label'] );
+		if ( current_user_can( $post_type->cap->edit_posts ) ) {
+			$label = '<a href="' . esc_url( admin_url( $integration['admin_url'] ) ) . '">' . $label . '</a>';
+		}
+		$links[] = $label;
+		$types[$post_type->name] = '<code>' . esc_html( $post_type->name ) . '</code>';
+	}
+
+	echo '<div class="notice notice-info"><p><strong>' . esc_html__( 'Available on this website', 'builder-template-categories' ) . '</strong><br>';
+	echo esc_html__( 'Builder Categories organize these template libraries on this website. The listed libraries share the same set of categories.', 'builder-template-categories' ) . '</p>';
+	if ( $links ) {
+		echo '<p>' . implode( ' · ', $links ) . '</p>';
+		echo '<details><summary>' . esc_html__( 'Technical details: post types', 'builder-template-categories' ) . '</summary><p>' . implode( ', ', $types ) . '</p></details>';
+	} else {
+		echo '<p>' . esc_html__( 'No supported template libraries are currently available.', 'builder-template-categories' ) . '</p>';
+	}
+	echo '<p>' . esc_html__( 'Categories provided by Builder Template Categories. Independent of WordPress pattern categories.', 'builder-template-categories' ) . '</p></div>';
+}

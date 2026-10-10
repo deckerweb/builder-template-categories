@@ -1,7 +1,14 @@
 {
   "name": "deckerweb/builder-template-categories",
-  "description": "WordPress plugin that adds a Taxonomy Template Category for categorizing templates to make the life of site builders a little bit easier. Integrates with Page Builders and other plugins.",
-  "keywords": ["templates", "categories", "template", "category", "elementor", "page builder", "pods", "astra", "generatepress", "oceanwp", "crocoblock"],
+  "description": "Organize WordPress patterns and supported builder template libraries with shared categories.",
+  "keywords": [
+    "wordpress",
+    "templates",
+    "categories",
+    "patterns",
+    "elementor",
+    "bricks"
+  ],
   "type": "wordpress-plugin",
   "homepage": "https://github.com/deckerweb/builder-template-categories",
   "license": "GPL-2.0-or-later",
@@ -17,6 +24,6 @@
     "source": "https://github.com/deckerweb/builder-template-categories"
   },
   "require": {
-    "php": ">=7.4"
+    "php": ">=8.0"
   }
 }

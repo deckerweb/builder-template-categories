@@ -50,7 +50,8 @@ add_filter( 'parent_file', 'ddw_btc_bricks_template_parent', 5 );
  */
 function ddw_btc_bricks_template_parent( $parent_file ) {
 
-    if ( 'bricks_template' === get_current_screen()->post_type ) {
+    $screen = get_current_screen();
+    if ( $screen && 'bricks_template' === $screen->post_type && 'builder-template-category' !== $screen->taxonomy ) {
         $GLOBALS[ 'submenu_file' ] = 'edit.php?post_type=bricks_template';
         $parent_file = 'bricks';
     }

@@ -12,7 +12,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 
-add_action( 'admin_init', 'ddw_btc_integrations_add_taxonomy', 100 );
+add_action( 'init', 'ddw_btc_integrations_add_taxonomy', 100 );
 /**
  * Loop through every supported integration's post type and add our custom
  *   taxonomy 'builder-template-category'.
@@ -24,13 +24,15 @@ add_action( 'admin_init', 'ddw_btc_integrations_add_taxonomy', 100 );
  * @since 1.0.0
  *
  * @uses ddw_btc_get_integrations()
+
+ * @return void
  */
 function ddw_btc_integrations_add_taxonomy() {
 
 	$integrations = ddw_btc_get_integrations();
 
 	foreach ( $integrations as $integration ) {
-		
+
 		register_taxonomy_for_object_type( 'builder-template-category', $integration[ 'post_type' ] );
 
 	}  // end foreach
@@ -50,6 +52,8 @@ add_action( 'admin_menu', 'ddw_btc_integrations_add_admin_submenus', 600 );
  * @uses ddw_btc_taxonomy_admin_url()
  * @uses ddw_btc_string_template()
  * @uses ddw_btc_capability_submenu()
+
+ * @return void
  */
 function ddw_btc_integrations_add_admin_submenus() {
 
@@ -94,15 +98,18 @@ function ddw_btc_integrations_add_admin_submenus() {
  * @return array Tweaked array of all bulk actions for a post type.
  */
 function ddw_btc_bulk_actions_edit_title( $actions ) {
-  
+
+	if ( ! isset( $actions['edit'] ) || ! current_user_can( ddw_btc_capability_submenu() ) ) {
+		return $actions;
+	}
 	$actions[ 'edit' ] = esc_html_x(
 		'Edit, add Category etc.',
 		'Tweaked label for "Edit" bulk action',
 		'builder-template-categories'
 	);
-  
+
 	return $actions;
-  
+
 }  // end function
 
 
@@ -124,8 +131,14 @@ add_action( 'restrict_manage_posts', 'ddw_btc_filter_post_type_by_taxonomy', 100
  * @uses wp_dropdown_categories()
  *
  * @global $GLOBALS[ 'pagenow' ]
+
+ * @return void
  */
 function ddw_btc_filter_post_type_by_taxonomy() {
+	if ( ! current_user_can( ddw_btc_capability_submenu() ) ) {
+		return;
+	}
+
 
 	$integrations = ddw_btc_get_integrations();
 
@@ -134,10 +147,9 @@ function ddw_btc_filter_post_type_by_taxonomy() {
 		$post_type = sanitize_key( $integration[ 'post_type' ] );
 		$taxonomy  = 'builder-template-category';
 
-		if ( $post_type == $GLOBALS[ 'typenow' ] ) {
+		if ( $post_type === ( $GLOBALS['typenow'] ?? '' ) ) {
 
-			$selected      = isset( $_GET[ $taxonomy ] ) ? sanitize_key( wp_unslash( $_GET[ $taxonomy ] ) ) : '';
-			$info_taxonomy = get_taxonomy( $taxonomy );
+			$selected      = isset( $_GET[ $taxonomy ] ) && is_scalar( $_GET[ $taxonomy ] ) ? absint( wp_unslash( $_GET[ $taxonomy ] ) ) : 0;
 			$tax_label     = sprintf(
 				/* translators: %s - Category label based on content type, for example: All Template Categories, All Block Categories etc. */
 				esc_attr__( 'All %s', 'builder-template-categories' ),
@@ -163,7 +175,7 @@ function ddw_btc_filter_post_type_by_taxonomy() {
 }  // end function
 
 
-add_filter( 'parse_query', 'ddw_btc_convert_id_to_term_in_query', 10, 3 );
+add_action( 'parse_query', 'ddw_btc_convert_id_to_term_in_query' );
 /**
  * Execute the taxonomy filter within the post type overview table.
  *   This will only be added for supported integrations and their post types.
@@ -179,306 +191,97 @@ add_filter( 'parse_query', 'ddw_btc_convert_id_to_term_in_query', 10, 3 );
  * @uses ddw_btc_get_integrations()
  *
  * @global object $GLOBALS[ 'pagenow' ]
+
+ * @param WP_Query $query Query being parsed.
+ * @return void
  */
 function ddw_btc_convert_id_to_term_in_query( $query ) {
-
-	$integrations = ddw_btc_get_integrations();
-
-	foreach ( $integrations as $integration ) {
-
-		$post_type = sanitize_key( $integration[ 'post_type' ] );
-		$taxonomy  = 'builder-template-category';
-		$q_vars    = &$query->query_vars;
-
-		if ( 'edit.php' === $GLOBALS[ 'pagenow' ]
-			&& isset( $q_vars[ 'post_type' ] )
-			&& $q_vars[ 'post_type' ] == $post_type
-			&& isset( $q_vars[ $taxonomy ] )
-			&& is_numeric( $q_vars[ $taxonomy ] )
-			&& $q_vars[ $taxonomy ] != 0
-		) {
-
-			$term                = get_term_by( 'id', $q_vars[ $taxonomy ], $taxonomy );
-			$q_vars[ $taxonomy ] = $term->slug;
-
-		}  // end if
-
-	}  // end foreach
-
-}  // end function
+	if ( ! is_admin() || ! $query->is_main_query() || 'edit.php' !== ( $GLOBALS['pagenow'] ?? '' ) ) {
+		return;
+	}
+	$taxonomy = 'builder-template-category';
+	$post_type = $query->get( 'post_type' );
+	$value = $query->get( $taxonomy );
+	if ( ! is_string( $post_type ) || ! ddw_btc_get_content_type_for_post_type( $post_type ) || ! is_scalar( $value ) || ! ctype_digit( (string) $value ) || 0 === (int) $value ) {
+		return;
+	}
+	$term = get_term( (int) $value, $taxonomy );
+	if ( ! $term || is_wp_error( $term ) ) {
+		$query->set( 'post__in', array( 0 ) );
+		$query->set( $taxonomy, '' );
+		return;
+	}
+	$query->set( $taxonomy, $term->slug );
+}
 
 
 add_filter( 'manage_posts_columns', 'ddw_btc_tweak_taxonomy_column_title' );
+add_action( 'current_screen', 'ddw_btc_register_list_table_column' );
 /**
- * Tweak the taxonomy List Table columns label so it fits to the content type of
- *   the current integration.
+ * Restore the taxonomy column after builders customize their list tables.
  *
- *   Note: Fires intentionally on the "global" filter 'manage_posts_columns' to
- *         catch all integration post types.
- *
- * @since 1.1.0
- * @since 1.2.0 Added checks for "Field", "Box", "Bar" and "Hook" content types.
- * @since 1.3.0 Added checks for "Filter" content type.
- * @since 1.4.1 Added checks for "Section" content type.
- * @since 1.4.3 Added checks for "Flow" and "Snippet" content types.
- * @since 1.6.0 Added checks for "Sidebar", "Area", "Form" and "Script" content
- *              types.
- * @since 1.7.0 Added checks for "URL" and "Redirect" content types.
- * @since 1.8.0 Added checks for "Pattern" and "Font" content types.
- *
- * @uses ddw_btc_get_integration_post_types()
- * @uses ddw_btc_string_template()
- *
- * @param array $columns Array which holds all Post Types list table columns labels.
- * @return array Tweaked $columns array.
+ * @since 1.9.0
+ * @param WP_Screen $screen Current admin screen.
+ * @return void
  */
-function ddw_btc_tweak_taxonomy_column_title( $columns ) {  
-	
-	/** Get current Admin screen object */
-	$current_screen = get_current_screen();
-
-	/** Get our specific, relevant post types from the integrations as an array */
-	$post_types = (array) ddw_btc_get_integration_post_types();
-
-	/**
-	 * Check current Admin post type with our array and set taxonomy label
-	 *   string if proper match.
-	 */
-	if ( in_array( $current_screen->post_type, $post_types[ 'popups' ] ) ) {
-		$columns[ 'taxonomy-builder-template-category' ] = ddw_btc_string_template( 'popup' );
+function ddw_btc_register_list_table_column( $screen ) {
+	if ( 'edit' === $screen->base && ddw_btc_get_content_type_for_post_type( $screen->post_type ) ) {
+		add_filter( 'manage_' . $screen->post_type . '_posts_columns', 'ddw_btc_tweak_taxonomy_column_title', 100 );
 	}
+}
+/**
+ * Use the active integration content type for the taxonomy column.
 
-	if ( in_array( $current_screen->post_type, $post_types[ 'listings' ] ) ) {
-		$columns[ 'taxonomy-builder-template-category' ] = ddw_btc_string_template( 'listing' );
+ * @since 1.9.0
+ * @param array $columns Existing list-table columns.
+ * @return array Column titles.
+ */
+function ddw_btc_tweak_taxonomy_column_title( $columns ) {
+	if ( ! current_user_can( ddw_btc_capability_submenu() ) ) {
+		unset( $columns['taxonomy-builder-template-category'], $columns['builder-template-category'] );
+		return $columns;
 	}
-
-	if ( in_array( $current_screen->post_type, $post_types[ 'blocks' ] ) ) {
-		$columns[ 'taxonomy-builder-template-category' ] = ddw_btc_string_template( 'block' );
+	$screen = get_current_screen();
+	$type = $screen ? ddw_btc_get_content_type_for_post_type( $screen->post_type ) : null;
+	if ( $type ) {
+		$key = 'taxonomy-builder-template-category';
+		$label = ddw_btc_string_template( $type );
+		if ( isset( $columns[$key] ) ) {
+			$columns[$key] = $label;
+		} else {
+			// Keep the builder's columns and place ours immediately before Date.
+			$updated = array();
+			foreach ( $columns as $name => $title ) {
+				if ( 'date' === $name ) {
+					$updated[$key] = $label;
+				}
+				$updated[$name] = $title;
+			}
+			if ( ! isset( $updated[$key] ) ) {
+				$updated[$key] = $label;
+			}
+			$columns = $updated;
+		}
 	}
-
-	if ( in_array( $current_screen->post_type, $post_types[ 'patterns' ] ) ) {
-		$columns[ 'taxonomy-builder-template-category' ] = ddw_btc_string_template( 'pattern' );
-	}
-	
-	if ( in_array( $current_screen->post_type, $post_types[ 'libraries' ] ) ) {
-		$columns[ 'taxonomy-builder-template-category' ] = ddw_btc_string_template( 'library' );
-	}
-
-	if ( in_array( $current_screen->post_type, $post_types[ 'elements' ] ) ) {
-		$columns[ 'taxonomy-builder-template-category' ] = ddw_btc_string_template( 'element' );
-	}
-
-	if ( in_array( $current_screen->post_type, $post_types[ 'layouts' ] ) ) {
-		$columns[ 'taxonomy-builder-template-category' ] = ddw_btc_string_template( 'layout' );
-	}
-
-	if ( in_array( $current_screen->post_type, $post_types[ 'lightboxes' ] ) ) {
-		$columns[ 'taxonomy-builder-template-category' ] = ddw_btc_string_template( 'lightbox' );
-	}
-
-	if ( in_array( $current_screen->post_type, $post_types[ 'post-types' ] ) ) {
-		$columns[ 'taxonomy-builder-template-category' ] = ddw_btc_string_template( 'post-type' );
-	}
-
-	if ( in_array( $current_screen->post_type, $post_types[ 'fields' ] ) ) {
-		$columns[ 'taxonomy-builder-template-category' ] = ddw_btc_string_template( 'field' );
-	}
-
-	if ( in_array( $current_screen->post_type, $post_types[ 'boxes' ] ) ) {
-		$columns[ 'taxonomy-builder-template-category' ] = ddw_btc_string_template( 'box' );
-	}
-
-	if ( in_array( $current_screen->post_type, $post_types[ 'bars' ] ) ) {
-		$columns[ 'taxonomy-builder-template-category' ] = ddw_btc_string_template( 'bar' );
-	}
-
-	if ( in_array( $current_screen->post_type, $post_types[ 'hooks' ] ) ) {
-		$columns[ 'taxonomy-builder-template-category' ] = ddw_btc_string_template( 'hook' );
-	}
-
-	if ( in_array( $current_screen->post_type, $post_types[ 'filters' ] ) ) {
-		$columns[ 'taxonomy-builder-template-category' ] = ddw_btc_string_template( 'filter' );
-	}
-
-	if ( in_array( $current_screen->post_type, $post_types[ 'sections' ] ) ) {
-		$columns[ 'taxonomy-builder-template-category' ] = ddw_btc_string_template( 'section' );
-	}
-
-	if ( in_array( $current_screen->post_type, $post_types[ 'flows' ] ) ) {
-		$columns[ 'taxonomy-builder-template-category' ] = ddw_btc_string_template( 'flow' );
-	}
-
-	if ( in_array( $current_screen->post_type, $post_types[ 'snippets' ] ) ) {
-		$columns[ 'taxonomy-builder-template-category' ] = ddw_btc_string_template( 'snippet' );
-	}
-
-	if ( in_array( $current_screen->post_type, $post_types[ 'sidebars' ] ) ) {
-		$columns[ 'taxonomy-builder-template-category' ] = ddw_btc_string_template( 'sidebar' );
-	}
-
-	if ( in_array( $current_screen->post_type, $post_types[ 'areas' ] ) ) {
-		$columns[ 'taxonomy-builder-template-category' ] = ddw_btc_string_template( 'area' );
-	}
-
-	if ( in_array( $current_screen->post_type, $post_types[ 'forms' ] ) ) {
-		$columns[ 'taxonomy-builder-template-category' ] = ddw_btc_string_template( 'form' );
-	}
-
-	if ( in_array( $current_screen->post_type, $post_types[ 'scripts' ] ) ) {
-		$columns[ 'taxonomy-builder-template-category' ] = ddw_btc_string_template( 'script' );
-	}
-
-	if ( in_array( $current_screen->post_type, $post_types[ 'urls' ] ) ) {
-		$columns[ 'taxonomy-builder-template-category' ] = ddw_btc_string_template( 'url' );
-	}
-
-	if ( in_array( $current_screen->post_type, $post_types[ 'redirects' ] ) ) {
-		$columns[ 'taxonomy-builder-template-category' ] = ddw_btc_string_template( 'redirect' );
-	}
-
-	if ( in_array( $current_screen->post_type, $post_types[ 'fonts' ] ) ) {
-		$columns[ 'taxonomy-builder-template-category' ] = ddw_btc_string_template( 'font' );
-	}
-	
-	/** Return array of column label strings */
 	return $columns;
-
-}  // end function
+}
 
 
 add_filter( 'btc/filter/string/default_content_type', 'ddw_btc_tweak_taxonomy_labels' );
 /**
- * For certain post types of our integrations tweak the taxonomy labels, based
- *   on content type of the integration.
- *   Example: "Popup" integrations then switch to "Popup Categories" strings
- *            (instead of "Template Categories").
- *
- * @since 1.1.0
- * @since 1.2.0 Added checks for "Field", "Box", "Bar" and "Hook" content types.
- * @since 1.3.0 Added checks for "Filter" content type.
- * @since 1.4.1 Added checks for "Section" content type.
- * @since 1.4.3 Added checks for "Flow" and "Snippet" content types.
- * @since 1.6.0 Added checks for "Sidebar", "Area", "Form" and "Script" content
- *              types.
- * @since 1.7.0 Added checks for "URL" and "Redirect" content types.
- * @since 1.8.0 Added checks for "Pattern" content type.
- *
- * @uses ddw_btc_get_integration_post_types()
- * @uses ddw_btc_string_content_type()
- *
- * @return string Taxonomy label string based on content type of the integration
- *                (post type).
+ * Resolve the admin content type and preserve the translated REST fallback.
+
+ * @since 1.9.0
+ * @param string $default_content_type Translated fallback label.
+ * @return string Translated content-type label.
  */
-function ddw_btc_tweak_taxonomy_labels() {
-
-	/** Bail early if not in Admin context */
+function ddw_btc_tweak_taxonomy_labels( $default_content_type ) {
 	if ( ! is_admin() ) {
-		return;
+		return $default_content_type;
 	}
-
-	/** Get our specific, relevant post types from the integrations as an array */
-	$post_types = (array) ddw_btc_get_integration_post_types();
-
-	/**
-	 * Check current Admin post type with our array and return label string if
-	 *   proper match.
-	 */
-	if ( in_array( ddw_btc_admin_get_current_post_type(), $post_types[ 'popups' ] ) ) {
-		return ddw_btc_string_content_type( 'popup' );
-	}
-
-	if ( in_array( ddw_btc_admin_get_current_post_type(), $post_types[ 'layouts' ] ) ) {
-		return ddw_btc_string_content_type( 'layout' );
-	}
-
-	if ( in_array( ddw_btc_admin_get_current_post_type(), $post_types[ 'libraries' ] ) ) {
-		return ddw_btc_string_content_type( 'library' );
-	}
-
-	if ( in_array( ddw_btc_admin_get_current_post_type(), $post_types[ 'listings' ] ) ) {
-		return ddw_btc_string_content_type( 'listing' );
-	}
-
-	if ( in_array( ddw_btc_admin_get_current_post_type(), $post_types[ 'blocks' ] ) ) {
-		return ddw_btc_string_content_type( 'block' );
-	}
-
-	if ( in_array( ddw_btc_admin_get_current_post_type(), $post_types[ 'patterns' ] ) ) {
-		return ddw_btc_string_content_type( 'pattern' );
-	}
-	
-	if ( in_array( ddw_btc_admin_get_current_post_type(), $post_types[ 'elements' ] ) ) {
-		return ddw_btc_string_content_type( 'element' );
-	}
-
-	if ( in_array( ddw_btc_admin_get_current_post_type(), $post_types[ 'lightboxes' ] ) ) {
-		return ddw_btc_string_content_type( 'lightbox' );
-	}
-
-	if ( in_array( ddw_btc_admin_get_current_post_type(), $post_types[ 'post-types' ] ) ) {
-		return ddw_btc_string_content_type( 'post-type' );
-	}
-
-	if ( in_array( ddw_btc_admin_get_current_post_type(), $post_types[ 'fields' ] ) ) {
-		return ddw_btc_string_content_type( 'field' );
-	}
-
-	if ( in_array( ddw_btc_admin_get_current_post_type(), $post_types[ 'boxes' ] ) ) {
-		return ddw_btc_string_content_type( 'box' );
-	}
-
-	if ( in_array( ddw_btc_admin_get_current_post_type(), $post_types[ 'bars' ] ) ) {
-		return ddw_btc_string_content_type( 'bar' );
-	}
-
-	if ( in_array( ddw_btc_admin_get_current_post_type(), $post_types[ 'hooks' ] ) ) {
-		return ddw_btc_string_content_type( 'hook' );
-	}
-
-	if ( in_array( ddw_btc_admin_get_current_post_type(), $post_types[ 'filters' ] ) ) {
-		return ddw_btc_string_content_type( 'filter' );
-	}
-
-	if ( in_array( ddw_btc_admin_get_current_post_type(), $post_types[ 'sections' ] ) ) {
-		return ddw_btc_string_content_type( 'section' );
-	}
-
-	if ( in_array( ddw_btc_admin_get_current_post_type(), $post_types[ 'flows' ] ) ) {
-		return ddw_btc_string_content_type( 'flow' );
-	}
-
-	if ( in_array( ddw_btc_admin_get_current_post_type(), $post_types[ 'snippets' ] ) ) {
-		return ddw_btc_string_content_type( 'snippet' );
-	}
-
-	if ( in_array( ddw_btc_admin_get_current_post_type(), $post_types[ 'sidebars' ] ) ) {
-		return ddw_btc_string_content_type( 'sidebar' );
-	}
-
-	if ( in_array( ddw_btc_admin_get_current_post_type(), $post_types[ 'areas' ] ) ) {
-		return ddw_btc_string_content_type( 'area' );
-	}
-
-	if ( in_array( ddw_btc_admin_get_current_post_type(), $post_types[ 'forms' ] ) ) {
-		return ddw_btc_string_content_type( 'form' );
-	}
-
-	if ( in_array( ddw_btc_admin_get_current_post_type(), $post_types[ 'scripts' ] ) ) {
-		return ddw_btc_string_content_type( 'script' );
-	}
-
-	if ( in_array( ddw_btc_admin_get_current_post_type(), $post_types[ 'urls' ] ) ) {
-		return ddw_btc_string_content_type( 'url' );
-	}
-
-	if ( in_array( ddw_btc_admin_get_current_post_type(), $post_types[ 'redirects' ] ) ) {
-		return ddw_btc_string_content_type( 'redirect' );
-	}
-
-	/** If no match, return the default string ("Template") */
-	return ddw_btc_string_content_type( 'btcdefault' );
-
-}  // end function
+	$type = ddw_btc_get_content_type_for_post_type( ddw_btc_admin_get_current_post_type() );
+	return $type ? ddw_btc_string_content_type( $type ) : $default_content_type;
+}
 
 
 /**
@@ -502,18 +305,18 @@ function ddw_btc_tweak_taxonomy_labels() {
 function ddw_btc_maybe_add_tax_column_data_cpt( $column_name, $post_id ) {
 
 	$taxonomy  = 'builder-template-category';
-	$post_type = sanitize_key( get_query_var( 'post_type' ) );
+	$post_type = sanitize_key( get_post_type( $post_id ) );
 
-	if ( $column_name == $taxonomy ) {
+	if ( $column_name === $taxonomy && current_user_can( ddw_btc_capability_submenu() ) ) {
 
 		$terms = get_the_terms( $post_id, $taxonomy );
 
-		if ( ! empty( $terms ) ) {
+		if ( ! empty( $terms ) && ! is_wp_error( $terms ) ) {
 
 			$output = array();
 
 			foreach ( $terms as $term ) {
-				$output[] = '<a href="' . esc_url( admin_url( 'edit.php?' . $taxonomy . '='.  $term->slug . '&post_type=' . $post_type ) ) . '">' . $term->name . '</a>';
+				$output[] = '<a href="' . esc_url( admin_url( 'edit.php?' . $taxonomy . '='.  $term->slug . '&post_type=' . $post_type ) ) . '">' . esc_html( $term->name ) . '</a>';
 			}
 
 			echo join( ', ', $output );
@@ -523,7 +326,7 @@ function ddw_btc_maybe_add_tax_column_data_cpt( $column_name, $post_id ) {
 			echo '&mdash;';
 
 		}  // end if
-	
+
 	}  // end if
 
 }  // end function
@@ -553,7 +356,7 @@ function ddw_btc_parent_submenu_tweaks( $parent_file ) {
 
 	foreach ( $integrations as $integration => $integration_data ) {
 
-		if ( 'edit-builder-template-category' === get_current_screen()->id && $integration_data[ 'post_type' ] === get_current_screen()->post_type ) {
+		if ( get_current_screen() && 'edit-builder-template-category' === get_current_screen()->id && $integration_data[ 'post_type' ] === get_current_screen()->post_type ) {
 
 			$GLOBALS[ 'submenu_file' ] = 'edit-tags.php?taxonomy=builder-template-category&post_type=' . $integration_data[ 'post_type' ];
 			$parent_file = $integration_data[ 'submenu_hook' ];
@@ -565,3 +368,17 @@ function ddw_btc_parent_submenu_tweaks( $parent_file ) {
 	return $parent_file;
 
 }  // end function
+
+
+add_action( 'registered_post_type', 'ddw_btc_attach_late_post_type', 10, 1 );
+/**
+ * Attach categories when a supported post type is registered after init 20.
+ * @since 1.9.0
+ * @param string $post_type Newly registered post-type key.
+ * @return void
+ */
+function ddw_btc_attach_late_post_type( $post_type ) {
+	if ( taxonomy_exists( 'builder-template-category' ) && ddw_btc_get_content_type_for_post_type( $post_type ) ) {
+		register_taxonomy_for_object_type( 'builder-template-category', $post_type );
+	}
+}

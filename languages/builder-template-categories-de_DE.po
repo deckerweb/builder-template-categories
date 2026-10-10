@@ -1453,3 +1453,36 @@ msgstr "https://deckerweb.de/"
 
 #~ msgid "Items list navigation"
 #~ msgstr "Eintragsliste Navigation"
+
+msgid "Feature development ended with version 1.9.0. Only security updates may follow if needed, no later than December 31, 2027."
+msgstr "Die Entwicklung wurde mit Version 1.9.0 eingestellt. Falls nötig, folgen nur Sicherheitsupdates, längstens bis 31.12.2027."
+
+msgid "Create categories in your template library submenu. Assign them to templates or patterns and use the list-table dropdown to filter items."
+msgstr "Lege Kategorien im Untermenü der Vorlagenbibliothek an. Weise sie Vorlagen zu und filtere die Einträge über das Dropdown in der Übersicht."
+
+msgid "Documentation"
+msgstr "Dokumentation"
+
+msgid "Sorry, you are not allowed to access template categories."
+msgstr "Du darfst nicht auf Vorlagen-Kategorien zugreifen."
+
+msgid "Organize WordPress patterns and the template libraries of supported builders and themes with shared categories."
+msgstr "Organisiere WordPress-Vorlagen und die Bibliotheken unterstützter Builder und Themes mit gemeinsamen Kategorien."
+
+msgid "Builder %s"
+msgstr "Builder-%s"
+
+msgid "Categories provided by Builder Template Categories. Independent of WordPress pattern categories."
+msgstr "Kategorien von Builder Template Categories. Unabhängig von den WordPress-Vorlagen-Kategorien."
+
+msgid "Available on this website"
+msgstr "Auf dieser Website verfügbar"
+
+msgid "Technical details: post types"
+msgstr "Technische Details: Beitragstypen"
+
+msgid "No supported template libraries are currently available."
+msgstr "Derzeit sind keine unterstützten Vorlagenbibliotheken verfügbar."
+
+msgid "Builder Categories organize these template libraries on this website. The listed libraries share the same set of categories."
+msgstr "Builder-Kategorien organisieren diese Vorlagenbibliotheken auf dieser Website. Die aufgeführten Bibliotheken verwenden denselben Kategorienbestand."

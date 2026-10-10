@@ -22,7 +22,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 function ddw_btc_capability_submenu() {
 
 	return sanitize_key(
-		apply_filters(
+		(string) apply_filters(
 			'btc/filter/capability/submenu',
 			'edit_theme_options'
 		)
@@ -34,7 +34,7 @@ function ddw_btc_capability_submenu() {
 /**
  * Return array of registered integrations and their arguments.
  *
- * Plugins and themes can hook into the 'btc_filter_get_integrations' filter to
+ * Plugins and themes can hook into the 'btc/filter/integrations/all' filter to
  *   register their own integration.
  *
  * @since 1.0.0
@@ -42,41 +42,32 @@ function ddw_btc_capability_submenu() {
  * @return array Filterable array of registered integrations.
  */
 function ddw_btc_get_integrations() {
-
-	/** Set integrations array */
-	$integrations = array(
-		'default-none' => array(
-			'label'          => esc_attr__( 'No Integration registered', 'builder-template-categories' ),
-			'submenu_hook'   => null,
-			'post_type'      => 'btc-custom-post-type',
-			'template_label' => 'template',
-			'admin_url'      => null,
-		),
-	);
-
-	/** Allow the array to be filtered (= adding more integrations) */
-	$integrations = (array) apply_filters(
-		'btc/filter/integrations/all',
-		$integrations,
-		array()
-	);
-
-	/** Escape the values of the array */
-	foreach ( $integrations as $integration => $integration_data ) {
-
-		$integration                          = sanitize_key( $integration );
-		$integration_data[ 'label' ]          = esc_attr( $integration_data[ 'label' ] );
-		$integration_data[ 'submenu_hook' ]   = esc_url( $integration_data[ 'submenu_hook' ] );
-		$integration_data[ 'post_type' ]      = sanitize_key( $integration_data[ 'post_type' ] );
-		$integration_data[ 'template_label' ] = sanitize_key( $integration_data[ 'template_label' ] );
-		$integration_data[ 'admin_url' ]      = esc_url( $integration_data[ 'admin_url' ] );
-
-	}  // end foreach
-
-	/** Return registered integrations */
-	return (array) $integrations;
-
-}  // end function
+	$integrations = (array) apply_filters( 'btc/filter/integrations/all', array(), array() );
+	$valid = array();
+	foreach ( $integrations as $id => $integration ) {
+		if ( ! is_array( $integration ) || ! isset( $integration['post_type'], $integration['template_label'], $integration['label'], $integration['submenu_hook'], $integration['admin_url'] ) ) {
+			continue;
+		}
+		if ( ! is_string( $id ) ) {
+			continue;
+		}
+		foreach ( array( 'post_type', 'template_label', 'label', 'submenu_hook', 'admin_url' ) as $key ) {
+			if ( ! is_string( $integration[$key] ) ) {
+				continue 2;
+			}
+		}
+		$integration['post_type'] = sanitize_key( $integration['post_type'] );
+		$integration['template_label'] = sanitize_key( $integration['template_label'] );
+		if ( ! post_type_exists( $integration['post_type'] ) ) {
+			continue;
+		}
+		$key = sanitize_key( $id );
+		if ( '' !== $key && '' !== $integration['post_type'] && '' !== $integration['template_label'] ) {
+			$valid[$key] = $integration;
+		}
+	}
+	return $valid;
+}
 
 
 /**
@@ -94,191 +85,40 @@ function ddw_btc_taxonomy_admin_url() {
 
 
 /**
- * Get specific post types from integrations for re-usage, summarized after
- *   label types (content types).
- *
- * @since 1.1.0
- * @since 1.2.0 Added "Field", "Box", "Bar" and "Hook" content types.
- * @since 1.3.0 Added "Filter" content type.
- * @since 1.4.1 Added "Section" content type.
- * @since 1.4.3 Added "Flow" and "Snippet" content types.
- * @since 1.6.0 Added "Sidebar", "Area", "Form" and "Script" content types.
- * @since 1.7.0 Added "URL" and "Redirect" content types.
- * @since 1.8.0 Added "Pattern" and "Fonts" content types.
- *
- * @uses ddw_btc_get_integrations()
- *
- * @param string $all_types Optional string param used as a flag, to enable
- *                          alternative return of all post types in one single
- *                          array (not summarized!).
- * @return array Filterable array of post type keys, summarized after content
- *               type.
+ * Collect supported post types, optionally grouped by content type.
+
+ * @since 1.9.0
+ * @param string $all_types Use all to return a flat list.
+ * @return array Post-type keys or groups.
  */
 function ddw_btc_get_integration_post_types( $all_types = '' ) {
-
-	/** Get array with all active integrations */
-	$integrations = ddw_btc_get_integrations();
-
-	/** Setup array of certain post types as content types (array keys) */
-	$post_types = array(
-		'templates'  => array(),
-		'popups'     => array(),
-		'layouts'    => array(),
-		'listings'   => array(),
-		'libraries'  => array(),
-		'elements'   => array(),
-		'blocks'     => array(),
-		'patterns'   => array(),
-		'lightboxes' => array(),
-		'post-types' => array(),
-		'fields'     => array(),
-		'boxes'      => array(),
-		'bars'       => array(),
-		'hooks'      => array(),
-		'filters'    => array(),
-		'sections'   => array(),
-		'flows'      => array(),
-		'snippets'   => array(),
-		'sidebars'   => array(),
-		'areas'      => array(),
-		'forms'      => array(),
-		'scripts'    => array(),
-		'urls'       => array(),
-		'redirects'  => array(),
-		'fonts'      => array(),
-		'btcdefault' => array( 'btc-template' ),
-	);
-
-	$post_types_all = array();
-
-	/**
-	 * Iterate through all integrations and collect the post types for the
-	 *   defined content types
-	 */
-	foreach ( $integrations as $integration ) {
-
-		if ( 'template' === $integration[ 'template_label' ] ) {
-			$post_types[ 'templates' ][] = $integration[ 'post_type' ];
-		}
-
-		if ( 'popup' === $integration[ 'template_label' ] ) {
-			$post_types[ 'popups' ][] = $integration[ 'post_type' ];
-		}
-
-		if ( 'layout' === $integration[ 'template_label' ] ) {
-			$post_types[ 'layouts' ][] = $integration[ 'post_type' ];
-		}
-
-		if ( 'listing' === $integration[ 'template_label' ] ) {
-			$post_types[ 'listings' ][] = $integration[ 'post_type' ];
-		}
-
-		if ( 'library' === $integration[ 'template_label' ] ) {
-			$post_types[ 'libraries' ][] = $integration[ 'post_type' ];
-		}
-
-		if ( 'element' === $integration[ 'template_label' ] ) {
-			$post_types[ 'elements' ][] = $integration[ 'post_type' ];
-		}
-
-		if ( 'block' === $integration[ 'template_label' ] ) {
-			$post_types[ 'blocks' ][] = $integration[ 'post_type' ];
-		}
-
-		if ( 'pattern' === $integration[ 'template_label' ] ) {
-			$post_types[ 'patterns' ][] = $integration[ 'post_type' ];
-		}
-		
-		if ( 'lightbox' === $integration[ 'template_label' ] ) {
-			$post_types[ 'lightboxes' ][] = $integration[ 'post_type' ];
-		}
-
-		if ( 'post-type' === $integration[ 'template_label' ] ) {
-			$post_types[ 'post-types' ][] = $integration[ 'post_type' ];
-		}
-
-		if ( 'field' === $integration[ 'template_label' ] ) {
-			$post_types[ 'fields' ][] = $integration[ 'post_type' ];
-		}
-
-		if ( 'box' === $integration[ 'template_label' ] ) {
-			$post_types[ 'boxes' ][] = $integration[ 'post_type' ];
-		}
-
-		if ( 'bar' === $integration[ 'template_label' ] ) {
-			$post_types[ 'bars' ][] = $integration[ 'post_type' ];
-		}
-
-		if ( 'hook' === $integration[ 'template_label' ] ) {
-			$post_types[ 'hooks' ][] = $integration[ 'post_type' ];
-		}
-
-		if ( 'filter' === $integration[ 'template_label' ] ) {
-			$post_types[ 'filters' ][] = $integration[ 'post_type' ];
-		}
-
-		if ( 'section' === $integration[ 'template_label' ] ) {
-			$post_types[ 'sections' ][] = $integration[ 'post_type' ];
-		}
-
-		if ( 'flow' === $integration[ 'template_label' ] ) {
-			$post_types[ 'flows' ][] = $integration[ 'post_type' ];
-		}
-
-		if ( 'snippet' === $integration[ 'template_label' ] ) {
-			$post_types[ 'snippets' ][] = $integration[ 'post_type' ];
-		}
-
-		if ( 'sidebar' === $integration[ 'template_label' ] ) {
-			$post_types[ 'sidebars' ][] = $integration[ 'post_type' ];
-		}
-
-		if ( 'area' === $integration[ 'template_label' ] ) {
-			$post_types[ 'areas' ][] = $integration[ 'post_type' ];
-		}
-
-		if ( 'form' === $integration[ 'template_label' ] ) {
-			$post_types[ 'forms' ][] = $integration[ 'post_type' ];
-		}
-
-		if ( 'script' === $integration[ 'template_label' ] ) {
-			$post_types[ 'scripts' ][] = $integration[ 'post_type' ];
-		}
-
-		if ( 'url' === $integration[ 'template_label' ] ) {
-			$post_types[ 'urls' ][] = $integration[ 'post_type' ];
-		}
-
-		if ( 'redirect' === $integration[ 'template_label' ] ) {
-			$post_types[ 'redirects' ][] = $integration[ 'post_type' ];
-		}
-
-		if ( 'font' === $integration[ 'template_label' ] ) {
-			$post_types[ 'fonts' ][] = $integration[ 'post_type' ];
-		}
-		
-		$post_types_all[] = $integration[ 'post_type' ];
-
-	}  // end foreach
-
-	/**
-	 * If $all_keys param is set to 'all' return all post types,
-	 *   non-summarized.
-	 */
-	if ( 'all' === sanitize_key( $all_types ) ) {
-		return $post_types_all;
+	$groups = array( 'templates' => array(), 'patterns' => array(), 'elements' => array(), 'layouts' => array(), 'libraries' => array() );
+	$keys = array( 'template' => 'templates', 'pattern' => 'patterns', 'element' => 'elements', 'layout' => 'layouts', 'library' => 'libraries' );
+	$all = array();
+	foreach ( ddw_btc_get_integrations() as $integration ) {
+		$type = $integration['template_label'];
+		$groups[$keys[$type] ?? $type][] = $integration['post_type'];
+		$all[] = $integration['post_type'];
 	}
+	if ( 'all' === $all_types ) {
+		return array_values( array_unique( $all ) );
+	}
+	return apply_filters( 'btc/filter/integrations/post_types', $groups );
+}
 
-	/**
-	 * Return filterable array of collected post types - summarized after
-	 *   content types.
-	 */
-	return apply_filters(
-		'btc/filter/integrations/post_types',
-		$post_types
-	);
-
-}  // end function
+/** Return the content type declared by an active integration.
+ * @since 1.9.0
+ * @param string $post_type Post-type key.
+ * @return string|null Content-type key, or null if unsupported.
+ */
+function ddw_btc_get_content_type_for_post_type( $post_type ) {
+	foreach ( ddw_btc_get_integrations() as $integration ) {
+		if ( $post_type === $integration['post_type'] ) {
+			return $integration['template_label'];
+		}
+	}
+	return null;
+}
 
 
 /**
@@ -347,22 +187,21 @@ function ddw_btc_get_post_types_for_block_editor( $keys_only = '' ) {
  * @return string|null String of post type or null if no post type available.
  */
 function ddw_btc_admin_get_current_post_type() {
-
-	/** Check $_GET for post ID/ post type */
-	if ( isset( $_GET[ 'post' ] ) ) {
-
-		return sanitize_key( get_post_type( wp_unslash( $_GET[ 'post' ] ) ) );
-
-	} elseif ( isset( $_GET[ 'post_type' ] ) ) {
-
-		return sanitize_key( wp_unslash( $_GET[ 'post_type' ] ) );
-
-	}  // end if
-
-	/** Fallback: We do not know the post type! */
+	if ( function_exists( 'get_current_screen' ) ) {
+		$screen = get_current_screen();
+		if ( $screen && $screen->post_type ) {
+			return $screen->post_type;
+		}
+	}
+	if ( isset( $_GET['post'] ) && is_scalar( $_GET['post'] ) ) {
+		$type = get_post_type( absint( wp_unslash( $_GET['post'] ) ) );
+		return $type ?: null;
+	}
+	if ( isset( $_GET['post_type'] ) && is_string( $_GET['post_type'] ) ) {
+		return sanitize_key( wp_unslash( $_GET['post_type'] ) );
+	}
 	return null;
-
-}  // end function
+}
 
 
 /**
@@ -373,6 +212,8 @@ function ddw_btc_admin_get_current_post_type() {
  *
  * @param string  $post_type Given post type to run the action for.
  * @param integer $priority Given priority to run the action at.
+
+ * @return void
  */
 function ddw_btc_prepare_tax_column_add( $post_type = '', $priority = 10 ) {
 
@@ -397,31 +238,21 @@ function ddw_btc_prepare_tax_column_add( $post_type = '', $priority = 10 ) {
  */
 function ddw_btc_info_values() {
 
-	/** Get current user */
-	$user = wp_get_current_user();
-
-	/** Build Newsletter URL */
-	$url_nl = sprintf(
-		'https://deckerweb.us2.list-manage.com/subscribe?u=e09bef034abf80704e5ff9809&amp;id=380976af88&amp;MERGE0=%1$s&amp;MERGE1=%2$s',
-		esc_attr( $user->user_email ),
-		esc_attr( $user->user_firstname )
-	);
-
 	$btc_info = array(
 
 		'url_snippets'      => 'https://github.com/deckerweb/builder-template-categories/wiki/Code-Snippets',
 		'author'            => __( 'David Decker - DECKERWEB', 'builder-template-categories' ),
-		'author_uri'        => 'https://deckerweb.de/',
+		'author_uri'        => 'https://github.com/deckerweb',
 		'license'           => 'GPL-2.0-or-later',
 		'url_license'       => 'https://opensource.org/licenses/GPL-2.0',
 		'first_code'        => '2018',
 
-		'url_newsletter'    => $url_nl,
+		'url_newsletter'    => 'https://eepurl.com/gbAUUn',
 		'url_donate'        => 'https://www.paypal.me/deckerweb',
 
 		'url_plugin'        => 'https://github.com/deckerweb/builder-template-categories',
-		'url_plugin_docs'   => 'https://github.com/deckerweb/builder-template-categories/wiki',
-		'url_plugin_faq'    => 'https://github.com/deckerweb/builder-template-categories?tab=readme-ov-file#frequently-asked-questions',
+		'url_plugin_docs'   => 'https://github.com/deckerweb/builder-template-categories/blob/master/docs/guide.md',
+		'url_plugin_faq'    => 'https://github.com/deckerweb/builder-template-categories/blob/master/README.md#faq',
 		'url_github'        => 'https://github.com/deckerweb/builder-template-categories',
 		'url_github_issues' => 'https://github.com/deckerweb/builder-template-categories/issues',
 		'url_twitter'       => 'https://twitter.com/deckerweb',
@@ -448,18 +279,10 @@ function ddw_btc_info_values() {
  * @return string URL for info value.
  */
 function ddw_btc_get_info_url( $url_key = '', $raw = FALSE ) {
-
-	$btc_info = (array) ddw_btc_info_values();
-
-	$output = esc_url( $btc_info[ sanitize_key( $url_key ) ] );
-
-	if ( TRUE === $raw ) {
-		$output = esc_url_raw( $btc_info[ esc_attr( $url_key ) ] );
-	}
-
-	return $output;
-
-}  // end function
+	$info = ddw_btc_info_values();
+	$value = $info[ sanitize_key( $url_key ) ] ?? '';
+	return $raw ? esc_url_raw( $value ) : esc_url( $value );
+}
 
 
 /**

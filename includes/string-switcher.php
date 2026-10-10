@@ -75,83 +75,26 @@ function ddw_btc_string_content_type( $content_type ) {
 		case 'pattern':
 			$string = esc_attr__( 'Pattern', 'builder-template-categories' );
 			break;
-			
-		case 'popup':
-			$string = esc_attr__( 'Popup', 'builder-template-categories' );
-			break;
 
-		case 'lightbox':
-			$string = esc_attr__( 'Lightbox', 'builder-template-categories' );
-			break;
 
-		case 'listing':
-			$string = esc_attr__( 'Listing', 'builder-template-categories' );
-			break;
 
-		case 'post-type':
-			$string = esc_attr__( 'Post Type', 'builder-template-categories' );
-			break;
 
-		case 'field':
-			$string = esc_attr__( 'Field', 'builder-template-categories' );
-			break;
 
-		case 'box':
-			$string = esc_attr__( 'Box', 'builder-template-categories' );
-			break;
 
-		case 'bar':
-			$string = esc_attr__( 'Bar', 'builder-template-categories' );
-			break;
 
-		case 'hook':
-			$string = esc_attr__( 'Hook', 'builder-template-categories' );
-			break;
 
-		case 'filter':
-			$string = esc_attr__( 'Filter', 'builder-template-categories' );
-			break;
 
-		case 'section':
-			$string = esc_attr__( 'Section', 'builder-template-categories' );
-			break;
 
-		case 'flow':
-			$string = esc_attr__( 'Flow', 'builder-template-categories' );
-			break;
 
-		case 'snippet':
-			$string = esc_attr__( 'Snippet', 'builder-template-categories' );
-			break;
 
-		case 'sidebar':
-			$string = esc_attr__( 'Sidebar', 'builder-template-categories' );
-			break;
 
-		case 'area':
-			$string = esc_attr__( 'Area', 'builder-template-categories' );
-			break;
 
-		case 'form':
-			$string = esc_attr__( 'Form', 'builder-template-categories' );
-			break;
 
-		case 'script':
-			$string = esc_attr__( 'Script', 'builder-template-categories' );
-			break;
 
-		case 'url':
-			$string = esc_attr__( 'URL', 'builder-template-categories' );
-			break;
 
-		case 'redirect':
-			$string = esc_attr__( 'Redirect', 'builder-template-categories' );
-			break;
 
-		case 'font':
-			$string = esc_attr__( 'Font', 'builder-template-categories' );
-			break;
-			
+
+
 		default:
 			$string = esc_attr__( 'Template', 'builder-template-categories' );
 
@@ -202,277 +145,17 @@ function ddw_btc_string_categories() {
  */
 function ddw_btc_string_template( $string_type ) {
 
-	/** Check type for the possible types and set strings */
-	switch ( sanitize_key( $string_type ) ) {
-
-		case 'template':
-			$string = sprintf(
-				/* translators: %s - label "Categories" (for example: Template Categories) */
-				esc_attr__( 'Template %s', 'builder-template-categories' ),
-				ddw_btc_string_categories()
-			);
-			break;
-
-		case 'library':
-			$string = sprintf(
-				/* translators: %s - label "Categories" (for example: Library Categories) */
-				esc_attr__( 'Library %s', 'builder-template-categories' ),
-				ddw_btc_string_categories()
-			);
-			break;
-
-		case 'layout':
-			$string = sprintf(
-				/* translators: %s - label "Categories" (for example: Layout Categories) */
-				esc_attr__( 'Layout %s', 'builder-template-categories' ),
-				ddw_btc_string_categories()
-			);
-			break;
-
-		case 'element':
-			$string = sprintf(
-				/* translators: %s - label "Categories" (for example: Element Categories) */
-				esc_attr__( 'Element %s', 'builder-template-categories' ),
-				ddw_btc_string_categories()
-			);
-			break;
-
-		case 'block':
-			$string = sprintf(
-				/* translators: %s - label "Categories" (for example: Block Categories) */
-				esc_attr__( 'Block %s', 'builder-template-categories' ),
-				ddw_btc_string_categories()
-			);
-			break;
-
-		case 'pattern':
-			$string = sprintf(
-				/* translators: %s - label "Categories" (for example: Block Categories) */
-				esc_attr__( 'Pattern %s', 'builder-template-categories' ),
-				ddw_btc_string_categories()
-			);
-			break;
-			
-		case 'popup':
-			$string = sprintf(
-				/* translators: %s - label "Categories" (for example: Popup Categories) */
-				esc_attr__( 'Popup %s', 'builder-template-categories' ),
-				ddw_btc_string_categories()
-			);
-			break;
-
-		case 'lightbox':
-			$string = sprintf(
-				/* translators: %s - label "Categories" (for example: Lightbox Categories) */
-				esc_attr__( 'Lightbox %s', 'builder-template-categories' ),
-				ddw_btc_string_categories()
-			);
-			break;
-
-		case 'listing':
-			$string = sprintf(
-				/* translators: %s - label "Categories" (for example: Listing Categories) */
-				esc_attr__( 'Listing %s', 'builder-template-categories' ),
-				ddw_btc_string_categories()
-			);
-			break;
-
-		case 'elhf-template':
-			$string = sprintf(
-				/* translators: %s - label "Categories" (for example: ELHF Categories - "EL HF" stands for Elementor Header Footer Builder plugin) */
-				esc_attr__( 'EL HF %s', 'builder-template-categories' ),
-				ddw_btc_string_categories()
-			);
-			break;
-
-		case 'post-type':
-			$string = sprintf(
-				/* translators: %s - label "Categories" (for example: Post Type Categories) */
-				esc_attr__( 'Post Type %s', 'builder-template-categories' ),
-				ddw_btc_string_categories()
-			);
-			break;
-
-		case 'field':
-			$string = sprintf(
-				/* translators: %s - label "Categories" (for example: Field Categories) */
-				esc_attr__( 'Field %s', 'builder-template-categories' ),
-				ddw_btc_string_categories()
-			);
-			break;
-
-		case 'box':
-			$string = sprintf(
-				/* translators: %s - label "Categories" (for example: Box Categories) */
-				esc_attr__( 'Box %s', 'builder-template-categories' ),
-				ddw_btc_string_categories()
-			);
-			break;
-
-		case 'bar':
-			$string = sprintf(
-				/* translators: %s - label "Categories" (for example: Bar Categories) */
-				esc_attr__( 'Bar %s', 'builder-template-categories' ),
-				ddw_btc_string_categories()
-			);
-			break;
-
-		case 'hook':
-			$string = sprintf(
-				/* translators: %s - label "Categories" (for example: Hook Categories) */
-				esc_attr__( 'Hook %s', 'builder-template-categories' ),
-				ddw_btc_string_categories()
-			);
-			break;
-
-		case 'filter':
-			$string = sprintf(
-				/* translators: %s - label "Categories" (for example: Filter Categories) */
-				esc_attr__( 'Filter %s', 'builder-template-categories' ),
-				ddw_btc_string_categories()
-			);
-			break;
-
-		case 'section':
-			$string = sprintf(
-				/* translators: %s - label "Categories" (for example: Section Categories) */
-				esc_attr__( 'Section %s', 'builder-template-categories' ),
-				ddw_btc_string_categories()
-			);
-			break;
-
-		case 'flow':
-			$string = sprintf(
-				/* translators: %s - label "Categories" (for example: Flow Categories) */
-				esc_attr__( 'Flow %s', 'builder-template-categories' ),
-				ddw_btc_string_categories()
-			);
-			break;
-
-		case 'snippet':
-			$string = sprintf(
-				/* translators: %s - label "Categories" (for example: Snippet Categories) */
-				esc_attr__( 'Snippet %s', 'builder-template-categories' ),
-				ddw_btc_string_categories()
-			);
-			break;
-
-		case 'sidebar':
-			$string = sprintf(
-				/* translators: %s - label "Categories" (for example: Sidebar Categories) */
-				esc_attr__( 'Sidebar %s', 'builder-template-categories' ),
-				ddw_btc_string_categories()
-			);
-			break;
-
-		case 'area':
-			$string = sprintf(
-				/* translators: %s - label "Categories" (for example: Area Categories) */
-				esc_attr__( 'Area %s', 'builder-template-categories' ),
-				ddw_btc_string_categories()
-			);
-			break;
-
-		case 'form':
-			$string = sprintf(
-				/* translators: %s - label "Categories" (for example: Form Categories) */
-				esc_attr__( 'Form %s', 'builder-template-categories' ),
-				ddw_btc_string_categories()
-			);
-			break;
-
-		case 'script':
-			$string = sprintf(
-				/* translators: %s - label "Categories" (for example: Script Categories) */
-				esc_attr__( 'Script %s', 'builder-template-categories' ),
-				ddw_btc_string_categories()
-			);
-			break;
-
-		case 'url':
-			$string = sprintf(
-				/* translators: %s - label "Categories" (for example: Script Categories) */
-				esc_attr__( 'URL %s', 'builder-template-categories' ),
-				ddw_btc_string_categories()
-			);
-			break;
-
-		case 'redirect':
-			$string = sprintf(
-				/* translators: %s - label "Categories" (for example: Script Categories) */
-				esc_attr__( 'Redirect %s', 'builder-template-categories' ),
-				ddw_btc_string_categories()
-			);
-			break;
-
-		case 'font':
-			$string = sprintf(
-				/* translators: %s - label "Categories" (for example: Script Categories) */
-				esc_attr__( 'Font %s', 'builder-template-categories' ),
-				ddw_btc_string_categories()
-			);
-			break;
-			
-		default:
-			$string = sprintf(
-				/* translators: %s - label "Categories" (for example: Template Categories) */
-				esc_attr__( 'Template %s', 'builder-template-categories' ),
-				ddw_btc_string_categories()
-			);
-
-	}  // end switch
+	$string = sprintf(
+		/* translators: %s: translated Categories label. */
+		esc_attr__( 'Builder %s', 'builder-template-categories' ),
+		ddw_btc_string_categories()
+	);
 
 	/** Finally, output the complete template string, filterable */
 	return apply_filters(
 		'btc/filter/strings/template',
 		$string,
 		$string_type
-	);
-
-}  // end function
-
-
-/**
- * Build string " (for WooCommerce)".
- *   Note: Space before the brackets is intended :).
- *
- * @since 1.0.0
- *
- * @return string Filtered string output " (for WooCommerce)".
- */
-function ddw_btc_string_for_woocommerce() {
-
-	return esc_attr(
-		apply_filters(
-			'btc/filter/string/for_woocommerce',
-			sprintf(
-				' (%s)',
-				__( 'for WooCommerce', 'builder-template-categories' )
-			)
-		)
-	);
-
-}  // end function
-
-
-/**
- * Build string " (for Post Types, Taxonomies, Fields)".
- *   Note: Space before the brackets is intended :).
- *
- * @since 1.0.0
- *
- * @return string Filtered string output " (for Post Types, Taxonomies, Fields)".
- */
-function ddw_btc_string_for_cpt_fields() {
-
-	return esc_attr(
-		apply_filters(
-			'btc/filter/string/for_cpt_fields',
-			sprintf(
-				' (%s)',
-				__( 'for Post Types, Taxonomies, Fields', 'builder-template-categories' )
-			)
-		)
 	);
 
 }  // end function

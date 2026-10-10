@@ -22,6 +22,15 @@ if ( ! defined( 'ABSPATH' ) ) {
 class DDW_BTC_Finder_Category extends \Elementor\Core\Common\Modules\Finder\Base_Category {
 
 	/**
+	 * Return the stable Finder category identifier.
+	 * @since 1.9.0
+	 * @return string Category ID.
+	 */
+	public function get_id() {
+		return 'builder-template-categories';
+	}
+
+	/**
 	 * Get title.
 	 *
 	 * @since 1.4.0
@@ -58,7 +67,7 @@ class DDW_BTC_Finder_Category extends \Elementor\Core\Common\Modules\Finder\Base
 				'title'       => _x( 'Template Categories', 'Title in Elementor Finder', 'builder-template-categories' ),
 				'url'         => admin_url( 'edit-tags.php?taxonomy=builder-template-category' ),
 				'icon'        => 'tabs',
-				'keywords'    => [ 'category', 'categories', 'builder', 'templates', 'library', 'elements', 'blocks', 'page builder', 'popups', 'lightboxes', 'hooks', 'fields', 'filters', 'bars', 'boxes' ],
+				'keywords'    => [ 'category', 'categories', 'builder', 'templates', 'library', 'elements', 'patterns', 'page builder' ],
 				'description' => __( 'Manage template categories for site builders', 'builder-template-categories' ),
 			],
 			'resources' => [

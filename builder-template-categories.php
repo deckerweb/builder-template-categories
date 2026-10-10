@@ -2,20 +2,21 @@
 /**
  * Plugin Name:       Builder Template Categories
  * Plugin URI:        https://github.com/deckerweb/builder-template-categories
- * Description:       This plugin adds a Taxonomy "Template Category" for categorizing templates to make the life of site builders a little bit easier. It integrates with Elementor My Templates, OceanWP My Library, Astra Custom Layouts, GeneratePress Elements, Blox for Genesis, AnyWhere Elementor Global Templates and JetThemeCore My Library (Kava Pro/ CrocoBlock). These categories only appear in the WP-Admin Dashboard and only for the administrator user role (capability 'edit_theme_options').
- * Version:           1.8.0
+ * Description:       Organize WordPress patterns and the template libraries of supported builders and themes with shared categories.
+ * Version:           1.9.0
+ * Requires at least: 7.0
+ * Requires PHP:      8.0
  * Author:            David Decker - DECKERWEB
- * Author URI:        https://deckerweb.de/
+ * Author URI:        https://github.com/deckerweb
  * License:           GPL-2.0-or-later
  * License URI:       https://www.gnu.org/licenses/gpl-2.0.html
  * Text Domain:       builder-template-categories
  * Domain Path:       /languages/
- * Requires WP:       6.7
- * Requires PHP:      7.4
+ * Update URI:        https://github.com/deckerweb/builder-template-categories
  * GitHub Plugin URI: https://github.com/deckerweb/builder-template-categories
- * GitHub Branch:     master
  *
- * Copyright:         © 2018-2025, David Decker - DECKERWEB
+ * Copyright:         © 2018-2026, David Decker - DECKERWEB
+ * SPDX-License-Identifier: GPL-2.0-or-later
  */
 
 /**
@@ -32,7 +33,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  * @since 1.0.0
  */
 /** Plugin version */
-define( 'BTC_PLUGIN_VERSION', '1.8.0' );
+define( 'BTC_PLUGIN_VERSION', '1.9.0' );
 
 /** Plugin directory */
 define( 'BTC_PLUGIN_DIR', trailingslashit( dirname( __FILE__ ) ) );
@@ -47,9 +48,11 @@ add_action( 'init', 'ddw_btc_load_translations', 1 );
  *
  * @since 1.0.0
  *
- * @uses get_user_locale()
+ * @uses determine_locale()
  * @uses load_textdomain() To load translations first from WP_LANG_DIR sub folder.
  * @uses load_plugin_textdomain() To additionally load default translations from plugin folder (default).
+
+ * @return void
  */
 function ddw_btc_load_translations() {
 
@@ -60,7 +63,7 @@ function ddw_btc_load_translations() {
     $locale = esc_attr(
         apply_filters(
             'plugin_locale',
-            get_user_locale(),
+            determine_locale(),
             $btc_textdomain
         )
     );
@@ -97,18 +100,15 @@ require_once BTC_PLUGIN_DIR . 'includes/functions-conditionals.php';
 require_once BTC_PLUGIN_DIR . 'includes/string-switcher.php';
 
 
-add_action( 'init', 'ddw_btc_setup_plugin' );
+add_action( 'init', 'ddw_btc_setup_plugin', 5 );
 /**
  * Finally setup the plugin for the main tasks.
  *
  * @since 1.0.0
+
+ * @return void
  */
 function ddw_btc_setup_plugin() {
-
-	/** Bail early if current user has no permission for this plugin */
-	if ( ! current_user_can( ddw_btc_capability_submenu() ) ) {
-		return;
-	}
 
 	/** Register Templates taxonomy */
 	require_once BTC_PLUGIN_DIR . 'includes/register-taxonomy.php';
@@ -120,13 +120,13 @@ function ddw_btc_setup_plugin() {
 	require_once BTC_PLUGIN_DIR . 'includes/run-integrations.php';
 
 	/** Include admin helper functions */
-	if ( is_admin() ) {
+	if ( is_admin() && current_user_can( ddw_btc_capability_submenu() ) ) {
 		require_once BTC_PLUGIN_DIR . 'includes/admin/admin-help.php';
 		require_once BTC_PLUGIN_DIR . 'includes/admin/admin-extras.php';
 	}
 
 	/** Add links to Settings and Menu pages to Plugins page */
-	if ( ( is_admin() || is_network_admin() ) ) {
+	if ( is_admin() && current_user_can( ddw_btc_capability_submenu() ) ) {
 
 		add_filter(
 			'plugin_action_links_' . plugin_basename( __FILE__ ),
@@ -147,20 +147,16 @@ function ddw_btc_setup_plugin() {
  * Steps of the plugin activation routine.
  *
  * @since 1.0.0
- * @since 1.4.3 Predefined terms for Elementor's own taxonomy.
  *
  * @see plugin file includes/register-taxonomy.php
  *
  * @uses ddw_btc_load_translations()
  * @uses ddw_btc_register_templates_taxonomy()
  * @uses ddw_btc_add_predefined_terms()
+
+ * @return void
  */
 function ddw_btc_plugin_activation_routine() {
-
-	/** Bail early if permissions are not in place */
-	if ( ! current_user_can( 'activate_plugins' ) ) {
-		return;
-	}
 
 	/**
 	 * During run of the activation hook no other hooks and functions are
@@ -168,6 +164,7 @@ function ddw_btc_plugin_activation_routine() {
 	 * @link https://premium.wpmudev.org/blog/activate-deactivate-uninstall-hooks/
 	 */
 
+	require_once BTC_PLUGIN_DIR . 'includes/load-integrations.php';
 	require_once BTC_PLUGIN_DIR . 'includes/register-taxonomy.php';
 
 	ddw_btc_register_templates_taxonomy();
@@ -178,17 +175,13 @@ function ddw_btc_plugin_activation_routine() {
 		/** For our own taxonomy */
 		ddw_btc_add_predefined_terms( 'builder-template-category' );
 
-		/** Optionally for Elementor's built-in tax */
-		if ( ddw_btc_is_elementor_version( 'core', '2.4.0-beta1', '>=' ) ) {
-			ddw_btc_add_predefined_terms( 'elementor_library_category' );
-		}
 
 	}  // end if
 
 }  // end function
 
 
-register_activation_hook( __FILE__, 'ddw_btc_run_plugin_activation', 10, 1 );
+register_activation_hook( __FILE__, 'ddw_btc_run_plugin_activation' );
 /**
  * On plugin activation register the plugin's custom taxonomy and add predefined
  *   terms.
@@ -198,57 +191,55 @@ register_activation_hook( __FILE__, 'ddw_btc_run_plugin_activation', 10, 1 );
  * @link https://leaves-and-love.net/blog/making-plugin-multisite-compatible/
  *
  * @uses ddw_btc_plugin_activation_routine()
+
+ * @param bool $network_wide Whether activation is network-wide.
+ * @return void
  */
 function ddw_btc_run_plugin_activation( $network_wide ) {
-
-	/** 1st case: Network-wide activation in a Multisite Network */
-    if ( is_multisite() && $network_wide ) { 
-
-    	$site_ids = get_sites( array( 'fields' => 'ids', 'network_id' => get_current_network_id() ) );
-
-        foreach ( $site_ids as $site_id ) {
-
-        	/** Run Site after Site */
-            switch_to_blog( $site_id );
-
-            ddw_btc_plugin_activation_routine();
-
-            restore_current_blog();
-
-        }  // end foreach
-
-    }
-
-    /** 2nd case: Activation on a regular single site install */
-    else {
-
-        ddw_btc_plugin_activation_routine();
-
-    }  // end if
-
-}  // end function
+	if ( ! is_multisite() || ! $network_wide ) {
+		ddw_btc_plugin_activation_routine();
+		return;
+	}
+	$offset = 0;
+	do {
+		$ids = get_sites( array( 'fields' => 'ids', 'network_id' => get_current_network_id(), 'number' => 100, 'offset' => $offset, 'orderby' => 'id', 'order' => 'ASC' ) );
+		foreach ( $ids as $id ) {
+			switch_to_blog( $id );
+			try {
+				ddw_btc_plugin_activation_routine();
+			} finally {
+				restore_current_blog();
+			}
+		}
+		$offset += count( $ids );
+	} while ( 100 === count( $ids ) );
+}
 
 
-add_action( 'wpmu_new_blog', 'ddw_btc_network_new_site_run_plugin_activation', 10, 6 );
+add_action( 'wp_initialize_site', 'ddw_btc_network_new_site_run_plugin_activation', 200, 1 );
 /**
  * When creating a new Site within a Multisite Network run the plugin activation
  *   routine - if Builder Template Categories is activated Network-wide.
- *   Note: The 'wpmu_new_blog' hook fires only in Multisite.
+ *   Note: The 'wp_initialize_site' hook fires only in Multisite.
  *
  * @since 1.0.0
  *
  * @uses ddw_btc_plugin_activation_routine()
+
+ * @param WP_Site $new_site Newly initialized site.
+ * @return void
  */
-function ddw_btc_network_new_site_run_plugin_activation( $blog_id, $user_id, $domain, $path, $site_id, $meta ) {
-
-    if ( is_plugin_active_for_network( BTC_PLUGIN_BASEDIR . 'builder-template-categories.php' ) ) {
-
-        switch_to_blog( $blog_id );
-
-        ddw_btc_plugin_activation_routine();
-
-        restore_current_blog();
-
-    }  // end if
-
-}  // end function
+function ddw_btc_network_new_site_run_plugin_activation( $new_site ) {
+	if ( ! function_exists( 'is_plugin_active_for_network' ) ) {
+		require_once ABSPATH . 'wp-admin/includes/plugin.php';
+	}
+	if ( ! is_plugin_active_for_network( plugin_basename( __FILE__ ) ) ) {
+		return;
+	}
+	switch_to_blog( $new_site->blog_id );
+	try {
+		ddw_btc_plugin_activation_routine();
+	} finally {
+		restore_current_blog();
+	}
+}

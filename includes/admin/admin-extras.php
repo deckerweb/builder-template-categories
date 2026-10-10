@@ -13,27 +13,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 
 /**
- * Remove unethical Jetpack search results Ads as no one needs these anyway.
- *   Additionally remove other promotions and Ads from Jetpack.
- *
- * @link https://wptavern.com/jetpack-7-1-adds-feature-suggestions-to-plugin-search-results#comment-284531
- *
- * @since 1.6.0
- */
-add_filter( 'jetpack_show_promotions', '__return_false', 20 );
-add_filter( 'can_display_jetpack_manage_notice', '__return_false', 20 );
-add_filter( 'jetpack_just_in_time_msgs', '__return_false', 20 );
-
-
-/**
- * Remove unethical WooCommerce Ads injections.
- *
- * @since 1.6.0
- */
-add_filter( 'woocommerce_allow_marketplace_suggestions', '__return_false' );
-
-
-/**
  * Add "Custom Taxonomy" link to Plugins page.
  *
  * @since 1.0.0
@@ -45,7 +24,7 @@ add_filter( 'woocommerce_allow_marketplace_suggestions', '__return_false' );
 function ddw_btc_custom_taxonomy_links( $action_links = [] ) {
 
 	$btc_links = array();
-	
+
 	/** Add settings link only if user has permission */
 	if ( current_user_can( ddw_btc_capability_submenu() ) ) {
 
@@ -55,7 +34,7 @@ function ddw_btc_custom_taxonomy_links( $action_links = [] ) {
 			esc_url( admin_url( ddw_btc_taxonomy_admin_url() ) ),
 			/* translators: Title attribute for Builder Template Categories taxonomy link */
 			esc_html__( 'Builder Template Categories', 'builder-template-categories' ),
-			esc_attr_x( 'Template Categories', 'For Builder Template Categories Plugin', 'builder-template-categories' )
+			ddw_btc_string_template( 'template' )
 		);
 
 	}  // end if
@@ -124,54 +103,6 @@ function ddw_btc_plugin_links( $btc_links, $btc_file ) {
 }  // end function
 
 
-add_action( 'admin_enqueue_scripts', 'ddw_btc_inline_styles_plugins_page', 20 );
-/**
- * Add additional inline styles on the admin Plugins page.
- *
- * @since 1.0.0
- * @since 1.7.0 Splitted into function; using wp_add_inline_style() from Core.
- *
- * @uses wp_add_inline_style()
- *
- * @global string $GLOBALS[ 'pagenow' ]
- */
-function ddw_btc_inline_styles_plugins_page() {
-
-	/** Bail early if not on plugins.php admin page */
-	if ( 'plugins.php' !== $GLOBALS[ 'pagenow' ] ) {
-		return;
-	}
-
-	$btc_file = BTC_PLUGIN_BASEDIR . 'builder-template-categories.php';
-
-    /**
-     * For WordPress Admin Area
-     *   Style handle: 'wp-admin' (WordPress Core)
-     */
-    $inline_css = sprintf(
-    	'
-        tr[data-plugin="%s"] .plugin-version-author-uri a.dashicons-before:before {
-			font-size: 17px;
-			margin-right: 2px;
-			opacity: .85;
-			vertical-align: sub;
-		}
-
-		.btc-update-message p:before,
-		.update-message.notice p:empty,
-		.update-message.updating-message > p,
-		.update-message.notice-success > p,
-		.update-message.notice-error > p {
-			display: none !important;
-		}',
-		$btc_file
-	);
-
-    wp_add_inline_style( 'wp-admin', $inline_css );
-
-}  // end function
-
-
 add_filter( 'debug_information', 'ddw_btc_site_health_add_debug_info', 7 );
 /**
  * Add additional plugin related info to the Site Health Debug Info section.
@@ -210,12 +141,6 @@ function ddw_btc_site_health_add_debug_info( $debug_info ) {
 
 	$integrations_output = ( empty( $integrations_output ) ) ? esc_html__( 'No integration(s) active', 'builder-template-categories' ) : $integrations_output;
 
-	/** Setup strings */
-	$string_enabled   = __( 'Enabled', 'builder-template-categories' );
-	$string_disabled  = __( 'Disabled', 'builder-template-categories' );
-
-	$block_editor_cpt_ui = apply_filters( 'btc/filter/wp_block/post_type_ui', TRUE );
-	
 	/** Add our Debug info */
 	$debug_info[ 'builder-template-categories' ] = array(
 		'label'  => esc_html__( 'Builder Template Categories', 'builder-template-categories' ) . ' (' . esc_html__( 'Plugin', 'builder-template-categories' ) . ')',
@@ -228,10 +153,6 @@ function ddw_btc_site_health_add_debug_info( $debug_info ) {
 				'label' => __( 'Current active integrations', 'builder-template-categories' ),
 				'value' => $integrations_output,
 			),
-			'wpblock_post_type_ui' => array(
-				'label' => __( 'Reusable Blocks Post Type UI', 'builder-template-categories' ),
-				'value' => ( $block_editor_cpt_ui ) ? $string_enabled : $string_disabled,
-			),
 		),
 	);
 
@@ -239,34 +160,3 @@ function ddw_btc_site_health_add_debug_info( $debug_info ) {
 	return $debug_info;
 
 }  // end function
-
-
-if ( ! function_exists( 'ddw_wp_site_health_remove_percentage' ) ) :
-
-	add_action( 'admin_head', 'ddw_wp_site_health_remove_percentage', 100 );
-	/**
-	 * Remove the "Percentage Progress" display in Site Health feature as this will
-	 *   get users obsessed with fulfilling a 100% where there are non-problems!
-	 *
-	 * @link https://make.wordpress.org/core/2019/04/25/site-health-check-in-5-2/
-	 *
-	 * @since 1.5.1
-	 */
-	function ddw_wp_site_health_remove_percentage() {
-
-		/** Bail early if not on WP 5.2+ */
-		if ( version_compare( $GLOBALS[ 'wp_version' ], '5.2-beta', '<' ) ) {
-			return;
-		}
-
-		?>
-			<style type="text/css">
-				.site-health-progress {
-					display: none;
-				}
-			</style>
-		<?php
-
-	}  // end function
-
-endif;
