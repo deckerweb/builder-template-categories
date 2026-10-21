@@ -319,7 +319,7 @@ function ddw_btc_maybe_add_tax_column_data_cpt( $column_name, $post_id ) {
 				$output[] = '<a href="' . esc_url( admin_url( 'edit.php?' . $taxonomy . '='.  $term->slug . '&post_type=' . $post_type ) ) . '">' . esc_html( $term->name ) . '</a>';
 			}
 
-			echo join( ', ', $output );
+			echo wp_kses_post( join( ', ', $output ) );
 
 		} else {
 

@@ -374,8 +374,8 @@ function ddw_btc_category_origin_notice() {
 	echo '<div class="notice notice-info"><p><strong>' . esc_html__( 'Available on this website', 'builder-template-categories' ) . '</strong><br>';
 	echo esc_html__( 'Builder Categories organize these template libraries on this website. The listed libraries share the same set of categories.', 'builder-template-categories' ) . '</p>';
 	if ( $links ) {
-		echo '<p>' . implode( ' · ', $links ) . '</p>';
-		echo '<details><summary>' . esc_html__( 'Technical details: post types', 'builder-template-categories' ) . '</summary><p>' . implode( ', ', $types ) . '</p></details>';
+		echo '<p>' . wp_kses_post( implode( ' · ', $links ) ) . '</p>';
+		echo '<details><summary>' . esc_html__( 'Technical details: post types', 'builder-template-categories' ) . '</summary><p>' . wp_kses_post( implode( ', ', $types ) ) . '</p></details>';
 	} else {
 		echo '<p>' . esc_html__( 'No supported template libraries are currently available.', 'builder-template-categories' ) . '</p>';
 	}

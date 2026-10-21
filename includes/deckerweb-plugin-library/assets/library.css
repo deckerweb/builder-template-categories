@@ -1,0 +1,82 @@
+/* Scoped to the deckerweb tab; uses WordPress admin accent colors. */
+.plugin-install-tab-deckerweb .search-form.search-plugins{display:none}
+.dwl-install .wrap{max-width:900px;margin:40px auto;padding:0 24px}
+.dwl-install .dwl-action{display:inline-block;margin:0 12px 0 0}
+#deckerweb-library{margin:20px 0;color:#1d2327}
+#deckerweb-library *{box-sizing:border-box}
+#deckerweb-library .dwl-heading{display:flex;justify-content:space-between;align-items:baseline;gap:20px;flex-wrap:wrap;margin-bottom:20px}
+#deckerweb-library h2{margin:0;font-size:22px;font-weight:400}
+#deckerweb-library .dwl-heading p{margin:6px 0 0;color:#50575e}
+#deckerweb-library .dwl-filter{display:flex;align-items:center;gap:18px;flex-wrap:wrap;margin-bottom:20px}
+#deckerweb-library .dwl-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,340px),1fr));gap:20px}
+#deckerweb-library .dwl-card{background:#fff;border:1px solid #c3c4c7;display:flex;flex-direction:column}
+#deckerweb-library .dwl-body{padding:22px;flex:1}
+#deckerweb-library .dwl-title{display:flex;align-items:flex-start;gap:16px}
+#deckerweb-library .dwl-title h3{margin:0 0 4px;font-size:18px;line-height:1.35}
+#deckerweb-library .dwl-icon{width:54px;height:54px;flex-shrink:0;background:#f0f6fc;color:var(--wp-admin-theme-color,#2271b1);display:flex;align-items:center;justify-content:center;font-size:23px;font-weight:600}
+#deckerweb-library .dwl-meta{font-size:12px;color:#50575e}
+#deckerweb-library .dwl-active{display:inline-block;color:#135e3b;padding:5px 0;font-weight:600}
+#deckerweb-library .dwl-requirements{margin-top:16px;padding:10px 12px;background:#f6f7f7;border-left:3px solid var(--wp-admin-theme-color,#2271b1)}
+#deckerweb-library .dwl-requirements ul{margin:0 0 6px}
+#deckerweb-library .dwl-details{margin-top:18px}
+#deckerweb-library .dwl-details summary{color:var(--wp-admin-theme-color,#2271b1);cursor:pointer}
+#deckerweb-library .dwl-details p{margin:8px 0}
+#deckerweb-library footer{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;padding:12px 22px;background:#f6f7f7;border-top:1px solid #dcdcde;color:#50575e}
+#deckerweb-library .dwl-bottom{margin-top:22px;display:flex;gap:22px;flex-wrap:wrap;align-items:center;color:#50575e}
+#deckerweb-library .dwl-action{display:inline-block;margin:0}
+#deckerweb-library .notice{margin:12px 0}
+@media(max-width:600px){#deckerweb-library .dwl-body{padding:16px}#deckerweb-library .dwl-filter{align-items:flex-start;flex-direction:column}#deckerweb-library .dwl-filter>label{max-width:100%}#deckerweb-library .dwl-filter>label:first-of-type{width:100%}#deckerweb-library .dwl-filter input[type=search]{margin:0;min-width:0;max-width:100%;width:100%}}
+
+#deckerweb-library .dwl-icon img{width:54px;height:54px;object-fit:contain}
+#deckerweb-library .dwl-icon-fallback{display:flex;align-items:center;justify-content:center;width:100%;height:100%;color:#536273}
+#deckerweb-library .dwl-stars{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+#deckerweb-library .dwl-stars a{text-decoration:none;color:#50575e}
+#deckerweb-library dialog{width:min(720px,calc(100vw - 32px));max-height:80vh;overflow:auto;border:1px solid #8c8f94;padding:24px;color:#1d2327;background:#fff}
+#deckerweb-library dialog::backdrop{background:rgba(0,0,0,.45)}
+#deckerweb-library .dwl-dialog-top{display:flex;justify-content:space-between;align-items:center;gap:16px}
+#deckerweb-library dialog section{padding:12px 0;border-bottom:1px solid #dcdcde}
+#deckerweb-library .dwl-badge{display:inline-block;padding:3px 8px;border-radius:3px;font-size:13px;margin:8px 0 0;color:#1d2327;background:#f0f0f1}
+#deckerweb-library .dwl-new{background:#d7eddf}#deckerweb-library .dwl-improved{background:#dbeaf7}#deckerweb-library .dwl-fixed{background:#f8e9d2}
+#deckerweb-library a:focus-visible,#deckerweb-library button:focus-visible,#deckerweb-library summary:focus-visible{outline:2px solid #2271b1;outline-offset:3px}
+#deckerweb-library .dwl-details summary{color:#135e96}#deckerweb-library .dwl-requirements{border-left-color:#2271b1}
+
+/* Product families stay independent of functional categories and original icons. */
+#deckerweb-library .dwl-filter{display:block}
+#deckerweb-library .dwl-series-filter{margin:0 0 14px;padding:0;border:0;display:flex;gap:8px;flex-wrap:wrap}
+#deckerweb-library .dwl-series-filter legend{font-weight:600;margin-bottom:8px}
+#deckerweb-library .dwl-series-selected{background:#eaf1f7;border-color:#2271b1;color:#135e96;box-shadow:inset 0 -2px #2271b1}
+#deckerweb-library .dwl-filter-controls{display:flex;gap:14px;align-items:center;flex-wrap:wrap}
+#deckerweb-library .dwl-filter-help{margin:10px 0 0;color:#50575e;max-width:850px}
+#deckerweb-library .dwl-series-badge{display:inline-block;margin:7px 5px 0 0;padding:2px 7px;font-size:12px;line-height:1.6;font-weight:600;border-radius:3px;background:#eef0f2;color:#34404b}
+#deckerweb-library .dwl-meta + .dwl-series-badge{display:table}
+#deckerweb-library .dwl-series-quicknav{background:#eaf1f7;color:#244962}
+#deckerweb-library .dwl-series-builder{background:#eef2e9;color:#3d5030}
+#deckerweb-library .dwl-series-purify{background:#f3edf4;color:#583d60}
+#deckerweb-library .dwl-series-filter button:focus-visible,#deckerweb-library .dwl-reset:focus-visible{outline:2px solid #2271b1;outline-offset:3px}
+@media(max-width:480px){#deckerweb-library .dwl-filter-controls input[type=search]{width:100%;max-width:100%}#deckerweb-library .dwl-filter-controls>label:first-child{width:100%}}
+
+#deckerweb-library .dwl-series-manage-content{background:#e8f1ef;color:#31534b}
+
+#deckerweb-library .dwl-series-connect{background:#edf0f7;color:#39476a}
+
+#deckerweb-library.dwl-settings-footer{margin-top:28px;padding-top:18px;border-top:1px solid #dcdcde}
+#deckerweb-library .dwl-settings-brand{display:flex;align-items:center;gap:14px;flex-wrap:nowrap}
+#deckerweb-library .dwl-settings-brand>img{width:52px;height:52px;flex:0 0 52px}
+#deckerweb-library .dwl-settings-brand>div{min-width:0;line-height:1.8;overflow-wrap:anywhere}
+
+#deckerweb-library.dwl-settings-footer [data-dwl-history]{margin-inline-start:18px}
+.wrap .dwl-settings-catalog-link{margin:26px 0 32px;padding:8px 0}
+.wrap .dwl-settings-catalog-link .button{padding-inline:16px}
+#deckerweb-library .dwl-inline-status{margin:10px 0;color:#22713b;overflow-wrap:anywhere}
+#deckerweb-library .dwl-inline-error{color:#b32d2e}
+#deckerweb-library .dwl-action[aria-busy=true] .button{cursor:progress}
+
+#deckerweb-library .dwl-icon-fallback{font-size:20px;letter-spacing:-.3px}
+
+#dwl-history:not([open]),#dwl-history[hidden]{display:none!important} .dwl-filter-chip{display:inline-block;margin:0 8px 8px 0}.dwl-diagnostics{margin:24px 0}.dwl-diagnostics summary{cursor:pointer;font-weight:600}.dwl-catalog-status,.dwl-install-state{color:#50575e}.dwl-grid{grid-template-columns:repeat(auto-fill,minmax(min(100%,340px),1fr))}
+
+/* Subtle card feedback preserves native control focus and never shifts layout. */
+#deckerweb-library .dwl-card:hover,
+#deckerweb-library .dwl-card:focus-within{border-color:#8c9aab;box-shadow:0 2px 8px rgba(30,45,65,.09)}
+@media (prefers-reduced-motion:no-preference){#deckerweb-library .dwl-card{transition:border-color .15s ease,box-shadow .15s ease}}
+@media (forced-colors:active){#deckerweb-library .dwl-card:focus-within{outline:1px solid Highlight;outline-offset:2px}}

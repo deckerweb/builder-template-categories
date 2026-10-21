@@ -58,7 +58,7 @@ function ddw_btc_add_patterns_admin_menu() {
  */
 function ddw_btc_register_integration_wp_block_editor( array $integrations ) {
 	$integrations['wp-block-editor'] = array(
-		'label'          => __( 'Patterns', 'default' ),
+		'label'          => get_post_type_object( 'wp_block' )->labels->name,
 		'submenu_hook'   => 'edit.php?post_type=wp_block',
 		'post_type'      => 'wp_block',
 		'template_label' => 'pattern',

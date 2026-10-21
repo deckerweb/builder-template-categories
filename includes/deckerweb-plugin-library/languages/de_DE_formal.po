@@ -1,0 +1,683 @@
+msgid ""
+msgstr "Project-Id-Version: deckerweb Library 1.1.0\nLanguage: de_DE_formal\nContent-Type: text/plain; charset=UTF-8\nPlural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgid "%s is installed but inactive. Activate it first."
+msgstr "%s ist installiert, aber inaktiv. Bitte zuerst aktivieren."
+
+msgid "%s is missing. Install and activate it first."
+msgstr "%s fehlt. Bitte zuerst installieren und aktivieren."
+
+msgid "%s must be network activated first."
+msgstr "%s muss zuerst netzwerkweit aktiviert werden."
+
+msgid "%s supports activation per site only."
+msgstr "%s unterstützt nur die Aktivierung je Website."
+
+msgid "Action cancelled."
+msgstr "Vorgang abgebrochen."
+
+msgid "Activate"
+msgstr "Aktivieren"
+
+msgid "Activate Bricks QuickNav per site after selecting the Bricks parent or child theme."
+msgstr "Bricks QuickNav bitte je Website aktivieren, nachdem das Bricks-Theme oder ein Child-Theme ausgewählt wurde."
+
+msgid "Activating…"
+msgstr "Wird aktiviert…"
+
+msgid "Active"
+msgstr "Aktiv"
+
+msgid "Active filters: "
+msgstr "Aktive Filter: "
+
+msgid "Admin"
+msgstr "Administration"
+
+msgid "Affected features remain paused until their requirements are met."
+msgstr "Betroffene Funktionen pausieren, bis ihre Voraussetzungen erfüllt sind."
+
+msgid "All"
+msgstr "Alle"
+
+msgid "Already active"
+msgstr "Bereits aktiv"
+
+msgid "Already up to date."
+msgstr "Bereits aktuell."
+
+msgid "Another action for this plugin is running. Please wait."
+msgstr "Für dieses Plugin läuft bereits eine Aktion. Bitte warten."
+
+msgid "Another component interrupted the request. If Git Updater is active, temporarily deactivate it and retry."
+msgstr "Eine andere Komponente hat die Anfrage unterbrochen. Falls Git Updater aktiv ist, deaktivieren Sie ihn vorübergehend und wiederholen Sie den Vorgang."
+
+msgid "Another updater provides a different release. Refresh updates before continuing."
+msgstr "Ein anderer Updater bietet einen abweichenden Release an. Bitte die Updateinformationen vor dem Fortfahren aktualisieren."
+
+msgid "Apr"
+msgstr "Apr"
+
+msgid "April"
+msgstr "April"
+
+msgid "Archive contains too many files."
+msgstr "Das Archiv enthält zu viele Dateien."
+
+msgid "Archive symlinks are not permitted."
+msgstr "Symbolische Verknüpfungen sind im Archiv nicht erlaubt."
+
+msgid "As of "
+msgstr "Stand: "
+
+msgid "Aug"
+msgstr "Aug"
+
+msgid "August"
+msgstr "August"
+
+msgid "Back to deckerweb"
+msgstr "Zurück zu deckerweb"
+
+msgid "Builder"
+msgstr "Builder"
+
+msgid "Bundled catalog"
+msgstr "Mitgelieferter Katalog"
+
+msgid "Cached or bundled catalog"
+msgstr "Gespeicherter oder mitgelieferter Katalog"
+
+msgid "Cannot create temporary file."
+msgstr "Temporäre Datei konnte nicht erstellt werden."
+
+msgid "Cannot create verified archive."
+msgstr "Geprüftes Archiv konnte nicht erstellt werden."
+
+msgid "Cannot finalize archive."
+msgstr "Archiv konnte nicht abgeschlossen werden."
+
+msgid "Cannot normalize archive."
+msgstr "Archiv konnte nicht aufbereitet werden."
+
+msgid "Cannot read archive entry."
+msgstr "Archiveintrag konnte nicht gelesen werden."
+
+msgid "Catalog URL"
+msgstr "Katalog-URL"
+
+msgid "Catalog refreshed."
+msgstr "Katalog aktualisiert."
+
+msgid "Changelog"
+msgstr "Änderungsverlauf"
+
+msgid "Check status"
+msgstr "Status prüfen"
+
+msgid "Checking status…"
+msgstr "Status wird geprüft…"
+
+msgid "Close"
+msgstr "Schließen"
+
+msgid "Commerce"
+msgstr "Commerce"
+
+msgid "Compatible additions only"
+msgstr "Nur passende Ergänzungen"
+
+msgid "Content"
+msgstr "Inhalte"
+
+msgid "Copied."
+msgstr "Kopiert."
+
+msgid "Copy diagnostic information"
+msgstr "Diagnoseinformationen kopieren"
+
+msgid "Dec"
+msgstr "Dez"
+
+msgid "December"
+msgstr "Dezember"
+
+msgid "Delete Library settings when removing the last host plugin"
+msgstr "Library-Einstellungen beim Entfernen des letzten Host-Plugins ebenfalls löschen"
+
+msgid "Details & requirements"
+msgstr "Details & Voraussetzungen"
+
+msgid "Discover more plugins by deckerweb"
+msgstr "Weitere Plugins von deckerweb entdecken"
+
+msgid "Discover randomly"
+msgstr "Zufällig entdecken"
+
+msgid "Dismiss permanently"
+msgstr "Dauerhaft schließen"
+
+msgid "Dismiss this notice"
+msgstr "Diesen Hinweis ausblenden"
+
+msgid "Done. The plugin is active."
+msgstr "Erledigt. Das Plugin ist aktiv."
+
+msgid "Enter a catalog URL first."
+msgstr "Bitte zuerst eine Katalog-URL eintragen."
+
+msgid "Expanded archive is too large."
+msgstr "Das entpackte Archiv ist zu groß."
+
+msgid "F j, Y"
+msgstr "j. F Y"
+
+msgid "Feb"
+msgstr "Feb"
+
+msgid "February"
+msgstr "Februar"
+
+msgid "Filesystem credentials are required."
+msgstr "Zugangsdaten für das Dateisystem werden benötigt."
+
+msgid "Filesystem credentials are required. Use the catalog with JavaScript enabled or the native Plugins screen."
+msgstr "Dateisystem-Zugangsdaten sind erforderlich. Bitte den Katalog mit aktiviertem JavaScript oder die WordPress-Pluginverwaltung verwenden."
+
+msgid "Filter"
+msgstr "Filtern"
+
+msgid "Fits my installation"
+msgstr "Passt zu meiner Installation"
+
+msgid "Fixed"
+msgstr "Behoben"
+
+msgid "Fri"
+msgstr "Fr"
+
+msgid "Friday"
+msgstr "Freitag"
+
+msgid "Git Updater is active. If a deckerweb installation or update fails, temporarily deactivate Git Updater and retry. Reactivate it afterwards if other plugins or themes need it. Only leave it disabled when those extensions have another reliable update provider."
+msgstr "Git Updater ist aktiv. Falls eine deckerweb-Installation oder Aktualisierung fehlschlägt, deaktivieren Sie Git Updater vorübergehend und wiederholen Sie den Vorgang. Aktivieren Sie ihn danach wieder, wenn andere Plugins oder Themes ihn benötigen. Lassen Sie ihn nur dauerhaft deaktiviert, wenn diese Erweiterungen einen anderen zuverlässigen Updateweg besitzen."
+
+msgid "GitHub Stars"
+msgstr "GitHub-Sterne"
+
+msgid "Hide catalog"
+msgstr "Katalog ausblenden"
+
+msgid "Improved"
+msgstr "Verbessert"
+
+msgid "Install and activate this plugin in the network admin."
+msgstr "Dieses Plugin bitte im Netzwerk-Admin installieren und aktivieren."
+
+msgid "Install deckerweb plugin"
+msgstr "deckerweb-Plugin installieren"
+
+msgid "Install now"
+msgstr "Jetzt installieren"
+
+msgid "Installation cancelled."
+msgstr "Installation abgebrochen."
+
+msgid "Installation failed."
+msgstr "Installation fehlgeschlagen."
+
+msgid "Installed"
+msgstr "Installiert"
+
+msgid "Installed · inactive"
+msgstr "Installiert · inaktiv"
+
+msgid "Installed: "
+msgstr "Installiert: "
+
+msgid "Installing…"
+msgstr "Wird installiert…"
+
+msgid "Invalid ZIP archive."
+msgstr "Ungültiges ZIP-Archiv."
+
+msgid "Invalid approval flag."
+msgstr "Ungültige Freigabeangabe."
+
+msgid "Invalid catalog field: "
+msgstr "Ungültiges Katalogfeld: "
+
+msgid "Invalid catalog revision."
+msgstr "Ungültiger Katalogstand."
+
+msgid "Invalid catalog schema."
+msgstr "Ungültiges Katalogformat."
+
+msgid "Invalid catalog timestamp."
+msgstr "Ungültiger Katalogzeitpunkt."
+
+msgid "Invalid dependencies."
+msgstr "Ungültige Abhängigkeiten."
+
+msgid "Invalid dependency URL."
+msgstr "Ungültige URL einer Abhängigkeit."
+
+msgid "Invalid dependency metadata."
+msgstr "Ungültige Angaben zu Abhängigkeiten."
+
+msgid "Invalid display field."
+msgstr "Ungültiges Anzeigefeld."
+
+msgid "Invalid icon color."
+msgstr "Ungültige Icon-Farbe."
+
+msgid "Invalid icon label."
+msgstr "Ungültiges Icon-Kürzel."
+
+msgid "Invalid identity or release metadata."
+msgstr "Ungültige Plugin- oder Release-Angaben."
+
+msgid "Invalid local icon."
+msgstr "Ungültiges lokales Icon."
+
+msgid "Invalid network policy."
+msgstr "Ungültige Netzwerkregel."
+
+msgid "Invalid network requirement."
+msgstr "Ungültige Netzwerkanforderung."
+
+msgid "Invalid platform version."
+msgstr "Ungültige Plattformversion."
+
+msgid "Invalid plugin series."
+msgstr "Ungültige Plugin-Serie."
+
+msgid "Invalid sort order."
+msgstr "Ungültige Sortierung."
+
+msgid "Invalid star count."
+msgstr "Ungültige Anzahl der GitHub-Sterne."
+
+msgid "Invalid stars date."
+msgstr "Ungültiges Datum der GitHub-Sterne."
+
+msgid "Jan"
+msgstr "Jan"
+
+msgid "January"
+msgstr "Januar"
+
+msgid "Jul"
+msgstr "Jul"
+
+msgid "July"
+msgstr "Juli"
+
+msgid "Jun"
+msgstr "Jun"
+
+msgid "June"
+msgstr "Juni"
+
+msgid "Last successful check: "
+msgstr "Zuletzt erfolgreich geprüft: "
+
+msgid "Library"
+msgstr "Library"
+
+msgid "Library changelog"
+msgstr "Library-Änderungsverlauf"
+
+msgid "Library settings"
+msgstr "Library-Einstellungen"
+
+msgid "Library settings saved."
+msgstr "Library-Einstellungen gespeichert."
+
+msgid "Manage Content"
+msgstr "Inhalte verwalten"
+
+msgid "Manage installed plugins"
+msgstr "Installierte Plugins verwalten"
+
+msgid "Mar"
+msgstr "Mär"
+
+msgid "March"
+msgstr "März"
+
+msgid "May"
+msgstr "Mai"
+
+msgid "Misc"
+msgstr "Sonstiges"
+
+msgid "Missing display text."
+msgstr "Anzeigetext fehlt."
+
+msgid "Missing plugin header."
+msgstr "Plugin-Header fehlt."
+
+msgid "Mon"
+msgstr "Mo"
+
+msgid "Monday"
+msgstr "Montag"
+
+msgid "More by deckerweb"
+msgstr "Mehr von deckerweb"
+
+msgid "Multisite"
+msgstr "Multisite"
+
+msgid "Name A–Z"
+msgstr "Name A–Z"
+
+msgid "Name Z–A"
+msgstr "Name Z–A"
+
+msgid "Network activate"
+msgstr "Netzwerkweit aktivieren"
+
+msgid "Network active"
+msgstr "Netzwerkweit aktiv"
+
+msgid "Network permission denied."
+msgstr "Keine Berechtigung für das Netzwerk."
+
+msgid "New"
+msgstr "Neu"
+
+msgid "No approved plugins match this selection."
+msgstr "Keine freigegebenen Plugins passen zu dieser Auswahl."
+
+msgid "Not installed. You can try again."
+msgstr "Nicht installiert. Ein erneuter Versuch ist möglich."
+
+msgid "Nov"
+msgstr "Nov"
+
+msgid "November"
+msgstr "November"
+
+msgid "Oct"
+msgstr "Okt"
+
+msgid "October"
+msgstr "Oktober"
+
+msgid "Off by default. Applies only when no other host is installed, including inactive hosts. Removes Library settings, installation records and introduction status. Installed plugins, their content and other plugin settings remain unchanged. Network data is shared across sites."
+msgstr "Standardmäßig ausgeschaltet. Gilt nur, wenn kein weiterer Host installiert ist, auch kein deaktivierter. Entfernt Library-Einstellungen, Installationszuordnung und den Status des Einführungshinweises. Installierte Plugins, deren Inhalte und Einstellungen anderer Plugins bleiben erhalten. Netzwerkdaten werden gemeinsam von den Websites genutzt."
+
+msgid "Online catalog"
+msgstr "Online-Katalog"
+
+msgid "Only HTTPS on raw.githubusercontent.com/deckerweb. The server receives the requesting IP address. GitHub is contacted when installing a release."
+msgstr "Nur HTTPS auf raw.githubusercontent.com/deckerweb. Der Server sieht die anfragende IP-Adresse. Beim Installieren eines Releases wird GitHub kontaktiert."
+
+msgid "Only approved releases"
+msgstr "Nur freigegebene Releases"
+
+msgid "Open catalog"
+msgstr "Katalog öffnen"
+
+msgid "Optional. The bundled catalog works immediately. Catalog requests are cached for 24 hours. No site URL, plugin list or usage data is sent."
+msgstr "Optional. Der mitgelieferte Katalog funktioniert sofort. Katalogabfragen werden 24 Stunden zwischengespeichert. Keine Website-URL, Plugin-Liste oder Nutzungsdaten werden übertragen."
+
+msgid "PHP ZIP support is required."
+msgstr "PHP-ZIP-Unterstützung wird benötigt."
+
+msgid "POST required."
+msgstr "Eine POST-Anfrage ist erforderlich."
+
+msgid "Permission denied."
+msgstr "Keine Berechtigung."
+
+msgid "Permission denied. Reload the page and check your permissions."
+msgstr "Zugriff verweigert. Laden Sie die Seite neu und prüfen Sie Ihre Berechtigungen."
+
+msgid "Planned: "
+msgstr "Geplant: "
+
+msgid "Plugin identity or version does not match the catalog."
+msgstr "Plugin oder Version stimmt nicht mit dem Katalog überein."
+
+msgid "Plugin is not installed."
+msgstr "Das Plugin ist nicht installiert."
+
+msgid "Plugin series"
+msgstr "Plugin-Serien"
+
+msgid "Product website"
+msgstr "Produktwebsite"
+
+msgid "Recently updated"
+msgstr "Zuletzt aktualisiert"
+
+msgid "Refresh catalog"
+msgstr "Katalog aktualisieren"
+
+msgid "Release 1.0.0 is being prepared. Installation will be available after package verification."
+msgstr "Release 1.0.0 wird vorbereitet. Die Installation ist nach Prüfung des Pakets verfügbar."
+
+msgid "Release checksum is verified before installation. Activation is a separate step."
+msgstr "Vor der Installation wird die Release-Prüfsumme geprüft. Die Aktivierung erfolgt separat."
+
+msgid "Release in preparation"
+msgstr "Release in Vorbereitung"
+
+msgid "Release must contain exactly the approved plugin directory."
+msgstr "Das Release muss genau das freigegebene Plugin-Verzeichnis enthalten."
+
+msgid "Remove filter: "
+msgstr "Filter entfernen: "
+
+msgid "Repository & documentation"
+msgstr "Repository & Dokumentation"
+
+msgid "Requirements shown are preliminary until the stable release is verified."
+msgstr "Die gezeigten Voraussetzungen sind bis zur Prüfung des stabilen Releases vorläufig."
+
+msgid "Requires PHP %s or newer."
+msgstr "Benötigt PHP %s oder neuer."
+
+msgid "Requires WordPress %s or newer."
+msgstr "Benötigt WordPress %s oder neuer."
+
+msgid "Requires a WordPress Multisite network."
+msgstr "Benötigt ein WordPress-Multisite-Netzwerk."
+
+msgid "Reset filters"
+msgstr "Filter zurücksetzen"
+
+msgid "Reset view"
+msgstr "Ansicht zurücksetzen"
+
+msgid "Retrieve approved catalog updates online"
+msgstr "Katalogfreigaben online aktualisieren"
+
+msgid "Sat"
+msgstr "Sa"
+
+msgid "Saturday"
+msgstr "Samstag"
+
+msgid "Save settings"
+msgstr "Einstellungen speichern"
+
+msgid "Scripts"
+msgstr "Scripte"
+
+msgid "Search this catalog"
+msgstr "Diesen Katalog durchsuchen"
+
+msgid "Select and copy the text."
+msgstr "Text markieren und kopieren."
+
+msgid "Selected by deckerweb · Installed from GitHub releases"
+msgstr "Von deckerweb ausgewählt · Installation aus GitHub-Releases"
+
+msgid "Sep"
+msgstr "Sep"
+
+msgid "September"
+msgstr "September"
+
+msgid "Settings saved."
+msgstr "Einstellungen gespeichert."
+
+msgid "Shop"
+msgstr "Shop"
+
+msgid "Show deckerweb under Add Plugins"
+msgstr "deckerweb unter „Plugins hinzufügen“ anzeigen"
+
+msgid "Shows plugins whose platform and dependency requirements are met in this site or network. Without this filter, plugins with missing requirements remain visible."
+msgstr "Zeigt Plugins, deren Plattform- und Abhängigkeitsanforderungen auf dieser Website oder im Netzwerk erfüllt sind. Ohne diesen Filter bleiben Plugins mit fehlenden Voraussetzungen sichtbar."
+
+msgid "Shuffle again"
+msgstr "Neu mischen"
+
+msgid "Small plugins. Practical improvements."
+msgstr "Kleine Plugins. Konkrete Verbesserungen."
+
+msgid "Sort by"
+msgstr "Sortieren nach"
+
+msgid "Source: GitHub"
+msgstr "Quelle: GitHub"
+
+msgid "Standard"
+msgstr "Standard"
+
+msgid "Sun"
+msgstr "So"
+
+msgid "Sunday"
+msgstr "Sonntag"
+
+msgid "Technical information"
+msgstr "Technische Informationen"
+
+msgid "The GitHub release could not be downloaded."
+msgstr "Das GitHub-Release konnte nicht heruntergeladen werden."
+
+msgid "The action is still running. Check its status again."
+msgstr "Die Aktion läuft noch. Bitte den Status erneut prüfen."
+
+msgid "The approved package could not be verified."
+msgstr "Das freigegebene Paket konnte nicht geprüft werden."
+
+msgid "The approved release changed. Refresh updates first."
+msgstr "Das freigegebene Release hat sich geändert. Bitte zuerst die Updates aktualisieren."
+
+msgid "The approved release could not be verified."
+msgstr "Der freigegebene Release konnte nicht geprüft werden."
+
+msgid "The catalog URL is not an allowed first-party HTTPS endpoint."
+msgstr "Die Katalog-URL ist keine erlaubte eigene HTTPS-Quelle."
+
+msgid "The catalog could not be verified. Please try again later."
+msgstr "Der Katalog konnte nicht geprüft werden. Bitte später erneut versuchen."
+
+msgid "The catalog is disabled."
+msgstr "Der Katalog ist deaktiviert."
+
+msgid "The catalog is hidden."
+msgstr "Der Katalog ist ausgeblendet."
+
+msgid "The deckerweb catalog could not load. Check platform requirements and the complete Library integration in the host plugin."
+msgstr "Der deckerweb-Katalog konnte nicht geladen werden. Bitte PHP-/WordPress-Anforderungen und die vollständige Library-Einbindung im Host-Plugin prüfen."
+
+msgid "The installed plugin identity could not be verified for this catalog update."
+msgstr "Die Identität des installierten Plugins konnte für dieses Katalogupdate nicht bestätigt werden."
+
+msgid "The online catalog is unavailable. Showing cached or bundled entries; online approval is checked again before installation."
+msgstr "Der Online-Katalog ist nicht erreichbar. Angezeigt wird der gespeicherte oder mitgelieferte Katalog; vor der Installation wird die Online-Freigabe erneut geprüft."
+
+msgid "The online catalog source is not trusted."
+msgstr "Die Online-Katalogquelle ist nicht vertrauenswürdig."
+
+msgid "The release checksum does not match. Installation stopped."
+msgstr "Die Prüfsumme des Releases stimmt nicht überein. Installation gestoppt."
+
+msgid "The request could not be completed. Check the plugin status before trying again."
+msgstr "Die Anfrage konnte nicht abgeschlossen werden. Vor einem erneuten Versuch den Plugin-Status prüfen."
+
+msgid "The requirements below describe the offered release."
+msgstr "Die folgenden Voraussetzungen beziehen sich auf den angebotenen Release."
+
+msgid "The update has not been confirmed. You can try again."
+msgstr "Die Aktualisierung wurde nicht bestätigt. Sie können es erneut versuchen."
+
+msgid "These details contain component versions and catalog status, without credentials or site content."
+msgstr "Diese Angaben enthalten Komponentenversionen und den Katalogstatus, keine Zugangsdaten oder Website-Inhalte."
+
+msgid "This catalog requires a newer Library."
+msgstr "Dieser Katalog benötigt eine neuere Library."
+
+msgid "This plugin directory already exists. Use the installed plugin; it will not be overwritten."
+msgstr "Dieses Plugin-Verzeichnis existiert bereits. Bitte das installierte Plugin verwenden; es wird nicht überschrieben."
+
+msgid "This release is no longer approved."
+msgstr "Dieses Release ist nicht mehr freigegeben."
+
+msgid "This release is not approved."
+msgstr "Dieses Release ist nicht freigegeben."
+
+msgid "Thu"
+msgstr "Do"
+
+msgid "Thursday"
+msgstr "Donnerstag"
+
+msgid "Tools"
+msgstr "Werkzeuge"
+
+msgid "Tue"
+msgstr "Di"
+
+msgid "Tuesday"
+msgstr "Dienstag"
+
+msgid "Unsafe archive path."
+msgstr "Unsicherer Archivpfad."
+
+msgid "Untrusted release URL."
+msgstr "Nicht vertrauenswürdige Release-URL."
+
+msgid "Update %1$s to version %2$s or newer."
+msgstr "%1$s bitte auf Version %2$s oder neuer aktualisieren."
+
+msgid "Update available"
+msgstr "Update verfügbar"
+
+msgid "Update failed."
+msgstr "Aktualisierung fehlgeschlagen."
+
+msgid "Update to %s"
+msgstr "Auf %s aktualisieren"
+
+msgid "Updated"
+msgstr "Aktualisiert"
+
+msgid "Updating…"
+msgstr "Wird aktualisiert…"
+
+msgid "View plugins"
+msgstr "Plugins ansehen"
+
+msgid "Visibility"
+msgstr "Sichtbarkeit"
+
+msgid "Wed"
+msgstr "Mi"
+
+msgid "Wednesday"
+msgstr "Mittwoch"
+
+msgid "WordPress"
+msgstr "WordPress"
+
+msgid "You already use one of my plugins. Find selected additions in the deckerweb tab."
+msgstr "Sie nutzen bereits ein Plugin von mir. Ausgewählte Ergänzungen finden Sie im deckerweb-Tab."

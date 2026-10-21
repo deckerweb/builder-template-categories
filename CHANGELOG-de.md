@@ -2,6 +2,19 @@
 
 > Die Entwicklung endet mit 1.9.0. Falls nötig, folgen nur Sicherheitsupdates, längstens bis 31.12.2027.
 
+## 1.9.1 — 21.10.2026
+
+### Verbessert
+- Library 1.1.0 und Updater 2.2.0 als Wartungsausnahme ergänzt, einschließlich nativer GitHub-Updates und Prüfung der Paketidentität.
+
+### Behoben
+- Abschließende Ausgabeabsicherung für Kategorienlinks und Integrationsdetails.
+- Fehlende mitgelieferte Übersetzungen bei älteren installierten Sprachpaketen auch nach Sprachwechseln ergänzt.
+
+### Sonstiges
+- PHP 8.1 erforderlich; WordPress 7.0 bleibt Mindestversion.
+- Funktionsentwicklung bleibt eingestellt; notwendige Sicherheitswartung endet spätestens am 31.12.2027.
+
 ## 1.9.0 — 10.10.2026
 
 - Einheitliche Builder-Kategorien mit Herkunftshinweis; klar von WordPress-Vorlagen-Kategorien getrennt.

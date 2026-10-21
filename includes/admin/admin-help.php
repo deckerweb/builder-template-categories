@@ -28,7 +28,7 @@ function ddw_btc_load_content_help() {
  * @return void
  */
 function ddw_btc_content_help_tab() {
-	echo '<h3>Builder Template Categories 1.9.0</h3><p>' . esc_html__( 'Feature development ended with version 1.9.0. Only security updates may follow if needed, no later than December 31, 2027.', 'builder-template-categories' ) . '</p>';
+	echo '<h3>Builder Template Categories ' . esc_html( BTC_PLUGIN_VERSION ) . '</h3><p>' . esc_html__( 'Feature development ended with version 1.9.0. Only security updates may follow if needed, no later than December 31, 2027.', 'builder-template-categories' ) . '</p>';
 	echo '<p>' . esc_html__( 'Create categories in your template library submenu. Assign them to templates or patterns and use the list-table dropdown to filter items.', 'builder-template-categories' ) . '</p>';
 	echo '<p>' . esc_html__( 'Categories provided by Builder Template Categories. Independent of WordPress pattern categories.', 'builder-template-categories' ) . '</p>';
 	echo '<ul>';

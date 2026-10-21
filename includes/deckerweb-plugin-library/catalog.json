@@ -1,0 +1,1044 @@
+{
+  "schema_version": 1,
+  "plugins": [
+    {
+      "approved": true,
+      "slug": "brand-admin-schemes",
+      "name": "Brand Admin Schemes",
+      "description": "Bring your brand colors to the WordPress admin, login, toolbar and browser tabs.",
+      "description_de": "Deine Markenfarben für WordPress-Admin, Login, Toolbar und Browser-Tabs.",
+      "version": "1.0.0",
+      "repository": "deckerweb/brand-admin-schemes",
+      "plugin_file": "brand-admin-schemes/brand-admin-schemes.php",
+      "download_url": "https://github.com/deckerweb/brand-admin-schemes/releases/download/v1.0.0/brand-admin-schemes-1.0.0.zip",
+      "sha256": "73039d32cbabdb3af586df9ef506553e47a463b102cb432d7c452632b895eda3",
+      "requires_wp": "6.4",
+      "requires_php": "8.0",
+      "category": "Admin",
+      "dependencies": [],
+      "github_stars": 1,
+      "stars_checked_at": "2026-10-15",
+      "icon_label": "BAS",
+      "icon_background": "#edf3f0",
+      "icon": "assets/icons/brand-admin-schemes-7e6be96553a5.png",
+      "published_at": "2026-10-06T15:59:00Z",
+      "series_memberships": [],
+      "series_memberships_v2": [
+        "tools"
+      ],
+      "sort_order": 0,
+      "series_memberships_v3": [
+        "tools",
+        "admin"
+      ],
+      "category_de": "Admin"
+    },
+    {
+      "approved": true,
+      "slug": "breakdance-quicknav",
+      "name": "Breakdance QuickNav",
+      "description": "Quick access to Breakdance content, templates, settings, and official add-ons from the WordPress toolbar.",
+      "description_de": "Schneller Toolbar-Zugriff auf Breakdance-Inhalte, Templates, Einstellungen und Hersteller-Addons.",
+      "version": "2.0.0",
+      "repository": "deckerweb/breakdance-quicknav",
+      "plugin_file": "breakdance-quicknav/breakdance-quicknav.php",
+      "download_url": "https://github.com/deckerweb/breakdance-quicknav/releases/download/v2.0.0/breakdance-quicknav-2.0.0.zip",
+      "sha256": "1329e103befa191c8a2890a3c327adb05f359d2dc1958e5adb73d0fa845b4681",
+      "requires_wp": "6.7",
+      "requires_php": "7.4",
+      "category": "Breakdance",
+      "dependencies": [
+        {
+          "name": "Breakdance Builder",
+          "plugin_file": "breakdance/plugin.php",
+          "min_version": "",
+          "detector": "breakdance",
+          "url": "https://breakdance.com/"
+        }
+      ],
+      "github_stars": 3,
+      "stars_checked_at": "2026-10-15",
+      "icon_label": "BDQ",
+      "icon_background": "#f0f3f6",
+      "series": "quicknav",
+      "published_at": "2026-10-08T15:31:56Z",
+      "series_memberships": [
+        "quicknav"
+      ],
+      "sort_order": 10,
+      "series_memberships_v3": [
+        "quicknav"
+      ],
+      "icon": "assets/icons/breakdance-quicknav-5fb876663a7c.png",
+      "dependency_rules": [
+        {
+          "plugin_file": "breakdance/plugin.php",
+          "since_version": "2.0.0",
+          "mode": "pause"
+        }
+      ],
+      "category_de": "Breakdance"
+    },
+    {
+      "approved": true,
+      "slug": "daily-scripture",
+      "name": "Daily Scripture",
+      "description": "Daily readings and selected local Bible passages for WordPress websites, including Multisite. Flexible design, live previews, Gutenberg, Elementor, Bricks, shortcodes, personal dashboard widgets and JSON settings transfer.",
+      "description_de": "Tägliche Lesungen und ausgewählte lokale Bibeltexte für WordPress und Multisite, mit flexibler Gestaltung, Builder-Integrationen und persönlichen Dashboard-Widgets.",
+      "version": "1.1.0",
+      "repository": "deckerweb/daily-scripture",
+      "plugin_file": "daily-scripture/daily-scripture.php",
+      "download_url": "https://github.com/deckerweb/daily-scripture/releases/download/v1.1.0/daily-scripture-1.1.0.zip",
+      "sha256": "1d3911067307ec4c8771495af7710b5071b3b3dcc629a90d8607b3e3d097ace5",
+      "requires_wp": "6.6",
+      "requires_php": "8.1",
+      "category": "Content",
+      "dependencies": [],
+      "github_stars": 1,
+      "stars_checked_at": "2026-10-15",
+      "icon": "assets/icons/daily-scripture-d44520ea223b.png",
+      "icon_label": "DS",
+      "icon_background": "#f0f3f6",
+      "network_activation": false,
+      "published_at": "2026-10-20T05:45:55Z",
+      "network_activation_min_version": "1.0.0",
+      "sort_order": 20,
+      "series_memberships_v3": [
+        "inspiration"
+      ],
+      "category_de": "Inhalte",
+      "series_memberships": [],
+      "series_memberships_v2": []
+    },
+    {
+      "approved": true,
+      "slug": "bricks-quicknav",
+      "name": "Bricks QuickNav",
+      "description": "Quick access to Bricks templates, pages and settings from the toolbar.",
+      "description_de": "Schneller Zugriff auf Bricks-Templates, Seiten und Einstellungen über die Toolbar.",
+      "version": "2.0.0",
+      "repository": "deckerweb/bricks-quicknav",
+      "plugin_file": "bricks-quicknav/bricks-quicknav.php",
+      "download_url": "https://github.com/deckerweb/bricks-quicknav/releases/download/v2.0.0/bricks-quicknav-2.0.0.zip",
+      "sha256": "cf0996a00f1cd09c25b8bd17e13fec85bf49e6fd0e0da22417da941135d15372",
+      "requires_wp": "6.7",
+      "requires_php": "7.4",
+      "category": "Bricks",
+      "dependencies": [
+        {
+          "name": "Bricks Builder",
+          "plugin_file": "bricks/theme.php",
+          "min_version": "",
+          "detector": "bricks",
+          "url": "https://bricksbuilder.io/"
+        }
+      ],
+      "github_stars": 7,
+      "stars_checked_at": "2026-10-15",
+      "icon": "assets/icons/bricks-quicknav-307de6c15a3f.png",
+      "icon_label": "BXQ",
+      "icon_background": "#f0f3f6",
+      "series": "quicknav",
+      "published_at": "2026-10-10T17:15:09Z",
+      "series_memberships": [
+        "quicknav"
+      ],
+      "sort_order": 30,
+      "series_memberships_v3": [
+        "quicknav"
+      ],
+      "category_de": "Bricks",
+      "dependency_rules": [
+        {
+          "plugin_file": "bricks/theme.php",
+          "since_version": "2.0.0",
+          "mode": "pause"
+        }
+      ]
+    },
+    {
+      "approved": true,
+      "slug": "oxygen-quicknav",
+      "name": "Oxygen QuickNav",
+      "description": "Toolbar shortcuts for Oxygen 6+ and Oxygen Classic 4.x content, templates, settings and official add-ons. Settings remain available without an active builder.",
+      "description_de": "Toolbar-Verknüpfungen für Inhalte, Templates, Einstellungen und Hersteller-Addons von Oxygen 6+ und Oxygen Classic 4.x. Einstellungen bleiben ohne aktiven Builder erreichbar.",
+      "version": "2.0.0",
+      "repository": "deckerweb/oxygen-quicknav",
+      "plugin_file": "oxygen-quicknav/oxygen-quicknav.php",
+      "download_url": "https://github.com/deckerweb/oxygen-quicknav/releases/download/v2.0.0/oxygen-quicknav-2.0.0.zip",
+      "sha256": "8c53e26eb36b6cafb7eb572f5e0b621e474f9e24e4cee86d6150334876d22eb2",
+      "requires_wp": "6.7",
+      "requires_php": "7.4",
+      "category": "Oxygen",
+      "dependencies": [
+        {
+          "name": "Oxygen 6+ / Oxygen Classic 4.x",
+          "plugin_file": "oxygen/plugin.php",
+          "min_version": "",
+          "detector": "oxygen",
+          "url": "https://oxygenbuilder.com/"
+        }
+      ],
+      "github_stars": 1,
+      "stars_checked_at": "2026-10-15",
+      "icon_label": "OQN",
+      "icon_background": "#eef1f8",
+      "series": "quicknav",
+      "published_at": "2026-10-07T22:59:51Z",
+      "series_memberships": [
+        "quicknav"
+      ],
+      "icon": "assets/icons/oxygen-quicknav-560d21e7da8d.png",
+      "dependencies_optional_since_version": "2.0.0-rc.1",
+      "sort_order": 40,
+      "series_memberships_v3": [
+        "quicknav"
+      ],
+      "dependency_rules": [
+        {
+          "plugin_file": "oxygen/plugin.php",
+          "since_version": "2.0.0-rc.1",
+          "mode": "pause"
+        }
+      ],
+      "category_de": "Oxygen"
+    },
+    {
+      "approved": true,
+      "slug": "advanced-scripts-quicknav",
+      "name": "Advanced Scripts QuickNav",
+      "description": "Reach your Advanced Scripts through personal favorites, status lists and folders in the WordPress toolbar.",
+      "description_de": "Advanced Scripts über persönliche Favoriten, Statuslisten und Ordner in der WordPress-Toolbar erreichen.",
+      "version": "1.3.0",
+      "repository": "deckerweb/advanced-scripts-quicknav",
+      "plugin_file": "advanced-scripts-quicknav/advanced-scripts-quicknav.php",
+      "download_url": "https://github.com/deckerweb/advanced-scripts-quicknav/releases/download/v1.3.0/advanced-scripts-quicknav.zip",
+      "sha256": "59785bfb0e081f08f2598cdc21614aad97afe1847b38068766e7f49d7a5f4664",
+      "requires_wp": "6.7",
+      "requires_php": "8.0",
+      "category": "Scripts",
+      "dependencies": [
+        {
+          "name": "Advanced Scripts",
+          "plugin_file": "advanced-scripts/advanced-scripts.php",
+          "min_version": "",
+          "detector": "advanced_scripts",
+          "url": "https://cleanplugins.com/"
+        }
+      ],
+      "github_stars": 1,
+      "stars_checked_at": "2026-10-15",
+      "icon": "assets/icons/advanced-scripts-quicknav-6b9f0d0f1174.png",
+      "icon_label": "ASQ",
+      "icon_background": "#f0f3f6",
+      "published_at": "2026-10-19T10:21:06Z",
+      "series_memberships": [
+        "quicknav"
+      ],
+      "series_memberships_v2": [
+        "quicknav",
+        "tools"
+      ],
+      "sort_order": 50,
+      "series_memberships_v3": [
+        "quicknav",
+        "tools",
+        "admin"
+      ],
+      "dependency_rules": [
+        {
+          "plugin_file": "advanced-scripts/advanced-scripts.php",
+          "since_version": "1.2.1",
+          "mode": "pause"
+        }
+      ],
+      "category_de": "Scripts"
+    },
+    {
+      "approved": true,
+      "slug": "quick-edit-featured-image",
+      "name": "Quick Edit Featured Image",
+      "description": "Set, replace and remove featured images directly in Quick Edit for posts, pages and supported public post types.",
+      "description_de": "Beitragsbilder direkt in Quick Edit für Beiträge, Seiten und unterstützte öffentliche Inhaltstypen setzen, ersetzen und entfernen.",
+      "version": "1.4.0",
+      "repository": "deckerweb/quick-edit-featured-image",
+      "plugin_file": "quick-edit-featured-image/quick-edit-featured-image.php",
+      "download_url": "https://github.com/deckerweb/quick-edit-featured-image/releases/download/v1.4.0/quick-edit-featured-image-1.4.0.zip",
+      "sha256": "2754a60f68b4e7ec64cd202d0cb143454d1f99949a0e10bcb9cfdcfad3449219",
+      "requires_wp": "6.7",
+      "requires_php": "8.1",
+      "category": "Content",
+      "dependencies": [],
+      "github_stars": 4,
+      "stars_checked_at": "2026-10-15",
+      "icon": "assets/icons/quick-edit-featured-image-1a8941ac79e5.png",
+      "icon_label": "QFI",
+      "icon_background": "#f0f3f6",
+      "published_at": "2026-10-07T23:02:33Z",
+      "series": "builder",
+      "series_memberships": [
+        "builder",
+        "manage-content"
+      ],
+      "sort_order": 60,
+      "series_memberships_v3": [
+        "builder",
+        "manage-content"
+      ],
+      "category_de": "Inhalte"
+    },
+    {
+      "approved": true,
+      "slug": "shortcode-item-updated",
+      "name": "Shortcode Item Updated",
+      "description": "Display the latest update of selected posts, pages or custom post type items with a flexible shortcode.",
+      "description_de": "Den letzten Aktualisierungszeitpunkt ausgewählter Beiträge, Seiten und anderer Inhalte mit einem flexiblen Shortcode anzeigen.",
+      "version": "2.3.0",
+      "repository": "deckerweb/shortcode-item-updated",
+      "plugin_file": "shortcode-item-updated/shortcode-item-updated.php",
+      "download_url": "https://github.com/deckerweb/shortcode-item-updated/releases/download/v2.3.0/shortcode-item-updated-2.3.0.zip",
+      "sha256": "5fe6275dc2764fae7bf002ade0406f46dcef1d5ad8d222b0b4b7599068821fb5",
+      "requires_wp": "6.7",
+      "requires_php": "8.0",
+      "category": "Content",
+      "dependencies": [],
+      "github_stars": 4,
+      "stars_checked_at": "2026-10-15",
+      "icon_label": "SIU",
+      "icon_background": "#f4f0e9",
+      "published_at": "2026-10-08T22:49:24Z",
+      "series": "builder",
+      "series_memberships": [
+        "builder",
+        "manage-content"
+      ],
+      "sort_order": 70,
+      "series_memberships_v3": [
+        "builder",
+        "manage-content"
+      ],
+      "icon": "assets/icons/shortcode-item-updated-7a3bcb32fa92.png",
+      "category_de": "Inhalte"
+    },
+    {
+      "approved": true,
+      "slug": "builder-list-pages",
+      "name": "Builder List Pages",
+      "description": "Recognize page builders at a glance, filter several builders and find their content in familiar WordPress lists.",
+      "description_de": "Page Builder auf einen Blick erkennen, mehrere Builder filtern und ihre Inhalte in vertrauten WordPress-Listen finden.",
+      "version": "1.2.0",
+      "repository": "deckerweb/builder-list-pages",
+      "plugin_file": "builder-list-pages/builder-list-pages.php",
+      "download_url": "https://github.com/deckerweb/builder-list-pages/releases/download/v1.2.0/builder-list-pages-1.2.0.zip",
+      "sha256": "a415ddb54f8e716f769930b6fdd8c1c69f6d987e9d23cf6510ce2b6fc0949979",
+      "requires_wp": "6.7",
+      "requires_php": "8.0",
+      "category": "Builder",
+      "dependencies": [],
+      "github_stars": 3,
+      "stars_checked_at": "2026-10-15",
+      "icon": "assets/icons/builder-list-pages-81160c9b906b.png",
+      "icon_label": "BLP",
+      "icon_background": "#f0f3f6",
+      "series": "builder",
+      "published_at": "2026-10-10T08:30:38Z",
+      "series_memberships": [
+        "builder"
+      ],
+      "sort_order": 80,
+      "series_memberships_v3": [
+        "builder"
+      ],
+      "category_de": "Builder"
+    },
+    {
+      "approved": true,
+      "slug": "multisite-toolbar-additions",
+      "name": "Multisite Toolbar Additions",
+      "repository": "deckerweb/multisite-toolbar-additions",
+      "plugin_file": "multisite-toolbar-additions/multisite-toolbar-additions.php",
+      "category": "Multisite",
+      "dependencies": [],
+      "version": "4.1.0",
+      "download_url": "https://github.com/deckerweb/multisite-toolbar-additions/releases/download/v4.1.0/multisite-toolbar-additions-4.1.0.zip",
+      "sha256": "b11be30a93e429ade7d0126909d5b586bb9cf16a8ff5f3f8040df1de5f9be04e",
+      "requires_wp": "6.7",
+      "requires_php": "8.2",
+      "github_stars": 12,
+      "stars_checked_at": "2026-10-15",
+      "description": "Configurable WordPress toolbar menus and practical shortcuts for single sites and Multisite networks.",
+      "description_de": "Konfigurierbare WordPress-Toolbar-Menüs und praktische Verknüpfungen für einzelne Websites und Multisite-Netzwerke.",
+      "requires_multisite": false,
+      "network_only": false,
+      "icon": "assets/icons/multisite-toolbar-additions-34b76a02a055.png",
+      "icon_label": "MTA",
+      "icon_background": "#edf2f5",
+      "series": "quicknav",
+      "published_at": "2026-10-07T09:41:59Z",
+      "series_memberships": [
+        "quicknav"
+      ],
+      "sort_order": 90,
+      "series_memberships_v3": [
+        "quicknav"
+      ],
+      "category_de": "Multisite"
+    },
+    {
+      "approved": true,
+      "slug": "post-author-taxonomy",
+      "name": "Post Author Taxonomy",
+      "repository": "deckerweb/post-author-taxonomy",
+      "plugin_file": "post-author-taxonomy/post-author-taxonomy.php",
+      "category": "Content",
+      "dependencies": [],
+      "version": "1.4.0",
+      "download_url": "https://github.com/deckerweb/post-author-taxonomy/releases/download/v1.4.0/post-author-taxonomy.zip",
+      "sha256": "1bdd51855ab78a809e8b3da5b3e1af0501c3fd339aeb3d93e93aa542c3522e6f",
+      "requires_wp": "6.7",
+      "requires_php": "8.0",
+      "github_stars": 4,
+      "stars_checked_at": "2026-10-15",
+      "description": "Multiple authors without user accounts, with profiles, local photos and flexible shortcodes for your builder or theme.",
+      "description_de": "Mehrere Autoren ohne Benutzerkonten: mit Profilen, lokalen Fotos und flexiblen Shortcodes für Builder oder Theme.",
+      "icon": "assets/icons/post-author-taxonomy-e41e3b9d292d.png",
+      "icon_label": "PAT",
+      "icon_background": "#edf2f5",
+      "published_at": "2026-10-10T08:37:36Z",
+      "series": "builder",
+      "series_memberships": [
+        "builder",
+        "manage-content"
+      ],
+      "sort_order": 100,
+      "series_memberships_v3": [
+        "builder",
+        "manage-content"
+      ],
+      "category_de": "Inhalte"
+    },
+    {
+      "approved": true,
+      "slug": "portfolio-content",
+      "name": "Portfolio Content",
+      "repository": "deckerweb/portfolio-content",
+      "plugin_file": "portfolio-content/portfolio-content.php",
+      "category": "Content",
+      "dependencies": [],
+      "version": "1.3.0",
+      "download_url": "https://github.com/deckerweb/portfolio-content/releases/download/v1.3.0/portfolio-content-1.3.0.zip",
+      "sha256": "274eeab14a284156e5cffe4f5f418a0e23549df5a2d55bd497184ea93fff3cd4",
+      "requires_wp": "6.7",
+      "requires_php": "7.4",
+      "github_stars": 6,
+      "stars_checked_at": "2026-10-15",
+      "description": "Portfolio projects, categories and tags with a quick start, project template and native block patterns.",
+      "description_de": "Portfolio-Projekte, Kategorien und Schlagwörter mit Schnellstart, Projektvorlage und nativen Block-Vorlagen.",
+      "icon": "assets/icons/portfolio-content-e69660bfe1ba.png",
+      "icon_label": "PC",
+      "icon_background": "#edf2f5",
+      "published_at": "2026-10-08T22:41:32Z",
+      "series": "builder",
+      "series_memberships": [
+        "builder",
+        "manage-content"
+      ],
+      "sort_order": 110,
+      "series_memberships_v3": [
+        "builder",
+        "manage-content"
+      ],
+      "category_de": "Inhalte"
+    },
+    {
+      "approved": true,
+      "slug": "builder-shortcode-extras",
+      "name": "Builder Shortcode Extras",
+      "repository": "deckerweb/builder-shortcode-extras",
+      "plugin_file": "builder-shortcode-extras/builder-shortcode-extras.php",
+      "category": "Content",
+      "dependencies": [],
+      "version": "1.3.0",
+      "download_url": "https://github.com/deckerweb/builder-shortcode-extras/releases/download/v1.3.0/builder-shortcode-extras.zip",
+      "sha256": "98b3a0df8b44df914e3ae74082b3874442a5ed8ee8ec9df7b0d1d2d7cb9e1d54",
+      "requires_wp": "6.7",
+      "requires_php": "8.0",
+      "github_stars": 14,
+      "stars_checked_at": "2026-10-15",
+      "description": "Small dynamic helpers for your WordPress website. Find, configure and copy useful shortcodes.",
+      "description_de": "Kleine dynamische Helfer für deine WordPress-Website: nützliche Shortcodes finden, konfigurieren und kopieren.",
+      "icon": "assets/icons/builder-shortcode-extras-8d63d2952676.png",
+      "icon_label": "BSE",
+      "icon_background": "#edf2f5",
+      "series": "builder",
+      "published_at": "2026-10-10T08:34:26Z",
+      "series_memberships": [
+        "builder"
+      ],
+      "sort_order": 120,
+      "series_memberships_v3": [
+        "builder"
+      ],
+      "category_de": "Inhalte"
+    },
+    {
+      "approved": true,
+      "slug": "plugin-submenu-mover",
+      "name": "Plugin Submenu Mover",
+      "repository": "deckerweb/plugin-submenu-mover",
+      "plugin_file": "plugin-submenu-mover/plugin-submenu-mover.php",
+      "category": "Admin",
+      "dependencies": [],
+      "version": "2.0.0",
+      "download_url": "https://github.com/deckerweb/plugin-submenu-mover/releases/download/v2.0.0/plugin-submenu-mover-2.0.0.zip",
+      "sha256": "35ad04a457d053d6f71809d98ccd141453a995b9a9e4a7c49157169fdf408a5f",
+      "requires_wp": "6.7",
+      "requires_php": "8.3",
+      "github_stars": 2,
+      "stars_checked_at": "2026-10-15",
+      "description": "Move selected plugin settings from top-level menus into suitable submenus for a clearer WordPress admin.",
+      "description_de": "Ausgewählte Plugin-Einstellungen aus Hauptmenüs in passende Untermenüs verschieben – für einen übersichtlicheren WordPress-Admin.",
+      "icon": "assets/icons/plugin-submenu-mover-8378bc01dc18.png",
+      "icon_label": "PSM",
+      "icon_background": "#edf2f5",
+      "published_at": "2026-10-19T15:58:34Z",
+      "series": "builder",
+      "series_memberships": [
+        "builder"
+      ],
+      "sort_order": 130,
+      "series_memberships_v3": [
+        "builder",
+        "admin",
+        "tools"
+      ],
+      "category_de": "Admin",
+      "series_memberships_v2": [
+        "builder",
+        "tools"
+      ]
+    },
+    {
+      "approved": true,
+      "slug": "purify-elementor",
+      "name": "Purify Elementor",
+      "repository": "deckerweb/purify-elementor",
+      "plugin_file": "purify-elementor/purify-elementor.php",
+      "category": "Elementor",
+      "series": "purify",
+      "dependencies": [
+        {
+          "name": "Elementor",
+          "plugin_file": "elementor/elementor.php",
+          "min_version": ""
+        }
+      ],
+      "version": "1.1.0",
+      "download_url": "https://github.com/deckerweb/purify-elementor/releases/download/v1.1.0/purify-elementor-1.1.0.zip",
+      "sha256": "698577a95875586fbff158a531a4667ee2b7cca01785b1c5d34e8d3171172a9e",
+      "requires_wp": "6.7",
+      "requires_php": "7.4",
+      "github_stars": 1,
+      "stars_checked_at": "2026-10-15",
+      "description": "Targeted Elementor advertising cleanup with optional AI, news and locked widget controls.",
+      "description_de": "Gezielte Bereinigung von Elementor-Werbung mit optionalen Einstellungen für KI, Neuigkeiten und gesperrte Widgets.",
+      "published_at": "2026-10-14T19:27:29Z",
+      "series_memberships": [
+        "purify"
+      ],
+      "icon": "assets/icons/purify-elementor-786d0fd981d9.png",
+      "icon_de": "assets/icons/purify-elementor-083648fac0c6-de.png",
+      "icon_label": "PE",
+      "sort_order": 140,
+      "series_memberships_v3": [
+        "purify"
+      ],
+      "category_de": "Elementor",
+      "dependency_rules": [
+        {
+          "plugin_file": "elementor/elementor.php",
+          "since_version": "1.1.0",
+          "mode": "pause"
+        }
+      ],
+      "icon_background": "#e9e1f1"
+    },
+    {
+      "approved": true,
+      "slug": "purify-wpcode-lite",
+      "name": "Purify WPCode Lite",
+      "repository": "deckerweb/purify-wpcode-lite",
+      "plugin_file": "purify-wpcode-lite/purify-wpcode-lite.php",
+      "description": "Remove promotional elements from WPCode Lite while preserving useful free features.",
+      "description_de": "Werbeelemente aus WPCode Lite entfernen und nützliche kostenlose Funktionen erhalten.",
+      "category": "Admin",
+      "dependencies": [
+        {
+          "name": "WPCode Lite",
+          "plugin_file": "insert-headers-and-footers/ihaf.php",
+          "min_version": "",
+          "detector": ""
+        }
+      ],
+      "series": "purify",
+      "series_memberships": [
+        "purify"
+      ],
+      "icon": "assets/icons/purify-wpcode-lite-a560b837cb98.png",
+      "version": "1.1.0",
+      "download_url": "https://github.com/deckerweb/purify-wpcode-lite/releases/download/v1.1.0/purify-wpcode-lite-1.1.0.zip",
+      "sha256": "382474a3da9c507cf39b46cc5a91263937fca90174eeba924674515ab8ad794d",
+      "requires_wp": "6.7",
+      "requires_php": "7.4",
+      "github_stars": 2,
+      "stars_checked_at": "2026-10-15",
+      "published_at": "2026-10-09T06:53:03Z",
+      "icon_label": "PCL",
+      "sort_order": 150,
+      "series_memberships_v3": [
+        "purify"
+      ],
+      "dependency_rules": [
+        {
+          "plugin_file": "insert-headers-and-footers/ihaf.php",
+          "since_version": "1.1.0",
+          "mode": "pause"
+        }
+      ],
+      "category_de": "Admin",
+      "icon_background": "#dfebdd"
+    },
+    {
+      "approved": true,
+      "slug": "purify-wpforms-lite",
+      "name": "Purify WPForms Lite",
+      "repository": "deckerweb/purify-wpforms-lite",
+      "plugin_file": "purify-wpforms-lite/purify-wpforms-lite.php",
+      "description": "Remove promotional elements from WPForms Lite while preserving useful free features.",
+      "description_de": "Werbung in WPForms Lite entfernen und nützliche kostenlose Funktionen erhalten.",
+      "category": "Admin",
+      "dependencies": [
+        {
+          "name": "WPForms Lite",
+          "plugin_file": "wpforms-lite/wpforms.php",
+          "min_version": "",
+          "detector": ""
+        }
+      ],
+      "series": "purify",
+      "series_memberships": [
+        "purify"
+      ],
+      "icon": "assets/icons/purify-wpforms-lite-730dc2781ea5.png",
+      "version": "1.1.0",
+      "download_url": "https://github.com/deckerweb/purify-wpforms-lite/releases/download/v1.1.0/purify-wpforms-lite.zip",
+      "sha256": "53228fd62e2db26f369d105400aee7d506509ac7c3e84731d8fc22fe7f1d0206",
+      "requires_wp": "6.7",
+      "requires_php": "8.0",
+      "github_stars": 1,
+      "stars_checked_at": "2026-10-15",
+      "published_at": "2026-10-09T23:04:09Z",
+      "icon_label": "PFL",
+      "sort_order": 160,
+      "series_memberships_v3": [
+        "purify"
+      ],
+      "category_de": "Admin",
+      "dependency_rules": [
+        {
+          "plugin_file": "wpforms-lite/wpforms.php",
+          "since_version": "1.1.0",
+          "mode": "pause"
+        }
+      ],
+      "icon_background": "#f1e3d7"
+    },
+    {
+      "approved": true,
+      "slug": "connect-for-shopware",
+      "name": "Connect for Shopware",
+      "repository": "deckerweb/connect-for-shopware",
+      "plugin_file": "connect-for-shopware/connect-for-shopware.php",
+      "version": "1.1.0",
+      "description": "Read-only Shopware products for Gutenberg and native Bricks elements.",
+      "description_de": "Shopware-Produkte lesend in Gutenberg und native Bricks-Elemente einbinden.",
+      "requires_wp": "6.6",
+      "requires_php": "8.1",
+      "dependencies": [],
+      "category": "Commerce",
+      "series_memberships": [
+        "connect"
+      ],
+      "icon": "assets/icons/connect-for-shopware-edf44f8030fc.png",
+      "github_stars": 1,
+      "stars_checked_at": "2026-10-15",
+      "download_url": "https://github.com/deckerweb/connect-for-shopware/releases/download/v1.1.0/connect-for-shopware-1.1.0.zip",
+      "sha256": "e2c7d6d7a9161d04a9fed32a9e16637a4b9f672e6d432892439103933141a545",
+      "published_at": "2026-10-20T08:54:04Z",
+      "icon_label": "CFS",
+      "sort_order": 170,
+      "series_memberships_v3": [
+        "connect",
+        "shop"
+      ],
+      "category_de": "Handel",
+      "series_memberships_v2": [
+        "connect",
+        "shop"
+      ],
+      "icon_background": "#dfe7f0"
+    },
+    {
+      "approved": true,
+      "slug": "redirect-draft-content",
+      "name": "Redirect Draft Content",
+      "repository": "deckerweb/redirect-draft-content",
+      "plugin_file": "redirect-draft-content/redirect-draft-content.php",
+      "category": "WordPress",
+      "dependencies": [],
+      "version": "0.9.0",
+      "download_url": "https://github.com/deckerweb/redirect-draft-content/releases/download/v0.9.0/redirect-draft-content-0.9.0.zip",
+      "sha256": "749422af57ccf1698d345e4460aa4a146714e57b61e5bafb7f65ecc3484d69f0",
+      "requires_wp": "7.1.2",
+      "requires_php": "8.2",
+      "github_stars": 1,
+      "stars_checked_at": "2026-10-15",
+      "description": "Temporarily redirect draft posts, pages and public custom post types to published content or a custom URL.",
+      "description_de": "Entwürfe von Beiträgen, Seiten und öffentlichen Inhaltstypen vorübergehend auf veröffentlichte Inhalte oder eine eigene URL umleiten.",
+      "requires_multisite": false,
+      "network_only": false,
+      "icon": "assets/icons/redirect-draft-content-f5f5ca6f88fc.png",
+      "icon_label": "RDC",
+      "icon_background": "#edf2f5",
+      "published_at": "2026-10-07T13:53:14Z",
+      "series_memberships": [
+        "manage-content"
+      ],
+      "sort_order": 180,
+      "series_memberships_v3": [
+        "manage-content"
+      ],
+      "category_de": "WordPress"
+    },
+    {
+      "approved": true,
+      "slug": "tools-for-fluentcart",
+      "name": "Tools for FluentCart",
+      "repository": "deckerweb/tools-for-fluentcart",
+      "plugin_file": "tools-for-fluentcart/tools-for-fluentcart.php",
+      "category": "Commerce",
+      "dependencies": [],
+      "version": "0.9.0",
+      "download_url": "https://github.com/deckerweb/tools-for-fluentcart/releases/download/v0.9.0/tools-for-fluentcart-0.9.0.zip",
+      "sha256": "c7a93a3be1781303ef8f52769f0c01606398f62a9a7face793f545775a1c4a2a",
+      "requires_wp": "7.1.2",
+      "requires_php": "8.2",
+      "github_stars": 1,
+      "stars_checked_at": "2026-10-15",
+      "description": "Practical FluentCart tools for quantity limits, minimum order values and single-item carts. Cart Rules supports FluentCart 1.7.x and stays paused without a supported active version.",
+      "description_de": "Praktische FluentCart-Werkzeuge für Mengenlimits, Mindestbestellwerte und Einzelartikel-Warenkörbe. Cart Rules unterstützt FluentCart 1.7.x und bleibt ohne unterstützte aktive Version pausiert.",
+      "requires_multisite": false,
+      "network_only": false,
+      "icon": "assets/icons/tools-for-fluentcart-f628f6cdf6b3.png",
+      "icon_label": "TFC",
+      "icon_background": "#edf2f5",
+      "published_at": "2026-10-07T20:00:24Z",
+      "series_memberships": [],
+      "series_memberships_v2": [
+        "tools",
+        "shop"
+      ],
+      "sort_order": 190,
+      "series_memberships_v3": [
+        "tools",
+        "shop"
+      ],
+      "category_de": "Handel"
+    },
+    {
+      "approved": true,
+      "slug": "builder-content-guide",
+      "name": "Builder Content Guide",
+      "repository": "deckerweb/builder-content-guide",
+      "plugin_file": "builder-content-guide/builder-content-guide.php",
+      "dependencies": [],
+      "category": "Content",
+      "icon_label": "BCG",
+      "icon_background": "#eef1f8",
+      "series_memberships": [
+        "builder",
+        "manage-content"
+      ],
+      "version": "1.0.0",
+      "download_url": "https://github.com/deckerweb/builder-content-guide/releases/download/1.0.0/builder-content-guide-1.0.0.zip",
+      "sha256": "74142634e7e198401d0db923016ad2095bb91e4e034b9e2747858cc5ceb3dc0e",
+      "published_at": "2026-10-08T15:24:23Z",
+      "requires_wp": "7.0",
+      "requires_php": "8.0",
+      "description": "Find the right website building block, understand the effect of a change, and open its original editor.",
+      "description_de": "Passende Website-Bausteine finden, die Wirkung einer Änderung verstehen und den ursprünglichen Editor öffnen.",
+      "sort_order": 200,
+      "series_memberships_v3": [
+        "builder",
+        "manage-content"
+      ],
+      "icon": "assets/icons/builder-content-guide-46fc9f1a1a32.png",
+      "github_stars": 1,
+      "stars_checked_at": "2026-10-15",
+      "category_de": "Inhalte"
+    },
+    {
+      "approved": true,
+      "slug": "builder-template-categories",
+      "name": "Builder Template Categories",
+      "description": "Organize WordPress patterns and supported builder template libraries with shared categories.",
+      "description_de": "WordPress-Patterns und Vorlagenbibliotheken unterstützter Builder mit gemeinsamen Kategorien organisieren.",
+      "version": "1.9.0",
+      "repository": "deckerweb/builder-template-categories",
+      "plugin_file": "builder-template-categories/builder-template-categories.php",
+      "download_url": "https://github.com/deckerweb/builder-template-categories/releases/download/1.9.0/builder-template-categories-1.9.0.zip",
+      "sha256": "6b1d6478748a5940878b0f225f5144cc2624ab2c8adb7ad73d8113ad19abb65f",
+      "requires_wp": "7.0",
+      "requires_php": "8.0",
+      "category": "Builder",
+      "dependencies": [],
+      "icon": "assets/icons/builder-template-categories-7e8d993c4679.png",
+      "icon_label": "BTC",
+      "icon_background": "#f0f3f6",
+      "series": "builder",
+      "published_at": "2026-10-10T11:26:53Z",
+      "series_memberships": [
+        "builder"
+      ],
+      "sort_order": 220,
+      "series_memberships_v3": [
+        "builder"
+      ],
+      "category_de": "Builder",
+      "github_stars": 34,
+      "stars_checked_at": "2026-10-15"
+    },
+    {
+      "approved": true,
+      "slug": "site-essentials",
+      "name": "Site Essentials",
+      "description": "Configure WordPress core behavior with focused controls, reusable presets and site-specific settings.",
+      "description_de": "Zentrale Werkzeuge für die tägliche WordPress-Verwaltung.",
+      "version": "0.9.0",
+      "repository": "deckerweb/site-essentials",
+      "plugin_file": "site-essentials/site-essentials.php",
+      "download_url": "https://github.com/deckerweb/site-essentials/releases/download/v0.9.0/site-essentials-0.9.0.zip",
+      "sha256": "1f90320c982d1dc13c4ca728ac817de74934c5b177d2308c0491f9d0cb7be9ab",
+      "requires_wp": "7.1.2",
+      "requires_php": "8.2",
+      "category": "Admin",
+      "dependencies": [],
+      "github_stars": 1,
+      "stars_checked_at": "2026-10-15",
+      "icon_label": "SE",
+      "icon_background": "#edf3f0",
+      "icon": "assets/icons/site-essentials-c6e2b94cd6fd.png",
+      "published_at": "2026-10-13T10:41:08Z",
+      "series_memberships": [],
+      "series_memberships_v2": [
+        "tools"
+      ],
+      "sort_order": 230,
+      "series_memberships_v3": [
+        "admin",
+        "tools"
+      ],
+      "category_de": "Admin"
+    },
+    {
+      "approved": true,
+      "slug": "genesis-widgetized-notfound",
+      "name": "Genesis Widgetized Not Found & 404",
+      "repository": "deckerweb/genesis-widgetized-notfound",
+      "plugin_file": "genesis-widgetized-notfound/genesis-widgetized-notfound.php",
+      "version": "2.0.0",
+      "description": "Customize Genesis 404 pages and empty search results with widgets, an accessible search form and shortcodes. Theme features require an active Genesis theme and otherwise pause safely.",
+      "description_de": "Genesis-404-Seiten und leere Suchergebnisse mit Widgets, Suchformular und Shortcodes gestalten. Theme-Funktionen benötigen ein aktives Genesis-Theme und pausieren andernfalls sicher.",
+      "requires_wp": "6.4",
+      "requires_php": "8.0",
+      "download_url": "https://github.com/deckerweb/genesis-widgetized-notfound/releases/download/2.0.0/genesis-widgetized-notfound-2.0.0.zip",
+      "sha256": "dac1238897d918e441a3024db5b42d5346f0ace68121fad4e111516849db494a",
+      "dependencies": [],
+      "category": "Genesis",
+      "category_de": "Genesis",
+      "series": "builder",
+      "series_memberships": [
+        "builder"
+      ],
+      "series_memberships_v2": [
+        "builder",
+        "tools"
+      ],
+      "series_memberships_v3": [
+        "builder",
+        "tools"
+      ],
+      "icon_label": "GNF",
+      "sort_order": 240,
+      "published_at": "2026-10-15T05:47:32Z",
+      "github_stars": 4,
+      "stars_checked_at": "2026-10-15",
+      "icon": "assets/icons/genesis-widgetized-notfound-b19c22c920b2.png",
+      "icon_background": "#e1e8dc"
+    },
+    {
+      "approved": true,
+      "slug": "types-fields-quicknav",
+      "name": "Types & Fields QuickNav",
+      "description": "Quick toolbar access to content type and custom field administration, with configurable provider navigation and role or user exclusions.",
+      "description_de": "Kurze Toolbar-Wege zur Verwaltung von Inhaltstypen und Feldern – mit wählbaren Provider-Menüs und Rollen- oder Benutzersperren.",
+      "version": "1.0.0",
+      "repository": "deckerweb/types-fields-quicknav",
+      "plugin_file": "types-fields-quicknav/types-fields-quicknav.php",
+      "download_url": "https://github.com/deckerweb/types-fields-quicknav/releases/download/1.0.0/types-fields-quicknav-1.0.0.zip",
+      "sha256": "66d53f5edcdfc1febac988e176687462dd3478a580f6d9a1678949d229d46a79",
+      "requires_wp": "7.1.2",
+      "requires_php": "8.2",
+      "category": "Content types & fields",
+      "category_de": "Inhaltstypen & Felder",
+      "dependencies": [],
+      "github_stars": 1,
+      "stars_checked_at": "2026-10-18",
+      "icon_label": "TFQ",
+      "icon_background": "#ddd2bb",
+      "icon": "assets/icons/types-fields-quicknav-ffa511c3a6a2.png",
+      "published_at": "2026-10-18T18:24:50Z",
+      "series": "quicknav",
+      "series_memberships": [
+        "quicknav"
+      ],
+      "series_memberships_v2": [
+        "quicknav"
+      ],
+      "series_memberships_v3": [
+        "quicknav"
+      ],
+      "sort_order": 250,
+      "requires_multisite": false,
+      "network_only": false,
+      "network_activation": true
+    },
+    {
+      "approved": true,
+      "slug": "tabulamea",
+      "name": "TabulaMea",
+      "repository": "deckerweb/tabulamea",
+      "plugin_file": "tabulamea/tabulamea.php",
+      "version": "0.9.0",
+      "download_url": "https://github.com/deckerweb/tabulamea/releases/download/v0.9.0/tabulamea-0.9.0.zip",
+      "sha256": "28fe76a11b7b84b41eaa9fee5d14c20d7b4b1ae2c6f30ac3e6caed315b164d9d",
+      "requires_wp": "7.1.2",
+      "requires_php": "8.2",
+      "description": "Privacy-friendly pageview statistics, popular content and referrers, with access controls and optional country and technology reports.",
+      "description_de": "WordPress-Inhalte tabellarisch verwalten.",
+      "dependencies": [],
+      "category": "Admin",
+      "category_de": "Admin",
+      "series_memberships": [],
+      "series_memberships_v2": [
+        "tools"
+      ],
+      "series_memberships_v3": [
+        "tools",
+        "admin"
+      ],
+      "icon_label": "TBM",
+      "icon": "assets/icons/tabulamea-973feb3bc9e3.png",
+      "github_stars": 1,
+      "stars_checked_at": "2026-10-19",
+      "published_at": "2026-10-19T06:47:30Z",
+      "sort_order": 260,
+      "icon_background": "#ddebe8"
+    },
+    {
+      "approved": true,
+      "slug": "genesis-widgetized-footer",
+      "name": "Genesis Widgetized Footer",
+      "repository": "deckerweb/genesis-widgetized-footer",
+      "plugin_file": "genesis-widgetized-footer/genesis-widgetized-footer.php",
+      "version": "2.0.0",
+      "download_url": "https://github.com/deckerweb/genesis-widgetized-footer/releases/download/v2.0.0/genesis-widgetized-footer-2.0.0.zip",
+      "sha256": "67b2e3131bfb4ecbaa5d46033ba59d4a46ff5864c5d882985a2a420dc551f7d8",
+      "requires_wp": "6.4",
+      "requires_php": "8.0",
+      "description": "Customize the Genesis footer and optional disclaimer with widgets, responsive layouts and shortcodes. Footer features require an active Genesis theme and otherwise pause safely.",
+      "description_de": "Widgetbereiche im Footer von Genesis-Themes verwalten. Footer-Funktionen benötigen ein aktives Genesis-Theme und pausieren andernfalls sicher.",
+      "dependencies": [],
+      "category": "Genesis",
+      "category_de": "Genesis",
+      "series_memberships": [
+        "builder"
+      ],
+      "series_memberships_v2": [
+        "builder",
+        "tools"
+      ],
+      "series_memberships_v3": [
+        "builder",
+        "tools"
+      ],
+      "icon_label": "GWF",
+      "icon": "assets/icons/genesis-widgetized-footer-c82e29394a19.png",
+      "github_stars": 1,
+      "stars_checked_at": "2026-10-19",
+      "published_at": "2026-10-19T07:28:41Z",
+      "sort_order": 270,
+      "icon_background": "#e7e2ef"
+    }
+  ],
+  "catalog_revision": "2026-10-21.1",
+  "generated_at": "2026-10-21T09:57:10Z",
+  "requires_library": "0.1.0",
+  "series_definitions": {
+    "quicknav": {
+      "name": "QuickNav",
+      "name_de": "QuickNav",
+      "order": 0
+    },
+    "builder": {
+      "name": "Builder",
+      "name_de": "Builder",
+      "order": 10
+    },
+    "purify": {
+      "name": "Purify",
+      "name_de": "Purify",
+      "order": 20
+    },
+    "manage-content": {
+      "name": "Manage Content",
+      "name_de": "Inhalte verwalten",
+      "order": 30
+    },
+    "connect": {
+      "name": "Connect",
+      "name_de": "Connect",
+      "order": 40
+    },
+    "tools": {
+      "name": "Tools",
+      "name_de": "Werkzeuge",
+      "order": 50
+    },
+    "shop": {
+      "name": "Shop",
+      "name_de": "Shop",
+      "order": 60
+    },
+    "admin": {
+      "name": "Admin",
+      "name_de": "Admin",
+      "order": 70
+    },
+    "inspiration": {
+      "name": "Inspiration",
+      "name_de": "Inspiration",
+      "order": 80
+    }
+  }
+}

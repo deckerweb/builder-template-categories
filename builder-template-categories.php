@@ -3,9 +3,9 @@
  * Plugin Name:       Builder Template Categories
  * Plugin URI:        https://github.com/deckerweb/builder-template-categories
  * Description:       Organize WordPress patterns and the template libraries of supported builders and themes with shared categories.
- * Version:           1.9.0
+ * Version:           1.9.1
  * Requires at least: 7.0
- * Requires PHP:      8.0
+ * Requires PHP:      8.1
  * Author:            David Decker - DECKERWEB
  * Author URI:        https://github.com/deckerweb
  * License:           GPL-2.0-or-later
@@ -33,7 +33,8 @@ if ( ! defined( 'ABSPATH' ) ) {
  * @since 1.0.0
  */
 /** Plugin version */
-define( 'BTC_PLUGIN_VERSION', '1.9.0' );
+define( 'BTC_PLUGIN_VERSION', '1.9.1' );
+define( 'BTC_PLUGIN_FILE', __FILE__ );
 
 /** Plugin directory */
 define( 'BTC_PLUGIN_DIR', trailingslashit( dirname( __FILE__ ) ) );
@@ -42,7 +43,12 @@ define( 'BTC_PLUGIN_DIR', trailingslashit( dirname( __FILE__ ) ) );
 define( 'BTC_PLUGIN_BASEDIR', trailingslashit( dirname( plugin_basename( __FILE__ ) ) ) );
 
 
+require_once __DIR__ . '/includes/deckerweb-plugin-library/bootstrap.php';
+deckerweb_library_register_v2( __FILE__, array(), __DIR__ . '/includes/deckerweb-plugin-library' );
+require_once __DIR__ . '/includes/updates.php';
+
 add_action( 'init', 'ddw_btc_load_translations', 1 );
+add_action( 'change_locale', 'ddw_btc_load_translations' );
 /**
  * Load the text domain for translation of the plugin.
  *
@@ -80,12 +86,10 @@ function ddw_btc_load_translations() {
         $btc_wp_lang_dir
     );
 
-    /** Translations: Secondly, look in 'wp-content/languages/plugins/' for the proper .mo file (= default) */
-    load_plugin_textdomain(
-        $btc_textdomain,
-        FALSE,
-        BTC_PLUGIN_BASEDIR . 'languages'
-    );
+    // Preserve installed language-pack overrides, then supply new bundled messages.
+    load_textdomain( $btc_textdomain, WP_LANG_DIR . '/plugins/' . $btc_textdomain . '-' . $locale . '.mo', $locale );
+    load_textdomain( $btc_textdomain, BTC_PLUGIN_DIR . 'languages/' . $btc_textdomain . '-' . $locale . '.mo', $locale );
+    load_plugin_textdomain( $btc_textdomain, plugin_rel_path: BTC_PLUGIN_BASEDIR . 'languages' );
 
 }  // end function
 

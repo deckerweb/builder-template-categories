@@ -329,8 +329,8 @@ function ddw_btc_coding_years( $first_year = '' ) {
 	$first_year = ( empty( $first_year ) ) ? absint( $btc_info[ 'first_code' ] ) : absint( $first_year );
 
 	/** Set year of first released code */
-	$code_first_year = ( date( 'Y' ) == $first_year || 0 === $first_year ) ? '' : $first_year . '&#x02013;';
+	$code_first_year = ( gmdate( 'Y' ) == $first_year || 0 === $first_year ) ? '' : $first_year . '&#x02013;';
 
-	return $code_first_year . date( 'Y' );
+	return $code_first_year . gmdate( 'Y' );
 
 }  // end function

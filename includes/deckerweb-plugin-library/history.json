@@ -1,0 +1,324 @@
+[
+  {
+    "version": "1.1.0",
+    "date": "2026-10-21",
+    "changes": {
+      "Improved": [
+        {
+          "en": "Updated approved catalog and local original icons, with fewer duplicate image files. Initials use consistent subtle background colors; cards highlight on hover and keyboard focus.",
+          "de": "Aktualisierter freigegebener Katalog und lokale Originalicons mit weniger Bild-Doppeldateien. Kürzel erhalten dezente Hintergrundfarben; Karten reagieren auf Maus und Tastaturfokus."
+        }
+      ],
+      "Fixed": [
+        {
+          "en": "Stricter normalization of administration inputs and contextual protection of catalog output.",
+          "de": "Strengere Bereinigung von Admin-Eingaben und kontextgerechte Absicherung der Katalogausgabe."
+        },
+        {
+          "en": "Inline updates work with Git Updater nonce checks without weakening Library authorization; failed actions retain their error styling.",
+          "de": "Inline-Updates berücksichtigen die Nonce-Prüfung von Git Updater, ohne die Library-Autorisierung abzuschwächen; fehlgeschlagene Aktionen bleiben als Fehler erkennbar."
+        },
+        {
+          "en": "Explicit catalog updates recognize matching GitHub source-archive offers while installing only the approved, checksum-verified release asset.",
+          "de": "Gezielte Katalogupdates erkennen passende GitHub-Quellarchivangebote und installieren weiterhin ausschließlich das freigegebene Release-ZIP mit geprüfter Prüfsumme."
+        }
+      ]
+    }
+  },
+  {
+    "version": "1.0.0",
+    "date": "2026-10-15",
+    "changes": {
+      "New": [
+        {
+          "en": "Personal catalog sorting, stable random discovery and copyable technical information in Library settings.",
+          "de": "Persönliche Katalogsortierung, stabile Zufallsansicht und kopierbare technische Informationen in den Library-Einstellungen."
+        }
+      ],
+      "Improved": [
+        {
+          "en": "Remembered filters, clearer catalog provenance and plugin activation states, refreshed approved releases and local original icons.",
+          "de": "Gespeicherte Filter, klarer Katalogstatus und Plugin-Aktivierungszustand, aktualisierte freigegebene Releases und lokale Originalicons."
+        }
+      ],
+      "Fixed": [
+        {
+          "en": "Inline installation supplies native plugin identity for Git Updater compatibility. Changelog dialogs retain native close and documentation-link fallbacks.",
+          "de": "Inline-Installationen übergeben die native Pluginidentität für die Zusammenarbeit mit Git Updater. Verlaufsdialoge behalten native Schließ- und Dokumentationslink-Fallbacks."
+        }
+      ]
+    }
+  },
+  {
+    "version": "0.9.0",
+    "date": "2026-10-10",
+    "changes": {
+      "New": [
+        {
+          "en": "Update verified installed catalog plugins directly in their cards, including older releases without an updater.",
+          "de": "Geprüfte installierte Katalogplugins direkt in ihren Karten aktualisieren, einschließlich älterer Releases ohne Updater."
+        },
+        {
+          "en": "Catalog-defined series, localized categories, ordering and versioned safe-pause dependency rules.",
+          "de": "Katalogdefinierte Serien, übersetzte Kategorien, Reihenfolge und versionsabhängige Regeln für sichere Funktionspausen."
+        }
+      ],
+      "Improved": [
+        {
+          "en": "Current approved catalog packages and local original icons, including Builder Content Guide and the Admin series.",
+          "de": "Aktuelle freigegebene Katalogpakete und lokale Originalicons, einschließlich Builder Content Guide und Admin-Serie."
+        },
+        {
+          "en": "Save shared preferences in place and keep Library operations inside WordPress administration.",
+          "de": "Gemeinsame Einstellungen direkt speichern und Library-Aktionen innerhalb der WordPress-Verwaltung halten."
+        }
+      ],
+      "Fixed": [
+        {
+          "en": "Early fallback messages use host translation resources; activation handoff documentation is directly attached to the function.",
+          "de": "Frühe Ausfallmeldungen verwenden Host-Sprachressourcen; die Aktivierungsübergabe ist direkt an der Funktion dokumentiert."
+        }
+      ]
+    }
+  },
+  {
+    "version": "0.8.1",
+    "date": "2026-10-08",
+    "changes": {
+      "Fixed": [
+        {
+          "en": "Final-host uninstall removes current catalog and update caches as well as legacy caches.",
+          "de": "Beim Entfernen des letzten Hosts werden aktuelle Katalog- und Update-Caches ebenso wie ältere Caches bereinigt."
+        },
+        {
+          "en": "The current uninstall entry point remains effective when an older cleanup copy was loaded first.",
+          "de": "Der aktuelle Deinstallationseinstieg bleibt wirksam, wenn zuvor eine ältere Cleanup-Kopie geladen wurde."
+        }
+      ],
+      "New": [
+        {
+          "en": "Tools and Shop catalog series, with backward-compatible metadata.",
+          "de": "Katalogserien Werkzeuge und Shop mit rückwärtskompatiblen Metadaten."
+        }
+      ],
+      "Improved": [
+        {
+          "en": "The bundled catalog includes all 20 approved plugins and their current local icons.",
+          "de": "Der mitgelieferte Katalog enthält alle 20 freigegebenen Plugins und ihre aktuellen lokalen Icons."
+        },
+        {
+          "en": "Check the plugin status after interrupted inline actions without repeating a successful operation.",
+          "de": "Nach unterbrochenen Inline-Aktionen den Plugin-Status prüfen, ohne eine erfolgreiche Aktion zu wiederholen."
+        },
+        {
+          "en": "Match builder runtime markers to the active installation and apply the versioned Oxygen QuickNav 2.0 activation contract.",
+          "de": "Builder-Laufzeitmarker der aktiven Installation zuordnen und den versionsabhängigen Aktivierungsvertrag von Oxygen QuickNav 2.0 berücksichtigen."
+        },
+        {
+          "en": "Updated Oxygen QuickNav2.0.0 and Quick Edit Featured Image1.4.0 packages, requirements and original icons.",
+          "de": "Pakete, Voraussetzungen und Originalicons von Oxygen QuickNav2.0.0 und Quick Edit Featured Image1.4.0 aktualisiert."
+        }
+      ]
+    }
+  },
+  {
+    "version": "0.7.0",
+    "date": "2026-10-07",
+    "changes": {
+      "Improved": [
+        {
+          "en": "Install and activate catalog plugins directly in their cards, with inline status and errors.",
+          "de": "Katalogplugins direkt in ihrer Karte installieren und aktivieren, mit Status und Fehlern an Ort und Stelle."
+        },
+        {
+          "en": "Use the approved three-character fallback labels when no original icon is available.",
+          "de": "Die freigegebenen dreistelligen Fallback-Kürzel verwenden, wenn kein Originalicon verfügbar ist."
+        }
+      ]
+    }
+  },
+  {
+    "version": "0.6.1",
+    "date": "2026-10-07",
+    "changes": {
+      "Improved": [
+        {
+          "en": "Updated approved plugin releases and original catalog icons.",
+          "de": "Freigegebene Plugin-Releases und originale Katalogicons aktualisiert."
+        },
+        {
+          "en": "The settings footer shows the local Library SVG icon, name and version.",
+          "de": "Der Einstellungs-Footer zeigt das lokale SVG-Icon, den Namen und die Version der Library."
+        }
+      ],
+      "Fixed": [
+        {
+          "en": "Daily Scripture 1.0.0 and newer can be network activated, including beside an older embedded Library.",
+          "de": "Daily Scripture ab 1.0.0 kann auch neben einer älteren eingebetteten Library netzwerkweit aktiviert werden."
+        },
+        {
+          "en": "Single filtered results retain normal card width on wide screens.",
+          "de": "Einzelne gefilterte Treffer behalten auf breiten Ansichten die normale Kartenbreite."
+        },
+        {
+          "en": "Multisite Toolbar Additions is also available for single websites and site activation.",
+          "de": "Multisite Toolbar Additions wird auch für einzelne Websites und Website-Aktivierung angeboten."
+        }
+      ]
+    }
+  },
+  {
+    "version": "0.6.0",
+    "date": "2026-10-06",
+    "changes": {
+      "New": [
+        {
+          "en": "Approved plugin releases can appear in the online catalog without replacing the embedded Library.",
+          "de": "Freigegebene Plugin-Releases können im Online-Katalog erscheinen, ohne die eingebettete Library auszutauschen."
+        },
+        {
+          "en": "Discover Purify WPCode Lite and Purify WPForms Lite in the catalog.",
+          "de": "Purify WPCode Lite und Purify WPForms Lite im Katalog entdecken."
+        },
+        {
+          "en": "Plugins can belong to several series, including Manage Content.",
+          "de": "Plugins können mehreren Serien angehören, darunter Inhalte verwalten."
+        },
+        {
+          "en": "Discover the Connect series and the upcoming Connect for Shopware 1.0.0 with a clear preparation notice.",
+          "de": "Die Connect-Serie und das kommende Connect for Shopware 1.0.0 mit klarem Vorbereitungshinweis entdecken."
+        }
+      ],
+      "Improved": [
+        {
+          "en": "The catalog refreshes after 24 hours; installed-plugin update checks use an independent cache.",
+          "de": "Der Katalog wird nach 24 Stunden aktualisiert; Updateprüfungen installierter Plugins nutzen einen unabhängigen Cache."
+        },
+        {
+          "en": "Optional integration with the host updater keeps package approval and checksum checks current.",
+          "de": "Die optionale Anbindung des Host-Updaters erhält aktuelle Paketfreigaben und Prüfsummenprüfungen."
+        },
+        {
+          "en": "The public GitHub catalog address is prefilled in Library settings.",
+          "de": "Die öffentliche GitHub-Katalogadresse ist in den Library-Einstellungen vorausgefüllt."
+        }
+      ],
+      "Fixed": [
+        {
+          "en": "Catalog and package requests use a client identifier without the website URL.",
+          "de": "Katalog- und Paketabfragen verwenden eine Clientkennung ohne Website-URL."
+        },
+        {
+          "en": "Plugins with their own updater remain independent when the catalog is unavailable.",
+          "de": "Plugins mit eigenem Updater bleiben bei nicht erreichbarem Katalog unabhängig."
+        },
+        {
+          "en": "Online catalog sources are restricted to the deckerweb GitHub raw-file host.",
+          "de": "Online-Katalogquellen sind auf den GitHub-Raw-Dateihost von deckerweb beschränkt."
+        }
+      ]
+    }
+  },
+  {
+    "version": "0.5.0",
+    "date": "2026-10-05",
+    "changes": {
+      "New": [
+        {
+          "en": "Explicit QuickNav, Builder and Purify product-family metadata, discreet card badges and a series filter. Empty families remain hidden.",
+          "de": "Ausdrückliche Serienzuordnung für QuickNav, Builder und Purify, dezente Karten-Badges und Serienfilter. Leere Serien bleiben verborgen."
+        },
+        {
+          "en": "Purify Elementor joins the approved catalog and Purify family; Multisite Toolbar Additions belongs to QuickNav.",
+          "de": "Purify Elementor ergänzt den freigegebenen Katalog und die Purify-Serie; Multisite Toolbar Additions gehört zu QuickNav."
+        }
+      ],
+      "Improved": [
+        {
+          "en": "Combine series and search with Fits my installation; reset filters without changing catalog settings.",
+          "de": "Serien und Suche mit „Passt zu meiner Installation“ kombinieren; Filter ohne Einstellungsänderung zurücksetzen."
+        }
+      ]
+    }
+  },
+  {
+    "version": "0.4.0",
+    "date": "2026-10-05",
+    "changes": {
+      "New": [
+        {
+          "en": "Host-domain translations in English, informal German and formal German.",
+          "de": "Übersetzungen über die Host-Textdomain auf Englisch, Deutsch (Du) und Deutsch (Sie)."
+        },
+        {
+          "en": "Shared last-host cleanup with optional settings deletion and a local accessible changelog.",
+          "de": "Gemeinsame Bereinigung beim letzten Host mit optionaler Einstellungslöschung und lokalem zugänglichem Änderungsverlauf."
+        }
+      ],
+      "Improved": [
+        {
+          "en": "Compatible runtime election across old and new hosts; current approved catalog sources and local icons.",
+          "de": "Kompatible Laufzeitwahl mit alten und neuen Hosts; aktuelle freigegebene Katalogquellen und lokale Icons."
+        }
+      ],
+      "Misc": [
+        {
+          "en": "Bilingual documentation, private security reporting through host repositories and documented data ownership.",
+          "de": "Zweisprachige Dokumentation, private Sicherheitsmeldungen über Host-Repositories und dokumentierte Datenzuordnung."
+        }
+      ],
+      "Fixed": [
+        {
+          "en": "Reject oversized archive contents before reading them and normalize files using bounded streams.",
+          "de": "Übergroße Archivinhalte vor dem Lesen ablehnen und Dateien über begrenzte Streams aufbereiten."
+        },
+        {
+          "en": "Preserve host code during integration and report platform conflicts without raising minimums.",
+          "de": "Host-Code bei Integration erhalten und Plattformkonflikte ohne Erhöhung der Mindestversionen melden."
+        }
+      ]
+    }
+  },
+  {
+    "version": "0.3.0",
+    "date": "2026-10-01",
+    "changes": {
+      "New": [
+        {
+          "en": "Fourteen approved plugins, twelve original local icons and dated GitHub star counts.",
+          "de": "Vierzehn freigegebene Plugins, zwölf lokale Original-Icons und datierte GitHub-Sterne."
+        }
+      ],
+      "Improved": [
+        {
+          "en": "Explicit Multisite requirements and refreshed release provenance.",
+          "de": "Explizite Multisite-Anforderungen und aktualisierte Release-Quellen."
+        }
+      ]
+    }
+  },
+  {
+    "version": "0.2.0",
+    "date": "",
+    "changes": {
+      "New": [
+        {
+          "en": "Additional catalog entries, local product icons and GitHub star snapshots.",
+          "de": "Zusätzliche Katalogeinträge, lokale Produkt-Icons und GitHub-Sterne als Zahlenstand."
+        }
+      ]
+    }
+  },
+  {
+    "version": "0.1.0",
+    "date": "",
+    "changes": {
+      "New": [
+        {
+          "en": "Embedded curated catalog, verified installation, separate activation and optional online approvals.",
+          "de": "Eingebetteter kuratierter Katalog, geprüfte Installation, separate Aktivierung und optionale Online-Freigaben."
+        }
+      ]
+    }
+  }
+]

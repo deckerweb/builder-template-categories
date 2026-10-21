@@ -1,0 +1,910 @@
+{
+  "%s is installed but inactive. Activate it first.": {
+    "de_DE": "%s ist installiert, aber inaktiv. Bitte zuerst aktivieren.",
+    "de_DE_formal": "%s ist installiert, aber inaktiv. Bitte zuerst aktivieren."
+  },
+  "%s is missing. Install and activate it first.": {
+    "de_DE": "%s fehlt. Bitte zuerst installieren und aktivieren.",
+    "de_DE_formal": "%s fehlt. Bitte zuerst installieren und aktivieren."
+  },
+  "%s must be network activated first.": {
+    "de_DE": "%s muss zuerst netzwerkweit aktiviert werden.",
+    "de_DE_formal": "%s muss zuerst netzwerkweit aktiviert werden."
+  },
+  "%s supports activation per site only.": {
+    "de_DE": "%s unterstützt nur die Aktivierung je Website.",
+    "de_DE_formal": "%s unterstützt nur die Aktivierung je Website."
+  },
+  "Activate": {
+    "de_DE": "Aktivieren",
+    "de_DE_formal": "Aktivieren"
+  },
+  "Activate Bricks QuickNav per site after selecting the Bricks parent or child theme.": {
+    "de_DE": "Bricks QuickNav bitte je Website aktivieren, nachdem das Bricks-Theme oder ein Child-Theme ausgewählt wurde.",
+    "de_DE_formal": "Bricks QuickNav bitte je Website aktivieren, nachdem das Bricks-Theme oder ein Child-Theme ausgewählt wurde."
+  },
+  "Admin": {
+    "de_DE": "Administration",
+    "de_DE_formal": "Administration"
+  },
+  "Already active": {
+    "de_DE": "Bereits aktiv",
+    "de_DE_formal": "Bereits aktiv"
+  },
+  "Archive contains too many files.": {
+    "de_DE": "Das Archiv enthält zu viele Dateien.",
+    "de_DE_formal": "Das Archiv enthält zu viele Dateien."
+  },
+  "Archive symlinks are not permitted.": {
+    "de_DE": "Symbolische Verknüpfungen sind im Archiv nicht erlaubt.",
+    "de_DE_formal": "Symbolische Verknüpfungen sind im Archiv nicht erlaubt."
+  },
+  "As of ": {
+    "de_DE": "Stand: ",
+    "de_DE_formal": "Stand: "
+  },
+  "Back to deckerweb": {
+    "de_DE": "Zurück zu deckerweb",
+    "de_DE_formal": "Zurück zu deckerweb"
+  },
+  "Builder": {
+    "de_DE": "Builder",
+    "de_DE_formal": "Builder"
+  },
+  "Cannot create temporary file.": {
+    "de_DE": "Temporäre Datei konnte nicht erstellt werden.",
+    "de_DE_formal": "Temporäre Datei konnte nicht erstellt werden."
+  },
+  "Cannot create verified archive.": {
+    "de_DE": "Geprüftes Archiv konnte nicht erstellt werden.",
+    "de_DE_formal": "Geprüftes Archiv konnte nicht erstellt werden."
+  },
+  "Cannot finalize archive.": {
+    "de_DE": "Archiv konnte nicht abgeschlossen werden.",
+    "de_DE_formal": "Archiv konnte nicht abgeschlossen werden."
+  },
+  "Cannot normalize archive.": {
+    "de_DE": "Archiv konnte nicht aufbereitet werden.",
+    "de_DE_formal": "Archiv konnte nicht aufbereitet werden."
+  },
+  "Cannot read archive entry.": {
+    "de_DE": "Archiveintrag konnte nicht gelesen werden.",
+    "de_DE_formal": "Archiveintrag konnte nicht gelesen werden."
+  },
+  "Catalog URL": {
+    "de_DE": "Katalog-URL",
+    "de_DE_formal": "Katalog-URL"
+  },
+  "Changelog": {
+    "de_DE": "Änderungsverlauf",
+    "de_DE_formal": "Änderungsverlauf"
+  },
+  "Close": {
+    "de_DE": "Schließen",
+    "de_DE_formal": "Schließen"
+  },
+  "Compatible additions only": {
+    "de_DE": "Nur passende Ergänzungen",
+    "de_DE_formal": "Nur passende Ergänzungen"
+  },
+  "Content": {
+    "de_DE": "Inhalte",
+    "de_DE_formal": "Inhalte"
+  },
+  "Delete Library settings when removing the last host plugin": {
+    "de_DE": "Library-Einstellungen beim Entfernen des letzten Host-Plugins ebenfalls löschen",
+    "de_DE_formal": "Library-Einstellungen beim Entfernen des letzten Host-Plugins ebenfalls löschen"
+  },
+  "Details & requirements": {
+    "de_DE": "Details & Voraussetzungen",
+    "de_DE_formal": "Details & Voraussetzungen"
+  },
+  "Discover more plugins by deckerweb": {
+    "de_DE": "Weitere Plugins von deckerweb entdecken",
+    "de_DE_formal": "Weitere Plugins von deckerweb entdecken"
+  },
+  "Dismiss permanently": {
+    "de_DE": "Dauerhaft schließen",
+    "de_DE_formal": "Dauerhaft schließen"
+  },
+  "Done. The plugin is active.": {
+    "de_DE": "Erledigt. Das Plugin ist aktiv.",
+    "de_DE_formal": "Erledigt. Das Plugin ist aktiv."
+  },
+  "Enter a catalog URL first.": {
+    "de_DE": "Bitte zuerst eine Katalog-URL eintragen.",
+    "de_DE_formal": "Bitte zuerst eine Katalog-URL eintragen."
+  },
+  "Expanded archive is too large.": {
+    "de_DE": "Das entpackte Archiv ist zu groß.",
+    "de_DE_formal": "Das entpackte Archiv ist zu groß."
+  },
+  "Filter": {
+    "de_DE": "Filtern",
+    "de_DE_formal": "Filtern"
+  },
+  "GitHub Stars": {
+    "de_DE": "GitHub-Sterne",
+    "de_DE_formal": "GitHub-Sterne"
+  },
+  "Hide catalog": {
+    "de_DE": "Katalog ausblenden",
+    "de_DE_formal": "Katalog ausblenden"
+  },
+  "Improved": {
+    "de_DE": "Verbessert",
+    "de_DE_formal": "Verbessert"
+  },
+  "Install and activate this plugin in the network admin.": {
+    "de_DE": "Dieses Plugin bitte im Netzwerk-Admin installieren und aktivieren.",
+    "de_DE_formal": "Dieses Plugin bitte im Netzwerk-Admin installieren und aktivieren."
+  },
+  "Install deckerweb plugin": {
+    "de_DE": "deckerweb-Plugin installieren",
+    "de_DE_formal": "deckerweb-Plugin installieren"
+  },
+  "Install now": {
+    "de_DE": "Jetzt installieren",
+    "de_DE_formal": "Jetzt installieren"
+  },
+  "Installed": {
+    "de_DE": "Installiert",
+    "de_DE_formal": "Installiert"
+  },
+  "Installed: ": {
+    "de_DE": "Installiert: ",
+    "de_DE_formal": "Installiert: "
+  },
+  "Invalid ZIP archive.": {
+    "de_DE": "Ungültiges ZIP-Archiv.",
+    "de_DE_formal": "Ungültiges ZIP-Archiv."
+  },
+  "Invalid approval flag.": {
+    "de_DE": "Ungültige Freigabeangabe.",
+    "de_DE_formal": "Ungültige Freigabeangabe."
+  },
+  "Invalid catalog field: ": {
+    "de_DE": "Ungültiges Katalogfeld: ",
+    "de_DE_formal": "Ungültiges Katalogfeld: "
+  },
+  "Invalid catalog schema.": {
+    "de_DE": "Ungültiges Katalogformat.",
+    "de_DE_formal": "Ungültiges Katalogformat."
+  },
+  "Invalid dependencies.": {
+    "de_DE": "Ungültige Abhängigkeiten.",
+    "de_DE_formal": "Ungültige Abhängigkeiten."
+  },
+  "Invalid dependency URL.": {
+    "de_DE": "Ungültige URL einer Abhängigkeit.",
+    "de_DE_formal": "Ungültige URL einer Abhängigkeit."
+  },
+  "Invalid dependency metadata.": {
+    "de_DE": "Ungültige Angaben zu Abhängigkeiten.",
+    "de_DE_formal": "Ungültige Angaben zu Abhängigkeiten."
+  },
+  "Invalid display field.": {
+    "de_DE": "Ungültiges Anzeigefeld.",
+    "de_DE_formal": "Ungültiges Anzeigefeld."
+  },
+  "Invalid icon color.": {
+    "de_DE": "Ungültige Icon-Farbe.",
+    "de_DE_formal": "Ungültige Icon-Farbe."
+  },
+  "Invalid icon label.": {
+    "de_DE": "Ungültiges Icon-Kürzel.",
+    "de_DE_formal": "Ungültiges Icon-Kürzel."
+  },
+  "Invalid identity or release metadata.": {
+    "de_DE": "Ungültige Plugin- oder Release-Angaben.",
+    "de_DE_formal": "Ungültige Plugin- oder Release-Angaben."
+  },
+  "Invalid local icon.": {
+    "de_DE": "Ungültiges lokales Icon.",
+    "de_DE_formal": "Ungültiges lokales Icon."
+  },
+  "Invalid network policy.": {
+    "de_DE": "Ungültige Netzwerkregel.",
+    "de_DE_formal": "Ungültige Netzwerkregel."
+  },
+  "Invalid network requirement.": {
+    "de_DE": "Ungültige Netzwerkanforderung.",
+    "de_DE_formal": "Ungültige Netzwerkanforderung."
+  },
+  "Invalid platform version.": {
+    "de_DE": "Ungültige Plattformversion.",
+    "de_DE_formal": "Ungültige Plattformversion."
+  },
+  "Invalid star count.": {
+    "de_DE": "Ungültige Anzahl der GitHub-Sterne.",
+    "de_DE_formal": "Ungültige Anzahl der GitHub-Sterne."
+  },
+  "Invalid stars date.": {
+    "de_DE": "Ungültiges Datum der GitHub-Sterne.",
+    "de_DE_formal": "Ungültiges Datum der GitHub-Sterne."
+  },
+  "Library": {
+    "de_DE": "Library",
+    "de_DE_formal": "Library"
+  },
+  "Library changelog": {
+    "de_DE": "Library-Änderungsverlauf",
+    "de_DE_formal": "Library-Änderungsverlauf"
+  },
+  "Library settings": {
+    "de_DE": "Library-Einstellungen",
+    "de_DE_formal": "Library-Einstellungen"
+  },
+  "Library settings saved.": {
+    "de_DE": "Library-Einstellungen gespeichert.",
+    "de_DE_formal": "Library-Einstellungen gespeichert."
+  },
+  "Manage installed plugins": {
+    "de_DE": "Installierte Plugins verwalten",
+    "de_DE_formal": "Installierte Plugins verwalten"
+  },
+  "Misc": {
+    "de_DE": "Sonstiges",
+    "de_DE_formal": "Sonstiges"
+  },
+  "Missing display text.": {
+    "de_DE": "Anzeigetext fehlt.",
+    "de_DE_formal": "Anzeigetext fehlt."
+  },
+  "Missing plugin header.": {
+    "de_DE": "Plugin-Header fehlt.",
+    "de_DE_formal": "Plugin-Header fehlt."
+  },
+  "More by deckerweb": {
+    "de_DE": "Mehr von deckerweb",
+    "de_DE_formal": "Mehr von deckerweb"
+  },
+  "Multisite": {
+    "de_DE": "Multisite",
+    "de_DE_formal": "Multisite"
+  },
+  "Network activate": {
+    "de_DE": "Netzwerkweit aktivieren",
+    "de_DE_formal": "Netzwerkweit aktivieren"
+  },
+  "Network permission denied.": {
+    "de_DE": "Keine Berechtigung für das Netzwerk.",
+    "de_DE_formal": "Keine Berechtigung für das Netzwerk."
+  },
+  "New": {
+    "de_DE": "Neu",
+    "de_DE_formal": "Neu"
+  },
+  "No approved plugins match this selection.": {
+    "de_DE": "Keine freigegebenen Plugins passen zu dieser Auswahl.",
+    "de_DE_formal": "Keine freigegebenen Plugins passen zu dieser Auswahl."
+  },
+  "Off by default. Applies only when no other host is installed, including inactive hosts. Removes Library settings, installation records and introduction status. Installed plugins, their content and other plugin settings remain unchanged. Network data is shared across sites.": {
+    "de_DE": "Standardmäßig ausgeschaltet. Gilt nur, wenn kein weiterer Host installiert ist, auch kein deaktivierter. Entfernt Library-Einstellungen, Installationszuordnung und den Status des Einführungshinweises. Installierte Plugins, deren Inhalte und Einstellungen anderer Plugins bleiben erhalten. Netzwerkdaten werden gemeinsam von den Websites genutzt.",
+    "de_DE_formal": "Standardmäßig ausgeschaltet. Gilt nur, wenn kein weiterer Host installiert ist, auch kein deaktivierter. Entfernt Library-Einstellungen, Installationszuordnung und den Status des Einführungshinweises. Installierte Plugins, deren Inhalte und Einstellungen anderer Plugins bleiben erhalten. Netzwerkdaten werden gemeinsam von den Websites genutzt."
+  },
+  "Online catalog": {
+    "de_DE": "Online-Katalog",
+    "de_DE_formal": "Online-Katalog"
+  },
+  "Only approved releases": {
+    "de_DE": "Nur freigegebene Releases",
+    "de_DE_formal": "Nur freigegebene Releases"
+  },
+  "Open catalog": {
+    "de_DE": "Katalog öffnen",
+    "de_DE_formal": "Katalog öffnen"
+  },
+  "PHP ZIP support is required.": {
+    "de_DE": "PHP-ZIP-Unterstützung wird benötigt.",
+    "de_DE_formal": "PHP-ZIP-Unterstützung wird benötigt."
+  },
+  "POST required.": {
+    "de_DE": "Eine POST-Anfrage ist erforderlich.",
+    "de_DE_formal": "Eine POST-Anfrage ist erforderlich."
+  },
+  "Permission denied.": {
+    "de_DE": "Keine Berechtigung.",
+    "de_DE_formal": "Keine Berechtigung."
+  },
+  "Plugin identity or version does not match the catalog.": {
+    "de_DE": "Plugin oder Version stimmt nicht mit dem Katalog überein.",
+    "de_DE_formal": "Plugin oder Version stimmt nicht mit dem Katalog überein."
+  },
+  "Plugin is not installed.": {
+    "de_DE": "Das Plugin ist nicht installiert.",
+    "de_DE_formal": "Das Plugin ist nicht installiert."
+  },
+  "Product website": {
+    "de_DE": "Produktwebsite",
+    "de_DE_formal": "Produktwebsite"
+  },
+  "Refresh catalog": {
+    "de_DE": "Katalog aktualisieren",
+    "de_DE_formal": "Katalog aktualisieren"
+  },
+  "Release checksum is verified before installation. Activation is a separate step.": {
+    "de_DE": "Vor der Installation wird die Release-Prüfsumme geprüft. Die Aktivierung erfolgt separat.",
+    "de_DE_formal": "Vor der Installation wird die Release-Prüfsumme geprüft. Die Aktivierung erfolgt separat."
+  },
+  "Release must contain exactly the approved plugin directory.": {
+    "de_DE": "Das Release muss genau das freigegebene Plugin-Verzeichnis enthalten.",
+    "de_DE_formal": "Das Release muss genau das freigegebene Plugin-Verzeichnis enthalten."
+  },
+  "Repository & documentation": {
+    "de_DE": "Repository & Dokumentation",
+    "de_DE_formal": "Repository & Dokumentation"
+  },
+  "Requires PHP %s or newer.": {
+    "de_DE": "Benötigt PHP %s oder neuer.",
+    "de_DE_formal": "Benötigt PHP %s oder neuer."
+  },
+  "Requires WordPress %s or newer.": {
+    "de_DE": "Benötigt WordPress %s oder neuer.",
+    "de_DE_formal": "Benötigt WordPress %s oder neuer."
+  },
+  "Requires a WordPress Multisite network.": {
+    "de_DE": "Benötigt ein WordPress-Multisite-Netzwerk.",
+    "de_DE_formal": "Benötigt ein WordPress-Multisite-Netzwerk."
+  },
+  "Retrieve approved catalog updates online": {
+    "de_DE": "Katalogfreigaben online aktualisieren",
+    "de_DE_formal": "Katalogfreigaben online aktualisieren"
+  },
+  "Save settings": {
+    "de_DE": "Einstellungen speichern",
+    "de_DE_formal": "Einstellungen speichern"
+  },
+  "Scripts": {
+    "de_DE": "Scripte",
+    "de_DE_formal": "Scripte"
+  },
+  "Search this catalog": {
+    "de_DE": "Diesen Katalog durchsuchen",
+    "de_DE_formal": "Diesen Katalog durchsuchen"
+  },
+  "Selected by deckerweb · Installed from GitHub releases": {
+    "de_DE": "Von deckerweb ausgewählt · Installation aus GitHub-Releases",
+    "de_DE_formal": "Von deckerweb ausgewählt · Installation aus GitHub-Releases"
+  },
+  "Show deckerweb under Add Plugins": {
+    "de_DE": "deckerweb unter „Plugins hinzufügen“ anzeigen",
+    "de_DE_formal": "deckerweb unter „Plugins hinzufügen“ anzeigen"
+  },
+  "Small plugins. Practical improvements.": {
+    "de_DE": "Kleine Plugins. Konkrete Verbesserungen.",
+    "de_DE_formal": "Kleine Plugins. Konkrete Verbesserungen."
+  },
+  "Source: GitHub": {
+    "de_DE": "Quelle: GitHub",
+    "de_DE_formal": "Quelle: GitHub"
+  },
+  "The GitHub release could not be downloaded.": {
+    "de_DE": "Das GitHub-Release konnte nicht heruntergeladen werden.",
+    "de_DE_formal": "Das GitHub-Release konnte nicht heruntergeladen werden."
+  },
+  "The approved release changed. Refresh updates first.": {
+    "de_DE": "Das freigegebene Release hat sich geändert. Bitte zuerst die Updates aktualisieren.",
+    "de_DE_formal": "Das freigegebene Release hat sich geändert. Bitte zuerst die Updates aktualisieren."
+  },
+  "The catalog URL is not an allowed first-party HTTPS endpoint.": {
+    "de_DE": "Die Katalog-URL ist keine erlaubte eigene HTTPS-Quelle.",
+    "de_DE_formal": "Die Katalog-URL ist keine erlaubte eigene HTTPS-Quelle."
+  },
+  "The catalog could not be verified. Please try again later.": {
+    "de_DE": "Der Katalog konnte nicht geprüft werden. Bitte später erneut versuchen.",
+    "de_DE_formal": "Der Katalog konnte nicht geprüft werden. Bitte später erneut versuchen."
+  },
+  "The catalog is disabled.": {
+    "de_DE": "Der Katalog ist deaktiviert.",
+    "de_DE_formal": "Der Katalog ist deaktiviert."
+  },
+  "The catalog is hidden.": {
+    "de_DE": "Der Katalog ist ausgeblendet.",
+    "de_DE_formal": "Der Katalog ist ausgeblendet."
+  },
+  "The online catalog is unavailable. Showing cached or bundled entries; online approval is checked again before installation.": {
+    "de_DE": "Der Online-Katalog ist nicht erreichbar. Angezeigt wird der gespeicherte oder mitgelieferte Katalog; vor der Installation wird die Online-Freigabe erneut geprüft.",
+    "de_DE_formal": "Der Online-Katalog ist nicht erreichbar. Angezeigt wird der gespeicherte oder mitgelieferte Katalog; vor der Installation wird die Online-Freigabe erneut geprüft."
+  },
+  "The online catalog source is not trusted.": {
+    "de_DE": "Die Online-Katalogquelle ist nicht vertrauenswürdig.",
+    "de_DE_formal": "Die Online-Katalogquelle ist nicht vertrauenswürdig."
+  },
+  "The release checksum does not match. Installation stopped.": {
+    "de_DE": "Die Prüfsumme des Releases stimmt nicht überein. Installation gestoppt.",
+    "de_DE_formal": "Die Prüfsumme des Releases stimmt nicht überein. Installation gestoppt."
+  },
+  "This plugin directory already exists. Use the installed plugin; it will not be overwritten.": {
+    "de_DE": "Dieses Plugin-Verzeichnis existiert bereits. Bitte das installierte Plugin verwenden; es wird nicht überschrieben.",
+    "de_DE_formal": "Dieses Plugin-Verzeichnis existiert bereits. Bitte das installierte Plugin verwenden; es wird nicht überschrieben."
+  },
+  "This release is no longer approved.": {
+    "de_DE": "Dieses Release ist nicht mehr freigegeben.",
+    "de_DE_formal": "Dieses Release ist nicht mehr freigegeben."
+  },
+  "This release is not approved.": {
+    "de_DE": "Dieses Release ist nicht freigegeben.",
+    "de_DE_formal": "Dieses Release ist nicht freigegeben."
+  },
+  "Unsafe archive path.": {
+    "de_DE": "Unsicherer Archivpfad.",
+    "de_DE_formal": "Unsicherer Archivpfad."
+  },
+  "Untrusted release URL.": {
+    "de_DE": "Nicht vertrauenswürdige Release-URL.",
+    "de_DE_formal": "Nicht vertrauenswürdige Release-URL."
+  },
+  "Update %1$s to version %2$s or newer.": {
+    "de_DE": "%1$s bitte auf Version %2$s oder neuer aktualisieren.",
+    "de_DE_formal": "%1$s bitte auf Version %2$s oder neuer aktualisieren."
+  },
+  "View plugins": {
+    "de_DE": "Plugins ansehen",
+    "de_DE_formal": "Plugins ansehen"
+  },
+  "Visibility": {
+    "de_DE": "Sichtbarkeit",
+    "de_DE_formal": "Sichtbarkeit"
+  },
+  "WordPress": {
+    "de_DE": "WordPress",
+    "de_DE_formal": "WordPress"
+  },
+  "You already use one of my plugins. Find selected additions in the deckerweb tab.": {
+    "de_DE": "Du nutzt bereits ein Plugin von mir. Ausgewählte Ergänzungen findest du im deckerweb-Tab.",
+    "de_DE_formal": "Sie nutzen bereits ein Plugin von mir. Ausgewählte Ergänzungen finden Sie im deckerweb-Tab."
+  },
+  "January": {
+    "de_DE": "Januar",
+    "de_DE_formal": "Januar"
+  },
+  "February": {
+    "de_DE": "Februar",
+    "de_DE_formal": "Februar"
+  },
+  "March": {
+    "de_DE": "März",
+    "de_DE_formal": "März"
+  },
+  "April": {
+    "de_DE": "April",
+    "de_DE_formal": "April"
+  },
+  "May": {
+    "de_DE": "Mai",
+    "de_DE_formal": "Mai"
+  },
+  "June": {
+    "de_DE": "Juni",
+    "de_DE_formal": "Juni"
+  },
+  "July": {
+    "de_DE": "Juli",
+    "de_DE_formal": "Juli"
+  },
+  "August": {
+    "de_DE": "August",
+    "de_DE_formal": "August"
+  },
+  "September": {
+    "de_DE": "September",
+    "de_DE_formal": "September"
+  },
+  "October": {
+    "de_DE": "Oktober",
+    "de_DE_formal": "Oktober"
+  },
+  "November": {
+    "de_DE": "November",
+    "de_DE_formal": "November"
+  },
+  "December": {
+    "de_DE": "Dezember",
+    "de_DE_formal": "Dezember"
+  },
+  "Jan": {
+    "de_DE": "Jan",
+    "de_DE_formal": "Jan"
+  },
+  "Feb": {
+    "de_DE": "Feb",
+    "de_DE_formal": "Feb"
+  },
+  "Mar": {
+    "de_DE": "Mär",
+    "de_DE_formal": "Mär"
+  },
+  "Apr": {
+    "de_DE": "Apr",
+    "de_DE_formal": "Apr"
+  },
+  "Jun": {
+    "de_DE": "Jun",
+    "de_DE_formal": "Jun"
+  },
+  "Jul": {
+    "de_DE": "Jul",
+    "de_DE_formal": "Jul"
+  },
+  "Aug": {
+    "de_DE": "Aug",
+    "de_DE_formal": "Aug"
+  },
+  "Sep": {
+    "de_DE": "Sep",
+    "de_DE_formal": "Sep"
+  },
+  "Oct": {
+    "de_DE": "Okt",
+    "de_DE_formal": "Okt"
+  },
+  "Nov": {
+    "de_DE": "Nov",
+    "de_DE_formal": "Nov"
+  },
+  "Dec": {
+    "de_DE": "Dez",
+    "de_DE_formal": "Dez"
+  },
+  "Monday": {
+    "de_DE": "Montag",
+    "de_DE_formal": "Montag"
+  },
+  "Tuesday": {
+    "de_DE": "Dienstag",
+    "de_DE_formal": "Dienstag"
+  },
+  "Wednesday": {
+    "de_DE": "Mittwoch",
+    "de_DE_formal": "Mittwoch"
+  },
+  "Thursday": {
+    "de_DE": "Donnerstag",
+    "de_DE_formal": "Donnerstag"
+  },
+  "Friday": {
+    "de_DE": "Freitag",
+    "de_DE_formal": "Freitag"
+  },
+  "Saturday": {
+    "de_DE": "Samstag",
+    "de_DE_formal": "Samstag"
+  },
+  "Sunday": {
+    "de_DE": "Sonntag",
+    "de_DE_formal": "Sonntag"
+  },
+  "Mon": {
+    "de_DE": "Mo",
+    "de_DE_formal": "Mo"
+  },
+  "Tue": {
+    "de_DE": "Di",
+    "de_DE_formal": "Di"
+  },
+  "Wed": {
+    "de_DE": "Mi",
+    "de_DE_formal": "Mi"
+  },
+  "Thu": {
+    "de_DE": "Do",
+    "de_DE_formal": "Do"
+  },
+  "Fri": {
+    "de_DE": "Fr",
+    "de_DE_formal": "Fr"
+  },
+  "Sat": {
+    "de_DE": "Sa",
+    "de_DE_formal": "Sa"
+  },
+  "Sun": {
+    "de_DE": "So",
+    "de_DE_formal": "So"
+  },
+  "F j, Y": {
+    "de_DE": "j. F Y",
+    "de_DE_formal": "j. F Y"
+  },
+  "Plugin series": {
+    "de_DE": "Plugin-Serien",
+    "de_DE_formal": "Plugin-Serien"
+  },
+  "All": {
+    "de_DE": "Alle",
+    "de_DE_formal": "Alle"
+  },
+  "Fits my installation": {
+    "de_DE": "Passt zu meiner Installation",
+    "de_DE_formal": "Passt zu meiner Installation"
+  },
+  "Reset filters": {
+    "de_DE": "Filter zurücksetzen",
+    "de_DE_formal": "Filter zurücksetzen"
+  },
+  "Invalid plugin series.": {
+    "de_DE": "Ungültige Plugin-Serie.",
+    "de_DE_formal": "Ungültige Plugin-Serie."
+  },
+  "Shows plugins whose platform and dependency requirements are met in this site or network. Without this filter, plugins with missing requirements remain visible.": {
+    "de_DE": "Zeigt Plugins, deren Plattform- und Abhängigkeitsanforderungen auf dieser Website oder im Netzwerk erfüllt sind. Ohne diesen Filter bleiben Plugins mit fehlenden Voraussetzungen sichtbar.",
+    "de_DE_formal": "Zeigt Plugins, deren Plattform- und Abhängigkeitsanforderungen auf dieser Website oder im Netzwerk erfüllt sind. Ohne diesen Filter bleiben Plugins mit fehlenden Voraussetzungen sichtbar."
+  },
+  "Fixed": {
+    "de_DE": "Behoben",
+    "de_DE_formal": "Behoben"
+  },
+  "Invalid catalog revision.": {
+    "de_DE": "Ungültiger Katalogstand.",
+    "de_DE_formal": "Ungültiger Katalogstand."
+  },
+  "This catalog requires a newer Library.": {
+    "de_DE": "Dieser Katalog benötigt eine neuere Library.",
+    "de_DE_formal": "Dieser Katalog benötigt eine neuere Library."
+  },
+  "Optional. The bundled catalog works immediately. Catalog requests are cached for 24 hours. No site URL, plugin list or usage data is sent.": {
+    "de_DE": "Optional. Der mitgelieferte Katalog funktioniert sofort. Katalogabfragen werden 24 Stunden zwischengespeichert. Keine Website-URL, Plugin-Liste oder Nutzungsdaten werden übertragen.",
+    "de_DE_formal": "Optional. Der mitgelieferte Katalog funktioniert sofort. Katalogabfragen werden 24 Stunden zwischengespeichert. Keine Website-URL, Plugin-Liste oder Nutzungsdaten werden übertragen."
+  },
+  "Invalid catalog timestamp.": {
+    "de_DE": "Ungültiger Katalogzeitpunkt.",
+    "de_DE_formal": "Ungültiger Katalogzeitpunkt."
+  },
+  "The approved release could not be verified.": {
+    "de_DE": "Der freigegebene Release konnte nicht geprüft werden.",
+    "de_DE_formal": "Der freigegebene Release konnte nicht geprüft werden."
+  },
+  "Only HTTPS on raw.githubusercontent.com/deckerweb. The server receives the requesting IP address. GitHub is contacted when installing a release.": {
+    "de_DE": "Nur HTTPS auf raw.githubusercontent.com/deckerweb. Der Server sieht die anfragende IP-Adresse. Beim Installieren eines Releases wird GitHub kontaktiert.",
+    "de_DE_formal": "Nur HTTPS auf raw.githubusercontent.com/deckerweb. Der Server sieht die anfragende IP-Adresse. Beim Installieren eines Releases wird GitHub kontaktiert."
+  },
+  "Manage Content": {
+    "de_DE": "Inhalte verwalten",
+    "de_DE_formal": "Inhalte verwalten"
+  },
+  "Commerce": {
+    "de_DE": "Commerce",
+    "de_DE_formal": "Commerce"
+  },
+  "Release in preparation": {
+    "de_DE": "Release in Vorbereitung",
+    "de_DE_formal": "Release in Vorbereitung"
+  },
+  "Planned: ": {
+    "de_DE": "Geplant: ",
+    "de_DE_formal": "Geplant: "
+  },
+  "Release 1.0.0 is being prepared. Installation will be available after package verification.": {
+    "de_DE": "Release 1.0.0 wird vorbereitet. Die Installation ist nach Prüfung des Pakets verfügbar.",
+    "de_DE_formal": "Release 1.0.0 wird vorbereitet. Die Installation ist nach Prüfung des Pakets verfügbar."
+  },
+  "Requirements shown are preliminary until the stable release is verified.": {
+    "de_DE": "Die gezeigten Voraussetzungen sind bis zur Prüfung des stabilen Releases vorläufig.",
+    "de_DE_formal": "Die gezeigten Voraussetzungen sind bis zur Prüfung des stabilen Releases vorläufig."
+  },
+  "Installing…": {
+    "de_DE": "Wird installiert…",
+    "de_DE_formal": "Wird installiert…"
+  },
+  "Activating…": {
+    "de_DE": "Wird aktiviert…",
+    "de_DE_formal": "Wird aktiviert…"
+  },
+  "The request could not be completed. Check the plugin status before trying again.": {
+    "de_DE": "Die Anfrage konnte nicht abgeschlossen werden. Vor einem erneuten Versuch den Plugin-Status prüfen.",
+    "de_DE_formal": "Die Anfrage konnte nicht abgeschlossen werden. Vor einem erneuten Versuch den Plugin-Status prüfen."
+  },
+  "Installation cancelled.": {
+    "de_DE": "Installation abgebrochen.",
+    "de_DE_formal": "Installation abgebrochen."
+  },
+  "Another action for this plugin is running. Please wait.": {
+    "de_DE": "Für dieses Plugin läuft bereits eine Aktion. Bitte warten.",
+    "de_DE_formal": "Für dieses Plugin läuft bereits eine Aktion. Bitte warten."
+  },
+  "Filesystem credentials are required.": {
+    "de_DE": "Zugangsdaten für das Dateisystem werden benötigt.",
+    "de_DE_formal": "Zugangsdaten für das Dateisystem werden benötigt."
+  },
+  "Installation failed.": {
+    "de_DE": "Installation fehlgeschlagen.",
+    "de_DE_formal": "Installation fehlgeschlagen."
+  },
+  "Tools": {
+    "de_DE": "Werkzeuge",
+    "de_DE_formal": "Werkzeuge"
+  },
+  "Shop": {
+    "de_DE": "Shop",
+    "de_DE_formal": "Shop"
+  },
+  "Check status": {
+    "de_DE": "Status prüfen",
+    "de_DE_formal": "Status prüfen"
+  },
+  "The action is still running. Check its status again.": {
+    "de_DE": "Die Aktion läuft noch. Bitte den Status erneut prüfen.",
+    "de_DE_formal": "Die Aktion läuft noch. Bitte den Status erneut prüfen."
+  },
+  "Not installed. You can try again.": {
+    "de_DE": "Nicht installiert. Ein erneuter Versuch ist möglich.",
+    "de_DE_formal": "Nicht installiert. Ein erneuter Versuch ist möglich."
+  },
+  "Checking status…": {
+    "de_DE": "Status wird geprüft…",
+    "de_DE_formal": "Status wird geprüft…"
+  },
+  "The requirements below describe the offered release.": {
+    "de_DE": "Die folgenden Voraussetzungen beziehen sich auf den angebotenen Release.",
+    "de_DE_formal": "Die folgenden Voraussetzungen beziehen sich auf den angebotenen Release."
+  },
+  "Affected features remain paused until their requirements are met.": {
+    "de_DE": "Betroffene Funktionen pausieren, bis ihre Voraussetzungen erfüllt sind.",
+    "de_DE_formal": "Betroffene Funktionen pausieren, bis ihre Voraussetzungen erfüllt sind."
+  },
+  "Update to %s": {
+    "de_DE": "Auf %s aktualisieren",
+    "de_DE_formal": "Auf %s aktualisieren"
+  },
+  "Updated": {
+    "de_DE": "Aktualisiert",
+    "de_DE_formal": "Aktualisiert"
+  },
+  "Already up to date.": {
+    "de_DE": "Bereits aktuell.",
+    "de_DE_formal": "Bereits aktuell."
+  },
+  "Updating…": {
+    "de_DE": "Wird aktualisiert…",
+    "de_DE_formal": "Wird aktualisiert…"
+  },
+  "The installed plugin identity could not be verified for this catalog update.": {
+    "de_DE": "Die Identität des installierten Plugins konnte für dieses Katalogupdate nicht bestätigt werden.",
+    "de_DE_formal": "Die Identität des installierten Plugins konnte für dieses Katalogupdate nicht bestätigt werden."
+  },
+  "Another updater provides a different release. Refresh updates before continuing.": {
+    "de_DE": "Ein anderer Updater bietet einen abweichenden Release an. Bitte die Updateinformationen vor dem Fortfahren aktualisieren.",
+    "de_DE_formal": "Ein anderer Updater bietet einen abweichenden Release an. Bitte die Updateinformationen vor dem Fortfahren aktualisieren."
+  },
+  "The update has not been confirmed. You can try again.": {
+    "de_DE": "Die Aktualisierung wurde nicht bestätigt. Du kannst es erneut versuchen.",
+    "de_DE_formal": "Die Aktualisierung wurde nicht bestätigt. Sie können es erneut versuchen."
+  },
+  "Update failed.": {
+    "de_DE": "Aktualisierung fehlgeschlagen.",
+    "de_DE_formal": "Aktualisierung fehlgeschlagen."
+  },
+  "Settings saved.": {
+    "de_DE": "Einstellungen gespeichert.",
+    "de_DE_formal": "Einstellungen gespeichert."
+  },
+  "Catalog refreshed.": {
+    "de_DE": "Katalog aktualisiert.",
+    "de_DE_formal": "Katalog aktualisiert."
+  },
+  "Filesystem credentials are required. Use the catalog with JavaScript enabled or the native Plugins screen.": {
+    "de_DE": "Dateisystem-Zugangsdaten sind erforderlich. Bitte den Katalog mit aktiviertem JavaScript oder die WordPress-Pluginverwaltung verwenden.",
+    "de_DE_formal": "Dateisystem-Zugangsdaten sind erforderlich. Bitte den Katalog mit aktiviertem JavaScript oder die WordPress-Pluginverwaltung verwenden."
+  },
+  "The deckerweb catalog could not load. Check platform requirements and the complete Library integration in the host plugin.": {
+    "de_DE": "Der deckerweb-Katalog konnte nicht geladen werden. Bitte PHP-/WordPress-Anforderungen und die vollständige Library-Einbindung im Host-Plugin prüfen.",
+    "de_DE_formal": "Der deckerweb-Katalog konnte nicht geladen werden. Bitte PHP-/WordPress-Anforderungen und die vollständige Library-Einbindung im Host-Plugin prüfen."
+  },
+  "The approved package could not be verified.": {
+    "de_DE": "Das freigegebene Paket konnte nicht geprüft werden.",
+    "de_DE_formal": "Das freigegebene Paket konnte nicht geprüft werden."
+  },
+  "Action cancelled.": {
+    "de_DE": "Vorgang abgebrochen.",
+    "de_DE_formal": "Vorgang abgebrochen."
+  },
+  "Standard": {
+    "de_DE": "Standard",
+    "de_DE_formal": "Standard"
+  },
+  "Name A–Z": {
+    "de_DE": "Name A–Z",
+    "de_DE_formal": "Name A–Z"
+  },
+  "Name Z–A": {
+    "de_DE": "Name Z–A",
+    "de_DE_formal": "Name Z–A"
+  },
+  "Recently updated": {
+    "de_DE": "Zuletzt aktualisiert",
+    "de_DE_formal": "Zuletzt aktualisiert"
+  },
+  "Discover randomly": {
+    "de_DE": "Zufällig entdecken",
+    "de_DE_formal": "Zufällig entdecken"
+  },
+  "Sort by": {
+    "de_DE": "Sortieren nach",
+    "de_DE_formal": "Sortieren nach"
+  },
+  "Shuffle again": {
+    "de_DE": "Neu mischen",
+    "de_DE_formal": "Neu mischen"
+  },
+  "Reset view": {
+    "de_DE": "Ansicht zurücksetzen",
+    "de_DE_formal": "Ansicht zurücksetzen"
+  },
+  "Invalid sort order.": {
+    "de_DE": "Ungültige Sortierung.",
+    "de_DE_formal": "Ungültige Sortierung."
+  },
+  "Technical information": {
+    "de_DE": "Technische Informationen",
+    "de_DE_formal": "Technische Informationen"
+  },
+  "Copy diagnostic information": {
+    "de_DE": "Diagnoseinformationen kopieren",
+    "de_DE_formal": "Diagnoseinformationen kopieren"
+  },
+  "These details contain component versions and catalog status, without credentials or site content.": {
+    "de_DE": "Diese Angaben enthalten Komponentenversionen und den Katalogstatus, keine Zugangsdaten oder Website-Inhalte.",
+    "de_DE_formal": "Diese Angaben enthalten Komponentenversionen und den Katalogstatus, keine Zugangsdaten oder Website-Inhalte."
+  },
+  "Copied.": {
+    "de_DE": "Kopiert.",
+    "de_DE_formal": "Kopiert."
+  },
+  "Select and copy the text.": {
+    "de_DE": "Text markieren und kopieren.",
+    "de_DE_formal": "Text markieren und kopieren."
+  },
+  "Cached or bundled catalog": {
+    "de_DE": "Gespeicherter oder mitgelieferter Katalog",
+    "de_DE_formal": "Gespeicherter oder mitgelieferter Katalog"
+  },
+  "Bundled catalog": {
+    "de_DE": "Mitgelieferter Katalog",
+    "de_DE_formal": "Mitgelieferter Katalog"
+  },
+  "Last successful check: ": {
+    "de_DE": "Zuletzt erfolgreich geprüft: ",
+    "de_DE_formal": "Zuletzt erfolgreich geprüft: "
+  },
+  "Network active": {
+    "de_DE": "Netzwerkweit aktiv",
+    "de_DE_formal": "Netzwerkweit aktiv"
+  },
+  "Active": {
+    "de_DE": "Aktiv",
+    "de_DE_formal": "Aktiv"
+  },
+  "Installed · inactive": {
+    "de_DE": "Installiert · inaktiv",
+    "de_DE_formal": "Installiert · inaktiv"
+  },
+  "Update available": {
+    "de_DE": "Update verfügbar",
+    "de_DE_formal": "Update verfügbar"
+  },
+  "Active filters: ": {
+    "de_DE": "Aktive Filter: ",
+    "de_DE_formal": "Aktive Filter: "
+  },
+  "Remove filter: ": {
+    "de_DE": "Filter entfernen: ",
+    "de_DE_formal": "Filter entfernen: "
+  },
+  "Dismiss this notice": {
+    "de_DE": "Diesen Hinweis ausblenden",
+    "de_DE_formal": "Diesen Hinweis ausblenden"
+  },
+  "Git Updater is active. If a deckerweb installation or update fails, temporarily deactivate Git Updater and retry. Reactivate it afterwards if other plugins or themes need it. Only leave it disabled when those extensions have another reliable update provider.": {
+    "de_DE": "Git Updater ist aktiv. Falls eine deckerweb-Installation oder Aktualisierung fehlschlägt, deaktiviere Git Updater vorübergehend und wiederhole den Vorgang. Aktiviere ihn danach wieder, wenn andere Plugins oder Themes ihn benötigen. Lasse ihn nur dauerhaft deaktiviert, wenn diese Erweiterungen einen anderen zuverlässigen Updateweg besitzen.",
+    "de_DE_formal": "Git Updater ist aktiv. Falls eine deckerweb-Installation oder Aktualisierung fehlschlägt, deaktivieren Sie Git Updater vorübergehend und wiederholen Sie den Vorgang. Aktivieren Sie ihn danach wieder, wenn andere Plugins oder Themes ihn benötigen. Lassen Sie ihn nur dauerhaft deaktiviert, wenn diese Erweiterungen einen anderen zuverlässigen Updateweg besitzen."
+  },
+  "Permission denied. Reload the page and check your permissions.": {
+    "de_DE": "Zugriff verweigert. Lade die Seite neu und prüfe deine Berechtigungen.",
+    "de_DE_formal": "Zugriff verweigert. Laden Sie die Seite neu und prüfen Sie Ihre Berechtigungen."
+  },
+  "Another component interrupted the request. If Git Updater is active, temporarily deactivate it and retry.": {
+    "de_DE": "Eine andere Komponente hat die Anfrage unterbrochen. Falls Git Updater aktiv ist, deaktiviere ihn vorübergehend und wiederhole den Vorgang.",
+    "de_DE_formal": "Eine andere Komponente hat die Anfrage unterbrochen. Falls Git Updater aktiv ist, deaktivieren Sie ihn vorübergehend und wiederholen Sie den Vorgang."
+  }
+}

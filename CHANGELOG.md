@@ -2,6 +2,19 @@
 
 > Feature development ended with 1.9.0. Only necessary security fixes may follow, no later than December 31, 2027.
 
+## 1.9.1 — 2026-10-21
+
+### Improved
+- Added shared Library 1.1.0 and Updater 2.2.0 as a maintenance exception, including native GitHub updates and package identity checks.
+
+### Fixed
+- Applied final output escaping to category links and integration details.
+- Supplied missing bundled translations alongside older installed language packs after locale changes.
+
+### Misc
+- Requires PHP 8.1; WordPress 7.0 remains the minimum.
+- Feature development remains frozen; necessary security maintenance ends no later than December 31, 2027.
+
 ## 1.9.0 — 2026-10-10
 
 - Clearly distinguish plugin-owned Builder Categories from native WordPress pattern categories.

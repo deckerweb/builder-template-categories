@@ -73,3 +73,15 @@ Gespeicherte WordPress-Vorlagen sind direkt unter **Vorlagen** im Admin-Menü er
 Builder-Kategorien gehören zu diesem Plugin und sind unabhängig von den WordPress-Vorlagen-Kategorien. Bestehende Kategorien und Zuordnungen bleiben erhalten.
 
 Die Verwaltung der Builder-Kategorien zeigt die auf dieser Website verfügbaren Vorlagenbibliotheken mit Links zu ihren Übersichten und aufklappbaren technischen Beitragstypen. Diese Information sehen nur Benutzer mit der Berechtigung für Builder-Kategorien.
+
+## Wartungsupdate 1.9.1
+
+Version 1.9.1 ergänzt deckerweb Library 1.1.0 und deckerweb Updater 2.2.0 als ausdrücklich zugelassene Wartungsausnahme. Erforderlich ist jetzt PHP 8.1 oder neuer; WordPress 7.0 bleibt die Mindestversion. Der Funktionsstopp und das Ende möglicher Sicherheitsupdates am 31.12.2027 bleiben bestehen.
+
+Die gemeinsame Library ist über Plugins hinzufügen erreichbar und unter Einstellungen → deckerweb Library ausblendbar. Ihr Online-Katalog ist standardmäßig ausgeschaltet. Wird er eingeschaltet, wird ein öffentlicher Katalog von GitHub geladen. Die Installation eines ausgewählten Plugins lädt dessen freigegebenes Paket; die Aktivierung ist ein eigener Schritt. Native Updates können GitHub kontaktieren und Release-ZIPs herunterladen. Dabei sieht die Gegenstelle die anfragende IP-Adresse; Telemetrie wird nicht ergänzt. Öffentliche Updates benötigen kein Token.
+
+Gemeinsame Library-Einstellungen bleiben bei Deaktivierung und standardmäßig bei Deinstallation erhalten. Die Entfernung des letzten einbindenden Plugins bereinigt Komponenten-Caches und temporäre Dateien; eine optionale Einstellungslöschung richtet sich nach der Library-Vorgabe. Andere installierte Plugins, Kategorien und Inhalte bleiben erhalten.
+
+Enthalten sind deckerweb Library 1.1.0 und deckerweb Updater 2.2.0 von David Decker – DECKERWEB unter GPL-2.0-or-later. Quellen: https://github.com/deckerweb/deckerweb-plugin-library und https://github.com/deckerweb/deckerweb-updater.
+
+[Vollständige Anleitung und Fragen nach Themen](https://github.com/deckerweb/builder-template-categories/wiki/Deutsch).

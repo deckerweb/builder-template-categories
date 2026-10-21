@@ -4,7 +4,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-$btc_integrations = array(
+$ddw_btc_integrations = array(
 	'bricks'               => ddw_btc_is_bricks_active(),
 	'elementor'            => ddw_btc_is_elementor_active(),
 	'beaver-templates'     => ddw_btc_is_beaver_builder_active() || ddw_btc_is_beaver_themer_active(),
@@ -16,9 +16,9 @@ $btc_integrations = array(
 	'block-editor'        => true,
 );
 
-foreach ( $btc_integrations as $btc_integration => $btc_available ) {
-	if ( $btc_available ) {
-		require_once BTC_PLUGIN_DIR . 'includes/integrations/integration-' . $btc_integration . '.php';
+foreach ( $ddw_btc_integrations as $ddw_btc_integration => $ddw_btc_available ) {
+	if ( $ddw_btc_available ) {
+		require_once BTC_PLUGIN_DIR . 'includes/integrations/integration-' . $ddw_btc_integration . '.php';
 	}
 }
-unset( $btc_integrations, $btc_integration, $btc_available );
+unset( $ddw_btc_integrations, $ddw_btc_integration, $ddw_btc_available );
