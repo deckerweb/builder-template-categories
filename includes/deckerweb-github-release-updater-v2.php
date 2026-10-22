@@ -4,14 +4,16 @@
  * Copyright © 2026 David Decker – DECKERWEB.
  * SPDX-License-Identifier: GPL-2.0-or-later
  *
+ * The include returns its own implementation class. Updated hosts must use that
+ * return value even when a legacy V2 class is already loaded by another host.
  * @package DeckerwebGitHubReleaseUpdater
  */
-
 namespace Deckerweb\GitHubReleaseUpdater\V2;
 
-if ( ! defined( 'ABSPATH' ) ) {
-	exit;
-}
+if ( ! defined( 'ABSPATH' ) ) { exit; }
+
+// Preserve the authentication ABI shared with already loaded 2.1/2.2 hosts.
+if ( ! interface_exists( AuthProvider::class, false ) ) {
 /**
  * Supplies a repository-bound runtime credential to the shared update engine.
  *
@@ -27,6 +29,14 @@ interface AuthProvider {
 	public function token( string $repository ): ?string;
 }
 
+
+}
+
+namespace Deckerweb\GitHubReleaseUpdater\V2\Runtime_2_2_1;
+use Deckerweb\GitHubReleaseUpdater\V2\AuthProvider;
+
+// Different embedded paths may load the same pinned implementation repeatedly.
+if ( ! class_exists( Updater::class, false ) ) {
 /** Read an installation-managed secret; the distributable contains only its variable name. */
 final class EnvironmentAuthProvider implements AuthProvider {
 	private string $repository;
@@ -63,7 +73,7 @@ final class EnvironmentAuthProvider implements AuthProvider {
 
 /** Connect one host to GitHub releases; preserve native WordPress authorization and lifecycle. */
 final class Updater {
-	public const IMPLEMENTATION_VERSION = '2.2.0';
+	public const IMPLEMENTATION_VERSION = '2.2.1';
 	public const SUPPORTS_PRIVATE_REPOSITORIES = true;
 	public const SUPPORTS_HOST_TRANSLATIONS = true;
 	public const SUPPORTS_CATALOG_PROVIDER = true;
@@ -166,7 +176,8 @@ final class Updater {
 		}
 		$this->repo        = 'https://github.com/' . $matches[1] . '/' . $matches[2];
 		$this->api         = 'https://api.github.com/repos/' . $matches[1] . '/' . $matches[2];
-		$this->cache       = 'ddw_ghru_' . \substr( \md5( $this->repo ), 0, 24 );
+		// Do not reuse release metadata accepted by a different implementation.
+		$this->cache       = 'ddw_ghru_' . \substr( \md5( $this->repo . '|' . self::IMPLEMENTATION_VERSION ), 0, 24 );
 		if ( $this->private ) { $this->cache .= '_private'; }
 		$this->name        = $name;
 		$this->description = $description;
@@ -434,6 +445,28 @@ final class Updater {
 	 */
 	public function clear_cache(): void { \delete_site_transient( $this->cache ); }
 
+    /**
+     * Remove this release's and legacy metadata caches for one exact repository.
+     *
+     * Hosts may call this during uninstall without creating an updater instance or
+     * registering hooks. Other implementation versions expire by their normal TTL.
+     * No plugin settings, credentials, update offers or foreign repositories change.
+     *
+     * @since 2.2.1
+     * @param string $repository Exact HTTPS GitHub repository URL owned by the host.
+     * @return void No action for an invalid repository URL.
+     */
+    public static function clear_repository_cache( string $repository ): void {
+        $repository = rtrim( $repository, '/' );
+        if ( ! preg_match( '~^https://github\.com/[A-Za-z0-9_.-]+/[A-Za-z0-9_.-]+$~D', $repository ) ) { return; }
+        foreach ( array( $repository, $repository . '|' . self::IMPLEMENTATION_VERSION ) as $identity ) {
+            $key = 'ddw_ghru_' . substr( md5( $identity ), 0, 24 );
+            \delete_site_transient( $key );
+            \delete_site_transient( $key . '_private' );
+        }
+    }
+
+
 	/**
 	 * Resolve and validate a credential without modifying its bytes.
 	 * @return array<string,string>|null Headers, or null on private authorization failure.
@@ -615,3 +648,19 @@ final class Updater {
 	}
 }
 
+
+}
+
+namespace Deckerweb\GitHubReleaseUpdater\V2;
+
+// Legacy hosts retain their published API. Never replace an existing class or
+// migrate another host's hooks, credentials, options or running updater instance.
+if ( ! class_exists( EnvironmentAuthProvider::class, false ) ) {
+    class_alias( Runtime_2_2_1\EnvironmentAuthProvider::class, EnvironmentAuthProvider::class );
+}
+if ( ! class_exists( Updater::class, false ) ) {
+    class_alias( Runtime_2_2_1\Updater::class, Updater::class );
+}
+
+// Use require, not require_once: its return value is stable on every include.
+return Runtime_2_2_1\Updater::class;

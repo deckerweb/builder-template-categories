@@ -9,7 +9,7 @@ Explore **[Builder Content Guide](https://github.com/deckerweb/builder-content-g
 
 Shared project categories for supported template libraries in WordPress admin.
 
-**Version:** 1.9.1 · **WordPress:** 7.0+ · **PHP:** 8.1+ · **GPL-2.0-or-later**
+**Version:** 1.9.2 · **WordPress:** 7.0+ · **PHP:** 8.1+ · **GPL-2.0-or-later**
 
 [Guide](docs/guide.md) · [Deutsch](README-de.md) · [FAQ](#faq) · [Security](SECURITY.md)
 
@@ -76,6 +76,10 @@ See the [documentation](docs/guide.md) for usage and developer guidance.
 
 ## Changelog
 
+### 1.9.2 — 2026-10-22
+
+**Fixed:** Reliable GitHub updates when another plugin has already loaded an older deckerweb Updater.
+
 ### 1.9.1 — 2026-10-21
 
 **Improved:** Library 1.1.0 and Updater 2.2.0 with verified package identity.
@@ -113,6 +117,10 @@ Builder Categories belong to this plugin and are independent of the native WordP
 
 The Builder Categories management screen lists the template libraries currently available on this website, with links to their lists and expandable post-type details. Only users permitted to manage Builder Categories can see this information.
 
+## Maintenance update 1.9.2
+
+Updater 2.2.1 fixes update handling when older updater copies are also loaded. Library 1.1.0, features, settings and minimum requirements remain unchanged.
+
 ## Maintenance update 1.9.1
 
 Version 1.9.1 adds deckerweb Library 1.1.0 and deckerweb Updater 2.2.0 as a maintenance exception. PHP 8.1 or later is now required; WordPress 7.0 remains the minimum. The feature freeze and security maintenance deadline of December 31, 2027 remain unchanged.
@@ -121,6 +129,6 @@ The shared Library is available through Add Plugins; it can be hidden in Setting
 
 Shared Library settings survive deactivation and remain by default after uninstall. Removing the final embedding host cleans component caches and temporary files; optional settings deletion follows the Library preference. Other installed plugins, categories and content remain.
 
-This plugin bundles deckerweb Library 1.1.0 and deckerweb Updater 2.2.0 by David Decker – DECKERWEB under GPL-2.0-or-later. Sources: https://github.com/deckerweb/deckerweb-plugin-library and https://github.com/deckerweb/deckerweb-updater.
+This plugin bundles deckerweb Library 1.1.0 and deckerweb Updater 2.2.1 by David Decker – DECKERWEB under GPL-2.0-or-later. Sources: https://github.com/deckerweb/deckerweb-plugin-library and https://github.com/deckerweb/deckerweb-updater.
 
 [Complete guide and FAQ by topic](https://github.com/deckerweb/builder-template-categories/wiki/English).

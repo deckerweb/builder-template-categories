@@ -3,7 +3,7 @@ Contributors: deckerweb
 Tags: templates, categories, builders, patterns
 Requires at least: 7.0
 Requires PHP: 8.1
-Stable tag: 1.9.1
+Stable tag: 1.9.2
 Tested up to: 7.1
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -17,9 +17,9 @@ Explore Builder Content Guide: https://github.com/deckerweb/builder-content-guid
 More tools: Builder Shortcode Extras, Bricks QuickNav and Breakdance QuickNav (links in README.md).
 
 == Description ==
-Maintenance 1.9.1 includes Library 1.1.0 and Updater 2.2.0 (GPL-2.0-or-later, David Decker). Online catalog retrieval is off by default; catalog, installation and update requests contact GitHub, which can see the requesting IP address. No telemetry. See README.md for details.
+Maintenance 1.9.2 includes Library 1.1.0 and Updater 2.2.1 (GPL-2.0-or-later, David Decker). Online catalog retrieval is off by default; catalog, installation and update requests contact GitHub, which can see the requesting IP address. No telemetry. See README.md for details.
 
-Organize the retained template libraries in WordPress admin. Existing categories and assignments are preserved. This release removes 72 older integration files and requires WordPress 7.0 / PHP 8.0.
+Organize the retained template libraries in WordPress admin. Existing categories and assignments are preserved. Version 1.9.0 removed 72 older integration files. Current requirements are WordPress 7.0 / PHP 8.1.
 
 Builder Categories belong to this plugin and are independent of the native WordPress pattern categories. Existing terms and assignments are preserved. The two taxonomies are not automatically synchronized.
 
@@ -46,6 +46,9 @@ Users with edit_theme_options by default. The capability is filterable.
 No automatic migration. The guide is an independent plugin.
 
 == Changelog ==
+= 1.9.2 =
+* Fixed: Reliable GitHub updates with bundled Updater 2.2.1 when an older copy was loaded first.
+
 = 1.9.1 =
 * Improved: Shared Library 1.1.0 and Updater 2.2.0 integration with host package validation.
 * Fixed: Late escaping in category output.
@@ -58,5 +61,8 @@ No automatic migration. The guide is an independent plugin.
 * Misc: WordPress 7.0 / PHP 8.0 minimum; final feature release. Possible security fixes end by December 31, 2027.
 
 == Upgrade Notice ==
+= 1.9.2 =
+Updates the bundled updater to 2.2.1. Existing settings, categories and minimum requirements are unchanged.
+
 = 1.9.1 =
 Requires PHP 8.1. Adds shared Library and native GitHub updates as a maintenance exception. Categories are retained. Feature freeze and security deadline December 31, 2027 remain unchanged.

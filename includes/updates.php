@@ -13,10 +13,8 @@ add_filter( 'upgrader_source_selection', 'ddw_btc_validate_update_source', 30, 4
  * @return void
  */
 function ddw_btc_register_updater() {
-	if ( ! class_exists( '\Deckerweb\GitHubReleaseUpdater\V2\Updater' ) ) {
-		require_once __DIR__ . '/deckerweb-github-release-updater-v2.php';
-	}
-	if ( ! defined( '\Deckerweb\GitHubReleaseUpdater\V2\Updater::SUPPORTS_HOST_TRANSLATIONS' ) || ! defined( '\Deckerweb\GitHubReleaseUpdater\V2\Updater::SUPPORTS_CATALOG_PROVIDER' ) ) {
+	$updater_class = require __DIR__ . '/deckerweb-github-release-updater-v2.php';
+	if ( ! defined( $updater_class . '::SUPPORTS_HOST_TRANSLATIONS' ) || ! defined( $updater_class . '::SUPPORTS_CATALOG_PROVIDER' ) ) {
 		add_action( 'admin_notices', 'ddw_btc_updater_notice' );
 		add_action( 'network_admin_notices', 'ddw_btc_updater_notice' );
 		return;
@@ -25,7 +23,7 @@ function ddw_btc_register_updater() {
 	$options = deckerweb_library_updater_options_v1( BTC_PLUGIN_FILE, $repository );
 	$options['translate'] = require __DIR__ . '/updater-translations.php';
 	try {
-		$updater = new \Deckerweb\GitHubReleaseUpdater\V2\Updater(
+		$updater = new $updater_class(
 			BTC_PLUGIN_FILE,
 			$repository,
 			'Builder Template Categories',

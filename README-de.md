@@ -9,7 +9,7 @@ Entdecke stattdessen insbesondere **[Builder Content Guide](https://github.com/d
 
 Gemeinsame Projektkategorien für unterstützte Vorlagenbibliotheken im WordPress-Admin.
 
-**Version:** 1.9.1 · **WordPress:** 7.0+ · **PHP:** 8.1+ · **GPL-2.0-or-later**
+**Version:** 1.9.2 · **WordPress:** 7.0+ · **PHP:** 8.1+ · **GPL-2.0-or-later**
 
 [Anleitung](docs/guide-de.md) · [English](README.md) · [FAQ](#faq) · [Sicherheit](SECURITY.md)
 
@@ -76,6 +76,10 @@ Die vollständige Anleitung einschließlich Entwicklerhinweisen steht in der [Do
 
 ## Changelog
 
+### 1.9.2 — 22.10.2026
+
+**Behoben:** Zuverlässige GitHub-Updates, auch wenn ein anderes Plugin zuvor einen älteren deckerweb Updater geladen hat.
+
 ### 1.9.1 — 21.10.2026
 
 **Verbessert:** Library 1.1.0 und Updater 2.2.0 mit Prüfung der Paketidentität.
@@ -113,6 +117,10 @@ Builder-Kategorien gehören zu diesem Plugin und sind unabhängig von den WordPr
 
 Die Verwaltung der Builder-Kategorien zeigt die auf dieser Website verfügbaren Vorlagenbibliotheken mit Links zu ihren Übersichten und aufklappbaren technischen Beitragstypen. Diese Information sehen nur Benutzer mit der Berechtigung für Builder-Kategorien.
 
+## Wartungsupdate 1.9.2
+
+Updater 2.2.1 behebt die Update-Verarbeitung bei gleichzeitig geladenen älteren Updater-Kopien. Library 1.1.0, Funktionen, Einstellungen und Mindestanforderungen bleiben unverändert.
+
 ## Wartungsupdate 1.9.1
 
 Version 1.9.1 ergänzt deckerweb Library 1.1.0 und deckerweb Updater 2.2.0 als ausdrücklich zugelassene Wartungsausnahme. Erforderlich ist jetzt PHP 8.1 oder neuer; WordPress 7.0 bleibt die Mindestversion. Der Funktionsstopp und das Ende möglicher Sicherheitsupdates am 31.12.2027 bleiben bestehen.
@@ -121,6 +129,6 @@ Die gemeinsame Library ist über Plugins hinzufügen erreichbar und unter Einste
 
 Gemeinsame Library-Einstellungen bleiben bei Deaktivierung und standardmäßig bei Deinstallation erhalten. Die Entfernung des letzten einbindenden Plugins bereinigt Komponenten-Caches und temporäre Dateien; eine optionale Einstellungslöschung richtet sich nach der Library-Vorgabe. Andere installierte Plugins, Kategorien und Inhalte bleiben erhalten.
 
-Enthalten sind deckerweb Library 1.1.0 und deckerweb Updater 2.2.0 von David Decker – DECKERWEB unter GPL-2.0-or-later. Quellen: https://github.com/deckerweb/deckerweb-plugin-library und https://github.com/deckerweb/deckerweb-updater.
+Enthalten sind deckerweb Library 1.1.0 und deckerweb Updater 2.2.1 von David Decker – DECKERWEB unter GPL-2.0-or-later. Quellen: https://github.com/deckerweb/deckerweb-plugin-library und https://github.com/deckerweb/deckerweb-updater.
 
 [Vollständige Anleitung und Fragen nach Themen](https://github.com/deckerweb/builder-template-categories/wiki/Deutsch).

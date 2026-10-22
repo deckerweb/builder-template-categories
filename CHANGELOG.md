@@ -2,6 +2,11 @@
 
 > Feature development ended with 1.9.0. Only necessary security fixes may follow, no later than December 31, 2027.
 
+## 1.9.2 — 2026-10-22
+
+### Fixed
+- GitHub updates reliably use bundled Updater 2.2.1 even when an older copy was loaded first.
+
 ## 1.9.1 — 2026-10-21
 
 ### Improved

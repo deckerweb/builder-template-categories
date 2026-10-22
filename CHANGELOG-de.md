@@ -2,6 +2,11 @@
 
 > Die Entwicklung endet mit 1.9.0. Falls nötig, folgen nur Sicherheitsupdates, längstens bis 31.12.2027.
 
+## 1.9.2 — 22.10.2026
+
+### Behoben
+- GitHub-Updates verwenden zuverlässig den enthaltenen Updater 2.2.1, auch wenn zuvor eine ältere Kopie geladen wurde.
+
 ## 1.9.1 — 21.10.2026
 
 ### Verbessert

@@ -3,7 +3,7 @@
  * Plugin Name:       Builder Template Categories
  * Plugin URI:        https://github.com/deckerweb/builder-template-categories
  * Description:       Organize WordPress patterns and the template libraries of supported builders and themes with shared categories.
- * Version:           1.9.1
+ * Version:           1.9.2
  * Requires at least: 7.0
  * Requires PHP:      8.1
  * Author:            David Decker - DECKERWEB
@@ -33,7 +33,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  * @since 1.0.0
  */
 /** Plugin version */
-define( 'BTC_PLUGIN_VERSION', '1.9.1' );
+define( 'BTC_PLUGIN_VERSION', '1.9.2' );
 define( 'BTC_PLUGIN_FILE', __FILE__ );
 
 /** Plugin directory */
