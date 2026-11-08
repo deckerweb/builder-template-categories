@@ -1,6 +1,6 @@
 <?php
 /** Copyright 2026 David Decker – DECKERWEB. SPDX-License-Identifier: GPL-2.0-or-later */
-namespace Deckerweb\PluginLibrary\V1_1_0;
+namespace Deckerweb\PluginLibrary\V1_3_0;
 if ( ! defined( 'ABSPATH' ) ) { exit; }
 
 /** Strict metadata-only catalog. No remote PHP, JavaScript, CSS, icons or telemetry. */
@@ -231,9 +231,10 @@ final class Catalog {
 					$this->status = 'online';
 					$this->provenance = ['catalog_revision'=>$data['catalog_revision'] ?? '', 'checked_at'=>time()]; return $valid;
 				}
+				$failure = self::request_error( $response, 'catalog' );
 				set_site_transient( $key . '_retry', true, 15 * MINUTE_IN_SECONDS );
 			}
-			if ( $fresh ) { return new \WP_Error( 'dwl_offline', Library::t( 'The catalog could not be verified. Please try again later.' ) ); }
+			if ( $fresh ) { return $failure ?? self::request_error( new \WP_Error('unavailable'), 'catalog' ); }
 			$last = get_site_transient( $key . '_last' );
 			$this->status = 'offline';
 			if ( is_array( $last ) && isset( $last['data'] ) ) { $this->provenance = ['catalog_revision'=>$last['data']['catalog_revision'] ?? '', 'checked_at'=>(int)($last['checked_at'] ?? 0)]; return self::validate( $last['data'] ); }
@@ -241,4 +242,45 @@ final class Catalog {
 		$data = json_decode( (string) ( is_file( $this->dir . '/catalog.json' ) ? file_get_contents( $this->dir . '/catalog.json' ) : '' ), true );
 		$this->provenance = ['catalog_revision'=>$data['catalog_revision'] ?? '', 'checked_at'=>0]; return self::validate( $data );
 	}
+ /**
+  * Resolve known installed identities from local metadata without an online approval request.
+  * @return array Bundled entries plus valid cached display entries; no remote requests or cache writes.
+  */
+ public function local_entries(): array {
+  $data = json_decode( (string) ( is_file( $this->dir . '/catalog.json' ) ? file_get_contents( $this->dir . '/catalog.json' ) : '' ), true );
+  $bundled = self::validate( $data ); $entries = is_wp_error( $bundled ) ? [] : $bundled;
+  $settings = Library::settings();
+  if ( $settings['online'] && self::trusted_source( $settings['catalog_url'] ) ) {
+   $key = 'dwl_catalog_' . md5( $settings['catalog_url'] ) . '_061';
+   foreach ( [ $key, $key . '_last' ] as $cache_key ) {
+    $cache = get_site_transient( $cache_key );
+    if ( ! is_array( $cache ) || ! isset( $cache['data'] ) ) { continue; }
+    $valid = self::validate( $cache['data'] );
+    if ( ! is_wp_error( $valid ) ) { return array_replace( $entries, $valid ); }
+   }
+  }
+  return $entries;
+ }
+
+ /** Classify a failed first-party request without exposing remote text, URLs, paths or credentials.
+  * @param mixed $response WordPress HTTP response or WP_Error.
+  * @param string $stage Catalog or package request stage; other values use catalog.
+  * @return \WP_Error Localized safe failure with bounded diagnostic fields only.
+  */
+ public static function request_error( $response, string $stage ): \WP_Error {
+  $stage = $stage === 'package' ? 'package' : 'catalog';
+  $label = Library::t( $stage === 'package' ? 'Package download' : 'Catalog verification' );
+  $http = is_wp_error($response) ? 0 : (int) wp_remote_retrieve_response_code($response);
+  $cause = 'network'; $reason = Library::t('Connection failed. Please try again later.');
+  if ( is_wp_error($response) ) {
+   $raw = $response->get_error_message();
+   if ( preg_match('/(?:cURL error 28\b|timed? out|timeout)/i', $raw) ) { $cause='timeout'; $reason=Library::t('The connection timed out. Please try again later.'); }
+   elseif ( preg_match('/(?:cURL error 6\b|could not resolve|name resolution)/i', $raw) ) { $cause='dns'; $reason=Library::t('The server address could not be resolved.'); }
+   elseif ( preg_match('/(?:cURL error (?:35|51|58|60|77)\b|SSL|TLS|certificate)/i', $raw) ) { $cause='tls'; $reason=Library::t('The secure connection could not be verified.'); }
+  } elseif ( $http >= 100 && $http <= 599 && $http !== 200 ) {
+   $cause='http'; $reason=sprintf(Library::t('The server returned HTTP %d. Please try again later.'),$http);
+  } else { $http=0; $cause='content'; $reason=Library::t('The catalog response is invalid, incompatible or too large.'); }
+  return new \WP_Error('dwl_' . $stage . '_' . $cause, sprintf(Library::t('Stage: %1$s. %2$s'),$label,$reason), ['stage'=>$stage,'cause'=>$cause,'http_status'=>$http]);
+ }
+
 }

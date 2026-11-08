@@ -1,6 +1,6 @@
 <?php
 /** Copyright 2026 David Decker – DECKERWEB. SPDX-License-Identifier: GPL-2.0-or-later */
-namespace Deckerweb\PluginLibrary\V1_1_0;
+namespace Deckerweb\PluginLibrary\V1_3_0;
 if ( ! defined( 'ABSPATH' ) ) { exit; }
 /** Structured, escaped local history. One dialog per Library page, no shared host-footer replacement. */
 final class History {
@@ -16,7 +16,7 @@ final class History {
   if ( ! is_array( $data ) ) { return; }
   $de = str_starts_with( determine_locale(), 'de' );
   $history_url = 'https://github.com/deckerweb/deckerweb-plugin-library/blob/main/docs/CHANGELOG' . ($de ? '-de' : '') . '.md';
-  echo '<span>© 2026 <a href="https://github.com/deckerweb" target="_blank" rel="noopener noreferrer">David Decker – DECKERWEB</a></span> <a href="' . esc_url($history_url) . '" target="_blank" rel="noopener noreferrer" class="button-link" data-dwl-history>' . esc_html( Library::t( 'Changelog' ) ) . '</a>';
+  echo '<span>© 2026 <a href="' . esc_url( 'https://deckerwebplugins.com/' . ($de ? 'de/' : 'en/') ) . '" target="_blank" rel="noopener noreferrer">David Decker – DECKERWEB</a></span> <a href="' . esc_url($history_url) . '" target="_blank" rel="noopener noreferrer" class="button-link" data-dwl-history>' . esc_html( Library::t( 'Changelog' ) ) . '</a>';
   echo '<dialog hidden id="dwl-history" aria-labelledby="dwl-history-title"><div class="dwl-dialog-top"><h2 id="dwl-history-title">' . esc_html( Library::t( 'Library changelog' ) ) . '</h2><form method="dialog"><button type="submit" class="button" data-dwl-close autofocus>' . esc_html( Library::t( 'Close' ) ) . '</button></form></div>';
   foreach ( array_slice( $data, 0, 7 ) as $release ) {
    echo '<section><h3>' . esc_html( $release['version'] ) . '</h3>';

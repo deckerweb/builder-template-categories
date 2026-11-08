@@ -52,6 +52,25 @@
     const url = new URL(job.form.action);url.searchParams.set('action','dwl_activate');job.form.action=url.href;
     job.button.textContent = data.next.label;job.button.classList.add('button-primary');
    } else if (data.updated || data.active || data.installed) {job.button.textContent=data.message;job.button.disabled=true;}
+   if(data.installed||data.active||data.updated) refreshCatalog(job);
+  };
+  const refreshCatalog = async (job) => {
+   const current=document.getElementById('deckerweb-library');
+   if(!current)return;
+   const viewState=$(current.querySelector('form.dwl-filter')).serialize();
+   try {
+    const url=new URL(window.location.href);['dwl_search','dwl_series','dwl_compatible','dwl_done'].forEach(key=>url.searchParams.delete(key));
+    const response=await fetch(url.href,{credentials:'same-origin',cache:'no-store'});
+    if(!response.ok)return;
+    const doc=new DOMParser().parseFromString(await response.text(),'text/html');const next=doc.getElementById('deckerweb-library');
+    if(!next||busy||!current.isConnected||current.querySelector('form.dwl-filter[aria-busy]')||$(current.querySelector('form.dwl-filter')).serialize()!==viewState)return;
+    const slug=job.form.dataset.dwlSlug;const owned=document.activeElement===document.body||job.form.closest('.dwl-card')?.contains(document.activeElement);
+    const focusedName=current.contains(document.activeElement)?document.activeElement.name:'';
+    current.replaceWith(next);
+    if(owned){const target=[...next.querySelectorAll('form[data-dwl-slug]')].find(form=>form.dataset.dwlSlug===slug)?.querySelector('button:not(:disabled)');(target||next.querySelector('.dwl-result-count')||next.querySelector('[name="dwl_status"]'))?.focus();}
+    if(!owned&&['dwl_status','dwl_sort','dwl_search','dwl_compatible'].includes(focusedName))next.querySelector('[name="'+focusedName+'"]')?.focus();
+    if(window.wp?.a11y)wp.a11y.speak(next.querySelector('.dwl-result-count')?.textContent||'', 'polite');
+   } catch(error) { /* The confirmed operation remains valid; the existing card preserves its result. */ }
   };
   const checkStatus = (job) => {
    job.button.textContent=dwlInline.checking;job.form.setAttribute('aria-busy','true');
@@ -59,7 +78,7 @@
     finish(job,message || dwlInline.failed,true);
     job.form.dataset.dwlRecover='1';job.form.dataset.dwlLabel=job.label;job.button.textContent=dwlInline.status;
    };
-   $.ajax({url:dwlInline.url,method:'POST',dataType:'json',data:{action:'dwl_inline_status',operation:job.form.dataset.dwlAction,slug:job.form.dataset.dwlSlug,network:job.form.dataset.dwlNetwork,_wpnonce:job.form.querySelector('[name="_wpnonce"]').value}}).done(response=>{
+   $.ajax({url:dwlInline.url,method:'POST',dataType:'json',data:{action:'dwl_inline_status',operation:job.form.dataset.dwlAction,target_version:job.form.querySelector('[name="target_version"]')?.value||'',slug:job.form.dataset.dwlSlug,network:job.form.dataset.dwlNetwork,_wpnonce:job.form.querySelector('[name="_wpnonce"]').value}}).done(response=>{
     const data=response?.data || {};
     if (!response.success || data.pending) {unavailable(data.message);return;}
     if(!data.installed && job.failure){finish(job,job.failure+' '+(data.message||''),true);return;}apply(job,data);
@@ -68,7 +87,7 @@
   // Native upgrader filters may verify the Core updates nonce. The server still
   // independently verifies the operation- and slug-bound Library _wpnonce.
   const send = (job) => {
-   $.ajax({url:dwlInline.url,method:'POST',dataType:'json',data:{...credentials(),_ajax_nonce:window.wp?.updates?.ajaxNonce,action:'dwl_inline',operation:job.form.dataset.dwlAction,slug:job.form.dataset.dwlSlug,network:job.form.dataset.dwlNetwork,_wpnonce:job.form.querySelector('[name="_wpnonce"]').value}}).done(response => {
+   $.ajax({url:dwlInline.url,method:'POST',dataType:'json',data:{...credentials(),_ajax_nonce:window.wp?.updates?.ajaxNonce,action:'dwl_inline',operation:job.form.dataset.dwlAction,target_version:job.form.querySelector('[name="target_version"]')?.value||'',slug:job.form.dataset.dwlSlug,network:job.form.dataset.dwlNetwork,_wpnonce:job.form.querySelector('[name="_wpnonce"]').value}}).done(response => {
     const data = response?.data || {};
     if (!response.success) {
      if (data.credentials && document.getElementById('request-filesystem-credentials-dialog') && window.wp?.updates) {
@@ -84,14 +103,14 @@
     apply(job,data);
    }).fail(xhr => {job.failure = String(xhr.responseText).trim()==='-1' ? dwlInline.interrupted : (xhr.status===403 ? dwlInline.forbidden : dwlInline.failed);job.status.textContent=job.failure;checkStatus(job);});
   };
-  $('#deckerweb-library').on('submit', '.dwl-card form[data-dwl-action]', function(event) {
+  $(document).on('submit', '#deckerweb-library .dwl-card form[data-dwl-action]', function(event) {
    if (!['install','activate','update'].includes(this.dataset.dwlAction)) return;
    event.preventDefault(); if (busy) return;
    busy = true;
    const button = this.querySelector('button[type="submit"]');
    let status = this.parentElement.querySelector('.dwl-inline-status');
    if (!status) {status=document.createElement('p');status.className='dwl-inline-status';status.setAttribute('role','status');status.setAttribute('aria-live','polite');this.after(status);}
-   const job={form:this,button,status,label:this.dataset.dwlLabel || button.textContent};
+   const job={form:this,button,status,hadFocus:this.closest('.dwl-card')?.contains(document.activeElement),label:this.dataset.dwlLabel || button.textContent};
    status.textContent='';status.classList.remove('dwl-inline-error');button.disabled=true;
    button.textContent=this.dataset.dwlAction==='install'?dwlInline.installing:(this.dataset.dwlAction==='update'?dwlInline.updating:dwlInline.activating);
    this.setAttribute('aria-busy','true');if(this.dataset.dwlRecover==='1')checkStatus(job);else send(job);
@@ -129,7 +148,7 @@
 
 /* Personal sorting and notice dismissal retain native administration fallbacks. */
 (($)=>{
- $(document).on('change','select[name="dwl_sort"]',function(){const b=this.form.querySelector('[name="dwl_shuffle"]');if(b)b.hidden=this.value!=='random';if(window.fetch&&window.dwlInline)this.form.requestSubmit(this.form.querySelector('.dwl-filter-controls button[name="dwl_series"]'));});
+ $(document).on('change','select[name="dwl_sort"],select[name="dwl_status"]',function(){const b=this.form.querySelector('[name="dwl_shuffle"]');if(b)b.hidden=this.form.querySelector('[name="dwl_sort"]').value!=='random';if(window.fetch&&window.dwlInline)this.form.requestSubmit(this.form.querySelector('.dwl-filter-controls button[name="dwl_series"]'));});
  $(document).on('submit','form',function(event){
   if(this.querySelector('[name="action"]')?.value!=='dwl_conflict_dismiss'||!window.dwlInline)return;
   event.preventDefault();const form=this;const data=$(form).serializeArray();
@@ -146,7 +165,7 @@
   const controls=[...form.querySelectorAll('button,input,select')].filter(el=>!el.disabled);controls.forEach(el=>el.disabled=true);
   fetch(form.getAttribute('action'),{method:'POST',body:data,credentials:'same-origin'}).then(async response=>{
    if(!response.ok)throw Error('view');const html=await response.text();const doc=new DOMParser().parseFromString(html,'text/html');const next=doc.getElementById('deckerweb-library');const current=document.getElementById('deckerweb-library');
-   if(!next||!current)throw Error('view');current.replaceWith(next);const focus=next.querySelector(button?.name==='dwl_shuffle'?'[name="dwl_shuffle"]':'[name="dwl_sort"]');focus?.focus();
+   if(!next||!current)throw Error('view');current.replaceWith(next);const focus=next.querySelector(button?.name==='dwl_shuffle'?'[name="dwl_shuffle"]':'[name="dwl_status"]');focus?.focus();
   }).catch(()=>{let message=form.querySelector('[role="status"]');if(!message){message=document.createElement('p');message.setAttribute('role','status');form.append(message);}message.textContent=dwlInline.failed;}).finally(()=>{viewPending=false;form.removeAttribute('aria-busy');controls.forEach(el=>el.disabled=false);});
  });
 })(jQuery);

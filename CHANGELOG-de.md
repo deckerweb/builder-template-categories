@@ -2,6 +2,10 @@
 
 > Die Entwicklung endet mit 1.9.0. Falls nötig, folgen nur Sicherheitsupdates, längstens bis 31.12.2027.
 
+## 1.9.3 · 2026-11-09
+
+- **Behoben:** deckerweb Library auf 1.3.0 und Updater auf 2.4.0 aktualisiert: normale Updates unabhängig vom Katalog, begrenzte Downloads und strengere Paketprüfung.
+
 ## 1.9.2 — 22.10.2026
 
 ### Behoben

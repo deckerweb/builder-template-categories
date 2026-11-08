@@ -1,18 +1,17 @@
 <?php
 /** Copyright 2026 David Decker – DECKERWEB. SPDX-License-Identifier: GPL-2.0-or-later */
-namespace Deckerweb\PluginLibrary\V1_1_0;
+namespace Deckerweb\PluginLibrary\V1_3_0;
 if ( ! defined( 'ABSPATH' ) ) { exit; }
 
 /** WordPress-native, embedded catalog. Settings are shared across host plugins. */
 final class Library {
-	const VERSION = '1.1.0';
+	const VERSION = '1.3.0';
 	const OPTION = 'deckerweb_library_settings_v1';
 	const MANAGED = 'deckerweb_library_installed_v1';
 	private array $chosen;
 	private array $hosts;
 	private Catalog $catalog;
 	private bool $network = false;
- private ?object $explicit_upgrader = null;
 	/**
 	 * Initialize the component with validated host paths and shared runtime configuration.
 	 *
@@ -46,6 +45,30 @@ final class Library {
 		$saved = is_array( $saved ) ? $saved : [];
 		return [ 'enabled' => ! isset( $saved['enabled'] ) || ! empty( $saved['enabled'] ), 'online' => ! empty( $saved['online'] ), 'delete_settings' => ! empty( $saved['delete_settings'] ), 'catalog_url' => is_string( $saved['catalog_url'] ?? null ) ? ( $saved['catalog_url'] !== '' ? $saved['catalog_url'] : Catalog::DEFAULT_URL ) : Catalog::DEFAULT_URL ];
 	}
+ /**
+  * Read a plugin's management assignment without rewriting the legacy shared array.
+  * @param string $file Exact installed plugin basename.
+  * @return string Repository assignment, a nonempty paused marker, or an empty string when unassigned.
+  */
+ private static function managed_repository( string $file ): string {
+  $saved = get_site_option( 'deckerweb_library_managed_v2_' . hash( 'sha256', $file ), null );
+  if ( $saved !== null ) { return is_string( $saved ) ? $saved : ''; }
+  $legacy = get_site_option( self::MANAGED, [] );
+  return is_array( $legacy ) && is_string( $legacy[$file] ?? null ) ? $legacy[$file] : '';
+ }
+
+
+
+ /**
+  * Persist one verified assignment independently of other plugin operations.
+  * @param array $entry Verified catalog entry after a successful explicit operation.
+  * @return void No return value; preserves legacy and other plugin records.
+  */
+ private static function remember_managed( array $entry ): void {
+  update_site_option( 'deckerweb_library_managed_v2_' . hash( 'sha256', $entry['plugin_file'] ), $entry['repository'] );
+  update_site_option( 'deckerweb_library_managed_v2_present', true );
+ }
+
 	/**
 	 * Attach the elected runtime to native WordPress administration and update hooks.
 	 *
@@ -76,7 +99,7 @@ final class Library {
 		add_action( 'admin_post_dwl_refresh', [ $this, 'refresh' ] );
 		add_action( 'activate_plugin', [ $this, 'activation_guard' ], 0, 2 );
 		add_filter( 'pre_set_site_transient_update_plugins', [ $this, 'updates' ] );
-		add_filter( 'upgrader_pre_download', [ $this, 'update_download' ], 10, 4 );
+  add_filter( 'site_transient_update_plugins', [ $this, 'updates' ] );
 		foreach ( $this->hosts as $host ) {
 			add_filter( 'plugin_action_links_' . plugin_basename( $host['host'] ), [ $this, 'links' ] );
 			add_filter( 'network_admin_plugin_action_links_' . plugin_basename( $host['host'] ), [ $this, 'links' ] );
@@ -135,7 +158,7 @@ final class Library {
 	public function assets( string $hook ): void {
 		if ( ! current_user_can( 'install_plugins' ) ) { return; }
 		if ( ( $hook === 'plugin-install.php' && self::query( 'tab' ) === 'deckerweb' ) || str_contains( $hook, 'deckerweb-library' ) || ( in_array($hook,['plugins.php','update-core.php'],true) && Experience::conflicts() ) ) {
-			wp_enqueue_style( 'deckerweb-plugin-library', plugins_url( 'assets/library.css', $this->chosen['dir'] . '/bootstrap.php' ), [], self::VERSION );
+			wp_enqueue_style( 'deckerweb-plugin-library', plugins_url( 'assets/library.css', $this->chosen['dir'] . '/bootstrap.php' ), [], self::VERSION . '.compact1' );
    wp_enqueue_script( 'deckerweb-plugin-library', plugins_url( 'assets/library.js', $this->chosen['dir'] . '/bootstrap.php' ), [ 'jquery', 'updates' ], self::VERSION . '.1', true );
    wp_localize_script( 'deckerweb-plugin-library', 'dwlInline', [ 'url' => admin_url( 'admin-ajax.php' ), 'installing' => self::t( 'Installing…' ), 'activating' => self::t( 'Activating…' ), 'updating' => self::t( 'Updating…' ), 'failed' => self::t( 'The request could not be completed. Check the plugin status before trying again.' ), 'cancelled' => self::t( 'Action cancelled.' ), 'status' => self::t( 'Check status' ), 'checking' => self::t( 'Checking status…' ), 'active' => self::t('Active'), 'networkActive' => self::t('Network active'), 'inactive' => self::t('Installed · inactive'), 'copied' => self::t( 'Copied.' ), 'copyManual' => self::t( 'Select and copy the text.' ), 'forbidden' => self::t( 'Permission denied. Reload the page and check your permissions.' ), 'interrupted' => self::t( 'Another component interrupted the request. If Git Updater is active, temporarily deactivate it and retry.' ), 'saved' => self::t( 'Settings saved.' ) ] );
 		}
@@ -261,7 +284,9 @@ final class Library {
 		if ( is_wp_error( $entries ) ) { echo '<div class="notice notice-error"><p>' . esc_html( $entries->get_error_message() ) . '</p></div>'; return; }
 		$entries += $this->catalog->previews();
 		$plugins = get_plugins();
+  $updates = NativeUpdates::snapshot();
   $view = Experience::view();
+  $status = $view['status'];
   $entries = Experience::ordered( $entries, $view );
 		$search = self::query( 'dwl_search' ) ?? $view['search'];
 		$compatible = self::query( 'dwl_compatible' ) !== null ? self::query( 'dwl_compatible' ) === '1' : $view['compatible'];
@@ -292,42 +317,55 @@ final class Library {
   }
   $series_controls .= '</fieldset>';
   echo '<form method="post" action="' . esc_url( admin_url( 'admin-post.php' ) ) . '" class="dwl-filter"><input type="hidden" name="action" value="dwl_view"><input type="hidden" name="dwl_view_nonce" value="' . esc_attr( wp_create_nonce( 'dwl_view' ) ) . '"><button type="submit" name="dwl_series" value="' . esc_attr( $series ) . '" hidden>' . esc_html( self::t( 'Filter' ) ) . '</button>' . wp_kses( $series_controls, [ 'fieldset'=>[ 'class'=>true ], 'legend'=>[], 'button'=>[ 'type'=>true, 'class'=>true, 'name'=>true, 'value'=>true, 'aria-pressed'=>true ] ] ) . '<div class="dwl-filter-controls"><label>' . esc_html( self::t( 'Search this catalog' ) ) . ' <input type="search" name="dwl_search" value="' . esc_attr( $search ) . '"></label><label><input type="checkbox" name="dwl_compatible" value="1" ' . checked( $compatible, true, false ) . ' aria-describedby="dwl-compatible-help"> ' . esc_html( self::t( 'Fits my installation' ) ) . '</label><button type="submit" class="button" name="dwl_series" value="' . esc_attr( $series ) . '">' . esc_html( self::t( 'Filter' ) ) . '</button>';
+  echo '<label>' . esc_html( self::t( 'Plugin status' ) ) . ' <select name="dwl_status">';
+  foreach ( Experience::STATUSES as $key=>$label ) { echo '<option value="' . esc_attr($key) . '" ' . selected($status,$key,false) . '>' . esc_html(self::t($label)) . '</option>'; }
+  echo '</select></label>';
   echo '<label>' . esc_html( self::t( 'Sort by' ) ) . ' <select name="dwl_sort">';
   foreach ( Experience::MODES as $mode=>$label ) { echo '<option value="' . esc_attr($mode) . '" ' . selected($view['sort'],$mode,false) . '>' . esc_html(self::t($label)) . '</option>'; }
-  echo '</select></label><button class="button" type="submit" name="dwl_shuffle" value="1"' . ($view['sort']==='random'?'':' hidden') . '>' . esc_html(self::t('Shuffle again')) . '</button><button class="button-link dwl-reset" type="submit" name="dwl_reset" value="1">' . esc_html(self::t('Reset view')) . '</button>';
+  echo '</select></label><button class="button" type="submit" name="dwl_shuffle" value="1"' . ($view['sort']==='random'?'':' hidden') . '>' . esc_html(self::t('Shuffle again')) . '</button><button class="button-link dwl-reset" type="submit" name="dwl_reset" value="1">' . esc_html(self::t('Reset filters')) . '</button>';
   echo '</div><p id="dwl-compatible-help" class="dwl-filter-help">' . esc_html( self::t( 'Shows plugins whose platform and dependency requirements are met in this site or network. Without this filter, plugins with missing requirements remain visible.' ) ) . '</p></form>
 ';
-  if ( $series !== '' || $search !== '' || $compatible ) {
+  if ( $series !== '' || $search !== '' || $compatible || $status !== 'all' ) {
    echo '<div class="dwl-active-filters">' . esc_html(self::t('Active filters: ')) . ' ';
-   foreach ( [ 'series'=>$series !== '' ? ($series_labels[$series] ?? $series) : '', 'search'=>$search, 'compatible'=>$compatible ? self::t('Fits my installation') : '' ] as $key=>$label ) {
+   foreach ( [ 'status'=>$status !== 'all' ? self::t(Experience::STATUSES[$status]) : '', 'series'=>$series !== '' ? ($series_labels[$series] ?? $series) : '', 'search'=>$search, 'compatible'=>$compatible ? self::t('Fits my installation') : '' ] as $key=>$label ) {
     if ($label==='') {continue;} echo '<form class="dwl-filter-chip" method="post" action="' . esc_url(admin_url('admin-post.php')) . '"><input type="hidden" name="action" value="dwl_view"><input type="hidden" name="dwl_view_nonce" value="' . esc_attr(wp_create_nonce('dwl_view')) . '">';
-    foreach ( ['dwl_sort'=>$view['sort'],'dwl_series'=>$key==='series'?'':$series,'dwl_search'=>$key==='search'?'':$search,'dwl_compatible'=>$key==='compatible'?'0':($compatible?'1':'0')] as $field=>$value ) {echo '<input type="hidden" name="' . esc_attr($field) . '" value="' . esc_attr($value) . '">';}
+    foreach ( ['dwl_status'=>$key==='status'?'all':$status,'dwl_sort'=>$view['sort'],'dwl_series'=>$key==='series'?'':$series,'dwl_search'=>$key==='search'?'':$search,'dwl_compatible'=>$key==='compatible'?'0':($compatible?'1':'0')] as $field=>$value ) {echo '<input type="hidden" name="' . esc_attr($field) . '" value="' . esc_attr($value) . '">';}
     echo '<button class="button" type="submit" aria-label="' . esc_attr(self::t('Remove filter: ') . $label) . '">' . esc_html($label) . ' ×</button></form>';
    } echo '</div>';
   }
-		echo '<div class="dwl-grid">'; $count = 0;
-		foreach ( $entries as $entry ) {
-			$name = self::text( $entry, 'name' ); $description = self::text( $entry, 'description' );
-			if ( $series !== '' && ! in_array( $series, Catalog::series( $entry ), true ) ) { continue; }
-			$issues = ! empty( $entry['_preview'] ) ? [ self::t( 'Release 1.0.0 is being prepared. Installation will be available after package verification.' ) ] : Requirements::check( $entry, $plugins );
-			if ( $search !== '' && stripos( remove_accents( $name . ' ' . $description ), remove_accents( $search ) ) === false ) { continue; }
-			if ( $compatible && $issues ) { continue; }
-			$count++;
+  $visible_entries = []; $entry_issues = [];
+  foreach ( $entries as $entry ) {
+   $name = self::text( $entry, 'name' ); $description = self::text( $entry, 'description' );
+   if ( $series !== '' && ! in_array( $series, Catalog::series( $entry ), true ) ) { continue; }
+   if ( $search !== '' && stripos( remove_accents( $name . ' ' . $description ), remove_accents( $search ) ) === false ) { continue; }
+   if ( ! Experience::matches( $status, $entry, $plugins, $updates ) ) { continue; }
+   $issues = ! empty( $entry['_preview'] ) ? [ self::t( 'Release 1.0.0 is being prepared. Installation will be available after package verification.' ) ] : Requirements::check( $entry, $plugins );
+   if ( $compatible && $issues ) { continue; }
+   $visible_entries[] = $entry; $entry_issues[$entry['slug']] = $issues;
+  }
+  $count = count( $visible_entries );
+  echo '<p class="dwl-result-count" role="status" tabindex="-1">' . esc_html( sprintf( self::t( '%1$s of %2$s plugins' ), number_format_i18n($count), number_format_i18n(count($entries)) ) ) . '</p>';
+  echo '<div class="dwl-grid">';
+  foreach ( $visible_entries as $entry ) {
+   $name = self::text( $entry, 'name' ); $description = self::text( $entry, 'description' );
+   $issues = $entry_issues[$entry['slug']];
+   $update_offer = NativeUpdates::offer( $entry, $plugins, $updates );
 			$installed = isset( $plugins[$entry['plugin_file']] );
 			$active = $installed && ( is_network_admin() ? is_plugin_active_for_network( $entry['plugin_file'] ) : is_plugin_active( $entry['plugin_file'] ) );
 			$series_badges = '';
 			foreach ( Catalog::series( $entry ) as $membership ) { $series_badges .= '<span class="dwl-series-badge dwl-series-' . esc_attr( $membership ) . '">' . esc_html( $series_labels[$membership] ) . '</span>'; }
 			echo '<article class="dwl-card"><div class="dwl-body"><div class="dwl-title"><div class="dwl-icon" aria-hidden="true">' . wp_kses( $this->icon( $entry ), [ 'img'=>[ 'src'=>true, 'alt'=>true, 'width'=>true, 'height'=>true ], 'span'=>[ 'class'=>true, 'style'=>true ] ] ) . '</div><div><h3>' . esc_html( $name ) . '</h3><span class="dwl-meta">deckerweb · ' . esc_html( self::text( $entry, 'category' ) ?: self::t( 'WordPress' ) ) . '</span>' . wp_kses( $series_badges, [ 'span'=>[ 'class'=>true ] ] ) . '</div></div><p>' . esc_html( $description ) . '</p>';
 
-   if ( $installed ) { echo '<p class="dwl-install-state">' . esc_html( self::t( is_plugin_active_for_network( $entry['plugin_file'] ) ? 'Network active' : ( $active ? 'Active' : 'Installed · inactive' ) ) . ( version_compare( $entry['version'], $plugins[$entry['plugin_file']]['Version'] ?? '0', '>' ) ? ' · ' . self::t( 'Update available' ) : '' ) ) . '</p>'; }
+   if ( $installed ) { echo '<p class="dwl-install-state">' . esc_html( self::t( is_plugin_active_for_network( $entry['plugin_file'] ) ? 'Network active' : ( $active ? 'Active' : 'Installed · inactive' ) ) . ( Experience::update_available( $entry, $plugins, $updates ) ? ' · ' . self::t( 'Update available' ) : '' ) ) . '</p>'; }
+   if ( $installed ) { echo '<p class="dwl-meta dwl-update-state">' . esc_html( $update_offer ? sprintf( self::t( 'Update available: %s' ), $update_offer->new_version ) : self::t( 'No update reported.' ) ) . '</p>'; }
 			if ( isset( $entry['github_stars'], $entry['stars_checked_at'] ) ) {
 				echo '<p class="dwl-stars"><a href="' . esc_url( 'https://github.com/' . $entry['repository'] . '/stargazers' ) . '" target="_blank" rel="noopener noreferrer"><span aria-hidden="true">★</span> ' . esc_html( number_format_i18n( $entry['github_stars'] ) . ' ' . self::t( 'GitHub Stars' ) ) . '</a> <span class="dwl-meta">' . esc_html( self::t( 'As of ' ) . I18n::date( $entry['stars_checked_at'] ) ) . '</span></p>';
 			}
 			if ( ! empty( $entry['_preview'] ) ) { echo '<button class="button" disabled>' . esc_html( self::t( 'Release in preparation' ) ) . '</button>'; }
-   elseif ( $installed && version_compare( $entry['version'], $plugins[$entry['plugin_file']]['Version'] ?? '0', '>' ) && current_user_can( 'update_plugins' ) ) {
-    $update_issues = Requirements::check( $entry, $plugins, is_plugin_active_for_network( $entry['plugin_file'] ), false );
-    if ( ! $update_issues && $this->update_identity( $entry, $plugins[$entry['plugin_file']] ) ) { $this->form( 'update', $entry['slug'], sprintf( self::t( 'Update to %s' ), $entry['version'] ), 'button button-primary' ); }
-    else { echo '<p class="dwl-meta">' . esc_html( $update_issues ? implode( ' ', $update_issues ) : self::t( 'The installed plugin identity could not be verified for this catalog update.' ) ) . '</p>'; }
+   elseif ( $installed && Experience::update_available( $entry, $plugins, $updates ) && current_user_can( 'update_plugins' ) ) {
+    $update_issues = NativeUpdates::issues( $update_offer );
+    if ( ! $update_issues && $this->update_identity( $entry, $plugins[$entry['plugin_file']] ) ) { $this->form( 'update', $entry['slug'], sprintf( self::t( 'Update to %s' ), $update_offer->new_version ), 'button button-primary', [ 'target_version'=>$update_offer->new_version ] ); }
+    else { echo '<p class="dwl-meta">' . esc_html( $update_issues ? implode( ' ', $update_issues ) : self::t( 'The installed plugin identity could not be verified. Use the Plugins screen to review it.' ) ) . '</p>'; }
    }
 			elseif ( $active ) { echo '<span class="dwl-active">' . esc_html( self::t( 'Already active' ) ) . '</span>'; }
 			elseif ( $issues ) { echo '<button class="button" disabled>' . esc_html( $installed ? self::t( 'Activate' ) : self::t( 'Install now' ) ) . '</button>'; }
@@ -337,14 +375,14 @@ final class Library {
    $advisory = Requirements::check( $entry, $plugins, null, true, true );
    if ( $advisory ) { echo '<p class="dwl-meta">' . esc_html( self::t( 'Affected features remain paused until their requirements are met.' ) . ' ' . implode( ' ', $advisory ) ) . '</p>'; }
 			if ( $issues ) { echo '<div class="dwl-requirements"><ul>'; foreach ( $issues as $issue ) { echo '<li>' . esc_html( $issue ) . '</li>'; } echo '</ul><a href="' . esc_url( self_admin_url( 'plugins.php' ) ) . '">' . esc_html( self::t( 'Manage installed plugins' ) ) . '</a></div>'; }
-			if ( $installed && ( $plugins[$entry['plugin_file']]['Version'] ?? '' ) !== $entry['version'] ) { echo '<p class="dwl-meta">' . esc_html( self::t( 'The requirements below describe the offered release.' ) ) . '</p>'; }
+			if ( $installed && ( $plugins[$entry['plugin_file']]['Version'] ?? '' ) !== $entry['version'] ) { echo '<p class="dwl-meta">' . esc_html( self::t( 'The requirements below describe the catalog version for first installation, not an installed-plugin update.' ) ) . '</p>'; }
 			echo '<details class="dwl-details"><summary>' . esc_html( self::t( 'Details & requirements' ) ) . '</summary><p>WordPress ≥ ' . esc_html( $entry['requires_wp'] ) . ' · PHP ≥ ' . esc_html( $entry['requires_php'] ) . '</p>';
 			foreach ( Requirements::dependencies_for( $entry, $plugins, false ) as $dep ) { echo '<p>' . esc_html( $dep['name'] . ( $dep['min_version'] !== '' ? ' ≥ ' . $dep['min_version'] : '' ) ) . ( isset( $dep['url'] ) ? ' · <a href="' . esc_url( $dep['url'] ) . '" target="_blank" rel="noopener noreferrer">' . esc_html( self::t( 'Product website' ) ) . '</a>' : '' ) . '</p>'; }
 			echo '<p><a href="' . esc_url( 'https://github.com/' . $entry['repository'] ) . '" target="_blank" rel="noopener noreferrer">' . esc_html( self::t( 'Repository & documentation' ) ) . '</a></p><p class="dwl-meta">' . esc_html( self::t( ! empty( $entry['_preview'] ) ? 'Requirements shown are preliminary until the stable release is verified.' : 'Release checksum is verified before installation. Activation is a separate step.' ) ) . '</p></details></div><footer><span>' . esc_html( self::t( 'Source: GitHub' ) ) . '</span><span>' . esc_html( ! empty( $entry['_preview'] ) ? self::t( 'Planned: ' ) . $entry['version'] : ( $installed ? self::t( 'Installed: ' ) . $plugins[$entry['plugin_file']]['Version'] : 'v' . $entry['version'] ) ) . '</span></footer></article>';
 		}
 		echo '</div>';
 		if ( ! $count ) { echo '<p>' . esc_html( self::t( 'No approved plugins match this selection.' ) ) . '</p>'; }
-		echo '<div class="dwl-bottom"><span>' . esc_html( self::t( 'Library' ) ) . ' ' . esc_html( self::VERSION ) . ' · ' . esc_html( self::t( 'Only approved releases' ) ) . '</span>';
+		echo '<div class="dwl-bottom"><span>' . esc_html( self::t( 'Library' ) ) . ' ' . esc_html( self::VERSION ) . ' · ' . esc_html( self::t( 'Verified first installations · Independent plugin updates' ) ) . '</span>';
 		$this->form( 'preferences', '', self::t( 'Hide catalog' ), 'button-link', [ 'enabled' => '0', 'hide_only' => '1' ] );
 		if ( self::settings()['online'] ) { $this->form( 'refresh', '', self::t( 'Refresh catalog' ), 'button-link' ); }
 		History::render( $this->chosen['dir'] ); echo '</div></div>';
@@ -366,6 +404,7 @@ final class Library {
 		echo '<table class="form-table" role="presentation"><tr><th scope="row">' . esc_html( self::t( 'Visibility' ) ) . '</th><td><label><input type="checkbox" name="enabled" value="1" ' . checked( $s['enabled'], true, false ) . '> ' . esc_html( self::t( 'Show deckerweb under Add Plugins' ) ) . '</label></td></tr>';
 		echo '<tr><th scope="row">' . esc_html( self::t( 'Online catalog' ) ) . '</th><td><label><input type="checkbox" name="online" value="1" ' . checked( $s['online'], true, false ) . '> ' . esc_html( self::t( 'Retrieve approved catalog updates online' ) ) . '</label><p class="description">' . esc_html( self::t( 'Optional. The bundled catalog works immediately. Catalog requests are cached for 24 hours. No site URL, plugin list or usage data is sent.' ) ) . '</p><p><label for="dwl-catalog-url">' . esc_html( self::t( 'Catalog URL' ) ) . '</label><br><input type="url" id="dwl-catalog-url" name="catalog_url" value="' . esc_attr( $s['catalog_url'] ) . '" class="regular-text" placeholder="https://…/catalog.json"></p><p class="description">' . esc_html( self::t( 'Only HTTPS on raw.githubusercontent.com/deckerweb. The server receives the requesting IP address. GitHub is contacted when installing a release.' ) ) . '</p></td></tr></table>';
 		echo '<p><label><input type="checkbox" name="delete_settings" value="1" ' . checked( $s['delete_settings'], true, false ) . '> ' . esc_html( self::t( 'Delete Library settings when removing the last host plugin' ) ) . '</label></p><p class="description">' . esc_html( self::t( 'Off by default. Applies only when no other host is installed, including inactive hosts. Removes Library settings, installation records and introduction status. Installed plugins, their content and other plugin settings remain unchanged. Network data is shared across sites.' ) ) . '</p>';
+  echo '<p class="description">' . esc_html( self::t( 'Catalog retrieval does not limit updates of installed plugins. Those use their normal WordPress update provider.' ) ) . '</p>';
   Experience::diagnostics( $this->chosen, $this->hosts, $this->catalog->summary() );
   submit_button( self::t( 'Save settings' ) ); echo '</form><p class="dwl-settings-catalog-link"><a class="button button-secondary" href="' . esc_url( self_admin_url( 'plugin-install.php?tab=deckerweb' ) ) . '">' . esc_html( self::t( 'Open catalog' ) ) . '</a></p>'; echo '<div id="deckerweb-library" class="dwl-settings-footer"><div class="dwl-settings-brand"><img src="' . esc_url( plugins_url( 'assets/library-icon.svg', $this->chosen['dir'] . '/bootstrap.php' ) ) . '" width="52" height="52" alt="" aria-hidden="true"><div><strong>deckerweb Library</strong> <span>' . esc_html( self::VERSION ) . '</span><br>'; History::render( $this->chosen['dir'] ); echo '</div></div></div></div>'; 
 	}
@@ -405,6 +444,24 @@ final class Library {
 		if ( ! isset( $entries[$slug] ) ) { wp_die( esc_html( self::t( 'This release is not approved.' ) ), '', [ 'response' => 404 ] ); }
 		return $entries[$slug];
 	}
+ /**
+  * Resolve an installed-action identity without fetching or freshly approving a catalog release.
+  * @param string $slug Nonce-bound plugin slug selected from a catalog card.
+  * @return array Known local/cached identity; terminates if the requested slug is unknown.
+  */
+ private function installed_entry( string $slug ): array {
+  $entries = $this->catalog->local_entries();
+  if ( ! isset( $entries[$slug] ) ) { wp_die( esc_html( self::t( 'Use the Plugins screen to manage this installed plugin.' ) ), '', [ 'response'=>404 ] ); }
+  return $entries[$slug];
+ }
+ /**
+  * Read the bounded update version explicitly submitted with a displayed native offer.
+  * @return string Scalar version or an empty string, rejected before native update effects.
+  */
+ private static function requested_update_version(): string {
+  return isset( $_POST['target_version'] ) && is_string( $_POST['target_version'] ) ? sanitize_text_field( wp_unslash( $_POST['target_version'] ) ) : '';
+ }
+
 	/**
 	 * Reject an action when platform, dependency or network requirements are unmet.
 	 *
@@ -498,7 +555,7 @@ final class Library {
   $this->network = is_multisite() && ( isset( $_POST['network'] ) && is_string( $_POST['network'] ) ? sanitize_text_field( wp_unslash( $_POST['network'] ) ) : '' ) === '1';
   if ( ! current_user_can( $operation === 'install' ? 'install_plugins' : ( $operation === 'update' ? 'update_plugins' : 'activate_plugins' ) ) || ( $this->network && ! current_user_can( 'manage_network_plugins' ) ) ) { wp_send_json_error( [ 'message' => self::t( 'Permission denied.' ) ], 403 ); }
   if ( ! self::settings()['enabled'] ) { wp_send_json_error( [ 'message' => self::t( 'The catalog is disabled.' ) ], 403 ); }
-  $entries = $this->catalog->entries( true );
+  $entries = $operation === 'update' ? $this->catalog->local_entries() : $this->catalog->entries( true );
   if ( is_wp_error( $entries ) || ! isset( $entries[$slug] ) ) { wp_send_json_error( [ 'message' => is_wp_error( $entries ) ? $entries->get_error_message() : self::t( 'This release is not approved.' ) ] ); }
   $entry = $entries[$slug];
   $main = is_multisite() ? get_main_site_id( get_main_network_id() ) : get_current_blog_id();
@@ -512,7 +569,8 @@ final class Library {
   $active = $installed && ( $this->network ? is_plugin_active_for_network( $entry['plugin_file'] ) : is_plugin_active( $entry['plugin_file'] ) );
   $response = [ 'installed' => $installed, 'active' => $active, 'network_active' => $installed && is_plugin_active_for_network($entry['plugin_file']), 'message' => self::t( $active ? 'Already active' : ( $installed ? 'Installed' : 'Not installed. You can try again.' ) ) ];
   if ( $operation === 'update' ) {
-   $response['updated'] = $installed && version_compare( $plugins[$entry['plugin_file']]['Version'] ?? '0', $entry['version'], '>=' );
+   $expected = self::requested_update_version();
+   $response['updated'] = $installed && NativeUpdates::version( $expected ) && version_compare( $plugins[$entry['plugin_file']]['Version'] ?? '0', $expected, '>=' );
    $response['version'] = $plugins[$entry['plugin_file']]['Version'] ?? '';
    $response['message'] = $response['updated'] ? self::t( 'Updated' ) : self::t( 'The update has not been confirmed. You can try again.' );
    if ( ! $response['updated'] ) { $response['installed'] = false; $response['active'] = false; }
@@ -539,11 +597,11 @@ final class Library {
   $this->network = is_multisite() && ( isset( $_POST['network'] ) && is_string( $_POST['network'] ) ? sanitize_text_field( wp_unslash( $_POST['network'] ) ) : '' ) === '1';
   if ( ! current_user_can( $operation === 'install' ? 'install_plugins' : ( $operation === 'update' ? 'update_plugins' : 'activate_plugins' ) ) || ( $this->network && ! current_user_can( 'manage_network_plugins' ) ) ) { wp_send_json_error( [ 'message' => self::t( 'Permission denied.' ) ], 403 ); }
   if ( ! self::settings()['enabled'] ) { wp_send_json_error( [ 'message' => self::t( 'The catalog is disabled.' ) ], 403 ); }
-  $entries = $this->catalog->entries( true );
+  $entries = $operation === 'update' ? $this->catalog->local_entries() : $this->catalog->entries( true );
   if ( is_wp_error( $entries ) ) { wp_send_json_error( [ 'message' => $entries->get_error_message() ] ); }
   if ( ! isset( $entries[$slug] ) ) { wp_send_json_error( [ 'message' => self::t( 'This release is not approved.' ) ], 404 ); }
   $entry = $entries[$slug];
-  $issues = Requirements::check( $entry, null, $operation === 'update' ? is_plugin_active_for_network( $entry['plugin_file'] ) : $this->network, $operation !== 'update' );
+  $issues = $operation === 'update' ? [] : Requirements::check( $entry, null, $this->network );
   if ( $issues ) { wp_send_json_error( [ 'message' => implode( ' ', $issues ) ] ); }
   $lock = 'dwl_inline_lock_' . $slug;
   $lock_blog = is_multisite() ? get_main_site_id( get_main_network_id() ) : get_current_blog_id();
@@ -578,7 +636,7 @@ final class Library {
    require_once ABSPATH . 'wp-admin/includes/plugin.php';
    require_once ABSPATH . 'wp-admin/includes/file.php';
    if ( $operation === 'update' ) {
-    $response = $this->perform_update( $entry );
+    $response = $this->perform_update( $entry, self::requested_update_version() );
    } elseif ( $operation === 'install' ) {
     if ( is_dir( WP_PLUGIN_DIR . '/' . $entry['slug'] ) ) { throw new \RuntimeException( self::t( 'This plugin directory already exists. Use the installed plugin; it will not be overwritten.' ) ); }
     require_once ABSPATH . 'wp-admin/includes/class-wp-upgrader.php';
@@ -593,8 +651,7 @@ final class Library {
      $result = $upgrader->install( $package, [ 'clear_update_cache' => false, 'overwrite_package' => false ] );
      if ( $result !== true || $skin->get_errors()->has_errors() ) { throw new \RuntimeException( is_wp_error( $result ) ? $result->get_error_message() : ( $skin->get_errors()->has_errors() ? $skin->get_errors()->get_error_message() : self::t( 'Installation failed.' ) ) ); }
      wp_clean_plugins_cache( false );
-     $managed = get_site_option( self::MANAGED, [] ); $managed = is_array( $managed ) ? $managed : [];
-     $managed[$entry['plugin_file']] = $entry['repository']; update_site_option( self::MANAGED, $managed );
+     self::remember_managed( $entry );
      $response = [ 'installed' => true, 'message' => self::t( 'Installed' ) ];
     }
    } else {
@@ -622,113 +679,73 @@ final class Library {
  }
 
  /**
-  * Match installed header identity to the exact approved repository before explicit adoption.
+  * Match current installed repository identity before an explicit native action.
   * @param array $entry Approved catalog metadata.
   * @param array $headers Installed plugin header metadata.
-  * @return bool Whether name and a repository identity header match without a foreign Update URI.
+  * @return bool Whether a repository identity header matches without a foreign Update URI; display names may change.
   */
  private function update_identity( array $entry, array $headers ): bool {
   $repo = 'https://github.com/' . $entry['repository'];
-  if ( ( $headers['Name'] ?? '' ) !== $entry['name'] ) { return false; }
   if ( ! empty( $headers['UpdateURI'] ) && rtrim( $headers['UpdateURI'], '/' ) !== $repo ) { return false; }
   $custom = get_file_data( WP_PLUGIN_DIR . '/' . $entry['plugin_file'], [ 'github' => 'GitHub Plugin URI' ] );
   return rtrim( $headers['PluginURI'] ?? '', '/' ) === $repo || rtrim( $headers['UpdateURI'] ?? '', '/' ) === $repo || rtrim( $custom['github'] ?? '', '/' ) === $repo;
  }
 
- /**
-  * Match an existing update offer to the explicitly approved release identity.
-  * @param array $entry Validated catalog entry with pinned asset URL and version.
-  * @param mixed $existing Native updater offer; no fields are trusted implicitly.
-  * @return bool True for the exact asset or same-repository, same-tag GitHub source archive.
-  * A matching source URL is never downloaded; only the independently verified catalog asset is used.
-  */
- private static function compatible_offer( array $entry, $existing ): bool {
-  if ( ! is_array( $existing ) && ! is_object( $existing ) ) { return false; }
-  $offer = (array) $existing;
-  if ( ( $offer['new_version'] ?? null ) !== $entry['version'] || ( isset( $offer['plugin'] ) && $offer['plugin'] !== $entry['plugin_file'] ) || ! is_string( $offer['package'] ?? null ) ) { return false; }
-  if ( $offer['package'] === $entry['download_url'] ) { return true; }
-  $url = wp_parse_url( $offer['package'] );
-  if ( ! is_array( $url ) || ( $url['scheme'] ?? '' ) !== 'https' || ( $url['host'] ?? '' ) !== 'api.github.com' ) { return false; }
-  foreach ( [ 'user', 'pass', 'port', 'query', 'fragment' ] as $part ) { if ( isset( $url[$part] ) ) { return false; } }
-  if ( preg_match( '/[\x00-\x20\x7f]/', $offer['package'] ) ) { return false; }
-  if ( ! preg_match( '~^https://github\.com/' . preg_quote( $entry['repository'], '~' ) . '/releases/download/([a-zA-Z0-9_.-]+)/[a-zA-Z0-9_.-]+\.zip$~D', $entry['download_url'], $tag ) ) { return false; }
-  return ( $url['path'] ?? '' ) === '/repos/' . $entry['repository'] . '/zipball/' . $tag[1];
- }
+
+
 
  /**
-  * Update an explicitly selected installed plugin through the native upgrader and verified package.
-  * @param array $entry Freshly approved catalog metadata with exact package hash.
-  * @return array Result flags and message; credentials flag requests the native modal.
-  * @throws \RuntimeException On identity, policy, competing offer or upgrader failure.
-  * Registers successful adoption only after upgrade; retains native activation/data behavior.
+  * Execute the existing normal WordPress update, independently of catalog approval or version.
+  * @param array $entry Locally known catalog identity; its package/version/requirements are not used.
+  * @param string $expected Version explicitly shown and submitted by the administrator.
+  * @return array Native outcome, installed version and optional filesystem-credentials request.
+  * @throws \RuntimeException On authorization, identity, changed offer or native upgrader failure.
   */
- private function perform_update( array $entry ): array {
+ private function perform_update( array $entry, string $expected ): array {
   if ( ! current_user_can( 'update_plugins' ) || ( is_multisite() && ! current_user_can( 'manage_network_plugins' ) ) ) { throw new \RuntimeException( self::t( 'Permission denied.' ) ); }
+  require_once ABSPATH . 'wp-admin/includes/plugin.php';
   require_once ABSPATH . 'wp-admin/includes/class-wp-upgrader.php';
-  $plugins = get_plugins(); $file = $entry['plugin_file'];
-  if ( ! isset( $plugins[$file] ) || ! $this->update_identity( $entry, $plugins[$file] ) ) { throw new \RuntimeException( self::t( 'The installed plugin identity could not be verified for this catalog update.' ) ); }
-  if ( ! version_compare( $entry['version'], $plugins[$file]['Version'] ?? '0', '>' ) ) { return [ 'updated' => true, 'message' => self::t( 'Already up to date.' ) ]; }
-  $issues = Requirements::check( $entry, $plugins, is_plugin_active_for_network( $file ), false );
+  wp_clean_plugins_cache( false ); $plugins = get_plugins(); $file = $entry['plugin_file'];
+  if ( ! isset( $plugins[$file] ) || ! $this->update_identity( $entry, $plugins[$file] ) ) { throw new \RuntimeException( self::t( 'The installed plugin identity could not be verified. Use the Plugins screen to review it.' ) ); }
+  if ( ! NativeUpdates::version( $expected ) ) { throw new \RuntimeException( self::t( 'Update information changed. Reload the page and try again.' ) ); }
+  if ( version_compare( $plugins[$file]['Version'], $expected, '>=' ) ) { return [ 'installed'=>true, 'updated'=>true, 'active'=>is_plugin_active($file), 'network_active'=>is_plugin_active_for_network($file), 'version'=>$plugins[$file]['Version'], 'message'=>self::t( 'Already up to date.' ) ]; }
+  $offer = NativeUpdates::offer( $entry, $plugins );
+  if ( ! $offer || $offer->new_version !== $expected ) { throw new \RuntimeException( self::t( 'Update information changed. Reload the page and try again.' ) ); }
+  $issues = NativeUpdates::issues( $offer );
   if ( $issues ) { throw new \RuntimeException( implode( ' ', $issues ) ); }
-  $current = get_site_transient( 'update_plugins' );
-  $existing = is_object( $current ) ? ( $current->response[$file] ?? null ) : null;
-  if ( $existing && ! self::compatible_offer( $entry, $existing ) ) { throw new \RuntimeException( self::t( 'Another updater provides a different release. Refresh updates before continuing.' ) ); }
   $skin = new \WP_Ajax_Upgrader_Skin(); $upgrader = new \Plugin_Upgrader( $skin );
-  if ( ! $upgrader->fs_connect( [ WP_CONTENT_DIR, WP_PLUGIN_DIR ] ) ) { return [ 'credentials' => true, 'message' => self::t( 'Filesystem credentials are required.' ) ]; }
-  $package = Package::download( $entry );
-  if ( is_wp_error( $package ) ) { throw new \RuntimeException( $package->get_error_message() ); }
-  $offer = (object) [ 'slug' => $entry['slug'], 'plugin' => $file, 'new_version' => $entry['version'], 'package' => $entry['download_url'], 'url' => 'https://github.com/' . $entry['repository'] ];
-  $temporary = is_object( $current ) ? clone $current : (object) [ 'checked' => [], 'response' => [] ];
-  $temporary->response[$file] = $offer;
+  if ( ! $upgrader->fs_connect( [ WP_CONTENT_DIR, WP_PLUGIN_DIR ] ) ) { return [ 'credentials'=>true, 'message'=>self::t( 'Filesystem credentials are required.' ) ]; }
   /**
-   * Supply the already verified package only to this exact native update request.
-   * @param mixed $reply Existing download result.
+   * Bind this native action to its observed package without replacing any updater offer.
+   * @param mixed $reply Earlier handled result, preserved for the unchanged package.
    * @param string $url Native requested package URL.
-   * @param mixed $instance Native upgrader instance.
-   * @param array $extra Native context with plugin basename.
-   * @return mixed Verified archive path for this request, otherwise the previous result.
+   * @param mixed $instance Current upgrader instance.
+   * @param array $extra Native target context.
+   * @return mixed Earlier result, or WP_Error if another callback changed this selected package.
    */
-  $download = static function( $reply, string $url, $instance, array $extra ) use ( $file, $entry, $package, $upgrader ) { if ( $instance !== $upgrader || ( $extra['plugin'] ?? '' ) !== $file ) { return $reply; } if (is_wp_error($reply)) { return $reply; } return $url === $entry['download_url'] ? $package : new \WP_Error( 'dwl_release_changed', self::t( 'The approved release changed. Refresh updates first.' ) ); };
-  /**
-   * Keep this explicit verified native update bound to its approved asset.
-   * @param mixed $value Core update state after other updater filters.
-   * @return mixed Copy with only the selected plugin offer replaced; unrelated offers remain intact.
-   * Registered only around this one native upgrade and removed in finally.
-   */
-  $approved_offer = static function( $value ) use ( $file, $offer ) {
-   if ( ! is_object( $value ) ) { return $value; }
-   $copy = clone $value;
-   $copy->response = is_array( $copy->response ?? null ) ? $copy->response : [];
-   $copy->response[$file] = $offer;
-   return $copy;
+  $guard = static function( $reply, string $url, $instance, array $extra ) use ( $upgrader, $file, $offer ) {
+   if ( $instance !== $upgrader || ( $extra['plugin'] ?? '' ) !== $file ) { return $reply; }
+   return $url === $offer->package ? $reply : new \WP_Error( 'dwl_offer_changed', self::t( 'Update information changed. Reload the page and try again.' ) );
   };
-  $this->explicit_upgrader = $upgrader;
-  add_filter( 'site_transient_update_plugins', $approved_offer, PHP_INT_MAX );
-  add_filter( 'upgrader_pre_download', $download, PHP_INT_MAX, 4 );
+  add_filter( 'upgrader_pre_download', $guard, 0, 4 );
   try {
-   set_site_transient( 'update_plugins', $temporary );
-   $results = $upgrader->bulk_upgrade( [ $file ], [ 'clear_update_cache' => false ] );
+   // Core's AJAX updater uses the bulk path for one target to preserve activation.
+   $results = $upgrader->bulk_upgrade( [ $file ], [ 'clear_update_cache'=>false ] );
    $result = is_array( $results ) ? ( $results[$file] ?? false ) : $results;
    if ( ! is_array( $result ) || $skin->get_errors()->has_errors() ) { throw new \RuntimeException( is_wp_error( $result ) ? $result->get_error_message() : ( $skin->get_errors()->has_errors() ? $skin->get_errors()->get_error_message() : self::t( 'Update failed.' ) ) ); }
    wp_clean_plugins_cache( false ); $after = get_plugins();
-   if ( ! isset( $after[$file] ) || $after[$file]['Version'] !== $entry['version'] ) { throw new \RuntimeException( self::t( 'The update has not been confirmed. You can try again.' ) ); }
-   $managed = get_site_option( self::MANAGED, [] ); $managed = is_array( $managed ) ? $managed : [];
-   $managed[$file] = $entry['repository']; update_site_option( self::MANAGED, $managed );
-   return [ 'updated' => true, 'installed' => true, 'active' => is_plugin_active($file), 'network_active' => is_plugin_active_for_network($file), 'version' => $entry['version'], 'message' => self::t( 'Updated' ) ];
-  } finally {
-   remove_filter( 'site_transient_update_plugins', $approved_offer, PHP_INT_MAX );
-   remove_filter( 'upgrader_pre_download', $download, PHP_INT_MAX ); $this->explicit_upgrader = null; Package::remove( $package );
-   // Invalidate the temporary offer rather than overwriting concurrent updater results.
-   delete_site_transient( 'update_plugins' );
-  }
+   if ( ! isset( $after[$file]['Version'] ) || $after[$file]['Version'] !== $expected ) { throw new \RuntimeException( self::t( 'The update has not been confirmed. You can try again.' ) ); }
+   return [ 'installed'=>true, 'updated'=>true, 'active'=>is_plugin_active($file), 'network_active'=>is_plugin_active_for_network($file), 'version'=>$after[$file]['Version'], 'message'=>self::t( 'Updated' ) ];
+  } finally { remove_filter( 'upgrader_pre_download', $guard, 0 ); }
  }
+
 
  /**
   * Perform a native no-JavaScript update inside WordPress administration and return to the catalog.
   * @return void Verifies authorization and terminates after an admin redirect or escaped error.
   */
  public function update(): void {
-  $slug = $this->slug(); $this->authorize( 'update', 'update_plugins', $slug ); $entry = $this->entry( $slug );
+  $slug = $this->slug(); $this->authorize( 'update', 'update_plugins', $slug ); $entry = $this->installed_entry( $slug );
   require_once ABSPATH . 'wp-admin/includes/plugin.php'; require_once ABSPATH . 'wp-admin/includes/file.php';
   $lock = 'dwl_inline_lock_' . $slug; $blog = is_multisite() ? get_main_site_id( get_main_network_id() ) : get_current_blog_id();
   $token = time() . ':' . wp_generate_uuid4(); $switched = $blog !== get_current_blog_id();
@@ -747,7 +764,7 @@ final class Library {
    if ( $switched ) { restore_current_blog(); }
   };
   register_shutdown_function( $unlock );
-  try { $result = $this->perform_update( $entry ); }
+  try { $result = $this->perform_update( $entry, self::requested_update_version() ); }
   catch ( \Throwable $error ) { wp_die( esc_html( $error->getMessage() ) ); }
   finally { $unlock(); }
   if ( ! empty( $result['credentials'] ) ) { wp_die( esc_html( self::t( 'Filesystem credentials are required. Use the catalog with JavaScript enabled or the native Plugins screen.' ) ) ); }
@@ -773,7 +790,7 @@ final class Library {
 		$GLOBALS['hook_suffix'] = 'deckerweb-library-install';
 		set_current_screen( $this->network ? 'plugin-install-network' : 'plugin-install' );
 		wp_enqueue_style( 'common' ); wp_enqueue_style( 'forms' );
-		wp_enqueue_style( 'deckerweb-plugin-library', plugins_url( 'assets/library.css', $this->chosen['dir'] . '/bootstrap.php' ), [], self::VERSION );
+		wp_enqueue_style( 'deckerweb-plugin-library', plugins_url( 'assets/library.css', $this->chosen['dir'] . '/bootstrap.php' ), [], self::VERSION . '.compact1' );
 		/**
 		 * Add the installer scope to the native administration body classes.
 		 * @param string $classes Existing space-delimited body classes.
@@ -827,8 +844,7 @@ final class Library {
 			try { $result = $upgrader->install( $package, [ 'clear_update_cache' => false, 'overwrite_package' => false ] ); }
 			finally { remove_filter( 'install_plugin_complete_actions', $actions, 10 ); Package::remove( $package ); }
 			if ( $result === true ) {
-				$managed = get_site_option( self::MANAGED, [] ); $managed = is_array( $managed ) ? $managed : [];
-				$managed[$entry['plugin_file']] = $entry['repository']; update_site_option( self::MANAGED, $managed );
+				self::remember_managed( $entry );
 			}
 		}
 		echo '</div>'; iframe_footer();
@@ -857,104 +873,79 @@ final class Library {
 	 * @return void No return value.
 	 */
 	public function activation_guard( string $file, bool $network ): void {
-		$managed = get_site_option( self::MANAGED, [] );
 		$bundled = json_decode( (string) ( is_file( $this->chosen['dir'] . '/catalog.json' ) ? file_get_contents( $this->chosen['dir'] . '/catalog.json' ) : '' ), true );
 		$known = array_column( $bundled['plugins'] ?? [], 'plugin_file' );
-		if ( ! in_array( $file, $known, true ) && ! isset( $managed[$file] ) ) { return; }
+		if ( ! in_array( $file, $known, true ) && self::managed_repository( $file ) === '' ) { return; }
 		// Hiding discovery must never remove runtime dependency protection.
 		$entries = $this->catalog->entries();
 		if ( is_wp_error( $entries ) ) { return; }
 		foreach ( $entries as $entry ) { if ( $entry['plugin_file'] === $file ) { $this->enforce_requirements( $entry, $network ); return; } }
 	}
-	/**
-	 * Add update offers only for Library-managed plugins without their own Update URI.
-	 *
-	 * @param mixed $transient Native update transient with checked plugin versions and existing offers.
-	 * @return mixed The supplied native update transient with eligible managed offers added.
-	 */
-	public function updates( $transient ) {
-		if ( ! is_object( $transient ) || empty( $transient->checked ) ) { return $transient; }
-		$managed = get_site_option( self::MANAGED, [] );
-		if ( ! is_array( $managed ) || ! $managed ) { return $transient; }
-		$entries = $this->catalog->entries( false, true );
-		if ( is_wp_error( $entries ) ) { return $transient; }
-		require_once ABSPATH . 'wp-admin/includes/plugin.php'; $plugins = get_plugins();
-		foreach ( $entries as $e ) {
-			$file = $e['plugin_file'];
-			if ( ! isset( $managed[$file], $plugins[$file], $transient->checked[$file] ) || $managed[$file] !== $e['repository'] || ! empty( $plugins[$file]['UpdateURI'] ) || isset( $transient->response[$file] ) || ! version_compare( $e['version'], $transient->checked[$file], '>' ) ) { continue; }
-			$transient->response[$file] = (object) [ 'id' => 'https://github.com/' . $e['repository'], 'slug' => $e['slug'], 'plugin' => $file, 'new_version' => $e['version'], 'url' => 'https://github.com/' . $e['repository'], 'package' => $e['download_url'], 'requires' => $e['requires_wp'], 'requires_php' => $e['requires_php'], 'dwl_managed' => true ];
-		}
-		return $transient;
-	}
-	/**
-	 * Verify current approval, dependencies and the exact native update package.
-	 *
-	 * @param mixed $reply Earlier download result; false means not handled.
-	 * @param string $package Exact offered release ZIP URL.
-	 * @param mixed $upgrader Native WordPress upgrader instance.
-	 * @param array $extra Additional action fields or native upgrader context.
-	 * @return mixed Existing handled download, verified local package path, WP_Error, or the original unhandled value.
-	 */
-	public function update_download( $reply, string $package, $upgrader, array $extra = [] ) {
-  if ( $this->explicit_upgrader !== null && $upgrader === $this->explicit_upgrader ) { return $reply; }
-  if ( ( $extra['action'] ?? '' ) === 'install' ) { return $reply; }
-		$file = $extra['plugin'] ?? '';
-		$managed = get_site_option( self::MANAGED, [] );
-		if ( ! is_string( $file ) || ! is_array( $managed ) || ! isset( $managed[$file] ) ) { return $reply; }
-		if ( false !== $reply ) { return $reply; }
-		require_once ABSPATH . 'wp-admin/includes/plugin.php';
-		$plugins = get_plugins();
-		if ( ! empty( $plugins[$file]['UpdateURI'] ) ) { return $reply; }
-		$entries = $this->catalog->entries( true );
-		if ( is_wp_error( $entries ) ) { return $entries; }
-		foreach ( $entries as $entry ) {
-			if ( $entry['plugin_file'] !== $file || $entry['repository'] !== $managed[$file] ) { continue; }
-			if ( $package !== $entry['download_url'] ) { return new \WP_Error( 'dwl_release_changed', self::t( 'The approved release changed. Refresh updates first.' ) ); }
-			$issues = Requirements::check( $entry, null, is_plugin_active_for_network( $file ), false );
-			if ( $issues ) { return new \WP_Error( 'dwl_requirements', implode( ' ', $issues ) ); }
-			return Package::download( $entry );
-		}
-		return new \WP_Error( 'dwl_withdrawn', self::t( 'This release is no longer approved.' ) );
-	}
  /**
-  * Supply opted-in public host updater metadata from the independent update cache.
-  *
-  * @param string $repository Exact public GitHub repository URL.
-  * @param string $file Plugin basename identifying the target plugin.
-  * @param bool $fresh Require a successful uncached source read.
-  * @return array|null|false Release metadata, false for direct-updater fallback, or null when approval is refused.
+  * Retire only old Library-owned cached offers; ordinary updater offers are preserved.
+  * @param mixed $transient Existing WordPress update state.
+  * @return mixed State without obsolete dwl_managed offers; no HTTP or new update offers.
   */
- public function updater_release( string $repository, string $file, bool $fresh = false ) {
-  if ( ! self::settings()['online'] ) { return false; }
-  $fresh = $fresh || ( is_admin() && current_user_can( 'update_plugins' ) && self::query( 'force-check' ) === '1' );
-  $entries = $this->catalog->entries( $fresh, true );
-  if ( is_wp_error( $entries ) ) { return null; }
-  foreach ( $entries as $entry ) {
-   if ( $entry['plugin_file'] !== $file || 'https://github.com/' . $entry['repository'] !== $repository ) { continue; }
-   return [ 'version' => $entry['version'], 'package' => $entry['download_url'], 'notes' => self::text( $entry, 'description' ), 'published' => $entry['published_at'] ?? '', 'requires_wp' => $entry['requires_wp'], 'requires_php' => $entry['requires_php'], 'sha256' => $entry['sha256'] ];
-  }
-  return null;
+ public function updates( $transient ) {
+  if ( ! is_object( $transient ) || ! is_array( $transient->response ?? null ) ) { return $transient; }
+  $copy = clone $transient;
+  foreach ( $copy->response as $file=>$offer ) { if ( is_object( $offer ) && ( $offer->dwl_managed ?? null ) === true ) { unset( $copy->response[$file] ); } }
+  return $copy;
  }
+
  /**
-  * Download the opted-in host package only after fresh approval and requirement checks.
-  *
-  * @param string $repository Exact public GitHub repository URL.
-  * @param string $file Plugin basename identifying the target plugin.
-  * @param string $package Exact offered release ZIP URL.
-  * @return string|\WP_Error Verified temporary package path or WP_Error when approval or requirements fail.
-  * Successful temporary archives must be removed by the caller after use.
+  * Preserve existing native downloads for callers retaining an old Library callback.
+  * @param mixed $reply Existing WordPress download result.
+  * @param string $package Offered package URL; not resolved against the catalog.
+  * @param mixed $upgrader Native upgrader instance.
+  * @param array $extra Native target context.
+  * @return mixed The unchanged earlier result; the normal updater owns installed-plugin updates.
+  */
+ public function update_download( $reply, string $package, $upgrader, array $extra = [] ) { return $reply; }
+
+ /**
+  * Select the direct updater path for legacy host adapters in every catalog setting.
+  * @param string $repository Configured public repository URL.
+  * @param string $file Exact installed host basename.
+  * @param bool $fresh Legacy freshness request; catalog approval is not consulted.
+  * @return false Explicit direct-updater fallback, not an approval or metadata result.
+  */
+ public function updater_release( string $repository, string $file, bool $fresh = false ) { return false; }
+
+ /**
+  * Refuse obsolete update-provider package calls without fetching any file.
+  * @param string $repository Configured public repository URL.
+  * @param string $file Exact target basename.
+  * @param string $package Former catalog package URL.
+  * @return \WP_Error Controlled refusal; catalog packages are reserved for first installation.
   */
  public function updater_package( string $repository, string $file, string $package ) {
-  $entries = $this->catalog->entries( true, true );
-  if ( is_wp_error( $entries ) ) { return $entries; }
-  foreach ( $entries as $entry ) {
-   if ( $entry['plugin_file'] !== $file || 'https://github.com/' . $entry['repository'] !== $repository ) { continue; }
-   if ( $package !== $entry['download_url'] ) { return new \WP_Error( 'dwl_release_changed', self::t( 'The approved release changed. Refresh updates first.' ) ); }
-   $issues = Requirements::check( $entry, null, is_plugin_active_for_network( $file ), false );
-   if ( $issues ) { return new \WP_Error( 'dwl_requirements', implode( ' ', $issues ) ); }
-   return Package::download( $entry );
-  }
-  return new \WP_Error( 'dwl_withdrawn', self::t( 'This release is no longer approved.' ) );
+  return new \WP_Error( 'dwl_native_updates', self::t( 'Installed plugins use their normal update provider. Reload the update information and try again.' ) );
  }
+
+
+ /**
+  * Preserve earlier owners for callers retaining the retired catalog-update lease API.
+  * @param mixed $previous Earlier owner callback or null.
+  * @param string $repository Legacy repository identity.
+  * @param string $file Legacy plugin basename.
+  * @param string $package Legacy package URL.
+  * @return mixed Unchanged earlier value; no catalog update files are created by this runtime.
+  */
+ public function package_lease( $previous, string $repository, string $file, string $package ) { return $previous; }
+
+
+
+
+
+
+ /**
+  * Preserve the diagnostic adapter without issuing catalog requests for installed updates.
+  * @param string $repository Configured repository URL.
+  * @param string $file Exact target basename.
+  * @return null No catalog-related update failure is retained.
+  */
+ public function updater_diagnostic( string $repository, string $file ): ?\WP_Error { return null; }
+
 
 }

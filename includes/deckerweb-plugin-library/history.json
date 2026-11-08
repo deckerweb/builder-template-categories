@@ -1,5 +1,83 @@
 [
   {
+    "version": "1.3.0",
+    "date": "2026-11-08",
+    "changes": {
+      "Fixed": [
+        {
+          "en": "Retire stale catalog-managed update offers and verify installed identity before explicit updates.",
+          "de": "Veraltete katalogverwaltete Updateangebote entfernen und installierte Identität vor expliziten Updates prüfen."
+        },
+        {
+          "en": "Check installed-version requirements when activating an existing plugin.",
+          "de": "Bei der Aktivierung eines vorhandenen Plugins die Voraussetzungen seiner installierten Version prüfen."
+        },
+        {
+          "en": "Keep parallel installation and temporary-file records independent and reliably clean owned first-installation files after failures.",
+          "de": "Parallele Installations- und Temporärdateieinträge unabhängig speichern und eigene Erstinstallationsdateien nach Fehlern zuverlässig bereinigen."
+        }
+      ],
+      "Improved": [
+        {
+          "en": "Cards show actual installed versions and normal WordPress update offers, including newer releases than the catalog.",
+          "de": "Karten zeigen tatsächlich installierte Versionen und normale WordPress-Updateangebote, auch neuere Releases als im Katalog."
+        },
+        {
+          "en": "Updated approved bundled catalog and local original icons.",
+          "de": "Freigegebenen eingebauten Katalog und lokale Originalicons aktualisiert."
+        }
+      ],
+      "New": [
+        {
+          "en": "Installed-plugin updates are independent of online catalog settings and catalog versions.",
+          "de": "Bestandsupdates sind unabhängig von Onlinekatalog-Einstellung und Katalogversionen."
+        }
+      ],
+      "Misc": [
+        {
+          "en": "Older plugins without a normal update provider need a one-time manual ZIP update; the Library no longer supplies catalog-managed update offers.",
+          "de": "Altplugins ohne normalen Updateanbieter benötigen einmalig ein manuelles ZIP-Update; die Library liefert keine katalogverwalteten Ersatz-Updateangebote mehr."
+        }
+      ]
+    }
+  },
+  {
+    "version": "1.2.0",
+    "date": "2026-10-30",
+    "changes": {
+      "New": [
+        {
+          "en": "Filter plugins by installation, activation and available catalog updates, with matching result counts.",
+          "de": "Plugins nach Installation, Aktivierung und verfügbaren Katalogupdates filtern, mit passender Trefferzahl."
+        }
+      ],
+      "Improved": [
+        {
+          "en": "Plugin status and matching results refresh after successful catalog actions. Reset filters keeps the personal sort order.",
+          "de": "Plugin-Status und Treffer werden nach erfolgreichen Katalogaktionen aktualisiert. Filter zurücksetzen erhält die persönliche Sortierung."
+        },
+        {
+          "en": "Updated bundled catalog and local original icons.",
+          "de": "Aktualisierter eingebauter Katalog und lokale Originalicons."
+        },
+        {
+          "en": "Catalog and download failures identify the failed stage and a safe connection, HTTP, checksum or archive cause.",
+          "de": "Katalog- und Downloadfehler nennen die betroffene Fehlerstufe sowie eine bereinigte Verbindungs-, HTTP-, Prüfsummen- oder Archivursache."
+        },
+        {
+          "en": "More compact catalog filters retain familiar WordPress controls and keyboard focus.",
+          "de": "Kompaktere Katalogfilter erhalten vertraute WordPress-Bedienelemente und Tastaturfokus."
+        }
+      ],
+      "Fixed": [
+        {
+          "en": "Catalog actions remain inline after changing filters or sorting.",
+          "de": "Katalogaktionen bleiben auch nach Filter- oder Sortierwechseln inline."
+        }
+      ]
+    }
+  },
+  {
     "version": "1.1.0",
     "date": "2026-10-21",
     "changes": {

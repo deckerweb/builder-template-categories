@@ -1,3 +1,6 @@
+msgid "%1$s of %2$s plugins"
+msgstr ""
+
 msgid "%s is installed but inactive. Activate it first."
 msgstr ""
 
@@ -64,6 +67,9 @@ msgstr ""
 msgid "Archive symlinks are not permitted."
 msgstr ""
 
+msgid "Archive verification"
+msgstr ""
+
 msgid "As of "
 msgstr ""
 
@@ -106,6 +112,12 @@ msgstr ""
 msgid "Catalog refreshed."
 msgstr ""
 
+msgid "Catalog retrieval does not limit updates of installed plugins. Those use their normal WordPress update provider."
+msgstr ""
+
+msgid "Catalog verification"
+msgstr ""
+
 msgid "Changelog"
 msgstr ""
 
@@ -115,6 +127,9 @@ msgstr ""
 msgid "Checking status…"
 msgstr ""
 
+msgid "Checksum verification"
+msgstr ""
+
 msgid "Close"
 msgstr ""
 
@@ -122,6 +137,9 @@ msgid "Commerce"
 msgstr ""
 
 msgid "Compatible additions only"
+msgstr ""
+
+msgid "Connection failed. Please try again later."
 msgstr ""
 
 msgid "Content"
@@ -208,6 +226,9 @@ msgstr ""
 msgid "Improved"
 msgstr ""
 
+msgid "Inactive"
+msgstr ""
+
 msgid "Install and activate this plugin in the network admin."
 msgstr ""
 
@@ -224,6 +245,12 @@ msgid "Installation failed."
 msgstr ""
 
 msgid "Installed"
+msgstr ""
+
+msgid "Installed plugin identity does not match the approved release."
+msgstr ""
+
+msgid "Installed plugins use their normal update provider. Reload the update information and try again."
 msgstr ""
 
 msgid "Installed · inactive"
@@ -296,6 +323,9 @@ msgid "Invalid star count."
 msgstr ""
 
 msgid "Invalid stars date."
+msgstr ""
+
+msgid "Invalid status filter."
 msgstr ""
 
 msgid "Jan"
@@ -388,6 +418,12 @@ msgstr ""
 msgid "No approved plugins match this selection."
 msgstr ""
 
+msgid "No update reported."
+msgstr ""
+
+msgid "Not installed"
+msgstr ""
+
 msgid "Not installed. You can try again."
 msgstr ""
 
@@ -427,6 +463,9 @@ msgstr ""
 msgid "POST required."
 msgstr ""
 
+msgid "Package download"
+msgstr ""
+
 msgid "Permission denied."
 msgstr ""
 
@@ -443,6 +482,9 @@ msgid "Plugin is not installed."
 msgstr ""
 
 msgid "Plugin series"
+msgstr ""
+
+msgid "Plugin status"
 msgstr ""
 
 msgid "Product website"
@@ -544,6 +586,9 @@ msgstr ""
 msgid "Source: GitHub"
 msgstr ""
 
+msgid "Stage: %1$s. %2$s"
+msgstr ""
+
 msgid "Standard"
 msgstr ""
 
@@ -583,10 +628,19 @@ msgstr ""
 msgid "The catalog is hidden."
 msgstr ""
 
+msgid "The catalog response is invalid, incompatible or too large."
+msgstr ""
+
+msgid "The connection timed out. Please try again later."
+msgstr ""
+
 msgid "The deckerweb catalog could not load. Check platform requirements and the complete Library integration in the host plugin."
 msgstr ""
 
 msgid "The installed plugin identity could not be verified for this catalog update."
+msgstr ""
+
+msgid "The installed plugin identity could not be verified. Use the Plugins screen to review it."
 msgstr ""
 
 msgid "The online catalog is unavailable. Showing cached or bundled entries; online approval is checked again before installation."
@@ -595,13 +649,31 @@ msgstr ""
 msgid "The online catalog source is not trusted."
 msgstr ""
 
+msgid "The package checksum does not match the approved release. Installation was stopped."
+msgstr ""
+
+msgid "The package did not pass the archive or plugin identity checks. Installation was stopped."
+msgstr ""
+
 msgid "The release checksum does not match. Installation stopped."
 msgstr ""
 
 msgid "The request could not be completed. Check the plugin status before trying again."
 msgstr ""
 
+msgid "The requirements below describe the catalog version for first installation, not an installed-plugin update."
+msgstr ""
+
 msgid "The requirements below describe the offered release."
+msgstr ""
+
+msgid "The secure connection could not be verified."
+msgstr ""
+
+msgid "The server address could not be resolved."
+msgstr ""
+
+msgid "The server returned HTTP %d. Please try again later."
 msgstr ""
 
 msgid "The update has not been confirmed. You can try again."
@@ -649,7 +721,13 @@ msgstr ""
 msgid "Update available"
 msgstr ""
 
+msgid "Update available: %s"
+msgstr ""
+
 msgid "Update failed."
+msgstr ""
+
+msgid "Update information changed. Reload the page and try again."
 msgstr ""
 
 msgid "Update to %s"
@@ -659,6 +737,12 @@ msgid "Updated"
 msgstr ""
 
 msgid "Updating…"
+msgstr ""
+
+msgid "Use the Plugins screen to manage this installed plugin."
+msgstr ""
+
+msgid "Verified first installations · Independent plugin updates"
 msgstr ""
 
 msgid "View plugins"

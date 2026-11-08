@@ -1,6 +1,6 @@
 <?php
 /** Copyright 2026 David Decker – DECKERWEB. SPDX-License-Identifier: GPL-2.0-or-later */
-namespace Deckerweb\PluginLibrary\V1_1_0;
+namespace Deckerweb\PluginLibrary\V1_3_0;
 if ( ! defined( 'ABSPATH' ) ) { exit; }
 
 /** Used both when rendering cards and immediately before install/activation. */
@@ -28,8 +28,11 @@ final class Requirements {
 			if ( version_compare( $installed_version, $entry['network_activation_min_version'], '<' ) ) { $issues[] = sprintf( Library::t( 'Update %1$s to version %2$s or newer.' ), $entry['name'], $entry['network_activation_min_version'] ); }
 		}
 		global $wp_version;
-		if ( version_compare( $wp_version, $entry['requires_wp'], '<' ) ) { $issues[] = sprintf( Library::t( 'Requires WordPress %s or newer.' ), $entry['requires_wp'] ); }
-		if ( version_compare( PHP_VERSION, $entry['requires_php'], '<' ) ) { $issues[] = sprintf( Library::t( 'Requires PHP %s or newer.' ), $entry['requires_php'] ); }
+		$installed = $activation ? ( $plugins[$entry['plugin_file']] ?? null ) : null;
+		$requires_wp = is_array( $installed ) ? ( $installed['RequiresWP'] ?? '' ) : $entry['requires_wp'];
+		$requires_php = is_array( $installed ) ? ( $installed['RequiresPHP'] ?? '' ) : $entry['requires_php'];
+		if ( is_string( $requires_wp ) && $requires_wp !== '' && version_compare( $wp_version, $requires_wp, '<' ) ) { $issues[] = sprintf( Library::t( 'Requires WordPress %s or newer.' ), $requires_wp ); }
+		if ( is_string( $requires_php ) && $requires_php !== '' && version_compare( PHP_VERSION, $requires_php, '<' ) ) { $issues[] = sprintf( Library::t( 'Requires PHP %s or newer.' ), $requires_php ); }
   if ( $advisory_only ) { $issues = []; }
   foreach ( self::dependencies_for( $entry, $plugins, $activation ) as $dep ) {
    if ( $advisory_only !== ! empty( $dep['_advisory'] ) ) { continue; }

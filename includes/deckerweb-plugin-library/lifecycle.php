@@ -1,9 +1,9 @@
 <?php
-/** Shared uninstall protocol 3, with a protocol-2 compatibility entry point. No activation is needed to detect installed hosts.
+/** Shared uninstall protocol 4, with protocol-2 and protocol-3 compatibility entry points. No activation is needed to detect installed hosts.
  * Copyright 2026 David Decker – DECKERWEB. SPDX-License-Identifier: GPL-2.0-or-later
  */
 if ( ! defined( 'ABSPATH' ) ) { exit; }
-if ( ! function_exists( 'deckerweb_library_uninstall_v3' ) ) {
+if ( ! function_exists( 'deckerweb_library_uninstall_v4' ) ) {
  /**
   * Clean component-owned temporary data only after the final installed host is removed.
   *
@@ -12,7 +12,7 @@ if ( ! function_exists( 'deckerweb_library_uninstall_v3' ) ) {
   * May read or change component-owned shared storage; foreign plugin data is preserved.
   * Queues a final ownership recheck after native batch deletion completes.
   */
- function deckerweb_library_uninstall_v3( string $host_file ): bool {
+ function deckerweb_library_uninstall_v4( string $host_file ): bool {
   if ( ! defined( 'WP_UNINSTALL_PLUGIN' ) ) { return false; }
   // Core may process several uninstall.php files in one request while retaining
   // the first WP_UNINSTALL_PLUGIN constant. Recheck final ownership at shutdown.
@@ -24,7 +24,7 @@ if ( ! function_exists( 'deckerweb_library_uninstall_v3' ) ) {
     * Recheck shared ownership after native deletion finishes its full batch.
     * @return void Runs guarded cleanup; installed hosts still protect shared data.
     */
-   register_shutdown_function( static function() use ( $first_host ): void { deckerweb_library_uninstall_v3( $first_host ); } );
+   register_shutdown_function( static function() use ( $first_host ): void { deckerweb_library_uninstall_v4( $first_host ); } );
   }
   if ( plugin_basename( $host_file ) !== WP_UNINSTALL_PLUGIN ) { return false; }
   require_once ABSPATH . 'wp-admin/includes/plugin.php';
@@ -55,6 +55,23 @@ if ( ! function_exists( 'deckerweb_library_uninstall_v3' ) ) {
    $temps = is_multisite() ? get_network_option( $network_id, 'deckerweb_library_temp_v2', [] ) : get_option( 'deckerweb_library_temp_v2', [] );
    if ( is_array( $temps ) ) { $temporary = array_merge( $temporary, $temps ); }
    if ( is_multisite() ) { delete_network_option( $network_id, 'deckerweb_library_temp_v2' ); } else { delete_option( 'deckerweb_library_temp_v2' ); }
+   // Independent records cannot overwrite another operation's registration.
+   $prefixes = [ 'deckerweb_library_temp_v3_' ];
+   if ( $delete ) { $prefixes[] = 'deckerweb_library_managed_v2_'; }
+   foreach ( $prefixes as $prefix ) {
+    $pattern = $wpdb->esc_like( $prefix ) . '%';
+    $records = is_multisite()
+     ? $wpdb->get_col( $wpdb->prepare( "SELECT meta_key FROM {$wpdb->sitemeta} WHERE site_id = %d AND meta_key LIKE %s", $network_id, $pattern ) )
+     : $wpdb->get_col( $wpdb->prepare( "SELECT option_name FROM {$wpdb->options} WHERE option_name LIKE %s", $pattern ) );
+    foreach ( $records as $record ) {
+     if ( ! preg_match( '/^' . preg_quote( $prefix, '/' ) . '[a-f0-9]{64}$/D', $record ) ) { continue; }
+     if ( $prefix === 'deckerweb_library_temp_v3_' ) {
+      $path = is_multisite() ? get_network_option( $network_id, $record, null ) : get_option( $record, null );
+      if ( is_string( $path ) && $record === $prefix . hash( 'sha256', $path ) ) { $temporary[] = $path; }
+     }
+     if ( is_multisite() ) { delete_network_option( $network_id, $record ); } else { delete_option( $record ); }
+    }
+   }
    // Delete only the component's documented catalog-transient namespace.
    if ( is_multisite() ) {
     $names = $wpdb->get_col( $wpdb->prepare( "SELECT meta_key FROM {$wpdb->sitemeta} WHERE site_id = %d AND (meta_key LIKE %s OR meta_key LIKE %s)", $network_id, $wpdb->esc_like( '_site_transient_dwl_catalog_' ) . '%', $wpdb->esc_like( '_site_transient_timeout_dwl_catalog_' ) . '%' ) );
@@ -80,7 +97,7 @@ if ( ! function_exists( 'deckerweb_library_uninstall_v3' ) ) {
    if ( is_multisite() ) { delete_network_option( $network_id, 'deckerweb_library_cache_keys_v2' ); }
    else { delete_option( 'deckerweb_library_cache_keys_v2' ); }
    if ( $delete ) {
-    foreach ( [ 'deckerweb_library_settings_v1', 'deckerweb_library_installed_v1' ] as $key ) {
+    foreach ( [ 'deckerweb_library_settings_v1', 'deckerweb_library_installed_v1', 'deckerweb_library_managed_v2_present' ] as $key ) {
      if ( is_multisite() ) { delete_network_option( $network_id, $key ); } else { delete_option( $key ); }
     }
     $delete_intro = true;
@@ -106,6 +123,17 @@ if ( ! function_exists( 'deckerweb_library_uninstall_v3' ) ) {
  }
 }
 
+if ( ! function_exists( 'deckerweb_library_uninstall_v3' ) ) {
+ /**
+  * Delegate protocol-three hosts when no earlier copy owns their entry point.
+  * @param string $host_file Absolute main file matching WP_UNINSTALL_PLUGIN.
+  * @return bool Whether guarded final-host cleanup was performed.
+  */
+ function deckerweb_library_uninstall_v3( string $host_file ): bool {
+  return deckerweb_library_uninstall_v4( $host_file );
+ }
+}
+
 if ( ! function_exists( 'deckerweb_library_uninstall_v2' ) ) {
  /**
   * Delegate protocol-two hosts to current cleanup when no earlier copy owns the alias.
@@ -114,6 +142,6 @@ if ( ! function_exists( 'deckerweb_library_uninstall_v2' ) ) {
   * @return bool Whether final-host cleanup was performed; retained hosts/data return false.
   */
  function deckerweb_library_uninstall_v2( string $host_file ): bool {
-  return deckerweb_library_uninstall_v3( $host_file );
+  return deckerweb_library_uninstall_v4( $host_file );
  }
 }

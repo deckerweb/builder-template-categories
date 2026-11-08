@@ -9,7 +9,7 @@ Entdecke stattdessen insbesondere **[Builder Content Guide](https://github.com/d
 
 Gemeinsame Projektkategorien für unterstützte Vorlagenbibliotheken im WordPress-Admin.
 
-**Version:** 1.9.2 · **WordPress:** 7.0+ · **PHP:** 8.1+ · **GPL-2.0-or-later**
+**Version:** 1.9.3 · **WordPress:** 7.0+ · **PHP:** 8.1+ · **GPL-2.0-or-later**
 
 [Anleitung](docs/guide-de.md) · [English](README.md) · [FAQ](#faq) · [Sicherheit](SECURITY.md)
 
@@ -76,6 +76,10 @@ Die vollständige Anleitung einschließlich Entwicklerhinweisen steht in der [Do
 
 ## Changelog
 
+### 1.9.3 · 2026-11-09
+
+- **Behoben:** deckerweb Library auf 1.3.0 und Updater auf 2.4.0 aktualisiert: normale Updates unabhängig vom Katalog, begrenzte Downloads und strengere Paketprüfung.
+
 ### 1.9.2 — 22.10.2026
 
 **Behoben:** Zuverlässige GitHub-Updates, auch wenn ein anderes Plugin zuvor einen älteren deckerweb Updater geladen hat.
@@ -116,6 +120,10 @@ Gespeicherte WordPress-Vorlagen sind direkt unter **Vorlagen** im Admin-Menü er
 Builder-Kategorien gehören zu diesem Plugin und sind unabhängig von den WordPress-Vorlagen-Kategorien. Bestehende Kategorien und Zuordnungen bleiben erhalten.
 
 Die Verwaltung der Builder-Kategorien zeigt die auf dieser Website verfügbaren Vorlagenbibliotheken mit Links zu ihren Übersichten und aufklappbaren technischen Beitragstypen. Diese Information sehen nur Benutzer mit der Berechtigung für Builder-Kategorien.
+
+## Wartungsupdate 1.9.3
+
+deckerweb Library auf 1.3.0 und Updater auf 2.4.0 aktualisiert. Normale Updates sind unabhängig vom Katalog; Downloads sind begrenzt und Pakete werden strenger geprüft.
 
 ## Wartungsupdate 1.9.2
 

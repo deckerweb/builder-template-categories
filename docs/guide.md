@@ -74,6 +74,10 @@ Builder Categories belong to this plugin and are independent of the native WordP
 
 The Builder Categories management screen lists the template libraries currently available on this website, with links to their lists and expandable post-type details. Only users permitted to manage Builder Categories can see this information.
 
+## Maintenance update 1.9.3
+
+Updated deckerweb Library to 1.3.0 and Updater to 2.4.0. Normal updates are independent of the catalog, with bounded downloads and stricter package checks.
+
 ## Maintenance update 1.9.2
 
 Updater 2.2.1 fixes update handling when older updater copies are also loaded. Library 1.1.0, features, settings and minimum requirements remain unchanged.
@@ -86,6 +90,6 @@ The shared Library is available through Add Plugins; it can be hidden in Setting
 
 Shared Library settings survive deactivation and remain by default after uninstall. Removing the final embedding host cleans component caches and temporary files; optional settings deletion follows the Library preference. Other installed plugins, categories and content remain.
 
-This plugin bundles deckerweb Library 1.1.0 and deckerweb Updater 2.2.1 by David Decker – DECKERWEB under GPL-2.0-or-later. Sources: https://github.com/deckerweb/deckerweb-plugin-library and https://github.com/deckerweb/deckerweb-updater.
+This plugin bundles deckerweb Library 1.3.0 and deckerweb Updater 2.4.0 by David Decker – DECKERWEB under GPL-2.0-or-later. Sources: https://github.com/deckerweb/deckerweb-plugin-library and https://github.com/deckerweb/deckerweb-updater.
 
 [Complete guide and FAQ by topic](https://github.com/deckerweb/builder-template-categories/wiki/English).

@@ -3,7 +3,7 @@ Contributors: deckerweb
 Tags: templates, categories, builders, patterns
 Requires at least: 7.0
 Requires PHP: 8.1
-Stable tag: 1.9.2
+Stable tag: 1.9.3
 Tested up to: 7.1
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -46,6 +46,9 @@ Users with edit_theme_options by default. The capability is filterable.
 No automatic migration. The guide is an independent plugin.
 
 == Changelog ==
+= 1.9.3 · 2026-11-09 =
+* Fixed: Updated deckerweb Library to 1.3.0 and Updater to 2.4.0: normal updates are independent of the catalog, with bounded downloads and stricter package checks.
+
 = 1.9.2 =
 * Fixed: Reliable GitHub updates with bundled Updater 2.2.1 when an older copy was loaded first.
 

@@ -1,9 +1,10 @@
 <?php
 /** Copyright 2026 David Decker – DECKERWEB. SPDX-License-Identifier: GPL-2.0-or-later */
-namespace Deckerweb\PluginLibrary\V1_1_0;
+namespace Deckerweb\PluginLibrary\V1_3_0;
 if ( ! defined( 'ABSPATH' ) ) { exit; }
 /** Personal catalog presentation and local, data-minimized diagnostics. */
 final class Experience {
+ const STATUSES = [ 'all'=>'All', 'missing'=>'Not installed', 'installed'=>'Installed', 'active'=>'Active', 'inactive'=>'Inactive', 'updates'=>'Update available' ];
  const META = 'deckerweb_library_view_v1';
  const MODES = [ 'standard' => 'Standard', 'az' => 'Name A–Z', 'za' => 'Name Z–A', 'updated' => 'Recently updated', 'random' => 'Discover randomly' ];
  /** Read normalized preferences for the current user without changing shared settings.
@@ -11,7 +12,7 @@ final class Experience {
   */
  public static function view(): array {
   $v = get_user_meta( get_current_user_id(), self::META, true ); $v = is_array( $v ) ? $v : [];
-  return [ 'sort' => isset( self::MODES[$v['sort'] ?? ''] ) ? $v['sort'] : 'standard', 'seed' => is_string( $v['seed'] ?? null ) && preg_match( '/^[a-f0-9]{32}$/D', $v['seed'] ) ? $v['seed'] : md5( 'dwl:' . get_current_user_id() ), 'search' => is_string( $v['search'] ?? null ) ? substr( $v['search'], 0, 150 ) : '', 'series' => is_string( $v['series'] ?? null ) ? sanitize_key( $v['series'] ) : '', 'compatible' => ! empty( $v['compatible'] ) ];
+  return [ 'status' => is_string( $v['status'] ?? null ) && isset( self::STATUSES[$v['status']] ) ? $v['status'] : 'all', 'sort' => is_string( $v['sort'] ?? null ) && isset( self::MODES[$v['sort']] ) ? $v['sort'] : 'standard', 'seed' => is_string( $v['seed'] ?? null ) && preg_match( '/^[a-f0-9]{32}$/D', $v['seed'] ) ? $v['seed'] : md5( 'dwl:' . get_current_user_id() ), 'search' => is_string( $v['search'] ?? null ) ? substr( $v['search'], 0, 150 ) : '', 'series' => is_string( $v['series'] ?? null ) ? sanitize_key( $v['series'] ) : '', 'compatible' => ! empty( $v['compatible'] ) ];
  }
  /** Persist an authorized explicit view submission; GET navigation never writes preferences.
   * @return void Updates only the current user's view metadata after POST, nonce and capability checks.
@@ -19,16 +20,49 @@ final class Experience {
  public static function save(): void {
   if ( ( isset( $_SERVER['REQUEST_METHOD'] ) && is_string( $_SERVER['REQUEST_METHOD'] ) ? sanitize_text_field( wp_unslash( $_SERVER['REQUEST_METHOD'] ) ) : '' ) !== 'POST' || ! current_user_can( 'install_plugins' ) || ! is_string( $_POST['dwl_view_nonce'] ?? null ) || ! wp_verify_nonce( sanitize_text_field( wp_unslash( $_POST['dwl_view_nonce'] ) ), 'dwl_view' ) ) { wp_die( esc_html( Library::t( 'Permission denied.' ) ), '', [ 'response' => 403 ] ); }
   $v = self::view();
-  if ( isset( $_POST['dwl_reset'] ) ) { $v = [ 'sort'=>'standard', 'seed'=>md5( wp_generate_uuid4() ), 'search'=>'', 'series'=>'', 'compatible'=>false ]; }
+  if ( isset( $_POST['dwl_reset'] ) ) { $v = array_merge( $v, [ 'search'=>'', 'series'=>'', 'compatible'=>false, 'status'=>'all' ] ); }
   else {
    $mode = is_string( $_POST['dwl_sort'] ?? null ) ? sanitize_key( wp_unslash( $_POST['dwl_sort'] ) ) : '';
    if ( ! isset( self::MODES[$mode] ) ) { wp_die( esc_html( Library::t( 'Invalid sort order.' ) ) ); }
+   $status = is_string( $_POST['dwl_status'] ?? null ) ? sanitize_key( wp_unslash( $_POST['dwl_status'] ) ) : 'all';
+   if ( ! isset( self::STATUSES[$status] ) ) { wp_die( esc_html( Library::t( 'Invalid status filter.' ) ) ); }
+   $v['status']=$status;
    $v['sort']=$mode; $v['search']=is_string( $_POST['dwl_search'] ?? null ) ? substr( sanitize_text_field( wp_unslash( $_POST['dwl_search'] ) ), 0, 150 ) : '';
    $v['series']=is_string( $_POST['dwl_series'] ?? null ) ? sanitize_key( wp_unslash( $_POST['dwl_series'] ) ) : ''; $v['compatible']=( isset( $_POST['dwl_compatible'] ) && is_string( $_POST['dwl_compatible'] ) ? sanitize_text_field( wp_unslash( $_POST['dwl_compatible'] ) ) : '' ) === '1';
    if ( isset( $_POST['dwl_shuffle'] ) ) { $v['seed']=md5( wp_generate_uuid4() ); $v['sort']='random'; }
   }
   update_user_meta( get_current_user_id(), self::META, $v );
   wp_safe_redirect( self_admin_url( 'plugin-install.php?tab=deckerweb' ) ); exit;
+ }
+ /**
+  * Report an existing normal update without comparing the catalog release version.
+  * @param array $entry Catalog plugin identity.
+  * @param array $plugins Installed plugin headers.
+  * @param mixed $state Existing update snapshot, or null to read WordPress state.
+  * @return bool Whether WordPress currently offers a forward update for the installed plugin.
+  */
+ public static function update_available( array $entry, array $plugins, $state = null ): bool {
+  return NativeUpdates::offer( $entry, $plugins, $state ) !== null;
+ }
+
+ /** Match the current website or network status without remote requests.
+  * @param string $status Whitelisted status filter.
+  * @param array $entry Validated catalog entry.
+  * @param array $plugins Installed plugin headers.
+  * @param mixed $state Existing update snapshot, or null to read WordPress state.
+  * @return bool Whether the entry matches the selected status.
+  */
+ public static function matches( string $status, array $entry, array $plugins, $state = null ): bool {
+  $installed = isset( $plugins[$entry['plugin_file']] );
+  $active = $installed && ( is_network_admin() ? is_plugin_active_for_network( $entry['plugin_file'] ) : is_plugin_active( $entry['plugin_file'] ) );
+  switch ( $status ) {
+   case 'missing': return ! $installed;
+   case 'installed': return $installed;
+   case 'active': return $active;
+   case 'inactive': return $installed && ! $active;
+   case 'updates': return self::update_available( $entry, $plugins, $state );
+   default: return true;
+  }
  }
  /** Sort a validated catalog without changing entry keys or installation identity.
   * @param array $entries Entries keyed by plugin slug.

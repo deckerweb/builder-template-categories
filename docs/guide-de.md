@@ -74,6 +74,10 @@ Builder-Kategorien gehören zu diesem Plugin und sind unabhängig von den WordPr
 
 Die Verwaltung der Builder-Kategorien zeigt die auf dieser Website verfügbaren Vorlagenbibliotheken mit Links zu ihren Übersichten und aufklappbaren technischen Beitragstypen. Diese Information sehen nur Benutzer mit der Berechtigung für Builder-Kategorien.
 
+## Wartungsupdate 1.9.3
+
+deckerweb Library auf 1.3.0 und Updater auf 2.4.0 aktualisiert. Normale Updates sind unabhängig vom Katalog; Downloads sind begrenzt und Pakete werden strenger geprüft.
+
 ## Wartungsupdate 1.9.2
 
 Updater 2.2.1 behebt die Update-Verarbeitung bei gleichzeitig geladenen älteren Updater-Kopien. Library 1.1.0, Funktionen, Einstellungen und Mindestanforderungen bleiben unverändert.

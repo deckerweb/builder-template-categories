@@ -1,7 +1,6 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: Builder Template Categories 1.9.1\n"
-"POT-Creation-Date: 2025-04-08 21:26+0200\n"
+"Project-Id-Version: Builder Template Categories\n"
 "PO-Revision-Date: 2025-04-08 21:30+0200\n"
 "Last-Translator: David Decker DECKERWEB.de <David Decker DECKERWEB.de>\n"
 "Language-Team: David Decker DECKERWEB.de\n"
@@ -19,1385 +18,6 @@ msgstr ""
 "__;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: *.js\n"
-
-#. translators: Title attribute for Builder Template Categories taxonomy link
-#. Plugin Name of the plugin/theme
-#: includes/admin/admin-extras.php:57 includes/admin/admin-extras.php:221
-#: includes/admin/admin-help.php:238 includes/admin/admin-help.php:312
-#: includes/admin/admin-help.php:317
-msgid "Builder Template Categories"
-msgstr "Builder Template-Kategorien"
-
-#: includes/admin/admin-extras.php:58
-msgctxt "For Builder Template Categories Plugin"
-msgid "Template Categories"
-msgstr "Template-Kategorien"
-
-#: includes/admin/admin-extras.php:98
-msgctxt "Plugins page listing"
-msgid "Code Snippets"
-msgstr "Code-Snippets"
-
-#: includes/admin/admin-extras.php:105
-msgctxt "Plugins page listing"
-msgid "Donate"
-msgstr "Spenden"
-
-#: includes/admin/admin-extras.php:112
-msgctxt "Plugins page listing"
-msgid "Join our Newsletter"
-msgstr "Newsletter jetzt!"
-
-#: includes/admin/admin-extras.php:211
-msgid "No integration(s) active"
-msgstr "Keine Integration(en) aktiv"
-
-#: includes/admin/admin-extras.php:214
-msgid "Enabled"
-msgstr "Aktiviert"
-
-#: includes/admin/admin-extras.php:215
-msgid "Disabled"
-msgstr "Deaktiviert"
-
-#: includes/admin/admin-extras.php:221 includes/admin/admin-help.php:312
-msgid "Plugin"
-msgstr "Plugin"
-
-#: includes/admin/admin-extras.php:224
-msgid "Plugin version"
-msgstr "Plugin-Version"
-
-#: includes/admin/admin-extras.php:228
-msgid "Current active integrations"
-msgstr "Derzeit aktive Integrationen"
-
-#: includes/admin/admin-extras.php:232
-msgid "Reusable Blocks Post Type UI"
-msgstr "Wiederverwendbare Blöcke Inhaltstyp-Interface"
-
-#: includes/admin/admin-help.php:30
-msgid ""
-"These Template Categories are globally available for Administrators within "
-"the Admin Dashboard and can be used to organize the template libraries for "
-"the following active Plugins and/or Themes"
-msgstr ""
-"Diese Template-Kategorien sind global verfügbar für Administratoren im Admin-"
-"Dashboard und können zum Organisieren der Template-Bibliotheken verwendet "
-"werden - für die folgenden Plugins und/ oder Themes"
-
-#: includes/admin/admin-help.php:278
-msgid "Content Type"
-msgstr "Inhaltstyp"
-
-#: includes/admin/admin-help.php:280 includes/string-switcher.php:92
-msgid "Post Type"
-msgstr "Beitragstyp"
-
-#: includes/admin/admin-help.php:316
-#, php-format
-msgid ""
-"Currently active integrations where the %s taxonomy is applied to better "
-"internally organize templates for various content types"
-msgstr ""
-"Derzeit aktive Integrationen, denen die Taxonomie %s zugewiesen wird. Damit "
-"lassen sich Templates für verschiedene Inhaltstypen intern besser "
-"organisieren"
-
-#: includes/admin/admin-help.php:326
-msgid "Video Overview: Bulk Add Template Categories"
-msgstr "Video-Übersicht: Mehrfachaktionen für Template-Kategorien"
-
-#: includes/admin/admin-help.php:327
-msgid "video overview"
-msgstr "Video-Übersicht"
-
-#. translators: 1 - string "Bulk Actions" / 2 - Label "Edit, add Category etc." / 3 - video link markup with title "video overview"
-#: includes/admin/admin-help.php:332
-#, php-format
-msgid ""
-"You can bulk add template categories to more than one template at once in "
-"your template post type overview table, using the %1$s drop-down menu. The "
-"action will be labeled like %2$s. See a short %3$s of this feature."
-msgstr ""
-"Sie können Template-Kategorien auch als Mehrfachaktion hinzufügen, dies "
-"geschieht in der Beitragstyp-Übersichtstabelle, im Drop-Down-Menü %1$s. Die "
-"Aktion ist betitelt mit %2$s. Schauen Sie eine kurze %3$s dieser Funktion an."
-
-#: includes/admin/admin-help.php:333
-msgid "Bulk Actions"
-msgstr "Mehrfachaktionen"
-
-#: includes/admin/admin-help.php:334
-msgid "Edit, add Category etc."
-msgstr "Bearbeiten, Kategorie(n) hinzufügen, etc."
-
-#: includes/admin/admin-help.php:341
-msgid ""
-"The template categories are global and are applied automatically to all "
-"current active integrations."
-msgstr ""
-"Die Template-Kategorien sind global und werden automatisch allen derzeit "
-"aktiven Integrationen zugewiesen."
-
-#: includes/admin/admin-help.php:342
-msgid ""
-"The category description can be used for internal notices for your team "
-"members for example."
-msgstr ""
-"Die Kategoriebeschreibung kann zum Beispiel auch für interne Notizen für "
-"Ihre Team-Mitglieder verwendet werden."
-
-#: includes/admin/admin-help.php:346
-msgid "Important plugin links:"
-msgstr "Wichtige Plugin-Links:"
-
-#: includes/admin/admin-help.php:348
-msgid "Plugin website"
-msgstr "Plugin-Webseite"
-
-#: includes/admin/admin-help.php:350
-msgctxt "Help tab info"
-msgid "Donate"
-msgstr "Spenden"
-
-#: includes/admin/admin-help.php:352
-msgctxt "Help tab info"
-msgid "Join our Newsletter"
-msgstr "Newsletter jetzt!"
-
-#: includes/admin/admin-help.php:377
-msgid "Customize"
-msgstr "Anpassen"
-
-#: includes/admin/admin-help.php:378
-msgid "Code Snippets"
-msgstr "Code-Snippets"
-
-#: includes/admin/admin-help.php:380
-msgid "Connect"
-msgstr "Vernetzen"
-
-#: includes/functions-global.php:49
-msgid "No Integration registered"
-msgstr "Keine Integration registriert"
-
-#. Author of the plugin/theme
-#: includes/functions-global.php:413
-msgid "David Decker - DECKERWEB"
-msgstr "David Decker - DECKERWEB.de"
-
-#: includes/integrations/elementor-finder.php:35
-msgctxt "Title in Elementor Finder"
-msgid "Add-On: Builder Template Categories"
-msgstr "Add-On: Builder Template-Kategorien"
-
-#: includes/integrations/elementor-finder.php:58
-msgctxt "Title in Elementor Finder"
-msgid "Template Categories"
-msgstr "Template-Kategorien"
-
-#: includes/integrations/elementor-finder.php:62
-msgid "Manage template categories for site builders"
-msgstr "Verwalten Sie Template-Kategorien für Website-Builder"
-
-#: includes/integrations/elementor-finder.php:65
-msgctxt "Title in Elementor Finder"
-msgid "Help Resources - Builder Template Categories"
-msgstr "Hilfe-Ressourcen - Builder Template-Kategorien"
-
-#: includes/integrations/elementor-finder.php:69
-msgid "FAQ and documentation for the plugin"
-msgstr "FAQ (Häufige Fragen) und Dokumentation für das Plugin"
-
-#: includes/integrations/elementor-finder.php:79
-msgctxt "Title in Elementor Finder"
-msgid "Code Snippets - Builder Template Categories"
-msgstr "Code-Snippets - Builder Template-Kategorien"
-
-#: includes/integrations/elementor-finder.php:83
-msgid "These allow for tweaks and customizations"
-msgstr "Diese erlauben Ihnen Tweaks und Anpassungen vorzunehmen"
-
-#: includes/integrations/integration-advanced-custom-blocks.php:27
-msgid "Advanced Custom Blocks"
-msgstr "Erweiterte benutzerdefinierte Blöcke (ACB)"
-
-#: includes/integrations/integration-advanced-custom-fields.php:27
-msgid "Advanced Custom Fields Field Groups"
-msgstr "Erweiterte benutzerdefinierte Felder (ACF) Feld-Gruppen"
-
-#: includes/integrations/integration-anywhere-elementor.php:27
-msgid "AnyWhere Elementor Global Templates"
-msgstr "AnyWhere Elementor Globale Templates"
-
-#: includes/integrations/integration-astra.php:27
-msgid "Astra Custom Layouts"
-msgstr "Astra Eigene Layouts"
-
-#: includes/integrations/integration-avada-fusion-builder.php:27
-msgid "Avada Fusion Builder Templates"
-msgstr "Avada Fusion Builder Templates"
-
-#: includes/integrations/integration-avada-fusion-builder.php:35
-msgid "Avada Fusion Builder Elements"
-msgstr "Avada Fusion Builder Elemente"
-
-#: includes/integrations/integration-avada-fusion-builder.php:81
-#: includes/integrations/integration-avada-fusion-builder.php:82
-msgid "Templates Overview"
-msgstr "Templates-Übersicht"
-
-#: includes/integrations/integration-avada-fusion-builder.php:89
-#: includes/integrations/integration-avada-fusion-builder.php:90
-msgid "Elements Overview"
-msgstr "Elemente-Übersicht"
-
-#: includes/integrations/integration-beaver-templates.php:34
-msgid "Beaver Builder Templates"
-msgstr "Beaver Builder Templates"
-
-#: includes/integrations/integration-beaver-templates.php:46
-msgid "Beaver Themer Templates"
-msgstr "Beaver Themer Templates"
-
-#: includes/integrations/integration-block-areas.php:27
-msgid "Block Areas"
-msgstr "Block-Bereiche"
-
-#: includes/integrations/integration-block-editor.php:30
-msgid "Block Editor Reusable Blocks"
-msgstr "Block-Editor wiederverwendbare Blöcke"
-
-#: includes/integrations/integration-block-editor.php:99
-msgctxt "Admin page title"
-msgid "Reusable Blocks"
-msgstr "Wiederverwendbare Blöcke"
-
-#: includes/integrations/integration-block-editor.php:100
-msgctxt "Admin menu label"
-msgid "Blocks"
-msgstr "Blöcke"
-
-#: includes/integrations/integration-block-editor.php:111
-msgctxt "Admin page title"
-msgid "Add New Reusable Block"
-msgstr "Neuen wiederverwendbaren Block hinzufügen"
-
-#: includes/integrations/integration-block-editor.php:112
-msgctxt "Admin menu label"
-msgid "Add New"
-msgstr "Hinzufügen"
-
-#: includes/integrations/integration-block-lab.php:27
-msgid "Block Lab Blocks"
-msgstr "Block-Lab-Blöcke"
-
-#: includes/integrations/integration-block-layouts.php:27
-msgid "Block Layouts"
-msgstr "Block-Layouts"
-
-#: includes/integrations/integration-block-templates.php:27
-msgid "Gutenberg Block Templates"
-msgstr "Gutenberg Block-Templates"
-
-#: includes/integrations/integration-boldgrid.php:27
-msgid "BoldGrid Blocks"
-msgstr "BoldGrid-Blöcke"
-
-#: includes/integrations/integration-boxzilla.php:27
-msgid "Boxzilla Boxes"
-msgstr "Boxzilla Boxen"
-
-#: includes/integrations/integration-bricks.php:27
-msgid "Bricks Templates"
-msgstr "Bricks Templates"
-
-#: includes/integrations/integration-brizy.php:27
-msgid "Brizy Templates"
-msgstr "Brizy Templates"
-
-#: includes/integrations/integration-bsf-sidebar-manager.php:27
-msgid "Light Sidebar Manager - Sidebars"
-msgstr "Sidebar Manager - Seitenleisten"
-
-#: includes/integrations/integration-cartflows.php:27
-msgid "CartFlows Checkout Flows"
-msgstr "CartFlows Checkout-Abläufe"
-
-#: includes/integrations/integration-cherry-popups.php:27
-msgid "Cherry PopUps Templates"
-msgstr "Cherry PopUps Templates"
-
-#: includes/integrations/integration-cmb2-admin-extension.php:27
-msgid "CMB2 Meta Boxes"
-msgstr "CMB2 Meta-Boxen"
-
-#: includes/integrations/integration-content-blocks.php:27
-msgid "Content Blocks"
-msgstr "Inhaltsblöcke"
-
-#: includes/integrations/integration-cornerstone-global-blocks.php:27
-msgid "Global Content Blocks for Cornerstone Page Builder"
-msgstr "Globale Blöcke für Cornerstone Page Builder"
-
-#: includes/integrations/integration-custom-field-suite.php:27
-msgid "Custom Field Suite Field Groups"
-msgstr "Custom Field Suite Feld-Gruppen"
-
-#: includes/integrations/integration-custom-page-templates.php:28
-msgid "Custom Page Templates"
-msgstr "Eigene Seiten-Templates"
-
-#: includes/integrations/integration-custom-page-templates.php:37
-msgid "Custom Post Type Registrations"
-msgstr "Custom Post Type Registrierungen"
-
-#: includes/integrations/integration-custom-page-templates.php:46
-msgid "Custom Taxonomy Registrations"
-msgstr "Custom Taxonomy Registrierungen"
-
-#: includes/integrations/integration-custom-template-learndash.php:27
-msgid "LearnDash Custom Templates"
-msgstr "LearnDash eigene Templates"
-
-#: includes/integrations/integration-custom-template-lifterlms.php:27
-msgid "LifterLMS Custom Templates"
-msgstr "LifterLMS eigene Templates"
-
-#: includes/integrations/integration-customify.php:27
-msgid "Customify Hooks"
-msgstr "Customify Hooks"
-
-#: includes/integrations/integration-dev-content-blocks.php:27
-msgid "Dev Content Blocks"
-msgstr "Dev-Inhaltsblöcke"
-
-#: includes/integrations/integration-dhwc-elementor.php:27
-msgid "DHWC Elementor Product Templates"
-msgstr "DHWC Elementor Produkt-Templates"
-
-#: includes/integrations/integration-divi-templates.php:34
-msgid "Divi Builder Templates"
-msgstr "Divi Builder Templates"
-
-#: includes/integrations/integration-divi-templates.php:44
-msgid "Extra Category Layout Templates"
-msgstr "Extra Kategorie-Layout Templates"
-
-#: includes/integrations/integration-easy-content-templates.php:27
-msgid "Easy Content Templates"
-msgstr "Einfache Inhalts-Templates"
-
-#: includes/integrations/integration-elementor.php:39
-msgid "Elementor My Templates"
-msgstr "Elementor Meine Templates"
-
-#: includes/integrations/integration-elements-kit.php:27
-msgid "Elements Kit Templates"
-msgstr "Elements Kit Templates"
-
-#: includes/integrations/integration-epic-news-elements.php:27
-msgid "Epic News Elements - Post Templates"
-msgstr "Epic News Elements - Beitrags-Templates"
-
-#: includes/integrations/integration-epic-news-elements.php:35
-msgid "Epic News Elements - Archive Templates"
-msgstr "Epic News Elements - Archiv-Templates"
-
-#: includes/integrations/integration-flo-forms.php:27
-msgid "Flo Forms"
-msgstr "Flo Formulare"
-
-#: includes/integrations/integration-generatepress.php:27
-msgid "GeneratePress Elements"
-msgstr "GeneratePress Elemente"
-
-#: includes/integrations/integration-genesis-blox.php:27
-msgid "Blox Global Blocks (for Genesis)"
-msgstr "Blox Globale Blöcke (für Genesis)"
-
-#: includes/integrations/integration-genesis-blox.php:136
-msgid "Genesis Plugins from the Plugin Directory"
-msgstr "Genesis Plugins aus dem Pluginverzeichnis"
-
-#: includes/integrations/integration-genesis-blox.php:137
-msgid "Genesis Plugins"
-msgstr "Genesis Plugins"
-
-#: includes/integrations/integration-givewp.php:27
-msgid "Give Donation Forms"
-msgstr "Give-Spendenformulare"
-
-#: includes/integrations/integration-happyforms.php:27
-msgid "HappyForms Forms"
-msgstr "HappyForms Formulare"
-
-#: includes/integrations/integration-happyforms.php:112
-msgid "HappyForms Upgrade"
-msgstr "HappyForms Upgrade"
-
-#: includes/integrations/integration-happyforms.php:113
-msgid "Upgrade"
-msgstr "Upgrade"
-
-#: includes/integrations/integration-hf-elementor.php:27
-msgid "Header &amp; Footer Templates for Elementor"
-msgstr "Header &amp; Footer-Templates für Elementor"
-
-#: includes/integrations/integration-holler-box.php:27
-msgid "Holler Box Boxes"
-msgstr "Holler Box Boxen"
-
-#: includes/integrations/integration-ht-script.php:27
-msgid "HT Script - Header &amp; Footer Scripts"
-msgstr "HT-Skript - Header- &amp; Footer-Skripte"
-
-#: includes/integrations/integration-jetengine.php:51
-msgid "JetEngine Listing Templates"
-msgstr "JetEngine Auflistungen-Templates"
-
-#: includes/integrations/integration-jetengine.php:61
-msgid "JetEngine Forms"
-msgstr "JetEngine Formulare"
-
-#: includes/integrations/integration-jetpopup.php:27
-msgid "JetPopup Templates"
-msgstr "JetPopup Templates"
-
-#: includes/integrations/integration-jetsmartfilters.php:27
-msgid "JetSmartFilters Filter Templates"
-msgstr "JetSmartFilters Filter-Templates"
-
-#: includes/integrations/integration-jetthemecore.php:27
-msgid "JetThemeCore My Library"
-msgstr "JetThemeCore Meine Bibliothek"
-
-#: includes/integrations/integration-jetwoobuilder.php:27
-msgid "JetWooBuilder Product Templates"
-msgstr "JetWooBuilder Produkt-Templates"
-
-#: includes/integrations/integration-kadence-woocommerce-elementor.php:28
-msgid "Kadence Elementor Single Product Templates"
-msgstr "Kadence Elementor Einzelprodukt-Templates"
-
-#: includes/integrations/integration-kadence-woocommerce-elementor.php:39
-msgid "Kadence Elementor Product Archive Templates"
-msgstr "Kadence Elementor Produktarchiv-Templates"
-
-#: includes/integrations/integration-kadence-woocommerce-elementor.php:47
-msgid "Kadence Elementor Checkout Templates"
-msgstr "Kadence Elementor Kassen-Templates"
-
-#: includes/integrations/integration-lazy-blocks.php:27
-msgid "Lazy Block Templates"
-msgstr "Lazy Block-Templates"
-
-#: includes/integrations/integration-loomisoft-content-blocks.php:27
-msgid "Loomisoft Reusable Content Blocks"
-msgstr "Loomisoft wiederverwendbare Inhaltsblöcke"
-
-#: includes/integrations/integration-master-popups.php:27
-msgid "Master Popup Templates"
-msgstr "Master Popup Templates"
-
-#: includes/integrations/integration-metabox-builder.php:27
-msgid "Meta Box Field Groups"
-msgstr "Meta Box Feld-Gruppen"
-
-#: includes/integrations/integration-metabox-posttypes.php:29
-msgid "Meta Box Post Type Registrations"
-msgstr "Meta Box Beitragstyp-Registrierungen"
-
-#: includes/integrations/integration-metabox-posttypes.php:41
-msgid "Meta Box Taxonomy Registrations"
-msgstr "Meta Box Taxonomie-Registrierungen"
-
-#: includes/integrations/integration-neve.php:27
-msgid "Neve Custom Layouts"
-msgstr "Neve Eigene Layouts"
-
-#: includes/integrations/integration-oceanwp.php:27
-msgid "OceanWP Library"
-msgstr "OceanWP Bibliothek"
-
-#: includes/integrations/integration-opal-widgets-elementor.php:27
-msgid "Opal Header Templates for Elementor"
-msgstr "Opal Header-Templates für Elementor"
-
-#: includes/integrations/integration-opal-widgets-elementor.php:35
-msgid "Opal Footer Templates for Elementor"
-msgstr "Opal Footer-Templates für Elementor"
-
-#: includes/integrations/integration-oxygen-builder.php:31
-msgid "Oxygen Builder Templates"
-msgstr "Oxygen Builder Templates"
-
-#: includes/integrations/integration-oxygen-builder.php:42
-msgid "Oxygen User Elements Library"
-msgstr "Oxygen Benutzer Elemente-Bibliothek"
-
-#: includes/integrations/integration-page-builder-framework.php:27
-msgid "Page Builder Framework Sections"
-msgstr "Page Builder Framework Abschnitte"
-
-#: includes/integrations/integration-pods.php:27
-msgid "Pods Templates"
-msgstr "Pods-Templates"
-
-#: includes/integrations/integration-popboxes.php:27
-msgid "PopBox Popup Templates"
-msgstr "PopBox Popup-Templates"
-
-#: includes/integrations/integration-popup-maker.php:27
-msgid "Popup Maker Templates"
-msgstr "Popup Maker Templates"
-
-#: includes/integrations/integration-reusable-content-blocks.php:27
-msgid "Reusable Content Blocks"
-msgstr "Wiederverwendbare Inhaltsblöcke"
-
-#: includes/integrations/integration-reusable-layouts-siteorigin.php:27
-msgid "Reusable Layouts for SiteOrigin"
-msgstr "Wiederverwendbare Layouts für SiteOrigin"
-
-#: includes/integrations/integration-reusable-templates.php:27
-msgid "Reusable Templates"
-msgstr "Wiederverwendbare Templates"
-
-#: includes/integrations/integration-simple-content-templates.php:27
-msgid "Simple Content Templates"
-msgstr "Einfache Inhalts-Templates"
-
-#: includes/integrations/integration-smart-footer-system.php:27
-msgid "Smart Footer Templates"
-msgstr "Smarte Footer-Templates"
-
-#: includes/integrations/integration-sqh-placeholder-block.php:27
-msgid "Placeholder Blocks by Square Happiness"
-msgstr "Platzhalter-Blocks von Square Happiness"
-
-#: includes/integrations/integration-stylepress-elementor.php:27
-msgid "StylePress Templates for Elementor"
-msgstr "StylePress-Templates für Elementor"
-
-#: includes/integrations/integration-stylepress-elementor.php:52
-#: includes/integrations/integration-stylepress-elementor.php:53
-msgid "Styles Overview"
-msgstr "Styles-Übersicht"
-
-#: includes/integrations/integration-suki.php:27
-msgid "Suki Custom Blocks"
-msgstr "Suki individuelle Blöcke"
-
-#: includes/integrations/integration-templementor.php:27
-msgid "Templementor Templates"
-msgstr "Templementor Elementor-Templates"
-
-#: includes/integrations/integration-text-blocks.php:27
-msgid "Text Blocks"
-msgstr "Text-Blöcke"
-
-#: includes/integrations/integration-themify-builder.php:27
-msgid "Themify Builder Layouts"
-msgstr "Themify Builder Layouts"
-
-#: includes/integrations/integration-themify-builder.php:35
-msgid "Themify Builder Layout Parts"
-msgstr "Themify Builder Layout-Bereiche"
-
-#: includes/integrations/integration-themify-popup.php:27
-msgid "Themify Popup Templates"
-msgstr "Themify Popup-Templates"
-
-#: includes/integrations/integration-thrive-lightboxes.php:27
-msgid "Thrive Lightbox Templates"
-msgstr "Thrive Lightbox-Templates"
-
-#: includes/integrations/integration-toolkit-elementor.php:27
-msgid "ToolKit for Elementor Templates"
-msgstr "ToolKit für Elementor Templates"
-
-#: includes/integrations/integration-visual-composer.php:33
-msgid "Visual Composer Global Templates"
-msgstr "Visual Composer Globale Templates"
-
-#: includes/integrations/integration-visual-composer.php:44
-msgid "Visual Composer Header Builder Templates"
-msgstr "Visual Composer Header-Builder Templates"
-
-#: includes/integrations/integration-visual-composer.php:53
-msgid "Visual Composer Footer Builder Templates"
-msgstr "Visual Composer Footer-Builder Templates"
-
-#: includes/integrations/integration-visual-composer.php:62
-msgid "Visual Composer Sidebar Builder Templates"
-msgstr "Visual Composer Sidebar-Builder Templates"
-
-#: includes/integrations/integration-widget-content-blocks.php:27
-msgid "Widget Content Blocks"
-msgstr "Widget-Inhaltsblöcke"
-
-#: includes/integrations/integration-woody-snippets.php:27
-msgid "Woody Snippets"
-msgstr "Woody Snippets"
-
-#: includes/integrations/integration-woody-snippets.php:95
-#: includes/integrations/integration-woody-snippets.php:102
-msgid "Snippet Categories"
-msgstr "Snippet-Kategorien"
-
-#: includes/integrations/integration-woostify.php:27
-msgid "Woostify Pro Header Footer Builder Templates"
-msgstr "Woostify Pro Header Footer Builder Templates"
-
-#: includes/integrations/integration-wpbakery.php:34
-msgid "WPBakery Page Builder Templates"
-msgstr "WPBakery Page Builder Templates"
-
-#: includes/integrations/integration-wpbakery.php:45
-msgid "WPBakery Grid Builder Templates"
-msgstr "WPBakery Raster-Templates"
-
-#: includes/integrations/integration-wpshowposts.php:27
-msgid "WP Show Posts Listings"
-msgstr "WP Show Posts Auflistungen"
-
-#: includes/integrations/integration-wpshowposts.php:66
-#: includes/integrations/integration-wpshowposts.php:73
-msgid "Listing Categories"
-msgstr "Kategorien für Auflistungen"
-
-#. translators: %s - Label name for default content type, "Template"
-#: includes/register-taxonomy.php:37
-#, php-format
-msgctxt "Taxonomy General Name"
-msgid "%s Categories"
-msgstr "%s-Kategorien"
-
-#. translators: %s - Label name for default content type, "Template"
-#: includes/register-taxonomy.php:42
-#, php-format
-msgctxt "Taxonomy Singular Name"
-msgid "%s Category"
-msgstr "%s Kategorie"
-
-#. translators: %s - Label name for default content type, "Template"
-#: includes/register-taxonomy.php:47
-#, php-format
-msgid "All %s Categories"
-msgstr "Alle %s-Kategorien"
-
-#. translators: %s - Label name for default content type, "Template"
-#: includes/register-taxonomy.php:52
-#, php-format
-msgid "Parent %s Category"
-msgstr "Übergeordnete %s-Kategorie"
-
-#. translators: %s - Label name for default content type, "Template"
-#: includes/register-taxonomy.php:57
-#, php-format
-msgid "Parent %s Category:"
-msgstr "Übergeordnete %s-Kategorie:"
-
-#. translators: %s - Label name for default content type, "Template"
-#: includes/register-taxonomy.php:62
-#, php-format
-msgid "New %s Category Name"
-msgstr "Neuer Name der %s-Kategorie"
-
-#. translators: %s - Label name for default content type, "Template"
-#: includes/register-taxonomy.php:67
-#, php-format
-msgid "Add New %s Category"
-msgstr "Neue %s-Kategorie hinzufügen"
-
-#. translators: %s - Label name for default content type, "Template"
-#: includes/register-taxonomy.php:72
-#, php-format
-msgid "Edit %s Category"
-msgstr "%s-Kategorie bearbeiten"
-
-#: includes/register-taxonomy.php:76
-#, php-format
-msgid "Update %s Category"
-msgstr "%s-Kategorie aktualisieren"
-
-#. translators: %s - Label name for default content type, "Template"
-#: includes/register-taxonomy.php:81
-#, php-format
-msgid "View %s Category"
-msgstr "%s-Kategorie anzeigen"
-
-#. translators: %s - Label name for default content type, "Template"
-#: includes/register-taxonomy.php:86
-#, php-format
-msgid "Separate %s Categories with commas"
-msgstr "%s-Kategorien mit Kommas trennen"
-
-#: includes/register-taxonomy.php:89
-msgid "Add or remove categories"
-msgstr "Kategorien hinzufügen oder entfernen"
-
-#: includes/register-taxonomy.php:90
-msgid "Choose from the most used"
-msgstr "Aus meistbenutzten wählen"
-
-#: includes/register-taxonomy.php:91
-msgid "Popular Categories"
-msgstr "Beliebte Kategorien"
-
-#. translators: %s - Label name for default content type, "Template"
-#: includes/register-taxonomy.php:94
-#, php-format
-msgid "Search %s Categories"
-msgstr "%s-Kategorien durchsuchen"
-
-#. translators: %s - Label name for default content type, "Template"
-#: includes/register-taxonomy.php:99
-#, php-format
-msgid "No %s Categories found."
-msgstr "Es wurden keine %s-Kategorien gefunden."
-
-#. translators: %s - Label name for default content type, "Template"
-#: includes/register-taxonomy.php:104
-#, php-format
-msgid "No %s Categories"
-msgstr "Keine %s-Kategorien"
-
-#: includes/register-taxonomy.php:124
-msgid "Template Categories for templates of Page Builders or similar libraries"
-msgstr ""
-"Template-Kategorien für Templates von Page Buildern oder ähnlichen "
-"Bibliotheken"
-
-#: includes/register-taxonomy.php:207
-msgctxt "Taxonomy term title"
-msgid "General"
-msgstr "Allgemein"
-
-#: includes/register-taxonomy.php:208
-msgctxt "Taxonomy term slug - only lowercase, a-z, 0-9, hyphens!"
-msgid "general"
-msgstr "allgemein"
-
-#: includes/register-taxonomy.php:209
-msgctxt "Taxonomy term description"
-msgid "General templates"
-msgstr "Allgemeine Templates"
-
-#: includes/register-taxonomy.php:212
-msgctxt "Taxonomy term title"
-msgid "Frontpage"
-msgstr "Startseite"
-
-#: includes/register-taxonomy.php:213
-msgctxt "Taxonomy term slug - only lowercase, a-z, 0-9, hyphens!"
-msgid "frontpage"
-msgstr "startseite"
-
-#: includes/register-taxonomy.php:214
-msgctxt "Taxonomy term description"
-msgid "Templates for the Frontpage/ Homepage"
-msgstr "Templates für die Startseite"
-
-#: includes/register-taxonomy.php:217
-msgctxt "Taxonomy term title"
-msgid "Pages"
-msgstr "Seiten"
-
-#: includes/register-taxonomy.php:218
-msgctxt "Taxonomy term slug - only lowercase, a-z, 0-9, hyphens!"
-msgid "pages"
-msgstr "seiten"
-
-#: includes/register-taxonomy.php:219
-msgctxt "Taxonomy term description"
-msgid "Templates for Pages"
-msgstr "Templates für Seiten"
-
-#: includes/register-taxonomy.php:222
-msgctxt "Taxonomy term title"
-msgid "Landing Pages"
-msgstr "Landingseiten"
-
-#: includes/register-taxonomy.php:223
-msgctxt "Taxonomy term slug - only lowercase, a-z, 0-9, hyphens!"
-msgid "landing-pages"
-msgstr "landingseiten"
-
-#: includes/register-taxonomy.php:224
-msgctxt "Taxonomy term description"
-msgid "Templates for Landing Pages"
-msgstr "Templates für Landingseiten"
-
-#: includes/register-taxonomy.php:227
-msgctxt "Taxonomy term title"
-msgid "Sections"
-msgstr "Inhaltsblöcke"
-
-#: includes/register-taxonomy.php:228
-msgctxt "Taxonomy term slug - only lowercase, a-z, 0-9, hyphens!"
-msgid "sections"
-msgstr "inhaltsbloecke"
-
-#: includes/register-taxonomy.php:229
-msgctxt "Taxonomy term description"
-msgid "Templates for Sections/ Content Blocks"
-msgstr "Templates für Inhaltsblöcke"
-
-#: includes/register-taxonomy.php:232
-msgctxt "Taxonomy term title"
-msgid "Hooks"
-msgstr "Hooks"
-
-#: includes/register-taxonomy.php:233
-msgctxt "Taxonomy term slug - only lowercase, a-z, 0-9, hyphens!"
-msgid "hooks"
-msgstr "hooks"
-
-#: includes/register-taxonomy.php:234
-msgctxt "Taxonomy term description"
-msgid "Templates for Action Hooks"
-msgstr "Templates für Action-Hooks"
-
-#: includes/register-taxonomy.php:237
-msgctxt "Taxonomy term title"
-msgid "Testing"
-msgstr "Testing"
-
-#: includes/register-taxonomy.php:238
-msgctxt "Taxonomy term slug - only lowercase, a-z, 0-9, hyphens!"
-msgid "testing"
-msgstr "testing"
-
-#: includes/register-taxonomy.php:239
-msgctxt "Taxonomy term description"
-msgid "Templates just for testing purposes"
-msgstr "Templates für Testzwecke"
-
-#: includes/register-taxonomy.php:248
-msgctxt "Taxonomy term title"
-msgid "Products"
-msgstr "Produkte"
-
-#: includes/register-taxonomy.php:249
-msgctxt "Taxonomy term slug - only lowercase, a-z, 0-9, hyphens!"
-msgid "products"
-msgstr "produkte"
-
-#: includes/register-taxonomy.php:250
-msgctxt "Taxonomy term description"
-msgid "Templates for WooCommerce products"
-msgstr "Templates für WooCommerce-Produkte"
-
-#: includes/register-taxonomy.php:261
-msgctxt "Taxonomy term title"
-msgid "Popups"
-msgstr "Popups"
-
-#: includes/register-taxonomy.php:262
-msgctxt "Taxonomy term slug - only lowercase, a-z, 0-9, hyphens!"
-msgid "popups"
-msgstr "popups"
-
-#: includes/register-taxonomy.php:263
-msgctxt "Taxonomy term description"
-msgid "Templates for Popups/ Modal Windows"
-msgstr "Templates für Popups"
-
-#: includes/register-taxonomy.php:272
-msgctxt "Taxonomy term title"
-msgid "Blocks"
-msgstr "Blöcke"
-
-#: includes/register-taxonomy.php:273
-msgctxt "Taxonomy term slug - only lowercase, a-z, 0-9, hyphens!"
-msgid "blocks"
-msgstr "bloecke"
-
-#: includes/register-taxonomy.php:274
-msgctxt "Taxonomy term description"
-msgid "Templates for Blocks"
-msgstr "Templates für Blöcke"
-
-#: includes/register-taxonomy.php:283
-msgctxt "Taxonomy term title"
-msgid "Fields"
-msgstr "Felder"
-
-#: includes/register-taxonomy.php:284
-msgctxt "Taxonomy term slug - only lowercase, a-z, 0-9, hyphens!"
-msgid "fields"
-msgstr "felder"
-
-#: includes/register-taxonomy.php:285
-msgctxt "Taxonomy term description"
-msgid "Templates for Fields"
-msgstr "Templates für Felder"
-
-#: includes/register-taxonomy.php:294
-msgctxt "Taxonomy term title"
-msgid "Boxes"
-msgstr "Boxen"
-
-#: includes/register-taxonomy.php:295
-msgctxt "Taxonomy term slug - only lowercase, a-z, 0-9, hyphens!"
-msgid "boxes"
-msgstr "boxen"
-
-#: includes/register-taxonomy.php:296
-msgctxt "Taxonomy term description"
-msgid "Templates for Boxes"
-msgstr "Templates für Boxen"
-
-#: includes/register-taxonomy.php:305
-msgctxt "Taxonomy term title"
-msgid "Bars"
-msgstr "Leisten"
-
-#: includes/register-taxonomy.php:306
-msgctxt "Taxonomy term slug - only lowercase, a-z, 0-9, hyphens!"
-msgid "bars"
-msgstr "leisten"
-
-#: includes/register-taxonomy.php:307
-msgctxt "Taxonomy term description"
-msgid "Templates for Bars"
-msgstr "Templates für Leisten"
-
-#: includes/register-taxonomy.php:316
-msgctxt "Taxonomy term title"
-msgid "Flows"
-msgstr "Abläufe"
-
-#: includes/register-taxonomy.php:317
-msgctxt "Taxonomy term slug - only lowercase, a-z, 0-9, hyphens!"
-msgid "flows"
-msgstr "ablaeufe"
-
-#: includes/register-taxonomy.php:318
-msgctxt "Taxonomy term description"
-msgid "Templates for Flows"
-msgstr "Templates für Abläufe"
-
-#: includes/register-taxonomy.php:327
-msgctxt "Taxonomy term title"
-msgid "Snippets"
-msgstr "Snippets"
-
-#: includes/register-taxonomy.php:328
-msgctxt "Taxonomy term slug - only lowercase, a-z, 0-9, hyphens!"
-msgid "snippets"
-msgstr "snippets"
-
-#: includes/register-taxonomy.php:329
-msgctxt "Taxonomy term description"
-msgid "Templates for Snippets"
-msgstr "Templates für Snippets"
-
-#: includes/register-taxonomy.php:338
-msgctxt "Taxonomy term title"
-msgid "Forms"
-msgstr "Formulare"
-
-#: includes/register-taxonomy.php:339
-msgctxt "Taxonomy term slug - only lowercase, a-z, 0-9, hyphens!"
-msgid "forms"
-msgstr "formulare"
-
-#: includes/register-taxonomy.php:340
-msgctxt "Taxonomy term description"
-msgid "Templates for Forms"
-msgstr "Templates für Formulare"
-
-#: includes/register-taxonomy.php:349
-msgctxt "Taxonomy term title"
-msgid "URLs"
-msgstr "URLs"
-
-#: includes/register-taxonomy.php:350
-msgctxt "Taxonomy term slug - only lowercase, a-z, 0-9, hyphens!"
-msgid "urls"
-msgstr "urls"
-
-#: includes/register-taxonomy.php:351
-msgctxt "Taxonomy term description"
-msgid "Templates for URLs"
-msgstr "Templates für URLs"
-
-#: includes/register-taxonomy.php:360
-msgctxt "Taxonomy term title"
-msgid "Redirects"
-msgstr "Weiterleitungen"
-
-#: includes/register-taxonomy.php:361
-msgctxt "Taxonomy term slug - only lowercase, a-z, 0-9, hyphens!"
-msgid "redirects"
-msgstr "weiterleitungen"
-
-#: includes/register-taxonomy.php:362
-msgctxt "Taxonomy term description"
-msgid "Templates for Redirects"
-msgstr "Templates für Weiterleitungen"
-
-#: includes/run-integrations.php:99
-msgctxt "Tweaked label for \"Edit\" bulk action"
-msgid "Edit, add Category etc."
-msgstr "Bearbeiten, Kategorie(n) hinzufügen, etc."
-
-#. translators: %s - Category label based on content type, for example: All Template Categories, All Block Categories etc.
-#: includes/run-integrations.php:143
-#, php-format
-msgid "All %s"
-msgstr "Alle %s"
-
-#: includes/string-switcher.php:30 includes/string-switcher.php:156
-msgid "Template"
-msgstr "Template"
-
-#: includes/string-switcher.php:60
-msgid "Library"
-msgstr "Bibliothek"
-
-#: includes/string-switcher.php:64
-msgid "Layout"
-msgstr "Layout"
-
-#: includes/string-switcher.php:68
-msgid "Element"
-msgstr "Element"
-
-#: includes/string-switcher.php:72
-msgid "Block"
-msgstr "Block"
-
-#: includes/string-switcher.php:76
-msgid "Pattern"
-msgstr "Vorlage"
-
-#: includes/string-switcher.php:80
-msgid "Popup"
-msgstr "Popup"
-
-#: includes/string-switcher.php:84
-msgid "Lightbox"
-msgstr "Lightbox"
-
-#: includes/string-switcher.php:88
-msgid "Listing"
-msgstr "Liste"
-
-#: includes/string-switcher.php:96
-msgid "Field"
-msgstr "Feld"
-
-#: includes/string-switcher.php:100
-msgid "Box"
-msgstr "Box"
-
-#: includes/string-switcher.php:104
-msgid "Bar"
-msgstr "Leiste"
-
-#: includes/string-switcher.php:108
-msgid "Hook"
-msgstr "Hook"
-
-#: includes/string-switcher.php:112
-msgid "Filter"
-msgstr "Filter"
-
-#: includes/string-switcher.php:116
-msgid "Section"
-msgstr "Abschnitt"
-
-#: includes/string-switcher.php:120
-msgid "Flow"
-msgstr "Ablauf"
-
-#: includes/string-switcher.php:124
-msgid "Snippet"
-msgstr "Snippet"
-
-#: includes/string-switcher.php:128
-msgid "Sidebar"
-msgstr "Seitenleiste"
-
-#: includes/string-switcher.php:132
-msgid "Area"
-msgstr "Bereich"
-
-#: includes/string-switcher.php:136
-msgid "Form"
-msgstr "Formular"
-
-#: includes/string-switcher.php:140
-msgid "Script"
-msgstr "Skript"
-
-#: includes/string-switcher.php:144
-msgid "URL"
-msgstr "URL"
-
-#: includes/string-switcher.php:148
-msgid "Redirect"
-msgstr "Weiterleitung"
-
-#: includes/string-switcher.php:152
-msgid "Font"
-msgstr "Schriftart"
-
-#: includes/string-switcher.php:178
-msgid "Categories"
-msgstr "Kategorien"
-
-#. translators: %s - label "Categories" (for example: Template Categories)
-#: includes/string-switcher.php:211 includes/string-switcher.php:419
-#, php-format
-msgid "Template %s"
-msgstr "Template-%s"
-
-#. translators: %s - label "Categories" (for example: Library Categories)
-#: includes/string-switcher.php:219
-#, php-format
-msgid "Library %s"
-msgstr "Bibliothek-%s"
-
-#. translators: %s - label "Categories" (for example: Layout Categories)
-#: includes/string-switcher.php:227
-#, php-format
-msgid "Layout %s"
-msgstr "Layout-%s"
-
-#. translators: %s - label "Categories" (for example: Element Categories)
-#: includes/string-switcher.php:235
-#, php-format
-msgid "Element %s"
-msgstr "Element-%s"
-
-#. translators: %s - label "Categories" (for example: Block Categories)
-#: includes/string-switcher.php:243
-#, php-format
-msgid "Block %s"
-msgstr "Block-%s"
-
-#. translators: %s - label "Categories" (for example: Block Categories)
-#: includes/string-switcher.php:251
-#, php-format
-msgid "Pattern %s"
-msgstr "Vorlagen-%s"
-
-#. translators: %s - label "Categories" (for example: Popup Categories)
-#: includes/string-switcher.php:259
-#, php-format
-msgid "Popup %s"
-msgstr "Popup-%s"
-
-#. translators: %s - label "Categories" (for example: Lightbox Categories)
-#: includes/string-switcher.php:267
-#, php-format
-msgid "Lightbox %s"
-msgstr "Lightbox-%s"
-
-#. translators: %s - label "Categories" (for example: Listing Categories)
-#: includes/string-switcher.php:275
-#, php-format
-msgid "Listing %s"
-msgstr "Listen-%s"
-
-#. translators: %s - label "Categories" (for example: ELHF Categories - "EL HF" stands for Elementor Header Footer Builder plugin)
-#: includes/string-switcher.php:283
-#, php-format
-msgid "EL HF %s"
-msgstr "EL HF %s"
-
-#. translators: %s - label "Categories" (for example: Post Type Categories)
-#: includes/string-switcher.php:291
-#, php-format
-msgid "Post Type %s"
-msgstr "Beitragstyp-%s"
-
-#. translators: %s - label "Categories" (for example: Field Categories)
-#: includes/string-switcher.php:299
-#, php-format
-msgid "Field %s"
-msgstr "Feld-%s"
-
-#. translators: %s - label "Categories" (for example: Box Categories)
-#: includes/string-switcher.php:307
-#, php-format
-msgid "Box %s"
-msgstr "Boxen-%s"
-
-#. translators: %s - label "Categories" (for example: Bar Categories)
-#: includes/string-switcher.php:315
-#, php-format
-msgid "Bar %s"
-msgstr "Leisten-%s"
-
-#. translators: %s - label "Categories" (for example: Hook Categories)
-#: includes/string-switcher.php:323
-#, php-format
-msgid "Hook %s"
-msgstr "Hooks-%s"
-
-#. translators: %s - label "Categories" (for example: Filter Categories)
-#: includes/string-switcher.php:331
-#, php-format
-msgid "Filter %s"
-msgstr "Filter-%s"
-
-#. translators: %s - label "Categories" (for example: Section Categories)
-#: includes/string-switcher.php:339
-#, php-format
-msgid "Section %s"
-msgstr "Abschnitt-%s"
-
-#. translators: %s - label "Categories" (for example: Flow Categories)
-#: includes/string-switcher.php:347
-#, php-format
-msgid "Flow %s"
-msgstr "Ablauf-%s"
-
-#. translators: %s - label "Categories" (for example: Snippet Categories)
-#: includes/string-switcher.php:355
-#, php-format
-msgid "Snippet %s"
-msgstr "Snippet-%s"
-
-#. translators: %s - label "Categories" (for example: Sidebar Categories)
-#: includes/string-switcher.php:363
-#, php-format
-msgid "Sidebar %s"
-msgstr "Seitenleisten-%s"
-
-#. translators: %s - label "Categories" (for example: Area Categories)
-#: includes/string-switcher.php:371
-#, php-format
-msgid "Area %s"
-msgstr "Bereichs-%s"
-
-#. translators: %s - label "Categories" (for example: Form Categories)
-#: includes/string-switcher.php:379
-#, php-format
-msgid "Form %s"
-msgstr "Formular-%s"
-
-#. translators: %s - label "Categories" (for example: Script Categories)
-#: includes/string-switcher.php:387
-#, php-format
-msgid "Script %s"
-msgstr "Skript-%s"
-
-#. translators: %s - label "Categories" (for example: Script Categories)
-#: includes/string-switcher.php:395
-#, php-format
-msgid "URL %s"
-msgstr "URL-%s"
-
-#. translators: %s - label "Categories" (for example: Script Categories)
-#: includes/string-switcher.php:403
-#, php-format
-msgid "Redirect %s"
-msgstr "Weiterleitungs-%s"
-
-#. translators: %s - label "Categories" (for example: Script Categories)
-#: includes/string-switcher.php:411
-#, php-format
-msgid "Font %s"
-msgstr "Schriftarten-%s"
-
-#: includes/string-switcher.php:450
-msgid "for WooCommerce"
-msgstr "für WooCommerce Shops"
-
-#: includes/string-switcher.php:473
-msgid "for Post Types, Taxonomies, Fields"
-msgstr "für Inhaltstypen, Taxonomien, Felder"
-
-#: includes/string-switcher.php:490
-msgid "Add New"
-msgstr "Erstellen"
-
-#. Plugin URI of the plugin/theme
-msgid "https://github.com/deckerweb/builder-template-categories"
-msgstr "https://github.com/deckerweb/builder-template-categories"
-
-#. Description of the plugin/theme
-msgid ""
-"This plugin adds a Taxonomy \"Template Category\" for categorizing templates "
-"to make the life of site builders a little bit easier. It integrates with "
-"Elementor My Templates, OceanWP My Library, Astra Custom Layouts, "
-"GeneratePress Elements, Blox for Genesis, AnyWhere Elementor Global "
-"Templates and JetThemeCore My Library (Kava Pro/ CrocoBlock). These "
-"categories only appear in the WP-Admin Dashboard and only for the "
-"administrator user role (capability 'edit_theme_options')."
-msgstr ""
-"Dieses Plugin fügt eine Taxonomie \"Template-Kategorie\" für die "
-"Kategorisierung von Templates hinzu, um das Leben von Website-Buildern ein "
-"wenig zu erleichtern. Es integriert sich mit Elementor My Templates, OceanWP "
-"My Library, Astra Custom Layouts, GeneratePress Elements, Blox für Genesis, "
-"AnyWhere Elementor Global Templates und JetThemeCore My Library (Kava Pro/ "
-"CrocoBlock). Diese Kategorien erscheinen nur im WP-Admin Dashboard und nur "
-"für die Administrator-Benutzerrolle (Berechtigung 'edit_theme_options')."
-
-#. Author URI of the plugin/theme
-msgid "https://deckerweb.de/"
-msgstr "https://deckerweb.de/"
-
-msgid ""
-"Feature development ended with version 1.9.0. Only security updates may "
-"follow if needed, no later than December 31, 2027."
-msgstr ""
-"Die Entwicklung wurde mit Version 1.9.0 eingestellt. Falls nötig, folgen nur "
-"Sicherheitsupdates, längstens bis 31.12.2027."
-
-msgid ""
-"Create categories in your template library submenu. Assign them to templates "
-"or patterns and use the list-table dropdown to filter items."
-msgstr ""
-"Legen Sie Kategorien im Untermenü der Vorlagenbibliothek an. Weisen Sie sie "
-"Vorlagen zu und filtern Sie die Einträge über das Dropdown in der Übersicht."
-
-msgid "Documentation"
-msgstr "Dokumentation"
-
-msgid "Sorry, you are not allowed to access template categories."
-msgstr "Sie dürfen nicht auf Vorlagen-Kategorien zugreifen."
-
-msgid ""
-"Organize WordPress patterns and the template libraries of supported builders "
-"and themes with shared categories."
-msgstr ""
-"Organisiere WordPress-Vorlagen und die Bibliotheken unterstützter Builder "
-"und Themes mit gemeinsamen Kategorien."
-
-msgid "Builder %s"
-msgstr "Builder-%s"
-
-msgid ""
-"Categories provided by Builder Template Categories. Independent of WordPress "
-"pattern categories."
-msgstr ""
-"Kategorien von Builder Template Categories. Unabhängig von den WordPress-"
-"Vorlagen-Kategorien."
-
-msgid "Available on this website"
-msgstr "Auf dieser Website verfügbar"
-
-msgid "Technical details: post types"
-msgstr "Technische Details: Beitragstypen"
-
-msgid "No supported template libraries are currently available."
-msgstr "Derzeit sind keine unterstützten Vorlagenbibliotheken verfügbar."
-
-msgid ""
-"Builder Categories organize these template libraries on this website. The "
-"listed libraries share the same set of categories."
-msgstr ""
-"Builder-Kategorien organisieren diese Vorlagenbibliotheken auf dieser "
-"Website. Die aufgeführten Bibliotheken verwenden denselben Kategorienbestand."
 
 msgid "%s is installed but inactive. Activate it first."
 msgstr "%s ist installiert, aber inaktiv. Bitte zuerst aktivieren."
@@ -1433,8 +53,39 @@ msgstr "Aktiv"
 msgid "Active filters: "
 msgstr "Aktive Filter: "
 
+msgid "Add New"
+msgstr "Erstellen"
+
+msgid "Add New %s Category"
+msgstr "Neue %s-Kategorie hinzufügen"
+
+msgid "Add or remove categories"
+msgstr "Kategorien hinzufügen oder entfernen"
+
 msgid "Admin"
 msgstr "Administration"
+
+msgctxt "Admin menu label"
+msgid "Add New"
+msgstr "Hinzufügen"
+
+msgctxt "Admin menu label"
+msgid "Blocks"
+msgstr "Blöcke"
+
+msgctxt "Admin page title"
+msgid "Add New Reusable Block"
+msgstr "Neuen wiederverwendbaren Block hinzufügen"
+
+msgctxt "Admin page title"
+msgid "Reusable Blocks"
+msgstr "Wiederverwendbare Blöcke"
+
+msgid "Advanced Custom Blocks"
+msgstr "Erweiterte benutzerdefinierte Blöcke (ACB)"
+
+msgid "Advanced Custom Fields Field Groups"
+msgstr "Erweiterte benutzerdefinierte Felder (ACF) Feld-Gruppen"
 
 msgid "Affected features remain paused until their requirements are met."
 msgstr ""
@@ -1442,6 +93,12 @@ msgstr ""
 
 msgid "All"
 msgstr "Alle"
+
+msgid "All %s"
+msgstr "Alle %s"
+
+msgid "All %s Categories"
+msgstr "Alle %s-Kategorien"
 
 msgid "Already active"
 msgstr "Bereits aktiv"
@@ -1466,6 +123,9 @@ msgstr ""
 "Ein anderer Updater bietet einen abweichenden Release an. Bitte die "
 "Updateinformationen vor dem Fortfahren aktualisieren."
 
+msgid "AnyWhere Elementor Global Templates"
+msgstr "AnyWhere Elementor Globale Templates"
+
 msgid "Apr"
 msgstr "Apr"
 
@@ -1478,8 +138,17 @@ msgstr "Das Archiv enthält zu viele Dateien."
 msgid "Archive symlinks are not permitted."
 msgstr "Symbolische Verknüpfungen sind im Archiv nicht erlaubt."
 
+msgid "Area"
+msgstr "Bereich"
+
+msgid "Area %s"
+msgstr "Bereichs-%s"
+
 msgid "As of "
 msgstr "Stand: "
+
+msgid "Astra Custom Layouts"
+msgstr "Astra Eigene Layouts"
 
 msgid "Aug"
 msgstr "Aug"
@@ -1487,14 +156,100 @@ msgstr "Aug"
 msgid "August"
 msgstr "August"
 
+msgid "Avada Fusion Builder Elements"
+msgstr "Avada Fusion Builder Elemente"
+
+msgid "Avada Fusion Builder Templates"
+msgstr "Avada Fusion Builder Templates"
+
+msgid "Available on this website"
+msgstr "Auf dieser Website verfügbar"
+
 msgid "Back to deckerweb"
 msgstr "Zurück zu deckerweb"
+
+msgid "Bar"
+msgstr "Leiste"
+
+msgid "Bar %s"
+msgstr "Leisten-%s"
+
+msgid "Beaver Builder Templates"
+msgstr "Beaver Builder Templates"
+
+msgid "Beaver Themer Templates"
+msgstr "Beaver Themer Templates"
+
+msgid "Block"
+msgstr "Block"
+
+msgid "Block %s"
+msgstr "Block-%s"
+
+msgid "Block Areas"
+msgstr "Block-Bereiche"
+
+msgid "Block Editor Reusable Blocks"
+msgstr "Block-Editor wiederverwendbare Blöcke"
+
+msgid "Block Lab Blocks"
+msgstr "Block-Lab-Blöcke"
+
+msgid "Block Layouts"
+msgstr "Block-Layouts"
+
+msgid "Blox Global Blocks (for Genesis)"
+msgstr "Blox Globale Blöcke (für Genesis)"
+
+msgid "BoldGrid Blocks"
+msgstr "BoldGrid-Blöcke"
+
+msgid "Box"
+msgstr "Box"
+
+msgid "Box %s"
+msgstr "Boxen-%s"
+
+msgid "Boxzilla Boxes"
+msgstr "Boxzilla Boxen"
+
+msgid "Bricks Templates"
+msgstr "Bricks Templates"
+
+msgid "Brizy Templates"
+msgstr "Brizy Templates"
 
 msgid "Builder"
 msgstr "Builder"
 
+msgid "Builder %s"
+msgstr "Builder-%s"
+
+msgid ""
+"Builder Categories organize these template libraries on this website. The "
+"listed libraries share the same set of categories."
+msgstr ""
+"Builder-Kategorien organisieren diese Vorlagenbibliotheken auf dieser "
+"Website. Die aufgeführten Bibliotheken verwenden denselben Kategorienbestand."
+
+msgid "Builder Template Categories"
+msgstr "Builder Template-Kategorien"
+
+msgid ""
+"Builder Template Categories requires a newer shared deckerweb Updater. "
+"Please update the other deckerweb plugins."
+msgstr ""
+"Builder Template Categories benötigt einen neueren gemeinsamen deckerweb "
+"Updater. Bitte aktualisieren Sie die anderen deckerweb Plugins."
+
+msgid "Bulk Actions"
+msgstr "Mehrfachaktionen"
+
 msgid "Bundled catalog"
 msgstr "Mitgelieferter Katalog"
+
+msgid "CMB2 Meta Boxes"
+msgstr "CMB2 Meta-Boxen"
 
 msgid "Cached or bundled catalog"
 msgstr "Gespeicherter oder mitgelieferter Katalog"
@@ -1514,11 +269,24 @@ msgstr "Archiv konnte nicht aufbereitet werden."
 msgid "Cannot read archive entry."
 msgstr "Archiveintrag konnte nicht gelesen werden."
 
+msgid "CartFlows Checkout Flows"
+msgstr "CartFlows Checkout-Abläufe"
+
 msgid "Catalog URL"
 msgstr "Katalog-URL"
 
 msgid "Catalog refreshed."
 msgstr "Katalog aktualisiert."
+
+msgid "Categories"
+msgstr "Kategorien"
+
+msgid ""
+"Categories provided by Builder Template Categories. Independent of WordPress "
+"pattern categories."
+msgstr ""
+"Kategorien von Builder Template Categories. Unabhängig von den WordPress-"
+"Vorlagen-Kategorien."
 
 msgid "Changelog"
 msgstr "Änderungsverlauf"
@@ -1529,8 +297,17 @@ msgstr "Status prüfen"
 msgid "Checking status…"
 msgstr "Status wird geprüft…"
 
+msgid "Cherry PopUps Templates"
+msgstr "Cherry PopUps Templates"
+
+msgid "Choose from the most used"
+msgstr "Aus meistbenutzten wählen"
+
 msgid "Close"
 msgstr "Schließen"
+
+msgid "Code Snippets"
+msgstr "Code-Snippets"
 
 msgid "Commerce"
 msgstr "Commerce"
@@ -1538,14 +315,74 @@ msgstr "Commerce"
 msgid "Compatible additions only"
 msgstr "Nur passende Ergänzungen"
 
+msgid "Connect"
+msgstr "Vernetzen"
+
 msgid "Content"
 msgstr "Inhalte"
+
+msgid "Content Blocks"
+msgstr "Inhaltsblöcke"
+
+msgid "Content Type"
+msgstr "Inhaltstyp"
 
 msgid "Copied."
 msgstr "Kopiert."
 
 msgid "Copy diagnostic information"
 msgstr "Diagnoseinformationen kopieren"
+
+msgid "Could not access the update filesystem."
+msgstr "Auf das Dateisystem für das Update konnte nicht zugegriffen werden."
+
+msgid "Could not create the update download file."
+msgstr "Die Datei für den Update-Download konnte nicht erstellt werden."
+
+msgid "Could not prepare the GitHub release package."
+msgstr "Das GitHub-Release-Paket konnte nicht vorbereitet werden."
+
+msgid ""
+"Create categories in your template library submenu. Assign them to templates "
+"or patterns and use the list-table dropdown to filter items."
+msgstr ""
+"Legen Sie Kategorien im Untermenü der Vorlagenbibliothek an. Weisen Sie sie "
+"Vorlagen zu und filtern Sie die Einträge über das Dropdown in der Übersicht."
+
+msgid "Current active integrations"
+msgstr "Derzeit aktive Integrationen"
+
+msgid ""
+"Currently active integrations where the %s taxonomy is applied to better "
+"internally organize templates for various content types"
+msgstr ""
+"Derzeit aktive Integrationen, denen die Taxonomie %s zugewiesen wird. Damit "
+"lassen sich Templates für verschiedene Inhaltstypen intern besser "
+"organisieren"
+
+msgid "Custom Field Suite Field Groups"
+msgstr "Custom Field Suite Feld-Gruppen"
+
+msgid "Custom Page Templates"
+msgstr "Eigene Seiten-Templates"
+
+msgid "Custom Post Type Registrations"
+msgstr "Custom Post Type Registrierungen"
+
+msgid "Custom Taxonomy Registrations"
+msgstr "Custom Taxonomy Registrierungen"
+
+msgid "Customify Hooks"
+msgstr "Customify Hooks"
+
+msgid "Customize"
+msgstr "Anpassen"
+
+msgid "DHWC Elementor Product Templates"
+msgstr "DHWC Elementor Produkt-Templates"
+
+msgid "David Decker - DECKERWEB"
+msgstr "David Decker - DECKERWEB.de"
 
 msgid "Dec"
 msgstr "Dez"
@@ -1561,6 +398,12 @@ msgstr ""
 msgid "Details & requirements"
 msgstr "Details & Voraussetzungen"
 
+msgid "Dev Content Blocks"
+msgstr "Dev-Inhaltsblöcke"
+
+msgid "Disabled"
+msgstr "Deaktiviert"
+
 msgid "Discover more plugins by deckerweb"
 msgstr "Weitere Plugins von deckerweb entdecken"
 
@@ -1573,23 +416,84 @@ msgstr "Dauerhaft schließen"
 msgid "Dismiss this notice"
 msgstr "Diesen Hinweis ausblenden"
 
+msgid "Divi Builder Templates"
+msgstr "Divi Builder Templates"
+
+msgid "Documentation"
+msgstr "Dokumentation"
+
 msgid "Done. The plugin is active."
 msgstr "Erledigt. Das Plugin ist aktiv."
+
+msgid "EL HF %s"
+msgstr "EL HF %s"
+
+msgid "Easy Content Templates"
+msgstr "Einfache Inhalts-Templates"
+
+msgid "Edit %s Category"
+msgstr "%s-Kategorie bearbeiten"
+
+msgid "Edit, add Category etc."
+msgstr "Bearbeiten, Kategorie(n) hinzufügen, etc."
+
+msgid "Element"
+msgstr "Element"
+
+msgid "Element %s"
+msgstr "Element-%s"
+
+msgid "Elementor My Templates"
+msgstr "Elementor Meine Templates"
+
+msgid "Elements Kit Templates"
+msgstr "Elements Kit Templates"
+
+msgid "Elements Overview"
+msgstr "Elemente-Übersicht"
+
+msgid "Enabled"
+msgstr "Aktiviert"
 
 msgid "Enter a catalog URL first."
 msgstr "Bitte zuerst eine Katalog-URL eintragen."
 
+msgid "Epic News Elements - Archive Templates"
+msgstr "Epic News Elements - Archiv-Templates"
+
+msgid "Epic News Elements - Post Templates"
+msgstr "Epic News Elements - Beitrags-Templates"
+
 msgid "Expanded archive is too large."
 msgstr "Das entpackte Archiv ist zu groß."
 
+msgid "Extra Category Layout Templates"
+msgstr "Extra Kategorie-Layout Templates"
+
 msgid "F j, Y"
 msgstr "j. F Y"
+
+msgid "FAQ and documentation for the plugin"
+msgstr "FAQ (Häufige Fragen) und Dokumentation für das Plugin"
+
+msgid ""
+"Feature development ended with version 1.9.0. Only security updates may "
+"follow if needed, no later than December 31, 2027."
+msgstr ""
+"Die Entwicklung wurde mit Version 1.9.0 eingestellt. Falls nötig, folgen nur "
+"Sicherheitsupdates, längstens bis 31.12.2027."
 
 msgid "Feb"
 msgstr "Feb"
 
 msgid "February"
 msgstr "Februar"
+
+msgid "Field"
+msgstr "Feld"
+
+msgid "Field %s"
+msgstr "Feld-%s"
 
 msgid "Filesystem credentials are required."
 msgstr "Zugangsdaten für das Dateisystem werden benötigt."
@@ -1601,17 +505,57 @@ msgstr ""
 "Dateisystem-Zugangsdaten sind erforderlich. Bitte den Katalog mit "
 "aktiviertem JavaScript oder die WordPress-Pluginverwaltung verwenden."
 
+msgid "Filter"
+msgstr "Filter"
+
+msgid "Filter %s"
+msgstr "Filter-%s"
+
 msgid "Fits my installation"
 msgstr "Passt zu meiner Installation"
 
 msgid "Fixed"
 msgstr "Behoben"
 
+msgid "Flo Forms"
+msgstr "Flo Formulare"
+
+msgid "Flow"
+msgstr "Ablauf"
+
+msgid "Flow %s"
+msgstr "Ablauf-%s"
+
+msgid "Font"
+msgstr "Schriftart"
+
+msgid "Font %s"
+msgstr "Schriftarten-%s"
+
+msgctxt "For Builder Template Categories Plugin"
+msgid "Template Categories"
+msgstr "Template-Kategorien"
+
+msgid "Form"
+msgstr "Formular"
+
+msgid "Form %s"
+msgstr "Formular-%s"
+
 msgid "Fri"
 msgstr "Fr"
 
 msgid "Friday"
 msgstr "Freitag"
+
+msgid "GeneratePress Elements"
+msgstr "GeneratePress Elemente"
+
+msgid "Genesis Plugins"
+msgstr "Genesis Plugins"
+
+msgid "Genesis Plugins from the Plugin Directory"
+msgstr "Genesis Plugins aus dem Pluginverzeichnis"
 
 msgid ""
 "Git Updater is active. If a deckerweb installation or update fails, "
@@ -1628,8 +572,52 @@ msgstr ""
 msgid "GitHub Stars"
 msgstr "GitHub-Sterne"
 
+msgid "GitHub release does not contain the plugin main file."
+msgstr "Der GitHub-Release enthält nicht die Hauptdatei des Plugins."
+
+msgid "Give Donation Forms"
+msgstr "Give-Spendenformulare"
+
+msgid "Global Content Blocks for Cornerstone Page Builder"
+msgstr "Globale Blöcke für Cornerstone Page Builder"
+
+msgid "Gutenberg Block Templates"
+msgstr "Gutenberg Block-Templates"
+
+msgid "HT Script - Header &amp; Footer Scripts"
+msgstr "HT-Skript - Header- &amp; Footer-Skripte"
+
+msgid "HappyForms Forms"
+msgstr "HappyForms Formulare"
+
+msgid "HappyForms Upgrade"
+msgstr "HappyForms Upgrade"
+
+msgid "Header &amp; Footer Templates for Elementor"
+msgstr "Header &amp; Footer-Templates für Elementor"
+
+msgctxt "Help tab info"
+msgid "Donate"
+msgstr "Spenden"
+
+msgctxt "Help tab info"
+msgid "Join our Newsletter"
+msgstr "Newsletter jetzt!"
+
 msgid "Hide catalog"
 msgstr "Katalog ausblenden"
+
+msgid "Holler Box Boxes"
+msgstr "Holler Box Boxen"
+
+msgid "Hook"
+msgstr "Hook"
+
+msgid "Hook %s"
+msgstr "Hooks-%s"
+
+msgid "Important plugin links:"
+msgstr "Wichtige Plugin-Links:"
 
 msgid "Improved"
 msgstr "Verbessert"
@@ -1661,11 +649,17 @@ msgstr "Installiert: "
 msgid "Installing…"
 msgstr "Wird installiert…"
 
+msgid "Invalid GitHub repository URL."
+msgstr "Ungültige GitHub-Repository-URL."
+
 msgid "Invalid ZIP archive."
 msgstr "Ungültiges ZIP-Archiv."
 
 msgid "Invalid approval flag."
 msgstr "Ungültige Freigabeangabe."
+
+msgid "Invalid authentication provider."
+msgstr "Ungültiger Authentifizierungsanbieter."
 
 msgid "Invalid catalog field: "
 msgstr "Ungültiges Katalogfeld: "
@@ -1730,6 +724,24 @@ msgstr "Jan"
 msgid "January"
 msgstr "Januar"
 
+msgid "JetEngine Forms"
+msgstr "JetEngine Formulare"
+
+msgid "JetEngine Listing Templates"
+msgstr "JetEngine Auflistungen-Templates"
+
+msgid "JetPopup Templates"
+msgstr "JetPopup Templates"
+
+msgid "JetSmartFilters Filter Templates"
+msgstr "JetSmartFilters Filter-Templates"
+
+msgid "JetThemeCore My Library"
+msgstr "JetThemeCore Meine Bibliothek"
+
+msgid "JetWooBuilder Product Templates"
+msgstr "JetWooBuilder Produkt-Templates"
+
 msgid "Jul"
 msgstr "Jul"
 
@@ -1742,8 +754,35 @@ msgstr "Jun"
 msgid "June"
 msgstr "Juni"
 
+msgid "Kadence Elementor Checkout Templates"
+msgstr "Kadence Elementor Kassen-Templates"
+
+msgid "Kadence Elementor Product Archive Templates"
+msgstr "Kadence Elementor Produktarchiv-Templates"
+
+msgid "Kadence Elementor Single Product Templates"
+msgstr "Kadence Elementor Einzelprodukt-Templates"
+
 msgid "Last successful check: "
 msgstr "Zuletzt erfolgreich geprüft: "
+
+msgid "Layout"
+msgstr "Layout"
+
+msgid "Layout %s"
+msgstr "Layout-%s"
+
+msgid "Lazy Block Templates"
+msgstr "Lazy Block-Templates"
+
+msgid "LearnDash Custom Templates"
+msgstr "LearnDash eigene Templates"
+
+msgid "Library"
+msgstr "Bibliothek"
+
+msgid "Library %s"
+msgstr "Bibliothek-%s"
 
 msgid "Library changelog"
 msgstr "Library-Änderungsverlauf"
@@ -1754,11 +793,38 @@ msgstr "Library-Einstellungen"
 msgid "Library settings saved."
 msgstr "Library-Einstellungen gespeichert."
 
+msgid "LifterLMS Custom Templates"
+msgstr "LifterLMS eigene Templates"
+
+msgid "Light Sidebar Manager - Sidebars"
+msgstr "Sidebar Manager - Seitenleisten"
+
+msgid "Lightbox"
+msgstr "Lightbox"
+
+msgid "Lightbox %s"
+msgstr "Lightbox-%s"
+
+msgid "Listing"
+msgstr "Liste"
+
+msgid "Listing %s"
+msgstr "Listen-%s"
+
+msgid "Listing Categories"
+msgstr "Kategorien für Auflistungen"
+
+msgid "Loomisoft Reusable Content Blocks"
+msgstr "Loomisoft wiederverwendbare Inhaltsblöcke"
+
 msgid "Manage Content"
 msgstr "Inhalte verwalten"
 
 msgid "Manage installed plugins"
 msgstr "Installierte Plugins verwalten"
+
+msgid "Manage template categories for site builders"
+msgstr "Verwalten Sie Template-Kategorien für Website-Builder"
 
 msgid "Mar"
 msgstr "Mär"
@@ -1766,8 +832,20 @@ msgstr "Mär"
 msgid "March"
 msgstr "März"
 
+msgid "Master Popup Templates"
+msgstr "Master Popup Templates"
+
 msgid "May"
 msgstr "Mai"
+
+msgid "Meta Box Field Groups"
+msgstr "Meta Box Feld-Gruppen"
+
+msgid "Meta Box Post Type Registrations"
+msgstr "Meta Box Beitragstyp-Registrierungen"
+
+msgid "Meta Box Taxonomy Registrations"
+msgstr "Meta Box Taxonomie-Registrierungen"
 
 msgid "Misc"
 msgstr "Sonstiges"
@@ -1805,11 +883,32 @@ msgstr "Netzwerkweit aktiv"
 msgid "Network permission denied."
 msgstr "Keine Berechtigung für das Netzwerk."
 
+msgid "Neve Custom Layouts"
+msgstr "Neve Eigene Layouts"
+
 msgid "New"
 msgstr "Neu"
 
+msgid "New %s Category Name"
+msgstr "Neuer Name der %s-Kategorie"
+
+msgid "No %s Categories"
+msgstr "Keine %s-Kategorien"
+
+msgid "No %s Categories found."
+msgstr "Es wurden keine %s-Kategorien gefunden."
+
+msgid "No Integration registered"
+msgstr "Keine Integration registriert"
+
 msgid "No approved plugins match this selection."
 msgstr "Keine freigegebenen Plugins passen zu dieser Auswahl."
+
+msgid "No integration(s) active"
+msgstr "Keine Integration(en) aktiv"
+
+msgid "No supported template libraries are currently available."
+msgstr "Derzeit sind keine unterstützten Vorlagenbibliotheken verfügbar."
 
 msgid "Not installed. You can try again."
 msgstr "Nicht installiert. Ein erneuter Versuch ist möglich."
@@ -1819,6 +918,9 @@ msgstr "Nov"
 
 msgid "November"
 msgstr "November"
+
+msgid "OceanWP Library"
+msgstr "OceanWP Bibliothek"
 
 msgid "Oct"
 msgstr "Okt"
@@ -1852,6 +954,12 @@ msgstr ""
 msgid "Only approved releases"
 msgstr "Nur freigegebene Releases"
 
+msgid "Opal Footer Templates for Elementor"
+msgstr "Opal Footer-Templates für Elementor"
+
+msgid "Opal Header Templates for Elementor"
+msgstr "Opal Header-Templates für Elementor"
+
 msgid "Open catalog"
 msgstr "Katalog öffnen"
 
@@ -1863,11 +971,39 @@ msgstr ""
 "werden 24 Stunden zwischengespeichert. Keine Website-URL, Plugin-Liste oder "
 "Nutzungsdaten werden übertragen."
 
+msgid ""
+"Organize WordPress patterns and the template libraries of supported builders "
+"and themes with shared categories."
+msgstr ""
+"Organisiere WordPress-Vorlagen und die Bibliotheken unterstützter Builder "
+"und Themes mit gemeinsamen Kategorien."
+
+msgid "Oxygen Builder Templates"
+msgstr "Oxygen Builder Templates"
+
+msgid "Oxygen User Elements Library"
+msgstr "Oxygen Benutzer Elemente-Bibliothek"
+
 msgid "PHP ZIP support is required."
 msgstr "PHP-ZIP-Unterstützung wird benötigt."
 
 msgid "POST required."
 msgstr "Eine POST-Anfrage ist erforderlich."
+
+msgid "Page Builder Framework Sections"
+msgstr "Page Builder Framework Abschnitte"
+
+msgid "Parent %s Category"
+msgstr "Übergeordnete %s-Kategorie"
+
+msgid "Parent %s Category:"
+msgstr "Übergeordnete %s-Kategorie:"
+
+msgid "Pattern"
+msgstr "Vorlage"
+
+msgid "Pattern %s"
+msgstr "Vorlagen-%s"
 
 msgid "Permission denied."
 msgstr "Keine Berechtigung."
@@ -1877,8 +1013,14 @@ msgstr ""
 "Zugriff verweigert. Laden Sie die Seite neu und prüfen Sie Ihre "
 "Berechtigungen."
 
+msgid "Placeholder Blocks by Square Happiness"
+msgstr "Platzhalter-Blocks von Square Happiness"
+
 msgid "Planned: "
 msgstr "Geplant: "
+
+msgid "Plugin"
+msgstr "Plugin"
 
 msgid "Plugin identity or version does not match the catalog."
 msgstr "Plugin oder Version stimmt nicht mit dem Katalog überein."
@@ -1889,11 +1031,69 @@ msgstr "Das Plugin ist nicht installiert."
 msgid "Plugin series"
 msgstr "Plugin-Serien"
 
+msgid "Plugin version"
+msgstr "Plugin-Version"
+
+msgid "Plugin website"
+msgstr "Plugin-Webseite"
+
+msgctxt "Plugins page listing"
+msgid "Code Snippets"
+msgstr "Code-Snippets"
+
+msgctxt "Plugins page listing"
+msgid "Donate"
+msgstr "Spenden"
+
+msgctxt "Plugins page listing"
+msgid "Join our Newsletter"
+msgstr "Newsletter jetzt!"
+
+msgid "Pods Templates"
+msgstr "Pods-Templates"
+
+msgid "PopBox Popup Templates"
+msgstr "PopBox Popup-Templates"
+
+msgid "Popular Categories"
+msgstr "Beliebte Kategorien"
+
+msgid "Popup"
+msgstr "Popup"
+
+msgid "Popup %s"
+msgstr "Popup-%s"
+
+msgid "Popup Maker Templates"
+msgstr "Popup Maker Templates"
+
+msgid "Post Type"
+msgstr "Beitragstyp"
+
+msgid "Post Type %s"
+msgstr "Beitragstyp-%s"
+
+msgid "Private mode must be boolean."
+msgstr "Der Private-Modus muss ein boolescher Wert sein."
+
 msgid "Product website"
 msgstr "Produktwebsite"
 
+msgid ""
+"Public catalog callbacks require both providers and cannot be used in "
+"private mode."
+msgstr ""
+"Öffentliche Katalog-Callbacks benötigen beide Anbieter und können nicht im "
+"Private-Modus verwendet werden."
+
 msgid "Recently updated"
 msgstr "Zuletzt aktualisiert"
+
+msgid "Redirect"
+msgstr "Weiterleitung"
+
+msgid "Redirect %s"
+msgstr "Weiterleitungs-%s"
 
 msgid "Refresh catalog"
 msgstr "Katalog aktualisieren"
@@ -1948,6 +1148,18 @@ msgstr "Ansicht zurücksetzen"
 msgid "Retrieve approved catalog updates online"
 msgstr "Katalogfreigaben online aktualisieren"
 
+msgid "Reusable Blocks Post Type UI"
+msgstr "Wiederverwendbare Blöcke Inhaltstyp-Interface"
+
+msgid "Reusable Content Blocks"
+msgstr "Wiederverwendbare Inhaltsblöcke"
+
+msgid "Reusable Layouts for SiteOrigin"
+msgstr "Wiederverwendbare Layouts für SiteOrigin"
+
+msgid "Reusable Templates"
+msgstr "Wiederverwendbare Templates"
+
 msgid "Sat"
 msgstr "Sa"
 
@@ -1957,11 +1169,29 @@ msgstr "Samstag"
 msgid "Save settings"
 msgstr "Einstellungen speichern"
 
+msgid "Script"
+msgstr "Skript"
+
+msgid "Script %s"
+msgstr "Skript-%s"
+
 msgid "Scripts"
 msgstr "Scripte"
 
+msgid "Search %s Categories"
+msgstr "%s-Kategorien durchsuchen"
+
 msgid "Search this catalog"
 msgstr "Diesen Katalog durchsuchen"
+
+msgid "Section"
+msgstr "Abschnitt"
+
+msgid "Section %s"
+msgstr "Abschnitt-%s"
+
+msgid "See the release on GitHub."
+msgstr "Sehen Sie sich den Release auf GitHub an."
 
 msgid "Select and copy the text."
 msgstr "Text markieren und kopieren."
@@ -1971,6 +1201,9 @@ msgstr "Von deckerweb ausgewählt · Installation aus GitHub-Releases"
 
 msgid "Sep"
 msgstr "Sep"
+
+msgid "Separate %s Categories with commas"
+msgstr "%s-Kategorien mit Kommas trennen"
 
 msgid "September"
 msgstr "September"
@@ -1996,8 +1229,32 @@ msgstr ""
 msgid "Shuffle again"
 msgstr "Neu mischen"
 
+msgid "Sidebar"
+msgstr "Seitenleiste"
+
+msgid "Sidebar %s"
+msgstr "Seitenleisten-%s"
+
+msgid "Simple Content Templates"
+msgstr "Einfache Inhalts-Templates"
+
 msgid "Small plugins. Practical improvements."
 msgstr "Kleine Plugins. Konkrete Verbesserungen."
+
+msgid "Smart Footer Templates"
+msgstr "Smarte Footer-Templates"
+
+msgid "Snippet"
+msgstr "Snippet"
+
+msgid "Snippet %s"
+msgstr "Snippet-%s"
+
+msgid "Snippet Categories"
+msgstr "Snippet-Kategorien"
+
+msgid "Sorry, you are not allowed to access template categories."
+msgstr "Sie dürfen nicht auf Vorlagen-Kategorien zugreifen."
 
 msgid "Sort by"
 msgstr "Sortieren nach"
@@ -2008,14 +1265,270 @@ msgstr "Quelle: GitHub"
 msgid "Standard"
 msgstr "Standard"
 
+msgid "StylePress Templates for Elementor"
+msgstr "StylePress-Templates für Elementor"
+
+msgid "Styles Overview"
+msgstr "Styles-Übersicht"
+
+msgid "Suki Custom Blocks"
+msgstr "Suki individuelle Blöcke"
+
 msgid "Sun"
 msgstr "So"
 
 msgid "Sunday"
 msgstr "Sonntag"
 
+msgctxt "Taxonomy General Name"
+msgid "%s Categories"
+msgstr "%s-Kategorien"
+
+msgctxt "Taxonomy Singular Name"
+msgid "%s Category"
+msgstr "%s Kategorie"
+
+msgctxt "Taxonomy term description"
+msgid "General templates"
+msgstr "Allgemeine Templates"
+
+msgctxt "Taxonomy term description"
+msgid "Templates for Action Hooks"
+msgstr "Templates für Action-Hooks"
+
+msgctxt "Taxonomy term description"
+msgid "Templates for Bars"
+msgstr "Templates für Leisten"
+
+msgctxt "Taxonomy term description"
+msgid "Templates for Blocks"
+msgstr "Templates für Blöcke"
+
+msgctxt "Taxonomy term description"
+msgid "Templates for Boxes"
+msgstr "Templates für Boxen"
+
+msgctxt "Taxonomy term description"
+msgid "Templates for Fields"
+msgstr "Templates für Felder"
+
+msgctxt "Taxonomy term description"
+msgid "Templates for Flows"
+msgstr "Templates für Abläufe"
+
+msgctxt "Taxonomy term description"
+msgid "Templates for Forms"
+msgstr "Templates für Formulare"
+
+msgctxt "Taxonomy term description"
+msgid "Templates for Landing Pages"
+msgstr "Templates für Landingseiten"
+
+msgctxt "Taxonomy term description"
+msgid "Templates for Pages"
+msgstr "Templates für Seiten"
+
+msgctxt "Taxonomy term description"
+msgid "Templates for Popups/ Modal Windows"
+msgstr "Templates für Popups"
+
+msgctxt "Taxonomy term description"
+msgid "Templates for Redirects"
+msgstr "Templates für Weiterleitungen"
+
+msgctxt "Taxonomy term description"
+msgid "Templates for Sections/ Content Blocks"
+msgstr "Templates für Inhaltsblöcke"
+
+msgctxt "Taxonomy term description"
+msgid "Templates for Snippets"
+msgstr "Templates für Snippets"
+
+msgctxt "Taxonomy term description"
+msgid "Templates for URLs"
+msgstr "Templates für URLs"
+
+msgctxt "Taxonomy term description"
+msgid "Templates for WooCommerce products"
+msgstr "Templates für WooCommerce-Produkte"
+
+msgctxt "Taxonomy term description"
+msgid "Templates for the Frontpage/ Homepage"
+msgstr "Templates für die Startseite"
+
+msgctxt "Taxonomy term description"
+msgid "Templates just for testing purposes"
+msgstr "Templates für Testzwecke"
+
+msgctxt "Taxonomy term slug - only lowercase, a-z, 0-9, hyphens!"
+msgid "bars"
+msgstr "leisten"
+
+msgctxt "Taxonomy term slug - only lowercase, a-z, 0-9, hyphens!"
+msgid "blocks"
+msgstr "bloecke"
+
+msgctxt "Taxonomy term slug - only lowercase, a-z, 0-9, hyphens!"
+msgid "boxes"
+msgstr "boxen"
+
+msgctxt "Taxonomy term slug - only lowercase, a-z, 0-9, hyphens!"
+msgid "fields"
+msgstr "felder"
+
+msgctxt "Taxonomy term slug - only lowercase, a-z, 0-9, hyphens!"
+msgid "flows"
+msgstr "ablaeufe"
+
+msgctxt "Taxonomy term slug - only lowercase, a-z, 0-9, hyphens!"
+msgid "forms"
+msgstr "formulare"
+
+msgctxt "Taxonomy term slug - only lowercase, a-z, 0-9, hyphens!"
+msgid "frontpage"
+msgstr "startseite"
+
+msgctxt "Taxonomy term slug - only lowercase, a-z, 0-9, hyphens!"
+msgid "general"
+msgstr "allgemein"
+
+msgctxt "Taxonomy term slug - only lowercase, a-z, 0-9, hyphens!"
+msgid "hooks"
+msgstr "hooks"
+
+msgctxt "Taxonomy term slug - only lowercase, a-z, 0-9, hyphens!"
+msgid "landing-pages"
+msgstr "landingseiten"
+
+msgctxt "Taxonomy term slug - only lowercase, a-z, 0-9, hyphens!"
+msgid "pages"
+msgstr "seiten"
+
+msgctxt "Taxonomy term slug - only lowercase, a-z, 0-9, hyphens!"
+msgid "popups"
+msgstr "popups"
+
+msgctxt "Taxonomy term slug - only lowercase, a-z, 0-9, hyphens!"
+msgid "products"
+msgstr "produkte"
+
+msgctxt "Taxonomy term slug - only lowercase, a-z, 0-9, hyphens!"
+msgid "redirects"
+msgstr "weiterleitungen"
+
+msgctxt "Taxonomy term slug - only lowercase, a-z, 0-9, hyphens!"
+msgid "sections"
+msgstr "inhaltsbloecke"
+
+msgctxt "Taxonomy term slug - only lowercase, a-z, 0-9, hyphens!"
+msgid "snippets"
+msgstr "snippets"
+
+msgctxt "Taxonomy term slug - only lowercase, a-z, 0-9, hyphens!"
+msgid "testing"
+msgstr "testing"
+
+msgctxt "Taxonomy term slug - only lowercase, a-z, 0-9, hyphens!"
+msgid "urls"
+msgstr "urls"
+
+msgctxt "Taxonomy term title"
+msgid "Bars"
+msgstr "Leisten"
+
+msgctxt "Taxonomy term title"
+msgid "Blocks"
+msgstr "Blöcke"
+
+msgctxt "Taxonomy term title"
+msgid "Boxes"
+msgstr "Boxen"
+
+msgctxt "Taxonomy term title"
+msgid "Fields"
+msgstr "Felder"
+
+msgctxt "Taxonomy term title"
+msgid "Flows"
+msgstr "Abläufe"
+
+msgctxt "Taxonomy term title"
+msgid "Forms"
+msgstr "Formulare"
+
+msgctxt "Taxonomy term title"
+msgid "Frontpage"
+msgstr "Startseite"
+
+msgctxt "Taxonomy term title"
+msgid "General"
+msgstr "Allgemein"
+
+msgctxt "Taxonomy term title"
+msgid "Hooks"
+msgstr "Hooks"
+
+msgctxt "Taxonomy term title"
+msgid "Landing Pages"
+msgstr "Landingseiten"
+
+msgctxt "Taxonomy term title"
+msgid "Pages"
+msgstr "Seiten"
+
+msgctxt "Taxonomy term title"
+msgid "Popups"
+msgstr "Popups"
+
+msgctxt "Taxonomy term title"
+msgid "Products"
+msgstr "Produkte"
+
+msgctxt "Taxonomy term title"
+msgid "Redirects"
+msgstr "Weiterleitungen"
+
+msgctxt "Taxonomy term title"
+msgid "Sections"
+msgstr "Inhaltsblöcke"
+
+msgctxt "Taxonomy term title"
+msgid "Snippets"
+msgstr "Snippets"
+
+msgctxt "Taxonomy term title"
+msgid "Testing"
+msgstr "Testing"
+
+msgctxt "Taxonomy term title"
+msgid "URLs"
+msgstr "URLs"
+
+msgid "Technical details: post types"
+msgstr "Technische Details: Beitragstypen"
+
 msgid "Technical information"
 msgstr "Technische Informationen"
+
+msgid "Template"
+msgstr "Template"
+
+msgid "Template %s"
+msgstr "Template-%s"
+
+msgid "Template Categories for templates of Page Builders or similar libraries"
+msgstr ""
+"Template-Kategorien für Templates von Page Buildern oder ähnlichen "
+"Bibliotheken"
+
+msgid "Templates Overview"
+msgstr "Templates-Übersicht"
+
+msgid "Templementor Templates"
+msgstr "Templementor Elementor-Templates"
+
+msgid "Text Blocks"
+msgstr "Text-Blöcke"
 
 msgid "The GitHub release could not be downloaded."
 msgstr "Das GitHub-Release konnte nicht heruntergeladen werden."
@@ -2048,6 +1561,13 @@ msgid "The catalog is hidden."
 msgstr "Der Katalog ist ausgeblendet."
 
 msgid ""
+"The category description can be used for internal notices for your team "
+"members for example."
+msgstr ""
+"Die Kategoriebeschreibung kann zum Beispiel auch für interne Notizen für "
+"Ihre Team-Mitglieder verwendet werden."
+
+msgid ""
 "The deckerweb catalog could not load. Check platform requirements and the "
 "complete Library integration in the host plugin."
 msgstr ""
@@ -2071,6 +1591,22 @@ msgstr ""
 msgid "The online catalog source is not trusted."
 msgstr "Die Online-Katalogquelle ist nicht vertrauenswürdig."
 
+msgid "The plugin must be installed in a stable slug directory."
+msgstr ""
+"Das Plugin muss in einem Verzeichnis mit einem festen Slug installiert sein."
+
+msgid ""
+"The private update could not be authorized. Check the repository credentials "
+"and refresh updates."
+msgstr ""
+"Das private Update konnte nicht autorisiert werden. Prüfen Sie die "
+"Repository-Zugangsdaten und suchen Sie erneut nach Updates."
+
+msgid "The private update download failed. Check credentials and try again."
+msgstr ""
+"Der Download des privaten Updates ist fehlgeschlagen. Prüfen Sie die "
+"Zugangsdaten und versuchen Sie es erneut."
+
 msgid "The release checksum does not match. Installation stopped."
 msgstr ""
 "Die Prüfsumme des Releases stimmt nicht überein. Installation gestoppt."
@@ -2086,9 +1622,44 @@ msgid "The requirements below describe the offered release."
 msgstr ""
 "Die folgenden Voraussetzungen beziehen sich auf den angebotenen Release."
 
+msgid ""
+"The template categories are global and are applied automatically to all "
+"current active integrations."
+msgstr ""
+"Die Template-Kategorien sind global und werden automatisch allen derzeit "
+"aktiven Integrationen zugewiesen."
+
 msgid "The update has not been confirmed. You can try again."
 msgstr ""
 "Die Aktualisierung wurde nicht bestätigt. Sie können es erneut versuchen."
+
+msgid ""
+"The update package could not be verified. The installed version has been "
+"preserved."
+msgstr ""
+"Das Update-Paket konnte nicht geprüft werden. Die installierte Version wurde "
+"beibehalten."
+
+msgid "Themify Builder Layout Parts"
+msgstr "Themify Builder Layout-Bereiche"
+
+msgid "Themify Builder Layouts"
+msgstr "Themify Builder Layouts"
+
+msgid "Themify Popup Templates"
+msgstr "Themify Popup-Templates"
+
+msgid ""
+"These Template Categories are globally available for Administrators within "
+"the Admin Dashboard and can be used to organize the template libraries for "
+"the following active Plugins and/or Themes"
+msgstr ""
+"Diese Template-Kategorien sind global verfügbar für Administratoren im Admin-"
+"Dashboard und können zum Organisieren der Template-Bibliotheken verwendet "
+"werden - für die folgenden Plugins und/ oder Themes"
+
+msgid "These allow for tweaks and customizations"
+msgstr "Diese erlauben Ihnen Tweaks und Anpassungen vorzunehmen"
 
 msgid ""
 "These details contain component versions and catalog status, without "
@@ -2099,6 +1670,23 @@ msgstr ""
 
 msgid "This catalog requires a newer Library."
 msgstr "Dieser Katalog benötigt eine neuere Library."
+
+msgid ""
+"This plugin adds a Taxonomy \"Template Category\" for categorizing templates "
+"to make the life of site builders a little bit easier. It integrates with "
+"Elementor My Templates, OceanWP My Library, Astra Custom Layouts, "
+"GeneratePress Elements, Blox for Genesis, AnyWhere Elementor Global "
+"Templates and JetThemeCore My Library (Kava Pro/ CrocoBlock). These "
+"categories only appear in the WP-Admin Dashboard and only for the "
+"administrator user role (capability 'edit_theme_options')."
+msgstr ""
+"Dieses Plugin fügt eine Taxonomie \"Template-Kategorie\" für die "
+"Kategorisierung von Templates hinzu, um das Leben von Website-Buildern ein "
+"wenig zu erleichtern. Es integriert sich mit Elementor My Templates, OceanWP "
+"My Library, Astra Custom Layouts, GeneratePress Elements, Blox für Genesis, "
+"AnyWhere Elementor Global Templates und JetThemeCore My Library (Kava Pro/ "
+"CrocoBlock). Diese Kategorien erscheinen nur im WP-Admin Dashboard und nur "
+"für die Administrator-Benutzerrolle (Berechtigung 'edit_theme_options')."
 
 msgid ""
 "This plugin directory already exists. Use the installed plugin; it will not "
@@ -2113,11 +1701,33 @@ msgstr "Dieses Release ist nicht mehr freigegeben."
 msgid "This release is not approved."
 msgstr "Dieses Release ist nicht freigegeben."
 
+msgid "Thrive Lightbox Templates"
+msgstr "Thrive Lightbox-Templates"
+
 msgid "Thu"
 msgstr "Do"
 
 msgid "Thursday"
 msgstr "Donnerstag"
+
+msgctxt "Title in Elementor Finder"
+msgid "Add-On: Builder Template Categories"
+msgstr "Add-On: Builder Template-Kategorien"
+
+msgctxt "Title in Elementor Finder"
+msgid "Code Snippets - Builder Template Categories"
+msgstr "Code-Snippets - Builder Template-Kategorien"
+
+msgctxt "Title in Elementor Finder"
+msgid "Help Resources - Builder Template Categories"
+msgstr "Hilfe-Ressourcen - Builder Template-Kategorien"
+
+msgctxt "Title in Elementor Finder"
+msgid "Template Categories"
+msgstr "Template-Kategorien"
+
+msgid "ToolKit for Elementor Templates"
+msgstr "ToolKit für Elementor Templates"
 
 msgid "Tools"
 msgstr "Werkzeuge"
@@ -2128,6 +1738,16 @@ msgstr "Di"
 msgid "Tuesday"
 msgstr "Dienstag"
 
+msgctxt "Tweaked label for \"Edit\" bulk action"
+msgid "Edit, add Category etc."
+msgstr "Bearbeiten, Kategorie(n) hinzufügen, etc."
+
+msgid "URL"
+msgstr "URL"
+
+msgid "URL %s"
+msgstr "URL-%s"
+
 msgid "Unsafe archive path."
 msgstr "Unsicherer Archivpfad."
 
@@ -2136,6 +1756,9 @@ msgstr "Nicht vertrauenswürdige Release-URL."
 
 msgid "Update %1$s to version %2$s or newer."
 msgstr "%1$s bitte auf Version %2$s oder neuer aktualisieren."
+
+msgid "Update %s Category"
+msgstr "%s-Kategorie aktualisieren"
 
 msgid "Update available"
 msgstr "Update verfügbar"
@@ -2152,17 +1775,56 @@ msgstr "Aktualisiert"
 msgid "Updating…"
 msgstr "Wird aktualisiert…"
 
+msgid "Upgrade"
+msgstr "Upgrade"
+
+msgid "Video Overview: Bulk Add Template Categories"
+msgstr "Video-Übersicht: Mehrfachaktionen für Template-Kategorien"
+
+msgid "View %s Category"
+msgstr "%s-Kategorie anzeigen"
+
 msgid "View plugins"
 msgstr "Plugins ansehen"
 
 msgid "Visibility"
 msgstr "Sichtbarkeit"
 
+msgid "Visual Composer Footer Builder Templates"
+msgstr "Visual Composer Footer-Builder Templates"
+
+msgid "Visual Composer Global Templates"
+msgstr "Visual Composer Globale Templates"
+
+msgid "Visual Composer Header Builder Templates"
+msgstr "Visual Composer Header-Builder Templates"
+
+msgid "Visual Composer Sidebar Builder Templates"
+msgstr "Visual Composer Sidebar-Builder Templates"
+
+msgid "WP Show Posts Listings"
+msgstr "WP Show Posts Auflistungen"
+
+msgid "WPBakery Grid Builder Templates"
+msgstr "WPBakery Raster-Templates"
+
+msgid "WPBakery Page Builder Templates"
+msgstr "WPBakery Page Builder Templates"
+
 msgid "Wed"
 msgstr "Mi"
 
 msgid "Wednesday"
 msgstr "Mittwoch"
+
+msgid "Widget Content Blocks"
+msgstr "Widget-Inhaltsblöcke"
+
+msgid "Woody Snippets"
+msgstr "Woody Snippets"
+
+msgid "Woostify Pro Header Footer Builder Templates"
+msgstr "Woostify Pro Header Footer Builder Templates"
 
 msgid "WordPress"
 msgstr "WordPress"
@@ -2174,188 +1836,158 @@ msgstr ""
 "Sie nutzen bereits ein Plugin von mir. Ausgewählte Ergänzungen finden Sie im "
 "deckerweb-Tab."
 
-msgid "Private mode must be boolean."
-msgstr "Der Private-Modus muss ein boolescher Wert sein."
-
-msgid "Invalid authentication provider."
-msgstr "Ungültiger Authentifizierungsanbieter."
-
-msgid "The plugin must be installed in a stable slug directory."
-msgstr ""
-"Das Plugin muss in einem Verzeichnis mit einem festen Slug installiert sein."
-
-msgid "Invalid GitHub repository URL."
-msgstr "Ungültige GitHub-Repository-URL."
-
 msgid ""
-"The private update could not be authorized. Check the repository credentials "
-"and refresh updates."
+"You can bulk add template categories to more than one template at once in "
+"your template post type overview table, using the %1$s drop-down menu. The "
+"action will be labeled like %2$s. See a short %3$s of this feature."
 msgstr ""
-"Das private Update konnte nicht autorisiert werden. Prüfen Sie die "
-"Repository-Zugangsdaten und suchen Sie erneut nach Updates."
+"Sie können Template-Kategorien auch als Mehrfachaktion hinzufügen, dies "
+"geschieht in der Beitragstyp-Übersichtstabelle, im Drop-Down-Menü %1$s. Die "
+"Aktion ist betitelt mit %2$s. Schauen Sie eine kurze %3$s dieser Funktion an."
 
-msgid "Could not create the update download file."
-msgstr "Die Datei für den Update-Download konnte nicht erstellt werden."
+msgid "for Post Types, Taxonomies, Fields"
+msgstr "für Inhaltstypen, Taxonomien, Felder"
 
-msgid "The private update download failed. Check credentials and try again."
-msgstr ""
-"Der Download des privaten Updates ist fehlgeschlagen. Prüfen Sie die "
-"Zugangsdaten und versuchen Sie es erneut."
+msgid "for WooCommerce"
+msgstr "für WooCommerce Shops"
 
-msgid "Could not access the update filesystem."
-msgstr "Auf das Dateisystem für das Update konnte nicht zugegriffen werden."
+msgid "https://deckerweb.de/"
+msgstr "https://deckerweb.de/"
 
-msgid "GitHub release does not contain the plugin main file."
-msgstr "Der GitHub-Release enthält nicht die Hauptdatei des Plugins."
+msgid "https://github.com/deckerweb/builder-template-categories"
+msgstr "https://github.com/deckerweb/builder-template-categories"
 
-msgid "Could not prepare the GitHub release package."
-msgstr "Das GitHub-Release-Paket konnte nicht vorbereitet werden."
+msgid "video overview"
+msgstr "Video-Übersicht"
 
-msgid "See the release on GitHub."
-msgstr "Sehen Sie sich den Release auf GitHub an."
+msgid "Archive verification"
+msgstr "Archivprüfung"
 
-msgid ""
-"Public catalog callbacks require both providers and cannot be used in "
-"private mode."
-msgstr ""
-"Öffentliche Katalog-Callbacks benötigen beide Anbieter und können nicht im "
-"Private-Modus verwendet werden."
+msgid "Catalog approval"
+msgstr "Katalogfreigabe"
 
-#~ msgid "Taxonomy"
-#~ msgstr "Taxonomie"
+msgid "Catalog diagnostics require a public catalog provider."
+msgstr "Die Katalogdiagnose benötigt einen öffentlichen Kataloganbieter."
 
-#~ msgctxt "Plugins page listing"
-#~ msgid "Support"
-#~ msgstr "Support"
+msgid "Checksum verification"
+msgstr "Prüfsummenprüfung"
 
-#~ msgctxt "Plugins page listing"
-#~ msgid "Facebook Group"
-#~ msgstr "Facebook-Gruppe"
+msgid "HTTP status: %d."
+msgstr "HTTP-Status: %d."
 
-#~ msgctxt "Plugins page listing"
-#~ msgid "Translations"
-#~ msgstr "Übersetzungen"
+msgid "Invalid package cleanup provider."
+msgstr "Ungültiger Anbieter für die Paketbereinigung."
 
-#, php-format
-#~ msgid "%s rating"
-#~ msgstr "%s Bewertung"
+msgid "Invalid private download limits."
+msgstr "Ungültige Grenzen für private Downloads."
 
-#, php-format
-#~ msgid ""
-#~ "Enjoyed %1$s? Please leave us a %2$s. We really appreciate your support!"
-#~ msgstr ""
-#~ "Gefällt Ihnen %1$s? Dann geben Sie uns bitte eine %2$s. Wir schätzen Ihre "
-#~ "Unterstützung!"
+msgid "Package download"
+msgstr "Paketdownload"
 
-#~ msgctxt "Plugin installer: Tab name in installer toolbar"
-#~ msgid "Newest"
-#~ msgstr "Neueste"
+msgid "Safe package cleanup is unavailable for this update provider."
+msgstr "Für diesen Updateanbieter ist keine sichere Paketbereinigung verfügbar."
 
-#~ msgctxt "Plugin card: plugin version"
-#~ msgid "Version:"
-#~ msgstr "Version:"
+msgid "The archive or plugin identity could not be verified. Installation was stopped."
+msgstr "Das Archiv oder die Pluginidentität konnte nicht geprüft werden. Die Installation wurde gestoppt."
 
-#~ msgctxt "Plugin installer: Tab name in installer toolbar"
-#~ msgid "deckerweb Plugins"
-#~ msgstr "deckerweb Plugins"
+msgid "The package does not match the approved checksum. Installation was stopped."
+msgstr "Das Paket entspricht nicht der freigegebenen Prüfsumme. Die Installation wurde gestoppt."
 
-#~ msgctxt "Plugin installer: Page title"
-#~ msgid "deckerweb Plugins"
-#~ msgstr "deckerweb Plugins"
+msgid "The secure connection to the update server failed."
+msgstr "Die sichere Verbindung zum Updateserver ist fehlgeschlagen."
 
-#~ msgid ""
-#~ "Great helper tools for Site Builders to save time and get more productive"
-#~ msgstr ""
-#~ "Großartige Helferlein-Plugins für Site-Builder, um wertvolle Zeit zu "
-#~ "sparen und noch produktiver zu werden."
+msgid "The update package identity, version or requirements could not be verified."
+msgstr "Identität, Version oder Anforderungen des Updatepakets konnten nicht bestätigt werden."
 
-#, php-format
-#~ msgid "You can use any of our free plugins or premium plugins from %s"
-#~ msgstr ""
-#~ "Sie können jedes unserer kostenlosen Plugins oder Premium-Plugins von %s "
-#~ "verwenden"
+msgid "The update provider did not return valid update data."
+msgstr "Der Updateanbieter hat keine gültigen Updatedaten geliefert."
 
-#~ msgid "Join our Newsletter"
-#~ msgstr "Newsletter jetzt!"
+msgid "The update request timed out. Try again later."
+msgstr "Die Updateanfrage hat zu lange gedauert. Versuchen Sie es später erneut."
 
-#~ msgid "Facebook User Group"
-#~ msgstr "Facebook-Nutzergruppe"
+msgid "The update server address could not be resolved."
+msgstr "Die Adresse des Updateservers konnte nicht aufgelöst werden."
 
-#~ msgctxt "Help tab info"
-#~ msgid "FAQ"
-#~ msgstr "FAQ - Häufige Fragen"
+msgid "The update server could not be reached. Try again later."
+msgstr "Der Updateserver ist nicht erreichbar. Versuchen Sie es später erneut."
 
-#~ msgctxt "Help tab info"
-#~ msgid "Support"
-#~ msgstr "Support"
+msgid "The update server returned an unsuccessful HTTP response."
+msgstr "Der Updateserver hat eine HTTP-Fehlerantwort zurückgegeben."
 
-#~ msgctxt "Help tab info"
-#~ msgid "Facebook Group"
-#~ msgstr "Facebook-Gruppe"
+msgid "Update stopped at %1$s: %2$s"
+msgstr "Update gestoppt bei %1$s: %2$s"
 
-#~ msgctxt "Help tab info"
-#~ msgid "Translations"
-#~ msgstr "Übersetzungen"
+msgid "%1$s of %2$s plugins"
+msgstr "%1$s von %2$s Plugins"
 
-#~ msgid "Facebook Group"
-#~ msgstr "Facebook-Gruppe"
+msgid "Catalog retrieval does not limit updates of installed plugins. Those use their normal WordPress update provider."
+msgstr "Der Katalogabruf begrenzt keine Updates installierter Plugins. Diese verwenden ihren normalen WordPress-Updater."
 
-#, fuzzy
-#~| msgctxt "Admin menu label"
-#~| msgid "Blocks"
-#~ msgid "Blocks"
-#~ msgstr "Blöcke"
+msgid "Catalog verification"
+msgstr "Katalogprüfung"
 
-#, fuzzy
-#~| msgid "Styles Overview"
-#~ msgctxt "Admin page title"
-#~ msgid "Blocks Overview"
-#~ msgstr "Styles-Übersicht"
+msgid "Connection failed. Please try again later."
+msgstr "Die Verbindung ist fehlgeschlagen. Bitte später erneut versuchen."
 
-#, fuzzy
-#~| msgid "Styles Overview"
-#~ msgctxt "Admin menu label"
-#~ msgid "Blocks Overview"
-#~ msgstr "Styles-Übersicht"
+msgid "Inactive"
+msgstr "Inaktiv"
 
-#~ msgid "Block Categories"
-#~ msgstr "Block-Kategorien"
+msgid "Installed plugin identity does not match the approved release."
+msgstr "Die Identität des installierten Plugins stimmt nicht mit dem freigegebenen Release überein."
 
-#~ msgid "More about the plugin author"
-#~ msgstr "Mehr über den Plugin-Autor"
+msgid "Installed plugins use their normal update provider. Reload the update information and try again."
+msgstr "Installierte Plugins verwenden ihren normalen Updater. Aktualisieren Sie die Updateinformationen und versuchen Sie es erneut."
 
-#~ msgid "Social:"
-#~ msgstr "Vernetzen:"
+msgid "Invalid status filter."
+msgstr "Ungültiger Statusfilter."
 
-#~ msgctxt "Taxonomy General Name"
-#~ msgid "Template Categories"
-#~ msgstr "Template-Kategorien"
+msgid "No update reported."
+msgstr "Kein Update gemeldet."
 
-#~ msgctxt "Taxonomy Singular Name"
-#~ msgid "Template Category"
-#~ msgstr "Vorlagenkategorie"
+msgid "Not installed"
+msgstr "Nicht installiert"
 
-#~ msgid "No Template Categories"
-#~ msgstr "Keine Template-Kategorien"
+msgid "Plugin status"
+msgstr "Plugin-Status"
 
-#~ msgid "Not Found"
-#~ msgstr "Es wurden keine Template-Kategorien gefunden."
+msgid "Stage: %1$s. %2$s"
+msgstr "Fehlerstufe: %1$s. %2$s"
 
-#~ msgid "Items list"
-#~ msgstr "Einträge"
+msgid "The catalog response is invalid, incompatible or too large."
+msgstr "Die Katalogantwort ist ungültig, inkompatibel oder zu groß."
 
-#~ msgid "Items list navigation"
-#~ msgstr "Eintragsliste Navigation"
+msgid "The connection timed out. Please try again later."
+msgstr "Die Zeit für die Verbindung wurde überschritten. Bitte später erneut versuchen."
 
-#~ msgid ""
-#~ "These Template Categories will be displayed and are usable for these "
-#~ "current available post types"
-#~ msgstr ""
-#~ "Diese Template-Kategorien werden angezeigt und sind nutzbar für diese "
-#~ "derzeit aktiven Inhaltstypen"
+msgid "The installed plugin identity could not be verified. Use the Plugins screen to review it."
+msgstr "Die Identität des installierten Plugins konnte nicht geprüft werden. Prüfen Sie es auf der Plugins-Seite."
 
-msgid "Builder Template Categories requires a newer shared deckerweb Updater. Please update the other deckerweb plugins."
-msgstr "Builder Template Categories benötigt einen neueren gemeinsamen deckerweb Updater. Bitte aktualisieren Sie die anderen deckerweb Plugins."
+msgid "The package checksum does not match the approved release. Installation was stopped."
+msgstr "Die Paketprüfsumme stimmt nicht mit der freigegebenen Version überein. Die Installation wurde gestoppt."
 
-msgid "The update package could not be verified. The installed version has been preserved."
-msgstr "Das Update-Paket konnte nicht geprüft werden. Die installierte Version wurde beibehalten."
+msgid "The package did not pass the archive or plugin identity checks. Installation was stopped."
+msgstr "Das Paket hat die Archiv- oder Plugin-Identitätsprüfung nicht bestanden. Die Installation wurde gestoppt."
+
+msgid "The requirements below describe the catalog version for first installation, not an installed-plugin update."
+msgstr "Die folgenden Voraussetzungen beschreiben die Katalogversion für die Erstinstallation, nicht ein Bestandsupdate."
+
+msgid "The secure connection could not be verified."
+msgstr "Die sichere Verbindung konnte nicht bestätigt werden."
+
+msgid "The server address could not be resolved."
+msgstr "Die Serveradresse konnte nicht aufgelöst werden."
+
+msgid "The server returned HTTP %d. Please try again later."
+msgstr "Der Server hat HTTP %d zurückgegeben. Bitte später erneut versuchen."
+
+msgid "Update available: %s"
+msgstr "Update verfügbar: %s"
+
+msgid "Update information changed. Reload the page and try again."
+msgstr "Die Updateinformationen haben sich geändert. Laden Sie die Seite neu und versuchen Sie es erneut."
+
+msgid "Use the Plugins screen to manage this installed plugin."
+msgstr "Verwalten Sie dieses installierte Plugin auf der Plugins-Seite."
+
+msgid "Verified first installations · Independent plugin updates"
+msgstr "Geprüfte Erstinstallationen · Unabhängige Pluginupdates"

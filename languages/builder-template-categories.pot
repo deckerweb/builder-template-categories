@@ -1248,3 +1248,609 @@ msgid ""
 "You already use one of my plugins. Find selected additions in the deckerweb "
 "tab."
 msgstr ""
+
+msgid "%1$s of %2$s plugins"
+msgstr ""
+
+msgid "Advanced Custom Blocks"
+msgstr ""
+
+msgid "Advanced Custom Fields Field Groups"
+msgstr ""
+
+msgid "AnyWhere Elementor Global Templates"
+msgstr ""
+
+msgid "Archive verification"
+msgstr ""
+
+msgid "Area"
+msgstr ""
+
+msgid "Area %s"
+msgstr ""
+
+msgid "Bar"
+msgstr ""
+
+msgid "Bar %s"
+msgstr ""
+
+msgid "Block %s"
+msgstr ""
+
+msgid "Block Areas"
+msgstr ""
+
+msgid "Block Editor Reusable Blocks"
+msgstr ""
+
+msgid "Block Lab Blocks"
+msgstr ""
+
+msgid "Block Layouts"
+msgstr ""
+
+msgid "Blox Global Blocks (for Genesis)"
+msgstr ""
+
+msgid "BoldGrid Blocks"
+msgstr ""
+
+msgid "Box"
+msgstr ""
+
+msgid "Box %s"
+msgstr ""
+
+msgid "Boxzilla Boxes"
+msgstr ""
+
+msgid "Brizy Templates"
+msgstr ""
+
+msgid "Bulk Actions"
+msgstr ""
+
+msgid "CMB2 Meta Boxes"
+msgstr ""
+
+msgid "CartFlows Checkout Flows"
+msgstr ""
+
+msgid "Catalog approval"
+msgstr ""
+
+msgid "Catalog diagnostics require a public catalog provider."
+msgstr ""
+
+msgid "Catalog retrieval does not limit updates of installed plugins. Those use their normal WordPress update provider."
+msgstr ""
+
+msgid "Catalog verification"
+msgstr ""
+
+msgid "Checksum verification"
+msgstr ""
+
+msgid "Cherry PopUps Templates"
+msgstr ""
+
+msgid "Connect"
+msgstr ""
+
+msgid "Connection failed. Please try again later."
+msgstr ""
+
+msgid "Content Blocks"
+msgstr ""
+
+msgid "Content Type"
+msgstr ""
+
+msgid "Currently active integrations where the %s taxonomy is applied to better internally organize templates for various content types"
+msgstr ""
+
+msgid "Custom Field Suite Field Groups"
+msgstr ""
+
+msgid "Custom Page Templates"
+msgstr ""
+
+msgid "Custom Post Type Registrations"
+msgstr ""
+
+msgid "Custom Taxonomy Registrations"
+msgstr ""
+
+msgid "Customify Hooks"
+msgstr ""
+
+msgid "Customize"
+msgstr ""
+
+msgid "DHWC Elementor Product Templates"
+msgstr ""
+
+msgid "Dev Content Blocks"
+msgstr ""
+
+msgid "Disabled"
+msgstr ""
+
+msgid "EL HF %s"
+msgstr ""
+
+msgid "Easy Content Templates"
+msgstr ""
+
+msgid "Element %s"
+msgstr ""
+
+msgid "Elements Kit Templates"
+msgstr ""
+
+msgid "Enabled"
+msgstr ""
+
+msgid "Epic News Elements - Archive Templates"
+msgstr ""
+
+msgid "Epic News Elements - Post Templates"
+msgstr ""
+
+msgid "Extra Category Layout Templates"
+msgstr ""
+
+msgid "Field"
+msgstr ""
+
+msgid "Field %s"
+msgstr ""
+
+msgid "Filter %s"
+msgstr ""
+
+msgid "Flo Forms"
+msgstr ""
+
+msgid "Flow"
+msgstr ""
+
+msgid "Flow %s"
+msgstr ""
+
+msgid "Font"
+msgstr ""
+
+msgid "Font %s"
+msgstr ""
+
+msgid "Form"
+msgstr ""
+
+msgid "Form %s"
+msgstr ""
+
+msgid "Genesis Plugins"
+msgstr ""
+
+msgid "Genesis Plugins from the Plugin Directory"
+msgstr ""
+
+msgid "Give Donation Forms"
+msgstr ""
+
+msgid "Global Content Blocks for Cornerstone Page Builder"
+msgstr ""
+
+msgid "Gutenberg Block Templates"
+msgstr ""
+
+msgid "HT Script - Header &amp; Footer Scripts"
+msgstr ""
+
+msgid "HTTP status: %d."
+msgstr ""
+
+msgid "HappyForms Forms"
+msgstr ""
+
+msgid "HappyForms Upgrade"
+msgstr ""
+
+msgid "Header &amp; Footer Templates for Elementor"
+msgstr ""
+
+msgid "Holler Box Boxes"
+msgstr ""
+
+msgid "Hook"
+msgstr ""
+
+msgid "Hook %s"
+msgstr ""
+
+msgid "Important plugin links:"
+msgstr ""
+
+msgid "Inactive"
+msgstr ""
+
+msgid "Installed plugin identity does not match the approved release."
+msgstr ""
+
+msgid "Installed plugins use their normal update provider. Reload the update information and try again."
+msgstr ""
+
+msgid "Invalid package cleanup provider."
+msgstr ""
+
+msgid "Invalid private download limits."
+msgstr ""
+
+msgid "Invalid status filter."
+msgstr ""
+
+msgid "JetEngine Forms"
+msgstr ""
+
+msgid "JetEngine Listing Templates"
+msgstr ""
+
+msgid "JetPopup Templates"
+msgstr ""
+
+msgid "JetSmartFilters Filter Templates"
+msgstr ""
+
+msgid "JetThemeCore My Library"
+msgstr ""
+
+msgid "JetWooBuilder Product Templates"
+msgstr ""
+
+msgid "Kadence Elementor Checkout Templates"
+msgstr ""
+
+msgid "Kadence Elementor Product Archive Templates"
+msgstr ""
+
+msgid "Kadence Elementor Single Product Templates"
+msgstr ""
+
+msgid "Layout %s"
+msgstr ""
+
+msgid "Lazy Block Templates"
+msgstr ""
+
+msgid "LearnDash Custom Templates"
+msgstr ""
+
+msgid "Library %s"
+msgstr ""
+
+msgid "LifterLMS Custom Templates"
+msgstr ""
+
+msgid "Light Sidebar Manager - Sidebars"
+msgstr ""
+
+msgid "Lightbox"
+msgstr ""
+
+msgid "Lightbox %s"
+msgstr ""
+
+msgid "Listing"
+msgstr ""
+
+msgid "Listing %s"
+msgstr ""
+
+msgid "Listing Categories"
+msgstr ""
+
+msgid "Loomisoft Reusable Content Blocks"
+msgstr ""
+
+msgid "Master Popup Templates"
+msgstr ""
+
+msgid "Meta Box Field Groups"
+msgstr ""
+
+msgid "Meta Box Post Type Registrations"
+msgstr ""
+
+msgid "Meta Box Taxonomy Registrations"
+msgstr ""
+
+msgid "Neve Custom Layouts"
+msgstr ""
+
+msgid "No Integration registered"
+msgstr ""
+
+msgid "No update reported."
+msgstr ""
+
+msgid "Not installed"
+msgstr ""
+
+msgid "OceanWP Library"
+msgstr ""
+
+msgid "Opal Footer Templates for Elementor"
+msgstr ""
+
+msgid "Opal Header Templates for Elementor"
+msgstr ""
+
+msgid "Package download"
+msgstr ""
+
+msgid "Page Builder Framework Sections"
+msgstr ""
+
+msgid "Pattern %s"
+msgstr ""
+
+msgid "Placeholder Blocks by Square Happiness"
+msgstr ""
+
+msgid "Plugin status"
+msgstr ""
+
+msgid "Plugin website"
+msgstr ""
+
+msgid "Pods Templates"
+msgstr ""
+
+msgid "PopBox Popup Templates"
+msgstr ""
+
+msgid "Popup"
+msgstr ""
+
+msgid "Popup %s"
+msgstr ""
+
+msgid "Popup Maker Templates"
+msgstr ""
+
+msgid "Post Type"
+msgstr ""
+
+msgid "Post Type %s"
+msgstr ""
+
+msgid "Redirect"
+msgstr ""
+
+msgid "Redirect %s"
+msgstr ""
+
+msgid "Reusable Blocks Post Type UI"
+msgstr ""
+
+msgid "Reusable Content Blocks"
+msgstr ""
+
+msgid "Reusable Layouts for SiteOrigin"
+msgstr ""
+
+msgid "Reusable Templates"
+msgstr ""
+
+msgid "Safe package cleanup is unavailable for this update provider."
+msgstr ""
+
+msgid "Script"
+msgstr ""
+
+msgid "Script %s"
+msgstr ""
+
+msgid "Section"
+msgstr ""
+
+msgid "Section %s"
+msgstr ""
+
+msgid "Sidebar"
+msgstr ""
+
+msgid "Sidebar %s"
+msgstr ""
+
+msgid "Simple Content Templates"
+msgstr ""
+
+msgid "Smart Footer Templates"
+msgstr ""
+
+msgid "Snippet"
+msgstr ""
+
+msgid "Snippet %s"
+msgstr ""
+
+msgid "Snippet Categories"
+msgstr ""
+
+msgid "Stage: %1$s. %2$s"
+msgstr ""
+
+msgid "StylePress Templates for Elementor"
+msgstr ""
+
+msgid "Styles Overview"
+msgstr ""
+
+msgid "Suki Custom Blocks"
+msgstr ""
+
+msgid "Template %s"
+msgstr ""
+
+msgid "Templementor Templates"
+msgstr ""
+
+msgid "Text Blocks"
+msgstr ""
+
+msgid "The archive or plugin identity could not be verified. Installation was stopped."
+msgstr ""
+
+msgid "The catalog response is invalid, incompatible or too large."
+msgstr ""
+
+msgid "The category description can be used for internal notices for your team members for example."
+msgstr ""
+
+msgid "The connection timed out. Please try again later."
+msgstr ""
+
+msgid "The installed plugin identity could not be verified. Use the Plugins screen to review it."
+msgstr ""
+
+msgid "The package checksum does not match the approved release. Installation was stopped."
+msgstr ""
+
+msgid "The package did not pass the archive or plugin identity checks. Installation was stopped."
+msgstr ""
+
+msgid "The package does not match the approved checksum. Installation was stopped."
+msgstr ""
+
+msgid "The requirements below describe the catalog version for first installation, not an installed-plugin update."
+msgstr ""
+
+msgid "The secure connection could not be verified."
+msgstr ""
+
+msgid "The secure connection to the update server failed."
+msgstr ""
+
+msgid "The server address could not be resolved."
+msgstr ""
+
+msgid "The server returned HTTP %d. Please try again later."
+msgstr ""
+
+msgid "The template categories are global and are applied automatically to all current active integrations."
+msgstr ""
+
+msgid "The update package identity, version or requirements could not be verified."
+msgstr ""
+
+msgid "The update provider did not return valid update data."
+msgstr ""
+
+msgid "The update request timed out. Try again later."
+msgstr ""
+
+msgid "The update server address could not be resolved."
+msgstr ""
+
+msgid "The update server could not be reached. Try again later."
+msgstr ""
+
+msgid "The update server returned an unsuccessful HTTP response."
+msgstr ""
+
+msgid "Themify Builder Layout Parts"
+msgstr ""
+
+msgid "Themify Builder Layouts"
+msgstr ""
+
+msgid "Themify Popup Templates"
+msgstr ""
+
+msgid "These Template Categories are globally available for Administrators within the Admin Dashboard and can be used to organize the template libraries for the following active Plugins and/or Themes"
+msgstr ""
+
+msgid "This plugin adds a Taxonomy \"Template Category\" for categorizing templates to make the life of site builders a little bit easier. It integrates with Elementor My Templates, OceanWP My Library, Astra Custom Layouts, GeneratePress Elements, Blox for Genesis, AnyWhere Elementor Global Templates and JetThemeCore My Library (Kava Pro/ CrocoBlock). These categories only appear in the WP-Admin Dashboard and only for the administrator user role (capability 'edit_theme_options')."
+msgstr ""
+
+msgid "Thrive Lightbox Templates"
+msgstr ""
+
+msgid "ToolKit for Elementor Templates"
+msgstr ""
+
+msgid "URL"
+msgstr ""
+
+msgid "URL %s"
+msgstr ""
+
+msgid "Update available: %s"
+msgstr ""
+
+msgid "Update information changed. Reload the page and try again."
+msgstr ""
+
+msgid "Update stopped at %1$s: %2$s"
+msgstr ""
+
+msgid "Upgrade"
+msgstr ""
+
+msgid "Use the Plugins screen to manage this installed plugin."
+msgstr ""
+
+msgid "Verified first installations · Independent plugin updates"
+msgstr ""
+
+msgid "Video Overview: Bulk Add Template Categories"
+msgstr ""
+
+msgid "Visual Composer Footer Builder Templates"
+msgstr ""
+
+msgid "Visual Composer Global Templates"
+msgstr ""
+
+msgid "Visual Composer Header Builder Templates"
+msgstr ""
+
+msgid "Visual Composer Sidebar Builder Templates"
+msgstr ""
+
+msgid "WP Show Posts Listings"
+msgstr ""
+
+msgid "WPBakery Grid Builder Templates"
+msgstr ""
+
+msgid "WPBakery Page Builder Templates"
+msgstr ""
+
+msgid "Widget Content Blocks"
+msgstr ""
+
+msgid "Woody Snippets"
+msgstr ""
+
+msgid "Woostify Pro Header Footer Builder Templates"
+msgstr ""
+
+msgid "You can bulk add template categories to more than one template at once in your template post type overview table, using the %1$s drop-down menu. The action will be labeled like %2$s. See a short %3$s of this feature."
+msgstr ""
+
+msgid "for Post Types, Taxonomies, Fields"
+msgstr ""
+
+msgid "for WooCommerce"
+msgstr ""
+
+msgid "https://deckerweb.de/"
+msgstr ""
+
+msgid "video overview"
+msgstr ""

@@ -80,3 +80,26 @@
 #deckerweb-library .dwl-card:focus-within{border-color:#8c9aab;box-shadow:0 2px 8px rgba(30,45,65,.09)}
 @media (prefers-reduced-motion:no-preference){#deckerweb-library .dwl-card{transition:border-color .15s ease,box-shadow .15s ease}}
 @media (forced-colors:active){#deckerweb-library .dwl-card:focus-within{outline:1px solid Highlight;outline-offset:2px}}
+
+/* Preserve native hidden controls against WordPress button display rules. */
+#deckerweb-library [hidden]{display:none!important}
+
+/* Compact catalog controls retain native WordPress colors and focus indicators. */
+#deckerweb-library .dwl-series-filter{gap:6px;margin-bottom:10px}
+#deckerweb-library .dwl-series-filter legend{margin-bottom:6px}
+#deckerweb-library .dwl-series-filter .button{min-height:28px;padding:0 8px;font-size:13px;line-height:26px}
+#deckerweb-library .dwl-filter-controls{gap:8px 12px;align-items:center}
+#deckerweb-library .dwl-filter-controls>label{display:inline-flex;align-items:center;gap:5px;flex-wrap:wrap}
+#deckerweb-library .dwl-filter-controls input[type=search]{width:170px;max-width:100%;min-width:0;margin:0}
+#deckerweb-library .dwl-filter-controls select{max-width:180px;margin:0;font-size:13px}
+#deckerweb-library .dwl-filter-controls .button{min-height:28px;padding:0 8px;font-size:13px;line-height:26px}
+#deckerweb-library .dwl-filter-help{margin-top:8px;font-size:12px;line-height:1.5}
+#deckerweb-library .dwl-result-count{margin:10px 0}
+#deckerweb-library .dwl-filter{margin-bottom:12px}
+#deckerweb-library .dwl-heading{margin-bottom:12px}
+@media(max-width:782px){
+ #deckerweb-library .dwl-series-filter .button,#deckerweb-library .dwl-filter-controls .button{min-height:36px;line-height:34px;padding-inline:10px}
+ #deckerweb-library .dwl-filter-controls select{min-height:36px;font-size:14px;max-width:100%}
+ #deckerweb-library .dwl-filter-controls input[type=search]{min-height:36px;font-size:14px}
+}
+@media(max-width:480px){#deckerweb-library .dwl-filter-controls>label:first-child{display:flex;width:100%}#deckerweb-library .dwl-filter-controls input[type=search]{width:100%}}

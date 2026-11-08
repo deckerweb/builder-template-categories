@@ -132,7 +132,7 @@ add_action( 'plugins_loaded', 'deckerweb_library_elect_v090', PHP_INT_MAX - 2 );
 
 if ( ! function_exists( 'deckerweb_library_updater_options_v1' ) ) {
  /**
-  * Provide lazy public catalog callbacks without changing host updater ownership.
+  * Retain lazy legacy adapter callbacks; the elected runtime selects independent installed updates.
   *
   * @param string $plugin_file Absolute host main-file path.
   * @param string $repository Exact public GitHub repository URL.
@@ -151,7 +151,7 @@ if ( ! function_exists( 'deckerweb_library_updater_options_v1' ) ) {
    'release_provider' => static function( string $repo, string $basename, bool $fresh = false ) use ( $repository, $file ) {
     $runtime = $GLOBALS['deckerweb_library_runtime_v1'] ?? null;
     if ( $repo !== $repository || $basename !== $file ) { return null; }
-    return is_object( $runtime ) && method_exists( $runtime, 'updater_release' ) ? $runtime->updater_release( $repo, $basename, $fresh ) : false;
+    return is_object( $runtime ) && method_exists( $runtime, 'updater_release' ) ? $runtime->updater_release( $repo, $basename, $fresh ) : null;
    },
    /**
     * Verify an offered package for the configured public host identity.
